@@ -1,0 +1,42 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "browser": true,
+    "es2024": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:css-modules/recommended",
+    "plugin:react/recommended",
+    "plugin:compat/recommended",
+    "plugin:prettier/recommended",
+    "prettier",
+    "plugin:storybook/recommended"
+  ],
+  "plugins": ["compat", "prettier", "css-modules"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "jsx-a11y/alt-text": ["off"],
+    "linebreak-style": [2, "unix"],
+    "semi": [2, "always"],
+    "no-multiple-empty-lines": [
+      2,
+      {
+        "max": 1
+      }
+    ],
+    "no-useless-catch": 0
+  }
+}

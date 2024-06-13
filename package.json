@@ -1,0 +1,103 @@
+{
+  "name": "package-name",
+  "author": "AUTHOR",
+  "description": "DESCRIPTION",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+REPO_URL.git"
+  },
+  "bugs": {
+    "url": "URL"
+  },
+  "homepage": "HOMEPAGE",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "react",
+    "react-component",
+    "ui"
+  ],
+  "main": "dist/lib/index.cjs",
+  "module": "dist/lib/index.js",
+  "scripts": {
+    "lint": "eslint src/**/*.js --fix",
+    "format": "prettier --write .",
+    "stylelint": "stylelint \"src/**/*.css\" --fix",
+    "unimported": "npx unimported",
+    "release": "release-it",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "build:lib": "rm -rf dist/lib && tsup src/index.js --out-dir dist/lib",
+    "publish": "npm publish --access public"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.23.2",
+    "@babel/preset-env": "7.23.2",
+    "@babel/preset-react": "7.22.15",
+    "@storybook/addon-essentials": "7.5.1",
+    "@storybook/addon-interactions": "7.5.1",
+    "@storybook/addon-links": "7.5.1",
+    "@storybook/addon-onboarding": "1.0.8",
+    "@storybook/blocks": "7.5.1",
+    "@storybook/react": "7.5.1",
+    "@storybook/react-webpack5": "7.5.1",
+    "@storybook/testing-library": "0.2.2",
+    "autoprefixer": "10.4.16",
+    "babel-loader": "9.1.3",
+    "css-loader": "6.8.1",
+    "eslint": "8.52.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-compat": "4.2.0",
+    "eslint-plugin-css-modules": "2.12.0",
+    "eslint-plugin-prettier": "5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-storybook": "0.6.15",
+    "husky": "8.0.3",
+    "mini-css-extract-plugin": "2.7.6",
+    "node-sass": "9.0.0",
+    "postcss": "8.4.31",
+    "postcss-prefixer": "3.0.0",
+    "prettier": "3.0.3",
+    "release-it": "16.2.1",
+    "sass": "1.69.4",
+    "sass-loader": "13.3.2",
+    "storybook": "7.5.1",
+    "style-loader": "3.3.3",
+    "stylelint": "15.11.0",
+    "stylelint-config-prettier-scss": "1.0.0",
+    "stylelint-config-standard-scss": "11.0.0",
+    "stylelint-declaration-strict-value": "1.9.2",
+    "stylelint-no-unsupported-browser-features": "7.0.0",
+    "stylelint-scss": "5.2.1",
+    "tsup": "7.2.0",
+    "webpack": "5.89.0",
+    "webpack-bundle-analyzer": "4.9.1",
+    "webpack-cli": "5.1.4"
+  },
+  "tsup": {
+    "format": [
+      "esm",
+      "cjs"
+    ],
+    "loader": {
+      ".css": "local-css",
+      ".js": "jsx"
+    },
+    "dts": false,
+    "sourcemap": false,
+    "clean": true
+  }
+}

@@ -1,0 +1,15 @@
+:root {
+  --rfe-white: #fff;
+  --rfe-white-rgb: 255 255 255;
+  --rfe-black: #000;
+  --rfe-black-rgb: 0 0 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --white: #000;
+    --white-rgb: 0 0 0;
+    --black: #fff;
+    --black-rgb: 255 255 255;
+  }
+}

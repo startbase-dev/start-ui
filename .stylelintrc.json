@@ -1,0 +1,41 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-prettier-scss"
+  ],
+  "plugins": [
+    "stylelint-declaration-strict-value",
+    "stylelint-no-unsupported-browser-features"
+  ],
+  "rules": {
+    "selector-class-pattern": "^[a-z][a-zA-Z0-9]+$",
+    "scss/no-global-function-names": null,
+    "no-descending-specificity": null,
+    "media-feature-range-notation": null,
+    "scale-unlimited/declaration-strict-value": [
+      ["/color$/"],
+      {
+        "disableFix": true
+      }
+    ],
+    "declaration-block-no-redundant-longhand-properties": [
+      true,
+      {
+        "ignoreShorthands": ["/flex/"]
+      }
+    ],
+    "plugin/no-unsupported-browser-features": [
+      true,
+      {
+        "browsers": [">1%", "not dead", "not op_mini all"],
+        "ignorePartialSupport": true,
+        "ignore": [
+          "css-nesting",
+          "css-resize",
+          "css-focus-visible",
+          "css3-cursors"
+        ]
+      }
+    ]
+  }
+}
