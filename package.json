@@ -1,93 +1,264 @@
 {
-  "name": "package-name",
-  "author": "AUTHOR",
-  "description": "DESCRIPTION",
-  "version": "1.0.0",
+  "name": "@start-base/start-ui",
+  "author": "Start-Base",
+  "description": "",
+  "version": "1.9.6",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+REPO_URL.git"
+    "url": "git+https://github.com/startbase-dev/start-ui.git"
   },
-  "bugs": {
-    "url": "URL"
-  },
-  "homepage": "HOMEPAGE",
   "files": [
-    "dist"
+    "./index.js",
+    "./index.mjs",
+    "./index.css",
+    "Accordion",
+    "Alert",
+    "Badge",
+    "Button",
+    "Card",
+    "Chip",
+    "Col",
+    "Collapsible",
+    "Container",
+    "Countdown",
+    "DataTable",
+    "Divider",
+    "Dropdown",
+    "List",
+    "Popover",
+    "Progress",
+    "Row",
+    "ScrollArea",
+    "Skeleton",
+    "Stepper",
+    "Tab",
+    "Table",
+    "Toggle",
+    "ToggleGroup",
+    "Tooltip",
+    "Typography"
   ],
   "keywords": [
+    "ui",
+    "ui-library",
+    "react-ui-library",
     "react",
     "react-component",
-    "ui"
+    "start-ui",
+    "start-base"
   ],
-  "main": "dist/lib/index.cjs",
-  "module": "dist/lib/index.js",
+  "main": "./index.cjs",
+  "module": "./index.js",
+  "exports": {
+    ".": {
+      "require": "./index.cjs",
+      "import": "./index.js"
+    },
+    "./index.css": "./index.css",
+    "./Accordion": {
+      "require": "./Accordion/index.cjs",
+      "import": "./Accordion/index.js"
+    },
+    "./Alert": {
+      "require": "./Alert/index.cjs",
+      "import": "./Alert/index.js"
+    },
+    "./Badge": {
+      "require": "./Badge/index.cjs",
+      "import": "./Badge/index.js"
+    },
+    "./Button": {
+      "require": "./Button/index.cjs",
+      "import": "./Button/index.js"
+    },
+    "./Card": {
+      "require": "./Card/index.cjs",
+      "import": "./Card/index.js"
+    },
+    "./Chip": {
+      "require": "./Chip/index.cjs",
+      "import": "./Chip/index.js"
+    },
+    "./Col": {
+      "require": "./Col/index.cjs",
+      "import": "./Col/index.js"
+    },
+    "./Collapsible": {
+      "require": "./Collapsible/index.cjs",
+      "import": "./Collapsible/index.js"
+    },
+    "./Container": {
+      "require": "./Container/index.cjs",
+      "import": "./Container/index.js"
+    },
+    "./Countdown": {
+      "require": "./Countdown/index.cjs",
+      "import": "./Countdown/index.js"
+    },
+    "./DataTable": {
+      "require": "./DataTable/index.cjs",
+      "import": "./DataTable/index.js"
+    },
+    "./Divider": {
+      "require": "./Divider/index.cjs",
+      "import": "./Divider/index.js"
+    },
+    "./Dropdown": {
+      "require": "./Dropdown/index.cjs",
+      "import": "./Dropdown/index.js"
+    },
+    "./List": {
+      "require": "./List/index.cjs",
+      "import": "./List/index.js"
+    },
+    "./Popover": {
+      "require": "./Popover/index.cjs",
+      "import": "./Popover/index.js"
+    },
+    "./Progress": {
+      "require": "./Progress/index.cjs",
+      "import": "./Progress/index.js"
+    },
+    "./Row": {
+      "require": "./Row/index.cjs",
+      "import": "./Row/index.js"
+    },
+    "./ScrollArea": {
+      "require": "./ScrollArea/index.cjs",
+      "import": "./ScrollArea/index.js"
+    },
+    "./Skeleton": {
+      "require": "./Skeleton/index.cjs",
+      "import": "./Skeleton/index.js"
+    },
+    "./Stepper": {
+      "require": "./Stepper/index.cjs",
+      "import": "./Stepper/index.js"
+    },
+    "./Tab": {
+      "require": "./Tab/index.cjs",
+      "import": "./Tab/index.js"
+    },
+    "./Table": {
+      "require": "./Table/index.cjs",
+      "import": "./Table/index.js"
+    },
+    "./Toggle": {
+      "require": "./Toggle/index.cjs",
+      "import": "./Toggle/index.js"
+    },
+    "./ToggleGroup": {
+      "require": "./ToggleGroup/index.cjs",
+      "import": "./ToggleGroup/index.js"
+    },
+    "./Tooltip": {
+      "require": "./Tooltip/index.cjs",
+      "import": "./Tooltip/index.js"
+    },
+    "./Typography": {
+      "require": "./Typography/index.cjs",
+      "import": "./Typography/index.js"
+    }
+  },
   "scripts": {
-    "lint": "eslint src/**/*.js --fix",
+    "lint": "eslint src/*.js src/**/*.js --fix",
     "format": "prettier --write .",
     "stylelint": "stylelint \"src/**/*.css\" --fix",
-    "unimported": "npx unimported",
-    "release": "release-it",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build:lib": "rm -rf dist/lib && tsup src/index.js --out-dir dist/lib",
-    "publish": "npm publish --access public"
+    "build:all": "npm run build && npm run build:Accordion && npm run build:Alert && npm run build:Badge && npm run build:Button && npm run build:Card && npm run build:Chip && npm run build:Col && npm run build:Collapsible && npm run build:Container && npm run build:Countdown && npm run build:DataTable && npm run build:Divider && npm run build:Dropdown && npm run build:List && npm run build:Popover && npm run build:Progress && npm run build:Row && npm run build:ScrollArea && npm run build:Skeleton && npm run build:Stepper && npm run build:Tab && npm run build:Table && npm run build:Toggle && npm run build:ToggleGroup && npm run build:Tooltip && npm run build:Typography",
+    "build": "tsup --out-dir ./ --no-splitting --treeshake --minify terser",
+    "build:Accordion": "tsup src/Accordion/index.js --out-dir ./Accordion --no-splitting --treeshake --minify terser",
+    "build:Alert": "tsup src/Alert/index.js --out-dir ./Alert --no-splitting --treeshake --minify terser",
+    "build:Badge": "tsup src/Badge/index.js --out-dir ./Badge --no-splitting --treeshake --minify terser",
+    "build:Button": "tsup src/Button/index.js --out-dir ./Button --no-splitting --treeshake --minify terser",
+    "build:Card": "tsup src/Card/index.js --out-dir ./Card --no-splitting --treeshake --minify terser",
+    "build:Chip": "tsup src/Chip/index.js --out-dir ./Chip --no-splitting --treeshake --minify terser",
+    "build:Col": "tsup src/Col/index.js --out-dir ./Col --no-splitting --treeshake --minify terser",
+    "build:Collapsible": "tsup src/Collapsible/index.js --out-dir ./Collapsible --no-splitting --treeshake --minify terser",
+    "build:Container": "tsup src/Container/index.js --out-dir ./Container --no-splitting --treeshake --minify terser",
+    "build:Countdown": "tsup src/Countdown/index.js --out-dir ./Countdown --no-splitting --treeshake --minify terser",
+    "build:DataTable": "tsup src/DataTable/index.js --out-dir ./DataTable --no-splitting --treeshake --minify terser",
+    "build:Divider": "tsup src/Divider/index.js --out-dir ./Divider --no-splitting --treeshake --minify terser",
+    "build:Dropdown": "tsup src/Dropdown/index.js --out-dir ./Dropdown --no-splitting --treeshake --minify terser",
+    "build:List": "tsup src/List/index.js --out-dir ./List --no-splitting --treeshake --minify terser",
+    "build:Popover": "tsup src/Popover/index.js --out-dir ./Popover --no-splitting --treeshake --minify terser",
+    "build:Progress": "tsup src/Progress/index.js --out-dir ./Progress --no-splitting --treeshake --minify terser",
+    "build:Row": "tsup src/Row/index.js --out-dir ./Row --no-splitting --treeshake --minify terser",
+    "build:ScrollArea": "tsup src/ScrollArea/index.js --out-dir ./ScrollArea --no-splitting --treeshake --minify terser",
+    "build:Skeleton": "tsup src/Skeleton/index.js --out-dir ./Skeleton --no-splitting --treeshake --minify terser",
+    "build:Stepper": "tsup src/Stepper/index.js --out-dir ./Stepper --no-splitting --treeshake --minify terser",
+    "build:Tab": "tsup src/Tab/index.js --out-dir ./Tab --no-splitting --treeshake --minify terser",
+    "build:Table": "tsup src/Table/index.js --out-dir ./Table --no-splitting --treeshake --minify terser",
+    "build:Toggle": "tsup src/Toggle/index.js --out-dir ./Toggle --no-splitting --treeshake --minify terser",
+    "build:ToggleGroup": "tsup src/ToggleGroup/index.js --out-dir ./ToggleGroup --no-splitting --treeshake --minify terser",
+    "build:Tooltip": "tsup src/Tooltip/index.js --out-dir ./Tooltip --no-splitting --treeshake --minify terser",
+    "build:Typography": "tsup src/Tooltip/index.js --out-dir ./Typography --no-splitting --treeshake --minify terser"
   },
   "peerDependencies": {
+    "clsx": "^2.0.0",
     "prop-types": "^15.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
   "dependencies": {
+    "clsx": "^2.0.0",
     "prop-types": "^15.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.23.2",
-    "@babel/preset-env": "7.23.2",
-    "@babel/preset-react": "7.22.15",
-    "@storybook/addon-essentials": "7.5.1",
-    "@storybook/addon-interactions": "7.5.1",
-    "@storybook/addon-links": "7.5.1",
-    "@storybook/addon-onboarding": "1.0.8",
-    "@storybook/blocks": "7.5.1",
-    "@storybook/react": "7.5.1",
-    "@storybook/react-webpack5": "7.5.1",
-    "@storybook/testing-library": "0.2.2",
-    "autoprefixer": "10.4.16",
+    "@babel/core": "7.24.7",
+    "@babel/preset-env": "7.24.7",
+    "@babel/preset-react": "7.24.7",
+    "@chromatic-com/storybook": "1.5.0",
+    "@hookform/resolvers": "3.6.0",
+    "@storybook/addon-essentials": "8.1.10",
+    "@storybook/addon-interactions": "8.1.10",
+    "@storybook/addon-links": "8.1.10",
+    "@storybook/addon-onboarding": "8.1.10",
+    "@storybook/addon-webpack5-compiler-swc": "1.0.3",
+    "@storybook/blocks": "8.1.10",
+    "@storybook/react": "8.1.10",
+    "@storybook/react-webpack5": "8.1.10",
+    "@storybook/test": "8.1.10",
+    "autoprefixer": "10.4.19",
     "babel-loader": "9.1.3",
-    "css-loader": "6.8.1",
-    "eslint": "8.52.0",
-    "eslint-config-prettier": "9.0.0",
-    "eslint-plugin-compat": "4.2.0",
+    "css-loader": "7.1.2",
+    "eslint": "8.57.0",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-compat": "5.0.0",
     "eslint-plugin-css-modules": "2.12.0",
-    "eslint-plugin-prettier": "5.0.1",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-storybook": "0.6.15",
-    "husky": "8.0.3",
-    "mini-css-extract-plugin": "2.7.6",
-    "node-sass": "9.0.0",
-    "postcss": "8.4.31",
+    "eslint-plugin-prettier": "5.1.3",
+    "eslint-plugin-react": "7.34.3",
+    "eslint-plugin-react-hooks": "4.6.2",
+    "eslint-plugin-storybook": "0.8.0",
+    "husky": "9.0.11",
+    "mini-css-extract-plugin": "2.9.0",
+    "postcss": "8.4.38",
     "postcss-prefixer": "3.0.0",
-    "prettier": "3.0.3",
-    "release-it": "16.2.1",
-    "sass": "1.69.4",
-    "sass-loader": "13.3.2",
-    "storybook": "7.5.1",
-    "style-loader": "3.3.3",
-    "stylelint": "15.11.0",
+    "prettier": "3.3.2",
+    "sass": "1.77.6",
+    "sass-loader": "14.2.1",
+    "storybook": "8.1.10",
+    "style-loader": "4.0.0",
+    "stylelint": "16.6.1",
     "stylelint-config-prettier-scss": "1.0.0",
-    "stylelint-config-standard-scss": "11.0.0",
-    "stylelint-declaration-strict-value": "1.9.2",
-    "stylelint-no-unsupported-browser-features": "7.0.0",
-    "stylelint-scss": "5.2.1",
-    "tsup": "7.2.0",
-    "webpack": "5.89.0",
-    "webpack-bundle-analyzer": "4.9.1",
+    "stylelint-config-standard-scss": "13.1.0",
+    "stylelint-declaration-strict-value": "1.10.4",
+    "stylelint-no-unsupported-browser-features": "8.0.1",
+    "stylelint-scss": "6.3.1",
+    "terser": "5.31.1",
+    "tsup": "8.1.0",
+    "webpack": "5.92.0",
+    "webpack-bundle-analyzer": "4.10.2",
     "webpack-cli": "5.1.4"
   },
   "tsup": {
+    "entry": [
+      "src/index.js"
+    ],
     "format": [
       "esm",
       "cjs"
@@ -98,6 +269,10 @@
     },
     "dts": false,
     "sourcemap": false,
-    "clean": true
-  }
+    "clean": false
+  },
+  "bugs": {
+    "url": "https://github.com/startbase-dev/start-ui/issues"
+  },
+  "homepage": "https://github.com/startbase-dev/start-ui#readme"
 }
