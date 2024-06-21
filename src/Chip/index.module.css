@@ -17,12 +17,3 @@
   color: var(--sui-foreground);
   box-shadow: var(--shadow);
 }
-
-.root:hover {
-  background-color: rgba(var(--sui-background-rgb), 0.8);
-}
-
-.root:focus {
-  outline: 2px solid var(--ring);
-  outline-offset: 2px;
-}
