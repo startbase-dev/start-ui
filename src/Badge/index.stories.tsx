@@ -3,7 +3,6 @@ import Badge from "./index";
 
 interface TemplateProps {
   title: string;
-  content: string;
 }
 
 const Template: React.FC<TemplateProps> = (args) => {
@@ -17,14 +16,14 @@ const Template: React.FC<TemplateProps> = (args) => {
           flexDirection: "column",
         }}
       >
-        <Badge content={args.content} />
+        <Badge />
       </div>
     </>
   );
 };
 
 export const BadgeComponent = Template.bind({});
-BadgeComponent.args = { title: "Badge", content: "Badge" };
+BadgeComponent.args = { title: "Badge" };
 
 const Component = {
   title: "UI/Badge",
