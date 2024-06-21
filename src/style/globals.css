@@ -23,6 +23,11 @@
   --rfe-font-family: "Arial", sans-serif;
   --rfe-transition: all 250ms;
 
+  --sui-background: #18181a;
+  --sui-background-rgb: 24,24,26;
+  --sui-foreground: #fafafa;
+  --sui-border-radius: calc(0.5rem - 2px);
+
   .rdp {
     --rdp-cell-size: 40px !important; /* Size of the day cells. */
     --rdp-caption-font-size: 16px !important; /* Font size for the caption labels. */
@@ -55,6 +60,10 @@
     --rfe-background-selected: #191919;
     --rfe-background-disabled: #282828;
     --rfe-focus: 0 0 10px #4b4b4b, 0 0 0 1px #4b4b4b;
+
+    --sui-background: #fafafa;
+    --sui-background-rgb: 250,250,250;
+    --sui-foreground: #18181a;
   }
 }
 
