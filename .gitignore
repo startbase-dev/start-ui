@@ -73,3 +73,5 @@ package-lock.json
 /index.js
 /index.css
 /index.mjs
+
+*storybook.log
