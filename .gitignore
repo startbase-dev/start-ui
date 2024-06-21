@@ -42,3 +42,34 @@ package-lock.json
 
 # dist
 /dist
+
+/Accordion
+/Alert
+/Badge
+/Button
+/Card
+/Chip
+/Col
+/Collapsible
+/Container
+/Countdown
+/DataTable
+/Divider
+/Dropdown
+/List
+/Popover
+/Progress
+/Row
+/ScrollArea
+/Skeleton
+/Stepper
+/Tab
+/Table
+/Toggle
+/ToggleGroup
+/Tooltip
+/Typography
+
+/index.js
+/index.css
+/index.mjs

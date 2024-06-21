@@ -20,7 +20,7 @@
   --rfe-spacing: 16px;
   --rfe-label-spacing: 10px;
   --rfe-focus: 0 0 10px #dcdcdc;
-  --rfe-font-family: 'Arial', sans-serif;
+  --rfe-font-family: "Arial", sans-serif;
   --rfe-transition: all 250ms;
 
   .rdp {
@@ -71,13 +71,13 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type='number'] {
+input[type="number"] {
   appearance: textfield;
 }
 
 /* EDGE */
-input[type='password']::-ms-reveal,
-input[type='password']::-ms-clear {
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
   display: none;
 }
 
@@ -119,20 +119,20 @@ input {
   appearance: none;
 }
 
-input[type='color'],
-input[type='date'],
-input[type='datetime'],
-input[type='datetime-local'],
-input[type='email'],
-input[type='month'],
-input[type='number'],
-input[type='password'],
-input[type='search'],
-input[type='tel'],
-input[type='text'],
-input[type='time'],
-input[type='url'],
-input[type='week'],
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
 select:focus,
 textarea {
   font-size: var(--rfe-font-size) !important;

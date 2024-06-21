@@ -5,8 +5,11 @@
     "browser": true,
     "es2024": true
   },
+  "parser": "@typescript-eslint/parser",
   "extends": [
     "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:css-modules/recommended",
     "plugin:react/recommended",
     "plugin:compat/recommended",
@@ -14,7 +17,7 @@
     "prettier",
     "plugin:storybook/recommended"
   ],
-  "plugins": ["compat", "prettier", "css-modules"],
+  "plugins": ["@typescript-eslint", "compat", "prettier", "css-modules"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
