@@ -26,6 +26,10 @@
   --sui-background: #18181a;
   --sui-background-rgb: 24,24,26;
   --sui-foreground: #fafafa;
+  --sui-color-primary: #9c28b1;
+  --sui-color-secondary: #646464;
+  --sui-color-success: #2f7c34;
+  --sui-color-error: #ff383e;
   --sui-border-radius: calc(0.5rem - 2px);
 
   .rdp {

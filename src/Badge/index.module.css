@@ -1,3 +1,96 @@
 .root {
-  
+  display: flex;
+  align-self: center;
+  position: relative;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  color: var(--sui-foreground);
+  background-color: var(--sui-color-primary);
+  height: 20px;
+  min-width: 20px;
+  border-radius: 10px;
+  padding: 0 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 150ms;
+}
+
+/** POSITION PROP */
+.root[data-position="right"] .badge {
+  top: 50%;
+  right: 0;
+}
+
+.root[data-position="bottom-right"] .badge {
+  top: 100%;
+  right: 0;
+}
+
+.root[data-position="bottom"] .badge {
+  top: 100%;
+  right: 50%;
+}
+
+.root[data-position="bottom-left"] .badge {
+  top: 100%;
+  right: 100%;
+}
+
+.root[data-position="left"] .badge {
+  top: 50%;
+  right: 100%;
+}
+
+.root[data-position="top-left"] .badge {
+  top: 0;
+  right: 100%;
+}
+
+.root[data-position="top"] .badge {
+  top: 0;
+  right: 50%;
+}
+
+.root[data-position="top-right"] .badge {
+  top: 0;
+  right: 0;
+}
+
+/** SHOW PROP */
+.root[data-show=false] .badge {
+  display: none; /** TODO: Animate display none */
+}
+
+/** COLOR PROP */
+.root[data-color="primary"] .badge {
+  background-color: var(--sui-color-primary);
+}
+
+.root[data-color="secondary"] .badge {
+  background-color: var(--sui-color-secondary);
+}
+
+.root[data-color="success"] .badge {
+  background-color: var(--sui-color-success);
+}
+
+.root[data-color="error"] .badge {
+  background-color: var(--sui-color-error);
+}
+
+/** VARIANT PROP */
+.root[data-variant="dot"] .badge {
+  width: 8px;
+  height: 8px;
+  min-width: unset;
+  padding: unset;
 }
