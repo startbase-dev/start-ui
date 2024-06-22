@@ -22,6 +22,14 @@
   font-size: 0.75rem;
   font-weight: 500;
   transition: all 150ms;
+  opacity: 1;
+
+  /** Only supported in Chromium browsers yet. Won't brake anything for other browsers */
+  transition-behavior: allow-discrete;
+
+  @starting-style {
+    opacity: 0;
+  }
 }
 
 /** POSITION PROP */
@@ -67,7 +75,8 @@
 
 /** SHOW PROP */
 .root[data-show=false] .badge {
-  display: none; /** TODO: Animate display none */
+  display: none;
+  opacity: 0;
 }
 
 /** COLOR PROP */
