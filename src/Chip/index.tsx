@@ -1,10 +1,6 @@
 import React, { forwardRef } from "react";
-
 import s from "./index.module.css";
-
-interface IndexProps {
-  content: string;
-}
+import type { IndexProps } from "./types";
 
 const Index = forwardRef<HTMLSpanElement, IndexProps>((props, ref) => {
   return (

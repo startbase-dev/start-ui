@@ -1,10 +1,6 @@
 import React from "react";
 import Chip from "./index";
-
-interface TemplateProps {
-  title: string;
-  content: string;
-}
+import type { TemplateProps } from "./types";
 
 const Template: React.FC<TemplateProps> = (args) => {
   return (
