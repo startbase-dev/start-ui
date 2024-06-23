@@ -1,10 +1,6 @@
 import React from "react";
 import Badge from "./index";
-import type { IndexProps } from "./types";
-
-interface TemplateProps extends IndexProps {
-  title: string;
-}
+import type { TemplateProps } from "./types";
 
 const Template: React.FC<TemplateProps> = (args) => {
   const {

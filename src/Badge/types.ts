@@ -16,3 +16,7 @@ export interface IndexProps {
   showZero?: boolean;
   max?: number;
 };
+
+export interface TemplateProps extends IndexProps {
+  title: string;
+};
