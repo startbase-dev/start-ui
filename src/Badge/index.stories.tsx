@@ -1,6 +1,6 @@
 import React from "react";
 import Badge from "./index";
-import type { IndexProps } from "./index";
+import type { IndexProps } from "./types";
 
 interface TemplateProps extends IndexProps {
   title: string;
