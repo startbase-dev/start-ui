@@ -1,11 +1,16 @@
 import React, { forwardRef } from "react";
-
 import s from "./index.module.css";
+import clsx from "clsx";
+import type { IndexProps } from "./types";
 
-interface IndexProps {}
+const Index = forwardRef<HTMLSpanElement, IndexProps>((props, ref) => {
+  const { classnames = [] } = props;
 
-const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
-  return <div className={s.root} ref={ref} {...props}></div>;
+  return (
+    <span className={clsx(s.root, ...classnames)} ref={ref} {...props}>
+      {props.content}
+    </span>
+  );
 });
 
 Index.displayName = "Chip";
