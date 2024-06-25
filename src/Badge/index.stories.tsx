@@ -5,13 +5,7 @@ import type { TemplateProps } from "./types";
 const Template: React.FC<TemplateProps> = (args) => {
   const {
     children,
-    badgeContent,
-    color,
-    variant,
-    position,
-    invisible,
-    showZero,
-    max
+    ...props
   } = args;
 
   return (
@@ -24,15 +18,7 @@ const Template: React.FC<TemplateProps> = (args) => {
           flexDirection: "column",
         }}
       >
-        <Badge
-          badgeContent={badgeContent}
-          color={color}
-          variant={variant}
-          position={position}
-          invisible={invisible}
-          showZero={showZero}
-          max={max}
-        >
+        <Badge {...props}>
           {children}
         </Badge>
       </div>
@@ -50,6 +36,7 @@ BadgeComponent.args = {
   invisible: false,
   showZero: false,
   max: 99,
+  classnames: [""],
   children: <span style={{display: "grid", alignItems: "center", textAlign: "center", width: "70px", height: "50px", border: "1px solid red"}}>Example</span>,
 };
 

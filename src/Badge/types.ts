@@ -15,6 +15,7 @@ export interface IndexProps {
   invisible?: boolean;
   showZero?: boolean;
   max?: number;
+  classnames?: string[];
 };
 
 export interface TemplateProps extends IndexProps {

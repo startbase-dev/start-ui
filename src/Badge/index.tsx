@@ -1,5 +1,6 @@
 import React, { forwardRef } from "react";
 import s from "./index.module.css";
+import clsx from "clsx";
 import type { IndexProps } from "./types";
 
 const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
@@ -11,7 +12,8 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     position = "top-right",
     invisible = false,
     showZero = false,
-    max = 99
+    max = 99,
+    classnames = []
   } = props;
 
   // Convert badgeContent to string and add plus sign if more than max
@@ -34,7 +36,7 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
 
   return (
     <div
-      className={s.root}
+      className={clsx(s.root, ...classnames)}
       ref={ref}
       data-show={showBadge}
       data-color={color}
