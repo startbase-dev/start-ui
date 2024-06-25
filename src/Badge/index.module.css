@@ -1,28 +1,105 @@
 .root {
-  display: inline-flex;
+  display: flex;
+  align-self: center;
+  position: relative;
+}
+
+.badge {
+  display: flex;
   align-items: center;
-  justify-content: center; /** This can be overwritten to make Badge content start from the left most position */
-  align-self: center; /** This can be overwritten to make Badge fill the parent width */
-  border: 1px solid transparent;
-  border-radius: var(--sui-border-radius);
-  padding: 0.125rem 0.625rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform;
-  transition-duration: 150ms;
-  transition-timing-function: ease-in-out;
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
-  background-color: var(--sui-background);
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
   color: var(--sui-foreground);
-  box-shadow: var(--shadow);
+  background-color: var(--sui-color-primary);
+  height: 20px;
+  min-width: 20px;
+  border-radius: 10px;
+  padding: 0 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 150ms;
+  opacity: 1;
+
+  /** Only supported in Chromium browsers yet. Won't brake anything for other browsers */
+  transition-behavior: allow-discrete;
+
+  @starting-style {
+    opacity: 0;
+  }
 }
 
-.root:hover {
-  background-color: rgba(var(--sui-background-rgb), 0.8);
+/** POSITION PROP */
+.root[data-position="right"] .badge {
+  top: 50%;
+  right: 0;
 }
 
-.root:focus {
-  outline: 2px solid var(--ring);
-  outline-offset: 2px;
+.root[data-position="bottom-right"] .badge {
+  top: 100%;
+  right: 0;
+}
+
+.root[data-position="bottom"] .badge {
+  top: 100%;
+  right: 50%;
+}
+
+.root[data-position="bottom-left"] .badge {
+  top: 100%;
+  right: 100%;
+}
+
+.root[data-position="left"] .badge {
+  top: 50%;
+  right: 100%;
+}
+
+.root[data-position="top-left"] .badge {
+  top: 0;
+  right: 100%;
+}
+
+.root[data-position="top"] .badge {
+  top: 0;
+  right: 50%;
+}
+
+.root[data-position="top-right"] .badge {
+  top: 0;
+  right: 0;
+}
+
+/** SHOW PROP */
+.root[data-show=false] .badge {
+  display: none;
+  opacity: 0;
+}
+
+/** COLOR PROP */
+.root[data-color="primary"] .badge {
+  background-color: var(--sui-color-primary);
+}
+
+.root[data-color="secondary"] .badge {
+  background-color: var(--sui-color-secondary);
+}
+
+.root[data-color="success"] .badge {
+  background-color: var(--sui-color-success);
+}
+
+.root[data-color="error"] .badge {
+  background-color: var(--sui-color-error);
+}
+
+/** VARIANT PROP */
+.root[data-variant="dot"] .badge {
+  width: 8px;
+  height: 8px;
+  min-width: unset;
+  padding: unset;
 }

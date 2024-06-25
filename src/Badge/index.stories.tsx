@@ -1,12 +1,19 @@
 import React from "react";
 import Badge from "./index";
-
-interface TemplateProps {
-  title: string;
-  content: string;
-}
+import type { TemplateProps } from "./types";
 
 const Template: React.FC<TemplateProps> = (args) => {
+  const {
+    children,
+    badgeContent,
+    color,
+    variant,
+    position,
+    invisible,
+    showZero,
+    max
+  } = args;
+
   return (
     <>
       <h2>{args.title}</h2>
@@ -17,14 +24,34 @@ const Template: React.FC<TemplateProps> = (args) => {
           flexDirection: "column",
         }}
       >
-        <Badge content={args.content} />
+        <Badge
+          badgeContent={badgeContent}
+          color={color}
+          variant={variant}
+          position={position}
+          invisible={invisible}
+          showZero={showZero}
+          max={max}
+        >
+          {children}
+        </Badge>
       </div>
     </>
   );
 };
 
 export const BadgeComponent = Template.bind({});
-BadgeComponent.args = { title: "Badge", content: "Badge" };
+BadgeComponent.args = {
+  title: "Badge",
+  badgeContent: 10,
+  color: "primary",
+  variant: "default",
+  position: "top-right",
+  invisible: false,
+  showZero: false,
+  max: 99,
+  children: <span style={{display: "grid", alignItems: "center", textAlign: "center", width: "70px", height: "50px", border: "1px solid red"}}>Example</span>,
+};
 
 const Component = {
   title: "UI/Badge",
