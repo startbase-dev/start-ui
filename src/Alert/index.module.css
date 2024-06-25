@@ -1,2 +1,115 @@
 .root {
+  display: flex;
+  gap: 16px;
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  color: var(--sui-text-succes);
+  background: var(--sui-color-success-dim);
 }
+
+.body {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.root[data-open=false] {
+  display: none;
+}
+
+/** VARIANT DEFAULT */
+.root[data-variant="default-success"] {
+  color: var(--sui-text-success);
+  background-color: var(--sui-color-success-dim);
+}
+
+.root[data-variant="default-success"] svg {
+  fill: var(--sui-color-success);
+}
+
+.root[data-variant="default-info"] {
+  color: var(--sui-text-info);
+  background-color: var(--sui-color-info-dim);
+}
+
+.root[data-variant="default-info"] svg {
+  fill: var(--sui-color-info);
+}
+
+.root[data-variant="default-warning"] {
+  color: var(--sui-text-warning);
+  background-color: var(--sui-color-warning-dim);
+}
+
+.root[data-variant="default-warning"] svg {
+  fill: var(--sui-color-warning);
+}
+
+.root[data-variant="default-error"] {
+  color: var(--sui-text-error);
+  background-color: var(--sui-color-error-dim);
+}
+
+.root[data-variant="default-error"] svg {
+  fill: var(--sui-color-error);
+}
+
+/** VARIANT FILLED */
+.root[data-variant="filled-success"] {
+  color: var(--sui-color-black);
+  background-color: var(--sui-color-success);
+  font-weight: 500;
+}
+
+.root[data-variant="filled-info"] {
+  color: var(--sui-color-black);
+  background-color: var(--sui-color-info);
+  font-weight: 500;
+}
+
+.root[data-variant="filled-warning"] {
+  color: var(--sui-color-black);
+  background-color: var(--sui-color-warning);
+  font-weight: 500;
+}
+
+.root[data-variant="filled-error"] {
+  color: var(--sui-color-white);
+  background-color: var(--sui-color-error);
+  font-weight: 500;
+}
+
+/** VARIANT OUTLINED */
+.root[data-variant="outlined-success"] {
+  color: var(--sui-text-success);
+  background-color: transparent;
+  border: 1px solid var(--sui-color-success)
+}
+
+.root[data-variant="outlined-info"] {
+  color: var(--sui-text-info);
+  background-color: transparent;
+  border: 1px solid var(--sui-color-info)
+}
+
+.root[data-variant="outlined-warning"] {
+  color: var(--sui-text-warning);
+  background-color: transparent;
+  border: 1px solid var(--sui-color-warning)
+}
+
+.root[data-variant="outlined-error"] {
+  color: var(--sui-text-error);
+  background-color: transparent;
+  border: 1px solid var(--sui-color-error)
+}
+

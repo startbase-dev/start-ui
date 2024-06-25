@@ -23,13 +23,28 @@
   --rfe-font-family: "Arial", sans-serif;
   --rfe-transition: all 250ms;
 
-  --sui-background: #18181a;
-  --sui-background-rgb: 24,24,26;
-  --sui-foreground: #fafafa;
+  --sui-background: #fafafa;
+  --sui-background-rgb: 250,250,250;
+  --sui-foreground: #18181a;
+
+  --sui-color-white: #fafafa;
+  --sui-color-black: #18181a;
   --sui-color-primary: #9c28b1;
   --sui-color-secondary: #646464;
-  --sui-color-success: #2f7c34;
-  --sui-color-error: #ff383e;
+  --sui-color-success: #398e3d;
+  --sui-color-success-dim: #edf7ed;
+  --sui-color-info: #0288d1;
+  --sui-color-info-dim: #e5f6fd;
+  --sui-color-warning: #ec6c01;
+  --sui-color-warning-dim: #fff4e5;
+  --sui-color-error: #d32f2e;
+  --sui-color-error-dim: #fdeded;
+
+  --sui-text-success: #1e4620;
+  --sui-text-info: #014361;
+  --sui-text-warning: #663c00;
+  --sui-text-error: #5f2120;
+
   --sui-border-radius: calc(0.5rem - 2px);
 
   .rdp {
@@ -65,9 +80,18 @@
     --rfe-background-disabled: #282828;
     --rfe-focus: 0 0 10px #4b4b4b, 0 0 0 1px #4b4b4b;
 
-    --sui-background: #fafafa;
-    --sui-background-rgb: 250,250,250;
-    --sui-foreground: #18181a;
+    --sui-background: #18181a;
+    --sui-background-rgb: 24,24,26;
+    --sui-foreground: #fafafa;
+
+    --sui-color-success-dim: #0c130d;
+    --sui-color-info-dim: #071318;
+    --sui-color-warning-dim: #191207;
+    --sui-color-error-dim: #160b0b;
+    --sui-text-success: #cce8cd;
+    --sui-text-info: #b8e7fb;
+    --sui-text-warning: #ffe2b7;
+    --sui-text-error: #f4c7c7;
   }
 }
 
