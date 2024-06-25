@@ -1,6 +1,7 @@
 import React, { forwardRef } from "react";
 import s from "./index.module.css";
 import IconSelector from "./IconSelector";
+import clsx from "clsx";
 import type { IndexProps } from "./types";
 
 const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
@@ -13,6 +14,7 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     icon = true,
     alertTitle = false,
     open = true,
+    classnames = [],
     ...rest
   } = props;
 
@@ -28,7 +30,7 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
 
   return (
     <div
-      className={s.root}
+      className={clsx(s.root, ...classnames)}
       ref={ref}
       role="alert"
       aria-live={ariaLive}

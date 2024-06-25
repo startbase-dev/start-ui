@@ -9,6 +9,7 @@ export interface IndexProps extends React.HTMLAttributes<HTMLDivElement> {
   icon?: React.ReactNode;
   alertTitle?: string | boolean;
   open?: boolean;
+  classnames?: string[];
 };
 
 export interface TemplateProps extends IndexProps {

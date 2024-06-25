@@ -30,10 +30,11 @@ AlertComponent.args = {
   severity: "success",
   variant: "default",
   color: "inherit",
-  action: <button>Button</button>,
+  action: undefined,
   icon: true,
   alertTitle: false,
   open: true,
+  classnames: [""],
 };
 
 const Component = {
