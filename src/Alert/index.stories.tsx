@@ -1,11 +1,10 @@
 import React from "react";
 import Alert from "./index";
-
-interface TemplateProps {
-  title: string;
-}
+import type { TemplateProps } from "./types";
 
 const Template: React.FC<TemplateProps> = (args) => {
+  const { children, ...props } = args;
+
   return (
     <>
       <h2>{args.title}</h2>
@@ -16,14 +15,27 @@ const Template: React.FC<TemplateProps> = (args) => {
           flexDirection: "column",
         }}
       >
-        <Alert />
+        <Alert {...props}>
+          {children}
+        </Alert>
       </div>
     </>
   );
 };
 
 export const AlertComponent = Template.bind({});
-AlertComponent.args = { title: "Alert" };
+AlertComponent.args = {
+  title: "Alert",
+  children: "This is an alert",
+  severity: "success",
+  variant: "default",
+  color: "inherit",
+  action: undefined,
+  icon: true,
+  alertTitle: false,
+  open: true,
+  classnames: [""],
+};
 
 const Component = {
   title: "UI/Alert",
