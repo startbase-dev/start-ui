@@ -17,6 +17,14 @@
   border-bottom: 1px solid var(--sui-border);
 }
 
+.root[data-align="left"]::before {
+  width: 10%;
+}
+
+.root[data-align="right"]::after {
+  width: 10%;
+}
+
 .root:empty {
   border-bottom: 1px solid var(--sui-border);
 }
