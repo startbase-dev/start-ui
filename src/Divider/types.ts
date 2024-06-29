@@ -1,4 +1,4 @@
-type Variant = "fullWidth" | "inset" | "middle";
+type Variant = "fullWidth" | "left" | "middle" | "right";
 type Orientation = "horizontal" | "vertical";
 type ContentAlign = "left" | "middle" | "right";
 type Component = keyof JSX.IntrinsicElements;

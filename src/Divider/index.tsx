@@ -14,7 +14,14 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
 
   return createElement(
     component,
-    { className: s.root, ref, role: "separator", "aria-orientation": orientation, ...dividerProps },
+    {
+      className: s.root,
+      ref, role: "separator",
+      "aria-orientation": orientation,
+      "data-variant": variant,
+      "data-align": contentAlign,
+      ...dividerProps
+    },
     children
   );
 });

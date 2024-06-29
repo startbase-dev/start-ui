@@ -4,3 +4,17 @@
   color: var(--sui-foreground-dim);
   background-color: var(--sui-border);
 }
+
+.root[data-variant="left"] {
+  width: 90%;
+}
+
+.root[data-variant="right"] {
+  width: 90%;
+  align-self: flex-end;
+}
+
+.root[data-variant="middle"] {
+  width: 90%;
+  align-self: center;
+}

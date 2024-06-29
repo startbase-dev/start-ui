@@ -17,6 +17,9 @@ const Template: React.FC<TemplateProps> = (args) => {
           display: "flex",
           justifyContent: "space-evenly",
           flexDirection: "column",
+          borderLeft: "1px solid red",
+          borderRight: "1px solid red",
+          height: "50px"
         }}
       >
         <Divider {...dividerProps}>
