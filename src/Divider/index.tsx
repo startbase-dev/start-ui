@@ -21,7 +21,7 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     ...dividerProps
   };
 
-  // Void elements throw error if a child is passed
+  // Void elements throw error if a child is passed: https://developer.mozilla.org/en-US/docs/Glossary/Void_element
   // Avoid passing child if a void element is used
   const voidElements = [
     "area",
@@ -40,12 +40,14 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     "wbr",
   ];
 
+  // Return void divider
   if (voidElements.includes(component)) return createElement(
     component,
     componentParams,
     null
   );
 
+  // Return normal divider
   return createElement(
     component,
     componentParams,
