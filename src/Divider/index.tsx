@@ -12,16 +12,43 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     ...dividerProps
   } = props;
 
+  const componentParams = {
+    className: s.root,
+    ref, role: "separator",
+    "aria-orientation": orientation,
+    "data-variant": variant,
+    "data-align": contentAlign,
+    ...dividerProps
+  };
+
+  // Void elements throw error if a child is passed
+  // Avoid passing child if a void element is used
+  const voidElements = [
+    "area",
+    "base",
+    "br",
+    "col",
+    "embed",
+    "hr",
+    "img",
+    "input",
+    "link",
+    "meta",
+    "param",
+    "source",
+    "track",
+    "wbr",
+  ];
+
+  if (voidElements.includes(component)) return createElement(
+    component,
+    componentParams,
+    null
+  );
+
   return createElement(
     component,
-    {
-      className: s.root,
-      ref, role: "separator",
-      "aria-orientation": orientation,
-      "data-variant": variant,
-      "data-align": contentAlign,
-      ...dividerProps
-    },
+    componentParams,
     children
   );
 });
