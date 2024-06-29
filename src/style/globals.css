@@ -26,6 +26,8 @@
   --sui-background: #fafafa;
   --sui-background-rgb: 250,250,250;
   --sui-foreground: #18181a;
+  --sui-foreground-dim: #646464; /** TODO: Add dark variant */
+  --sui-border: #dcdedd; /** TODO: Add dark variant */
 
   --sui-color-white: #fafafa;
   --sui-color-black: #18181a;

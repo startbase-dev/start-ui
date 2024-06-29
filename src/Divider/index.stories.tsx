@@ -1,14 +1,17 @@
 import React from "react";
 import Divider from "./index";
-
-interface TemplateProps {
-  title: string;
-}
+import type { TemplateProps } from "./types";
 
 const Template: React.FC<TemplateProps> = (args) => {
+  const {
+    children,
+    title,
+    ...dividerProps
+  } = args;
+
   return (
     <>
-      <h2>{args.title}</h2>
+      <h2>{title}</h2>
       <div
         style={{
           display: "flex",
@@ -16,14 +19,23 @@ const Template: React.FC<TemplateProps> = (args) => {
           flexDirection: "column",
         }}
       >
-        <Divider />
+        <Divider {...dividerProps}>
+          {children}
+        </Divider>
       </div>
     </>
   );
 };
 
 export const DividerComponent = Template.bind({});
-DividerComponent.args = { title: "Divider" };
+DividerComponent.args = {
+  title: "Divider",
+  variant: "fullWidth",
+  orientation: "horizontal",
+  contentAlign: "middle",
+  component: "div",
+  children: "",
+};
 
 const Component = {
   title: "UI/Divider",

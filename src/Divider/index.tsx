@@ -1,11 +1,22 @@
-import React, { forwardRef } from "react";
-
+import { createElement, forwardRef } from "react";
 import s from "./index.module.css";
-
-interface IndexProps {}
+import type { IndexProps } from "./types";
 
 const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
-  return <div className={s.root} ref={ref} {...props}></div>;
+  const {
+    children = null,
+    variant = "fullWidth",
+    orientation = "horizontal",
+    contentAlign = "middle",
+    component = "div",
+    ...dividerProps
+  } = props;
+
+  return createElement(
+    component,
+    { className: s.root, ref, role: "separator", "aria-orientation": orientation, ...dividerProps },
+    children
+  );
 });
 
 Index.displayName = "Divider";

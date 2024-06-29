@@ -1,2 +1,6 @@
 .root {
+  width: 100%;
+  height: 1px;
+  color: var(--sui-foreground-dim);
+  background-color: var(--sui-border);
 }

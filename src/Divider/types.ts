@@ -1,0 +1,16 @@
+type Variant = "fullWidth" | "inset" | "middle";
+type Orientation = "horizontal" | "vertical";
+type ContentAlign = "left" | "middle" | "right";
+type Component = keyof JSX.IntrinsicElements;
+
+export interface IndexProps extends React.AllHTMLAttributes<HTMLDivElement> {
+  children?: React.ReactNode;
+  variant?: Variant;
+  orientation?: Orientation;
+  contentAlign?: ContentAlign;
+  component?: Component;
+};
+
+export interface TemplateProps extends IndexProps {
+  title: string;
+};
