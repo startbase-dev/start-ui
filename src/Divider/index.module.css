@@ -49,3 +49,46 @@
   width: 90%;
   align-self: center;
 }
+
+.root[aria-orientation="vertical"] {
+  width: 1px;
+  height: 100%;
+  flex-direction: column;
+}
+
+.root[aria-orientation="vertical"]::after,
+.root[aria-orientation="vertical"]::before {
+  width: 1px;
+  height: 100%;
+  border: none;
+  border-right: 1px solid var(--sui-border);
+}
+
+.root[aria-orientation="vertical"]:empty {
+  width: 1px;
+  height: 100%;
+  border: none;
+  border-right: 1px solid var(--sui-border);
+}
+
+.root[aria-orientation="vertical"][data-align="left"]::before {
+  height: 10%;
+}
+
+.root[aria-orientation="vertical"][data-align="right"]::after {
+  height: 10%;
+}
+
+.root[aria-orientation="vertical"][data-variant="left"] {
+  height: 90%;
+}
+
+.root[aria-orientation="vertical"][data-variant="right"] {
+  height: 90%;
+  align-self: flex-end;
+}
+
+.root[aria-orientation="vertical"][data-variant="middle"] {
+  height: 90%;
+  align-self: center;
+}

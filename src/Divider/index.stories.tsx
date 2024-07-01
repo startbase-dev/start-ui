@@ -9,6 +9,8 @@ const Template: React.FC<TemplateProps> = (args) => {
     ...dividerProps
   } = args;
 
+  const isHorizontal = args.orientation === "horizontal";
+
   return (
     <>
       <h2>{title}</h2>
@@ -16,15 +18,17 @@ const Template: React.FC<TemplateProps> = (args) => {
         style={{
           display: "flex",
           justifyContent: "space-evenly",
-          flexDirection: "column",
+          flexDirection: isHorizontal ? "column" : "row",
           borderLeft: "1px solid red",
           borderRight: "1px solid red",
-          height: "50px"
+          height: "200px"
         }}
       >
+        <span>Hello</span>
         <Divider {...dividerProps}>
           {children}
         </Divider>
+        <span>World</span>
       </div>
     </>
   );
