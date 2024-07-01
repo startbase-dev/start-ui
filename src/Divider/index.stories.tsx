@@ -9,7 +9,7 @@ const Template: React.FC<TemplateProps> = (args) => {
     ...dividerProps
   } = args;
 
-  const isHorizontal = args.orientation === "horizontal";
+  const isVertical = args.orientation === "vertical";
 
   return (
     <>
@@ -17,10 +17,9 @@ const Template: React.FC<TemplateProps> = (args) => {
       <div
         style={{
           display: "flex",
+          textAlign: "center",
           justifyContent: "space-evenly",
-          flexDirection: isHorizontal ? "column" : "row",
-          borderLeft: "1px solid red",
-          borderRight: "1px solid red",
+          flexDirection: isVertical ? "row" : "column",
           height: "200px"
         }}
       >
