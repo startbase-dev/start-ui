@@ -1,11 +1,58 @@
-import React, { forwardRef } from "react";
-
+import { createElement, forwardRef } from "react";
 import s from "./index.module.css";
-
-interface IndexProps {}
+import type { IndexProps } from "./types";
 
 const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
-  return <div className={s.root} ref={ref} {...props}></div>;
+  const {
+    children = null,
+    variant = "fullWidth",
+    orientation = "horizontal",
+    contentAlign = "middle",
+    component = "div",
+    ...dividerProps
+  } = props;
+
+  const componentParams = {
+    className: s.root,
+    ref, role: "separator",
+    "aria-orientation": orientation,
+    "data-variant": variant,
+    "data-align": contentAlign,
+    ...dividerProps
+  };
+
+  // Void elements throw error if a child is passed: https://developer.mozilla.org/en-US/docs/Glossary/Void_element
+  // Avoid passing child if a void element is used
+  const voidElements = [
+    "area",
+    "base",
+    "br",
+    "col",
+    "embed",
+    "hr",
+    "img",
+    "input",
+    "link",
+    "meta",
+    "param",
+    "source",
+    "track",
+    "wbr",
+  ];
+
+  // Return void divider
+  if (voidElements.includes(component)) return createElement(
+    component,
+    componentParams,
+    null
+  );
+
+  // Return normal divider
+  return createElement(
+    component,
+    componentParams,
+    children
+  );
 });
 
 Index.displayName = "Divider";
