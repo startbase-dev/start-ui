@@ -39,7 +39,7 @@ DividerComponent.args = {
   title: "Divider",
   variant: "fullWidth",
   orientation: "horizontal",
-  contentAlign: "middle",
+  contentAlign: "center",
   component: "div",
   children: "",
 };

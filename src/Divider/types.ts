@@ -1,6 +1,6 @@
-type Variant = "fullWidth" | "left" | "middle" | "right";
+type Variant = "fullWidth" | "start" | "center" | "end";
 type Orientation = "horizontal" | "vertical";
-type ContentAlign = "left" | "middle" | "right"; // TODO: Change these to start, center, end
+type ContentAlign = "start" | "center" | "end";
 type Component = keyof JSX.IntrinsicElements;
 
 export interface IndexProps extends React.AllHTMLAttributes<HTMLDivElement> {
