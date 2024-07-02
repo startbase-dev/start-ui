@@ -37,6 +37,42 @@ AlertComponent.args = {
   classnames: [""],
 };
 
+export const AlertWithSeverity = Template.bind({});
+AlertWithSeverity.args = {
+  ...AlertComponent.args,
+  severity: "error",
+  children: "This is an error",
+};
+
+export const AlertWithVariant = Template.bind({});
+AlertWithVariant.args = {
+  ...AlertComponent.args,
+  variant: "filled",
+  children: "This is a filled alert",
+};
+
+export const AlertWithColor = Template.bind({});
+AlertWithColor.args = {
+  ...AlertComponent.args,
+  color: "warning",
+  severity: "info",
+  children: "This is an info disguised as a warning",
+};
+
+export const AlertWithAction = Template.bind({});
+AlertWithAction.args = {
+  ...AlertComponent.args,
+  children: "This is an alert with an action button. Try clicking on the button.",
+  action: <button onClick={() => window.alert("You clicked me!")}>Click me!</button>,
+};
+
+export const AlertWithTitle = Template.bind({});
+AlertWithTitle.args = {
+  ...AlertComponent.args,
+  children: "This is an alert with title",
+  alertTitle: "Custom Alert Title!",
+};
+
 const Component = {
   title: "UI/Alert",
   component: AlertComponent,

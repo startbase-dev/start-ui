@@ -89,19 +89,19 @@ const Component = {
   argTypes: {
     variant: {
       options: ["fullWidth", "start", "center", "end"],
-      control: { type: "radio" }
+      control: "radio"
     },
     orientation: {
       options: ["horizontal", "vertical"],
-      control: { type: "radio" }
+      control: "radio"
     },
     contentAlign: {
       options: ["start", "center", "end"],
-      control: { type: "radio" }
+      control: "radio"
     },
     component: {
       options: ["div", "hr", "li"],
-      control: { type: "radio" }
+      control: "radio"
     }
   }
 };
