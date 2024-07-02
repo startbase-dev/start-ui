@@ -86,6 +86,24 @@ DividerVertical.args = {
 const Component = {
   title: "UI/Divider",
   component: DividerComponent,
+  argTypes: {
+    variant: {
+      options: ["fullWidth", "start", "center", "end"],
+      control: { type: "radio" }
+    },
+    orientation: {
+      options: ["horizontal", "vertical"],
+      control: { type: "radio" }
+    },
+    contentAlign: {
+      options: ["start", "center", "end"],
+      control: { type: "radio" }
+    },
+    component: {
+      options: ["div", "hr", "li"],
+      control: { type: "radio" }
+    }
+  }
 };
 
 export default Component;
