@@ -76,6 +76,20 @@ AlertWithTitle.args = {
 const Component = {
   title: "UI/Alert",
   component: AlertComponent,
+  argTypes: {
+    severity: {
+      options: ["success", "info", "warning", "error"],
+      control: "radio"
+    },
+    variant: {
+      options: ["default", "filled", "outlined"],
+      control: "radio"
+    },
+    color: {
+      options: ["inherit", "success", "info", "warning", "error"],
+      control: "radio"
+    }
+  }
 };
 
 export default Component;
