@@ -47,8 +47,6 @@
   --sui-text-warning: #663c00;
   --sui-text-error: #5f2120;
 
-  --sui-border-radius: calc(0.5rem - 2px);
-
   .rdp {
     --rdp-cell-size: 40px !important; /* Size of the day cells. */
     --rdp-caption-font-size: 16px !important; /* Font size for the caption labels. */
