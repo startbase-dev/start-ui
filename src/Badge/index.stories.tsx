@@ -1,9 +1,10 @@
 import React from "react";
 import Badge from "./index";
-import type { TemplateProps, IndexProps } from "./types";
+import type { TemplateProps } from "./types";
 
 const Template: React.FC<TemplateProps> = (args) => {
   const {
+    title,
     children,
     badgeContent,
     color,
@@ -16,7 +17,7 @@ const Template: React.FC<TemplateProps> = (args) => {
 
   return (
     <>
-      <h2>{args.title}</h2>
+      <h2>{title}</h2>
       <div
         style={{
           display: "flex",

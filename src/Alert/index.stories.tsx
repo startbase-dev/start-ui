@@ -3,11 +3,11 @@ import Alert from "./index";
 import type { TemplateProps } from "./types";
 
 const Template: React.FC<TemplateProps> = (args) => {
-  const { children, ...props } = args;
+  const { children, title, ...props } = args;
 
   return (
     <>
-      <h2>{args.title}</h2>
+      <h2>{title}</h2>
       <div
         style={{
           display: "flex",
