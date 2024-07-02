@@ -13,7 +13,7 @@
   transition-timing-function: ease-in-out;
   outline: none;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
-  background-color: var(--sui-background);
-  color: var(--sui-foreground);
+  background-color: var(--sui-foreground);
+  color: var(--sui-background);
   box-shadow: var(--shadow);
 }
