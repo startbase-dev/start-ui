@@ -56,6 +56,20 @@ BadgeComponent.args = {
 const Component = {
   title: "UI/Badge",
   component: BadgeComponent,
+  argTypes: {
+    color: {
+      options: ["primary", "secondary", "success", "error"],
+      control: "radio"
+    },
+    variant: {
+      options: ["default", "dot"],
+      control: "radio"
+    },
+    position: {
+      options: ["top-left", "top", "top-right", "right", "bottom-right", "bottom", "bottom-left", "left"],
+      control: "radio"
+    }
+  }
 };
 
 export default Component;
