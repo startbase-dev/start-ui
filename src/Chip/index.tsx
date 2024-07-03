@@ -4,10 +4,10 @@ import clsx from "clsx";
 import type { IndexProps } from "./types";
 
 const Index = forwardRef<HTMLSpanElement, IndexProps>((props, ref) => {
-  const { classnames = [] } = props;
+  const { classNames = [] } = props;
 
   return (
-    <span className={clsx(s.root, ...classnames)} ref={ref} {...props}>
+    <span className={clsx(s.root, ...classNames)} ref={ref} {...props}>
       {props.content}
     </span>
   );

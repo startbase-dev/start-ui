@@ -12,7 +12,8 @@ const Template: React.FC<TemplateProps> = (args) => {
     position,
     invisible,
     showZero,
-    max
+    max,
+    classNames
   } = args;
 
   return (
@@ -33,6 +34,7 @@ const Template: React.FC<TemplateProps> = (args) => {
           invisible={invisible}
           showZero={showZero}
           max={max}
+          classNames={classNames}
         >
           {children}
         </Badge>
@@ -51,6 +53,7 @@ BadgeComponent.args = {
   invisible: false,
   showZero: false,
   max: 99,
+  classNames: [""],
   children: <span style={{display: "grid", alignItems: "center", textAlign: "center", width: "70px", height: "50px", border: "1px solid red"}}>Example</span>,
 };
 

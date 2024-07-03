@@ -13,14 +13,14 @@ const Template: React.FC<TemplateProps> = (args) => {
           flexDirection: "column",
         }}
       >
-        <Chip content={args.content} classnames={args.classnames} />
+        <Chip content={args.content} classNames={args.classNames} />
       </div>
     </>
   );
 };
 
 export const ChipComponent = Template.bind({});
-ChipComponent.args = { title: "Chip", content: "Chip", classnames: [""] };
+ChipComponent.args = { title: "Chip", content: "Chip", classNames: [""] };
 
 const Component = {
   title: "UI/Chip",
