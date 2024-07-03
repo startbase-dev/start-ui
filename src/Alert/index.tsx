@@ -28,13 +28,12 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
 
   const iconBoolean = typeof icon === "boolean";
 
-  let title: React.ReactNode;
   function getTitle() {
-    if (alertTitle === true) return title = severity;
-    if (typeof alertTitle === "string") return title = alertTitle;
-    return title = null;
+    if (alertTitle === true) return severity;
+    if (typeof alertTitle === "string") return alertTitle;
+    return null;
   };
-  getTitle();
+  const title = getTitle();
 
   return (
     <div
