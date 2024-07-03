@@ -28,6 +28,13 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
 
   const iconBoolean = typeof icon === "boolean";
 
+  function getTitle() {
+    if (alertTitle === true) return severity;
+    if (typeof alertTitle === "string") return alertTitle;
+    return null;
+  };
+  const title = getTitle();
+
   return (
     <div
       className={clsx(s.root, ...classnames)}
@@ -40,7 +47,7 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     >
       {iconBoolean ? <IconSelector iconName={severity} icon={icon} iconBoolean={iconBoolean} size={22} /> : icon}
       <div className={s.body}>
-        {alertTitle && <span className={s.title}>{severity}</span>}
+        {title && <span className={s.title}>{title}</span>}
         <span>{children}</span>
       </div>
       {action}

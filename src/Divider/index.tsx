@@ -9,6 +9,7 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     orientation = "horizontal",
     contentAlign = "middle",
     component = "div",
+    classNames = [],
     ...dividerProps
   } = props;
 

@@ -13,7 +13,7 @@
   top: 0;
   right: 0;
   transform: translate(50%, -50%);
-  color: var(--sui-foreground);
+  color: var(--sui-color-white);
   background-color: var(--sui-color-primary);
   height: 20px;
   min-width: 20px;
