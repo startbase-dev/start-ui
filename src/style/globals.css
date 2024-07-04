@@ -46,6 +46,15 @@
   --sui-text-info: #014361;
   --sui-text-warning: #663c00;
   --sui-text-error: #5f2120;
+  
+  --gray-color-600: #717a80;
+  --gray-color-500: #899196;
+  --gray-color-400: #a3abb0;
+  --gray-color-300: #b6bec4;
+  --gray-color-200: #d1d8de;
+  --gray-color-100: #e5eaef;
+  --gray-color-50: #f8f9f9;
+  --gray-color-25: #fafafa;
 
   .rdp {
     --rdp-cell-size: 40px !important; /* Size of the day cells. */
@@ -94,6 +103,15 @@
     --sui-text-info: #b8e7fb;
     --sui-text-warning: #ffe2b7;
     --sui-text-error: #f4c7c7;
+
+    --gray-color-600-dark: #2b2e33;
+    --gray-color-500-dark: #313336;
+    --gray-color-400-dark: #3c3f43;
+    --gray-color-300-dark: #4b4f54;
+    --gray-color-200-dark: #575b60;
+    --gray-color-100-dark: #6b6f74;
+    --gray-color-50-dark: #8b8e91;
+    --gray-color-25-dark: #a1a3a5;
   }
 }
 
