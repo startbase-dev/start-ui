@@ -23,7 +23,8 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     };
 
     const percentage = ((value - min) / (max - min)) * 100;
-    return `${percentage}%`;
+    const roundedPercentage = Math.round(percentage);
+    return `${roundedPercentage}%`;
   };
 
   const barValue = toPercentage(value, max, min);
@@ -36,10 +37,10 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
       aria-valuenow={value}
       aria-valuemin={min}
       aria-valuemax={max}
-      style={{"--progress-bar-value": barValue, ...style}}
+      style={{ "--progress-bar-value": barValue, ...style }}
       {...restProps}
     >
-
+      {progressLabel && <span className={s.label}>{barValue}</span>}
     </div>
   );
 });

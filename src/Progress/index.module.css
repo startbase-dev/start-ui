@@ -10,4 +10,12 @@
   background:
     radial-gradient(closest-side, var(--progress-label-background) 79%, transparent 80% 100%),
     conic-gradient(var(--progress-bar-color) var(--progress-bar-value), var(--progress-track-color) 0);
+  position: relative;
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
