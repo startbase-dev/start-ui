@@ -37,6 +37,7 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
       aria-valuenow={value}
       aria-valuemin={min}
       aria-valuemax={max}
+      data-color={color}
       style={{ "--progress-bar-value": barValue, ...style }}
       {...restProps}
     >

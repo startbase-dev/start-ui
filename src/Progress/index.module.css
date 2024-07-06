@@ -19,3 +19,18 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+/** COLOR */
+.root[data-color="secondary"] {
+  --progress-bar-color: var(--sui-color-secondary);
+}
+
+.root[data-color="success"] {
+  --progress-bar-color: var(--sui-color-success);
+  --progress-track-color: var(--sui-color-success-dim);
+}
+
+.root[data-color="error"] {
+  --progress-bar-color: var(--sui-color-error);
+  --progress-track-color: var(--sui-color-error-dim);
+}
