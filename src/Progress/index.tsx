@@ -30,20 +30,21 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
   const barValue = toPercentage(value, max, min);
 
   return (
-    <div className={s.container}>
+    <div
+      className={clsx(s.root, ...classNames)}
+      ref={ref}
+      role="progressbar"
+      aria-valuenow={value}
+      aria-valuemin={min}
+      aria-valuemax={max}
+      data-color={color}
+      data-determinate={determinate}
+      data-variant={variant}
+      style={{ "--progress-bar-value": barValue, ...style }}
+      {...restProps}
+    >
+      <div className={s.progressbar}></div>
       {progressLabel && <span className={s.label}>{barValue}</span>}
-      <div
-        className={clsx(s.root, ...classNames)}
-        ref={ref}
-        role="progressbar"
-        aria-valuenow={value}
-        aria-valuemin={min}
-        aria-valuemax={max}
-        data-color={color}
-        data-determinate={determinate}
-        style={{ "--progress-bar-value": barValue, ...style }}
-        {...restProps}
-      ></div>
     </div>
   );
 });
