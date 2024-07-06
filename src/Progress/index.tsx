@@ -14,6 +14,7 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     determinate = true,
     classNames = [],
     style = {},
+    trackSize = 10,
     ...restProps
   } = props;
 
@@ -40,7 +41,7 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
       data-color={color}
       data-determinate={determinate}
       data-variant={variant}
-      style={{ "--progress-bar-value": barValue, ...style }}
+      style={{ "--progress-bar-value": barValue, "--progress-track-size": `${trackSize}px`, ...style }}
       {...restProps}
     >
       <div className={s.progressbar}></div>

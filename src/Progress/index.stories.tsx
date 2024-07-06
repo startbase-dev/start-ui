@@ -35,6 +35,7 @@ ProgressComponent.args = {
   color: "primary",
   progressLabel: false,
   determinate: true,
+  trackSize: 10,
   classNames: [""],
 };
 

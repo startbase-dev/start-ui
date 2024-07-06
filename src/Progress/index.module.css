@@ -1,6 +1,7 @@
 .root {
   --progress-label-background: var(--sui-background, white);
   --progress-track-color: var(--sui-color-info-dim);
+  --progress-track-size: 10px;
   --progress-bar-color: var(--sui-color-info);
   --progress-bar-value: 0;
 
@@ -12,11 +13,11 @@
 }
 
 .progressbar {
-  width: 100px;
-  height: 100px;
+  width: calc(var(--progress-track-size)*10);
+  height: calc(var(--progress-track-size)*10);
   border-radius: 50%;
   background:
-    radial-gradient(closest-side, var(--progress-label-background) 79%, transparent 80% 100%),
+    radial-gradient(closest-side, var(--progress-label-background) 78%, transparent 80% 100%),
     conic-gradient(var(--progress-bar-color) var(--progress-bar-value), var(--progress-track-color) 0);
   position: relative;
 }
@@ -72,8 +73,8 @@
   background: linear-gradient(90deg, var(--progress-bar-color) var(--progress-bar-value), var(--progress-track-color) var(--progress-bar-value) 100%);
   min-width: 100px;
   width: 100%;
-  height: 8px;
-  border-radius: 4px;
+  height: var(--progress-track-size);
+  border-radius: calc(var(--progress-track-size) / 2);
 }
 
 @keyframes infinite-slide {

@@ -9,6 +9,7 @@ export interface IndexProps extends React.AllHTMLAttributes<HTMLDivElement> {
   color?: Color;
   progressLabel?: boolean;
   determinate?: boolean;
+  trackSize?: number;
   classNames?: string[];
 };
 
