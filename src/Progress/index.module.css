@@ -1,3 +1,9 @@
+.container {
+  display: flex;
+  position: relative;
+  align-self: center;
+}
+
 .root {
   --progress-label-background: var(--sui-background, white);
   --progress-track-color: var(--sui-color-info-dim);
@@ -14,10 +20,12 @@
 }
 
 .label {
+  color: var(--sui-foreground);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
 /** COLOR */
@@ -33,4 +41,21 @@
 .root[data-color="error"] {
   --progress-bar-color: var(--sui-color-error);
   --progress-track-color: var(--sui-color-error-dim);
+}
+
+/** DETERMINATE */
+@keyframes spin-clockwise {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+.root[data-determinate=false] {
+  background:
+    radial-gradient(closest-side, var(--progress-label-background) 79%, transparent 80% 100%),
+    conic-gradient(var(--progress-bar-color) 25%, var(--progress-track-color) 0);
+  animation: 0.5s linear both spin-clockwise infinite;
 }
