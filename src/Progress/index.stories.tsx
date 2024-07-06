@@ -39,6 +39,43 @@ ProgressComponent.args = {
   classNames: [""],
 };
 
+export const ProgressWithVariant = Template.bind({});
+ProgressWithVariant.args = {
+  ...ProgressComponent.args,
+  title: "Progress Linear Variant",
+  variant: "linear",
+};
+
+export const ProgressWithColor = Template.bind({});
+ProgressWithColor.args = {
+  ...ProgressComponent.args,
+  title: "Progress Color Variants",
+  variant: "linear",
+  color: "success"
+};
+
+export const ProgressWithLabel = Template.bind({});
+ProgressWithLabel.args = {
+  ...ProgressComponent.args,
+  title: "Progress With Label",
+  progressLabel: true
+};
+
+export const ProgressWithIndeterminate = Template.bind({});
+ProgressWithIndeterminate.args = {
+  ...ProgressComponent.args,
+  title: "Progress Indeterminate Variant",
+  determinate: false
+};
+
+export const ProgressWithSize = Template.bind({});
+ProgressWithSize.args = {
+  ...ProgressComponent.args,
+  title: "Progress With Track Size",
+  determinate: false,
+  trackSize: 15
+};
+
 const Component = {
   title: "UI/Progress",
   component: ProgressComponent,
