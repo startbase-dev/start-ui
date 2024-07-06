@@ -7,6 +7,8 @@
   display: flex;
   position: relative;
   align-self: center;
+  align-items: center;
+  gap: 8px;
 }
 
 .progressbar {
@@ -26,6 +28,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  line-height: 1rem;
 }
 
 /** COLOR */
@@ -63,7 +66,6 @@
 /** VARIANT */
 .root[data-variant="linear"] {
   align-self: unset;
-  max-width: calc(100% - 40px);
 }
 
 .root[data-variant="linear"] .progressbar {
@@ -90,7 +92,6 @@
 }
 
 .root[data-variant="linear"] .label {
-  left: 100%;
-  top: 50%;
-  transform: translate(25%, -55%);
+  position: static;
+  transform: unset;
 }
