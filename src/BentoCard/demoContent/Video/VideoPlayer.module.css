@@ -1,0 +1,35 @@
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  object-fit: cover; /* Adjust as needed: 'cover' to zoom or 'contain' to fit */
+}
+
+.button {
+  position: absolute;
+  bottom: 20px; /* Adjust positioning as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border: none;
+  color: white;
+}
+  
