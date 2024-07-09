@@ -3,12 +3,7 @@ import Divider from "./index";
 import type { TemplateProps } from "./types";
 
 const Template: React.FC<TemplateProps> = (args) => {
-  const {
-    children,
-    title,
-    classNames,
-    ...dividerProps
-  } = args;
+  const { children, title, classNames, ...dividerProps } = args;
 
   const isVertical = args.orientation === "vertical";
 
@@ -21,13 +16,11 @@ const Template: React.FC<TemplateProps> = (args) => {
           textAlign: "center",
           justifyContent: "space-evenly",
           flexDirection: isVertical ? "row" : "column",
-          height: "200px"
+          height: "200px",
         }}
       >
         <span>Hello</span>
-        <Divider {...dividerProps}>
-          {children}
-        </Divider>
+        <Divider {...dividerProps}>{children}</Divider>
         <span>World</span>
       </div>
     </>
@@ -80,21 +73,21 @@ const Component = {
   argTypes: {
     variant: {
       options: ["fullWidth", "start", "center", "end"],
-      control: "radio"
+      control: "radio",
     },
     orientation: {
       options: ["horizontal", "vertical"],
-      control: "radio"
+      control: "radio",
     },
     contentAlign: {
       options: ["start", "center", "end"],
-      control: "radio"
+      control: "radio",
     },
     component: {
       options: ["div", "hr", "li"],
-      control: "radio"
-    }
-  }
+      control: "radio",
+    },
+  },
 };
 
 export default Component;

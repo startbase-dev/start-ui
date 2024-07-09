@@ -2,6 +2,7 @@
   from {
     opacity: 0.5;
   }
+
   to {
     opacity: 1;
   }
@@ -9,9 +10,10 @@
 
 @keyframes slideUp {
   from {
-    margin-top: 0px;
+    margin-top: 0;
     opacity: 1;
   }
+
   to {
     margin-top: -100px;
     opacity: 0;
@@ -22,8 +24,9 @@
   from {
     margin-top: -200px;
   }
+
   to {
-    margin-top: 0px;
+    margin-top: 0;
   }
 }
 
@@ -31,6 +34,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(45deg);
   }
@@ -40,6 +44,7 @@
   from {
     transform: rotate(45deg);
   }
+
   to {
     transform: rotate(0deg);
   }

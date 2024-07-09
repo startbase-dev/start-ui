@@ -22,7 +22,7 @@
   text-transform: capitalize;
 }
 
-.root[data-open=false] {
+.root[data-open="false"] {
   display: none;
 }
 

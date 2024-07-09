@@ -3,11 +3,7 @@ import Progress from "./index";
 import type { TemplateProps } from "./types";
 
 const Template: React.FC<TemplateProps> = (args) => {
-  const {
-    title,
-    value,
-    ...rest
-  } = args;
+  const { title, value, ...rest } = args;
 
   return (
     <>
@@ -51,21 +47,21 @@ ProgressWithColor.args = {
   ...ProgressComponent.args,
   title: "Progress Color Variants",
   variant: "linear",
-  color: "success"
+  color: "success",
 };
 
 export const ProgressWithLabel = Template.bind({});
 ProgressWithLabel.args = {
   ...ProgressComponent.args,
   title: "Progress With Label",
-  progressLabel: true
+  progressLabel: true,
 };
 
 export const ProgressWithIndeterminate = Template.bind({});
 ProgressWithIndeterminate.args = {
   ...ProgressComponent.args,
   title: "Progress Indeterminate Variant",
-  determinate: false
+  determinate: false,
 };
 
 export const ProgressWithSize = Template.bind({});
@@ -73,7 +69,7 @@ ProgressWithSize.args = {
   ...ProgressComponent.args,
   title: "Progress With Track Size",
   determinate: false,
-  trackSize: 15
+  trackSize: 15,
 };
 
 const Component = {
@@ -82,13 +78,13 @@ const Component = {
   argTypes: {
     variant: {
       options: ["circular", "linear"],
-      control: "radio"
+      control: "radio",
     },
     color: {
       options: ["primary", "secondary", "success", "error"],
-      control: "radio"
-    }
-  }
+      control: "radio",
+    },
+  },
 };
 
 export default Component;

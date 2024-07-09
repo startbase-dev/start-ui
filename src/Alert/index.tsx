@@ -32,7 +32,7 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     if (alertTitle === true) return severity;
     if (typeof alertTitle === "string") return alertTitle;
     return null;
-  };
+  }
   const title = getTitle();
 
   return (
@@ -45,7 +45,16 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
       data-open={open}
       {...rest}
     >
-      {iconBoolean ? <IconSelector iconName={severity} icon={icon} iconBoolean={iconBoolean} size={22} /> : icon}
+      {iconBoolean ? (
+        <IconSelector
+          iconName={severity}
+          icon={icon}
+          iconBoolean={iconBoolean}
+          size={22}
+        />
+      ) : (
+        icon
+      )}
       <div className={s.body}>
         {title && <span className={s.title}>{title}</span>}
         <span>{children}</span>

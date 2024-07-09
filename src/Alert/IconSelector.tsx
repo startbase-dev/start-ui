@@ -10,7 +10,7 @@ interface SelectorProps extends React.SVGAttributes<SVGSVGElement> {
   iconBoolean: boolean;
   icon: React.ReactNode;
   size: number;
-};
+}
 
 const iconMap = {
   success: CheckCircleOutline,
@@ -30,7 +30,7 @@ export default function IconSelector({
 
   const SelectedIcon = iconMap[iconName];
 
-  if (!SelectedIcon) return <CheckCircleOutline size={size} {...props} />
+  if (!SelectedIcon) return <CheckCircleOutline size={size} {...props} />;
 
-  return <SelectedIcon size={size} {...props} />
-};
+  return <SelectedIcon size={size} {...props} />;
+}

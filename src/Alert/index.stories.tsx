@@ -15,9 +15,7 @@ const Template: React.FC<TemplateProps> = (args) => {
           flexDirection: "column",
         }}
       >
-        <Alert {...props}>
-          {children}
-        </Alert>
+        <Alert {...props}>{children}</Alert>
       </div>
     </>
   );
@@ -62,8 +60,11 @@ AlertWithColor.args = {
 export const AlertWithAction = Template.bind({});
 AlertWithAction.args = {
   ...AlertComponent.args,
-  children: "This is an alert with an action button. Try clicking on the button.",
-  action: <button onClick={() => window.alert("You clicked me!")}>Click me!</button>,
+  children:
+    "This is an alert with an action button. Try clicking on the button.",
+  action: (
+    <button onClick={() => window.alert("You clicked me!")}>Click me!</button>
+  ),
 };
 
 export const AlertWithTitle = Template.bind({});
@@ -79,17 +80,17 @@ const Component = {
   argTypes: {
     severity: {
       options: ["success", "info", "warning", "error"],
-      control: "radio"
+      control: "radio",
     },
     variant: {
       options: ["default", "filled", "outlined"],
-      control: "radio"
+      control: "radio",
     },
     color: {
       options: ["inherit", "success", "info", "warning", "error"],
-      control: "radio"
-    }
-  }
+      control: "radio",
+    },
+  },
 };
 
 export default Component;

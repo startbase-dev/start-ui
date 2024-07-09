@@ -52,12 +52,13 @@
   from {
     rotate: 0deg;
   }
+
   to {
     rotate: 360deg;
   }
 }
 
-.root[data-determinate=false] .progressbar {
+.root[data-determinate="false"] .progressbar {
   background:
     radial-gradient(closest-side, var(--progress-label-background) 79%, transparent 80% 100%),
     conic-gradient(var(--progress-bar-color) 25%, var(--progress-track-color) 0);
@@ -81,12 +82,13 @@
   from {
     background-position: 0%;
   }
+
   to {
     background-position: -300%;
   }
 }
 
-.root[data-variant="linear"][data-determinate=false] .progressbar {
+.root[data-variant="linear"][data-determinate="false"] .progressbar {
   background: linear-gradient(90deg, var(--progress-track-color) 0% 40%, var(--progress-bar-color) 50% 65%, var(--progress-track-color) 75% 100%);
   background-size: 300%;
   animation: 1.5s linear infinite both infinite-slide;

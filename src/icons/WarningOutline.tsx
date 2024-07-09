@@ -3,9 +3,9 @@ import { SVGProps } from "react";
 
 interface IconProps extends SVGProps<SVGSVGElement> {
   size?: number;
-};
+}
 
-const WarningOutline = ({size, width, height, ...props}: IconProps) => (
+const WarningOutline = ({ size, width, height, ...props }: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="currentColor"

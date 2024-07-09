@@ -13,7 +13,7 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     invisible = false,
     showZero = false,
     max = 99,
-    classNames = []
+    classNames = [],
   } = props;
 
   // Convert badgeContent to string and add plus sign if more than max
@@ -21,7 +21,7 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     if (variant === "dot") return "";
     if (badgeContent > max) return `${max}+`;
     return badgeContent.toString();
-  };
+  }
 
   const content = calculateContent();
 
@@ -30,7 +30,7 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     if (invisible) return false;
     if (showZero) return true;
     return badgeContent > 0;
-  };
+  }
 
   const showBadge = calculateShow();
 
@@ -44,9 +44,7 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
       data-position={position}
       {...props}
     >
-      <span className={s.badge}>
-        {content}
-      </span>
+      <span className={s.badge}>{content}</span>
       {children}
     </div>
   );

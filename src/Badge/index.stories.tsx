@@ -13,7 +13,7 @@ const Template: React.FC<TemplateProps> = (args) => {
     invisible,
     showZero,
     max,
-    classNames
+    classNames,
   } = args;
 
   return (
@@ -54,27 +54,40 @@ BadgeComponent.args = {
   showZero: false,
   max: 99,
   classNames: [""],
-  children: <span style={{display: "grid", alignItems: "center", textAlign: "center", width: "70px", height: "50px", border: "1px solid red"}}>Example</span>,
+  children: (
+    <span
+      style={{
+        display: "grid",
+        alignItems: "center",
+        textAlign: "center",
+        width: "70px",
+        height: "50px",
+        border: "1px solid red",
+      }}
+    >
+      Example
+    </span>
+  ),
 };
 
 export const BadgeWithColor = Template.bind({});
 BadgeWithColor.args = {
   ...BadgeComponent.args,
-  color: "success"
+  color: "success",
 };
 
 export const BadgeWithVariant = Template.bind({});
 BadgeWithVariant.args = {
   ...BadgeComponent.args,
   title: "Badge with dot variant",
-  variant: "dot"
+  variant: "dot",
 };
 
 export const BadgeWithPosition = Template.bind({});
 BadgeWithPosition.args = {
   ...BadgeComponent.args,
   title: "Badge with position",
-  position: "top-left"
+  position: "top-left",
 };
 
 export const BadgeWithZero = Template.bind({});
@@ -82,14 +95,14 @@ BadgeWithZero.args = {
   ...BadgeComponent.args,
   title: "Badge with display zero",
   showZero: true,
-  badgeContent: 0
+  badgeContent: 0,
 };
 
 export const BadgeWithMax = Template.bind({});
 BadgeWithMax.args = {
   ...BadgeComponent.args,
   title: "Badge with max content",
-  badgeContent: 500
+  badgeContent: 500,
 };
 
 const Component = {
@@ -98,17 +111,26 @@ const Component = {
   argTypes: {
     color: {
       options: ["primary", "secondary", "success", "error"],
-      control: "radio"
+      control: "radio",
     },
     variant: {
       options: ["default", "dot"],
-      control: "radio"
+      control: "radio",
     },
     position: {
-      options: ["top-left", "top", "top-right", "right", "bottom-right", "bottom", "bottom-left", "left"],
-      control: "radio"
-    }
-  }
+      options: [
+        "top-left",
+        "top",
+        "top-right",
+        "right",
+        "bottom-right",
+        "bottom",
+        "bottom-left",
+        "left",
+      ],
+      control: "radio",
+    },
+  },
 };
 
 export default Component;

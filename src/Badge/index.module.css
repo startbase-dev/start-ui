@@ -7,8 +7,7 @@
 .badge {
   display: flex;
   align-items: center;
-  justify-content: center;
-  align-content: center;
+  place-content: center center;
   position: absolute;
   top: 0;
   right: 0;
@@ -74,7 +73,7 @@
 }
 
 /** SHOW PROP */
-.root[data-show=false] .badge {
+.root[data-show="false"] .badge {
   display: none;
   opacity: 0;
 }
