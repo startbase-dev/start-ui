@@ -1,13 +1,36 @@
-import React, { forwardRef } from "react";
-
+import React, { forwardRef, CSSProperties } from "react";
 import s from "./index.module.css";
+import { IndexProps } from "./types";
 
-interface IndexProps {}
+const ScrollArea = forwardRef<HTMLDivElement, IndexProps>(
+  ({ orientation, className, style, children, ...rest }, ref) => {
+    const getScrollContainerStyles = (): CSSProperties => {
+      let scrollStyles: CSSProperties = {
+        overflowX: orientation === "horizontal" ? "auto" : "hidden",
+        overflowY: orientation === "vertical" ? "auto" : "hidden",
+        WebkitOverflowScrolling: "touch", // Optional: Smooth scrolling on iOS
+      };
 
-const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
-  return <div className={s.root} ref={ref} {...props}></div>;
-});
+      if (style) {
+        scrollStyles = { ...scrollStyles, ...style };
+      }
 
-Index.displayName = "ScrollArea";
+      return scrollStyles;
+    };
 
-export default Index;
+    return (
+      <div
+        className={`${s.root} ${className}`}
+        ref={ref}
+        style={getScrollContainerStyles()}
+        {...rest}
+      >
+        {children}
+      </div>
+    );
+  },
+);
+
+ScrollArea.displayName = "ScrollArea";
+
+export default ScrollArea;
