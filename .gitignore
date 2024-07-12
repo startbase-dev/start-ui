@@ -37,7 +37,8 @@ next-env.d.ts
 
 .idea
 package-lock.json
-
+/docs/pnpm-lock.yaml
+/docs/package-lock.json
 # storybook static
 /storybook-static
 
