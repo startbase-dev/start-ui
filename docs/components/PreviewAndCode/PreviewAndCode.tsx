@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import s from "./PreviewAndCode.module.css";
 import prettier from "prettier/standalone";
-import parserHtml from "prettier/parser-html";
+import parserHtml from "prettier/plugins/html";
 import CopyToClipboardButton from "../CopyToClipboardButton/CopyToClipboardButton";
 
 interface PreviewAndCodeProps {
