@@ -10,7 +10,12 @@ const CopyToClipboardButton: React.FC<CopyToClipboardButtonProps> = ({
   onClick,
   ...props
 }) => (
-  <button className={s.root} onClick={onClick} {...props}>
+  <button
+    className={s.root}
+    onClick={onClick}
+    {...props}
+    aria-label="Copy to clipboard"
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={24}
