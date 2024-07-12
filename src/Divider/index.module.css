@@ -4,7 +4,6 @@
   gap: 8px;
   width: 100%;
   min-height: 1px;
-  color: var(--sui-foreground-dim);
   position: relative;
   text-align: center;
 }
@@ -16,7 +15,7 @@
   height: 1px;
   width: 100%;
   border: none;
-  border-bottom: 1px solid var(--sui-border);
+  border-bottom: 1px solid var(--border);
 }
 
 .root[data-align="start"]::before {
@@ -29,7 +28,7 @@
 
 .root:empty {
   border: none;
-  border-bottom: 1px solid var(--sui-border);
+  border-bottom: 1px solid var(--border);
 }
 
 .root:empty::after,
@@ -63,14 +62,14 @@
   width: 1px;
   height: 100%;
   border: none;
-  border-right: 1px solid var(--sui-border);
+  border-right: 1px solid var(--border);
 }
 
 .root[aria-orientation="vertical"]:empty {
   width: 1px;
   height: 100%;
   border: none;
-  border-right: 1px solid var(--sui-border);
+  border-right: 1px solid var(--border);
 }
 
 .root[aria-orientation="vertical"][data-align="start"]::before {

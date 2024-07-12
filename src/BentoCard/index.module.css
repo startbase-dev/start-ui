@@ -60,16 +60,16 @@
   line-height: 40px;
 
   /* COLOR CODES */
-  --bento-card-bg: var(--sui-color-white);
-  --bento-card-bg-active: var(--sui-color-primary);
-  --bento-card-title: var(--sui-color-black);
-  --bento-card-title-active: var(--sui-color-white);
-  --bento-card-button-bg: var(--gray-color-500);
-  --bento-card-button-bg-hover: var(--gray-color-600);
-  --bento-card-button-icon: var(--sui-color-white);
-  --bento-card-button-active-bg: var(--gray-color-500);
-  --bento-card-button-active-bg-hover: var(--gray-color-600);
-  --bento-card-button-active-icon: var(--sui-color-white);
+  --bento-card-bg: var(--white);
+  --bento-card-bg-active: var(--primary);
+  --bento-card-title: var(--black);
+  --bento-card-title-active: var(--white);
+  --bento-card-button-bg: var(--gray-500);
+  --bento-card-button-bg-hover: var(--gray-600);
+  --bento-card-button-icon: var(--white);
+  --bento-card-button-active-bg: var(--gray-500);
+  --bento-card-button-active-bg-hover: var(--gray-600);
+  --bento-card-button-active-icon: var(--white);
 }
 
 .rootActive {
@@ -116,13 +116,17 @@
 }
 
 .content {
-  color: var(--sui-color-white);
-  transition: margin-top 600ms, opacity 600ms;
+  color: var(--white);
+  transition:
+    margin-top 600ms,
+    opacity 600ms;
   animation: slideUp 600ms forwards;
 }
 
 .root[data-active="true"] .content {
-  transition: margin-top 600ms, opacity 600ms;
+  transition:
+    margin-top 600ms,
+    opacity 600ms;
   animation: slideDown 600ms forwards;
 }
 
@@ -152,7 +156,7 @@
 .activeButton {
   animation: rotateIn 600ms forwards;
   background-color: var(--bento-card-button-active-bg);
-  
+
   &:hover {
     background-color: var(--bento-card-button-active-bg-hover);
   }

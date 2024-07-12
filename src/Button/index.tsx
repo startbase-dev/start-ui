@@ -1,12 +1,62 @@
-import React, { forwardRef } from "react";
+import React, { ButtonHTMLAttributes, forwardRef, ReactNode } from "react";
+import cx from "clsx";
 
+// eslint-disable-next-line css-modules/no-unused-class
 import s from "./index.module.css";
+import Progress from "../Progress";
 
-interface IndexProps {}
+type ButtonProps = {
+  children: ReactNode;
+  className?: string;
+  disabled?: boolean;
+  loading?: boolean;
+  color?: "primary" | "secondary" | "destructive";
+  variant?: "default" | "link" | "outline" | "ghost";
+  size?: "small" | "medium" | "large";
+  fluid?: boolean;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
-  return <div className={s.root} ref={ref} {...props}></div>;
-});
+const styles: Record<string, string> = s;
+
+const Index = forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      children,
+      className = "",
+      disabled,
+      loading,
+      color = "primary",
+      variant = "default",
+      size = "medium",
+      fluid = false,
+      ...rest
+    },
+    ref,
+  ) => {
+    return (
+      <button
+        ref={ref}
+        className={cx(
+          styles.root,
+          styles[variant],
+          styles[color],
+          styles[size],
+          fluid && styles.fluid,
+          disabled && styles.disabled,
+          className,
+        )}
+        disabled={disabled || loading}
+        {...rest}
+      >
+        {loading ? (
+          <Progress value={0.5} determinate={false} trackSize={2} />
+        ) : (
+          children
+        )}
+      </button>
+    );
+  },
+);
 
 Index.displayName = "Button";
 

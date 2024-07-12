@@ -5,22 +5,22 @@ interface IconProps extends SVGProps<SVGSVGElement> {
   size?: number;
 }
 
-const WarningOutline = ({ size, width, height, ...props }: IconProps) => (
+const ErrorCircleOutline = ({ size, width, height, ...props }: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    fill="currentColor"
+    fill="none"
     stroke="currentColor"
-    strokeWidth={0}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    strokeWidth={2}
     viewBox="0 0 24 24"
     width={size ?? width}
     height={size ?? height}
     {...props}
   >
-    <path
-      stroke="none"
-      d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"
-    />
+    <circle cx={12} cy={12} r={10} fill="none" />
+    <path d="m15 9-6 6M9 9l6 6" fill="none" stroke="currentColor" />
   </svg>
 );
 
-export default WarningOutline;
+export default ErrorCircleOutline;

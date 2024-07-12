@@ -2,9 +2,9 @@ import React, { forwardRef } from "react";
 import s from "./index.module.css";
 import IconSelector from "./IconSelector";
 import clsx from "clsx";
-import type { IndexProps } from "./types";
+import type { AlertProps } from "./types";
 
-const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
+const Index = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
   const {
     children,
     severity = "success",

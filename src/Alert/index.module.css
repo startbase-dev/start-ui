@@ -1,12 +1,11 @@
 .root {
   display: flex;
-  gap: 16px;
-  padding: 8px 16px;
-  font-size: 0.875rem;
-  border-radius: 4px;
-  border: 1px solid transparent;
-  color: var(--sui-text-succes);
-  background: var(--sui-color-success-dim);
+  gap: var(--gap);
+  padding: var(--padding);
+  border-radius: var(--border-radius-medium);
+  border: 1px solid var(--transparent);
+  color: var(--success);
+  background: var(--success-200);
 }
 
 .body {
@@ -14,11 +13,16 @@
   flex-grow: 1;
   flex-direction: column;
   justify-content: center;
+  font-weight: 400;
+  font-size: var(--text-fs);
+  line-height: var(--text-lh);
 }
 
 .title {
-  font-weight: 500;
-  font-size: 1rem;
+  font-weight: 600;
+  font-size: var(--text-large-fs);
+  line-height: var(--text-large-lh);
+  margin-bottom: var(--text-margin);
   text-transform: capitalize;
 }
 
@@ -28,88 +32,83 @@
 
 /** VARIANT DEFAULT */
 .root[data-variant="default-success"] {
-  color: var(--sui-text-success);
-  background-color: var(--sui-color-success-dim);
+  color: var(--success-d600);
+  background-color: var(--success-200);
 }
 
 .root[data-variant="default-success"] svg {
-  fill: var(--sui-color-success);
+  fill: var(--success-d600);
 }
 
 .root[data-variant="default-info"] {
-  color: var(--sui-text-info);
-  background-color: var(--sui-color-info-dim);
+  color: var(--info-d600);
+  background-color: var(--info-200);
 }
 
 .root[data-variant="default-info"] svg {
-  fill: var(--sui-color-info);
+  fill: var(--info-d600);
 }
 
 .root[data-variant="default-warning"] {
-  color: var(--sui-text-warning);
-  background-color: var(--sui-color-warning-dim);
+  color: var(--warning-d600);
+  background-color: var(--warning-200);
 }
 
 .root[data-variant="default-warning"] svg {
-  fill: var(--sui-color-warning);
+  fill: var(--warning-d600);
 }
 
 .root[data-variant="default-error"] {
-  color: var(--sui-text-error);
-  background-color: var(--sui-color-error-dim);
+  color: var(--error-d600);
+  background-color: var(--error-200);
 }
 
 .root[data-variant="default-error"] svg {
-  fill: var(--sui-color-error);
+  fill: var(--error-d600);
 }
 
 /** VARIANT FILLED */
 .root[data-variant="filled-success"] {
-  color: var(--sui-color-black);
-  background-color: var(--sui-color-success);
-  font-weight: 500;
+  color: var(--white);
+  background-color: var(--success);
 }
 
 .root[data-variant="filled-info"] {
-  color: var(--sui-color-black);
-  background-color: var(--sui-color-info);
-  font-weight: 500;
+  color: var(--white);
+  background-color: var(--info);
 }
 
 .root[data-variant="filled-warning"] {
-  color: var(--sui-color-black);
-  background-color: var(--sui-color-warning);
-  font-weight: 500;
+  color: var(--white);
+  background-color: var(--warning);
 }
 
 .root[data-variant="filled-error"] {
-  color: var(--sui-color-white);
-  background-color: var(--sui-color-error);
-  font-weight: 500;
+  color: var(--white);
+  background-color: var(--error);
 }
 
 /** VARIANT OUTLINED */
 .root[data-variant="outlined-success"] {
-  color: var(--sui-text-success);
-  background-color: transparent;
-  border: 1px solid var(--sui-color-success)
+  color: var(--success-d600);
+  background-color: var(--success-50);
+  border: 1px solid var(--success);
 }
 
 .root[data-variant="outlined-info"] {
-  color: var(--sui-text-info);
-  background-color: transparent;
-  border: 1px solid var(--sui-color-info)
+  color: var(--info-d600);
+  background-color: var(--info-50);
+  border: 1px solid var(--info-d600);
 }
 
 .root[data-variant="outlined-warning"] {
-  color: var(--sui-text-warning);
-  background-color: transparent;
-  border: 1px solid var(--sui-color-warning)
+  color: var(--warning-d600);
+  background-color: var(--warning-50);
+  border: 1px solid var(--warning-d600);
 }
 
 .root[data-variant="outlined-error"] {
-  color: var(--sui-text-error);
-  background-color: transparent;
-  border: 1px solid var(--sui-color-error)
+  color: var(--error-d600);
+  background-color: var(--error-50);
+  border: 1px solid var(--warning-d600);
 }
-

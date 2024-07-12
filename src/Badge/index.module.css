@@ -12,8 +12,8 @@
   top: 0;
   right: 0;
   transform: translate(50%, -50%);
-  color: var(--sui-color-white);
-  background-color: var(--sui-color-primary);
+  color: var(--white);
+  background-color: var(--primary);
   height: 20px;
   min-width: 20px;
   border-radius: 10px;
@@ -80,19 +80,19 @@
 
 /** COLOR PROP */
 .root[data-color="primary"] .badge {
-  background-color: var(--sui-color-primary);
+  background-color: var(--primary);
 }
 
 .root[data-color="secondary"] .badge {
-  background-color: var(--sui-color-secondary);
+  background-color: var(--secondary);
 }
 
 .root[data-color="success"] .badge {
-  background-color: var(--sui-color-success);
+  background-color: var(--success);
 }
 
 .root[data-color="error"] .badge {
-  background-color: var(--sui-color-error);
+  background-color: var(--error);
 }
 
 /** VARIANT PROP */

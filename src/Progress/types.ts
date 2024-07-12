@@ -11,8 +11,8 @@ export interface IndexProps extends React.AllHTMLAttributes<HTMLDivElement> {
   determinate?: boolean;
   trackSize?: number;
   classNames?: string[];
-};
+}
 
 export interface TemplateProps extends IndexProps {
   title: string;
-};
+}

@@ -1,57 +1,103 @@
 :root {
-  --sui-background: #fafafa;
-  --sui-background-rgb: 250,250,250;
-  --sui-foreground: #18181a;
-  --sui-foreground-dim: #646464;
-  --sui-border: #dcdedd;
-  --sui-color-white: #fafafa;
-  --sui-color-black: #18181a;
-  --sui-color-primary: #9c28b1;
-  --sui-color-secondary: #646464;
-  --sui-color-success: #398e3d;
-  --sui-color-success-dim: #edf7ed;
-  --sui-color-info: #0288d1;
-  --sui-color-info-dim: #e5f6fd;
-  --sui-color-warning: #ec6c01;
-  --sui-color-warning-dim: #fff4e5;
-  --sui-color-error: #d32f2e;
-  --sui-color-error-dim: #fdeded;
-  --sui-text-success: #1e4620;
-  --sui-text-info: #014361;
-  --sui-text-warning: #663c00;
-  --sui-text-error: #5f2120;
-  --gray-color-600: #717a80;
-  --gray-color-500: #899196;
-  --gray-color-400: #a3abb0;
-  --gray-color-300: #b6bec4;
-  --gray-color-200: #d1d8de;
-  --gray-color-100: #e5eaef;
-  --gray-color-50: #f8f9f9;
-  --gray-color-25: #fafafa;
+  /* WHITE AND BLACK */
+  --white: #fff;
+  --black: #000;
+
+  /* COLORS */
+  --success: #22c55e;
+  --info: #3b82f6;
+  --warning: #f97316;
+  --error: #ef4444;
+  --primary: #9c28b1;
+  --secondary: #646464;
+
+  /* GRAY */
+  --gray-950: #0a0a0a;
+  --gray-900: #171717;
+  --gray-800: #262626;
+  --gray-700: #404040;
+  --gray-600: #525252;
+  --gray-500: #737373;
+  --gray-400: #a3a3a3;
+  --gray-300: #d4d4d4;
+  --gray-200: #e5e5e5;
+  --gray-100: #f5f5f5;
+  --gray-50: #fafafa;
+
+  /* TYPOGRAPHY */
+  --h1-fs: 2.5rem;
+  --h1-lh: 2.875rem;
+  --h2-fs: 2rem;
+  --h2-lh: 2.3rem;
+  --h3-fs: 2rem;
+  --h3-lh: 2.3rem;
+  --h4-fs: 1.5rem;
+  --h4-lh: 1.725rem;
+  --h5-fs: 1.5rem;
+  --h5-lh: 1.725rem;
+  --h6-fs: 1rem;
+  --h6-lh: 1.15rem;
+  --text-small-fs: 0.625rem;
+  --text-small-lh: 1.125rem;
+  --text-fs: 0.875rem;
+  --text-lh: 1.375rem;
+  --text-large-fs: 1rem;
+  --text-large-lh: 1.5rem;
+
+  /* ELEVATIONS */
+  --elevation-1: rgb(0 0 0 / 10%) 0 1px 1px 0;
+  --elevation-2: rgb(0 0 0 / 10%) 0 3px 3px 0;
+  --elevation-3: rgb(0 0 0 / 10%) 0 8px 8px 0;
+  --elevation-4: rgb(0 0 0 / 10%) 0 16px 16px 0;
+  --elevation-5: rgb(0 0 0 / 10%) 0 32px 32px 0;
+  --elevation-6: rgb(0 0 0 / 10%) 0 64px 64px 0;
+
+  /* BORDER RADIUS */
+  --border-radius-small: 0.4rem;
+  --border-radius-medium: 0.6rem;
+  --border-radius-large: 0.8rem;
+  --border-radius-full: 100%;
+
+  /* GAPS MARGINS PADDINGS */
+  --padding: 0.875rem;
+  --text-margin: 0.5rem;
+  --gap: 1rem;
+
+  /* NEUTRAL COLORS/ */
+  --transparent: transparent;
+  --current: currentcolor;
+
+  /* COMPONENT COLORS/ */
+  --border: var(--gray-300);
+
+  /* BUTTON */
+  --destructive: color-mix(in srgb, var(--error) 80%, var(--white));
+
+  /* ALERT */
+  --success-50: color-mix(in srgb, var(--success) 5%, var(--white));
+  --info-50: color-mix(in srgb, var(--info) 5%, var(--white));
+  --warning-50: color-mix(in srgb, var(--warning) 5%, var(--white));
+  --error-50: color-mix(in srgb, var(--error) 5%, var(--white));
+  --success-200: color-mix(in srgb, var(--success) 20%, var(--white));
+  --info-200: color-mix(in srgb, var(--info) 20%, var(--white));
+  --warning-200: color-mix(in srgb, var(--warning) 20%, var(--white));
+  --error-200: color-mix(in srgb, var(--error) 20%, var(--white));
+  --success-d600: color-mix(in srgb, var(--success) 60%, var(--black));
+  --info-d600: color-mix(in srgb, var(--info) 60%, var(--black));
+  --warning-d600: color-mix(in srgb, var(--warning) 60%, var(--black));
+  --error-d600: color-mix(in srgb, var(--error) 60%, var(--black));
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --sui-background: #18181a;
-    --sui-background-rgb: 24,24,26;
-    --sui-foreground: #fafafa;
-    --sui-foreground-dim: #7a7a7a;
-    --sui-border: #3c3c3c;
-    --sui-color-success-dim: #0c130d;
-    --sui-color-info-dim: #071318;
-    --sui-color-warning-dim: #191207;
-    --sui-color-error-dim: #160b0b;
-    --sui-text-success: #cce8cd;
-    --sui-text-info: #b8e7fb;
-    --sui-text-warning: #ffe2b7;
-    --sui-text-error: #f4c7c7;
-    --gray-color-600-dark: #2b2e33;
-    --gray-color-500-dark: #313336;
-    --gray-color-400-dark: #3c3f43;
-    --gray-color-300-dark: #4b4f54;
-    --gray-color-200-dark: #575b60;
-    --gray-color-100-dark: #6b6f74;
-    --gray-color-50-dark: #8b8e91;
-    --gray-color-25-dark: #a1a3a5;
+    /* WHITE AND BLACK */
+    --white: #fff;
+    --black: #000;
+
+    /* COLORS */
+    --success: #22c55e;
+    --info: #3b82f6;
+    --warning: #f97316;
+    --error: #ef4444;
   }
 }
