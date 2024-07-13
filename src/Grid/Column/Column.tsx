@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./Column.module.css";
+import s from "./Column.module.scss";
 import clsx from "clsx";
 
 interface ColumnProps extends React.AllHTMLAttributes<HTMLDivElement> {

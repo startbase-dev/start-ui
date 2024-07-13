@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import s from "./index.module.css";
+import s from "./index.module.scss";
 import clsx from "clsx";
 import type { IndexProps } from "./types";
 
@@ -12,7 +12,12 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     ...rest
   } = props;
 
-  const { smMinWidth, mdMinWidth, lgMinWidth, xlMinWidth } = breakpoints;
+  const {
+    smMinWidth = "576px",
+    mdMinWidth = "768px",
+    lgMinWidth = "992px",
+    xlMinWidth = "1200px"
+  } = breakpoints;
 
   return (
     <div

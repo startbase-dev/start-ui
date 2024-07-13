@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./Row.module.css";
+import s from "./Row.module.scss";
 import clsx from "clsx";
 
 interface RowProps extends React.AllHTMLAttributes<HTMLDivElement> {
