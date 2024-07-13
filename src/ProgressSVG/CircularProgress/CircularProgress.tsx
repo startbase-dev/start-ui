@@ -27,49 +27,45 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
   const labelAndDeterminate = determinate && progressLabel;
 
   return (
-    <svg
-      className={clsx([s.root, ...classnames])}
-      ref={ref}
-      width={size}
-      height={size}
-      viewBox={`0 0 ${size} ${size}`}
-      role="progressbar"
-      aria-valuenow={value}
-      aria-valuemax={max}
-      aria-valuemin={min}
-      aria-valuetext={percentage}
-      data-determinate={determinate}
-      {...rest}
-    >
-      {labelAndDeterminate && <text
-        className={s.label}
-        x={"50%"}
-        y={"50%"}
-        dominantBaseline={"middle"}
-        textAnchor={"middle"}
-      >{percentage}</text>}
-      <circle
-        className={s.track}
-        r={radius}
-        cx={center}
-        cy={center}
-        fill="transparent"
-        stroke="currentColor"
-        strokeWidth={trackSize}
-      ></circle>
-      <circle
-        className={s.progress}
-        r={radius}
-        cx={center}
-        cy={center}
-        fill="transparent"
-        stroke="currentColor"
-        strokeWidth={trackSize}
-        strokeDasharray={circumference}
-        strokeDashoffset={offset}
-        strokeLinecap="round"
-      ></circle>
-    </svg>
+    <div className={s.container}>
+      <svg
+        className={clsx([s.root, ...classnames])}
+        ref={ref}
+        width={size}
+        height={size}
+        viewBox={`0 0 ${size} ${size}`}
+        role="progressbar"
+        aria-valuenow={value}
+        aria-valuemax={max}
+        aria-valuemin={min}
+        aria-valuetext={percentage}
+        data-determinate={determinate}
+        {...rest}
+      >
+        <circle
+          className={s.track}
+          r={radius}
+          cx={center}
+          cy={center}
+          fill="transparent"
+          stroke="currentColor"
+          strokeWidth={trackSize}
+        ></circle>
+        <circle
+          className={s.progress}
+          r={radius}
+          cx={center}
+          cy={center}
+          fill="transparent"
+          stroke="currentColor"
+          strokeWidth={trackSize}
+          strokeDasharray={circumference}
+          strokeDashoffset={offset}
+          strokeLinecap="round"
+        ></circle>
+      </svg>
+      {labelAndDeterminate && <span className={s.label}>{percentage}</span>}
+    </div>
   );
 });
 
