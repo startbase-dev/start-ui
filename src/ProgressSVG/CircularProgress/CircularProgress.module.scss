@@ -11,11 +11,11 @@
 }
 
 .track {
-  color: var(--gray-200, lightgray);
+  color: var(--gray-200);
 }
 
 .progress {
-  color: var(--primary, purple);
+  color: var(--primary);
   transform: rotate(-90deg) translateX(-100%);
 }
 

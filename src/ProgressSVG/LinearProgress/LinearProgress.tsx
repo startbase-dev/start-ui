@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useState } from "react";
+import React, { forwardRef } from "react";
 import s from "./LinearProgress.module.scss";
 import clsx from "clsx";
 import type { IndexProps } from "../types";
@@ -17,65 +17,61 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
   } = props;
   const classnames = className.split(" ");
 
-  const [animatedValue, setAnimatedValue] = useState(0);
-
-  useEffect(() => {
-    function animateProgress() {
-      setAnimatedValue(num => (num + 0.01) % 1);
-    };
-
-    const interval = setInterval(animateProgress, 10);
-
-    return () => clearInterval(interval);
-  }, [determinate]);
-
   const normalizedValue = normalizeValue(value, max, min);
-  const progress = determinate ? size * normalizedValue : size * animatedValue;
+  const progress = size * normalizedValue;
   const percentage = toPercentage(normalizedValue);
   const borderRadius = trackSize * 0.5;
   const labelAndDeterminate = determinate && progressLabel;
-  const trackSizeWithText = labelAndDeterminate ? trackSize + 32 : trackSize;
-
 
   return (
-    <svg
-      className={clsx([...classnames])}
-      ref={ref}
-      width={size}
-      height={trackSizeWithText}
-      viewBox={`0 0 ${size} ${trackSizeWithText}`}
-      style={{
-        "--track-size": `${trackSize}px`
-      }}
-      role="progressbar"
-      aria-valuenow={value}
-      aria-valuemax={max}
-      aria-valuemin={min}
-      aria-valuetext={percentage}
-      {...rest}
-    >
-      {labelAndDeterminate && <text
-        className={s.label}
-        dominantBaseline={"middle"}
-        textAnchor={"middle"}
-      >{percentage}</text>}
-      <rect
-        className={s.track}
+    <div className={s.container}>
+      <svg
+        className={clsx([s.root, ...classnames])}
+        ref={ref}
         width={size}
         height={trackSize}
-        rx={borderRadius}
-        fill="currentColor"
-        stroke="transparent"
-      ></rect>
-      <rect
-        className={s.progress}
-        width={progress}
-        height={trackSize}
-        rx={borderRadius}
-        fill="currentColor"
-        stroke="transparent"
-      ></rect>
-    </svg>
+        style={{
+          "--border-radius": `${borderRadius}px`
+        }}
+        role="progressbar"
+        aria-valuenow={value}
+        aria-valuemax={max}
+        aria-valuemin={min}
+        aria-valuetext={percentage}
+        data-determinate={determinate}
+        {...rest}
+      >
+        <line
+          className={s.track}
+          x1={borderRadius}
+          y1={borderRadius}
+          x2={size - borderRadius}
+          y2={borderRadius}
+          height={trackSize}
+          width={size}
+          fill="transparent"
+          stroke="currentColor"
+          strokeWidth={trackSize}
+          strokeLinecap="round"
+        ></line>
+        <line
+          className={s.progress}
+          x1={borderRadius}
+          y1={borderRadius}
+          x2={size - borderRadius}
+          y2={borderRadius}
+          height={trackSize}
+          width={size}
+          fill="transparent"
+          stroke="currentColor"
+          strokeWidth={trackSize}
+          strokeDasharray={size}
+          strokeDashoffset={size - progress}
+          strokeLinecap="round"
+        ></line>
+      </svg>
+      {labelAndDeterminate && <span className={s.label}>{percentage}</span>}
+    </div>
   );
 });
 
