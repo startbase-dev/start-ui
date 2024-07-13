@@ -1,0 +1,131 @@
+.root {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+  overflow: hidden;
+  border-radius: 0.375rem;
+  border: 1px solid var(--transparent);
+  width: max-content;
+
+  &.primary.default {
+    background-color: var(--black);
+    color: var(--white);
+
+    &:hover {
+      background-color: var(--gray-800);
+    }
+  }
+
+  &.secondary.default {
+    background-color: var(--gray-200);
+    color: var(--black);
+
+    &:hover {
+      background-color: var(--gray-100);
+    }
+  }
+
+  &.destructive.default {
+    background-color: var(--error);
+    color: var(--white);
+
+    &:hover {
+      background-color: var(--destructive);
+    }
+  }
+
+  &.primary.outline {
+    background-color: var(--gray-200);
+    color: var(--black);
+    border: 1px solid var(--gray-400);
+
+    &:hover {
+      background-color: var(--gray-800);
+      color: var(--white);
+    }
+  }
+
+  &.secondary.outline {
+    background-color: var(--gray-50);
+    color: var(--black);
+    border: 1px solid var(--gray-200);
+
+    &:hover {
+      background-color: var(--gray-200);
+    }
+  }
+
+  &.destructive.outline {
+    background-color: var(--error-50);
+    color: var(--error);
+    border: 1px solid var(--error-200);
+
+    &:hover {
+      background-color: var(--destructive);
+      color: var(--white);
+    }
+  }
+
+  &.primary.ghost {
+    background-color: var(--transparent);
+    color: var(--black);
+
+    &:hover {
+      background-color: var(--gray-800);
+      color: var(--white);
+    }
+  }
+
+  &.secondary.ghost {
+    background-color: var(--transparent);
+    color: var(--black);
+
+    &:hover {
+      background-color: var(--gray-100);
+      color: var(--black);
+    }
+  }
+
+  &.destructive.ghost {
+    background-color: var(--transparent);
+    color: var(--destructive);
+
+    &:hover {
+      background-color: var(--destructive);
+      color: var(--white);
+    }
+  }
+
+  &.small {
+    height: 24px;
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
+    min-width: 64px;
+  }
+
+  &.medium {
+    height: 36px;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    min-width: 128px;
+  }
+
+  &.large {
+    height: 48px;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    min-width: 192px;
+  }
+
+  &.fluid {
+    width: 100%;
+  }
+
+  &.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}

@@ -5,7 +5,7 @@ import React, {
   useState,
   useMemo,
 } from "react";
-import s from "./VideoPlayer.module.css";
+import s from "./VideoPlayer.module.scss";
 import file from "./large.mp4";
 import Replay from "../../../icons/Replay";
 import Pause from "../../../icons/Pause";

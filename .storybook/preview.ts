@@ -1,5 +1,4 @@
-import "../src/style/globals.css";
-import "./storybook.css";
+import "../src/style/globals.scss";
 
 const preview = {
   parameters: {
@@ -11,7 +10,7 @@ const preview = {
     },
   },
 
-  tags: ["autodocs"]
+  tags: ["autodocs"],
 };
 
 export default preview;
