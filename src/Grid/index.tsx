@@ -12,7 +12,12 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     ...rest
   } = props;
 
-  const { smMinWidth, mdMinWidth, lgMinWidth, xlMinWidth } = breakpoints;
+  const {
+    smMinWidth = "576px",
+    mdMinWidth = "768px",
+    lgMinWidth = "992px",
+    xlMinWidth = "1200px"
+  } = breakpoints;
 
   return (
     <div
