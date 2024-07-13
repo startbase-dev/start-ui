@@ -1,3 +1,15 @@
+@keyframes spin {
+  from {
+    rotate: 0deg;
+  } to {
+    rotate: 360deg;
+  }
+}
+
+.root[data-determinate=false] {
+  animation: 0.75s linear both infinite spin;
+}
+
 .track {
   color: var(--gray-200, lightgray);
 }

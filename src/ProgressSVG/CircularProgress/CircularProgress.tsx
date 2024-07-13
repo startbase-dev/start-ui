@@ -5,27 +5,30 @@ import type { IndexProps } from "../types";
 
 const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
   const {
-    value,
+    value = 0,
     max = 1,
     min = 0,
     size = 100,
     trackSize = 10,
     progressLabel = false,
+    determinate = true,
     className = "",
     ...rest
   } = props;
   const classnames = className.split(" ");
 
+  const IndeterminateValue = 0.25;
   const center = size * 0.5;
   const radius = size * 0.4;
   const circumference = 2 * Math.PI * radius;
-  const normalizedValue = normalizeValue(value, max, min);
+  const normalizedValue = determinate ? normalizeValue(value, max, min) : IndeterminateValue;
   const offset = circumference - circumference * normalizedValue;
   const percentage = toPercentage(normalizedValue);
+  const labelAndDeterminate = determinate && progressLabel;
 
   return (
     <svg
-      className={clsx([...classnames])}
+      className={clsx([s.root, ...classnames])}
       ref={ref}
       width={size}
       height={size}
@@ -35,9 +38,10 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
       aria-valuemax={max}
       aria-valuemin={min}
       aria-valuetext={percentage}
+      data-determinate={determinate}
       {...rest}
     >
-      {progressLabel && <text
+      {labelAndDeterminate && <text
         className={s.label}
         x={"50%"}
         y={"50%"}

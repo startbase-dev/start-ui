@@ -1,26 +1,41 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useEffect, useState } from "react";
 import s from "./LinearProgress.module.scss";
 import clsx from "clsx";
 import type { IndexProps } from "../types";
 
 const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
   const {
-    value,
+    value = 0,
     max = 1,
     min = 0,
     size = 100,
     trackSize = 10,
     progressLabel = false,
+    determinate = true,
     className = "",
     ...rest
   } = props;
   const classnames = className.split(" ");
 
+  const [animatedValue, setAnimatedValue] = useState(0);
+
+  useEffect(() => {
+    function animateProgress() {
+      setAnimatedValue(num => (num + 0.01) % 1);
+    };
+
+    const interval = setInterval(animateProgress, 10);
+
+    return () => clearInterval(interval);
+  }, [determinate]);
+
   const normalizedValue = normalizeValue(value, max, min);
-  const progress = size * normalizedValue;
+  const progress = determinate ? size * normalizedValue : size * animatedValue;
   const percentage = toPercentage(normalizedValue);
   const borderRadius = trackSize * 0.5;
-  const trackSizeWithText = progressLabel ? trackSize + 32 : trackSize;
+  const labelAndDeterminate = determinate && progressLabel;
+  const trackSizeWithText = labelAndDeterminate ? trackSize + 32 : trackSize;
+
 
   return (
     <svg
@@ -39,7 +54,7 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
       aria-valuetext={percentage}
       {...rest}
     >
-      {progressLabel && <text
+      {labelAndDeterminate && <text
         className={s.label}
         dominantBaseline={"middle"}
         textAnchor={"middle"}
