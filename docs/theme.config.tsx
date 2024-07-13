@@ -15,6 +15,7 @@ const config: DocsThemeConfig = {
   feedback: {
     content: null,
   },
+  gitTimestamp: null,
   docsRepositoryBase: "https://github.com/startbase-dev/start-ui",
   footer: {
     text: (
