@@ -1,0 +1,14 @@
+.track {
+  color: var(--sui-border, lightgray);
+}
+
+.progress {
+  color: var(--sui-color-primary, cyan);
+  transform: rotate(-90deg) translateX(-100%);
+}
+
+.label {
+  fill: inherit;
+  font-size: inherit;
+  font-family: inherit;
+}
