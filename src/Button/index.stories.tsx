@@ -18,13 +18,13 @@ const Template: React.FC<TemplateProps> = (args) => {
         }}
       >
         <Button size="medium" variant="default" color="primary">
-          Button Default Primary
+          Button Primary Default
         </Button>
         <Button size="medium" variant="default" color="secondary">
-          Button Default Secondary
+          Button Secondary Default
         </Button>
         <Button size="medium" variant="default" color="destructive">
-          Button Default Destructive
+          Button Destructive Default
         </Button>
 
         <Button size="medium" variant="outline" color="primary">
@@ -66,6 +66,10 @@ const Template: React.FC<TemplateProps> = (args) => {
         </Button>
         <Button size="large" variant="default" color="destructive" loading>
           Button Destructive Default Disabled
+        </Button>
+
+        <Button size="medium" variant="default" color="primary" fluid>
+          Button Primary Default Fluid
         </Button>
       </div>
     </>
