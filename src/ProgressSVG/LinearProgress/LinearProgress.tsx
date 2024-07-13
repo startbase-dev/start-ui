@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import s from "./CircularProgress.module.css";
+import s from "./LinearProgress.module.css";
 import clsx from "clsx";
 
 interface IndexProps extends React.SVGAttributes<SVGSVGElement> {
@@ -22,20 +22,21 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
   } = props;
   const classnames = className.split(" ");
 
-  const center = size * 0.5;
-  const radius = size * 0.4;
-  const circumference = 2 * Math.PI * radius;
   const normalizedValue = normalizeValue(value, max, min);
-  const offset = circumference - circumference * normalizedValue;
+  const progress = size * normalizedValue;
   const percentage = toPercentage(normalizedValue);
+  const borderRadius = trackSize * 0.5;
 
   return (
     <svg
       className={clsx([...classnames])}
       ref={ref}
       width={size}
-      height={size}
-      viewBox={`0 0 ${size} ${size}`}
+      height={trackSize + 32}
+      viewBox={`0 0 ${size} ${trackSize + 32}`}
+      style={{
+        "--track-size": `${trackSize}px`
+      }}
       role="progressbar"
       aria-valuenow={value}
       aria-valuemax={max}
@@ -43,39 +44,32 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
       aria-valuetext={percentage}
       {...rest}
     >
-      <circle
-        className={s.track}
-        r={radius}
-        cx={center}
-        cy={center}
-        fill="transparent"
-        stroke="currentColor"
-        strokeWidth={trackSize}
-      ></circle>
-      <circle
-        className={s.progress}
-        r={radius}
-        cx={center}
-        cy={center}
-        fill="transparent"
-        stroke="currentColor"
-        strokeWidth={trackSize}
-        strokeDasharray={circumference}
-        strokeDashoffset={offset}
-        strokeLinecap="round"
-      ></circle>
       <text
         className={s.label}
-        x={"50%"}
-        y={"50%"}
         dominantBaseline={"middle"}
         textAnchor={"middle"}
       >{percentage}</text>
+      <rect
+        className={s.track}
+        width={size}
+        height={trackSize}
+        rx={borderRadius}
+        fill="currentColor"
+        stroke="transparent"
+      ></rect>
+      <rect
+        className={s.progress}
+        width={progress}
+        height={trackSize}
+        rx={borderRadius}
+        fill="currentColor"
+        stroke="transparent"
+      ></rect>
     </svg>
   );
 });
 
-Index.displayName = "CircularProgress";
+Index.displayName = "LinearProgress";
 
 function toPercentage(value: number, max?: number, min?: number) {
   if (!max || !min) return `${Math.round(value * 100)}%`;

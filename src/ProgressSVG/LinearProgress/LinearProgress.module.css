@@ -1,0 +1,16 @@
+.track,
+.progress {
+  color: var(--sui-border, lightgray);
+  transform: translate(0, calc(100% - var(--track-size)));
+}
+
+.progress {
+  color: var(--sui-color-primary, cyan);
+}
+
+.label {
+  fill: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  transform: translate(50%, 16px);
+}

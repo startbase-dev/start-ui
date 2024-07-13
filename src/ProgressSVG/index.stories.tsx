@@ -29,12 +29,19 @@ ProgressSVGComponent.args = {
   min: 0,
   size: 100,
   trackSize: 10,
+  variant: "circular",
   className: ""
 };
 
 const Component = {
   title: "UI/ProgressSVG",
   component: ProgressSVGComponent,
+  argTypes: {
+    variant: {
+      options: ["circular", "linear"],
+      control: "radio"
+    }
+  }
 };
 
 export default Component;

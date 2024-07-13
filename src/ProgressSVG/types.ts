@@ -4,6 +4,7 @@ export interface IndexProps extends React.SVGAttributes<SVGSVGElement> {
   min?: number;
   size?: number;
   trackSize?: number;
+  variant?: "linear" | "circular";
 };
 
 export interface TemplateProps extends IndexProps {
