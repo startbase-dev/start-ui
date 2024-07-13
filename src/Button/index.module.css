@@ -104,18 +104,21 @@
   height: 24px;
   font-size: 0.75rem;
   padding: 0.375rem 0.75rem;
+  min-width: 64px;
 }
 
 .root.medium {
   height: 36px;
   font-size: 0.875rem;
   padding: 0.5rem 1rem;
+  min-width: 128px;
 }
 
 .root.large {
   height: 48px;
   font-size: 1rem;
   padding: 0.75rem 1.5rem;
+  min-width: 192px;
 }
 
 .root.fluid {

@@ -57,6 +57,16 @@ const Template: React.FC<TemplateProps> = (args) => {
         <Button size="medium" variant="default" color="destructive" disabled>
           Button Destructive Default Disabled
         </Button>
+
+        <Button size="small" variant="default" color="primary" loading>
+          Button Primary Default Disabled
+        </Button>
+        <Button size="medium" variant="default" color="secondary" loading>
+          Button Secondary Default Disabled
+        </Button>
+        <Button size="large" variant="default" color="destructive" loading>
+          Button Destructive Default Disabled
+        </Button>
       </div>
     </>
   );
