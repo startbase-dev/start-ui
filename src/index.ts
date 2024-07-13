@@ -17,7 +17,7 @@ import Popover from "./Popover";
 import Progress from "./Progress";
 import Row from "./Row";
 import ScrollArea from "./ScrollArea";
-import Skeleton from "./Skeleton";
+import * as Skeleton from "./Skeleton";
 import Stepper from "./Stepper";
 import Tab from "./Tab";
 import Table from "./Table";
@@ -26,7 +26,7 @@ import ToggleGroup from "./ToggleGroup";
 import Tooltip from "./Tooltip";
 import Typography from "./Typography";
 
-import "./style/globals.css";
+import "./style/globals.scss";
 
 export {
   Accordion,
