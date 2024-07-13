@@ -88,13 +88,13 @@ const TemplateWithResponsive: React.FC<TemplateProps> = (args) => (
     >
       <Grid>
         <Row>
-          <Column span={12} sm={12} md={12} lg={6} xl={4}  padding="24px">
+          <Column span={12} spanSizes={{sm: 12, md: 12, lg: 6, xl: 4}} padding="24px">
             {`Column 1 (4/12)`}
           </Column>
-          <Column span={12} sm={12} md={12} lg={6} xl={4}  padding="24px">
+          <Column span={12} spanSizes={{sm: 12, md: 12, lg: 6, xl: 4}} padding="24px">
             {`Column 2 (4/12)`}
           </Column>
-          <Column span={12} sm={12} md={12} lg={6} xl={4}  padding="24px">
+          <Column span={12} spanSizes={{sm: 12, md: 12, lg: 6, xl: 4}} padding="24px">
             {`Column 3 (4/12)`}
           </Column>
         </Row>
