@@ -7,14 +7,12 @@ interface ColumnProps extends React.AllHTMLAttributes<HTMLDivElement> {
   classNames?: string[];
   span?: number;
   columns?: number;
-  sm?: number;
-  md?: number;
-  lg?: number;
-  xl?: number;
-  smMinWidth?: string;
-  mdMinWidth?: string;
-  lgMinWidth?: string;
-  xlMinWidth?: string;
+  spanSizes?: {
+    sm?: number;
+    md?: number;
+    lg?: number;
+    xl?: number;
+  };
   padding?: string;
 };
 
@@ -27,18 +25,13 @@ export default function Column({
   classNames = [],
   span = 12,
   columns = 12,
-  sm,
-  md,
-  lg,
-  xl,
-  smMinWidth = "576px",
-  mdMinWidth = "768px",
-  lgMinWidth = "992px",
-  xlMinWidth = "1200px",
+  spanSizes = {},
   style = {},
   padding = "8px",
   ...rest
 }: ColumnProps) {
+  const { sm, md, lg, xl } = spanSizes;
+
   const baseWidth = getWidth(span, columns);
   const smWidth = sm ? getWidth(sm, columns) : baseWidth;
   const mdWidth = md ? getWidth(md, columns) : baseWidth;
@@ -50,11 +43,11 @@ export default function Column({
       className={clsx([s.root, ...classNames])}
       style={{
         ...style,
-        width: baseWidth,
-        [`@media screen and (min-width: ${smMinWidth})`]: { width: smWidth },
-        [`@media screen and (min-width: ${mdMinWidth})`]: { width: mdWidth },
-        [`@media screen and (min-width: ${lgMinWidth})`]: { width: lgWidth },
-        [`@media screen and (min-width: ${xlMinWidth})`]: { width: xlWidth },
+        "--base-width": baseWidth,
+        "--sm-width": smWidth,
+        "--md-width": mdWidth,
+        "--lg-width": lgWidth,
+        "--xl-width": xlWidth,
         "--padding": padding,
       }}
       {...rest}
