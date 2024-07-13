@@ -30,6 +30,7 @@ ProgressSVGComponent.args = {
   size: 100,
   trackSize: 10,
   variant: "circular",
+  progressLabel: false,
   className: ""
 };
 

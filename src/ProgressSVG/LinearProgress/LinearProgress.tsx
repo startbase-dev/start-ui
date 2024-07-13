@@ -1,14 +1,7 @@
 import React, { forwardRef } from "react";
 import s from "./LinearProgress.module.scss";
 import clsx from "clsx";
-
-interface IndexProps extends React.SVGAttributes<SVGSVGElement> {
-  value: number;
-  max?: number;
-  min?: number;
-  size?: number;
-  trackSize?: number;
-};
+import type { IndexProps } from "../types";
 
 const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
   const {
@@ -17,6 +10,7 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
     min = 0,
     size = 100,
     trackSize = 10,
+    progressLabel = false,
     className = "",
     ...rest
   } = props;
@@ -26,14 +20,15 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
   const progress = size * normalizedValue;
   const percentage = toPercentage(normalizedValue);
   const borderRadius = trackSize * 0.5;
+  const trackSizeWithText = progressLabel ? trackSize + 32 : trackSize;
 
   return (
     <svg
       className={clsx([...classnames])}
       ref={ref}
       width={size}
-      height={trackSize + 32}
-      viewBox={`0 0 ${size} ${trackSize + 32}`}
+      height={trackSizeWithText}
+      viewBox={`0 0 ${size} ${trackSizeWithText}`}
       style={{
         "--track-size": `${trackSize}px`
       }}
@@ -44,11 +39,11 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
       aria-valuetext={percentage}
       {...rest}
     >
-      <text
+      {progressLabel && <text
         className={s.label}
         dominantBaseline={"middle"}
         textAnchor={"middle"}
-      >{percentage}</text>
+      >{percentage}</text>}
       <rect
         className={s.track}
         width={size}

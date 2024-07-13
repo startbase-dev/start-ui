@@ -5,6 +5,7 @@ export interface IndexProps extends React.SVGAttributes<SVGSVGElement> {
   size?: number;
   trackSize?: number;
   variant?: "linear" | "circular";
+  progressLabel?: boolean;
 };
 
 export interface TemplateProps extends IndexProps {

@@ -1,9 +1,9 @@
 .track {
-  color: var(--sui-border, lightgray);
+  color: var(--gray-200, lightgray);
 }
 
 .progress {
-  color: var(--sui-color-primary, cyan);
+  color: var(--primary, purple);
   transform: rotate(-90deg) translateX(-100%);
 }
 

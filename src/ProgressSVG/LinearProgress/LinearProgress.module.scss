@@ -1,11 +1,11 @@
 .track,
 .progress {
-  color: var(--sui-border, lightgray);
+  color: var(--gray-200, lightgray);
   transform: translate(0, calc(100% - var(--track-size)));
 }
 
 .progress {
-  color: var(--sui-color-primary, cyan);
+  color: var(--primary, cyan);
 }
 
 .label {

@@ -1,14 +1,7 @@
 import React, { forwardRef } from "react";
 import s from "./CircularProgress.module.scss";
 import clsx from "clsx";
-
-interface IndexProps extends React.SVGAttributes<SVGSVGElement> {
-  value: number;
-  max?: number;
-  min?: number;
-  size?: number;
-  trackSize?: number;
-};
+import type { IndexProps } from "../types";
 
 const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
   const {
@@ -17,6 +10,7 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
     min = 0,
     size = 100,
     trackSize = 10,
+    progressLabel = false,
     className = "",
     ...rest
   } = props;
@@ -43,6 +37,13 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
       aria-valuetext={percentage}
       {...rest}
     >
+      {progressLabel && <text
+        className={s.label}
+        x={"50%"}
+        y={"50%"}
+        dominantBaseline={"middle"}
+        textAnchor={"middle"}
+      >{percentage}</text>}
       <circle
         className={s.track}
         r={radius}
@@ -64,13 +65,6 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
         strokeDashoffset={offset}
         strokeLinecap="round"
       ></circle>
-      <text
-        className={s.label}
-        x={"50%"}
-        y={"50%"}
-        dominantBaseline={"middle"}
-        textAnchor={"middle"}
-      >{percentage}</text>
     </svg>
   );
 });
