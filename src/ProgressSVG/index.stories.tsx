@@ -35,6 +35,25 @@ ProgressSVGComponent.args = {
   className: ""
 };
 
+export const ProgressSVGWithVariant = Template.bind({});
+ProgressSVGWithVariant.args = {
+  ...ProgressSVGComponent.args,
+  variant: "linear",
+  size: 400
+};
+
+export const ProgressSVGWithLabel = Template.bind({});
+ProgressSVGWithLabel.args = {
+  ...ProgressSVGComponent.args,
+  progressLabel: true,
+};
+
+export const ProgressSVGWithIndeterminate = Template.bind({});
+ProgressSVGWithIndeterminate.args = {
+  ...ProgressSVGComponent.args,
+  determinate: false
+};
+
 const Component = {
   title: "UI/ProgressSVG",
   component: ProgressSVGComponent,
