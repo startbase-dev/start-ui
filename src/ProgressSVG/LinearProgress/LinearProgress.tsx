@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import s from "./LinearProgress.module.css";
+import s from "./LinearProgress.module.scss";
 import clsx from "clsx";
 
 interface IndexProps extends React.SVGAttributes<SVGSVGElement> {
