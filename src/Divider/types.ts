@@ -9,8 +9,9 @@ export interface IndexProps extends React.AllHTMLAttributes<HTMLDivElement> {
   orientation?: Orientation;
   contentAlign?: ContentAlign;
   component?: Component;
-};
+  classNames?: string[];
+}
 
 export interface TemplateProps extends IndexProps {
   title: string;
-};
+}

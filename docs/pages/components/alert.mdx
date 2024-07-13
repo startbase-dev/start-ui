@@ -1,0 +1,44 @@
+# Alert
+The Alert component is a versatile component that displays a message to the user with various customization options. It supports different severity levels, variants, colors, and additional actions.
+
+import { useState } from 'react'
+
+### Alert With Severity
+
+import PreviewAndCode from '../../components/PreviewAndCode/PreviewAndCode'
+import Alert from '../../../Alert'
+import '../../../index.css'
+
+<PreviewAndCode
+  component={<Alert severity="error">This is an error</Alert>}
+  code={"<Alert severity='error'>This is an error</Alert>"}
+/>
+
+### Alert With Variant
+
+<PreviewAndCode
+  component={<Alert variant="filled">This is a filled alert</Alert>}
+  code={"<Alert variant='filled'>This is a filled alert</Alert>"}
+/>
+
+### Alert With Color
+
+<PreviewAndCode
+  component={<Alert color="warning" severity="info">This is an info disguised as a warning</Alert>}
+  code={"<Alert color='warning' severity='info'>This is an info disguised as a warning</Alert>"}
+/>
+
+### Alert With Action
+
+<PreviewAndCode
+  component={<Alert action={<button onClick={() => window.alert("You clicked me!")}>Click me!</button>}>This is an alert with an action button. Try clicking on the button.</Alert>}
+  code={"<Alert action={<button onClick={() => window.alert('You clicked me!')}>Click me!</button>"}
+/>
+
+### Alert With Title
+
+<PreviewAndCode
+  component={<Alert alertTitle="Custom Alert Title!" severity="info">This is an alert with title</Alert>}
+  code={"<Alert alertTitle='Custom Alert Title!' severity='info'>This is an alert with title</Alert>"}
+/>
+

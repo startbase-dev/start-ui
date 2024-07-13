@@ -1,0 +1,126 @@
+:root {
+  /* WHITE AND BLACK */
+  --white: #fff;
+  --black: #000;
+
+  /* COLORS */
+  --success: #22c55e;
+  --info: #3b82f6;
+  --warning: #f97316;
+  --error: #ef4444;
+  --primary: #9c28b1;
+  --secondary: #646464;
+
+  /* GRAY */
+  --gray-950: #0a0a0a;
+  --gray-900: #171717;
+  --gray-800: #262626;
+  --gray-700: #404040;
+  --gray-600: #525252;
+  --gray-500: #737373;
+  --gray-400: #a3a3a3;
+  --gray-300: #d4d4d4;
+  --gray-200: #e5e5e5;
+  --gray-100: #f5f5f5;
+  --gray-50: #fafafa;
+
+  /* TYPOGRAPHY */
+  --h1-fs: 2.5rem;
+  --h1-lh: 2.875rem;
+  --h2-fs: 2rem;
+  --h2-lh: 2.3rem;
+  --h3-fs: 2rem;
+  --h3-lh: 2.3rem;
+  --h4-fs: 1.5rem;
+  --h4-lh: 1.725rem;
+  --h5-fs: 1.5rem;
+  --h5-lh: 1.725rem;
+  --h6-fs: 1rem;
+  --h6-lh: 1.15rem;
+  --text-small-fs: 0.625rem;
+  --text-small-lh: 1.125rem;
+  --text-fs: 0.875rem;
+  --text-lh: 1.375rem;
+  --text-large-fs: 1rem;
+  --text-large-lh: 1.5rem;
+
+  /* ELEVATIONS */
+  --elevation-1: rgb(0 0 0 / 10%) 0 1px 1px 0;
+  --elevation-2: rgb(0 0 0 / 10%) 0 3px 3px 0;
+  --elevation-3: rgb(0 0 0 / 10%) 0 8px 8px 0;
+  --elevation-4: rgb(0 0 0 / 10%) 0 16px 16px 0;
+  --elevation-5: rgb(0 0 0 / 10%) 0 32px 32px 0;
+  --elevation-6: rgb(0 0 0 / 10%) 0 64px 64px 0;
+
+  /* BORDER RADIUS */
+  --border-radius-small: 0.4rem;
+  --border-radius-medium: 0.6rem;
+  --border-radius-large: 0.8rem;
+  --border-radius-full: 100%;
+
+  /* GAPS MARGINS PADDINGS */
+  --padding: 0.875rem;
+  --text-margin: 0.5rem;
+  --gap: 1rem;
+
+  /* NEUTRAL COLORS/ */
+  --transparent: transparent;
+  --current: currentcolor;
+
+  /* COMPONENT COLORS/ */
+  --border: var(--gray-300);
+
+  /* BUTTON */
+  --destructive: color-mix(in srgb, var(--error) 80%, var(--white));
+
+  /* ALERT */
+  --success-50: color-mix(in srgb, var(--success) 5%, var(--white));
+  --info-50: color-mix(in srgb, var(--info) 5%, var(--white));
+  --warning-50: color-mix(in srgb, var(--warning) 5%, var(--white));
+  --error-50: color-mix(in srgb, var(--error) 5%, var(--white));
+  --success-200: color-mix(in srgb, var(--success) 20%, var(--white));
+  --info-200: color-mix(in srgb, var(--info) 20%, var(--white));
+  --warning-200: color-mix(in srgb, var(--warning) 20%, var(--white));
+  --error-200: color-mix(in srgb, var(--error) 20%, var(--white));
+  --success-d600: color-mix(in srgb, var(--success) 60%, var(--black));
+  --info-d600: color-mix(in srgb, var(--info) 60%, var(--black));
+  --warning-d600: color-mix(in srgb, var(--warning) 60%, var(--black));
+  --error-d600: color-mix(in srgb, var(--error) 60%, var(--black));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* WHITE AND BLACK */
+    --white: #fff;
+    --black: #000;
+
+    /* COLORS */
+    --success: #22c55e;
+    --info: #3b82f6;
+    --warning: #f97316;
+    --error: #ef4444;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family:
+          GalanoGrotesque,
+          "Noto Sans",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          "Fira Sans",
+          "Droid Sans",
+          "Helvetica Neue",
+          sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--white);
+}

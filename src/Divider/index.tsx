@@ -1,5 +1,5 @@
 import { createElement, forwardRef } from "react";
-import s from "./index.module.css";
+import s from "./index.module.scss";
 import type { IndexProps } from "./types";
 
 const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
@@ -9,16 +9,18 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     orientation = "horizontal",
     contentAlign = "middle",
     component = "div",
+    classNames = [],
     ...dividerProps
   } = props;
 
   const componentParams = {
     className: s.root,
-    ref, role: "separator",
+    ref,
+    role: "separator",
     "aria-orientation": orientation,
     "data-variant": variant,
     "data-align": contentAlign,
-    ...dividerProps
+    ...dividerProps,
   };
 
   // Void elements throw error if a child is passed: https://developer.mozilla.org/en-US/docs/Glossary/Void_element
@@ -41,18 +43,11 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
   ];
 
   // Return void divider
-  if (voidElements.includes(component)) return createElement(
-    component,
-    componentParams,
-    null
-  );
+  if (voidElements.includes(component))
+    return createElement(component, componentParams, null);
 
   // Return normal divider
-  return createElement(
-    component,
-    componentParams,
-    children
-  );
+  return createElement(component, componentParams, children);
 });
 
 Index.displayName = "Divider";

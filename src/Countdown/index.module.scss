@@ -1,0 +1,66 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.value {
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: bold;
+}
+
+.label {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.withSeperator:not(:last-child)::after {
+  content: ":";
+}
+
+.withLabels {
+  align-items: flex-end;
+  margin-right: 12px;
+  max-width: 100px;
+  font-size: 16px;
+}
+
+.labelsUnder {
+  flex-direction: column;
+  margin-right: 12px;
+  gap: 5px;
+}
+
+.labelsUnder .label {
+  font-size: 16px;
+}
+
+.inBoxes {
+  border: 1px solid var(--border);
+  padding: 10px;
+  border-radius: 5px;
+  background-color: var(--black);
+  flex-direction: column;
+  gap: 5px;
+  margin-right: 12px;
+  width: 100px;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+.inBoxes .label {
+  font-size: 16px;
+  color: var(--white);
+}
+
+.inBoxes .value {
+  color: var(--white);
+}

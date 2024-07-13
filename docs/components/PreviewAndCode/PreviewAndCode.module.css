@@ -1,0 +1,55 @@
+.container {
+  overflow: hidden;
+  margin: 24px 0;
+}
+
+.tabContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.tabButton {
+  padding: 10px 0;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: color 0.3s;
+}
+
+.tabButton.active {
+  background-color: #fff;
+  border-bottom: 2px solid black;
+  color: black;
+  font-weight: bold;
+}
+
+.contentContainer {
+    position: relative;
+  padding: 20px;
+}
+
+.previewContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+.codeContainer {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 5px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.copy {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+  

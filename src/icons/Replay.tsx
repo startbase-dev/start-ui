@@ -3,9 +3,9 @@ import { SVGProps } from "react";
 
 interface IconProps extends SVGProps<SVGSVGElement> {
   size?: number;
-};
+}
 
-const WarningOutline = ({size, width, height, ...props}: IconProps) => (
+const Replay = ({ size, width, height, ...props }: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="currentColor"
@@ -16,11 +16,8 @@ const WarningOutline = ({size, width, height, ...props}: IconProps) => (
     height={size ?? height}
     {...props}
   >
-    <path
-      stroke="none"
-      d="M12 5.99 19.53 19H4.47L12 5.99M12 2 1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"
-    />
+    <path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"></path>
   </svg>
 );
 
-export default WarningOutline;
+export default Replay;

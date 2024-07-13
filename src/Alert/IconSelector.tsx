@@ -1,8 +1,8 @@
 import React from "react";
 import CheckCircleOutline from "../icons/CheckCircleOutline";
-import InfoOutline from "../icons/InfoOutline";
-import WarningOutline from "../icons/WarningOutline";
-import ErrorOutline from "../icons/ErrorOutline";
+import InfoCircleOutline from "../icons/InfoCircleOutline";
+import WarningCircleOutline from "../icons/WarningCircleOutline";
+import ErrorCircleOutline from "../icons/ErrorCircleOutline";
 import type { AlertSeverity } from "./types";
 
 interface SelectorProps extends React.SVGAttributes<SVGSVGElement> {
@@ -10,18 +10,17 @@ interface SelectorProps extends React.SVGAttributes<SVGSVGElement> {
   iconBoolean: boolean;
   icon: React.ReactNode;
   size: number;
-};
+}
 
 const iconMap = {
   success: CheckCircleOutline,
-  info: InfoOutline,
-  warning: WarningOutline,
-  error: ErrorOutline,
+  info: InfoCircleOutline,
+  warning: WarningCircleOutline,
+  error: ErrorCircleOutline,
 };
 
 export default function IconSelector({
   iconName,
-  iconBoolean,
   icon,
   size,
   ...props
@@ -30,7 +29,7 @@ export default function IconSelector({
 
   const SelectedIcon = iconMap[iconName];
 
-  if (!SelectedIcon) return <CheckCircleOutline size={size} {...props} />
+  if (!SelectedIcon) return <CheckCircleOutline size={size} {...props} />;
 
-  return <SelectedIcon size={size} {...props} />
-};
+  return <SelectedIcon size={size} {...props} />;
+}

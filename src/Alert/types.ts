@@ -1,7 +1,7 @@
 export type AlertSeverity = "success" | "info" | "warning" | "error";
 type AlertVariant = "default" | "filled" | "outlined";
 
-export interface IndexProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
   severity?: AlertSeverity;
   variant?: AlertVariant;
   color?: AlertSeverity | "inherit";
@@ -10,8 +10,8 @@ export interface IndexProps extends React.HTMLAttributes<HTMLDivElement> {
   alertTitle?: string | boolean;
   open?: boolean;
   classnames?: string[];
-};
+}
 
-export interface TemplateProps extends IndexProps {
+export interface TemplateProps extends AlertProps {
   title: string;
-};
+}

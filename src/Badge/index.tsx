@@ -1,5 +1,6 @@
 import React, { forwardRef } from "react";
-import s from "./index.module.css";
+import s from "./index.module.scss";
+import clsx from "clsx";
 import type { IndexProps } from "./types";
 
 const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
@@ -11,7 +12,8 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     position = "top-right",
     invisible = false,
     showZero = false,
-    max = 99
+    max = 99,
+    classNames = [],
   } = props;
 
   // Convert badgeContent to string and add plus sign if more than max
@@ -19,7 +21,7 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     if (variant === "dot") return "";
     if (badgeContent > max) return `${max}+`;
     return badgeContent.toString();
-  };
+  }
 
   const content = calculateContent();
 
@@ -28,13 +30,13 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     if (invisible) return false;
     if (showZero) return true;
     return badgeContent > 0;
-  };
+  }
 
   const showBadge = calculateShow();
 
   return (
     <div
-      className={s.root}
+      className={clsx(s.root, ...classNames)}
       ref={ref}
       data-show={showBadge}
       data-color={color}
@@ -42,9 +44,7 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
       data-position={position}
       {...props}
     >
-      <span className={s.badge}>
-        {content}
-      </span>
+      <span className={s.badge}>{content}</span>
       {children}
     </div>
   );

@@ -1,8 +1,8 @@
 export interface IndexProps {
   content: string;
-  classnames?: string[];
-};
+  classNames?: string[];
+}
 
 export interface TemplateProps extends IndexProps {
   title: string;
-};
+}

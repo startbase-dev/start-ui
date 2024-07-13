@@ -1,10 +1,10 @@
 import React, { forwardRef } from "react";
-import s from "./index.module.css";
+import s from "./index.module.scss";
 import IconSelector from "./IconSelector";
 import clsx from "clsx";
-import type { IndexProps } from "./types";
+import type { AlertProps } from "./types";
 
-const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
+const Index = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
   const {
     children,
     severity = "success",
@@ -28,6 +28,13 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
 
   const iconBoolean = typeof icon === "boolean";
 
+  function getTitle() {
+    if (alertTitle === true) return severity;
+    if (typeof alertTitle === "string") return alertTitle;
+    return null;
+  }
+  const title = getTitle();
+
   return (
     <div
       className={clsx(s.root, ...classnames)}
@@ -38,9 +45,18 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
       data-open={open}
       {...rest}
     >
-      {iconBoolean ? <IconSelector iconName={severity} icon={icon} iconBoolean={iconBoolean} size={22} /> : icon}
+      {iconBoolean ? (
+        <IconSelector
+          iconName={severity}
+          icon={icon}
+          iconBoolean={iconBoolean}
+          size={22}
+        />
+      ) : (
+        icon
+      )}
       <div className={s.body}>
-        {alertTitle && <span className={s.title}>{severity}</span>}
+        {title && <span className={s.title}>{title}</span>}
         <span>{children}</span>
       </div>
       {action}

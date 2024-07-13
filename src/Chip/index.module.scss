@@ -1,0 +1,12 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  border: 1px solid transparent;
+  border-radius: 0.4em;
+  padding: 0.125rem 0.625rem;
+  font-size: 0.75rem;
+  color: var(--white);
+  background-color: var(--black);
+}

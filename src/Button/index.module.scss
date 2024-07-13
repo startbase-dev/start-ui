@@ -1,0 +1,133 @@
+.root {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  border-radius: 0.375rem;
+  border: 1px solid var(--transparent);
+  width: max-content;
+}
+
+.root.primary.default {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.root.primary.default:hover {
+  background-color: var(--gray-800);
+}
+
+.root.secondary.default {
+  background-color: var(--gray-200);
+  color: var(--black);
+}
+
+.root.secondary.default:hover {
+  background-color: var(--gray-100);
+}
+
+.root.destructive.default {
+  background-color: var(--error);
+  color: var(--white);
+}
+
+.root.destructive.default:hover {
+  background-color: var(--destructive);
+}
+
+.root.primary.outline {
+  background-color: var(--gray-200);
+  color: var(--black);
+  border: 1px solid var(--gray-400);
+}
+
+.root.primary.outline:hover {
+  background-color: var(--gray-800);
+  color: var(--white);
+}
+
+.root.secondary.outline {
+  background-color: var(--gray-50);
+  color: var(--black);
+  border: 1px solid var(--gray-200);
+}
+
+.root.secondary.outline:hover {
+  background-color: var(--gray-200);
+}
+
+.root.destructive.outline {
+  background-color: var(--error-50);
+  color: var(--error);
+  border: 1px solid var(--error-200);
+}
+
+.root.destructive.outline:hover {
+  background-color: var(--destructive);
+  color: var(--white);
+}
+
+.root.primary.ghost {
+  background-color: var(--transparent);
+  color: var(--black);
+}
+
+.root.primary.ghost:hover {
+  background-color: var(--gray-800);
+  color: var(--white);
+}
+
+.root.secondary.ghost {
+  background-color: var(--transparent);
+  color: var(--black);
+}
+
+.root.secondary.ghost:hover {
+  background-color: var(--gray-100);
+  color: var(--black);
+}
+
+.root.destructive.ghost {
+  background-color: var(--transparent);
+  color: var(--black);
+}
+
+.root.destructive.ghost:hover {
+  background-color: var(--destructive);
+  color: var(--white);
+}
+
+.root.small {
+  height: 24px;
+  font-size: 0.75rem;
+  padding: 0.375rem 0.75rem;
+  min-width: 64px;
+}
+
+.root.medium {
+  height: 36px;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  min-width: 128px;
+}
+
+.root.large {
+  height: 48px;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  min-width: 192px;
+}
+
+.root.fluid {
+  width: 100%;
+}
+
+.root.disabled {
+  background-color: var(--gray-300) !important;
+  color: var(--gray-400) !important;
+  cursor: not-allowed;
+  border: 1px solid var(--transparent);
+}

@@ -7,14 +7,13 @@
 .badge {
   display: flex;
   align-items: center;
-  justify-content: center;
-  align-content: center;
+  place-content: center center;
   position: absolute;
   top: 0;
   right: 0;
   transform: translate(50%, -50%);
-  color: var(--sui-foreground);
-  background-color: var(--sui-color-primary);
+  color: var(--white);
+  background-color: var(--primary);
   height: 20px;
   min-width: 20px;
   border-radius: 10px;
@@ -74,26 +73,26 @@
 }
 
 /** SHOW PROP */
-.root[data-show=false] .badge {
+.root[data-show="false"] .badge {
   display: none;
   opacity: 0;
 }
 
 /** COLOR PROP */
 .root[data-color="primary"] .badge {
-  background-color: var(--sui-color-primary);
+  background-color: var(--primary);
 }
 
 .root[data-color="secondary"] .badge {
-  background-color: var(--sui-color-secondary);
+  background-color: var(--secondary);
 }
 
 .root[data-color="success"] .badge {
-  background-color: var(--sui-color-success);
+  background-color: var(--success);
 }
 
 .root[data-color="error"] .badge {
-  background-color: var(--sui-color-error);
+  background-color: var(--error);
 }
 
 /** VARIANT PROP */

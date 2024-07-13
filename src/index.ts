@@ -3,6 +3,7 @@ import Alert from "./Alert";
 import Badge from "./Badge";
 import Button from "./Button";
 import Card from "./Card";
+import BentoCard from "./BentoCard";
 import Chip from "./Chip";
 import Col from "./Col";
 import Collapsible from "./Collapsible";
@@ -33,6 +34,7 @@ export {
   Badge,
   Button,
   Card,
+  BentoCard,
   Chip,
   Col,
   Collapsible,

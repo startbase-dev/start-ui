@@ -4,13 +4,14 @@
 /node_modules
 /.pnp
 .pnp.js
-
+/docs/node_modules
 # testing
 /coverage
 
 # next.js
 /.next/
 /out/
+/docs/.next/
 
 # production
 /build
@@ -36,7 +37,8 @@ next-env.d.ts
 
 .idea
 package-lock.json
-
+/docs/pnpm-lock.yaml
+/docs/package-lock.json
 # storybook static
 /storybook-static
 
@@ -46,6 +48,7 @@ package-lock.json
 /Accordion
 /Alert
 /Badge
+/BentoCard
 /Button
 /Card
 /Chip

@@ -4,7 +4,10 @@ type BadgeVariant = "default" | "dot";
 
 type VerticalPosition = "top" | "bottom";
 type HorizontalPosition = "right" | "left";
-type BadgePosition = `${VerticalPosition}-${HorizontalPosition}` | VerticalPosition | HorizontalPosition;
+type BadgePosition =
+  | `${VerticalPosition}-${HorizontalPosition}`
+  | VerticalPosition
+  | HorizontalPosition;
 
 export interface IndexProps {
   children: React.ReactNode;
@@ -15,8 +18,9 @@ export interface IndexProps {
   invisible?: boolean;
   showZero?: boolean;
   max?: number;
-};
+  classNames?: string[];
+}
 
 export interface TemplateProps extends IndexProps {
   title: string;
-};
+}
