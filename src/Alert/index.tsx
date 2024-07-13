@@ -49,7 +49,6 @@ const Index = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
         <IconSelector
           iconName={severity}
           icon={icon}
-          iconBoolean={iconBoolean}
           size={22}
         />
       ) : (

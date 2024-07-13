@@ -7,7 +7,6 @@ import type { AlertSeverity } from "./types";
 
 interface SelectorProps extends React.SVGAttributes<SVGSVGElement> {
   iconName: AlertSeverity;
-  iconBoolean: boolean;
   icon: React.ReactNode;
   size: number;
 }
