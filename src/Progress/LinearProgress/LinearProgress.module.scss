@@ -1,0 +1,40 @@
+@keyframes slide {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+}
+
+.root {
+  border-radius: var(--border-radius);
+
+  &[data-determinate=false] .progress {
+    animation: 0.75s ease-in-out both infinite slide;
+  }
+}
+
+.track,
+.progress {
+  color: var(--gray-200);
+}
+
+.progress {
+  color: var(--primary);
+}
+
+.label {
+  fill: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: 100%;
+}
