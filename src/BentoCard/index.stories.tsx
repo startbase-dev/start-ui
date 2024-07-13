@@ -1,6 +1,6 @@
 import React from "react";
 import BentoCard from "./index";
-import s from "./stories.module.css";
+import s from "./stories.module.scss";
 import VideoPlayer from "./demoContent/Video/VideoPlayer";
 import Image from "./demoContent/Image/Image";
 

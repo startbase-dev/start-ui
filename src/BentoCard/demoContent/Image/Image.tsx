@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./Image.module.css";
+import s from "./Image.module.scss";
 import file from "./image.jpg";
 
 const Image: React.FC = () => {

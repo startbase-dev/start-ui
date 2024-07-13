@@ -1,6 +1,6 @@
 import React, { forwardRef, useMemo } from "react";
 // eslint-disable-next-line css-modules/no-unused-class
-import s from "./index.module.css";
+import s from "./index.module.scss";
 import { getUnitLabel } from "./constants";
 import useCountdown from "./hooks/useCountdown";
 import clsx from "clsx";

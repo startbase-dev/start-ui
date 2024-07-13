@@ -1,6 +1,6 @@
 import React, { forwardRef, useMemo, useState } from "react";
 import clsx from "clsx";
-import s from "./index.module.css";
+import s from "./index.module.scss";
 import Plus from "../icons/Plus";
 import type { IndexProps } from "./types";
 

@@ -1,6 +1,6 @@
 import React from "react";
 // eslint-disable-next-line css-modules/no-unused-class
-import s from "../index.module.css";
+import s from "../index.module.scss";
 import { SkeletonTableProps } from "../types";
 
 const SkeletonTable: React.FC<SkeletonTableProps> = ({
