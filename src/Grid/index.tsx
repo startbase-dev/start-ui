@@ -1,13 +1,14 @@
 import React, { forwardRef } from "react";
 import s from "./Grid.module.scss";
 import clsx from "clsx";
-import type { IndexProps } from "./types";
+import type { GridProps } from "./types";
 
-const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
+const Index = forwardRef<HTMLDivElement, GridProps>((props, ref) => {
   const {
     children,
     rootClassName = "",
-    breakpoints = {}
+    breakpoints = {},
+    ...rest
   } = props;
   const rootClassNames = clsx(s.root, rootClassName);
 
@@ -20,6 +21,7 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
 
   return (
     <div
+      {...rest}
       className={rootClassNames}
       ref={ref}
       style={{

@@ -2,7 +2,7 @@ import React from "react";
 import s from "./Col.module.scss";
 import clsx from "clsx";
 
-interface ColumnProps {
+interface ColumnProps extends React.AllHTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
   rootClassName?: string;
   span?: number;
@@ -27,6 +27,7 @@ export default function Column({
   columns = 12,
   spanSizes = {},
   padding = "8px",
+  ...rest
 }: ColumnProps) {
   const rootClassNames = clsx(s.root, rootClassName);
 
@@ -40,6 +41,7 @@ export default function Column({
 
   return (
     <div
+      {...rest}
       className={rootClassNames}
       style={{
         "--base-width": baseWidth,

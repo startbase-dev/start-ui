@@ -10,7 +10,7 @@ const Index = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
     severity = "success",
     variant = "default",
     color = "inherit",
-    action = undefined,
+    actionElement = undefined,
     icon = true,
     alertTitle = false,
     open = true,
@@ -18,7 +18,8 @@ const Index = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
     iconClassName = "",
     bodyClassName = "",
     titleClassName = "",
-    textClassName = ""
+    textClassName = "",
+    ...rest
   } = props;
   const rootClassNames = clsx(s.root, rootClassName);
   const iconClassNames = clsx(iconClassName);
@@ -45,6 +46,7 @@ const Index = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
 
   return (
     <div
+      {...rest}
       className={rootClassNames}
       ref={ref}
       role="alert"
@@ -61,7 +63,7 @@ const Index = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
         {title && <span className={titleClassNames}>{title}</span>}
         <span className={textClassNames}>{children}</span>
       </div>
-      {action}
+      {actionElement}
     </div>
   );
 });

@@ -3,7 +3,7 @@ type Orientation = "horizontal" | "vertical";
 type ContentAlign = "start" | "center" | "end";
 type Component = keyof JSX.IntrinsicElements;
 
-export interface IndexProps {
+export interface DividerProps extends React.AllHTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
   variant?: Variant;
   orientation?: Orientation;
@@ -12,6 +12,6 @@ export interface IndexProps {
   rootClassName?: string;
 }
 
-export interface TemplateProps extends IndexProps {
+export interface TemplateProps extends DividerProps {
   title: string;
 }

@@ -9,7 +9,7 @@ type BadgePosition =
   | VerticalPosition
   | HorizontalPosition;
 
-export interface IndexProps {
+export interface BadgeProps extends React.AllHTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   badgeContent: number;
   color?: BadgeColor;
@@ -22,6 +22,6 @@ export interface IndexProps {
   countClassName?: string;
 }
 
-export interface TemplateProps extends IndexProps {
+export interface TemplateProps extends BadgeProps {
   title: string;
 }

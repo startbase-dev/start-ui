@@ -1,15 +1,15 @@
 import React, { forwardRef } from "react";
 import s from "./Chip.module.scss";
 import clsx from "clsx";
-import type { IndexProps } from "./types";
+import type { ChipProps } from "./types";
 
-const Index = forwardRef<HTMLSpanElement, IndexProps>((props, ref) => {
-  const { rootClassName = "" } = props;
+const Index = forwardRef<HTMLSpanElement, ChipProps>((props, ref) => {
+  const { children, rootClassName = "", ...rest } = props;
   const rootClassNames = clsx(s.root, rootClassName);
 
   return (
-    <span className={rootClassNames} ref={ref}>
-      {props.children}
+    <span {...rest} className={rootClassNames} ref={ref}>
+      {children}
     </span>
   );
 });

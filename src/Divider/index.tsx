@@ -1,21 +1,23 @@
 import { createElement, forwardRef } from "react";
 import s from "./Divider.module.scss";
 import clsx from "clsx";
-import type { IndexProps } from "./types";
+import type { DividerProps } from "./types";
 
-const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
+const Index = forwardRef<HTMLDivElement, DividerProps>((props, ref) => {
   const {
     children = null,
     variant = "fullWidth",
     orientation = "horizontal",
     contentAlign = "middle",
     component = "div",
-    rootClassName = ""
+    rootClassName = "",
+    ...rest
   } = props;
 
   const rootClassNames = clsx(s.root, rootClassName);
 
   const componentParams = {
+    ...rest,
     className: rootClassNames,
     ref,
     role: "separator",

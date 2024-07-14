@@ -1,9 +1,9 @@
 import React, { forwardRef } from "react";
 import s from "./LinearProgress.module.scss";
 import clsx from "clsx";
-import type { IndexProps } from "../types";
+import type { ProgressProps } from "../types";
 
-const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
+const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
   const {
     value = 0,
     max = 1,
@@ -17,6 +17,7 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
     trackClassName = "",
     progressClassName = "",
     labelClassName = "",
+    ...rest
   } = props;
 
   const rootClassNames = clsx(s.root, rootClassName);
@@ -34,6 +35,7 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
   return (
     <div className={containerClassNames}>
       <svg
+        {...rest}
         className={rootClassNames}
         ref={ref}
         width={size}

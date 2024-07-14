@@ -1,4 +1,4 @@
-export interface IndexProps {
+export interface ProgressProps extends React.SVGAttributes<SVGSVGElement> {
   value?: number;
   max?: number;
   min?: number;
@@ -14,6 +14,6 @@ export interface IndexProps {
   labelClassName?: string;
 }
 
-export interface TemplateProps extends IndexProps {
+export interface TemplateProps extends ProgressProps {
   title: string;
 }

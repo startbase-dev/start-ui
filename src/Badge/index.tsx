@@ -1,9 +1,9 @@
 import React, { forwardRef } from "react";
 import s from "./Badge.module.scss";
 import clsx from "clsx";
-import type { IndexProps } from "./types";
+import type { BadgeProps } from "./types";
 
-const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
+const Index = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {
   const {
     children,
     badgeContent,
@@ -14,7 +14,8 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     showZero = false,
     max = 99,
     rootClassName = "",
-    countClassName = ""
+    countClassName = "",
+    ...rest
   } = props;
   const rootClassNames = clsx(s.root, rootClassName);
   const countClassNames = clsx(s.count, countClassName);
@@ -39,6 +40,7 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
 
   return (
     <div
+      {...rest}
       className={rootClassNames}
       ref={ref}
       data-show={showBadge}

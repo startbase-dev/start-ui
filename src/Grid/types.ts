@@ -1,4 +1,4 @@
-export interface IndexProps {
+export interface GridProps extends React.AllHTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
   rootClassName?: string;
   breakpoints?: {
@@ -9,6 +9,6 @@ export interface IndexProps {
   };
 }
 
-export interface TemplateProps extends IndexProps {
+export interface TemplateProps extends GridProps {
   title: string;
 }

@@ -28,7 +28,7 @@ AlertComponent.args = {
   severity: "success",
   variant: "default",
   color: "inherit",
-  action: undefined,
+  actionElement: undefined,
   icon: true,
   alertTitle: false,
   open: true,
