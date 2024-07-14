@@ -18,7 +18,7 @@
 .root {
   border-radius: var(--border-radius);
 
-  &[data-determinate=false] .progress {
+  &[data-determinate="false"] .progress {
     animation: 0.75s ease-in-out both infinite slide;
   }
 }

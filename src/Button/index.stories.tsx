@@ -47,7 +47,6 @@ const Template: React.FC<TemplateProps> = (args) => {
           Button Destructive Ghost
         </Button>
 
-
         <Button size="medium" variant="default" color="primary" disabled>
           Button Primary Default Disabled
         </Button>

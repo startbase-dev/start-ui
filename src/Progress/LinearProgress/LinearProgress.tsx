@@ -31,7 +31,7 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
         width={size}
         height={trackSize}
         style={{
-          "--border-radius": `${borderRadius}px`
+          "--border-radius": `${borderRadius}px`,
         }}
         role="progressbar"
         aria-valuenow={value}
@@ -81,17 +81,16 @@ function toPercentage(value: number, max?: number, min?: number) {
   if (!max || !min) return `${Math.round(value * 100)}%`;
 
   if (max === min) {
-    throw new Error('Max and min values cannot be the same.');
-  };
-
+    throw new Error("Max and min values cannot be the same.");
+  }
 
   const percentage = ((value - min) / (max - min)) * 100;
   const roundedPercentage = Math.round(percentage);
   return `${roundedPercentage}%`;
-};
+}
 
 function normalizeValue(value: number, max: number, min: number) {
   return (value - min) / (max - min);
-};
+}
 
 export default Index;

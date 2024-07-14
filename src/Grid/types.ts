@@ -6,8 +6,8 @@ export interface IndexProps extends React.AllHTMLAttributes<HTMLDivElement> {
     lgMinWidth?: string;
     xlMinWidth?: string;
   };
-};
+}
 
 export interface TemplateProps extends IndexProps {
   title: string;
-};
+}

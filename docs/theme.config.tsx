@@ -3,7 +3,11 @@ import { DocsThemeConfig } from "nextra-theme-docs";
 import Logo from "./pages/components/Logo";
 
 const config: DocsThemeConfig = {
-  logo: <span><Logo /></span>,
+  logo: (
+    <span>
+      <Logo />
+    </span>
+  ),
   project: {
     link: "https://github.com/startbase-dev/start-ui",
   },

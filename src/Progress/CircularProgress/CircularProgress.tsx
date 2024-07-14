@@ -21,7 +21,9 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
   const center = size * 0.5;
   const radius = size * 0.4;
   const circumference = 2 * Math.PI * radius;
-  const normalizedValue = determinate ? normalizeValue(value, max, min) : IndeterminateValue;
+  const normalizedValue = determinate
+    ? normalizeValue(value, max, min)
+    : IndeterminateValue;
   const offset = circumference - circumference * normalizedValue;
   const percentage = toPercentage(normalizedValue);
   const labelAndDeterminate = determinate && progressLabel;
@@ -75,17 +77,16 @@ function toPercentage(value: number, max?: number, min?: number) {
   if (!max || !min) return `${Math.round(value * 100)}%`;
 
   if (max === min) {
-    throw new Error('Max and min values cannot be the same.');
-  };
-
+    throw new Error("Max and min values cannot be the same.");
+  }
 
   const percentage = ((value - min) / (max - min)) * 100;
   const roundedPercentage = Math.round(percentage);
   return `${roundedPercentage}%`;
-};
+}
 
 function normalizeValue(value: number, max: number, min: number) {
   return (value - min) / (max - min);
-};
+}
 
 export default Index;

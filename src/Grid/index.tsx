@@ -4,19 +4,13 @@ import clsx from "clsx";
 import type { IndexProps } from "./types";
 
 const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
-  const {
-    children,
-    classNames = [],
-    breakpoints = {},
-    style,
-    ...rest
-  } = props;
+  const { children, classNames = [], breakpoints = {}, style, ...rest } = props;
 
   const {
     smMinWidth = "576px",
     mdMinWidth = "768px",
     lgMinWidth = "992px",
-    xlMinWidth = "1200px"
+    xlMinWidth = "1200px",
   } = breakpoints;
 
   return (

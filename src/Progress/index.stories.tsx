@@ -12,7 +12,7 @@ const Template: React.FC<TemplateProps> = (args) => {
         style={{
           display: "flex",
           justifyContent: "space-evenly",
-          flexDirection: "column"
+          flexDirection: "column",
         }}
       >
         <Progress value={value} {...rest} />
@@ -32,14 +32,14 @@ ProgressComponent.args = {
   variant: "circular",
   progressLabel: false,
   determinate: true,
-  className: ""
+  className: "",
 };
 
 export const ProgressWithVariant = Template.bind({});
 ProgressWithVariant.args = {
   ...ProgressComponent.args,
   variant: "linear",
-  size: 400
+  size: 400,
 };
 
 export const ProgressWithLabel = Template.bind({});
@@ -51,7 +51,7 @@ ProgressWithLabel.args = {
 export const ProgressWithIndeterminate = Template.bind({});
 ProgressWithIndeterminate.args = {
   ...ProgressComponent.args,
-  determinate: false
+  determinate: false,
 };
 
 const Component = {
@@ -60,9 +60,9 @@ const Component = {
   argTypes: {
     variant: {
       options: ["circular", "linear"],
-      control: "radio"
-    }
-  }
+      control: "radio",
+    },
+  },
 };
 
 export default Component;

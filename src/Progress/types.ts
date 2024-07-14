@@ -7,8 +7,8 @@ export interface IndexProps extends React.SVGAttributes<SVGSVGElement> {
   variant?: "linear" | "circular";
   progressLabel?: boolean;
   determinate?: boolean;
-};
+}
 
 export interface TemplateProps extends IndexProps {
   title: string;
-};
+}

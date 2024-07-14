@@ -14,11 +14,11 @@ interface ColumnProps extends React.AllHTMLAttributes<HTMLDivElement> {
     xl?: number;
   };
   padding?: string;
-};
+}
 
 function getWidth(span: number, columns: number) {
-  return `${span / columns * 100}%`;
-};
+  return `${(span / columns) * 100}%`;
+}
 
 export default function Column({
   children,
@@ -55,4 +55,4 @@ export default function Column({
       {children}
     </div>
   );
-};
+}
