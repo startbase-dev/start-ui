@@ -1,5 +1,6 @@
 import { createElement, forwardRef } from "react";
 import s from "./index.module.scss";
+import clsx from "clsx";
 import type { IndexProps } from "./types";
 
 const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
@@ -9,18 +10,18 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     orientation = "horizontal",
     contentAlign = "middle",
     component = "div",
-    classNames = [],
-    ...dividerProps
+    rootClassName = ""
   } = props;
 
+  const rootClassNames = clsx(s.root, rootClassName);
+
   const componentParams = {
-    className: s.root,
+    className: rootClassNames,
     ref,
     role: "separator",
     "aria-orientation": orientation,
     "data-variant": variant,
-    "data-align": contentAlign,
-    ...dividerProps,
+    "data-align": contentAlign
   };
 
   // Void elements throw error if a child is passed: https://developer.mozilla.org/en-US/docs/Glossary/Void_element

@@ -1,6 +1,6 @@
 export interface IndexProps {
-  content: string;
-  classNames?: string[];
+  children: string;
+  rootClassName?: string;
 }
 
 export interface TemplateProps extends IndexProps {

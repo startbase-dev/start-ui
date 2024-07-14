@@ -13,8 +13,11 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     invisible = false,
     showZero = false,
     max = 99,
-    classNames = [],
+    rootClassName = "",
+    countClassName = ""
   } = props;
+  const rootClassNames = clsx(s.root, rootClassName);
+  const countClassNames = clsx(s.count, countClassName);
 
   // Convert badgeContent to string and add plus sign if more than max
   function calculateContent() {
@@ -36,15 +39,14 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
 
   return (
     <div
-      className={clsx(s.root, ...classNames)}
+      className={rootClassNames}
       ref={ref}
       data-show={showBadge}
       data-color={color}
       data-variant={variant}
       data-position={position}
-      {...props}
     >
-      <span className={s.badge}>{content}</span>
+      <span className={countClassNames}>{content}</span>
       {children}
     </div>
   );

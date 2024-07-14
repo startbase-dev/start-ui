@@ -1,4 +1,4 @@
-export interface IndexProps extends React.SVGAttributes<SVGSVGElement> {
+export interface IndexProps {
   value?: number;
   max?: number;
   min?: number;
@@ -7,6 +7,11 @@ export interface IndexProps extends React.SVGAttributes<SVGSVGElement> {
   variant?: "linear" | "circular";
   progressLabel?: boolean;
   determinate?: boolean;
+  rootClassName?: string;
+  containerClassName?: string;
+  trackClassName?: string;
+  progressClassName?: string;
+  labelClassName?: string;
 }
 
 export interface TemplateProps extends IndexProps {

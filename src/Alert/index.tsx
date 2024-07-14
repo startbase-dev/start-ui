@@ -14,9 +14,17 @@ const Index = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
     icon = true,
     alertTitle = false,
     open = true,
-    classnames = [],
-    ...rest
+    rootClassName = "",
+    iconClassName = "",
+    bodyClassName = "",
+    titleClassName = "",
+    textClassName = ""
   } = props;
+  const rootClassNames = clsx(s.root, rootClassName);
+  const iconClassNames = clsx(iconClassName);
+  const bodyClassNames = clsx(s.body, bodyClassName);
+  const titleClassNames = clsx(s.title, titleClassName);
+  const textClassNames = clsx(textClassName);
 
   // Define aria-live prop
   const isAssertive = severity === "error" || severity === "warning";
@@ -37,22 +45,21 @@ const Index = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
 
   return (
     <div
-      className={clsx(s.root, ...classnames)}
+      className={rootClassNames}
       ref={ref}
       role="alert"
       aria-live={ariaLive}
       data-variant={dataVariant}
       data-open={open}
-      {...rest}
     >
       {iconBoolean ? (
-        <IconSelector iconName={severity} icon={icon} size={22} />
+        <IconSelector className={iconClassNames} iconName={severity} icon={icon} size={22} />
       ) : (
         icon
       )}
-      <div className={s.body}>
-        {title && <span className={s.title}>{title}</span>}
-        <span>{children}</span>
+      <div className={bodyClassNames}>
+        {title && <span className={titleClassNames}>{title}</span>}
+        <span className={textClassNames}>{children}</span>
       </div>
       {action}
     </div>

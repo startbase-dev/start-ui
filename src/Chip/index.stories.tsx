@@ -3,9 +3,11 @@ import Chip from "./index";
 import type { TemplateProps } from "./types";
 
 const Template: React.FC<TemplateProps> = (args) => {
+  const { title, ...rest } = args;
+
   return (
     <>
-      <h2>{args.title}</h2>
+      <h2>{title}</h2>
       <div
         style={{
           display: "flex",
@@ -13,14 +15,14 @@ const Template: React.FC<TemplateProps> = (args) => {
           flexDirection: "column",
         }}
       >
-        <Chip content={args.content} classNames={args.classNames} />
+        <Chip {...rest} />
       </div>
     </>
   );
 };
 
 export const ChipComponent = Template.bind({});
-ChipComponent.args = { title: "Chip", content: "Chip", classNames: [""] };
+ChipComponent.args = { title: "Chip", children: "Chip", rootClassName: "" };
 
 const Component = {
   title: "UI/Chip",

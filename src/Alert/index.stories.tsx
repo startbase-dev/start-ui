@@ -32,7 +32,11 @@ AlertComponent.args = {
   icon: true,
   alertTitle: false,
   open: true,
-  classnames: [""],
+  rootClassName: "",
+  iconClassName: "",
+  bodyClassName: "",
+  titleClassName: "",
+  textClassName: "",
 };
 
 export const AlertWithSeverity = Template.bind({});

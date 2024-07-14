@@ -18,7 +18,8 @@ export interface IndexProps {
   invisible?: boolean;
   showZero?: boolean;
   max?: number;
-  classNames?: string[];
+  rootClassName?: string;
+  countClassName?: string;
 }
 
 export interface TemplateProps extends IndexProps {

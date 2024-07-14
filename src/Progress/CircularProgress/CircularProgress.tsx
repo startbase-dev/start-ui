@@ -12,10 +12,18 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
     trackSize = 10,
     progressLabel = false,
     determinate = true,
-    className = "",
-    ...rest
+    rootClassName = "",
+    containerClassName = "",
+    trackClassName = "",
+    progressClassName = "",
+    labelClassName = "",
   } = props;
-  const classnames = className.split(" ");
+
+  const rootClassNames = clsx(s.root, rootClassName);
+  const containerClassNames = clsx(s.container, containerClassName);
+  const trackClassNames = clsx(s.track, trackClassName);
+  const progressClassNames = clsx(s.progress, progressClassName);
+  const labelClassNames = clsx(s.label, labelClassName);
 
   const IndeterminateValue = 0.25;
   const center = size * 0.5;
@@ -29,9 +37,9 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
   const labelAndDeterminate = determinate && progressLabel;
 
   return (
-    <div className={s.container}>
+    <div className={containerClassNames}>
       <svg
-        className={clsx([s.root, ...classnames])}
+        className={rootClassNames}
         ref={ref}
         width={size}
         height={size}
@@ -42,10 +50,9 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
         aria-valuemin={min}
         aria-valuetext={percentage}
         data-determinate={determinate}
-        {...rest}
       >
         <circle
-          className={s.track}
+          className={trackClassNames}
           r={radius}
           cx={center}
           cy={center}
@@ -54,7 +61,7 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
           strokeWidth={trackSize}
         ></circle>
         <circle
-          className={s.progress}
+          className={progressClassNames}
           r={radius}
           cx={center}
           cy={center}
@@ -66,7 +73,7 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
           strokeLinecap="round"
         ></circle>
       </svg>
-      {labelAndDeterminate && <span className={s.label}>{percentage}</span>}
+      {labelAndDeterminate && <span className={labelClassNames}>{percentage}</span>}
     </div>
   );
 });

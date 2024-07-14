@@ -32,7 +32,11 @@ ProgressComponent.args = {
   variant: "circular",
   progressLabel: false,
   determinate: true,
-  className: "",
+  rootClassName: "",
+  containerClassName: "",
+  trackClassName: "",
+  progressClassName: "",
+  labelClassName: "",
 };
 
 export const ProgressWithVariant = Template.bind({});

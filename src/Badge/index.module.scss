@@ -4,7 +4,7 @@
   position: relative;
 }
 
-.badge {
+.count {
   display: flex;
   align-items: center;
   place-content: center center;
@@ -32,71 +32,71 @@
 }
 
 /** POSITION PROP */
-.root[data-position="right"] .badge {
+.root[data-position="right"] .count {
   top: 50%;
   right: 0;
 }
 
-.root[data-position="bottom-right"] .badge {
+.root[data-position="bottom-right"] .count {
   top: 100%;
   right: 0;
 }
 
-.root[data-position="bottom"] .badge {
+.root[data-position="bottom"] .count {
   top: 100%;
   right: 50%;
 }
 
-.root[data-position="bottom-left"] .badge {
+.root[data-position="bottom-left"] .count {
   top: 100%;
   right: 100%;
 }
 
-.root[data-position="left"] .badge {
+.root[data-position="left"] .count {
   top: 50%;
   right: 100%;
 }
 
-.root[data-position="top-left"] .badge {
+.root[data-position="top-left"] .count {
   top: 0;
   right: 100%;
 }
 
-.root[data-position="top"] .badge {
+.root[data-position="top"] .count {
   top: 0;
   right: 50%;
 }
 
-.root[data-position="top-right"] .badge {
+.root[data-position="top-right"] .count {
   top: 0;
   right: 0;
 }
 
 /** SHOW PROP */
-.root[data-show="false"] .badge {
+.root[data-show="false"] .count {
   display: none;
   opacity: 0;
 }
 
 /** COLOR PROP */
-.root[data-color="primary"] .badge {
+.root[data-color="primary"] .count {
   background-color: var(--primary);
 }
 
-.root[data-color="secondary"] .badge {
+.root[data-color="secondary"] .count {
   background-color: var(--secondary);
 }
 
-.root[data-color="success"] .badge {
+.root[data-color="success"] .count {
   background-color: var(--success);
 }
 
-.root[data-color="error"] .badge {
+.root[data-color="error"] .count {
   background-color: var(--error);
 }
 
 /** VARIANT PROP */
-.root[data-variant="dot"] .badge {
+.root[data-variant="dot"] .count {
   width: 8px;
   height: 8px;
   min-width: unset;

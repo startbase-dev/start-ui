@@ -1,5 +1,6 @@
-export interface IndexProps extends React.AllHTMLAttributes<HTMLDivElement> {
-  classNames?: string[];
+export interface IndexProps {
+  children?: React.ReactNode;
+  rootClassName?: string;
   breakpoints?: {
     smMinWidth?: string;
     mdMinWidth?: string;

@@ -2,14 +2,16 @@ import React from "react";
 import s from "./Row.module.scss";
 import clsx from "clsx";
 
-interface RowProps extends React.AllHTMLAttributes<HTMLDivElement> {
+interface RowProps {
   children?: React.ReactNode;
-  classNames?: string[];
+  rootClassName?: string;
 }
 
-export default function Row({ children, classNames = [], ...rest }: RowProps) {
+export default function Row({ children, rootClassName = "" }: RowProps) {
+  const rootClassNames = clsx(s.root, rootClassName);
+
   return (
-    <div className={clsx([s.root, ...classNames])} {...rest}>
+    <div className={rootClassNames}>
       {children}
     </div>
   );

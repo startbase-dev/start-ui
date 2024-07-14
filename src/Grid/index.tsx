@@ -4,7 +4,12 @@ import clsx from "clsx";
 import type { IndexProps } from "./types";
 
 const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
-  const { children, classNames = [], breakpoints = {}, style, ...rest } = props;
+  const {
+    children,
+    rootClassName = "",
+    breakpoints = {}
+  } = props;
+  const rootClassNames = clsx(s.root, rootClassName);
 
   const {
     smMinWidth = "576px",
@@ -15,11 +20,9 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
 
   return (
     <div
-      className={clsx([s.root, ...classNames])}
+      className={rootClassNames}
       ref={ref}
-      {...rest}
       style={{
-        ...style,
         "--sm-min-width": smMinWidth,
         "--md-min-width": mdMinWidth,
         "--lg-min-width": lgMinWidth,
