@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import s from "./index.module.scss";
+import s from "./Alert.module.scss";
 import IconSelector from "./IconSelector";
 import clsx from "clsx";
 import type { AlertProps } from "./types";
