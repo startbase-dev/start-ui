@@ -62,7 +62,7 @@ export default defineConfig({
     sassPlugin({
       filter: /\.module\.scss$/,
       transform: postcssModules({
-        generateScopedName: "[hash:base64:8]--[local]",
+        generateScopedName: "SUI-[name]-[local]-[hash:base64:5]",
         localsConvention: "camelCaseOnly",
       }),
     }),
