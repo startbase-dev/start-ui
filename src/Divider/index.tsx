@@ -1,5 +1,5 @@
 import { createElement, forwardRef } from "react";
-import s from "./index.module.scss";
+import s from "./Divider.module.scss";
 import type { IndexProps } from "./types";
 
 const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {

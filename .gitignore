@@ -74,7 +74,8 @@ package-lock.json
 /Typography
 
 /index.js
-/index.css
+/styles.css
+/variables.css
 /index.mjs
 
 *storybook.log

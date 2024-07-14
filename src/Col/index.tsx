@@ -1,13 +1,58 @@
-import React, { forwardRef } from "react";
+import React from "react";
+import s from "./Col.module.scss";
+import clsx from "clsx";
 
-import s from "./index.module.scss";
+interface ColumnProps extends React.AllHTMLAttributes<HTMLDivElement> {
+  children?: React.ReactNode;
+  classNames?: string[];
+  span?: number;
+  columns?: number;
+  spanSizes?: {
+    sm?: number;
+    md?: number;
+    lg?: number;
+    xl?: number;
+  };
+  padding?: string;
+}
 
-interface IndexProps {}
+function getWidth(span: number, columns: number) {
+  return `${(span / columns) * 100}%`;
+}
 
-const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
-  return <div className={s.root} ref={ref} {...props}></div>;
-});
+export default function Index({
+  children,
+  classNames = [],
+  span = 12,
+  columns = 12,
+  spanSizes = {},
+  style = {},
+  padding = "8px",
+  ...rest
+}: ColumnProps) {
+  const { sm, md, lg, xl } = spanSizes;
 
-Index.displayName = "Col";
+  const baseWidth = getWidth(span, columns);
+  const smWidth = sm ? getWidth(sm, columns) : baseWidth;
+  const mdWidth = md ? getWidth(md, columns) : baseWidth;
+  const lgWidth = lg ? getWidth(lg, columns) : baseWidth;
+  const xlWidth = xl ? getWidth(xl, columns) : baseWidth;
 
-export default Index;
+  return (
+    <div
+      className={clsx([s.root, ...classNames])}
+      style={{
+        ...style,
+        "--base-width": baseWidth,
+        "--sm-width": smWidth,
+        "--md-width": mdWidth,
+        "--lg-width": lgWidth,
+        "--xl-width": xlWidth,
+        "--padding": padding,
+      }}
+      {...rest}
+    >
+      {children}
+    </div>
+  );
+}

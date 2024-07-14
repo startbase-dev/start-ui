@@ -1,6 +1,6 @@
 import React from "react";
 // eslint-disable-next-line css-modules/no-unused-class
-import s from "../index.module.scss";
+import s from "../Skeleton.module.scss";
 import { SkeletonButtonProps } from "../types";
 
 const SkeletonButton: React.FC<SkeletonButtonProps> = ({

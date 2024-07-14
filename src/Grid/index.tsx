@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import s from "./index.module.scss";
+import s from "./Grid.module.scss";
 import clsx from "clsx";
 import type { IndexProps } from "./types";
 
@@ -31,6 +31,6 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
   );
 });
 
-Index.displayName = "Dropdown";
+Index.displayName = "Grid";
 
 export default Index;

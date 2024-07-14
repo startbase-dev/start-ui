@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 
-import s from "./index.module.scss";
+import s from "./Dropdown.module.scss";
 
 interface IndexProps {}
 

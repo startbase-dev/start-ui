@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import s from "./index.module.scss";
+import s from "./Chip.module.scss";
 import clsx from "clsx";
 import type { IndexProps } from "./types";
 

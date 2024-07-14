@@ -2,7 +2,7 @@ import React, { ButtonHTMLAttributes, forwardRef, ReactNode } from "react";
 import cx from "clsx";
 
 // eslint-disable-next-line css-modules/no-unused-class
-import s from "./index.module.scss";
+import s from "./Button.module.scss";
 import Progress from "../Progress";
 
 type ButtonProps = {
