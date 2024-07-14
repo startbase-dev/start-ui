@@ -54,7 +54,7 @@ package-lock.json
 /Chip
 /Col
 /Collapsible
-/Container
+/Grid
 /Countdown
 /DataTable
 /Divider
@@ -74,7 +74,8 @@ package-lock.json
 /Typography
 
 /index.js
-/index.css
+/styles.css
+/variables.css
 /index.mjs
 
 *storybook.log

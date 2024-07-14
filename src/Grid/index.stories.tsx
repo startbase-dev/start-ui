@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "./index";
-import Row from "./Row/Row";
-import Column from "./Column/Column";
+import Row from "../Row";
+import Col from "../Col";
 import type { TemplateProps } from "./types";
 
 const Template: React.FC<TemplateProps> = (args) => {
@@ -17,13 +17,13 @@ const Template: React.FC<TemplateProps> = (args) => {
       >
         <Grid>
           <Row>
-            <Column span={4}>{`Column 1 (4/12)`}</Column>
-            <Column span={4}>{`Column 2 (4/12)`}</Column>
-            <Column span={4}>{`Column 3 (4/12)`}</Column>
+            <Col span={4}>{`Column 1 (4/12)`}</Col>
+            <Col span={4}>{`Column 2 (4/12)`}</Col>
+            <Col span={4}>{`Column 3 (4/12)`}</Col>
           </Row>
           <Row>
-            <Column span={6}>{`Column 1 (6/12)`}</Column>
-            <Column span={6}>{`Column 2 (6/12)`}</Column>
+            <Col span={6}>{`Column 1 (6/12)`}</Col>
+            <Col span={6}>{`Column 2 (6/12)`}</Col>
           </Row>
         </Grid>
       </div>
@@ -43,23 +43,23 @@ const TemplateWithPadding: React.FC<TemplateProps> = (args) => (
     >
       <Grid>
         <Row>
-          <Column span={4} padding="24px">
+          <Col span={4} padding="24px">
             {`Column 1 (4/12)`}
-          </Column>
-          <Column span={4} padding="24px">
+          </Col>
+          <Col span={4} padding="24px">
             {`Column 2 (4/12)`}
-          </Column>
-          <Column span={4} padding="24px">
+          </Col>
+          <Col span={4} padding="24px">
             {`Column 3 (4/12)`}
-          </Column>
+          </Col>
         </Row>
         <Row>
-          <Column span={6} padding="24px">
+          <Col span={6} padding="24px">
             {`Column 1 (6/12)`}
-          </Column>
-          <Column span={6} padding="24px">
+          </Col>
+          <Col span={6} padding="24px">
             {`Column 2 (6/12)`}
-          </Column>
+          </Col>
         </Row>
       </Grid>
     </div>
@@ -78,35 +78,35 @@ const TemplateWithResponsive: React.FC<TemplateProps> = (args) => (
     >
       <Grid>
         <Row>
-          <Column
+          <Col
             span={12}
             spanSizes={{ sm: 12, md: 12, lg: 6, xl: 4 }}
             padding="24px"
           >
             {`Column 1 (4/12)`}
-          </Column>
-          <Column
+          </Col>
+          <Col
             span={12}
             spanSizes={{ sm: 12, md: 12, lg: 6, xl: 4 }}
             padding="24px"
           >
             {`Column 2 (4/12)`}
-          </Column>
-          <Column
+          </Col>
+          <Col
             span={12}
             spanSizes={{ sm: 12, md: 12, lg: 6, xl: 4 }}
             padding="24px"
           >
             {`Column 3 (4/12)`}
-          </Column>
+          </Col>
         </Row>
         <Row>
-          <Column span={6} padding="24px">
+          <Col span={6} padding="24px">
             {`Column 1 (6/12)`}
-          </Column>
-          <Column span={6} padding="24px">
+          </Col>
+          <Col span={6} padding="24px">
             {`Column 2 (6/12)`}
-          </Column>
+          </Col>
         </Row>
       </Grid>
     </div>

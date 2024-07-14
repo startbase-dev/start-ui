@@ -1,6 +1,6 @@
 import React from "react";
 // eslint-disable-next-line css-modules/no-unused-class
-import s from "../index.module.scss";
+import s from "../Skeleton.module.scss";
 import { SkeletonAvatarProps } from "../types";
 
 const SkeletonAvatar: React.FC<SkeletonAvatarProps> = ({ size = "50px" }) => {

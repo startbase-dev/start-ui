@@ -1,5 +1,5 @@
 import { createElement, forwardRef } from "react";
-import s from "./index.module.scss";
+import s from "./Divider.module.scss";
 import clsx from "clsx";
 import type { IndexProps } from "./types";
 

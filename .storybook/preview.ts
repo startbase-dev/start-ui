@@ -1,4 +1,4 @@
-import "../src/style/globals.scss";
+import "../src/style/variables.scss";
 
 const preview = {
   parameters: {

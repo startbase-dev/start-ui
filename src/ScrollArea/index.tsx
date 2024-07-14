@@ -1,5 +1,5 @@
 import React, { forwardRef, CSSProperties } from "react";
-import s from "./index.module.scss";
+import s from "./ScrollArea.module.scss";
 import { IndexProps } from "./types";
 
 const ScrollArea = forwardRef<HTMLDivElement, IndexProps>(

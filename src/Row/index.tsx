@@ -1,13 +1,18 @@
-import React, { forwardRef } from "react";
+import React from "react";
+import s from "./Row.module.scss";
+import clsx from "clsx";
 
-import s from "./index.module.scss";
+interface RowProps {
+  children?: React.ReactNode;
+  rootClassName?: string;
+}
 
-interface IndexProps {}
+export default function Row({ children, rootClassName = "" }: RowProps) {
+  const rootClassNames = clsx(s.root, rootClassName);
 
-const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
-  return <div className={s.root} ref={ref} {...props}></div>;
-});
-
-Index.displayName = "Row";
-
-export default Index;
+  return (
+    <div className={rootClassNames}>
+      {children}
+    </div>
+  );
+}

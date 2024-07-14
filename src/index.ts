@@ -7,7 +7,7 @@ import BentoCard from "./BentoCard";
 import Chip from "./Chip";
 import Col from "./Col";
 import Collapsible from "./Collapsible";
-import Container from "./Container";
+import Grid from "./Grid";
 import Countdown from "./Countdown";
 import DataTable from "./DataTable";
 import Divider from "./Divider";
@@ -17,7 +17,17 @@ import Popover from "./Popover";
 import Progress from "./Progress";
 import Row from "./Row";
 import ScrollArea from "./ScrollArea";
-import * as Skeleton from "./Skeleton";
+import {
+  SkeletonAvatar,
+  SkeletonButton,
+  SkeletonParagraph,
+  SkeletonTable,
+  SkeletonCard,
+  SkeletonList,
+  SkeletonImage,
+  SkeletonInput,
+} from "./Skeleton";
+
 import Stepper from "./Stepper";
 import Tab from "./Tab";
 import Table from "./Table";
@@ -26,7 +36,7 @@ import ToggleGroup from "./ToggleGroup";
 import Tooltip from "./Tooltip";
 import Typography from "./Typography";
 
-import "./style/globals.scss";
+import "./style/variables.scss";
 
 export {
   Accordion,
@@ -38,7 +48,7 @@ export {
   Chip,
   Col,
   Collapsible,
-  Container,
+  Grid,
   Countdown,
   DataTable,
   Divider,
@@ -48,7 +58,14 @@ export {
   Progress,
   Row,
   ScrollArea,
-  Skeleton,
+  SkeletonAvatar,
+  SkeletonButton,
+  SkeletonParagraph,
+  SkeletonTable,
+  SkeletonCard,
+  SkeletonList,
+  SkeletonImage,
+  SkeletonInput,
   Stepper,
   Tab,
   Table,

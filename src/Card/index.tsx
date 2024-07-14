@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 
-import s from "./index.module.scss";
+import s from "./Card.module.scss";
 
 interface IndexProps {}
 
