@@ -2,7 +2,7 @@
   "name": "@start-base/start-ui",
   "author": "Start-Base",
   "description": "",
-  "version": "1.9.6",
+  "version": "0.0.5-alpha",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -11,8 +11,8 @@
   "files": [
     "./index.js",
     "./index.mjs",
-    "./style.css",
-    "./.css",
+    "./styles.css",
+    "./variables.css",
     "Accordion",
     "Alert",
     "Badge",
