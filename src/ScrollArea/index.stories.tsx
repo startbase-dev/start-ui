@@ -27,7 +27,7 @@ const Template: React.FC<TemplateProps> = (args) => {
             style={{
               height: orientation === "vertical" ? "500px" : "auto",
               width: orientation === "horizontal" ? "1000px" : "auto",
-              backgroundColor: "var(--gray-100)",
+              backgroundColor: "var(--sui-gray-100)",
               padding: "16px",
             }}
           >

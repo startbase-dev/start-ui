@@ -2,6 +2,7 @@
   display: flex;
   align-self: center;
   position: relative;
+  font-family: var(--sui-font-family);
 }
 
 .count {
@@ -12,8 +13,8 @@
   top: 0;
   right: 0;
   transform: translate(50%, -50%);
-  color: var(--white);
-  background-color: var(--primary);
+  color: var(--sui-white);
+  background-color: var(--sui-primary);
   height: 20px;
   min-width: 20px;
   border-radius: 10px;
@@ -80,19 +81,19 @@
 
 /** COLOR PROP */
 .root[data-color="primary"] .count {
-  background-color: var(--primary);
+  background-color: var(--sui-primary);
 }
 
 .root[data-color="secondary"] .count {
-  background-color: var(--secondary);
+  background-color: var(--sui-secondary);
 }
 
 .root[data-color="success"] .count {
-  background-color: var(--success);
+  background-color: var(--sui-success);
 }
 
 .root[data-color="error"] .count {
-  background-color: var(--error);
+  background-color: var(--sui-error);
 }
 
 /** VARIANT PROP */

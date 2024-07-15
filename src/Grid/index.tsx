@@ -19,11 +19,11 @@ const Index = forwardRef<HTMLDivElement, GridProps>((props, ref) => {
       className={rootClassNames}
       ref={ref}
       style={{
-        "--sm-min-width": smMinWidth,
-        "--md-min-width": mdMinWidth,
-        "--lg-min-width": lgMinWidth,
-        "--xl-min-width": xlMinWidth,
-        ...style
+        "--sui-sm-min-width": smMinWidth,
+        "--sui-md-min-width": mdMinWidth,
+        "--sui-lg-min-width": lgMinWidth,
+        "--sui-xl-min-width": xlMinWidth,
+        ...style,
       }}
       {...rest}
     >

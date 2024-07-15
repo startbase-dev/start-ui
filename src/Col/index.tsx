@@ -44,13 +44,13 @@ export default function Column({
     <div
       className={rootClassNames}
       style={{
-        "--base-width": baseWidth,
-        "--sm-width": smWidth,
-        "--md-width": mdWidth,
-        "--lg-width": lgWidth,
-        "--xl-width": xlWidth,
-        "--padding": padding,
-        ...style
+        "--sui-base-width": baseWidth,
+        "--sui-sm-width": smWidth,
+        "--sui-md-width": mdWidth,
+        "--sui-lg-width": lgWidth,
+        "--sui-xl-width": xlWidth,
+        "--sui-padding": padding,
+        ...style,
       }}
       {...rest}
     >

@@ -1,11 +1,12 @@
 .root {
   display: flex;
-  gap: var(--gap);
-  padding: var(--padding);
-  border-radius: var(--border-radius-medium);
-  border: 1px solid var(--transparent);
-  color: var(--success);
-  background: var(--success-200);
+  gap: var(--sui-gap);
+  padding: var(--sui-padding);
+  border-radius: var(--sui-border-radius-medium);
+  border: 1px solid var(--sui-transparent);
+  color: var(--sui-success);
+  background: var(--sui-success-200);
+  font-family: var(--sui-font-family);
 }
 
 .body {
@@ -14,15 +15,15 @@
   flex-direction: column;
   justify-content: center;
   font-weight: 400;
-  font-size: var(--text-fs);
-  line-height: var(--text-lh);
+  font-size: var(--sui-text-fs);
+  line-height: var(--sui-text-lh);
 }
 
 .title {
   font-weight: 600;
-  font-size: var(--text-large-fs);
-  line-height: var(--text-large-lh);
-  margin-bottom: var(--text-margin);
+  font-size: var(--sui-text-large-fs);
+  line-height: var(--sui-text-large-lh);
+  margin-bottom: var(--sui-text-margin);
   text-transform: capitalize;
 }
 
@@ -32,83 +33,83 @@
 
 /** VARIANT DEFAULT */
 .root[data-variant="default-success"] {
-  color: var(--success-d600);
-  background-color: var(--success-200);
+  color: var(--sui-success-d600);
+  background-color: var(--sui-success-200);
 }
 
 .root[data-variant="default-success"] svg {
-  fill: var(--success-d600);
+  fill: var(--sui-success-d600);
 }
 
 .root[data-variant="default-info"] {
-  color: var(--info-d600);
-  background-color: var(--info-200);
+  color: var(--sui-info-d600);
+  background-color: var(--sui-info-200);
 }
 
 .root[data-variant="default-info"] svg {
-  fill: var(--info-d600);
+  fill: var(--sui-info-d600);
 }
 
 .root[data-variant="default-warning"] {
-  color: var(--warning-d600);
-  background-color: var(--warning-200);
+  color: var(--sui-warning-d600);
+  background-color: var(--sui-warning-200);
 }
 
 .root[data-variant="default-warning"] svg {
-  fill: var(--warning-d600);
+  fill: var(--sui-warning-d600);
 }
 
 .root[data-variant="default-error"] {
-  color: var(--error-d600);
-  background-color: var(--error-200);
+  color: var(--sui-error-d600);
+  background-color: var(--sui-error-200);
 }
 
 .root[data-variant="default-error"] svg {
-  fill: var(--error-d600);
+  fill: var(--sui-error-d600);
 }
 
 /** VARIANT FILLED */
 .root[data-variant="filled-success"] {
-  color: var(--white);
-  background-color: var(--success);
+  color: var(--sui-white);
+  background-color: var(--sui-success);
 }
 
 .root[data-variant="filled-info"] {
-  color: var(--white);
-  background-color: var(--info);
+  color: var(--sui-white);
+  background-color: var(--sui-info);
 }
 
 .root[data-variant="filled-warning"] {
-  color: var(--white);
-  background-color: var(--warning);
+  color: var(--sui-white);
+  background-color: var(--sui-warning);
 }
 
 .root[data-variant="filled-error"] {
-  color: var(--white);
-  background-color: var(--error);
+  color: var(--sui-white);
+  background-color: var(--sui-error);
 }
 
 /** VARIANT OUTLINED */
 .root[data-variant="outlined-success"] {
-  color: var(--success-d600);
-  background-color: var(--success-50);
-  border: 1px solid var(--success);
+  color: var(--sui-success-d600);
+  background-color: var(--sui-success-50);
+  border: 1px solid var(--sui-success);
 }
 
 .root[data-variant="outlined-info"] {
-  color: var(--info-d600);
-  background-color: var(--info-50);
-  border: 1px solid var(--info-d600);
+  color: var(--sui-info-d600);
+  background-color: var(--sui-info-50);
+  border: 1px solid var(--sui-info-d600);
 }
 
 .root[data-variant="outlined-warning"] {
-  color: var(--warning-d600);
-  background-color: var(--warning-50);
-  border: 1px solid var(--warning-d600);
+  color: var(--sui-warning-d600);
+  background-color: var(--sui-warning-50);
+  border: 1px solid var(--sui-warning-d600);
 }
 
 .root[data-variant="outlined-error"] {
-  color: var(--error-d600);
-  background-color: var(--error-50);
-  border: 1px solid var(--warning-d600);
+  color: var(--sui-error-d600);
+  background-color: var(--sui-error-50);
+  border: 1px solid var(--sui-warning-d600);
 }
