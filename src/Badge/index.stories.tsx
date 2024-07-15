@@ -31,7 +31,7 @@ BadgeComponent.args = {
   invisible: false,
   showZero: false,
   max: 99,
-  rootClassName: "",
+  className: "",
   countClassName: "",
   children: (
     <span

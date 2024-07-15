@@ -10,7 +10,6 @@ export interface AlertProps extends React.AllHTMLAttributes<HTMLDivElement> {
   alertTitle?: string | boolean;
   open?: boolean;
   children?: React.ReactNode;
-  rootClassName?: string;
   iconClassName?: string;
   bodyClassName?: string;
   titleClassName?: string;

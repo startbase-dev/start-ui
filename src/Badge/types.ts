@@ -18,7 +18,6 @@ export interface BadgeProps extends React.AllHTMLAttributes<HTMLDivElement> {
   invisible?: boolean;
   showZero?: boolean;
   max?: number;
-  rootClassName?: string;
   countClassName?: string;
 }
 

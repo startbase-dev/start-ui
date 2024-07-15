@@ -22,7 +22,7 @@ const Template: React.FC<TemplateProps> = (args) => {
 };
 
 export const ChipComponent = Template.bind({});
-ChipComponent.args = { title: "Chip", children: "Chip", rootClassName: "" };
+ChipComponent.args = { title: "Chip", children: "Chip", className: "" };
 
 const Component = {
   title: "UI/Chip",

@@ -4,15 +4,14 @@ import clsx from "clsx";
 
 interface RowProps extends React.AllHTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
-  rootClassName?: string;
 }
 
 export default function Row({
   children,
-  rootClassName = "",
+  className = "",
   ...rest
 }: RowProps) {
-  const rootClassNames = clsx(s.root, rootClassName);
+  const rootClassNames = clsx(s.root, className);
 
   return (
     <div className={rootClassNames} {...rest}>

@@ -7,7 +7,7 @@ export interface ProgressProps extends React.SVGAttributes<SVGSVGElement> {
   variant?: "linear" | "circular";
   progressLabel?: boolean;
   determinate?: boolean;
-  rootClassName?: string;
+  className?: string;
   containerClassName?: string;
   trackClassName?: string;
   progressClassName?: string;

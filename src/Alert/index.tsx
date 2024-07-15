@@ -14,14 +14,14 @@ const Index = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
     icon = true,
     alertTitle = false,
     open = true,
-    rootClassName = "",
+    className = "",
     iconClassName = "",
     bodyClassName = "",
     titleClassName = "",
     textClassName = "",
     ...rest
   } = props;
-  const rootClassNames = clsx(s.root, rootClassName);
+  const rootClassNames = clsx(s.root, className);
   const iconClassNames = clsx(iconClassName);
   const bodyClassNames = clsx(s.body, bodyClassName);
   const titleClassNames = clsx(s.title, titleClassName);

@@ -9,7 +9,6 @@ export interface DividerProps extends React.AllHTMLAttributes<HTMLDivElement> {
   orientation?: Orientation;
   contentAlign?: ContentAlign;
   component?: Component;
-  rootClassName?: string;
 }
 
 export interface TemplateProps extends DividerProps {

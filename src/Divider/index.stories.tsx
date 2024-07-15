@@ -34,7 +34,7 @@ DividerComponent.args = {
   orientation: "horizontal",
   contentAlign: "center",
   component: "div",
-  rootClassName: "",
+  className: "",
   children: "",
 };
 

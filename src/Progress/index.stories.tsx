@@ -32,7 +32,7 @@ ProgressComponent.args = {
   variant: "circular",
   progressLabel: false,
   determinate: true,
-  rootClassName: "",
+  className: "",
   containerClassName: "",
   trackClassName: "",
   progressClassName: "",

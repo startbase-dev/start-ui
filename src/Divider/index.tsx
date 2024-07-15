@@ -10,11 +10,11 @@ const Index = forwardRef<HTMLDivElement, DividerProps>((props, ref) => {
     orientation = "horizontal",
     contentAlign = "middle",
     component = "div",
-    rootClassName = "",
+    className = "",
     ...rest
   } = props;
 
-  const rootClassNames = clsx(s.root, rootClassName);
+  const rootClassNames = clsx(s.root, className);
 
   const componentParams = {
     className: rootClassNames,

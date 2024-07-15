@@ -13,11 +13,11 @@ const Index = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {
     invisible = false,
     showZero = false,
     max = 99,
-    rootClassName = "",
+    className = "",
     countClassName = "",
     ...rest
   } = props;
-  const rootClassNames = clsx(s.root, rootClassName);
+  const rootClassNames = clsx(s.root, className);
   const countClassNames = clsx(s.count, countClassName);
 
   // Convert badgeContent to string and add plus sign if more than max

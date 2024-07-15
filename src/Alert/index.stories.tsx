@@ -32,7 +32,7 @@ AlertComponent.args = {
   icon: true,
   alertTitle: false,
   open: true,
-  rootClassName: "",
+  className: "",
   iconClassName: "",
   bodyClassName: "",
   titleClassName: "",
