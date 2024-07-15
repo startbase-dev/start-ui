@@ -52,7 +52,7 @@ const Index = forwardRef<HTMLButtonElement, ButtonProps>(
           <Progress
             value={1}
             determinate={false}
-            trackSize={size === "small" ? 1 : 2}
+            size={size === "small" ? 16 : 24}
           />
         ) : (
           children

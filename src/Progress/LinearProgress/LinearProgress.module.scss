@@ -13,10 +13,11 @@
   align-items: center;
   gap: 8px;
   width: fit-content;
+  font-family: var(--sui-font-family);
 }
 
 .root {
-  border-radius: var(--border-radius);
+  border-radius: var(--sui-border-radius);
 
   &[data-determinate="false"] .progress {
     animation: 0.75s ease-in-out both infinite slide;
@@ -25,11 +26,11 @@
 
 .track,
 .progress {
-  color: var(--gray-200);
+  color: var(--sui-gray-200);
 }
 
 .progress {
-  color: var(--primary);
+  color: var(--sui-primary);
 }
 
 .label {

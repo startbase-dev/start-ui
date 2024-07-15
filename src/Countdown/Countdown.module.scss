@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: var(--sui-font-family);
 }
 
 .item {
@@ -43,10 +44,10 @@
 }
 
 .inBoxes {
-  border: 1px solid var(--border);
+  border: 1px solid var(--sui-border);
   padding: 10px;
   border-radius: 5px;
-  background-color: var(--black);
+  background-color: var(--sui-black);
   flex-direction: column;
   gap: 5px;
   margin-right: 12px;
@@ -58,9 +59,9 @@
 
 .inBoxes .label {
   font-size: 16px;
-  color: var(--white);
+  color: var(--sui-white);
 }
 
 .inBoxes .value {
-  color: var(--white);
+  color: var(--sui-white);
 }

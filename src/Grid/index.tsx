@@ -20,10 +20,10 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
       {...rest}
       style={{
         ...style,
-        "--sm-min-width": smMinWidth,
-        "--md-min-width": mdMinWidth,
-        "--lg-min-width": lgMinWidth,
-        "--xl-min-width": xlMinWidth,
+        "--sui-sm-min-width": smMinWidth,
+        "--sui-md-min-width": mdMinWidth,
+        "--sui-lg-min-width": lgMinWidth,
+        "--sui-xl-min-width": xlMinWidth,
       }}
     >
       {children}

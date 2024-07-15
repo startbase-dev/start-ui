@@ -6,6 +6,7 @@
   min-height: 1px;
   position: relative;
   text-align: center;
+  font-family: var(--sui-font-family);
 }
 
 .root::before,
@@ -15,7 +16,7 @@
   height: 1px;
   width: 100%;
   border: none;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--sui-border);
 }
 
 .root[data-align="start"]::before {
@@ -28,7 +29,7 @@
 
 .root:empty {
   border: none;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--sui-border);
 }
 
 .root:empty::after,
@@ -62,14 +63,14 @@
   width: 1px;
   height: 100%;
   border: none;
-  border-right: 1px solid var(--border);
+  border-right: 1px solid var(--sui-border);
 }
 
 .root[aria-orientation="vertical"]:empty {
   width: 1px;
   height: 100%;
   border: none;
-  border-right: 1px solid var(--border);
+  border-right: 1px solid var(--sui-border);
 }
 
 .root[aria-orientation="vertical"][data-align="start"]::before {

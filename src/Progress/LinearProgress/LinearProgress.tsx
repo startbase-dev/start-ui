@@ -31,7 +31,7 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
         width={size}
         height={trackSize}
         style={{
-          "--border-radius": `${borderRadius}px`,
+          "--sui-border-radius": `${borderRadius}px`,
         }}
         role="progressbar"
         aria-valuenow={value}

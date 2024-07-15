@@ -54,26 +54,27 @@
   width: 100%;
   height: 100%;
   position: relative;
-  background-color: var(--bento-card-bg);
+  background-color: var(--sui-bento-card-bg);
   border-radius: 16px;
   transition: background-color 600ms;
   line-height: 40px;
+  font-family: var(--sui-font-family);
 
   /* COLOR CODES */
-  --bento-card-bg: var(--white);
-  --bento-card-bg-active: var(--primary);
-  --bento-card-title: var(--black);
-  --bento-card-title-active: var(--white);
-  --bento-card-button-bg: var(--gray-500);
-  --bento-card-button-bg-hover: var(--gray-600);
-  --bento-card-button-icon: var(--white);
-  --bento-card-button-active-bg: var(--gray-500);
-  --bento-card-button-active-bg-hover: var(--gray-600);
-  --bento-card-button-active-icon: var(--white);
+  --sui-bento-card-bg: var(--sui-white);
+  --sui-bento-card-bg-active: var(--sui-primary);
+  --sui-bento-card-title: var(--sui-black);
+  --sui-bento-card-title-active: var(--sui-white);
+  --sui-bento-card-button-bg: var(--sui-gray-500);
+  --sui-bento-card-button-bg-hover: var(--sui-gray-600);
+  --sui-bento-card-button-icon: var(--sui-white);
+  --sui-bento-card-button-active-bg: var(--sui-gray-500);
+  --sui-bento-card-button-active-bg-hover: var(--sui-gray-600);
+  --sui-bento-card-button-active-icon: var(--sui-white);
 }
 
 .rootActive {
-  background-color: var(--bento-card-bg-active);
+  background-color: var(--sui-bento-card-bg-active);
   line-height: 24px;
 }
 
@@ -82,7 +83,7 @@
   line-height: 1.2;
   font-weight: 600;
   letter-spacing: 0.011em;
-  color: var(--bento-card-title);
+  color: var(--sui-bento-card-title);
   width: 100%;
   padding: 36px 40px;
   position: absolute;
@@ -90,7 +91,7 @@
 }
 
 .activeTitle {
-  color: var(--bento-card-title-active);
+  color: var(--sui-bento-card-title-active);
 }
 
 .layer {
@@ -116,7 +117,7 @@
 }
 
 .content {
-  color: var(--white);
+  color: var(--sui-white);
   transition:
     margin-top 600ms,
     opacity 600ms;
@@ -146,19 +147,19 @@
   font-size: 24px;
   padding: 0;
   cursor: pointer;
-  background-color: var(--bento-card-button-bg);
+  background-color: var(--sui-bento-card-button-bg);
 
   &:hover {
-    background-color: var(--bento-card-button-bg-hover);
+    background-color: var(--sui-bento-card-button-bg-hover);
   }
 }
 
 .activeButton {
   animation: rotateIn 600ms forwards;
-  background-color: var(--bento-card-button-active-bg);
+  background-color: var(--sui-bento-card-button-active-bg);
 
   &:hover {
-    background-color: var(--bento-card-button-active-bg-hover);
+    background-color: var(--sui-bento-card-button-active-bg-hover);
   }
 }
 
@@ -177,11 +178,11 @@
 .root[data-active="false"] .plusIcon {
   width: 24px;
   height: 24px;
-  color: var(--bento-card-button-icon);
+  color: var(--sui-bento-card-button-icon);
 }
 
 .root[data-active="true"] .plusIcon {
   width: 24px;
   height: 24px;
-  color: var(--bento-card-button-active-icon);
+  color: var(--sui-bento-card-button-active-icon);
 }

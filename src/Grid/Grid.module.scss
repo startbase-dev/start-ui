@@ -1,9 +1,10 @@
 .root {
   display: flex;
   flex-direction: column;
-  color: var(--sui-foreground);
-  background-color: var(--sui-background);
+  color: var(--sui-sui-foreground);
+  background-color: var(--sui-sui-background);
   box-sizing: border-box;
+  font-family: var(--sui-font-family);
 }
 
 .root > * {
