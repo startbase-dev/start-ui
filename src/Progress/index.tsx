@@ -8,9 +8,9 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
   const isVariantCircular = variant === "circular";
 
   return isVariantCircular ? (
-    <CircularProgress {...rest} ref={ref} />
+    <CircularProgress ref={ref} {...rest} />
   ) : (
-    <LinearProgress {...rest} ref={ref} />
+    <LinearProgress ref={ref} {...rest} />
   );
 });
 

@@ -46,13 +46,13 @@ const Index = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
 
   return (
     <div
-      {...rest}
       className={rootClassNames}
       ref={ref}
       role="alert"
       aria-live={ariaLive}
       data-variant={dataVariant}
       data-open={open}
+      {...rest}
     >
       {iconBoolean ? (
         <IconSelector

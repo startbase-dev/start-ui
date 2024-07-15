@@ -17,13 +17,13 @@ const Index = forwardRef<HTMLDivElement, DividerProps>((props, ref) => {
   const rootClassNames = clsx(s.root, rootClassName);
 
   const componentParams = {
-    ...rest,
     className: rootClassNames,
     ref,
     role: "separator",
     "aria-orientation": orientation,
     "data-variant": variant,
     "data-align": contentAlign,
+    ...rest,
   };
 
   // Void elements throw error if a child is passed: https://developer.mozilla.org/en-US/docs/Glossary/Void_element

@@ -8,7 +8,7 @@ const Index = forwardRef<HTMLSpanElement, ChipProps>((props, ref) => {
   const rootClassNames = clsx(s.root, rootClassName);
 
   return (
-    <span {...rest} className={rootClassNames} ref={ref}>
+    <span className={rootClassNames} ref={ref} {...rest}>
       {children}
     </span>
   );

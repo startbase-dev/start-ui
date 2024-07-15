@@ -15,7 +15,7 @@ export default function Row({
   const rootClassNames = clsx(s.root, rootClassName);
 
   return (
-    <div {...rest} className={rootClassNames}>
+    <div className={rootClassNames} {...rest}>
       {children}
     </div>
   );

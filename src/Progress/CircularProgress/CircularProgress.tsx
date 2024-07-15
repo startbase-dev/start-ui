@@ -40,7 +40,6 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
   return (
     <div className={containerClassNames}>
       <svg
-        {...rest}
         className={rootClassNames}
         ref={ref}
         width={size}
@@ -52,6 +51,7 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
         aria-valuemin={min}
         aria-valuetext={percentage}
         data-determinate={determinate}
+        {...rest}
       >
         <circle
           className={trackClassNames}

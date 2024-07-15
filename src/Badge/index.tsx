@@ -40,13 +40,13 @@ const Index = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {
 
   return (
     <div
-      {...rest}
       className={rootClassNames}
       ref={ref}
       data-show={showBadge}
       data-color={color}
       data-variant={variant}
       data-position={position}
+      {...rest}
     >
       <span className={countClassNames}>{content}</span>
       {children}

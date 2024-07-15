@@ -27,6 +27,7 @@ export default function Column({
   columns = 12,
   spanSizes = {},
   padding = "8px",
+  style,
   ...rest
 }: ColumnProps) {
   const rootClassNames = clsx(s.root, rootClassName);
@@ -41,7 +42,6 @@ export default function Column({
 
   return (
     <div
-      {...rest}
       className={rootClassNames}
       style={{
         "--base-width": baseWidth,
@@ -50,7 +50,9 @@ export default function Column({
         "--lg-width": lgWidth,
         "--xl-width": xlWidth,
         "--padding": padding,
+        ...style
       }}
+      {...rest}
     >
       {children}
     </div>
