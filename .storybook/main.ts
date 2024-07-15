@@ -37,6 +37,8 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
+    'storybook-dark-mode',
+    'storybook-addon-render-modes'
   ],
   framework: {
     name: "@storybook/react-webpack5",
