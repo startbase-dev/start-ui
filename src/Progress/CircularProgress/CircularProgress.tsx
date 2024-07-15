@@ -26,13 +26,13 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
   const progressClassNames = clsx(s.progress, progressClassName);
   const labelClassNames = clsx(s.label, labelClassName);
 
-  const IndeterminateValue = 0.25;
+  const indeterminateValue = 0.25;
   const center = size * 0.5;
   const radius = size * 0.4;
   const circumference = 2 * Math.PI * radius;
   const normalizedValue = determinate
     ? normalizeValue(value, max, min)
-    : IndeterminateValue;
+    : indeterminateValue;
   const offset = circumference - circumference * normalizedValue;
   const percentage = toPercentage(normalizedValue);
   const labelAndDeterminate = determinate && progressLabel;
@@ -71,7 +71,7 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
           stroke="currentColor"
           strokeWidth={trackSize}
           strokeDasharray={circumference}
-          strokeDashoffset={value >= max ? 0 : offset}
+          strokeDashoffset={offset}
           strokeLinecap="round"
         ></circle>
       </svg>

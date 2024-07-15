@@ -27,8 +27,9 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
   const progressClassNames = clsx(s.progress, progressClassName);
   const labelClassNames = clsx(s.label, labelClassName);
 
-  const normalizedValue = normalizeValue(value, max, min);
-  const progress = size * normalizedValue;
+  const intedeterminateValue = 0.75;
+  const normalizedValue = determinate ? normalizeValue(value, max, min) : intedeterminateValue;
+  const offset =size - size * normalizedValue;
   const percentage = toPercentage(normalizedValue);
   const borderRadius = trackSize * 0.5;
   const labelAndDeterminate = determinate && progressLabel;
@@ -54,10 +55,10 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
       >
         <line
           className={trackClassNames}
-          x1={borderRadius}
-          y1={borderRadius}
-          x2={size - borderRadius}
-          y2={borderRadius}
+          x1={0}
+          y1={"50%"}
+          x2={size}
+          y2={"50%"}
           height={trackSize}
           width={size}
           fill="transparent"
@@ -67,17 +68,17 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
         ></line>
         <line
           className={progressClassNames}
-          x1={borderRadius}
-          y1={borderRadius}
-          x2={size - borderRadius}
-          y2={borderRadius}
+          x1={0}
+          y1={"50%"}
+          x2={size}
+          y2={"50%"}
           height={trackSize}
           width={size}
           fill="transparent"
           stroke="currentColor"
           strokeWidth={trackSize}
           strokeDasharray={size}
-          strokeDashoffset={size - progress}
+          strokeDashoffset={offset}
           strokeLinecap="round"
         ></line>
       </svg>
