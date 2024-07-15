@@ -23,7 +23,7 @@ const Index = forwardRef<HTMLDivElement, DividerProps>((props, ref) => {
     role: "separator",
     "aria-orientation": orientation,
     "data-variant": variant,
-    "data-align": contentAlign
+    "data-align": contentAlign,
   };
 
   // Void elements throw error if a child is passed: https://developer.mozilla.org/en-US/docs/Glossary/Void_element

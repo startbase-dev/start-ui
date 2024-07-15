@@ -7,7 +7,11 @@ interface RowProps extends React.AllHTMLAttributes<HTMLDivElement> {
   rootClassName?: string;
 }
 
-export default function Row({ children, rootClassName = "", ...rest }: RowProps) {
+export default function Row({
+  children,
+  rootClassName = "",
+  ...rest
+}: RowProps) {
   const rootClassNames = clsx(s.root, rootClassName);
 
   return (

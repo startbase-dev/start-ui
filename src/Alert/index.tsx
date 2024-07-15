@@ -55,7 +55,12 @@ const Index = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
       data-open={open}
     >
       {iconBoolean ? (
-        <IconSelector className={iconClassNames} iconName={severity} icon={icon} size={22} />
+        <IconSelector
+          className={iconClassNames}
+          iconName={severity}
+          icon={icon}
+          size={22}
+        />
       ) : (
         icon
       )}

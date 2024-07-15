@@ -4,12 +4,7 @@ import clsx from "clsx";
 import type { GridProps } from "./types";
 
 const Index = forwardRef<HTMLDivElement, GridProps>((props, ref) => {
-  const {
-    children,
-    rootClassName = "",
-    breakpoints = {},
-    ...rest
-  } = props;
+  const { children, rootClassName = "", breakpoints = {}, ...rest } = props;
   const rootClassNames = clsx(s.root, rootClassName);
 
   const {

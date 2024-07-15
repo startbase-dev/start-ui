@@ -7,7 +7,7 @@ import postcssModules from "postcss-modules";
 import postcssPresetEnv from "postcss-preset-env";
 import fs from "fs";
 import path from "path";
-import cssnano from 'cssnano';
+import cssnano from "cssnano";
 
 const renamePlugin = () => ({
   name: "rename-plugin",
@@ -27,14 +27,16 @@ const renamePlugin = () => ({
 
         // @ts-ignore
         for (const file of result.outputFiles) {
-          if (file.path.endsWith('index.css')) {
-            const newPath = file.path.replace('index.css', 'styles.css');
-            const newContents = file.text.replace(/index\.css/g, 'styles.css');
+          if (file.path.endsWith("index.css")) {
+            const newPath = file.path.replace("index.css", "styles.css");
+            const newContents = file.text.replace(/index\.css/g, "styles.css");
             file.path = newPath;
             file.contents = new TextEncoder().encode(newContents);
 
             // Minify the CSS using cssnano
-            const minified = await postcss([cssnano]).process(newContents, { from: undefined });
+            const minified = await postcss([cssnano]).process(newContents, {
+              from: undefined,
+            });
             file.contents = new TextEncoder().encode(minified.css);
           }
         }

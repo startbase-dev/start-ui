@@ -3,11 +3,7 @@ import Badge from "./index";
 import type { TemplateProps } from "./types";
 
 const Template: React.FC<TemplateProps> = (args) => {
-  const {
-    title,
-    children,
-    ...rest
-  } = args;
+  const { title, children, ...rest } = args;
 
   return (
     <>
@@ -19,9 +15,7 @@ const Template: React.FC<TemplateProps> = (args) => {
           flexDirection: "column",
         }}
       >
-        <Badge {...rest} >
-          {children}
-        </Badge>
+        <Badge {...rest}>{children}</Badge>
       </div>
     </>
   );

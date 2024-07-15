@@ -79,7 +79,9 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
           strokeLinecap="round"
         ></line>
       </svg>
-      {labelAndDeterminate && <span className={labelClassNames}>{percentage}</span>}
+      {labelAndDeterminate && (
+        <span className={labelClassNames}>{percentage}</span>
+      )}
     </div>
   );
 });
