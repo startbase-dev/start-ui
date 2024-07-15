@@ -9,7 +9,7 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
     max = 1,
     min = 0,
     size = 100,
-    trackSize = 10,
+    trackSize = size * 0.1, // trackSize is 1/10 of size parameter by default
     progressLabel = false,
     determinate = true,
     rootClassName = "",
@@ -71,7 +71,7 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
           stroke="currentColor"
           strokeWidth={trackSize}
           strokeDasharray={circumference}
-          strokeDashoffset={offset}
+          strokeDashoffset={value >= max ? 0 : offset}
           strokeLinecap="round"
         ></circle>
       </svg>
