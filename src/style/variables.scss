@@ -1,3 +1,9 @@
+@import "colors/colors";
+@import "colors/colors-light";
+@import "colors/colors-dark";
+@import "components/button";
+@import "components/alert";
+
 :root {
   /* WHITE AND BLACK */
   --sui-white: #fff;
@@ -14,13 +20,21 @@
   /* GRAY */
   --sui-gray-950: #0a0a0a;
   --sui-gray-900: #171717;
+  --sui-gray-850: #1f1f1f;
   --sui-gray-800: #262626;
+  --sui-gray-750: #333;
   --sui-gray-700: #404040;
+  --sui-gray-650: #4b4b4b;
   --sui-gray-600: #525252;
+  --sui-gray-550: #5f5f5f;
   --sui-gray-500: #737373;
+  --sui-gray-450: #8c8c8c;
   --sui-gray-400: #a3a3a3;
+  --sui-gray-350: #bfbfbf;
   --sui-gray-300: #d4d4d4;
+  --sui-gray-250: #e0e0e0;
   --sui-gray-200: #e5e5e5;
+  --sui-gray-150: #ededed;
   --sui-gray-100: #f5f5f5;
   --sui-gray-50: #fafafa;
 
@@ -74,9 +88,6 @@
   /* COMPONENT COLORS/ */
   --sui-border: var(--sui-gray-300);
 
-  /* BUTTON */
-  --sui-destructive: color-mix(in srgb, var(--sui-error) 80%, var(--sui-white));
-
   /* ALERT */
   --sui-success-50: color-mix(in srgb, var(--sui-success) 5%, var(--sui-white));
   --sui-info-50: color-mix(in srgb, var(--sui-info) 5%, var(--sui-white));
@@ -94,8 +105,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* WHITE AND BLACK */
-    --sui-white: #000;
-    --sui-black: #fff;
+    --sui-text-color: var(--sui-white);
+
   }
 }

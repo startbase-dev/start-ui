@@ -12,91 +12,92 @@
   font-family: var(--sui-font-family);
 
   &.primary.default {
-    background-color: var(--sui-black);
-    color: var(--sui-white);
+    background-color: var(--sui-button-primary-default-bg);
+    color: var(--sui-button-primary-default-text);
 
     &:hover {
-      background-color: var(--sui-gray-800);
+      background-color: var(--sui-button-primary-default-hover-bg);
     }
   }
 
   &.secondary.default {
-    background-color: var(--sui-gray-200);
-    color: var(--sui-black);
+    background-color: var(--sui-button-secondary-default-bg);
+    color: var(--sui-button-secondary-default-text);
 
     &:hover {
-      background-color: var(--sui-gray-100);
+      background-color: var(--sui-button-secondary-default-hover-bg);
     }
   }
 
   &.destructive.default {
-    background-color: var(--sui-error);
-    color: var(--sui-white);
+    background-color: var(--sui-button-destructive-default-bg);
+    color: var(--sui-button-destructive-default-text);
 
     &:hover {
-      background-color: var(--sui-destructive);
+      background-color: var(--sui-button-destructive-default-hover-bg);
     }
   }
 
   &.primary.outline {
-    background-color: var(--sui-gray-300);
-    color: var(--sui-black);
-    border: 1px solid var(--sui-gray-500);
+    background-color: var(--sui-button-primary-outline-bg);
+    color: var(--sui-button-primary-outline-text);
+    border: 1px solid var(--sui-button-primary-outline-border);
 
     &:hover {
-      background-color: var(--sui-gray-500);
-      color: var(--sui-white);
+      background-color: var(--sui-button-primary-outline-hover-bg);
+      color: var(--sui-button-primary-outline-hover-text);
     }
   }
 
   &.secondary.outline {
-    background-color: var(--sui-gray-50);
-    color: var(--sui-black);
-    border: 1px solid var(--sui-gray-200);
+    background-color: var(--sui-button-secondary-outline-bg);
+    color: var(--sui-button-secondary-outline-text);
+    border: 1px solid var(--sui-button-secondary-outline-border);
 
     &:hover {
-      background-color: var(--sui-gray-200);
+      background-color: var(--sui-button-secondary-outline-hover-bg);
     }
   }
 
   &.destructive.outline {
-    background-color: var(--sui-error-50);
-    color: var(--sui-error);
-    border: 1px solid var(--sui-error-200);
+    background-color: var(--sui-button-destructive-outline-bg);
+    color: var(--sui-button-destructive-outline-text);
+    border: 1px solid var(--sui-button-destructive-outline-border);
 
     &:hover {
-      background-color: var(--sui-destructive);
-      color: var(--sui-white);
+      background-color: var(--sui-button-destructive-outline-hover-bg);
+      color: var(--sui-button-destructive-outline-hover-text);
+      border: 1px solid var(--sui-button-destructive-outline-hover-border);
     }
   }
 
   &.primary.ghost {
-    background-color: var(--sui-transparent);
-    color: var(--sui-black);
+    background-color: var(--sui-button-primary-ghost-bg);
+    color: var(--sui-button-primary-ghost-text);
 
     &:hover {
-      background-color: var(--sui-gray-800);
-      color: var(--sui-white);
+      background-color: var(--sui-button-primary-ghost-hover-bg);
+      color: var(--sui-button-primary-ghost-hover-text);
     }
   }
 
   &.secondary.ghost {
-    background-color: var(--sui-transparent);
-    color: var(--sui-black);
+    background-color: var(--sui-button-secondary-ghost-bg);
+    color: var(--sui-button-secondary-ghost-text);
 
     &:hover {
-      background-color: var(--sui-gray-100);
-      color: var(--sui-black);
+      background-color: var(--sui-button-secondary-ghost-hover-bg);
+      color: var(--sui-button-secondary-ghost-hover-text);
     }
   }
 
   &.destructive.ghost {
-    background-color: var(--sui-transparent);
-    color: var(--sui-destructive);
+    background-color: var(--sui-button-destructive-ghost-bg);
+    color: var(--sui-button-destructive-ghost-text);
 
     &:hover {
-      background-color: var(--sui-destructive);
-      color: var(--sui-white);
+      background-color: var(--sui-button-destructive-ghost-hover-bg);
+      color: var(--sui-button-destructive-ghost-hover-text);
     }
   }
 
@@ -128,5 +129,12 @@
   &.disabled {
     opacity: 0.4;
     cursor: not-allowed;
+    background-color: var(--sui-button-disabled-bg) !important;
+    color: var(--sui-button-disabled-text) !important;
+
+    &:hover {
+      background-color: var(--sui-button-disabled-bg) !important;
+      color: var(--sui-button-disabled-text) !important;
+    }
   }
 }
