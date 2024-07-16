@@ -1,10 +1,11 @@
 import React, { forwardRef } from "react";
 import s from "./Grid.module.scss";
 import clsx from "clsx";
-import type { IndexProps } from "./types";
+import type { GridProps } from "./types";
 
-const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
-  const { children, classNames = [], breakpoints = {}, style, ...rest } = props;
+const Index = forwardRef<HTMLDivElement, GridProps>((props, ref) => {
+  const { children, className = "", breakpoints = {}, style, ...rest } = props;
+  const rootClassNames = clsx(s.root, className);
 
   const {
     smMinWidth = "576px",
@@ -15,16 +16,16 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
 
   return (
     <div
-      className={clsx([s.root, ...classNames])}
+      className={rootClassNames}
       ref={ref}
-      {...rest}
       style={{
-        ...style,
         "--sui-sm-min-width": smMinWidth,
         "--sui-md-min-width": mdMinWidth,
         "--sui-lg-min-width": lgMinWidth,
         "--sui-xl-min-width": xlMinWidth,
+        ...style,
       }}
+      {...rest}
     >
       {children}
     </div>

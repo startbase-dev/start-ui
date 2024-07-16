@@ -3,18 +3,7 @@ import Badge from "./index";
 import type { TemplateProps } from "./types";
 
 const Template: React.FC<TemplateProps> = (args) => {
-  const {
-    title,
-    children,
-    badgeContent,
-    color,
-    variant,
-    position,
-    invisible,
-    showZero,
-    max,
-    classNames,
-  } = args;
+  const { title, children, ...rest } = args;
 
   return (
     <>
@@ -26,18 +15,7 @@ const Template: React.FC<TemplateProps> = (args) => {
           flexDirection: "column",
         }}
       >
-        <Badge
-          badgeContent={badgeContent}
-          color={color}
-          variant={variant}
-          position={position}
-          invisible={invisible}
-          showZero={showZero}
-          max={max}
-          classNames={classNames}
-        >
-          {children}
-        </Badge>
+        <Badge {...rest}>{children}</Badge>
       </div>
     </>
   );
@@ -53,7 +31,8 @@ BadgeComponent.args = {
   invisible: false,
   showZero: false,
   max: 99,
-  classNames: [""],
+  className: "",
+  countClassName: "",
   children: (
     <span
       style={{

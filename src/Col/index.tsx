@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 interface ColumnProps extends React.AllHTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
-  classNames?: string[];
+  className?: string;
   span?: number;
   columns?: number;
   spanSizes?: {
@@ -20,16 +20,18 @@ function getWidth(span: number, columns: number) {
   return `${(span / columns) * 100}%`;
 }
 
-export default function Index({
+export default function Column({
   children,
-  classNames = [],
+  className = "",
   span = 12,
   columns = 12,
   spanSizes = {},
-  style = {},
   padding = "8px",
+  style,
   ...rest
 }: ColumnProps) {
+  const rootClassNames = clsx(s.root, className);
+
   const { sm, md, lg, xl } = spanSizes;
 
   const baseWidth = getWidth(span, columns);
@@ -40,15 +42,15 @@ export default function Index({
 
   return (
     <div
-      className={clsx([s.root, ...classNames])}
+      className={rootClassNames}
       style={{
-        ...style,
         "--sui-base-width": baseWidth,
         "--sui-sm-width": smWidth,
         "--sui-md-width": mdWidth,
         "--sui-lg-width": lgWidth,
         "--sui-xl-width": xlWidth,
         "--sui-padding": padding,
+        ...style,
       }}
       {...rest}
     >

@@ -3,7 +3,7 @@ import Divider from "./index";
 import type { TemplateProps } from "./types";
 
 const Template: React.FC<TemplateProps> = (args) => {
-  const { children, title, classNames, ...dividerProps } = args;
+  const { title, ...dividerProps } = args;
 
   const isVertical = args.orientation === "vertical";
 
@@ -20,7 +20,7 @@ const Template: React.FC<TemplateProps> = (args) => {
         }}
       >
         <span>Hello</span>
-        <Divider {...dividerProps}>{children}</Divider>
+        <Divider {...dividerProps} />
         <span>World</span>
       </div>
     </>
@@ -34,7 +34,7 @@ DividerComponent.args = {
   orientation: "horizontal",
   contentAlign: "center",
   component: "div",
-  classNames: [""],
+  className: "",
   children: "",
 };
 

@@ -1,5 +1,5 @@
-export interface IndexProps extends React.AllHTMLAttributes<HTMLDivElement> {
-  classNames?: string[];
+export interface GridProps extends React.AllHTMLAttributes<HTMLDivElement> {
+  children?: React.ReactNode;
   breakpoints?: {
     smMinWidth?: string;
     mdMinWidth?: string;
@@ -8,6 +8,6 @@ export interface IndexProps extends React.AllHTMLAttributes<HTMLDivElement> {
   };
 }
 
-export interface TemplateProps extends IndexProps {
+export interface TemplateProps extends GridProps {
   title: string;
 }

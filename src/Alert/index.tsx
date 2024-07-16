@@ -10,13 +10,22 @@ const Index = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
     severity = "success",
     variant = "default",
     color = "inherit",
-    action = undefined,
+    actionElement = undefined,
     icon = true,
     alertTitle = false,
     open = true,
-    classnames = [],
+    className = "",
+    iconClassName = "",
+    bodyClassName = "",
+    titleClassName = "",
+    textClassName = "",
     ...rest
   } = props;
+  const rootClassNames = clsx(s.root, className);
+  const iconClassNames = clsx(iconClassName);
+  const bodyClassNames = clsx(s.body, bodyClassName);
+  const titleClassNames = clsx(s.title, titleClassName);
+  const textClassNames = clsx(textClassName);
 
   // Define aria-live prop
   const isAssertive = severity === "error" || severity === "warning";
@@ -37,7 +46,7 @@ const Index = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
 
   return (
     <div
-      className={clsx(s.root, ...classnames)}
+      className={rootClassNames}
       ref={ref}
       role="alert"
       aria-live={ariaLive}
@@ -46,15 +55,20 @@ const Index = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
       {...rest}
     >
       {iconBoolean ? (
-        <IconSelector iconName={severity} icon={icon} size={22} />
+        <IconSelector
+          className={iconClassNames}
+          iconName={severity}
+          icon={icon}
+          size={22}
+        />
       ) : (
         icon
       )}
-      <div className={s.body}>
-        {title && <span className={s.title}>{title}</span>}
-        <span>{children}</span>
+      <div className={bodyClassNames}>
+        {title && <span className={titleClassNames}>{title}</span>}
+        <span className={textClassNames}>{children}</span>
       </div>
-      {action}
+      {actionElement}
     </div>
   );
 });

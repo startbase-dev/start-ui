@@ -33,6 +33,10 @@ ProgressComponent.args = {
   progressLabel: false,
   determinate: true,
   className: "",
+  containerClassName: "",
+  trackClassName: "",
+  progressClassName: "",
+  labelClassName: "",
 };
 
 export const ProgressWithVariant = Template.bind({});

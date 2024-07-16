@@ -1,9 +1,9 @@
 import React, { forwardRef } from "react";
 import s from "./LinearProgress.module.scss";
 import clsx from "clsx";
-import type { IndexProps } from "../types";
+import type { ProgressProps } from "../types";
 
-const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
+const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
   const {
     value = 0,
     max = 1,
@@ -13,25 +13,37 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
     progressLabel = false,
     determinate = true,
     className = "",
+    containerClassName = "",
+    trackClassName = "",
+    progressClassName = "",
+    labelClassName = "",
+    style,
     ...rest
   } = props;
-  const classnames = className.split(" ");
 
-  const normalizedValue = normalizeValue(value, max, min);
-  const progress = size * normalizedValue;
+  const rootClassNames = clsx(s.root, className);
+  const containerClassNames = clsx(s.container, containerClassName);
+  const trackClassNames = clsx(s.track, trackClassName);
+  const progressClassNames = clsx(s.progress, progressClassName);
+  const labelClassNames = clsx(s.label, labelClassName);
+
+  const intedeterminateValue = 0.75;
+  const normalizedValue = determinate ? normalizeValue(value, max, min) : intedeterminateValue;
+  const offset =size - size * normalizedValue;
   const percentage = toPercentage(normalizedValue);
   const borderRadius = trackSize * 0.5;
   const labelAndDeterminate = determinate && progressLabel;
 
   return (
-    <div className={s.container}>
+    <div className={containerClassNames}>
       <svg
-        className={clsx([s.root, ...classnames])}
+        className={rootClassNames}
         ref={ref}
         width={size}
         height={trackSize}
         style={{
           "--sui-border-radius": `${borderRadius}px`,
+          ...style,
         }}
         role="progressbar"
         aria-valuenow={value}
@@ -42,11 +54,11 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
         {...rest}
       >
         <line
-          className={s.track}
-          x1={borderRadius}
-          y1={borderRadius}
-          x2={size - borderRadius}
-          y2={borderRadius}
+          className={trackClassNames}
+          x1={0}
+          y1={"50%"}
+          x2={size}
+          y2={"50%"}
           height={trackSize}
           width={size}
           fill="transparent"
@@ -55,22 +67,24 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
           strokeLinecap="round"
         ></line>
         <line
-          className={s.progress}
-          x1={borderRadius}
-          y1={borderRadius}
-          x2={size - borderRadius}
-          y2={borderRadius}
+          className={progressClassNames}
+          x1={0}
+          y1={"50%"}
+          x2={size}
+          y2={"50%"}
           height={trackSize}
           width={size}
           fill="transparent"
           stroke="currentColor"
           strokeWidth={trackSize}
           strokeDasharray={size}
-          strokeDashoffset={size - progress}
+          strokeDashoffset={offset}
           strokeLinecap="round"
         ></line>
       </svg>
-      {labelAndDeterminate && <span className={s.label}>{percentage}</span>}
+      {labelAndDeterminate && (
+        <span className={labelClassNames}>{percentage}</span>
+      )}
     </div>
   );
 });

@@ -1,26 +1,29 @@
 import { createElement, forwardRef } from "react";
 import s from "./Divider.module.scss";
-import type { IndexProps } from "./types";
+import clsx from "clsx";
+import type { DividerProps } from "./types";
 
-const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
+const Index = forwardRef<HTMLDivElement, DividerProps>((props, ref) => {
   const {
     children = null,
     variant = "fullWidth",
     orientation = "horizontal",
     contentAlign = "middle",
     component = "div",
-    classNames = [],
-    ...dividerProps
+    className = "",
+    ...rest
   } = props;
 
+  const rootClassNames = clsx(s.root, className);
+
   const componentParams = {
-    className: s.root,
+    className: rootClassNames,
     ref,
     role: "separator",
     "aria-orientation": orientation,
     "data-variant": variant,
     "data-align": contentAlign,
-    ...dividerProps,
+    ...rest,
   };
 
   // Void elements throw error if a child is passed: https://developer.mozilla.org/en-US/docs/Glossary/Void_element

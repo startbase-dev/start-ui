@@ -1,37 +1,46 @@
 import React, { forwardRef } from "react";
 import s from "./CircularProgress.module.scss";
 import clsx from "clsx";
-import type { IndexProps } from "../types";
+import type { ProgressProps } from "../types";
 
-const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
+const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
   const {
     value = 0,
     max = 1,
     min = 0,
     size = 100,
-    trackSize = 10,
+    trackSize = size * 0.1, // trackSize is 1/10 of size parameter by default
     progressLabel = false,
     determinate = true,
     className = "",
+    containerClassName = "",
+    trackClassName = "",
+    progressClassName = "",
+    labelClassName = "",
     ...rest
   } = props;
-  const classnames = className.split(" ");
 
-  const IndeterminateValue = 0.25;
+  const rootClassNames = clsx(s.root, className);
+  const containerClassNames = clsx(s.container, containerClassName);
+  const trackClassNames = clsx(s.track, trackClassName);
+  const progressClassNames = clsx(s.progress, progressClassName);
+  const labelClassNames = clsx(s.label, labelClassName);
+
+  const indeterminateValue = 0.25;
   const center = size * 0.5;
   const radius = size * 0.4;
   const circumference = 2 * Math.PI * radius;
   const normalizedValue = determinate
     ? normalizeValue(value, max, min)
-    : IndeterminateValue;
+    : indeterminateValue;
   const offset = circumference - circumference * normalizedValue;
   const percentage = toPercentage(normalizedValue);
   const labelAndDeterminate = determinate && progressLabel;
 
   return (
-    <div className={s.container}>
+    <div className={containerClassNames}>
       <svg
-        className={clsx([s.root, ...classnames])}
+        className={rootClassNames}
         ref={ref}
         width={size}
         height={size}
@@ -45,7 +54,7 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
         {...rest}
       >
         <circle
-          className={s.track}
+          className={trackClassNames}
           r={radius}
           cx={center}
           cy={center}
@@ -54,7 +63,7 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
           strokeWidth={trackSize}
         ></circle>
         <circle
-          className={s.progress}
+          className={progressClassNames}
           r={radius}
           cx={center}
           cy={center}
@@ -66,7 +75,9 @@ const Index = forwardRef<SVGSVGElement, IndexProps>((props, ref) => {
           strokeLinecap="round"
         ></circle>
       </svg>
-      {labelAndDeterminate && <span className={s.label}>{percentage}</span>}
+      {labelAndDeterminate && (
+        <span className={labelClassNames}>{percentage}</span>
+      )}
     </div>
   );
 });
