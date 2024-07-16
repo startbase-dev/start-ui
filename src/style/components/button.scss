@@ -39,45 +39,45 @@
   --sui-button-disabled-text: var(--sui-black);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --sui-button-primary-default-bg: var(--sui-gray-100);
-    --sui-button-primary-default-text: var(--sui-black);
-    --sui-button-primary-default-hover-bg: var(--sui-gray-200);
-    --sui-button-secondary-default-bg: var(--sui-gray-700);
-    --sui-button-secondary-default-text: var(--sui-white);
-    --sui-button-secondary-default-hover-bg: var(--sui-gray-750);
-    --sui-button-destructive-default-bg: var(--sui-error-dark-650);
-    --sui-button-destructive-default-text: var(--sui-white);
-    --sui-button-destructive-default-hover-bg: var(--sui-error-dark-600);
-    --sui-button-primary-outline-bg: var(--sui-gray-400);
-    --sui-button-primary-outline-text: var(--sui-white);
-    --sui-button-primary-outline-border: var(--sui-gray-100);
-    --sui-button-primary-outline-hover-bg: var(--sui-gray-100);
-    --sui-button-primary-outline-hover-text: var(--sui-black);
-    --sui-button-secondary-outline-bg: var(--sui-gray-800);
-    --sui-button-secondary-outline-text: var(--sui-gray-100);
-    --sui-button-secondary-outline-border: var(--sui-gray-500);
-    --sui-button-secondary-outline-hover-bg: var(--sui-gray-500);
-    --sui-button-destructive-outline-bg: var(--sui-error-dark-300);
-    --sui-button-destructive-outline-text: var(--sui-error);
-    --sui-button-destructive-outline-border: var(--sui-error-dark-600);
-    --sui-button-destructive-outline-hover-bg: var(--sui-error-dark-600);
-    --sui-button-destructive-outline-hover-border: var(--sui-error-dark-600);
-    --sui-button-destructive-outline-hover-text: var(--sui-white);
-    --sui-button-primary-ghost-bg: var(--sui-transparent);
-    --sui-button-primary-ghost-text: var(--sui-white);
-    --sui-button-primary-ghost-hover-bg: var(--sui-gray-200);
-    --sui-button-primary-ghost-hover-text: var(--sui-black);
-    --sui-button-secondary-ghost-bg: var(--sui-transparent);
-    --sui-button-secondary-ghost-text: var(--sui-white);
-    --sui-button-secondary-ghost-hover-bg: var(--sui-gray-750);
-    --sui-button-secondary-ghost-hover-text: var(--sui-white);
-    --sui-button-destructive-ghost-bg: var(--sui-transparent);
-    --sui-button-destructive-ghost-text: var(-sui-error-dark-600);
-    --sui-button-destructive-ghost-hover-bg: var(--sui-error-dark-600);
-    --sui-button-destructive-ghost-hover-text: var(--sui-white);
-    --sui-button-disabled-bg: var(--sui-gray-600);
-    --sui-button-disabled-text: var(--sui-white);
-  }
+[data-theme='dark'] {
+  --sui-button-primary-default-bg: var(--sui-gray-100);
+  --sui-button-primary-default-text: var(--sui-black);
+  --sui-button-primary-default-hover-bg: var(--sui-gray-200);
+  --sui-button-secondary-default-bg: var(--sui-gray-700);
+  --sui-button-secondary-default-text: var(--sui-white);
+  --sui-button-secondary-default-hover-bg: var(--sui-gray-750);
+  --sui-button-destructive-default-bg: var(--sui-error-dark-650);
+  --sui-button-destructive-default-text: var(--sui-white);
+  --sui-button-destructive-default-hover-bg: var(--sui-error-dark-600);
+  --sui-button-primary-outline-bg: var(--sui-gray-400);
+  --sui-button-primary-outline-text: var(--sui-white);
+  --sui-button-primary-outline-border: var(--sui-gray-100);
+  --sui-button-primary-outline-hover-bg: var(--sui-gray-100);
+  --sui-button-primary-outline-hover-text: var(--sui-black);
+  --sui-button-secondary-outline-bg: var(--sui-gray-800);
+  --sui-button-secondary-outline-text: var(--sui-gray-100);
+  --sui-button-secondary-outline-border: var(--sui-gray-500);
+  --sui-button-secondary-outline-hover-bg: var(--sui-gray-500);
+  --sui-button-destructive-outline-bg: var(--sui-error-dark-300);
+  --sui-button-destructive-outline-text: var(--sui-error);
+  --sui-button-destructive-outline-border: var(--sui-error-dark-600);
+  --sui-button-destructive-outline-hover-bg: var(--sui-error-dark-600);
+  --sui-button-destructive-outline-hover-border: var(--sui-error-dark-600);
+  --sui-button-destructive-outline-hover-text: var(--sui-white);
+  --sui-button-primary-ghost-bg: var(--sui-transparent);
+  --sui-button-primary-ghost-text: var(--sui-white);
+  --sui-button-primary-ghost-hover-bg: var(--sui-gray-200);
+  --sui-button-primary-ghost-hover-text: var(--sui-black);
+  --sui-button-secondary-ghost-bg: var(--sui-transparent);
+  --sui-button-secondary-ghost-text: var(--sui-white);
+  --sui-button-secondary-ghost-hover-bg: var(--sui-gray-750);
+  --sui-button-secondary-ghost-hover-text: var(--sui-white);
+  --sui-button-destructive-ghost-bg: var(--sui-transparent);
+  --sui-button-destructive-ghost-text: var(-sui-error-dark-600);
+  --sui-button-destructive-ghost-hover-bg: var(--sui-error-dark-600);
+  --sui-button-destructive-ghost-hover-text: var(--sui-white);
+  --sui-button-disabled-bg: var(--sui-gray-600);
+  --sui-button-disabled-text: var(--sui-white);
 }
+
+

@@ -1,23 +1,15 @@
 import React from "react";
 import Alert from "./index";
 import type { TemplateProps } from "./types";
+import Storybook from "../Storybook";
 
 const Template: React.FC<TemplateProps> = (args) => {
   const { children, title, ...props } = args;
 
   return (
-    <>
-      <h2>{title}</h2>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexDirection: "column",
-        }}
-      >
+      <Storybook title={title}>
         <Alert {...props}>{children}</Alert>
-      </div>
-    </>
+      </Storybook>
   );
 };
 

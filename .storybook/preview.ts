@@ -3,19 +3,7 @@ import "./storybook.scss";
 
 const preview = {
   parameters: {
-    backgrounds: {
-      default: 'light',
-      values: [
-        {
-          name: 'light',
-          value: '#fff',
-        },
-        {
-          name: 'dark',
-          value: '#000',
-        },
-      ],
-    },
+    backgrounds: { disable: true },
     controls: {
       matchers: {
         color: /(background|color)$/i,
