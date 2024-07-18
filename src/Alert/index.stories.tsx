@@ -7,9 +7,9 @@ const Template: React.FC<TemplateProps> = (args) => {
   const { children, title, ...props } = args;
 
   return (
-      <Storybook title={title}>
-        <Alert {...props}>{children}</Alert>
-      </Storybook>
+    <Storybook title={title}>
+      <Alert {...props}>{children}</Alert>
+    </Storybook>
   );
 };
 

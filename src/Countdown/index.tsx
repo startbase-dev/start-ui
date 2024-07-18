@@ -6,11 +6,11 @@ import useCountdown from "./hooks/useCountdown";
 import clsx from "clsx";
 
 type Type =
-  | "default"
-  | "withSeperator"
+  | "withSeparator"
   | "withLabels"
   | "labelsUnder"
-  | "inBoxes";
+  | "inBoxes"
+  | "default";
 
 interface IndexProps {
   date: Date | number;
@@ -25,7 +25,7 @@ interface IndexProps {
   labelClassName?: string;
 }
 
-const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
+const Countdown = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
   const {
     date,
     showDay = true,
@@ -47,14 +47,24 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     showSecond,
   });
 
-  const itemClassNames = clsx(s.item, itemClassName, s[type]);
-
-  const valueClassNames = clsx(s.value, valueClassName, s[type]);
-
-  const labelClassNames = clsx(s.label, labelClassName, s[type]);
+  const itemClassNames = clsx(
+    s.item,
+    itemClassName,
+    type !== "default" && s[type],
+  );
+  const valueClassNames = clsx(
+    s.value,
+    valueClassName,
+    type !== "default" && s[type],
+  );
+  const labelClassNames = clsx(
+    s.label,
+    labelClassName,
+    type !== "default" && s[type],
+  );
 
   const format = useMemo(() => {
-    if (type === "withSeperator") return "none";
+    if (type === "withSeparator") return "none";
     else if (type === "default") return "oneChar";
     else return "full";
   }, [type]);
@@ -62,50 +72,40 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
   return (
     <div className={clsx(s.root, rootClassName)} ref={ref}>
       {showDay && timeLeft.day !== undefined && (
-        <>
-          <div className={itemClassNames}>
-            <div className={valueClassNames}>{timeLeft.day}</div>
-            <div className={labelClassNames}>{getUnitLabel("day", format)}</div>
-          </div>
-        </>
+        <div className={itemClassNames}>
+          <div className={valueClassNames}>{timeLeft.day}</div>
+          <div className={labelClassNames}>{getUnitLabel("day", format)}</div>
+        </div>
       )}
 
       {showHour && timeLeft.hour !== undefined && (
-        <>
-          <div className={itemClassNames}>
-            <div className={valueClassNames}>{timeLeft.hour}</div>
-            <div className={labelClassNames}>
-              {getUnitLabel("hour", format)}
-            </div>
-          </div>
-        </>
+        <div className={itemClassNames}>
+          <div className={valueClassNames}>{timeLeft.hour}</div>
+          <div className={labelClassNames}>{getUnitLabel("hour", format)}</div>
+        </div>
       )}
 
       {showMinute && timeLeft.minute !== undefined && (
-        <>
-          <div className={itemClassNames}>
-            <div className={valueClassNames}>{timeLeft.minute}</div>
-            <div className={labelClassNames}>
-              {getUnitLabel("minute", format)}
-            </div>
+        <div className={itemClassNames}>
+          <div className={valueClassNames}>{timeLeft.minute}</div>
+          <div className={labelClassNames}>
+            {getUnitLabel("minute", format)}
           </div>
-        </>
+        </div>
       )}
 
       {showSecond && timeLeft.second !== undefined && (
-        <>
-          <div className={itemClassNames}>
-            <div className={valueClassNames}>{timeLeft.second}</div>
-            <div className={labelClassNames}>
-              {getUnitLabel("second", format)}
-            </div>
+        <div className={itemClassNames}>
+          <div className={valueClassNames}>{timeLeft.second}</div>
+          <div className={labelClassNames}>
+            {getUnitLabel("second", format)}
           </div>
-        </>
+        </div>
       )}
     </div>
   );
 });
 
-Index.displayName = "Countdown";
+Countdown.displayName = "Countdown";
 
-export default Index;
+export default Countdown;

@@ -10,7 +10,7 @@ export default function Row({
   children,
   className = "",
   ...rest
-}: RowProps) {
+}: Readonly<RowProps>) {
   const rootClassNames = clsx(s.root, className);
 
   return (

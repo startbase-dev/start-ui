@@ -22,7 +22,7 @@
   font-weight: bold;
 }
 
-.withSeperator:not(:last-child)::after {
+.withSeparator:not(:last-child)::after {
   content: ":";
 }
 

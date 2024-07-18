@@ -6,8 +6,8 @@ interface TemplateProps {
   title: string;
 }
 
-const Template: React.FC<TemplateProps> = (args) => {
-  const { title } = args;
+const Template: React.FC<TemplateProps> = (props) => {
+  const { title } = props;
 
   return (
     <Storybook title={title}>

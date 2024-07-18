@@ -1,4 +1,5 @@
 import React from "react";
+import Divider from "../Divider";
 
 const Index = ({
   title,
@@ -30,8 +31,10 @@ const Index = ({
             width: "50%",
             borderBottomLeftRadius: "1rem",
             borderTopLeftRadius: "1rem",
+            alignItems: "center",
           }}
         >
+          <Divider>Light</Divider>
           {children}
         </div>
         <div
@@ -46,8 +49,10 @@ const Index = ({
             width: "50%",
             borderBottomRightRadius: "1rem",
             borderTopRightRadius: "1rem",
+            alignItems: "center",
           }}
         >
+          <Divider style={{ color: "white" }}>Dark</Divider>
           {children}
         </div>
       </div>

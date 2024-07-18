@@ -1,0 +1,21 @@
+.menuItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: var(--sui-border-radius-small);
+  padding: var(--sui-padding);
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background: var(--sui-floating-menu-item-active);
+  }
+
+  &[data-nested][data-open]:not([data-focus-inside]) {
+    background: var(--sui-floating-menu-item-active);
+  }
+
+  &[data-focus-inside][data-open] {
+    background: var(--sui-floating-menu-item-active);
+  }
+}

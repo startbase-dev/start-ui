@@ -1,0 +1,58 @@
+.arrow {
+  position: absolute;
+  height: 0;
+  width: 0;
+  z-index: 1;
+
+  &.top {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid
+      color-mix(in srgb, var(--sui-black) 40%, var(--sui-white));
+  }
+
+  &.bottom {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 6px solid
+      color-mix(in srgb, var(--sui-black) 40%, var(--sui-white));
+  }
+
+  &.left {
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 6px solid
+      color-mix(in srgb, var(--sui-black) 40%, var(--sui-white));
+  }
+
+  &.right {
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 6px solid
+      color-mix(in srgb, var(--sui-black) 40%, var(--sui-white));
+  }
+
+  @media (min-width: 576px) {
+    // Small devices (landscape phones, 576px and up)
+  }
+
+  @media (min-width: 768px) {
+    // Medium devices (tablets, 768px and up)
+  }
+
+  @media (min-width: 992px) {
+    // Large devices (desktops, 992px and up)
+  }
+
+  @media (min-width: 1200px) {
+    // X-Large devices (large desktops, 1200px and up)
+  }
+
+  @media (min-width: 1400px) {
+    // XX-Large devices (larger desktops, 1400px and up)
+  }
+
+  @media (min-width: 2160px) {
+    // XXX-Large devices (larger desktops, 2160px and up)
+  }
+}

@@ -6,7 +6,6 @@ import React, {
   useMemo,
 } from "react";
 import s from "./VideoPlayer.module.scss";
-import file from "./large.mp4";
 import Replay from "../../../icons/Replay";
 import Pause from "../../../icons/Pause";
 import Play from "../../../icons/Play";
@@ -92,7 +91,7 @@ const VideoPlayer: React.FC = () => {
         autoPlay
         width="100%"
         height="100%"
-        src={file}
+        src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
       >
         Your browser does not support the video tag.
       </video>

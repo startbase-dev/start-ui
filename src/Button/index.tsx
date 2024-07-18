@@ -18,7 +18,7 @@ type ButtonProps = {
 
 const styles: Record<string, string> = s;
 
-const Index = forwardRef<HTMLButtonElement, ButtonProps>(
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       children,
@@ -63,6 +63,6 @@ const Index = forwardRef<HTMLButtonElement, ButtonProps>(
   },
 );
 
-Index.displayName = "Button";
+Button.displayName = "Button";
 
-export default Index;
+export default Button;

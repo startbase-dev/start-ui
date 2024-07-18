@@ -39,7 +39,7 @@
   --sui-button-disabled-text: var(--sui-black);
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --sui-button-primary-default-bg: var(--sui-gray-100);
   --sui-button-primary-default-text: var(--sui-black);
   --sui-button-primary-default-hover-bg: var(--sui-gray-200);
@@ -79,5 +79,3 @@
   --sui-button-disabled-bg: var(--sui-gray-600);
   --sui-button-disabled-text: var(--sui-white);
 }
-
-
