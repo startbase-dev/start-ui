@@ -2,7 +2,7 @@
   "name": "@start-base/start-ui",
   "author": "Start-Base",
   "description": "",
-  "version": "0.0.7-alpha",
+  "version": "0.0.8-alpha",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -210,7 +210,7 @@
     "build:Toggle": "tsup src/Toggle/index.tsx --out-dir ./Toggle --no-splitting --treeshake --minify terser",
     "build:ToggleGroup": "tsup src/ToggleGroup/index.tsx --out-dir ./ToggleGroup --no-splitting --treeshake --minify terser",
     "build:Tooltip": "tsup src/floatings/Tooltip/index.tsx --out-dir ./Tooltip --no-splitting --treeshake --minify terser",
-    "build:Typography": "tsup src/Tooltip/index.tsx --out-dir ./Typography --no-splitting --treeshake --minify terser"
+    "build:Typography": "tsup src/Typography/index.tsx --out-dir ./Typography --no-splitting --treeshake --minify terser"
   },
   "peerDependencies": {
     "@floating-ui/core": "^1.6.4",
