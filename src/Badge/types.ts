@@ -7,7 +7,8 @@ type BadgePosition =
   | VerticalPosition
   | HorizontalPosition;
 
-export interface BadgeProps extends Omit<React.AllHTMLAttributes<HTMLDivElement>, "content"> {
+export interface BadgeProps
+  extends Omit<React.AllHTMLAttributes<HTMLDivElement>, "content"> {
   children: React.ReactNode;
   content: React.ReactNode;
   color?: BadgeColor;
