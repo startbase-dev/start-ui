@@ -28,9 +28,9 @@ const Index = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {
       data-variant={variant}
       data-position={position}
     >
-      <span className={rootClassNames} ref={ref} {...rest}>
+      <div className={rootClassNames} ref={ref} {...rest}>
         {isDefault && content}
-      </span>
+      </div>
       {children}
     </div>
   );
