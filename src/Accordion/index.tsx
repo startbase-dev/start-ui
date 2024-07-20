@@ -17,10 +17,14 @@ const Index = forwardRef<HTMLDivElement, AccordionProps>(({
   defaultExpanded = false,
   ...props
 }, ref) => {
+  const [animationClass, setAnimationClass] = useState("none");
+  const expandAnimation = animationClass === "expand";
+  const collapseAnimation = animationClass === "collapse";
+
   const rootClassNames = clsx(s.root, className);
   const headClassNames = clsx(s.head, headClassName);
-  const bodyClassNames = clsx(s.body, bodyClassName);
-  const footClassnames = clsx(s.foot, footClassName);
+  const bodyClassNames = clsx(s.body, bodyClassName, { [s.expand]: expandAnimation, [s.collapse]: collapseAnimation });
+  const footClassnames = clsx(s.foot, footClassName, { [s.expand]: expandAnimation, [s.collapse]: collapseAnimation });
 
   // uncontrolled expanded is used when expanded prop is not given
   const [ucExpanded, setUcExpanded] = useState(defaultExpanded);
@@ -28,10 +32,12 @@ const Index = forwardRef<HTMLDivElement, AccordionProps>(({
   const dataExpanded = typeof expanded === "boolean" ? expanded : ucExpanded;
 
   function handleClick() {
+    const nextAnimationClass = ucExpanded ? "collapse" : "expand";
+
+    setAnimationClass(nextAnimationClass);
     setUcExpanded(!ucExpanded);
   };
 
-  // TODO: Fix keyframes running on page load
   // TODO: to be added: disabled, controlled, unmountOnExit, aria controls,
 
   return (

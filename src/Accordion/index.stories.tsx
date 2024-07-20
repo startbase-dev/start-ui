@@ -17,6 +17,8 @@ const Template: React.FC<AccordionTemplateProps> = (args) => {
         }}
       >
         <Accordion {...props} />
+        <Accordion {...props} />
+        <Accordion {...props} />
       </div>
     </>
   );
@@ -27,7 +29,7 @@ AccordionComponent.args = {
   title: "Accordion",
   head: "Accordion Head",
   body: "Accordion Body.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula. Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est, vitae vehicula augue aliquam semper. Integer convallis blandit odio, vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue vehicula, felis purus consectetur sem, nec dapibus libero lectus in nibh.",
-  foot: <Button>Dismiss</Button>,
+  foot: <Button>Accordion Foot</Button>,
   headClassName: "",
   bodyClassName: "",
   footClassName: "",
