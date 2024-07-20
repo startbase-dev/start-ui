@@ -1,0 +1,32 @@
+.root {
+  width: var(--sui-base-width);
+  padding: var(--sui-padding);
+  font-family: var(--sui-font-family);
+}
+
+// Adding dynamic breakpoints to media queries seems to be impossible with how CSS works even with SASS.
+// https://stackoverflow.com/questions/40722882/css-native-variables-not-working-in-media-queries
+// TODO: Make a workaround with react using useMediaQuery
+@media screen and (min-width: 576px) {
+  .root {
+    width: var(--sui-sm-width);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .root {
+    width: var(--sui-md-width);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .root {
+    width: var(--sui-lg-width);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .root {
+    width: var(--sui-xl-width);
+  }
+}

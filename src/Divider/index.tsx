@@ -1,11 +1,56 @@
-import React, { forwardRef } from "react";
+import { createElement, forwardRef } from "react";
+import s from "./Divider.module.scss";
+import clsx from "clsx";
+import type { DividerProps } from "./types";
 
-import s from "./index.module.css";
+const Index = forwardRef<HTMLDivElement, DividerProps>((props, ref) => {
+  const {
+    children = null,
+    variant = "fullWidth",
+    orientation = "horizontal",
+    contentAlign = "middle",
+    component = "div",
+    className = "",
+    ...rest
+  } = props;
 
-interface IndexProps {}
+  const rootClassNames = clsx(s.root, className);
 
-const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
-  return <div className={s.root} ref={ref} {...props}></div>;
+  const componentParams = {
+    className: rootClassNames,
+    ref,
+    role: "separator",
+    "aria-orientation": orientation,
+    "data-variant": variant,
+    "data-align": contentAlign,
+    ...rest,
+  };
+
+  // Void elements throw error if a child is passed: https://developer.mozilla.org/en-US/docs/Glossary/Void_element
+  // Avoid passing child if a void element is used
+  const voidElements = [
+    "area",
+    "base",
+    "br",
+    "col",
+    "embed",
+    "hr",
+    "img",
+    "input",
+    "link",
+    "meta",
+    "param",
+    "source",
+    "track",
+    "wbr",
+  ];
+
+  // Return void divider
+  if (voidElements.includes(component))
+    return createElement(component, componentParams, null);
+
+  // Return normal divider
+  return createElement(component, componentParams, children);
 });
 
 Index.displayName = "Divider";

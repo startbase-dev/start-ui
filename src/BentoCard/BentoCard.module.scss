@@ -1,0 +1,188 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    margin-top: 0;
+    opacity: 1;
+  }
+
+  to {
+    margin-top: -100px;
+    opacity: 0;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    margin-top: -200px;
+  }
+
+  to {
+    margin-top: 0;
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes rotateOut {
+  from {
+    transform: rotate(45deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.root {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: var(--sui-bento-card-bg);
+  border-radius: 16px;
+  transition: background-color 600ms;
+  line-height: 40px;
+  font-family: var(--sui-font-family);
+
+  /* COLOR CODES */
+  --sui-bento-card-bg: var(--sui-white);
+  --sui-bento-card-bg-active: var(--sui-primary);
+  --sui-bento-card-title: var(--sui-black);
+  --sui-bento-card-title-active: var(--sui-white);
+  --sui-bento-card-button-bg: var(--sui-gray-500);
+  --sui-bento-card-button-bg-hover: var(--sui-gray-600);
+  --sui-bento-card-button-icon: var(--sui-white);
+  --sui-bento-card-button-active-bg: var(--sui-gray-500);
+  --sui-bento-card-button-active-bg-hover: var(--sui-gray-600);
+  --sui-bento-card-button-active-icon: var(--sui-white);
+}
+
+.rootActive {
+  background-color: var(--sui-bento-card-bg-active);
+  line-height: 24px;
+}
+
+.title {
+  font-size: 21px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: 0.011em;
+  color: var(--sui-bento-card-title);
+  width: 100%;
+  padding: 36px 40px;
+  position: absolute;
+  z-index: 4;
+}
+
+.activeTitle {
+  color: var(--sui-bento-card-title-active);
+}
+
+.layer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+}
+
+.firstLayer {
+  z-index: 2;
+  animation: fadeIn 600ms;
+}
+
+.secondLayer {
+  z-index: 1;
+  animation: opacity 600ms;
+}
+
+.hiddenLayer {
+  opacity: 0;
+}
+
+.content {
+  color: var(--sui-white);
+  transition:
+    margin-top 600ms,
+    opacity 600ms;
+  animation: slideUp 600ms forwards;
+}
+
+.root[data-active="true"] .content {
+  transition:
+    margin-top 600ms,
+    opacity 600ms;
+  animation: slideDown 600ms forwards;
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  border: none;
+  z-index: 3;
+  transition: transform 600ms;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  padding: 0;
+  cursor: pointer;
+  background-color: var(--sui-bento-card-button-bg);
+
+  &:hover {
+    background-color: var(--sui-bento-card-button-bg-hover);
+  }
+}
+
+.activeButton {
+  animation: rotateIn 600ms forwards;
+  background-color: var(--sui-bento-card-button-active-bg);
+
+  &:hover {
+    background-color: var(--sui-bento-card-button-active-bg-hover);
+  }
+}
+
+.exitingButton {
+  animation: rotateOut 600ms forwards;
+}
+
+.enteringContent {
+  animation: slideDown 600ms forwards;
+}
+
+.exitingContent {
+  animation: slideUp 600ms forwards;
+}
+
+.root[data-active="false"] .plusIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--sui-bento-card-button-icon);
+}
+
+.root[data-active="true"] .plusIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--sui-bento-card-button-active-icon);
+}

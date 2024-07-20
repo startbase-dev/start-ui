@@ -1,0 +1,41 @@
+@keyframes slide {
+  from {
+    transform: translateX(-150%);
+  }
+
+  to {
+    transform: translateX(150%);
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  font-family: var(--sui-font-family);
+}
+
+.root {
+  border-radius: var(--sui-border-radius);
+
+  &[data-determinate="false"] .progress {
+    animation: 0.75s ease-in-out both infinite slide;
+  }
+}
+
+.track,
+.progress {
+  color: var(--sui-gray-200);
+}
+
+.progress {
+  color: var(--sui-primary);
+}
+
+.label {
+  fill: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: 100%;
+}

@@ -1,0 +1,11 @@
+:root {
+  --sui-popover-bg: var(--sui-white);
+  --sui-popover-text: var(--sui-black);
+  --sui-popover-border: var(--sui-gray-200);
+}
+
+[data-theme="dark"] {
+  --sui-popover-bg: var(--sui-black);
+  --sui-popover-text: var(--sui-white);
+  --sui-popover-border: var(--sui-gray-700);
+}

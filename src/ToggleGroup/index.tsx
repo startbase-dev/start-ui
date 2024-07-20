@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 
-import s from "./index.module.css";
+import s from "./ToggleGroup.module.scss";
 
 interface IndexProps {}
 

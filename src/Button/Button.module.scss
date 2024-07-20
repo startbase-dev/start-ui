@@ -1,0 +1,140 @@
+.root {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--sui-transition);
+  overflow: hidden;
+  border-radius: 0.375rem;
+  border: 1px solid var(--sui-transparent);
+  width: max-content;
+  font-family: var(--sui-font-family);
+
+  &.primary.default {
+    background-color: var(--sui-button-primary-default-bg);
+    color: var(--sui-button-primary-default-text);
+
+    &:hover {
+      background-color: var(--sui-button-primary-default-hover-bg);
+    }
+  }
+
+  &.secondary.default {
+    background-color: var(--sui-button-secondary-default-bg);
+    color: var(--sui-button-secondary-default-text);
+
+    &:hover {
+      background-color: var(--sui-button-secondary-default-hover-bg);
+    }
+  }
+
+  &.destructive.default {
+    background-color: var(--sui-button-destructive-default-bg);
+    color: var(--sui-button-destructive-default-text);
+
+    &:hover {
+      background-color: var(--sui-button-destructive-default-hover-bg);
+    }
+  }
+
+  &.primary.outline {
+    background-color: var(--sui-button-primary-outline-bg);
+    color: var(--sui-button-primary-outline-text);
+    border: 1px solid var(--sui-button-primary-outline-border);
+
+    &:hover {
+      background-color: var(--sui-button-primary-outline-hover-bg);
+      color: var(--sui-button-primary-outline-hover-text);
+    }
+  }
+
+  &.secondary.outline {
+    background-color: var(--sui-button-secondary-outline-bg);
+    color: var(--sui-button-secondary-outline-text);
+    border: 1px solid var(--sui-button-secondary-outline-border);
+
+    &:hover {
+      background-color: var(--sui-button-secondary-outline-hover-bg);
+    }
+  }
+
+  &.destructive.outline {
+    background-color: var(--sui-button-destructive-outline-bg);
+    color: var(--sui-button-destructive-outline-text);
+    border: 1px solid var(--sui-button-destructive-outline-border);
+
+    &:hover {
+      background-color: var(--sui-button-destructive-outline-hover-bg);
+      color: var(--sui-button-destructive-outline-hover-text);
+      border: 1px solid var(--sui-button-destructive-outline-hover-border);
+    }
+  }
+
+  &.primary.ghost {
+    background-color: var(--sui-button-primary-ghost-bg);
+    color: var(--sui-button-primary-ghost-text);
+
+    &:hover {
+      background-color: var(--sui-button-primary-ghost-hover-bg);
+      color: var(--sui-button-primary-ghost-hover-text);
+    }
+  }
+
+  &.secondary.ghost {
+    background-color: var(--sui-button-secondary-ghost-bg);
+    color: var(--sui-button-secondary-ghost-text);
+
+    &:hover {
+      background-color: var(--sui-button-secondary-ghost-hover-bg);
+      color: var(--sui-button-secondary-ghost-hover-text);
+    }
+  }
+
+  &.destructive.ghost {
+    background-color: var(--sui-button-destructive-ghost-bg);
+    color: var(--sui-button-destructive-ghost-text);
+
+    &:hover {
+      background-color: var(--sui-button-destructive-ghost-hover-bg);
+      color: var(--sui-button-destructive-ghost-hover-text);
+    }
+  }
+
+  &.small {
+    height: 24px;
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
+    min-width: 64px;
+  }
+
+  &.medium {
+    height: 36px;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    min-width: 128px;
+  }
+
+  &.large {
+    height: 48px;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    min-width: 192px;
+  }
+
+  &.fluid {
+    width: 100%;
+  }
+
+  &.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background-color: var(--sui-button-disabled-bg) !important;
+    color: var(--sui-button-disabled-text) !important;
+
+    &:hover {
+      background-color: var(--sui-button-disabled-bg) !important;
+      color: var(--sui-button-disabled-text) !important;
+    }
+  }
+}

@@ -1,0 +1,107 @@
+# Alert
+
+The Alert component is a versatile component that displays a message to the user with various customization options. It supports different severity levels, variants, colors, and additional actions.
+
+import { Alert } from "../../../index";
+
+import { Tabs } from "nextra/components";
+import s from "../../style.module.css";
+
+### Alert With Severity
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <div className={s.previewContainer}>
+      <Alert severity="error">This is an error</Alert>
+    </div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+    <Alert severity="error">This is an error</Alert>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Alert With Variant
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <div className={s.previewContainer}>
+      <Alert variant="filled">This is a filled alert</Alert>
+    </div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+    <Alert variant="filled">This is a filled alert</Alert>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Alert With Color
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <div className={s.previewContainer}>
+      <Alert color="warning" severity="info">
+        This is an info disguised as a warning
+      </Alert>
+    </div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy
+    <Alert color="warning" severity="info">
+      This is an info disguised as a warning
+    </Alert>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Alert With Action
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <div className={s.previewContainer}>
+      <Alert
+        action={
+          <button onClick={() => window.alert("You clicked me!")}>
+            Click me!
+          </button>
+        }
+      >
+        This is an alert with an action button. Try clicking on the button.
+      </Alert>
+    </div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+    <Alert
+      action={
+        <button onClick={() => window.alert("You clicked me!")}>
+          Click me!
+        </button>
+      }
+    >
+      This is an alert with an action button. Try clicking on the button.
+    </Alert>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Alert With Title
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <div className={s.previewContainer}>
+      <Alert alertTitle="Custom Alert Title!" severity="info">
+        This is an alert with title
+      </Alert>
+    </div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+    <Alert alertTitle="Custom Alert Title!" severity="info">
+      This is an alert with title
+    </Alert>
+    ```
+  </Tabs.Tab>
+</Tabs>

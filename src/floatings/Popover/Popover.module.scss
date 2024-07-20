@@ -1,0 +1,56 @@
+.popover {
+  position: absolute;
+  background-color: var(--sui-popover-bg);
+  color: var(--sui-popover-text);
+  padding: var(--sui-padding-large);
+  border-radius: var(--sui-border-radius-medium);
+  box-shadow: var(--sui-elevation-1);
+  border: 1px solid var(--sui-popover-border);
+  z-index: 1;
+
+  &.visible {
+    visibility: visible;
+  }
+
+  &.hidden {
+    visibility: hidden;
+  }
+
+  &.animate {
+    animation: fade-out 0.5s forwards;
+  }
+
+  @media (min-width: 576px) {
+    // Small devices (landscape phones, 576px and up)
+  }
+
+  @media (min-width: 768px) {
+    // Medium devices (tablets, 768px and up)
+  }
+
+  @media (min-width: 992px) {
+    // Large devices (desktops, 992px and up)
+  }
+
+  @media (min-width: 1200px) {
+    // X-Large devices (large desktops, 1200px and up)
+  }
+
+  @media (min-width: 1400px) {
+    // XX-Large devices (larger desktops, 1400px and up)
+  }
+
+  @media (min-width: 2160px) {
+    // XXX-Large devices (larger desktops, 2160px and up)
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}

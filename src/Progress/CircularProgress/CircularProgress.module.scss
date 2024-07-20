@@ -1,0 +1,41 @@
+@keyframes spin {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  position: relative;
+  font-family: var(--sui-font-family);
+}
+
+.root[data-determinate="false"] {
+  animation: 0.5s linear both infinite spin;
+}
+
+.track {
+  color: var(--sui-gray-200);
+}
+
+.progress {
+  color: var(--sui-primary);
+  transform: rotate(-90deg) translateX(-100%);
+}
+
+.label {
+  fill: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,105 @@
+.root {
+  display: flex;
+  align-self: center;
+  position: relative;
+  font-family: var(--sui-font-family);
+}
+
+.count {
+  display: flex;
+  align-items: center;
+  place-content: center center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  color: var(--sui-white);
+  background-color: var(--sui-primary);
+  height: 20px;
+  min-width: 20px;
+  border-radius: 10px;
+  padding: 0 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 150ms;
+  opacity: 1;
+
+  /** Only supported in Chromium browsers yet. Won't brake anything for other browsers */
+  transition-behavior: allow-discrete;
+
+  @starting-style {
+    opacity: 0;
+  }
+}
+
+/** POSITION PROP */
+.root[data-position="right"] .count {
+  top: 50%;
+  right: 0;
+}
+
+.root[data-position="bottom-right"] .count {
+  top: 100%;
+  right: 0;
+}
+
+.root[data-position="bottom"] .count {
+  top: 100%;
+  right: 50%;
+}
+
+.root[data-position="bottom-left"] .count {
+  top: 100%;
+  right: 100%;
+}
+
+.root[data-position="left"] .count {
+  top: 50%;
+  right: 100%;
+}
+
+.root[data-position="top-left"] .count {
+  top: 0;
+  right: 100%;
+}
+
+.root[data-position="top"] .count {
+  top: 0;
+  right: 50%;
+}
+
+.root[data-position="top-right"] .count {
+  top: 0;
+  right: 0;
+}
+
+/** SHOW PROP */
+.root[data-show="false"] .count {
+  display: none;
+  opacity: 0;
+}
+
+/** COLOR PROP */
+.root[data-color="primary"] .count {
+  background-color: var(--sui-primary);
+}
+
+.root[data-color="secondary"] .count {
+  background-color: var(--sui-secondary);
+}
+
+.root[data-color="success"] .count {
+  background-color: var(--sui-success);
+}
+
+.root[data-color="error"] .count {
+  background-color: var(--sui-error);
+}
+
+/** VARIANT PROP */
+.root[data-variant="dot"] .count {
+  width: 8px;
+  height: 8px;
+  min-width: unset;
+  padding: unset;
+}

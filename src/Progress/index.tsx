@@ -1,11 +1,17 @@
 import React, { forwardRef } from "react";
+import type { ProgressProps } from "./types";
+import CircularProgress from "./CircularProgress/CircularProgress";
+import LinearProgress from "./LinearProgress/LinearProgress";
 
-import s from "./index.module.css";
+const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
+  const { variant = "circular", ...rest } = props;
+  const isVariantCircular = variant === "circular";
 
-interface IndexProps {}
-
-const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
-  return <div className={s.root} ref={ref} {...props}></div>;
+  return isVariantCircular ? (
+    <CircularProgress ref={ref} {...rest} />
+  ) : (
+    <LinearProgress ref={ref} {...rest} />
+  );
 });
 
 Index.displayName = "Progress";

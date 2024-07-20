@@ -1,0 +1,26 @@
+.firstCardRoot {
+  --sui-bento-card-title: var(--sui-white);
+  --sui-bento-card-bg: transparent;
+  --sui-bento-card-bg-active: var(--sui-primary);
+  --sui-bento-card-button-active-bg: var(--sui-white);
+  --sui-bento-card-button-active-bg-hover: var(--sui-gray-100);
+  --sui-bento-card-button-active-icon: var(--sui-black);
+}
+
+.secondCardRoot {
+  --sui-bento-card-title: var(--sui-black);
+  --sui-bento-card-bg: var(--sui-white);
+  --sui-bento-card-bg-active: var(--sui-success);
+  --sui-bento-card-button-active-bg: var(--sui-white);
+  --sui-bento-card-button-active-bg-hover: var(--sui-gray-100);
+  --sui-bento-card-button-active-icon: var(--sui-black);
+}
+
+.thirdCardRoot {
+  --sui-bento-card-title: var(--sui-white);
+  --sui-bento-card-bg: transparent;
+  --sui-bento-card-bg-active: var(--sui-warning);
+  --sui-bento-card-button-active-bg: var(--sui-white);
+  --sui-bento-card-button-active-bg-hover: var(--sui-gray-100);
+  --sui-bento-card-button-active-icon: var(--sui-black);
+}
