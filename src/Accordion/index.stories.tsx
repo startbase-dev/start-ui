@@ -17,8 +17,6 @@ const Template: React.FC<AccordionTemplateProps> = (args) => {
         }}
       >
         <Accordion {...props} />
-        <Accordion {...props} />
-        <Accordion {...props} />
       </div>
     </>
   );

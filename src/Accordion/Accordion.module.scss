@@ -34,20 +34,21 @@
 
 .root {
   font-family: var(--sui-font-family);
-  border: 1px solid var(--sui-border);
+  border-left: 1px solid var(--sui-border);
+  border-right: 1px solid var(--sui-border);
   box-sizing: border-box;
   transition: var(--sui-transition);
 
   &:first-of-type {
-    border-radius:
-      var(--sui-border-radius-small) var(--sui-border-radius-small) 0 0;
-    border-bottom: 1px solid transparent;
+    border-top-left-radius: var(--sui-border-radius-small);
+    border-top-right-radius: var(--sui-border-radius-small);
+    border-top: 1px solid var(--sui-border);
   }
 
   &:last-of-type {
-    border-radius:
-      0 0 var(--sui-border-radius-small) var(--sui-border-radius-small);
-    border-top: 1px solid transparent;
+    border-bottom-left-radius: var(--sui-border-radius-small);
+    border-bottom-right-radius: var(--sui-border-radius-small);
+    border-bottom: 1px solid var(--sui-border);
   }
 
   &[data-expanded=true] {
