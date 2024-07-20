@@ -24,15 +24,13 @@ const Template: React.FC<TemplateProps> = (args) => {
 export const BadgeComponent = Template.bind({});
 BadgeComponent.args = {
   title: "Badge",
-  badgeContent: 10,
+  content: 10,
   color: "primary",
   variant: "default",
-  position: "top-right",
+  position: "top-end",
   invisible: false,
-  showZero: false,
-  max: 99,
   className: "",
-  countClassName: "",
+  containerClassName: "",
   children: (
     <span
       style={{
@@ -98,14 +96,14 @@ const Component = {
     },
     position: {
       options: [
-        "top-left",
+        "top-end",
         "top",
-        "top-right",
-        "right",
-        "bottom-right",
+        "top-start",
+        "start",
+        "bottom-start",
         "bottom",
-        "bottom-left",
-        "left",
+        "bottom-end",
+        "end",
       ],
       control: "radio",
     },

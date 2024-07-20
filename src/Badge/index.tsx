@@ -6,49 +6,31 @@ import type { BadgeProps } from "./types";
 const Index = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {
   const {
     children,
-    badgeContent,
+    content,
     color = "primary",
     variant = "default",
     position = "top-right",
     invisible = false,
-    showZero = false,
-    max = 99,
     className = "",
-    countClassName = "",
+    containerClassName = "",
     ...rest
   } = props;
   const rootClassNames = clsx(s.root, className);
-  const countClassNames = clsx(s.count, countClassName);
+  const containerClassNames = clsx(s.container, containerClassName);
 
-  // Convert badgeContent to string and add plus sign if more than max
-  function calculateContent() {
-    if (variant === "dot") return "";
-    if (badgeContent > max) return `${max}+`;
-    return badgeContent.toString();
-  }
-
-  const content = calculateContent();
-
-  // Calculate if the badge should be visible or not
-  function calculateShow() {
-    if (invisible) return false;
-    if (showZero) return true;
-    return badgeContent > 0;
-  }
-
-  const showBadge = calculateShow();
+  const isDefault = variant === "default";
 
   return (
     <div
-      className={rootClassNames}
-      ref={ref}
-      data-show={showBadge}
+      className={containerClassNames}
+      data-show={!invisible}
       data-color={color}
       data-variant={variant}
       data-position={position}
-      {...rest}
     >
-      <span className={countClassNames}>{content}</span>
+      <span className={rootClassNames} ref={ref} {...rest}>
+        {isDefault && content}
+      </span>
       {children}
     </div>
   );
