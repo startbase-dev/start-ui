@@ -2,6 +2,7 @@ import React from "react";
 import Accordion from "./index";
 import { AccordionTemplateProps } from "./types";
 import Button from "../Button/index";
+import { useState } from "react";
 
 const Template: React.FC<AccordionTemplateProps> = (args) => {
   const { title, ...props } = args;
@@ -24,6 +25,34 @@ const Template: React.FC<AccordionTemplateProps> = (args) => {
   );
 };
 
+const ControlledTemplate: React.FC<AccordionTemplateProps> = (args) => {
+  const { title, ...props } = args;
+
+  const [expanded, setExpanded] = useState("a0");
+
+  function handleExpanded(value: string) {
+    if (value === expanded) return setExpanded("a0");
+    setExpanded(value);
+  };
+
+  return (
+    <>
+      <h2>{title}</h2>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-evenly",
+          flexDirection: "column"
+        }}
+      >
+        <Accordion {...props} head="Accordion 1" expanded={expanded === "a1"} onExpand={() => handleExpanded("a1")} />
+        <Accordion {...props} head="Accordion 2" expanded={expanded === "a2"} onExpand={() => handleExpanded("a2")} />
+        <Accordion {...props} head="Accordion 3" expanded={expanded === "a3"} onExpand={() => handleExpanded("a3")} />
+      </div>
+    </>
+  );
+};
+
 export const AccordionComponent = Template.bind({});
 AccordionComponent.args = {
   title: "Accordion",
@@ -34,6 +63,11 @@ AccordionComponent.args = {
   bodyClassName: "",
   footClassName: "",
   defaultExpanded: false,
+};
+
+export const AccordionWithControlled = ControlledTemplate.bind({});
+AccordionWithControlled.args = {
+  ...AccordionComponent.args,
 };
 
 const Component = {

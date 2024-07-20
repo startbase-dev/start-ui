@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from "react";
+import React, { forwardRef, useState, useEffect, useRef } from "react";
 import s from "./Accordion.module.scss";
 import ArrowForwardIos from "../icons/ArrowForwardIos";
 import clsx from "clsx";
@@ -29,22 +29,44 @@ const Index = forwardRef<HTMLDivElement, AccordionProps>(({
   // uncontrolled expanded is used when expanded prop is not given
   const [ucExpanded, setUcExpanded] = useState(defaultExpanded);
 
-  const dataExpanded = typeof expanded === "boolean" ? expanded : ucExpanded;
+  const controlled = typeof expanded === "boolean";
+  const dataExpanded = controlled ? expanded : ucExpanded;
+
+  function handleAnimation(state: boolean) {
+    const nextAnimationClass = state ? "expand" : "collapse";
+    setAnimationClass(nextAnimationClass);
+  };
 
   function handleClick() {
-    const nextAnimationClass = ucExpanded ? "collapse" : "expand";
+    if (controlled) {
+      if (onExpand) onExpand();
+      return;
+    };
 
-    setAnimationClass(nextAnimationClass);
+    handleAnimation(!ucExpanded);
     setUcExpanded(!ucExpanded);
   };
 
-  // TODO: to be added: disabled, controlled, unmountOnExit, aria controls,
+  const effectCountRef = useRef(0);
+
+  useEffect(() => {
+    // prevent animations from running on page load
+    if (controlled && effectCountRef.current > 0) {
+      handleAnimation(expanded);
+    };
+    
+    effectCountRef.current += 1;
+  }, [controlled, expanded]);
+
+  // TODO: to be added: disabled, unmountOnExit, aria controls,
+  // BUG: There is an initial flicker with onClick when the component is controlled
 
   return (
     <div
       className={rootClassNames}
       ref={ref}
       data-expanded={dataExpanded}
+      data-test={expanded}
       {...props}
     >
       {head &&
