@@ -1,3 +1,13 @@
+:root {
+  color: var(--sui-black);
+  background-color: var(--sui-white);
+}
+
+[data-theme="dark"] {
+  color: var(--sui-white);
+  background-color: var(--sui-black);
+}
+
 html,
 body {
   padding: 0;
