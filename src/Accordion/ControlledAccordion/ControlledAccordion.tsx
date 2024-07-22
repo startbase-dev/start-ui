@@ -21,6 +21,7 @@ const ControlledAccordion = forwardRef<HTMLDivElement, ControlledAccordionProps>
   expanded,
   onExpand,
   defaultExpanded = false,
+  icon,
   ...props
 }, ref) => {
   const [animationClass, setAnimationClass] = useState("none");
@@ -69,7 +70,9 @@ const ControlledAccordion = forwardRef<HTMLDivElement, ControlledAccordionProps>
     >
       <button className={summaryClassNames} onClick={handleClick}>
         {summary}
-        <ArrowForwardIos className={s.icon} size={16} />
+        {icon ?
+        <div className={s.icon}>{icon}</div> :
+        <ArrowForwardIos className={s.icon} size={16} />}
       </button>
       <div className={rootClassNames}>
         {children}

@@ -10,7 +10,6 @@ const Index = forwardRef<HTMLDivElement, AccordionProps>((props, ref) => {
   /**
    * TODO:
    *  - add unmountOnExit option
-   *  - add custom icon option
    */
 
   if (isControlled) {

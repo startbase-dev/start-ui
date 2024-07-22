@@ -10,6 +10,7 @@ export interface AccordionProps extends Omit<React.AllHTMLAttributes<HTMLDivElem
   onExpand?: () => void;
   defaultExpanded?: boolean;
   disabled?: boolean;
+  icon?: React.ReactNode;
 };
 
 export interface AccordionTemplateProps extends AccordionProps {

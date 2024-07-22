@@ -5,7 +5,7 @@ import ArrowForwardIos from "../../icons/ArrowForwardIos";
 import type { AccordionProps } from "../types";
 
 // Omit "expanded" | "onExpand" which are only required for controlled accordions
-interface UncontrolledAccordionProps extends Omit<AccordionProps, "expanded" | "onExpand"> {};
+interface UncontrolledAccordionProps extends Omit<AccordionProps, "expanded" | "onExpand"> { };
 
 const UncontrolledAccordion = forwardRef<HTMLDivElement, UncontrolledAccordionProps>(({
   children,
@@ -17,6 +17,7 @@ const UncontrolledAccordion = forwardRef<HTMLDivElement, UncontrolledAccordionPr
   containerClassName,
   defaultExpanded = false,
   disabled = false,
+  icon,
   ...props
 }, ref) => {
   const [animationClass, setAnimationClass] = useState("none");
@@ -53,12 +54,14 @@ const UncontrolledAccordion = forwardRef<HTMLDivElement, UncontrolledAccordionPr
     >
       <button className={summaryClassNames} onClick={handleClick} disabled={disabled}>
         {summary}
-        <ArrowForwardIos className={s.icon} size={16} />
+        {icon ?
+          <div className={s.icon}>{icon}</div> :
+          <ArrowForwardIos className={s.icon} size={16} />}
       </button>
       <div className={rootClassNames}>
         {children}
       </div>
-      {actions && 
+      {actions &&
         <div className={actionsClassNames}>
           {actions}
         </div>}
