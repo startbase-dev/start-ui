@@ -1,4 +1,5 @@
-export interface AccordionProps extends Omit<React.AllHTMLAttributes<HTMLDivElement>, "summary"> {
+export interface AccordionProps
+  extends Omit<React.AllHTMLAttributes<HTMLDivElement>, "summary"> {
   children?: React.ReactNode;
   summary?: React.ReactNode;
   actions?: React.ReactNode;
@@ -12,8 +13,8 @@ export interface AccordionProps extends Omit<React.AllHTMLAttributes<HTMLDivElem
   disabled?: boolean;
   icon?: React.ReactNode;
   unmountOnExit?: boolean;
-};
+}
 
 export interface AccordionTemplateProps extends AccordionProps {
   title: string;
-};
+}

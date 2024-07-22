@@ -1,4 +1,6 @@
 .container {
+  color: var(--sui-black);
+  background-color: var(--sui-white);
   font-family: var(--sui-font-family);
   border-left: 1px solid var(--sui-border);
   border-right: 1px solid var(--sui-border);
@@ -17,8 +19,7 @@
     border-bottom: 1px solid var(--sui-border);
   }
 
-  &[data-expanded=true] {
-
+  &[data-expanded="true"] {
     .root,
     .actions {
       max-height: 100px;
@@ -30,8 +31,7 @@
     }
   }
 
-  &[data-expanded=false] {
-
+  &[data-expanded="false"] {
     .root,
     .actions {
       max-height: 0;
@@ -43,8 +43,7 @@
     }
   }
 
-  &[data-unmountonexit=true] {
-
+  &[data-unmountonexit="true"] {
     .root,
     .actions {
       transition: none;
@@ -59,8 +58,9 @@
   width: 100%;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background-color: unset;
-  border: unset;
+  background-color: var(--sui-white);
+  border-radius: var(--sui-border-radius-small);
+  border: none;
   outline: none;
   font-family: inherit;
   font-size: var(--sui-text-large-fs);

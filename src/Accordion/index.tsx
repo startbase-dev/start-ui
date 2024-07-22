@@ -9,11 +9,14 @@ const Index = forwardRef<HTMLDivElement, AccordionProps>((props, ref) => {
 
   if (isControlled) {
     // redundant checks to satisfy TypeScript
-    const controlledProps = props as AccordionProps & { expanded: boolean, onExpand: () => void };
-    return <ControlledAccordion {...controlledProps} ref={ref} />
-  };
+    const controlledProps = props as AccordionProps & {
+      expanded: boolean;
+      onExpand: () => void;
+    };
+    return <ControlledAccordion {...controlledProps} ref={ref} />;
+  }
 
-  return <UncontrolledAccordion {...props} ref={ref} />
+  return <UncontrolledAccordion {...props} ref={ref} />;
 });
 
 Index.displayName = "Accordion";
