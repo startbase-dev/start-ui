@@ -45,9 +45,9 @@ const ControlledTemplate: React.FC<AccordionTemplateProps> = (args) => {
           flexDirection: "column"
         }}
       >
-        <Accordion {...props} head="Accordion 1" expanded={expanded === "a1"} onExpand={() => handleExpanded("a1")} />
-        <Accordion {...props} head="Accordion 2" expanded={expanded === "a2"} onExpand={() => handleExpanded("a2")} />
-        <Accordion {...props} head="Accordion 3" expanded={expanded === "a3"} onExpand={() => handleExpanded("a3")} />
+        <Accordion {...props} summary="Accordion 1" expanded={expanded === "a1"} onExpand={() => handleExpanded("a1")} />
+        <Accordion {...props} summary="Accordion 2" expanded={expanded === "a2"} onExpand={() => handleExpanded("a2")} />
+        <Accordion {...props} summary="Accordion 3" expanded={expanded === "a3"} onExpand={() => handleExpanded("a3")} />
       </div>
     </>
   );
@@ -56,12 +56,13 @@ const ControlledTemplate: React.FC<AccordionTemplateProps> = (args) => {
 export const AccordionComponent = Template.bind({});
 AccordionComponent.args = {
   title: "Accordion",
-  head: "Accordion Head",
-  body: "Accordion Body.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula. Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est, vitae vehicula augue aliquam semper. Integer convallis blandit odio, vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue vehicula, felis purus consectetur sem, nec dapibus libero lectus in nibh.",
-  foot: <Button>Accordion Foot</Button>,
-  headClassName: "",
-  bodyClassName: "",
-  footClassName: "",
+  summary: "Accordion Head",
+  children: "Accordion Body.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula. Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est, vitae vehicula augue aliquam semper. Integer convallis blandit odio, vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue vehicula, felis purus consectetur sem, nec dapibus libero lectus in nibh.",
+  actions: <Button>Accordion Foot</Button>,
+  className: "",
+  summaryClassName: "",
+  actionsClassName: "",
+  containerClassName: "",
   defaultExpanded: false,
 };
 

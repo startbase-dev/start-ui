@@ -41,7 +41,7 @@
   animation: 300ms ease-in-out both 1 to-collapsed;
 }
 
-.root {
+.container {
   font-family: var(--sui-font-family);
   border-left: 1px solid var(--sui-border);
   border-right: 1px solid var(--sui-border);
@@ -62,8 +62,8 @@
 
   &[data-expanded=true] {
 
-    .body,
-    .foot {
+    .root,
+    .actions {
       max-height: 100px;
       padding: 0.5rem 1rem;
     }
@@ -75,8 +75,8 @@
 
   &[data-expanded=false] {
 
-    .body,
-    .foot {
+    .root,
+    .actions {
       max-height: 0;
       padding: 0 1rem;
     }
@@ -87,7 +87,7 @@
   }
 }
 
-.head {
+.summary {
   display: flex;
   align-items: center;
   width: 100%;
@@ -101,7 +101,7 @@
   cursor: pointer;
 }
 
-.body {
+.root {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -110,7 +110,7 @@
   max-height: 100px;
 }
 
-.foot {
+.actions {
   display: flex;
   justify-content: flex-end;
   gap: 0.5rem;

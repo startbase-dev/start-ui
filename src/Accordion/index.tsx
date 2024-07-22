@@ -5,13 +5,13 @@ import clsx from "clsx";
 import type { AccordionProps } from "./types";
 
 const Index = forwardRef<HTMLDivElement, AccordionProps>(({
+  children,
+  summary,
+  actions,
   className,
-  headClassName,
-  bodyClassName,
-  footClassName,
-  head,
-  body,
-  foot,
+  summaryClassName,
+  actionsClassName,
+  containerClassName,
   expanded,
   onExpand,
   defaultExpanded = false,
@@ -21,10 +21,10 @@ const Index = forwardRef<HTMLDivElement, AccordionProps>(({
   const expandAnimation = animationClass === "expand";
   const collapseAnimation = animationClass === "collapse";
 
-  const rootClassNames = clsx(s.root, className);
-  const headClassNames = clsx(s.head, headClassName);
-  const bodyClassNames = clsx(s.body, bodyClassName, { [s.expand]: expandAnimation, [s.collapse]: collapseAnimation });
-  const footClassnames = clsx(s.foot, footClassName, { [s.expand]: expandAnimation, [s.collapse]: collapseAnimation });
+  const containerClassNames = clsx(s.container, containerClassName);
+  const summaryClassNames = clsx(s.summary, summaryClassName);
+  const rootClassNames = clsx(s.root, className, { [s.expand]: expandAnimation, [s.collapse]: collapseAnimation });
+  const actionsClassNames = clsx(s.actions, actionsClassName, { [s.expand]: expandAnimation, [s.collapse]: collapseAnimation });
 
   // uncontrolled expanded is used when expanded prop is not given
   const [ucExpanded, setUcExpanded] = useState(defaultExpanded);
@@ -63,23 +63,22 @@ const Index = forwardRef<HTMLDivElement, AccordionProps>(({
 
   return (
     <div
-      className={rootClassNames}
+      className={containerClassNames}
       ref={ref}
       data-expanded={dataExpanded}
-      data-test={expanded}
       {...props}
     >
-      {head &&
-        <button className={headClassNames} onClick={handleClick}>
-          {head}
-          <ArrowForwardIos className={s.icon} size={16} />
-        </button>}
-      {body && <div className={bodyClassNames}>
-        {body}
-      </div>}
-      {foot && <div className={footClassnames}>
-        {foot}
-      </div>}
+      <button className={summaryClassNames} onClick={handleClick}>
+        {summary}
+        <ArrowForwardIos className={s.icon} size={16} />
+      </button>
+      <div className={rootClassNames}>
+        {children}
+      </div>
+      {actions && 
+        <div className={actionsClassNames}>
+          {actions}
+        </div>}
     </div>
   );
 });
