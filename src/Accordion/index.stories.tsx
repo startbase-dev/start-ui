@@ -66,6 +66,7 @@ AccordionComponent.args = {
   containerClassName: "",
   defaultExpanded: false,
   disabled: false,
+  unmountOnExit: false,
 };
 
 export const ControlledAccordion = ControlledTemplate.bind({});

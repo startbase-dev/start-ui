@@ -11,6 +11,7 @@ export interface AccordionProps extends Omit<React.AllHTMLAttributes<HTMLDivElem
   defaultExpanded?: boolean;
   disabled?: boolean;
   icon?: React.ReactNode;
+  unmountOnExit?: boolean;
 };
 
 export interface AccordionTemplateProps extends AccordionProps {

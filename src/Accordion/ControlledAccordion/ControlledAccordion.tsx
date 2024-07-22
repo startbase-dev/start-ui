@@ -22,6 +22,7 @@ const ControlledAccordion = forwardRef<HTMLDivElement, ControlledAccordionProps>
   onExpand,
   defaultExpanded = false,
   icon,
+  unmountOnExit = false,
   ...props
 }, ref) => {
   const [animationClass, setAnimationClass] = useState("none");
@@ -37,6 +38,7 @@ const ControlledAccordion = forwardRef<HTMLDivElement, ControlledAccordionProps>
   const [cExpanded, setCExpanded] = useState(defaultExpanded);
 
   function handleAnimation(state: boolean) {
+    if (unmountOnExit) return setAnimationClass("none");
     const nextAnimationClass = state ? "expand" : "collapse";
     setAnimationClass(nextAnimationClass);
   };
@@ -75,7 +77,7 @@ const ControlledAccordion = forwardRef<HTMLDivElement, ControlledAccordionProps>
         <ArrowForwardIos className={s.icon} size={16} />}
       </button>
       <div className={rootClassNames}>
-        {children}
+        {(!unmountOnExit || expanded) && children}
       </div>
       {actions && 
         <div className={actionsClassNames}>

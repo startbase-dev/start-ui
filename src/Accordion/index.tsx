@@ -8,8 +8,8 @@ const Index = forwardRef<HTMLDivElement, AccordionProps>((props, ref) => {
   const isControlled = typeof expanded === "boolean";
 
   /**
-   * TODO:
-   *  - add unmountOnExit option
+   * BUGS:
+   *  - the expand and collapse animations are interrupted if a user clicks before the animation is complete
    */
 
   if (isControlled) {
