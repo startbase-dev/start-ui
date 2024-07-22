@@ -9,7 +9,6 @@ const Index = forwardRef<HTMLDivElement, AccordionProps>((props, ref) => {
 
   /**
    * TODO:
-   *  - add disabled option
    *  - add unmountOnExit option
    *  - add custom icon option
    */

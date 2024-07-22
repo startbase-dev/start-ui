@@ -38,6 +38,7 @@ const ControlledTemplate: React.FC<AccordionTemplateProps> = (args) => {
   return (
     <>
       <h2>{title}</h2>
+      <span>In this controlled accordion group, only one accordion can be expanded at a time.</span>
       <div
         style={{
           display: "flex",
@@ -56,21 +57,23 @@ const ControlledTemplate: React.FC<AccordionTemplateProps> = (args) => {
 export const AccordionComponent = Template.bind({});
 AccordionComponent.args = {
   title: "Accordion",
-  summary: "Accordion Head",
-  children: "Accordion Body.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula. Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est, vitae vehicula augue aliquam semper. Integer convallis blandit odio, vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue vehicula, felis purus consectetur sem, nec dapibus libero lectus in nibh.",
-  actions: <Button>Accordion Foot</Button>,
+  summary: "Accordion Summary",
+  children: "Accordion Root.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula. Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est, vitae vehicula augue aliquam semper. Integer convallis blandit odio, vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue vehicula, felis purus consectetur sem, nec dapibus libero lectus in nibh.",
+  actions: <Button>Accordion Actions</Button>,
   className: "",
   summaryClassName: "",
   actionsClassName: "",
   containerClassName: "",
   defaultExpanded: false,
+  disabled: false,
 };
 
-export const AccordionWithControlled = ControlledTemplate.bind({});
-AccordionWithControlled.args = {
+export const ControlledAccordion = ControlledTemplate.bind({});
+ControlledAccordion.args = {
   ...AccordionComponent.args,
   title: "Controlled Accordion"
 };
+delete ControlledAccordion.args.disabled;
 
 const Component = {
   title: "UI/Accordion",

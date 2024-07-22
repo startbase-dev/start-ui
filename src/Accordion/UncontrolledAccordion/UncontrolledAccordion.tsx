@@ -16,6 +16,7 @@ const UncontrolledAccordion = forwardRef<HTMLDivElement, UncontrolledAccordionPr
   actionsClassName,
   containerClassName,
   defaultExpanded = false,
+  disabled = false,
   ...props
 }, ref) => {
   const [animationClass, setAnimationClass] = useState("none");
@@ -40,16 +41,17 @@ const UncontrolledAccordion = forwardRef<HTMLDivElement, UncontrolledAccordionPr
     setUExpanded(!uExpanded)
   };
 
-  // TODO: Inquire where the ref and ...props should be passed to, container or root
+  // TODO: Inquire where the "ref" and "...props" should be passed to, container or root
 
   return (
     <div
       className={containerClassNames}
       ref={ref}
       data-expanded={uExpanded}
+      aria-disabled={disabled}
       {...props}
     >
-      <button className={summaryClassNames} onClick={handleClick}>
+      <button className={summaryClassNames} onClick={handleClick} disabled={disabled}>
         {summary}
         <ArrowForwardIos className={s.icon} size={16} />
       </button>

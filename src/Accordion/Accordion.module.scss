@@ -99,6 +99,10 @@
   font-family: inherit;
   font-size: var(--sui-text-large-fs);
   cursor: pointer;
+
+  &[disabled] {
+    cursor: default;
+  }
 }
 
 .root {
