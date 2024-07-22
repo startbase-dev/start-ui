@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "./index";
-import Row from "../Row";
-import Col from "../Col";
+import Row from "./Row";
+import Col from "./Col";
 import type { TemplateProps } from "./types";
 
 const Template: React.FC<TemplateProps> = (args) => {

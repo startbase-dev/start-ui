@@ -5,17 +5,15 @@ import Button from "./Button";
 import Card from "./Card";
 import BentoCard from "./BentoCard";
 import Chip from "./Chip";
-import Col from "./Col";
+import Col from "./Grid/Col";
 import Collapsible from "./Collapsible";
 import Grid from "./Grid";
 import Countdown from "./Countdown";
 import DataTable from "./DataTable";
 import Divider from "./Divider";
-import Dropdown from "./Dropdown";
 import List from "./List";
-import Popover from "./Popover";
 import Progress from "./Progress";
-import Row from "./Row";
+import Row from "./Grid/Row";
 import ScrollArea from "./ScrollArea";
 import {
   SkeletonAvatar,
@@ -33,7 +31,11 @@ import Tab from "./Tab";
 import Table from "./Table";
 import Toggle from "./Toggle";
 import ToggleGroup from "./ToggleGroup";
-import Tooltip from "./Tooltip";
+import Tooltip from "./floatings/Tooltip";
+import Popover from "./floatings/Popover";
+import Dropdown from "./floatings/Dropdown";
+import ContextMenu from "./floatings/ContextMenu";
+import FloatingMenuItem from "./floatings/FloatingMenuItem";
 import Typography from "./Typography";
 
 import "./style/variables.scss";
@@ -72,5 +74,7 @@ export {
   Toggle,
   ToggleGroup,
   Tooltip,
+  ContextMenu,
+  FloatingMenuItem,
   Typography,
 };

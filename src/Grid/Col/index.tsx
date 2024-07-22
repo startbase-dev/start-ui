@@ -29,7 +29,7 @@ export default function Column({
   padding = "8px",
   style,
   ...rest
-}: ColumnProps) {
+}: Readonly<ColumnProps>) {
   const rootClassNames = clsx(s.root, className);
 
   const { sm, md, lg, xl } = spanSizes;

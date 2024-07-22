@@ -28,8 +28,10 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
   const labelClassNames = clsx(s.label, labelClassName);
 
   const intedeterminateValue = 0.75;
-  const normalizedValue = determinate ? normalizeValue(value, max, min) : intedeterminateValue;
-  const offset =size - size * normalizedValue;
+  const normalizedValue = determinate
+    ? normalizeValue(value, max, min)
+    : intedeterminateValue;
+  const offset = size - size * normalizedValue;
   const percentage = toPercentage(normalizedValue);
   const borderRadius = trackSize * 0.5;
   const labelAndDeterminate = determinate && progressLabel;

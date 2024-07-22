@@ -23,7 +23,7 @@ export default function IconSelector({
   icon,
   size,
   ...props
-}: SelectorProps) {
+}: Readonly<SelectorProps>) {
   if (icon === false) return null;
 
   const SelectedIcon = iconMap[iconName];

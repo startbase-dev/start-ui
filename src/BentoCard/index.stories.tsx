@@ -8,7 +8,7 @@ interface TemplateProps {
   title: string;
 }
 
-const Template: React.FC<TemplateProps> = (args) => {
+const Template: React.FC<TemplateProps> = (props) => {
   return (
     <div
       style={{
@@ -17,7 +17,7 @@ const Template: React.FC<TemplateProps> = (args) => {
         gap: "32px",
       }}
     >
-      <h2>{args.title}</h2>
+      <h2>{props.title}</h2>
       <div
         style={{
           display: "flex",

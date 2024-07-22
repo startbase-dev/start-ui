@@ -2,7 +2,7 @@
   "name": "@start-base/start-ui",
   "author": "Start-Base",
   "description": "",
-  "version": "0.0.7-alpha",
+  "version": "0.0.8-alpha",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -38,7 +38,9 @@
     "Toggle",
     "ToggleGroup",
     "Tooltip",
-    "Typography"
+    "Typography",
+    "ContextMenu",
+    "FloatingMenuItem"
   ],
   "keywords": [
     "ui",
@@ -161,6 +163,14 @@
     "./Typography": {
       "require": "./Typography/index.cjs",
       "import": "./Typography/index.js"
+    },
+    "./ContextMenu": {
+      "require": "./ContextMenu/index.cjs",
+      "import": "./ContextMenu/index.js"
+    },
+    "./FloatingMenuItem": {
+      "require": "./FloatingMenuItem/index.cjs",
+      "import": "./FloatingMenuItem/index.js"
     }
   },
   "scripts": {
@@ -169,27 +179,29 @@
     "stylelint": "stylelint \"src/**/*.scss\" --fix",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build:all": "npm run build && npm run build:variables && npm run build:Accordion && npm run build:Alert && npm run build:Badge && npm run build:BentoCard && npm run build:Button && npm run build:Card && npm run build:Chip && npm run build:Col && npm run build:Collapsible && npm run build:Grid && npm run build:Countdown && npm run build:DataTable && npm run build:Divider && npm run build:Dropdown && npm run build:List && npm run build:Popover && npm run build:Progress && npm run build:Row && npm run build:ScrollArea && npm run build:Skeleton && npm run build:Stepper && npm run build:Tab && npm run build:Table && npm run build:Toggle && npm run build:ToggleGroup && npm run build:Tooltip && npm run build:Typography",
+    "build:all": "npm run build && npm run build:variables && npm run build:Accordion && npm run build:ContextMenu && npm run build:FloatingMenuItem && npm run build:Alert && npm run build:Badge && npm run build:BentoCard && npm run build:Button && npm run build:Card && npm run build:Chip && npm run build:Col && npm run build:Collapsible && npm run build:Grid && npm run build:Countdown && npm run build:DataTable && npm run build:Divider && npm run build:Dropdown && npm run build:List && npm run build:Popover && npm run build:Progress && npm run build:Row && npm run build:ScrollArea && npm run build:Skeleton && npm run build:Stepper && npm run build:Tab && npm run build:Table && npm run build:Toggle && npm run build:ToggleGroup && npm run build:Tooltip && npm run build:Typography",
     "build": "tsup --out-dir ./ --no-splitting --treeshake --minify terser",
     "build:variables": "tsup src/style/variables.scss --out-dir ./ --no-splitting --treeshake --minify terser",
     "build:Accordion": "tsup src/Accordion/index.tsx --out-dir ./Accordion --no-splitting --treeshake --minify terser",
+    "build:ContextMenu": "tsup src/floatings/ContextMenu/index.tsx --out-dir ./Accordion --no-splitting --treeshake --minify terser",
+    "build:FloatingMenuItem": "tsup src/floatings/FloatingMenuItem/index.tsx --out-dir ./Accordion --no-splitting --treeshake --minify terser",
     "build:Alert": "tsup src/Alert/index.tsx --out-dir ./Alert --no-splitting --treeshake --minify terser",
     "build:Badge": "tsup src/Badge/index.tsx --out-dir ./Badge --no-splitting --treeshake --minify terser",
     "build:BentoCard": "tsup src/BentoCard/index.tsx --out-dir ./BentoCard --no-splitting --treeshake --minify terser",
     "build:Button": "tsup src/Button/index.tsx --out-dir ./Button --no-splitting --treeshake --minify terser",
     "build:Card": "tsup src/Card/index.tsx --out-dir ./Card --no-splitting --treeshake --minify terser",
     "build:Chip": "tsup src/Chip/index.tsx --out-dir ./Chip --no-splitting --treeshake --minify terser",
-    "build:Col": "tsup src/Col/index.tsx --out-dir ./Col --no-splitting --treeshake --minify terser",
+    "build:Col": "tsup src/Grid/Col/index.tsx --out-dir ./Col --no-splitting --treeshake --minify terser",
     "build:Collapsible": "tsup src/Collapsible/index.tsx --out-dir ./Collapsible --no-splitting --treeshake --minify terser",
     "build:Grid": "tsup src/Grid/index.tsx --out-dir ./Grid --no-splitting --treeshake --minify terser",
     "build:Countdown": "tsup src/Countdown/index.tsx --out-dir ./Countdown --no-splitting --treeshake --minify terser",
     "build:DataTable": "tsup src/DataTable/index.tsx --out-dir ./DataTable --no-splitting --treeshake --minify terser",
     "build:Divider": "tsup src/Divider/index.tsx --out-dir ./Divider --no-splitting --treeshake --minify terser",
-    "build:Dropdown": "tsup src/Dropdown/index.tsx --out-dir ./Dropdown --no-splitting --treeshake --minify terser",
+    "build:Dropdown": "tsup src/floatings/Dropdown/index.tsx --out-dir ./Dropdown --no-splitting --treeshake --minify terser",
     "build:List": "tsup src/List/index.tsx --out-dir ./List --no-splitting --treeshake --minify terser",
-    "build:Popover": "tsup src/Popover/index.tsx --out-dir ./Popover --no-splitting --treeshake --minify terser",
+    "build:Popover": "tsup src/floatings/Popover/index.tsx --out-dir ./Popover --no-splitting --treeshake --minify terser",
     "build:Progress": "tsup src/Progress/index.tsx --out-dir ./Progress --no-splitting --treeshake --minify terser",
-    "build:Row": "tsup src/Row/index.tsx --out-dir ./Row --no-splitting --treeshake --minify terser",
+    "build:Row": "tsup src/Grid/Row/index.tsx --out-dir ./Row --no-splitting --treeshake --minify terser",
     "build:ScrollArea": "tsup src/ScrollArea/index.tsx --out-dir ./ScrollArea --no-splitting --treeshake --minify terser",
     "build:Skeleton": "tsup src/Skeleton/index.tsx --out-dir ./Skeleton --no-splitting --treeshake --minify terser",
     "build:Stepper": "tsup src/Stepper/index.tsx --out-dir ./Stepper --no-splitting --treeshake --minify terser",
@@ -197,16 +209,22 @@
     "build:Table": "tsup src/Table/index.tsx --out-dir ./Table --no-splitting --treeshake --minify terser",
     "build:Toggle": "tsup src/Toggle/index.tsx --out-dir ./Toggle --no-splitting --treeshake --minify terser",
     "build:ToggleGroup": "tsup src/ToggleGroup/index.tsx --out-dir ./ToggleGroup --no-splitting --treeshake --minify terser",
-    "build:Tooltip": "tsup src/Tooltip/index.tsx --out-dir ./Tooltip --no-splitting --treeshake --minify terser",
-    "build:Typography": "tsup src/Tooltip/index.tsx --out-dir ./Typography --no-splitting --treeshake --minify terser"
+    "build:Tooltip": "tsup src/floatings/Tooltip/index.tsx --out-dir ./Tooltip --no-splitting --treeshake --minify terser",
+    "build:Typography": "tsup src/Typography/index.tsx --out-dir ./Typography --no-splitting --treeshake --minify terser"
   },
   "peerDependencies": {
-    "clsx": "^2.0.0",
+    "@floating-ui/core": "^1.6.4",
+    "@floating-ui/dom": "^1.6.7",
+    "@floating-ui/react": "^0.26.19",
+    "clsx": "^2.1.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
   "dependencies": {
-    "clsx": "^2.0.0",
+    "@floating-ui/core": "^1.6.4",
+    "@floating-ui/dom": "^1.6.7",
+    "@floating-ui/react": "^0.26.19",
+    "clsx": "^2.1.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
@@ -238,7 +256,7 @@
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-compat": "6.0.0",
     "eslint-plugin-css-modules": "2.12.0",
-    "eslint-plugin-prettier": "5.1.3",
+    "eslint-plugin-prettier": "5.2.1",
     "eslint-plugin-react": "7.34.4",
     "eslint-plugin-react-hooks": "4.6.2",
     "eslint-plugin-storybook": "0.8.0",
@@ -259,9 +277,9 @@
     "stylelint-declaration-strict-value": "1.10.4",
     "stylelint-no-unsupported-browser-features": "8.0.1",
     "stylelint-scss": "6.4.1",
-    "terser": "5.31.2",
+    "terser": "5.31.3",
     "ts-node": "10.9.2",
-    "tsup": "8.1.0",
+    "tsup": "8.1.1",
     "typescript": "5.5.3",
     "typescript-plugin-css-modules": "5.1.0",
     "webpack": "5.93.0",

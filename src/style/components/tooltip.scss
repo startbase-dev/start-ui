@@ -1,0 +1,11 @@
+:root {
+  --sui-tooltip-bg: var(--sui-white);
+  --sui-tooltip-text: var(--sui-black);
+  --sui-tooltip-border: var(--sui-gray-200);
+}
+
+[data-theme="dark"] {
+  --sui-tooltip-bg: var(--sui-black);
+  --sui-tooltip-text: var(--sui-white);
+  --sui-tooltip-border: var(--sui-gray-700);
+}

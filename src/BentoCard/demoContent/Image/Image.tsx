@@ -1,11 +1,14 @@
 import React from "react";
 import s from "./Image.module.scss";
-import file from "./image.jpg";
 
 const Image: React.FC = () => {
   return (
     <div className={s.container}>
-      <img className={s.image} src={file} />
+      <img
+        className={s.image}
+        src="https://picsum.photos/1390/690"
+        alt="demo"
+      />
       <p className={s.desc}>
         Stay connected when you’re without Wi-Fi or cellular.
       </p>
