@@ -1,0 +1,17 @@
+:root {
+  --sui-accordion-fg: var(--sui-black);
+  --sui-accordion-bg: var(--sui-white);
+  --sui-accordion-border: var(--sui-gray-300);
+  --sui-accordion-summary-fg: inherit;
+  --sui-accordion-summary-bg: transparent;
+  --sui-accordion-summary-disabled: var(--sui-gray-400);
+}
+
+[data-theme="dark"] {
+  --sui-accordion-fg: var(--sui-white);
+  --sui-accordion-bg: var(--sui-black);
+  --sui-accordion-border: var(--sui-gray-700);
+  --sui-accordion-summary-fg: inherit;
+  --sui-accordion-summary-bg: transparent;
+  --sui-accordion-summary-disabled: var(--sui-gray-600);
+}

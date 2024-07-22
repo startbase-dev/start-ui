@@ -1,22 +1,22 @@
 .container {
-  color: var(--sui-black);
-  background-color: var(--sui-white);
+  color: var(--sui-accordion-fg);
+  background-color: var(--sui-accordion-bg);
   font-family: var(--sui-font-family);
-  border-left: 1px solid var(--sui-border);
-  border-right: 1px solid var(--sui-border);
+  border-left: 1px solid var(--sui-accordion-border);
+  border-right: 1px solid var(--sui-accordion-border);
   box-sizing: border-box;
   transition: var(--sui-transition);
 
   &:first-of-type {
     border-top-left-radius: var(--sui-border-radius-small);
     border-top-right-radius: var(--sui-border-radius-small);
-    border-top: 1px solid var(--sui-border);
+    border-top: 1px solid var(--sui-accordion-border);
   }
 
   &:last-of-type {
     border-bottom-left-radius: var(--sui-border-radius-small);
     border-bottom-right-radius: var(--sui-border-radius-small);
-    border-bottom: 1px solid var(--sui-border);
+    border-bottom: 1px solid var(--sui-accordion-border);
   }
 
   &[data-expanded="true"] {
@@ -58,7 +58,8 @@
   width: 100%;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  background-color: var(--sui-white);
+  color: var(--sui-accordion-summary-fg);
+  background-color: var(--sui-accordion-summary-bg);
   border-radius: var(--sui-border-radius-small);
   border: none;
   outline: none;
@@ -68,6 +69,7 @@
 
   &[disabled] {
     cursor: default;
+    color: var(--sui-accordion-summary-disabled);
   }
 }
 

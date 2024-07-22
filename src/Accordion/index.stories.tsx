@@ -3,6 +3,7 @@ import Accordion from "./index";
 import { AccordionTemplateProps } from "./types";
 import Button from "../Button/index";
 import { useState } from "react";
+import StoryBook from "../Storybook";
 
 const Template: React.FC<AccordionTemplateProps> = (args) => {
   const { title, ...props } = args;
@@ -15,73 +16,63 @@ const Template: React.FC<AccordionTemplateProps> = (args) => {
   }
 
   return (
-    <>
-      <h2>{title}</h2>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexDirection: "column",
-          gap: "16px",
-        }}
-      >
-        <span>{`Default expanded accordions will be expanded upon page load.`}</span>
-        <div>
-          <Accordion {...props} />
-          <Accordion
-            {...props}
-            summary="Default Expanded Accordion"
-            defaultExpanded
-          />
-          <Accordion {...props} />
-        </div>
-        <span>{`Disabled accordions will not expand or collapse on click. But they will persist their state.`}</span>
-        <div>
-          <Accordion {...props} summary="Disabled Accordion" disabled />
-          <Accordion
-            {...props}
-            summary="Expanded Disabled Accordion"
-            defaultExpanded
-            disabled
-          />
-          <Accordion {...props} />
-        </div>
-        <span>{`Controlled accordions' state is controlled by its parent. In this example, only one accordion can be expanded at a time.`}</span>
-        <div>
-          <Accordion
-            {...props}
-            summary="Controlled Accordion 1"
-            expanded={expanded === "a1"}
-            onExpand={() => handleExpanded("a1")}
-          />
-          <Accordion
-            {...props}
-            summary="Controlled Accordion 2"
-            expanded={expanded === "a2"}
-            onExpand={() => handleExpanded("a2")}
-          />
-          <Accordion
-            {...props}
-            summary="Controlled Accordion 3"
-            expanded={expanded === "a3"}
-            onExpand={() => handleExpanded("a3")}
-          />
-        </div>
-        <span>{`Accordions with "unmountOnExit" will not render their details when collapsed to increase performance. This option also disables the animations.`}</span>
-        <div>
-          <Accordion
-            {...props}
-            summary="Unmount on Exit Accordion"
-            unmountOnExit
-          />
-          <Accordion
-            {...props}
-            summary="Unmount on Exit Accordion"
-            unmountOnExit
-          />
-        </div>
+    <StoryBook title={title}>
+      <span>{`Default expanded accordions will be expanded upon page load.`}</span>
+      <div>
+        <Accordion {...props} />
+        <Accordion
+          {...props}
+          summary="Default Expanded Accordion"
+          defaultExpanded
+        />
+        <Accordion {...props} />
       </div>
-    </>
+      <span>{`Disabled accordions will not expand or collapse on click. But they will persist their state.`}</span>
+      <div>
+        <Accordion {...props} summary="Disabled Accordion" disabled />
+        <Accordion
+          {...props}
+          summary="Expanded Disabled Accordion"
+          defaultExpanded
+          disabled
+        />
+        <Accordion {...props} />
+      </div>
+      <span>{`Controlled accordions' state is controlled by its parent. In this example, only one accordion can be expanded at a time.`}</span>
+      <div>
+        <Accordion
+          {...props}
+          summary="Controlled Accordion 1"
+          expanded={expanded === "a1"}
+          onExpand={() => handleExpanded("a1")}
+        />
+        <Accordion
+          {...props}
+          summary="Controlled Accordion 2"
+          expanded={expanded === "a2"}
+          onExpand={() => handleExpanded("a2")}
+        />
+        <Accordion
+          {...props}
+          summary="Controlled Accordion 3"
+          expanded={expanded === "a3"}
+          onExpand={() => handleExpanded("a3")}
+        />
+      </div>
+      <span>{`Accordions with "unmountOnExit" will not render their details when collapsed to increase performance. This option also disables the animations.`}</span>
+      <div style={{width: "100%"}}>
+        <Accordion
+          {...props}
+          summary="Unmount on Exit Accordion"
+          unmountOnExit
+        />
+        <Accordion
+          {...props}
+          summary="Unmount on Exit Accordion"
+          unmountOnExit
+        />
+      </div>
+    </StoryBook>
   );
 };
 
