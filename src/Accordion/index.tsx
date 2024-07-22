@@ -7,11 +7,6 @@ const Index = forwardRef<HTMLDivElement, AccordionProps>((props, ref) => {
   const { expanded } = props;
   const isControlled = typeof expanded === "boolean";
 
-  /**
-   * BUGS:
-   *  - the expand and collapse animations are interrupted if a user clicks before the animation is complete
-   */
-
   if (isControlled) {
     // redundant checks to satisfy TypeScript
     const controlledProps = props as AccordionProps & { expanded: boolean, onExpand: () => void };

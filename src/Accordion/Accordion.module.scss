@@ -1,46 +1,3 @@
-@keyframes to-collapsed {
-  from {
-    max-height: 100px;
-    padding: 0.5rem 1rem;
-  }
-
-  to {
-    max-height: 0;
-    padding: 0 1rem;
-  }
-}
-
-@keyframes to-expanded {
-  from {
-    max-height: 0;
-    padding: 0 1rem;
-  }
-
-  to {
-    max-height: 100px;
-    padding: 0.5rem 1rem;
-  }
-}
-
-@keyframes to-overflow-auto {
-  from {
-    overflow: hidden;
-  }
-
-  to {
-    overflow: auto;
-  }
-}
-
-.expand {
-  animation: 300ms ease-in-out both 1 to-expanded, 100ms linear both 1 300ms to-overflow-auto;
-}
-
-.collapse {
-  overflow: hidden;
-  animation: 300ms ease-in-out both 1 to-collapsed;
-}
-
 .container {
   font-family: var(--sui-font-family);
   border-left: 1px solid var(--sui-border);
@@ -85,6 +42,14 @@
       transform: rotate(90deg);
     }
   }
+
+  &[data-unmountonexit=true] {
+
+    .root,
+    .actions {
+      transition: none;
+    }
+  }
 }
 
 .summary {
@@ -113,6 +78,7 @@
   padding: 0.5rem 1rem;
   overflow: auto;
   max-height: 100px;
+  transition: var(--sui-transition);
 }
 
 .actions {
@@ -122,6 +88,7 @@
   padding: 0.5rem 1rem;
   overflow: auto;
   max-height: 100px;
+  transition: var(--sui-transition);
 }
 
 .icon {

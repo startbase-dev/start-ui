@@ -21,36 +21,23 @@ const UncontrolledAccordion = forwardRef<HTMLDivElement, UncontrolledAccordionPr
   unmountOnExit = false,
   ...props
 }, ref) => {
-  const [animationClass, setAnimationClass] = useState("none");
-  const expandAnimation = animationClass === "expand";
-  const collapseAnimation = animationClass === "collapse";
-
   const containerClassNames = clsx(s.container, containerClassName);
   const summaryClassNames = clsx(s.summary, summaryClassName);
-  const rootClassNames = clsx(s.root, className, { [s.expand]: expandAnimation, [s.collapse]: collapseAnimation });
-  const actionsClassNames = clsx(s.actions, actionsClassName, { [s.expand]: expandAnimation, [s.collapse]: collapseAnimation });
+  const rootClassNames = clsx(s.root, className);
+  const actionsClassNames = clsx(s.actions, actionsClassName);
 
-  // Uncontrolled expanded state
-  const [uExpanded, setUExpanded] = useState(defaultExpanded);
-
-  function handleAnimation(state: boolean) {
-    if (unmountOnExit) return setAnimationClass("none");
-    const nextAnimationClass = state ? "expand" : "collapse";
-    setAnimationClass(nextAnimationClass);
-  };
+  const [expanded, setExpanded] = useState(defaultExpanded);
 
   function handleClick() {
-    handleAnimation(!uExpanded);
-    setUExpanded(!uExpanded)
+    setExpanded(!expanded);
   };
-
-  // TODO: Inquire where the "ref" and "...props" should be passed to, container or root
 
   return (
     <div
       className={containerClassNames}
       ref={ref}
-      data-expanded={uExpanded}
+      data-expanded={expanded}
+      data-unmountonexit={unmountOnExit}
       aria-disabled={disabled}
       {...props}
     >
@@ -61,7 +48,7 @@ const UncontrolledAccordion = forwardRef<HTMLDivElement, UncontrolledAccordionPr
           <ArrowForwardIos className={s.icon} size={16} />}
       </button>
       <div className={rootClassNames}>
-        {(!unmountOnExit || uExpanded) && children}
+        {(!unmountOnExit || expanded) && children}
       </div>
       {actions &&
         <div className={actionsClassNames}>
