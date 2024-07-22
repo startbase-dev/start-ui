@@ -1,11 +1,22 @@
 import React, { forwardRef } from "react";
+import UncontrolledAccordion from "./UncontrolledAccordion/UncontrolledAccordion";
+import ControlledAccordion from "./ControlledAccordion/ControlledAccordion";
+import type { AccordionProps } from "./types";
 
-import s from "./Accordion.module.scss";
+const Index = forwardRef<HTMLDivElement, AccordionProps>((props, ref) => {
+  const { expanded } = props;
+  const isControlled = typeof expanded === "boolean";
 
-interface IndexProps {}
+  if (isControlled) {
+    // redundant checks to satisfy TypeScript
+    const controlledProps = props as AccordionProps & {
+      expanded: boolean;
+      onExpand: () => void;
+    };
+    return <ControlledAccordion {...controlledProps} ref={ref} />;
+  }
 
-const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
-  return <div className={s.root} ref={ref} {...props}></div>;
+  return <UncontrolledAccordion {...props} ref={ref} />;
 });
 
 Index.displayName = "Accordion";
