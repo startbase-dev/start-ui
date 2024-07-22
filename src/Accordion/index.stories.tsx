@@ -69,6 +69,7 @@ AccordionComponent.args = {
 export const AccordionWithControlled = ControlledTemplate.bind({});
 AccordionWithControlled.args = {
   ...AccordionComponent.args,
+  title: "Controlled Accordion"
 };
 
 const Component = {
