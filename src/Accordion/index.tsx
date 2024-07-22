@@ -9,6 +9,7 @@ const Index = forwardRef<HTMLDivElement, AccordionProps>((props, ref) => {
 
   /**
    * BUGS:
+   *  - the icon element shrinks if summary is too big
    *  - the expand and collapse animations are interrupted if a user clicks before the animation is complete
    */
 
