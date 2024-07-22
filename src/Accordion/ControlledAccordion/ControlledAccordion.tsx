@@ -20,7 +20,6 @@ const ControlledAccordion = forwardRef<HTMLDivElement, ControlledAccordionProps>
   containerClassName,
   expanded,
   onExpand,
-  defaultExpanded = false,
   icon,
   unmountOnExit = false,
   ...props
