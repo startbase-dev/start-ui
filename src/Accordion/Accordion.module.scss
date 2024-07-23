@@ -22,7 +22,8 @@
   &[data-expanded="true"] {
     .root,
     .actions {
-      max-height: 100px;
+      max-height: 200px;
+      max-height: calc-size(auto);
       padding: 0.5rem 1rem;
     }
 
@@ -32,12 +33,6 @@
   }
 
   &[data-expanded="false"] {
-    .root,
-    .actions {
-      max-height: 0;
-      padding: 0 1rem;
-    }
-
     .icon {
       transform: rotate(90deg);
     }
@@ -77,9 +72,9 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0 1rem;
   overflow: auto;
-  max-height: 100px;
+  max-height: 0;
   transition: var(--sui-transition);
 }
 
@@ -88,9 +83,9 @@
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0 1rem;
   overflow: auto;
-  max-height: 100px;
+  max-height: 0;
   transition: var(--sui-transition);
 }
 
