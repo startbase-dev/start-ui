@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useEffect, useRef } from "react";
 import s from "../Accordion.module.scss";
 import clsx from "clsx";
 import ArrowForwardIos from "../../icons/ArrowForwardIos";
@@ -40,6 +40,20 @@ const ControlledAccordion = forwardRef<
       onExpand();
     }
 
+    const actionsRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+      if (!actionsRef.current) return;
+
+      const focusableElements = actionsRef.current.querySelectorAll(
+        "a, button, input, textarea, select, [tabindex]",
+      );
+      focusableElements.forEach((el) => {
+        const tabIndex = expanded ? "0" : "-1";
+        el.setAttribute("tabIndex", tabIndex);
+      });
+    }, [expanded]);
+
     return (
       <div
         className={containerClassNames}
@@ -56,10 +70,14 @@ const ControlledAccordion = forwardRef<
             <ArrowForwardIos className={s.icon} size={16} />
           )}
         </button>
-        <div className={rootClassNames}>
+        <div className={rootClassNames} tabIndex={expanded ? 0 : -1}>
           {(!unmountOnExit || expanded) && children}
         </div>
-        {actions && <div className={actionsClassNames}>{actions}</div>}
+        {actions && (
+          <div className={actionsClassNames} ref={actionsRef} tabIndex={-1}>
+            {actions}
+          </div>
+        )}
       </div>
     );
   },

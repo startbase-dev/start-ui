@@ -18,7 +18,7 @@ const Template: React.FC<AccordionTemplateProps> = (args) => {
   return (
     <StoryBook title={title}>
       <span>{`Default expanded accordions will be expanded upon page load.`}</span>
-      <div>
+      <div style={{ width: "100%" }}>
         <Accordion {...props} />
         <Accordion
           {...props}
@@ -28,7 +28,7 @@ const Template: React.FC<AccordionTemplateProps> = (args) => {
         <Accordion {...props} />
       </div>
       <span>{`Disabled accordions will not expand or collapse on click. But they will persist their state.`}</span>
-      <div>
+      <div style={{ width: "100%" }}>
         <Accordion {...props} summary="Disabled Accordion" disabled />
         <Accordion
           {...props}
@@ -39,7 +39,7 @@ const Template: React.FC<AccordionTemplateProps> = (args) => {
         <Accordion {...props} />
       </div>
       <span>{`Controlled accordions' state is controlled by its parent. In this example, only one accordion can be expanded at a time.`}</span>
-      <div>
+      <div style={{ width: "100%" }}>
         <Accordion
           {...props}
           summary="Controlled Accordion 1"
@@ -60,7 +60,7 @@ const Template: React.FC<AccordionTemplateProps> = (args) => {
         />
       </div>
       <span>{`Accordions with "unmountOnExit" will not render their details when collapsed to increase performance. This option also disables the animations.`}</span>
-      <div style={{width: "100%"}}>
+      <div style={{ width: "100%" }}>
         <Accordion
           {...props}
           summary="Unmount on Exit Accordion"
