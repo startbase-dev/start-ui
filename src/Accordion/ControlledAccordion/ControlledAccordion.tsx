@@ -46,9 +46,9 @@ const ControlledAccordion = forwardRef<
       if (!actionsRef.current) return;
 
       const focusableElements = actionsRef.current.querySelectorAll(
-        "a, button, input, textarea, select, [tabindex]"
+        "a, button, input, textarea, select, [tabindex]",
       );
-      focusableElements.forEach(el => {
+      focusableElements.forEach((el) => {
         const tabIndex = expanded ? "0" : "-1";
         el.setAttribute("tabIndex", tabIndex);
       });
@@ -73,7 +73,11 @@ const ControlledAccordion = forwardRef<
         <div className={rootClassNames} tabIndex={expanded ? 0 : -1}>
           {(!unmountOnExit || expanded) && children}
         </div>
-        {actions && <div className={actionsClassNames} ref={actionsRef} tabIndex={-1}>{actions}</div>}
+        {actions && (
+          <div className={actionsClassNames} ref={actionsRef} tabIndex={-1}>
+            {actions}
+          </div>
+        )}
       </div>
     );
   },
