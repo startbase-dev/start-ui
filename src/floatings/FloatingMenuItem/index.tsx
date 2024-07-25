@@ -5,16 +5,18 @@ import { useFloatingTree, useListItem, useMergeRefs } from "@floating-ui/react";
 import MenuContext from "../FloatingMenuContext";
 
 import styles from "./FloatingMenuItem.module.scss";
+import cx from "clsx";
 
 interface MenuItemProps {
   label: string;
+  className: string;
   disabled?: boolean;
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
   onFocus?: (event: React.FocusEvent<HTMLDivElement>) => void;
 }
 
 const FloatingMenuItem = forwardRef<HTMLDivElement, MenuItemProps>(
-  ({ label, disabled, ...props }, forwardedRef) => {
+  ({ label, disabled, className, ...props }, forwardedRef) => {
     const menu = useContext(MenuContext);
     const item = useListItem({ label: disabled ? null : label });
     const tree = useFloatingTree();
@@ -25,7 +27,7 @@ const FloatingMenuItem = forwardRef<HTMLDivElement, MenuItemProps>(
         {...props}
         ref={useMergeRefs([item.ref, forwardedRef])}
         role="menuitem"
-        className={styles.menuItem}
+        className={cx(styles.menuItem, className && { [className]: true })}
         tabIndex={isActive ? 0 : -1}
         {...menu.getItemProps({
           onClick(event: React.MouseEvent<HTMLDivElement>) {
