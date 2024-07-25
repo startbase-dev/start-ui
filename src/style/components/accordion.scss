@@ -5,6 +5,7 @@
   --sui-accordion-summary-fg: inherit;
   --sui-accordion-summary-bg: transparent;
   --sui-accordion-summary-disabled: var(--sui-gray-400);
+  --sui-accordion-summary-focus-outline: var(--sui-info);
 }
 
 [data-theme="dark"] {
@@ -14,4 +15,5 @@
   --sui-accordion-summary-fg: inherit;
   --sui-accordion-summary-bg: transparent;
   --sui-accordion-summary-disabled: var(--sui-gray-600);
+  --sui-accordion-summary-focus-outline: var(--sui-info);
 }
