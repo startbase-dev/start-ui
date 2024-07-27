@@ -14,6 +14,7 @@ type ButtonProps = {
   variant?: "default" | "link" | "outline" | "ghost";
   size?: "small" | "medium" | "large";
   fluid?: boolean;
+  type?: "submit" | "reset" | "button";
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 const styles: Record<string, string> = s;
@@ -28,6 +29,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       color = "primary",
       variant = "default",
       size = "medium",
+      type = "button",
       fluid = false,
       ...rest
     },
@@ -36,6 +38,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         ref={ref}
+        type={type}
         className={cx(
           styles.root,
           styles[variant],
