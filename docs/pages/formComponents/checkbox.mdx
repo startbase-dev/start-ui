@@ -1,6 +1,150 @@
 # Checkbox
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+The Checkbox component provides a user-friendly interface for toggling between checked and unchecked states, with customizable labels and state management.
+
+## Installation
+
+<Tabs items={["npm", "yarn", "pnpm"]}>
+<Tabs.Tab>
+    ``` bash copy
+    npm install --save @start-base/react-form-elements
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ``` bash copy
+    yarn add @start-base/react-form-elements
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ``` bash copy
+    pnpm add @start-base/react-form-elements
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+Make sure to add css file to your app root file
+
+``` tsx copy
+import '@start-base/react-form-elements/styles.css';
+```
 
 import { Tabs } from "nextra/components";
-import s from "../../style.module.css";
+import '@start-base/react-form-elements/styles.css';
+import Checkbox from '@start-base/react-form-elements/Checkbox';
+import Preview from '../../components/Preview/Preview';
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <Checkbox
+      label="Checkbox"
+      name="default"
+      onChange={() => {}}
+      title="CheckBox"
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import Checkbox from '@start-base/react-form-elements/Checkbox';
+    import '@start-base/react-form-elements/styles.css';
+
+   <Checkbox
+      label="Checkbox"
+      name="default"
+      onChange={() => {}}
+      title="CheckBox"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Checkbox Component Checked
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <Checkbox
+      checked
+      label="Checkbox"
+      name="default"
+      onChange={() => {}}
+      title="CheckBox"
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import Checkbox from '@start-base/react-form-elements/Checkbox';
+    import '@start-base/react-form-elements/styles.css';
+
+   <Checkbox
+      checked
+      label="Checkbox"
+      name="default"
+      onChange={() => {}}
+      title="CheckBox"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Checkbox Component Disabled
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <Checkbox
+      disabled
+      label="Checkbox"
+      name="default"
+      onChange={() => {}}
+      title="CheckBox"
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import Checkbox from '@start-base/react-form-elements/Checkbox';
+    import '@start-base/react-form-elements/styles.css';
+
+   <Checkbox
+      disabled
+      label="Checkbox"
+      name="default"
+      onChange={() => {}}
+      title="CheckBox"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Checkbox Component Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <Checkbox
+      error="Error Message"
+      label="Checkbox"
+      name="default"
+      onChange={() => {}}
+      title="CheckBox"
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import Checkbox from '@start-base/react-form-elements/Checkbox';
+    import '@start-base/react-form-elements/styles.css';
+
+   <Checkbox
+      error="Error Message"
+      label="Checkbox"
+      name="default"
+      onChange={() => {}}
+      title="CheckBox"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>

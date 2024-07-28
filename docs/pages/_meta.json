@@ -1,6 +1,10 @@
 {
   "index": "Introduction",
-  "marketingComponents": "Marketing Componnents",
+  "installation": "Installation",
+  "---": {
+    "type": "separator"
+  },
   "components": "Components",
+  "marketingComponents": "Marketing Componnents",
   "formComponents": "Form Components"
 }
