@@ -1,0 +1,14 @@
+.root {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: .75rem;
+  background-color: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) 77% / .1);
+}
+
+.children {
+  min-width: 300px;
+  width: 300px;
+}

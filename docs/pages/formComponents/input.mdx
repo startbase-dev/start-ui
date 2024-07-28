@@ -3,4 +3,218 @@
 A series of interactive headings arranged vertically, each revealing a section of content when clicked.
 
 import { Tabs } from "nextra/components";
-import s from "../../style.module.css";
+import '@start-base/react-form-elements/index.css';
+import Input from '@start-base/react-form-elements/Input';
+import { FaChartPie } from "react-icons/fa";
+
+### Input
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+      <Input
+        name="input"
+        onChange={() => {}}
+    />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+        <Input
+            name="input"
+            onChange={() => {}}
+        />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+
+### Input with Label
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+      <Input
+        label="Label"
+        name="input"
+        onChange={() => {}}
+    />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+        <Input
+            label="Label"
+            name="input"
+            onChange={() => {}}
+        />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Input with Placeholder
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+      <Input
+        placeholder="Placeholder"
+        name="input"
+        onChange={() => {}}
+    />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+        <Input
+            placeholder="Placeholder"
+            name="input"
+            onChange={() => {}}
+        />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+
+### Input with Placeholder and Label
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+      <Input
+        placeholder="Placeholder"
+        label="Label"
+        name="input"
+        onChange={() => {}}
+    />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+        <Input
+            placeholder="Placeholder"
+            label="Label"
+            name="input"
+            onChange={() => {}}
+        />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+
+### Input with Placeholder And Label And Disable Shrink
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+      <Input
+        disableShrink
+        placeholder="Placeholder"
+        label="Label"
+        name="input"
+        onChange={() => {}}
+    />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+        <Input
+            disableShrink
+            placeholder="Placeholder"
+            label="Label"
+            name="input"
+            onChange={() => {}}
+        />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Input Disabled
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+      <Input
+        disabled
+        placeholder="Placeholder"
+        label="Label"
+        name="input"
+        onChange={() => {}}
+    />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+        <Input
+            disabled
+            placeholder="Placeholder"
+            label="Label"
+            name="input"
+            onChange={() => {}}
+        />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Input Append
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+      <Input
+        placeholder="Placeholder"
+        label="Label"
+        name="input"
+        onChange={() => {}}
+        append={<FaChartPie />}
+    />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+        <Input
+            placeholder="Placeholder"
+            label="Label"
+            name="input"
+            onChange={() => {}}
+            append={<FaChartPie />}
+        />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Input Prepend
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+      <Input
+        placeholder="Placeholder"
+        label="Label"
+        name="input"
+        onChange={() => {}}
+        prepend={<FaChartPie />}
+    />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+        <Input
+            placeholder="Placeholder"
+            label="Label"
+            name="input"
+            onChange={() => {}}
+            prepend={<FaChartPie />}
+        />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Input Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+      <Input
+        placeholder="Placeholder"
+        label="Label"
+        name="input"
+        onChange={() => {}}
+        error="Error Message"
+    />
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+        <Input
+            placeholder="Placeholder"
+            label="Label"
+            name="input"
+            onChange={() => {}}
+            error="Error Message"
+        />
+    ```
+  </Tabs.Tab>
+</Tabs>
