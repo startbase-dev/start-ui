@@ -1,8 +1,135 @@
 # Skeleton
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+The Skeleton displays placeholder shapes for various UI elements. It helps improve the user experience by indicating that content is loading without causing abrupt layout shifts.
 
-import Skeleton from "../../../Skeleton";
+import { SkeletonAvatar } from "../../../index";
+import { SkeletonButton } from "../../../index";
+import { SkeletonCard } from "../../../index";
+import { SkeletonImage } from "../../../index";
+import { SkeletonInput } from "../../../index";
+import { SkeletonList } from "../../../index";
+import { SkeletonTable } from "../../../index";
+import { SkeletonParagraph } from "../../../index";
 
 import { Tabs } from "nextra/components";
 import s from "../../style.module.css";
+
+### Avatar Skeleton
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <div className={s.previewContainer}>
+      <SkeletonAvatar  size={'50px'}/>
+    </div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+     <SkeletonAvatar  size={'50px'}/>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Button Skeleton
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <div className={s.previewContainer}>
+      <SkeletonButton width="100px" height="50px"/>
+    </div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+    <SkeletonButton width="100px" height="50px"/>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Card Skeleton
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <div className={s.previewContainer}>
+      <SkeletonCard  width="300px" height="250px"/>
+    </div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+    <SkeletonCard  width="300px" height="250px"/>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Image Skeleton
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <div className={s.previewContainer}>
+      <SkeletonImage  width="300px" height="250px"/>
+    </div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+   <SkeletonImage  width="300px" height="250px"/>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Input Skeleton
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <div className={s.previewContainer}>
+      <SkeletonInput width="150px" height="50px" />
+    </div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+     <SkeletonInput width="150px" height="50px" />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### List Skeleton
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <div className={s.previewContainer}>
+      <SkeletonList itemCount={5}/>
+    </div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+     <SkeletonList itemCount={5}/>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Table Skeleton
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <div className={s.previewContainer}>
+      <SkeletonTable rows={5} columns={3}/>
+    </div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+    <SkeletonTable rows={5} columns={3}/>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Paragraph Skeleton
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <div className={s.previewContainer}>
+      <SkeletonParagraph  lines={4}/>
+    </div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+    <SkeletonParagraph  lines={4}/>
+    ```
+  </Tabs.Tab>
+</Tabs>

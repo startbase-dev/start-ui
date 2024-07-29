@@ -37,16 +37,18 @@ import IoCaretForwardOutline from "../../icons/Play";
 import MenuContext from "../FloatingMenuContext";
 
 import styles from "./FloatingMenu.module.scss";
+import cx from "clsx";
 
 interface FloatingMenuProps {
   children: ReactElement | ReactElement[];
   component?: ReactElement;
   label?: ReactElement | ReactElement[] | string;
+  className?: string;
   onFocus?: (event: React.FocusEvent<HTMLDivElement>) => void;
 }
 
 const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
-  ({ children, component, label, ...props }, forwardedRef) => {
+  ({ children, component, label, className, ...props }, forwardedRef) => {
     const [isOpen, setIsOpen] = useState(false);
     const [hasFocusInside, setHasFocusInside] = useState(false);
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -161,7 +163,12 @@ const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
           data-open={isOpen ? "" : undefined}
           data-nested={isNested ? "" : undefined}
           data-focus-inside={hasFocusInside ? "" : undefined}
-          className={isNested ? styles.menuItem : ""}
+          className={cx(
+            {
+              [styles.menuItem]: isNested,
+            },
+            className && { [className]: true },
+          )}
           {...getReferenceProps(
             parent.getItemProps({
               ...props,

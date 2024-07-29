@@ -1,8 +1,127 @@
 # Progress
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+The Progress visualize the completion status of an operation. It supports different shapes such as circular and linear progress bars, making it suitable for a variety of use cases.
 
-import Progress from "../../../Progress";
+import { Progress } from "../../../index";
 
 import { Tabs } from "nextra/components";
 import s from "../../style.module.css";
+
+### Progress
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <div className={s.previewContainer}>
+   <Progress
+        value={20}
+        max={100}
+        min={0}
+        size={100}
+        trackSize={10}
+        determinate={true}
+      />
+    </div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+  ```ts copy
+    <Progress
+        value={20}
+        max={100}
+        min={0}
+        size={100}
+        trackSize={10}
+        determinate={true}
+      />
+    ```
+  </Tabs.Tab>
+</Tabs>
+### Progress With Label
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <div className={s.previewContainer}>
+   <Progress
+        value={20}
+        max={100}
+        min={0}
+        size={100}
+        trackSize={10}
+        determinate={true}
+        progressLabel={true}
+      />
+    </div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+  ```ts copy
+   <Progress
+        value={20}
+        max={100}
+        min={0}
+        size={100}
+        trackSize={10}
+        determinate={true}
+        progressLabel={true}
+      />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Progress With Indeterminate
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <div className={s.previewContainer}>
+   <Progress
+        value={20}
+        max={100}
+        min={0}
+        size={100}
+        trackSize={10}
+        determinate={false}
+      />
+    </div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+  ```ts copy
+    <Progress
+        value={20}
+        max={100}
+        min={0}
+        size={100}
+        trackSize={10}
+        determinate={false}
+      />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Progress With Variant
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <div className={s.previewContainer}>
+   <Progress
+        value={20}
+        max={100}
+        min={0}
+        size={100}
+        trackSize={10}
+        determinate={true}
+        variant={'linear'}
+      />
+    </div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+  ```ts copy
+    <Progress
+        value={20}
+        max={100}
+        min={0}
+        size={100}
+        trackSize={10}
+        determinate={true}
+        variant={'linear'}
+      />
+    ```
+  </Tabs.Tab>
+</Tabs>

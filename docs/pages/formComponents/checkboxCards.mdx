@@ -1,6 +1,333 @@
-# CheckboxCards
+# Checkbox Cards
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+The CheckboxCards component provides a user-friendly interface for toggling between checked and unchecked states, with customizable labels and state management.
+
+## Installation
+
+<Tabs items={["npm", "yarn", "pnpm"]}>
+<Tabs.Tab>
+    ``` bash copy
+    npm install --save @start-base/react-form-elements
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ``` bash copy
+    yarn add @start-base/react-form-elements
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ``` bash copy
+    pnpm add @start-base/react-form-elements
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+Make sure to add css file to your app root file
+
+``` tsx copy
+import '@start-base/react-form-elements/styles.css';
+```
 
 import { Tabs } from "nextra/components";
-import s from "../../style.module.css";
+import CheckboxCards from '@start-base/react-form-elements/CheckboxCards';
+import Preview from '../../components/Preview/Preview';
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <CheckboxCards
+      label="CheckboxCards"
+      name="default"
+      onChange={() => {}}
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+      title="CheckboxCards"
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import CheckboxCards from '@start-base/react-form-elements/CheckboxCards';
+    import '@start-base/react-form-elements/styles.css';
+
+   <CheckboxCards
+      label="CheckboxCards"
+      name="default"
+      onChange={() => {}}
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+      title="CheckboxCards"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Checkbox Cards Component Checked
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <CheckboxCards
+      label="CheckboxCards"
+      name="default"
+      onChange={() => {}}
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+      title="CheckboxCards"
+      value={[
+        'default1',
+        'default2'
+      ]}
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import CheckboxCards from '@start-base/react-form-elements/CheckboxCards';
+    import '@start-base/react-form-elements/styles.css';
+
+  <CheckboxCards
+      label="CheckboxCards"
+      name="default"
+      onChange={() => {}}
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+      title="CheckboxCards"
+      value={[
+        'default1',
+        'default2'
+      ]}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Checkbox Cards Component Row
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <CheckboxCards
+      direction="row"
+      label="CheckboxCards"
+      name="default"
+      onChange={() => {}}
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+      title="CheckboxCards"
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import CheckboxCards from '@start-base/react-form-elements/CheckboxCards';
+    import '@start-base/react-form-elements/styles.css';
+
+   <CheckboxCards
+      direction="row"
+      label="CheckboxCards"
+      name="default"
+      onChange={() => {}}
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+      title="CheckboxCards"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Checkbox Cards Component Disabled
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <CheckboxCards
+      disabled
+      label="CheckboxCards"
+      name="default"
+      onChange={() => {}}
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+      title="CheckboxCards"
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import CheckboxCards from '@start-base/react-form-elements/CheckboxCards';
+    import '@start-base/react-form-elements/styles.css';
+
+   <CheckboxCards
+      disabled
+      label="CheckboxCards"
+      name="default"
+      onChange={() => {}}
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+      title="CheckboxCards"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Checkbox Cards Component With Input
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <CheckboxCards
+      label="CheckboxCards"
+      name="default"
+      onChange={() => {}}
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+      title="CheckboxCards"
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import CheckboxCards from '@start-base/react-form-elements/CheckboxCards';
+    import '@start-base/react-form-elements/styles.css';
+
+  <CheckboxCards
+      label="CheckboxCards"
+      name="default"
+      onChange={() => {}}
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+      title="CheckboxCards"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Checkbox Cards Component Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <CheckboxCards
+      error="Error Message"
+      label="CheckboxCards"
+      name="default"
+      onChange={() => {}}
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+      title="CheckboxCards with error"
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import CheckboxCards from '@start-base/react-form-elements/CheckboxCards';
+    import '@start-base/react-form-elements/styles.css';
+
+  <CheckboxCards
+      error="Error Message"
+      label="CheckboxCards"
+      name="default"
+      onChange={() => {}}
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+      title="CheckboxCards with error"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>

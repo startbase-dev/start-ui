@@ -6,6 +6,7 @@ interface ContextMenuProps {
   children: ReactElement | ReactElement[];
   component?: ReactElement;
   label?: ReactElement | ReactElement[] | string;
+  className?: string;
   onFocus?: (event: React.FocusEvent<HTMLDivElement>) => void;
 }
 

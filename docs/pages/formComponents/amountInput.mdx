@@ -1,6 +1,285 @@
-# AmountInput
+# Amount Input
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+The AmountInput component is a customizable input field designed for users to enter numerical amounts, featuring validation and formatting options.
+
+## Installation
+
+<Tabs items={["npm", "yarn", "pnpm"]}>
+<Tabs.Tab>
+    ``` bash copy
+    npm install --save @start-base/react-form-elements
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ``` bash copy
+    yarn add @start-base/react-form-elements
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ``` bash copy
+    pnpm add @start-base/react-form-elements
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+Make sure to add css file to your app root file
+
+``` tsx copy
+import '@start-base/react-form-elements/styles.css';
+```
 
 import { Tabs } from "nextra/components";
-import s from "../../style.module.css";
+
+import AmountInput from '@start-base/react-form-elements/AmountInput';
+import { AiOutlineDollarCircle } from "react-icons/ai";
+import Preview from '../../components/Preview/Preview';
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+    <AmountInput
+        name="input"
+        onChange={() => {}}
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import AmountInput from '@start-base/react-form-elements/AmountInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <AmountInput
+        name="input"
+        onChange={() => {}}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Amount Input with Label
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+      <AmountInput
+        label="Label"
+        name="input"
+        onChange={() => {}}
+    />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import AmountInput from '@start-base/react-form-elements/AmountInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <AmountInput
+        label="Label"
+        name="input"
+        onChange={() => {}}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Amount Input with Placeholder
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+   <Preview height="200px">
+      <AmountInput
+        placeholder="Placeholder"
+        name="input"
+        onChange={() => {}}
+    />
+   </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import AmountInput from '@start-base/react-form-elements/AmountInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <AmountInput
+      placeholder="Placeholder"
+      name="input"
+      onChange={() => {}}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Amount Input with Label & Placeholder
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+   <Preview height="200px">
+      <AmountInput
+        label="Label"
+        placeholder="Placeholder"
+        name="input"
+        onChange={() => {}}
+    />
+   </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import AmountInput from '@start-base/react-form-elements/AmountInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <AmountInput
+        label="Label"
+        placeholder="Placeholder"
+        name="input"
+        onChange={() => {}}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Amount Input with Placeholder And Label And Disable Shrink
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+   <Preview height="200px">
+      <AmountInput
+        label="Label"
+        placeholder="Placeholder"
+        name="input"
+        onChange={() => {}}
+        disableShrink
+    />
+   </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import AmountInput from '@start-base/react-form-elements/AmountInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <AmountInput
+        label="Label"
+        placeholder="Placeholder"
+        name="input"
+        onChange={() => {}}
+        disableShrink
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Amount Input with Placeholder And Label Disabled
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+   <Preview height="200px">
+      <AmountInput
+        label="Label"
+        placeholder="Placeholder"
+        name="input"
+        onChange={() => {}}
+        disabled
+    />
+   </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import AmountInput from '@start-base/react-form-elements/AmountInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <AmountInput
+        label="Label"
+        placeholder="Placeholder"
+        name="input"
+        onChange={() => {}}
+        disabled
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Amount Input with Append
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+   <Preview height="200px">
+      <AmountInput
+        label="Label"
+        placeholder="Placeholder"
+        name="input"
+        onChange={() => {}}
+        append={<AiOutlineDollarCircle />}
+    />
+   </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import AmountInput from '@start-base/react-form-elements/AmountInput';
+    import '@start-base/react-form-elements/styles.css';
+  
+    <AmountInput
+        label="Label"
+        placeholder="Placeholder"
+        name="input"
+        onChange={() => {}}
+        append={<AiOutlineDollarCircle />}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Amount Input with Prepend
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+   <Preview height="200px">
+      <AmountInput
+        label="Label"
+        placeholder="Placeholder"
+        name="input"
+        onChange={() => {}}
+        prepend={<AiOutlineDollarCircle />}
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import AmountInput from '@start-base/react-form-elements/AmountInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <AmountInput
+        label="Label"
+        placeholder="Placeholder"
+        name="input"
+        onChange={() => {}}
+        prepend={<AiOutlineDollarCircle />}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Amount Input with Label & Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+   <Preview height="200px">
+      <AmountInput
+        label="Label"
+        error="Error Message"
+        name="input"
+        onChange={() => {}}
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import AmountInput from '@start-base/react-form-elements/AmountInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <AmountInput
+        label="Label"
+        error="Error Message"
+        name="input"
+        onChange={() => {}}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
