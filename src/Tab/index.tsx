@@ -7,9 +7,13 @@ const Index = forwardRef<HTMLDivElement, TabProps>((props, ref) => {
   const {
     tabs,
     className,
+    buttonsClassName,
+    contentClassName,
     ...rest
   } = props;
-  const rootClassName = clsx(s.root, className);
+  const rootClassNames = clsx(s.root, className);
+  const buttonsClassNames = clsx(s.buttons, buttonsClassName);
+  const contentClassNames = clsx(s.content, contentClassName);
 
   const [tabIndex, setTabIndex] = useState(0);
 
@@ -29,11 +33,11 @@ const Index = forwardRef<HTMLDivElement, TabProps>((props, ref) => {
   ));
 
   return (
-    <div className={rootClassName} ref={ref} {...rest}>
-      <menu className={s.buttons}>
+    <div className={rootClassNames} ref={ref} {...rest}>
+      <menu className={buttonsClassNames}>
         {buttons}
       </menu>
-      <div className={s.content}>
+      <div className={contentClassNames}>
         {tabs[tabIndex]?.content}
       </div>
     </div>

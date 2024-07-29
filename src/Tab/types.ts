@@ -7,6 +7,8 @@ type Tab = {
 export interface TabProps extends React.AllHTMLAttributes<HTMLDivElement> {
   tabs: Tab[];
   className?: string;
+  buttonsClassName?: string;
+  contentClassName?: string;
 }
 
 export interface TemplateProps extends TabProps {
