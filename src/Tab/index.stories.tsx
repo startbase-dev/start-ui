@@ -1,24 +1,21 @@
 import React from "react";
 import Tab from "./index";
-
-interface TemplateProps {
-  title: string;
-}
+import StoryBook from "../Storybook/index";
+import type { TemplateProps } from "./types";
 
 const Template: React.FC<TemplateProps> = (props) => {
+  const { title, ...rest } = props;
+
+  const tabs = [
+    { button: "Tab 1", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pharetra felis sem, faucibus consectetur nunc ultrices id. Quisque sit amet elementum eros. Donec vestibulum, ligula quis aliquam porttitor, orci massa feugiat lacus, quis sagittis nisi libero id felis. Suspendisse consectetur sem eu faucibus aliquam. Proin consequat, purus a lobortis volutpat, nulla nisi tempor dui, ut placerat mi nisl at felis. Nulla dapibus commodo velit, nec consequat lorem tristique nec. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut tincidunt bibendum placerat. Maecenas in massa in nisi blandit lacinia ut congue ligula. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos." },
+    { button: "Tab 2", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget neque vestibulum, varius lorem at, luctus quam. Donec interdum molestie risus, nec iaculis nisi. Donec fermentum felis sit amet urna convallis, ut finibus lectus elementum. In dignissim turpis varius libero dapibus, sed ultricies ante suscipit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim vestibulum justo, vel cursus purus luctus non. Vivamus lectus enim, venenatis vel nibh eget, pharetra gravida mi. Donec dignissim auctor risus, ac tempus sem tristique ac. Fusce nisl dolor, ornare a massa non, mollis accumsan velit. Vivamus at maximus dolor, vel posuere nulla. Proin eget ipsum libero. Nunc nec mauris eu lorem tristique tristique. Sed scelerisque massa nec odio pretium pulvinar. Pellentesque id ligula efficitur erat ullamcorper suscipit at eu nisi. Integer rhoncus bibendum libero. " },
+    { button: "Tab 3", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam odio nisi, consequat sit amet erat eget, fringilla placerat augue. Integer venenatis facilisis leo nec pulvinar. Quisque bibendum risus vitae diam tristique facilisis. Nunc nec purus in tortor tempus placerat. Aliquam ante diam, ornare et consectetur ac, condimentum non felis. Aenean egestas dignissim tincidunt. Nam tristique, purus vitae tempor tincidunt, felis lorem sagittis urna, ac pharetra ex metus vitae dolor. Sed augue elit, hendrerit eget auctor eget, egestas ut orci. Aliquam malesuada placerat nibh quis fermentum. Duis sit amet volutpat tellus." },
+  ];
+
   return (
-    <>
-      <h2>{props.title}</h2>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexDirection: "column",
-        }}
-      >
-        <Tab />
-      </div>
-    </>
+    <StoryBook title={title}>
+      <Tab {...rest} tabs={tabs} />
+    </StoryBook>
   );
 };
 
