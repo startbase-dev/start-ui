@@ -12,5 +12,5 @@ export interface TabProps extends React.AllHTMLAttributes<HTMLDivElement> {
 }
 
 export interface TemplateProps extends TabProps {
-  title: string
+  title: string;
 }

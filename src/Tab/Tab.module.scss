@@ -22,12 +22,12 @@
   border-radius: var(--sui-border-radius-small);
   overflow: hidden;
 
-  >li {
+  > li {
     display: flex;
     flex-grow: 1;
     min-width: fit-content;
 
-    >button {
+    > button {
       width: 100%;
       padding: 0.25rem;
       border: 1px solid var(--sui-tab-button-border);
@@ -44,7 +44,7 @@
     }
 
     &[data-selected="true"] {
-      >button {
+      > button {
         color: var(--sui-tab-button-selected-fg);
         background-color: var(--sui-tab-button-selected-bg);
         box-shadow: var(--sui-elevation-2);
@@ -59,7 +59,6 @@
   width: 100%;
   border: 1px solid var(--sui-tab-content-border);
   border-radius: var(--sui-border-radius-small);
-  padding: var(--sui-padding-small);
   background-color: var(--sui-tab-content-bg);
   color: var(--sui-tab-content-fg);
   padding: var(--sui-padding);
