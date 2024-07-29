@@ -17,7 +17,7 @@
   margin: 0;
   padding: var(--sui-padding-small);
   list-style: none;
-  background-color: var(--sui-gray-100);
+  background-color: var(--sui-tab-buttons-bg);
   border-radius: var(--sui-border-radius-small);
   overflow: hidden;
 
@@ -28,9 +28,9 @@
     >button {
       width: 100%;
       padding: 0.25rem;
-      border: 1px solid var(--sui-transparent);
+      border: 1px solid var(--sui-tab-button-border);
       border-radius: var(--sui-border-radius-small);
-      background-color: var(--sui-transparent);
+      background-color: var(--sui-tab-button-bg);
       cursor: pointer;
       transition: var(--sui-transition);
 
@@ -41,7 +41,7 @@
 
     &[data-selected="true"] {
       >button {
-        background-color: var(--sui-white);
+        background-color: var(--sui-tab-button-selected-bg);
         box-shadow: var(--sui-elevation-2);
       }
     }
@@ -54,8 +54,8 @@
   width: 100%;
   border-radius: var(--sui-border-radius-small);
   padding: var(--sui-padding-small);
-  background-color: var(--sui-white);
-  color: var(--sui-black);
+  background-color: var(--sui-tab-content-bg);
+  color: var(--sui-tab-content-fg);
   box-shadow: var(--sui-elevation-2);
   padding: var(--sui-padding);
 }
