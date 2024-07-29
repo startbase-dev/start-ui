@@ -17,13 +17,10 @@ const Index = forwardRef<HTMLDivElement, TabProps>((props, ref) => {
 
   const [tabIndex, setTabIndex] = useState(0);
 
-  const liWidth = `${100 / tabs.length}%`;
-
   const buttons = tabs.map((tab, index) => (
     <li
       key={`${tab.button}`}
       data-selected={index === tabIndex}
-      style={{ "--sui-tab-li-width": liWidth }}
     >
       <button
         onClick={() => setTabIndex(index)}

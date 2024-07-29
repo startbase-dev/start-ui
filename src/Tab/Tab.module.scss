@@ -13,6 +13,7 @@
 
 .buttons {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   margin: 0;
   padding: var(--sui-padding-small);
@@ -23,7 +24,8 @@
 
   >li {
     display: flex;
-    width: var(--sui-tab-li-width);
+    flex-grow: 1;
+    min-width: fit-content;
 
     >button {
       width: 100%;
