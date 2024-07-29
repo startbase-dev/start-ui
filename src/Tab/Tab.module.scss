@@ -33,6 +33,10 @@
       background-color: var(--sui-transparent);
       cursor: pointer;
       transition: var(--sui-transition);
+
+      &[disabled] {
+        cursor: default;
+      }
     }
 
     &[data-selected="true"] {
