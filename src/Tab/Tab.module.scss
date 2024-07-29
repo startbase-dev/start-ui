@@ -30,6 +30,7 @@
       padding: 0.25rem;
       border: 1px solid var(--sui-tab-button-border);
       border-radius: var(--sui-border-radius-small);
+      color: var(--sui-tab-button-fg);
       background-color: var(--sui-tab-button-bg);
       cursor: pointer;
       transition: var(--sui-transition);
@@ -41,6 +42,7 @@
 
     &[data-selected="true"] {
       >button {
+        color: var(--sui-tab-button-selected-fg);
         background-color: var(--sui-tab-button-selected-bg);
         box-shadow: var(--sui-elevation-2);
       }
@@ -52,10 +54,10 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  border: 1px solid var(--sui-tab-content-border);
   border-radius: var(--sui-border-radius-small);
   padding: var(--sui-padding-small);
   background-color: var(--sui-tab-content-bg);
   color: var(--sui-tab-content-fg);
-  box-shadow: var(--sui-elevation-2);
   padding: var(--sui-padding);
 }
