@@ -38,6 +38,7 @@
       transition: var(--sui-transition);
 
       &[disabled] {
+        color: var(--sui-tab-button-disabled-fg);
         cursor: default;
       }
     }
