@@ -1,27 +1,33 @@
 # Input
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+The Input component is a versatile and customizable form element designed to capture user input efficiently. It supports various types such as text, number, password, email, and more, ensuring flexibility for different use cases. The component comes with built-in validation, error handling, and accessibility features, providing a seamless user experience. It also includes options for custom styling, placeholder text, and event handling for actions like focus, blur, and change, making it an essential building block for any form in your application.
+
+### Input
 
 import { Tabs } from "nextra/components";
 import '@start-base/react-form-elements/styles.css';
 import Input from '@start-base/react-form-elements/Input';
 import { FaChartPie } from "react-icons/fa";
-
-### Input
+import Preview from '../../components/Preview/Preview';
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
+  <Preview height="200px">
       <Input
         name="input"
         onChange={() => {}}
     />
+     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy
-        <Input
-            name="input"
-            onChange={() => {}}
-        />
+    ```ts copy showLineNumbers
+    import Input from '@start-base/react-form-elements/Input';
+    import '@start-base/react-form-elements/styles.css';
+
+    <Input
+      name="input"
+      onChange={() => {}}
+    />
     ```
   </Tabs.Tab>
 </Tabs>
@@ -31,19 +37,24 @@ import { FaChartPie } from "react-icons/fa";
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
+  <Preview height="200px">
       <Input
         label="Label"
         name="input"
         onChange={() => {}}
     />
+     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy
-        <Input
-            label="Label"
-            name="input"
-            onChange={() => {}}
-        />
+    ```ts copy showLineNumbers
+    import Input from '@start-base/react-form-elements/Input';
+    import '@start-base/react-form-elements/styles.css';
+
+    <Input
+        label="Label"
+        name="input"
+        onChange={() => {}}
+    />
     ```
   </Tabs.Tab>
 </Tabs>
@@ -52,19 +63,24 @@ import { FaChartPie } from "react-icons/fa";
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
+  <Preview height="200px">
       <Input
         placeholder="Placeholder"
         name="input"
         onChange={() => {}}
     />
+     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy
-        <Input
-            placeholder="Placeholder"
-            name="input"
-            onChange={() => {}}
-        />
+    ```ts copy showLineNumbers
+    import Input from '@start-base/react-form-elements/Input';
+    import '@start-base/react-form-elements/styles.css';
+
+    <Input
+      placeholder="Placeholder"
+      name="input"
+      onChange={() => {}}
+    />
     ```
   </Tabs.Tab>
 </Tabs>
@@ -74,21 +90,26 @@ import { FaChartPie } from "react-icons/fa";
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
+  <Preview height="200px">
       <Input
         placeholder="Placeholder"
         label="Label"
         name="input"
         onChange={() => {}}
     />
+     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy
-        <Input
-            placeholder="Placeholder"
-            label="Label"
-            name="input"
-            onChange={() => {}}
-        />
+    ```ts copy showLineNumbers
+    import Input from '@start-base/react-form-elements/Input';
+    import '@start-base/react-form-elements/styles.css';
+  
+    <Input
+      placeholder="Placeholder"
+      label="Label"
+      name="input"
+      onChange={() => {}}
+    />
     ```
   </Tabs.Tab>
 </Tabs>
@@ -98,6 +119,7 @@ import { FaChartPie } from "react-icons/fa";
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
+  <Preview height="200px">
       <Input
         disableShrink
         placeholder="Placeholder"
@@ -105,16 +127,20 @@ import { FaChartPie } from "react-icons/fa";
         name="input"
         onChange={() => {}}
     />
+     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy
-        <Input
-            disableShrink
-            placeholder="Placeholder"
-            label="Label"
-            name="input"
-            onChange={() => {}}
-        />
+    ```ts copy showLineNumbers
+    import Input from '@start-base/react-form-elements/Input';
+    import '@start-base/react-form-elements/styles.css';
+
+    <Input
+      disableShrink
+      placeholder="Placeholder"
+      label="Label"
+      name="input"
+      onChange={() => {}}
+    />
     ```
   </Tabs.Tab>
 </Tabs>
@@ -123,6 +149,7 @@ import { FaChartPie } from "react-icons/fa";
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
+  <Preview height="200px">
       <Input
         disabled
         placeholder="Placeholder"
@@ -130,9 +157,10 @@ import { FaChartPie } from "react-icons/fa";
         name="input"
         onChange={() => {}}
     />
+   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy
+    ```ts copy showLineNumbers
         <Input
             disabled
             placeholder="Placeholder"
@@ -148,6 +176,7 @@ import { FaChartPie } from "react-icons/fa";
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
+  <Preview height="200px">
       <Input
         placeholder="Placeholder"
         label="Label"
@@ -155,16 +184,20 @@ import { FaChartPie } from "react-icons/fa";
         onChange={() => {}}
         append={<FaChartPie />}
     />
+     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy
-        <Input
-            placeholder="Placeholder"
-            label="Label"
-            name="input"
-            onChange={() => {}}
-            append={<FaChartPie />}
-        />
+    ```ts copy showLineNumbers
+    import Input from '@start-base/react-form-elements/Input';
+    import '@start-base/react-form-elements/styles.css';
+  
+    <Input
+      placeholder="Placeholder"
+      label="Label"
+      name="input"
+      onChange={() => {}}
+      append={<FaChartPie />}
+    />
     ```
   </Tabs.Tab>
 </Tabs>
@@ -173,6 +206,7 @@ import { FaChartPie } from "react-icons/fa";
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
+  <Preview height="200px">
       <Input
         placeholder="Placeholder"
         label="Label"
@@ -180,16 +214,20 @@ import { FaChartPie } from "react-icons/fa";
         onChange={() => {}}
         prepend={<FaChartPie />}
     />
+     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy
-        <Input
-            placeholder="Placeholder"
-            label="Label"
-            name="input"
-            onChange={() => {}}
-            prepend={<FaChartPie />}
-        />
+    ```ts copy showLineNumbers
+    import Input from '@start-base/react-form-elements/Input';
+    import '@start-base/react-form-elements/styles.css';
+
+    <Input
+        placeholder="Placeholder"
+        label="Label"
+        name="input"
+        onChange={() => {}}
+        prepend={<FaChartPie />}
+    />
     ```
   </Tabs.Tab>
 </Tabs>
@@ -198,6 +236,7 @@ import { FaChartPie } from "react-icons/fa";
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
+  <Preview height="200px">
       <Input
         placeholder="Placeholder"
         label="Label"
@@ -205,16 +244,20 @@ import { FaChartPie } from "react-icons/fa";
         onChange={() => {}}
         error="Error Message"
     />
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy
-        <Input
-            placeholder="Placeholder"
-            label="Label"
-            name="input"
-            onChange={() => {}}
-            error="Error Message"
-        />
+    ```ts copy showLineNumbers
+    import Input from '@start-base/react-form-elements/Input';
+    import '@start-base/react-form-elements/styles.css';
+    
+    <Input
+      placeholder="Placeholder"
+      label="Label"
+      name="input"
+      onChange={() => {}}
+      error="Error Message"
+    />
     ```
   </Tabs.Tab>
 </Tabs>
