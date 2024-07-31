@@ -1,6 +1,60 @@
-# DateRangePicker
+# Date Picker
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+The DatePicker component is a user-friendly and customizable calendar input designed for selecting a single date.
+
+## Installation
+
+<Tabs items={["npm", "yarn", "pnpm"]}>
+<Tabs.Tab>
+    ``` bash copy
+    npm install --save @start-base/react-form-elements
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ``` bash copy
+    yarn add @start-base/react-form-elements
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ``` bash copy
+    pnpm add @start-base/react-form-elements
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+Make sure to add css file to your app root file
+
+``` tsx copy
+import '@start-base/react-form-elements/styles.css';
+```
 
 import { Tabs } from "nextra/components";
-import s from "../../style.module.css";
+import DatePicker from '@start-base/react-form-elements/DatePicker';
+import '@start-base/react-form-elements/styles.css';
+import 'react-day-picker/dist/style.css'
+import Preview from '../../components/Preview/Preview';
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="800px">
+     <DatePicker
+    label="DateRangePicker"
+    name="input"
+    onChange={() => {}}
+  />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+    import DatePicker from '@start-base/react-form-elements/DatePicker';
+    import '@start-base/react-form-elements/styles.css';
+
+    <DatePicker
+        label="DateRangePicker"
+        name="input"
+        onChange={() => {}}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+

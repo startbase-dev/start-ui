@@ -1,6 +1,222 @@
-# RadioGroup
+# Radio Group
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+The RadioGroup component is designed to manage a set of radio buttons that allows users to select a single option from multiple choices. It groups multiple Radio components together, ensuring that only one option can be selected at a time.
+
+## Installation
+
+<Tabs items={["npm", "yarn", "pnpm"]}>
+<Tabs.Tab>
+    ``` bash copy
+    npm install --save @start-base/react-form-elements
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ``` bash copy
+    yarn add @start-base/react-form-elements
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ``` bash copy
+    pnpm add @start-base/react-form-elements
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+Make sure to add css file to your app root file
+
+``` tsx copy
+import '@start-base/react-form-elements/styles.css';
+```
 
 import { Tabs } from "nextra/components";
-import s from "../../style.module.css";
+import '@start-base/react-form-elements/styles.css';
+import RadioGroup from '@start-base/react-form-elements/RadioGroup';
+import Preview from '../../components/Preview/Preview';
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+    <RadioGroup
+      label="RadioGroup"
+      name="default"
+      onChange={() => {}}
+      options={[
+        {
+          label: 'Radio Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Radio Option 2',
+          value: 'default2'
+        }
+      ]}
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import RadioGroup from '@start-base/react-form-elements/RadioGroup';
+    import '@start-base/react-form-elements/styles.css';
+
+    <RadioGroup
+      label="RadioGroup"
+      name="default"
+      onChange={() => {}}
+      options={[
+        {
+          label: 'Radio Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Radio Option 2',
+          value: 'default2'
+        }
+      ]}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Radio Group Component Checked
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <RadioGroup
+      checked
+      label="RadioGroup"
+      name="default"
+      onChange={() => {}}
+      options={[
+        {
+          label: 'Radio Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Radio Option 2',
+          value: 'default2'
+        }
+      ]}
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import RadioGroup from '@start-base/react-form-elements/RadioGroup';
+    import '@start-base/react-form-elements/styles.css';
+
+    <RadioGroup
+      checked
+      label="RadioGroup"
+      name="default"
+      onChange={() => {}}
+      options={[
+        {
+          label: 'Radio Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Radio Option 2',
+          value: 'default2'
+        }
+      ]}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Radio Group Component Disabled
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <RadioGroup
+      disabled
+      label="RadioGroup"
+      name="default"
+      onChange={() => {}}
+      options={[
+        {
+          label: 'Radio Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Radio Option 2',
+          value: 'default2'
+        }
+      ]}
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import RadioGroup from '@start-base/react-form-elements/RadioGroup';
+    import '@start-base/react-form-elements/styles.css';
+
+    <RadioGroup
+      disabled
+      label="RadioGroup"
+      name="default"
+      onChange={() => {}}
+      options={[
+        {
+          label: 'Radio Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Radio Option 2',
+          value: 'default2'
+        }
+      ]}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Radio Group Component Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <RadioGroup
+      error="Error Message"
+      label="RadioGroup"
+      name="default"
+      onChange={() => {}}
+      options={[
+        {
+          label: 'Radio Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Radio Option 2',
+          value: 'default2'
+        }
+      ]}
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import RadioGroup from '@start-base/react-form-elements/RadioGroup';
+    import '@start-base/react-form-elements/styles.css';
+
+    <RadioGroup
+      error="Error Message"
+      label="RadioGroup"
+      name="default"
+      onChange={() => {}}
+      options={[
+        {
+          label: 'Radio Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Radio Option 2',
+          value: 'default2'
+        }
+      ]}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
