@@ -53,7 +53,7 @@ package-lock.json
 /Card
 /Chip
 /Col
-/Collapsible
+/BentoGrid
 /Grid
 /Countdown
 /DataTable
