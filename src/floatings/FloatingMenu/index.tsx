@@ -68,7 +68,7 @@ const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
       nodeId,
       open: isOpen,
       onOpenChange: setIsOpen,
-      placement: isNested ? "right-start" : "bottom-start",
+      placement: isNested ? "right-start" : "bottom-end",
       middleware: [
         offset({
           mainAxis: isNested ? 0 : 4,
