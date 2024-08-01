@@ -1,6 +1,256 @@
 # PhoneInput
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+The PhoneInput component is designed for accurate and user-friendly phone number entry. It features an intuitive interface that allows users to input their phone numbers with automatic formatting and validation based on international standards.
+
+## Installation
+
+<Tabs items={["npm", "yarn", "pnpm"]}>
+<Tabs.Tab>
+    ``` bash copy
+    npm install --save @start-base/react-form-elements
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ``` bash copy
+    yarn add @start-base/react-form-elements
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ``` bash copy
+    pnpm add @start-base/react-form-elements
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+Make sure to add css file to your app root file
+
+``` tsx copy
+import '@start-base/react-form-elements/styles.css';
+```
 
 import { Tabs } from "nextra/components";
-import s from "../../style.module.css";
+import '@start-base/react-form-elements/styles.css';
+import PhoneInput from '@start-base/react-form-elements/PhoneInput';
+import Preview from '../../components/Preview/Preview';
+import { FaChartPie } from "react-icons/fa";
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+  <PhoneInput
+    name="input"
+    onChange={() => {}}
+    title="PhoneInput"
+  />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import PhoneInput from '@start-base/react-form-elements/PhoneInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <PhoneInput
+        name="input"
+        onChange={() => {}}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Phone Input With Label
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <PhoneInput
+        label="Label"
+        name="input"
+        onChange={() => {}}
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import PhoneInput from '@start-base/react-form-elements/PhoneInput';
+    import '@start-base/react-form-elements/styles.css';
+
+   <PhoneInput
+        label="Label"
+        name="input"
+        onChange={() => {}}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Phone Input With Placeholder
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <PhoneInput
+        name="input"
+        onChange={() => {}}
+        placeholder="+1 234 567 8901"
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import PhoneInput from '@start-base/react-form-elements/PhoneInput';
+    import '@start-base/react-form-elements/styles.css';
+
+   <PhoneInput
+        name="input"
+        onChange={() => {}}
+        placeholder="+1 234 567 8901"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Phone Input With Placeholder And Label
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <PhoneInput
+        label="Label"
+        name="input"
+        onChange={() => {}}
+        placeholder="+1 234 567 8901"
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import PhoneInput from '@start-base/react-form-elements/PhoneInput';
+    import '@start-base/react-form-elements/styles.css';
+
+   <PhoneInput
+      label="Label"
+        name="input"
+        onChange={() => {}}
+        placeholder="+1 234 567 8901"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Phone Input With Placeholder And Label And Disable Shrink
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <PhoneInput
+        disableShrink
+        label="Label"
+        name="input"
+        onChange={() => {}}
+        placeholder="+1 234 567 8901"
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import PhoneInput from '@start-base/react-form-elements/PhoneInput';
+    import '@start-base/react-form-elements/styles.css';
+
+   <PhoneInput
+        disableShrink
+        label="Label"
+        name="input"
+        onChange={() => {}}
+        placeholder="+1 234 567 8901"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Phone Input Disabled
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <PhoneInput
+        disabled
+        label="Label"
+        name="input"
+        onChange={() => {}}
+        placeholder="+1 234 567 8901"
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import PhoneInput from '@start-base/react-form-elements/PhoneInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <PhoneInput
+        disabled
+        label="Label"
+        name="input"
+        onChange={() => {}}
+        placeholder="+1 234 567 8901"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Phone Input Prepend
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <PhoneInput
+        label="Label"
+        name="input"
+        onChange={() => {}}
+        placeholder="+1 234 567 8901"
+        prepend={<FaChartPie />}
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import PhoneInput from '@start-base/react-form-elements/PhoneInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <PhoneInput
+        label="Label"
+        name="input"
+        onChange={() => {}}
+        placeholder="+1 234 567 8901"
+        prepend={<FaChartPie />}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Phone Input Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <PhoneInput
+        error="Error Message"
+        label="Label"
+        name="input"
+        onChange={() => {}}
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import PhoneInput from '@start-base/react-form-elements/PhoneInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <PhoneInput
+        error="Error Message"
+        label="Label"
+        name="input"
+        onChange={() => {}}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>

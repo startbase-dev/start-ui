@@ -1,3 +1,23 @@
 {
-  "amountInput": "Amount Input"
+  "amountInput": "Amount Input",
+  "calendar": "Calendar",
+  "checkbox": "Checkbox",
+  "checkboxCards": "Checkbox Cards",
+  "checkboxGroup": "Checkbox Group",
+  "datePicker": "DatePicker",
+  "dateRangePicker": "Date Range Picker",
+  "input": "Input",
+  "multipleDatePicker": "Multiple DatePicker",
+  "numberInput": "Number Input",
+  "otpInput": "OTP Input",
+  "passwordInput": "Password Input",
+  "phoneInput": "Phone Input",
+  "radio": "Radio",
+  "radioCards": "Radio Cards",
+  "radioGroup": "Radio Group",
+  "select": "Select",
+  "slider": "Slider",
+  "switch": "Switch",
+  "textArea": "Text Area",
+  "form": "Form"
 }

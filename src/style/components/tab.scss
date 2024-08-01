@@ -1,0 +1,22 @@
+:root {
+  --sui-tab-buttons-bg: var(--sui-gray-100);
+  --sui-tab-button-border: var(--sui-transparent);
+  --sui-tab-button-fg: var(--sui-black);
+  --sui-tab-button-bg: var(--sui-transparent);
+  --sui-tab-button-disabled-fg: var(--sui-gray-500);
+  --sui-tab-button-selected-fg: var(--sui-black);
+  --sui-tab-button-selected-bg: var(--sui-white);
+  --sui-tab-content-bg: var(--sui-white);
+  --sui-tab-content-fg: var(--sui-black);
+  --sui-tab-content-border: var(--sui-gray-300);
+}
+
+[data-theme="dark"] {
+  --sui-tab-buttons-bg: var(--sui-gray-800);
+  --sui-tab-button-fg: var(--sui-white);
+  --sui-tab-button-selected-fg: var(--sui-white);
+  --sui-tab-button-selected-bg: var(--sui-black);
+  --sui-tab-content-bg: var(--sui-black);
+  --sui-tab-content-fg: var(--sui-white);
+  --sui-tab-content-border: var(--sui-gray-700);
+}
