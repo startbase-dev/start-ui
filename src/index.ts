@@ -6,7 +6,7 @@ import Card from "./Card";
 import BentoCard from "./BentoCard";
 import Chip from "./Chip";
 import Col from "./Grid/Col";
-import Collapsible from "./Collapsible";
+import BentoGrid from "./BentoGrid";
 import Grid from "./Grid";
 import Countdown from "./Countdown";
 import DataTable from "./DataTable";
@@ -49,7 +49,7 @@ export {
   BentoCard,
   Chip,
   Col,
-  Collapsible,
+  BentoGrid,
   Grid,
   Countdown,
   DataTable,

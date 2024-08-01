@@ -7,6 +7,7 @@ interface DropdownProps {
   component?: ReactElement;
   label?: string;
   className?: string;
+  menuClassName?: string;
   onFocus?: (event: React.FocusEvent<HTMLDivElement>) => void;
 }
 

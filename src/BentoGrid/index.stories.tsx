@@ -1,5 +1,5 @@
 import React from "react";
-import Collapsible from "./index";
+import BentoGrid from "./index";
 
 interface TemplateProps {
   title: string;
@@ -16,18 +16,18 @@ const Template: React.FC<TemplateProps> = (props) => {
           flexDirection: "column",
         }}
       >
-        <Collapsible />
+        <BentoGrid />
       </div>
     </>
   );
 };
 
-export const CollapsibleComponent = Template.bind({});
-CollapsibleComponent.args = { title: "Collapsible" };
+export const BentoGridComponent = Template.bind({});
+BentoGridComponent.args = { title: "BentoGrid" };
 
 const Component = {
-  title: "UI/Collapsible",
-  component: CollapsibleComponent,
+  title: "UI/BentoGrid",
+  component: BentoGridComponent,
 };
 
 export default Component;

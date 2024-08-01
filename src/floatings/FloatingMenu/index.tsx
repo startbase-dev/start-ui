@@ -44,11 +44,15 @@ interface FloatingMenuProps {
   component?: ReactElement;
   label?: ReactElement | ReactElement[] | string;
   className?: string;
+  menuClassName?: string;
   onFocus?: (event: React.FocusEvent<HTMLDivElement>) => void;
 }
 
 const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
-  ({ children, component, label, className, ...props }, forwardedRef) => {
+  (
+    { children, component, label, className, menuClassName, ...props },
+    forwardedRef,
+  ) => {
     const [isOpen, setIsOpen] = useState(false);
     const [hasFocusInside, setHasFocusInside] = useState(false);
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -195,7 +199,10 @@ const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
                 >
                   <div
                     ref={refs.setFloating}
-                    className={styles.menu}
+                    className={cx(
+                      styles.menu,
+                      menuClassName && { [menuClassName]: true },
+                    )}
                     style={floatingStyles}
                     {...getFloatingProps()}
                   >
