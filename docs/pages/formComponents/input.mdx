@@ -6,17 +6,14 @@ The Input component is a versatile and customizable form element designed to cap
 
 import { Tabs } from "nextra/components";
 import '@start-base/react-form-elements/styles.css';
-import Input from '@start-base/react-form-elements/Input';
 import { FaChartPie } from "react-icons/fa";
 import Preview from '../../components/Preview/Preview';
+import InputWithOnChange from './InputWithOnChange';
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-      <Input
-        name="input"
-        onChange={() => {}}
-    />
+     <InputWithOnChange />
      </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -26,7 +23,7 @@ import Preview from '../../components/Preview/Preview';
 
     <Input
       name="input"
-      onChange={() => {}}
+      onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -38,11 +35,7 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-      <Input
-        label="Label"
-        name="input"
-        onChange={() => {}}
-    />
+    <InputWithOnChange label="Label"/>
      </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -53,7 +46,7 @@ import Preview from '../../components/Preview/Preview';
     <Input
         label="Label"
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -64,11 +57,7 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-      <Input
-        placeholder="Placeholder"
-        name="input"
-        onChange={() => {}}
-    />
+    <InputWithOnChange placeholder="Placeholder"/>
      </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -79,7 +68,7 @@ import Preview from '../../components/Preview/Preview';
     <Input
       placeholder="Placeholder"
       name="input"
-      onChange={() => {}}
+      onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -91,12 +80,7 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-      <Input
-        placeholder="Placeholder"
-        label="Label"
-        name="input"
-        onChange={() => {}}
-    />
+    <InputWithOnChange placeholder="Placeholder" label="Label"/>
      </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -108,7 +92,7 @@ import Preview from '../../components/Preview/Preview';
       placeholder="Placeholder"
       label="Label"
       name="input"
-      onChange={() => {}}
+      onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -120,13 +104,7 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-      <Input
-        disableShrink
-        placeholder="Placeholder"
-        label="Label"
-        name="input"
-        onChange={() => {}}
-    />
+    <InputWithOnChange placeholder="Placeholder" label="Label" disableShrink/>
      </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -139,7 +117,7 @@ import Preview from '../../components/Preview/Preview';
       placeholder="Placeholder"
       label="Label"
       name="input"
-      onChange={() => {}}
+      onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -150,13 +128,7 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-      <Input
-        disabled
-        placeholder="Placeholder"
-        label="Label"
-        name="input"
-        onChange={() => {}}
-    />
+    <InputWithOnChange placeholder="Placeholder" label="Label" disabled/>
    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -166,7 +138,7 @@ import Preview from '../../components/Preview/Preview';
             placeholder="Placeholder"
             label="Label"
             name="input"
-            onChange={() => {}}
+            onChange={handleChange}
         />
     ```
   </Tabs.Tab>
@@ -177,13 +149,7 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-      <Input
-        placeholder="Placeholder"
-        label="Label"
-        name="input"
-        onChange={() => {}}
-        append={<FaChartPie />}
-    />
+    <InputWithOnChange append={<FaChartPie />} label="Label"/>
      </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -192,10 +158,9 @@ import Preview from '../../components/Preview/Preview';
     import '@start-base/react-form-elements/styles.css';
   
     <Input
-      placeholder="Placeholder"
       label="Label"
       name="input"
-      onChange={() => {}}
+      onChange={handleChange}
       append={<FaChartPie />}
     />
     ```
@@ -207,13 +172,7 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-      <Input
-        placeholder="Placeholder"
-        label="Label"
-        name="input"
-        onChange={() => {}}
-        prepend={<FaChartPie />}
-    />
+    <InputWithOnChange prepend={<FaChartPie />} label="Label"/>
      </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -222,10 +181,9 @@ import Preview from '../../components/Preview/Preview';
     import '@start-base/react-form-elements/styles.css';
 
     <Input
-        placeholder="Placeholder"
         label="Label"
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
         prepend={<FaChartPie />}
     />
     ```
@@ -237,13 +195,7 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-      <Input
-        placeholder="Placeholder"
-        label="Label"
-        name="input"
-        onChange={() => {}}
-        error="Error Message"
-    />
+     <InputWithOnChange label="Label" error="Error Message"/>
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -252,10 +204,9 @@ import Preview from '../../components/Preview/Preview';
     import '@start-base/react-form-elements/styles.css';
     
     <Input
-      placeholder="Placeholder"
       label="Label"
       name="input"
-      onChange={() => {}}
+      onChange={handleChange}
       error="Error Message"
     />
     ```
