@@ -1,8 +1,23 @@
+import { Tabs } from "nextra/components";
+import '@start-base/react-form-elements/styles.css';
+import OTPInput from '@start-base/react-form-elements/OTPInput';
+import Preview from '../../components/Preview/Preview';
+import ApiReferenceButton from '../../components/ApiReferenceButton/ApiReferenceButton';
+import FormOnChange from './formOnChange'
+import { Steps } from 'nextra/components'
+import '@start-base/react-form-elements/styles.css';
+
 # OTPInput
 
 The OTPInput component is designed for secure and user-friendly input of One-Time Passwords (OTPs). It features multiple input fields to capture each digit of the OTP individually, providing a clear and intuitive interface for users.
 
+<ApiReferenceButton path="form-otpinput--docs" />
+
 ## Installation
+
+<Steps>
+
+### Install the package
 
 <Tabs items={["npm", "yarn", "pnpm"]}>
 <Tabs.Tab>
@@ -21,26 +36,26 @@ The OTPInput component is designed for secure and user-friendly input of One-Tim
     ```
   </Tabs.Tab>
 </Tabs>
-
+ 
+### Add the styles
+ 
 Make sure to add css file to your app root file
 
 ``` tsx copy
 import '@start-base/react-form-elements/styles.css';
 ```
 
-import { Tabs } from "nextra/components";
-import '@start-base/react-form-elements/styles.css';
-import OTPInput from '@start-base/react-form-elements/OTPInput';
-import Preview from '../../components/Preview/Preview';
+</Steps>
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
+  <FormOnChange>
     <OTPInput
     length={5}
     name="input"
-    onChange={() => {}}
   />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -51,7 +66,7 @@ import Preview from '../../components/Preview/Preview';
     <OTPInput
         length={5}
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -62,12 +77,13 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-   <OTPInput
+    <FormOnChange>
+      <OTPInput
     label="Label"
     length={5}
     name="input"
-    onChange={() => {}}
   />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -79,7 +95,7 @@ import Preview from '../../components/Preview/Preview';
         label="Label"
         length={5}
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -90,12 +106,13 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-   <OTPInput
+      <FormOnChange>
+      <OTPInput
     label="Label"
     length={4}
     name="input"
-    onChange={() => {}}
   />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -107,7 +124,7 @@ import Preview from '../../components/Preview/Preview';
         label="Label"
         length={4}
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -118,7 +135,8 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-   <OTPInput
+     <FormOnChange>
+      <OTPInput
     format={[
       2,
       2,
@@ -126,8 +144,8 @@ import Preview from '../../components/Preview/Preview';
     ]}
     length={6}
     name="input"
-    onChange={() => {}}
   />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -139,7 +157,7 @@ import Preview from '../../components/Preview/Preview';
         format={[2,2,2]}
         length={6}
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
   />
     ```
   </Tabs.Tab>
@@ -150,13 +168,15 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-   <OTPInput
+  
+    <FormOnChange>
+      <OTPInput
     format={[3,3]}
     length={6}
     name="input"
     separator="/"
-    onChange={() => {}}
   />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -169,7 +189,7 @@ import Preview from '../../components/Preview/Preview';
         length={6}
         name="input"
         separator="/"
-        onChange={() => {}}
+        onChange={handleChange}
   />
     ```
   </Tabs.Tab>
@@ -180,16 +200,18 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-   <OTPInput
+  
+   <FormOnChange>
+     <OTPInput
     format={[
       3,
       3
     ]}
     length={6}
     name="input"
-    onChange={() => {}}
     timer={120}
   />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -201,7 +223,7 @@ import Preview from '../../components/Preview/Preview';
         format={[3,3]}
         length={6}
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
         timer={120}
     />
     ```
@@ -213,17 +235,19 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-   <OTPInput
+  
+   <FormOnChange>
+     <OTPInput
     format={[
       3,
       3
     ]}
     length={6}
     name="input"
-    onChange={() => {}}
     onComplete={() => {}}
     timer={120}
   />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -235,7 +259,7 @@ import Preview from '../../components/Preview/Preview';
         format={[3,3]}
         length={6}
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
         onComplete={() => {}}
         timer={120}
     />
@@ -248,13 +272,15 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-   <OTPInput
+  
+   <FormOnChange>
+     <OTPInput
     length={6}
     name="input"
-    onChange={() => {}}
     onResend={() => {}}
     timer={120}
   />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -265,7 +291,7 @@ import Preview from '../../components/Preview/Preview';
     <OTPInput
         length={6}
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
         onResend={() => {}}
         timer={120}
     />
@@ -278,14 +304,16 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
+   
+  <FormOnChange>
    <OTPInput
     disabled
     label="Label"
     length={5}
     name="input"
-    onChange={() => {}}
     placeholder="Placeholder"
   />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -298,7 +326,7 @@ import Preview from '../../components/Preview/Preview';
         label="Label"
         length={5}
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
         placeholder="Placeholder"
     />
     ```
@@ -310,13 +338,15 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-  <OTPInput
+ 
+    <FormOnChange>
+    <OTPInput
     error="Error Message"
     label="Label"
     length={5}
     name="input"
-    onChange={() => {}}
   />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -329,7 +359,7 @@ import Preview from '../../components/Preview/Preview';
         label="Label"
         length={5}
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -340,13 +370,14 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-  <OTPInput
+      <FormOnChange>
+    <OTPInput
     error
     label="Label"
     length={5}
     name="input"
-    onChange={() => {}}
   />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -359,7 +390,7 @@ import Preview from '../../components/Preview/Preview';
         label="Label"
         length={5}
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
     />
     ```
   </Tabs.Tab>

@@ -1,8 +1,23 @@
+
+import { Tabs } from "nextra/components";
+import '@start-base/react-form-elements/styles.css';
+import TextArea from '@start-base/react-form-elements/TextArea';
+import Preview from '../../components/Preview/Preview';
+import ApiReferenceButton from '../../components/ApiReferenceButton/ApiReferenceButton';
+import FormOnChange from './formOnChange'
+import { Steps } from 'nextra/components'
+
 # TextArea
 
 The TextArea component is designed for multi-line text input, providing users with an area to enter larger amounts of text. It features a flexible and resizable interface that adapts to user input
 
+<ApiReferenceButton path="form-textArea--docs" />
+
 ## Installation
+
+<Steps>
+
+### Install the package
 
 <Tabs items={["npm", "yarn", "pnpm"]}>
 <Tabs.Tab>
@@ -21,25 +36,26 @@ The TextArea component is designed for multi-line text input, providing users wi
     ```
   </Tabs.Tab>
 </Tabs>
-
+ 
+### Add the styles
+ 
 Make sure to add css file to your app root file
 
 ``` tsx copy
 import '@start-base/react-form-elements/styles.css';
 ```
 
-import { Tabs } from "nextra/components";
-import '@start-base/react-form-elements/styles.css';
-import TextArea from '@start-base/react-form-elements/TextArea';
-import Preview from '../../components/Preview/Preview';
+</Steps>
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-   <TextArea
+   
+  <FormOnChange>
+    <TextArea
     name="input"
-    onChange={() => {}}
   />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -49,7 +65,7 @@ import Preview from '../../components/Preview/Preview';
 
     <TextArea
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -60,11 +76,13 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-    <TextArea
+   
+      <FormOnChange>
+     <TextArea
         label="TextArea Label"
         name="input"
-        onChange={() => {}}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -75,7 +93,7 @@ import Preview from '../../components/Preview/Preview';
    <TextArea
         label="TextArea Label"
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -86,11 +104,13 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-   <TextArea
+   
+    <FormOnChange>
+     <TextArea
         placeholder="TextArea Placeholder"
         name="input"
-        onChange={() => {}}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -101,7 +121,7 @@ import Preview from '../../components/Preview/Preview';
    <TextArea
         placeholder="TextArea Placeholder"
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -112,12 +132,14 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-   <TextArea
+   
+    <FormOnChange>
+     <TextArea
         label="TextArea Label"
         placeholder="TextArea Placeholder"
         name="input"
-        onChange={() => {}}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -129,7 +151,7 @@ import Preview from '../../components/Preview/Preview';
         label="TextArea Label"
         placeholder="TextArea Placeholder"
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -140,13 +162,15 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-   <TextArea
+   
+    <FormOnChange>
+     <TextArea
         autoGrow
         label="TextArea Label"
         placeholder="TextArea Placeholder"
         name="input"
-        onChange={() => {}}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -159,7 +183,7 @@ import Preview from '../../components/Preview/Preview';
         label="TextArea Label"
         placeholder="TextArea Placeholder"
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -170,13 +194,15 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-   <TextArea
+   
+    <FormOnChange>
+     <TextArea
         disableShrink
         label="TextArea Label"
         placeholder="TextArea Placeholder"
         name="input"
-        onChange={() => {}}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -189,7 +215,7 @@ import Preview from '../../components/Preview/Preview';
         label="TextArea Label"
         placeholder="TextArea Placeholder"
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -200,12 +226,14 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-   <TextArea
+   
+    <FormOnChange>
+     <TextArea
         error="Error Message"
         label="TextArea Label"
         name="input"
-        onChange={() => {}}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -217,7 +245,7 @@ import Preview from '../../components/Preview/Preview';
         error="Error Message"
         label="TextArea Label"
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
     />
     ```
   </Tabs.Tab>
