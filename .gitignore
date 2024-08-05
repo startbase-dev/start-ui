@@ -72,6 +72,8 @@ package-lock.json
 /ToggleGroup
 /Tooltip
 /Typography
+/Container
+/Collapsible
 
 /index.js
 /styles.css
