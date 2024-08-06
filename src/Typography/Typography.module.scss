@@ -1,6 +1,11 @@
 .root {
   display: flex;
   font-family: var(--sui-font-family);
+  --sui-gray-950: #0a0a0a;
+  --sui-gray-450: #8c8c8c;
+  --sui-gray-550: #5f5f5f;
+  --sui-current: currentcolor;
+  --sui-transparent: transparent;
 }
 
 .title {
@@ -10,15 +15,15 @@
     font-size: var(--sui-h1-fs);
     line-height: var(--sui-h1-lh);
   }
-  &.lg {
+  &.large {
     font-size: var(--sui-h2-fs);
     line-height: var(--sui-h2-lh);
   }
-  &.md {
+  &.medium {
     font-size: var(--sui-h3-fs);
     line-height: var(--sui-h3-lh);
   }
-  &.sm {
+  &.small {
     font-size: var(--sui-h4-fs);
     line-height: var(--sui-h4-lh);
   }
@@ -56,15 +61,15 @@
     font-size: var(--sui-text-lead-fs);
     line-height: var(--sui-text-lead-lh);
   }
-  &.lg {
+  &.large {
     font-size: var(--sui-text-large-fs);
     line-height: var(--sui-text-large-lh);
   }
-  &.md {
+  &.medium {
     font-size: var(--sui-text-fs);
     line-height: var(--sui-text-lh);
   }
-  &.sm {
+  &.small {
     font-size: var(--sui-text-small-fs);
     line-height: var(--sui-text-small-lh);
   }
@@ -79,21 +84,21 @@
     background: linear-gradient(to bottom left, var(--sui-gray-450), var(--sui-gray-550));
   -webkit-background-clip: text;
   background-clip: text; 
-  color: transparent; 
+  color: var(--sui-transparent); 
   }
   &.lead {
     font-size: var(--sui-text-lead-fs);
     line-height: var(--sui-text-lead-lh);
   }
-  &.lg {
+  &.large {
     font-size: var(--sui-text-large-fs);
     line-height: var(--sui-text-large-lh);
   }
-  &.md {
+  &.medium {
     font-size: var(--sui-text-fs);
     line-height: var(--sui-text-lh);
   }
-  &.sm {
+  &.small {
     font-size: var(--sui-text-small-fs);
     line-height: var(--sui-text-small-lh);
   }
@@ -108,15 +113,15 @@
     font-size: var(--sui-text-lead-fs);
     line-height: var(--sui-text-lead-lh);
   }
-  &.lg {
+  &.large {
     font-size: var(--sui-text-large-fs);
     line-height: var(--sui-text-large-lh);
   }
-  &.md {
+  &.medium {
     font-size: var(--sui-text-fs);
     line-height: var(--sui-text-lh);
   }
-  &.sm {
+  &.small {
     font-size: var(--sui-text-small-fs);
     line-height: var(--sui-text-small-lh);
   }
@@ -126,7 +131,7 @@
   color: var(--sui-current);
 
   &.gradient{
-    background: linear-gradient(to bottom left, var(--sui-current), #1c1c1c);
+    background: linear-gradient(to bottom left, var(--sui-current), var(--sui-gray-950));
   -webkit-background-clip: text;
   background-clip: text; 
   color: transparent; 

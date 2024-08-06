@@ -11,7 +11,7 @@ export default {
       control: { type: "select" },
     },
     size: {
-      options: ["sm", "md", "lg", "lead"],
+      options: ["small", "medium", "large", "lead"],
       control: { type: "select" },
     },
     color: {
@@ -38,6 +38,7 @@ export default {
         "size",
         "color",
         "decoration",
+        "elementType",
         "gradient",
         "italic",
         "bold",
@@ -94,7 +95,7 @@ Subtitle.parameters = {
 export const Paragraph = Template.bind({});
 Paragraph.args = {
   variant: "paragraph",
-  size: "md",
+  size: "medium",
   color: "success",
   children: "This is a Paragraph",
   italic: true,
@@ -108,7 +109,7 @@ Paragraph.parameters = {
 export const Muted = Template.bind({});
 Muted.args = {
   variant: "muted",
-  size: "md",
+  size: "medium",
   color: "default",
   bold: true,
   children: "This is Muted Text with Medium Size",
@@ -122,7 +123,7 @@ Muted.parameters = {
 export const Quote = Template.bind({});
 Quote.args = {
   variant: "quote",
-  size: "lg",
+  size: "large",
   color: "error",
   children: `"This is a Quote"`,
 };

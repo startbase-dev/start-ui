@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 import clsx from "clsx";
 import s from "./Typography.module.scss";
 
-type TypographySize = "sm" | "md" | "lg" | "lead";
+type TypographySize = "small" | "medium" | "large" | "lead";
 type TypographyColor = "default" | "info" | "warning" | "error" | "success";
 type TypographyDecoration = "underline" | "overline" | "linethrough";
 type TypographyElement = "h2" | "h3" | "h4" | "h5" | "h6";
@@ -117,7 +117,7 @@ Subtitle.displayName = "Subtitle";
 const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
   (props, ref) => {
     const {
-      size = "sm",
+      size = "small",
       color = "default",
       decoration = false,
       italic = false,
@@ -152,7 +152,7 @@ const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
 Paragraph.displayName = "Paragraph";
 const Muted = forwardRef<HTMLParagraphElement, MutedProps>((props, ref) => {
   const {
-    size = "md",
+    size = "medium",
     color = "default",
     decoration = false,
     italic = false,
@@ -187,7 +187,7 @@ Muted.displayName = "Muted";
 
 const Quote = forwardRef<HTMLQuoteElement, QuoteProps>((props, ref) => {
   const {
-    size = "sm",
+    size = "small",
     color = "default",
     decoration = false,
     italic = false,
@@ -242,7 +242,7 @@ const Typography: React.FC<TypographyControllerProps> = ({
     case "quote":
       return <Quote {...props} />;
     default:
-      return null;
+      return <Paragraph {...props} />;
   }
 };
 
