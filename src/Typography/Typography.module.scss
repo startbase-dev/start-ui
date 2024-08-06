@@ -1,31 +1,48 @@
 .root {
   display: flex;
   font-family: var(--sui-font-family);
-  --sui-gray-950: #0a0a0a;
-  --sui-gray-450: #8c8c8c;
-  --sui-gray-550: #5f5f5f;
-  --sui-current: currentcolor;
-  --sui-transparent: transparent;
+  --sui-typography-black: #000;
+  --sui-typography-gray-950: #0a0a0a;
+  --sui-typography-gray-450: #8c8c8c;
+  --sui-typography-gray-550: #5f5f5f;
+  --sui-typography-info: #3b82f6;
+  --sui-typography-info-d600: color-mix(in srgb, var(--sui-typography-info) 60%, var(--sui-typography-black));
+  --sui-typography-success: #22c55e;
+  --sui-typography-success-d600: color-mix(
+    in srgb,
+    var(--sui-typography-success) 60%,
+    var(--sui-typography-black)
+  );
+  --sui-typography-warning: #f97316;
+  --sui-typography-warning-d600: color-mix(
+    in srgb,
+    var(--sui-typography-warning) 60%,
+    var(--sui-typography-black)
+  );
+  --sui-typography-error: #ef4444;
+  --sui-typography-error-d600: color-mix(in srgb, var(--sui-typography-error) 60%, var(--sui-typography-black));
+  --sui-typography-current: currentcolor;
+  --sui-typography-transparent: transparent;
 }
 
 .title {
   font-weight: 500;
  
   &.lead {
+    font-size: var(--sui-lead-fs);
+    line-height: var(--sui-lead-lh);
+  }
+  &.large {
     font-size: var(--sui-h1-fs);
     line-height: var(--sui-h1-lh);
   }
-  &.large {
+  &.medium {
     font-size: var(--sui-h2-fs);
     line-height: var(--sui-h2-lh);
   }
-  &.medium {
+  &.small {
     font-size: var(--sui-h3-fs);
     line-height: var(--sui-h3-lh);
-  }
-  &.small {
-    font-size: var(--sui-h4-fs);
-    line-height: var(--sui-h4-lh);
   }
   
 }
@@ -78,13 +95,13 @@
 .muted {
 
   &.default {
-    color: var(--sui-gray-450);
+    color: var(--sui-typography-gray-450);
   }
   &.gradient{
-    background: linear-gradient(to bottom left, var(--sui-gray-450), var(--sui-gray-550));
+    background: linear-gradient(to bottom left, var(--sui-gray-typography-450), var(--sui-gray-typography-550));
   -webkit-background-clip: text;
   background-clip: text; 
-  color: var(--sui-transparent); 
+  color: var(--sui-typography-transparent); 
   }
   &.lead {
     font-size: var(--sui-text-lead-fs);
@@ -105,7 +122,7 @@
 }
 
 .quote {
-  border-left: 1px solid var(--sui-gray-450);
+  border-left: 1px solid var(--sui-typography-gray-450);
   font-style: italic;
   padding-left: var(--sui-padding);
   
@@ -128,10 +145,10 @@
 }
 
 .default {
-  color: var(--sui-current);
+  color: var(--sui-typography-current);
 
   &.gradient{
-    background: linear-gradient(to bottom left, var(--sui-current), var(--sui-gray-950));
+    background: linear-gradient(to bottom left, var(--sui-typography-current), var(--sui-typography-gray-950));
   -webkit-background-clip: text;
   background-clip: text; 
   color: transparent; 
@@ -139,9 +156,9 @@
 }
 
 .info {
-  color: var(--sui-info);
+  color: var(--sui-typography-info);
   &.gradient {
-    background: linear-gradient(to bottom left, var(--sui-info), var(--sui-info-d600));
+    background: linear-gradient(to bottom left, var(--sui-typography-info), var(--sui-typography-info-d600));
   -webkit-background-clip: text;
   background-clip: text; 
   color: transparent; 
@@ -149,9 +166,9 @@
 }
 
 .warning {
-  color: var(--sui-warning);
+  color: var(--sui-typography-warning);
   &.gradient {
-    background: linear-gradient(to bottom left, var(--sui-warning), var(--sui-warning-d600));
+    background: linear-gradient(to bottom left, var(--sui-typography-warning), var(--sui-typography-warning-d600));
   -webkit-background-clip: text;
   background-clip: text; 
   color: transparent; 
@@ -159,9 +176,9 @@
 }
 
 .error {
-  color: var(--sui-error);
+  color: var(--sui-error-typography);
   &.gradient {
-    background: linear-gradient(to bottom left, var(--sui-error), var(--sui-error-d600));
+    background: linear-gradient(to bottom left, var(--sui-error-typography), var(--sui-error-typography-d600));
   -webkit-background-clip: text;
   background-clip: text; 
   color: transparent; 
@@ -169,9 +186,9 @@
 }
 
 .success {
-  color: var(--sui-success);
+  color: var(--sui-typography-success);
   &.gradient {
-    background: linear-gradient(to bottom left, var(--sui-success), var(--sui-success-d600));
+    background: linear-gradient(to bottom left, var(--sui-typography-success), var(--sui-typography-success-d600));
   -webkit-background-clip: text;
   background-clip: text; 
   color: transparent; 
