@@ -1,0 +1,17 @@
+:root {
+    --sui-typography-black-text: #000;
+    --sui-typography-gray-450-text: #8c8c8c;
+    --sui-typography-success-text: #22c55e;
+    --sui-typography-transparent-text: transparent;
+    --sui-typography-error-text: #ef4444;
+    --sui-typography-warning-text: #f97316;
+    --sui-typography-info-text: #3b82f6;
+    --sui-typography-current-text: currentcolor;
+    --sui-typography-gray-950-gradient: #0a0a0a;
+    --sui-typography-gray-550-gradient: #5f5f5f;
+    --sui-typography-info-d600-gradient: color-mix(in srgb, var(--sui-typography-info-text) 60%, var(--sui-typography-black-text));
+    --sui-typography-success-d600-gradient: color-mix(in srgb, var(--sui-typography-success-text) 60%, var(--sui-typography-black-text));
+    --sui-typography-warning-d600-gradient: color-mix(in srgb, var(--sui-typography-warning-text) 60%, var(--sui-typography-black-text));
+    --sui-typography-error-d600-gradient: color-mix(in srgb, var(--sui-typography-error-text) 60%, var(--sui-typography-black-text));
+    --sui-typography-gray-450-border: #8c8c8c;
+}

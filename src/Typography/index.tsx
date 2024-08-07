@@ -1,6 +1,8 @@
 import React, { forwardRef } from "react";
 import clsx from "clsx";
+// eslint-disable-next-line css-modules/no-unused-class
 import s from "./Typography.module.scss";
+import "../style/components/typography.scss";
 
 type TypographySize = "small" | "medium" | "large" | "lead";
 type TypographyColor = "default" | "info" | "warning" | "error" | "success";
@@ -226,25 +228,32 @@ interface TypographyControllerProps extends CombinedTypographyProps {
   variant: TypographyVariant;
 }
 
-const Typography: React.FC<TypographyControllerProps> = ({
-  variant,
-  ...props
-}) => {
-  switch (variant) {
-    case "title":
-      return <Title {...props} />;
-    case "subtitle":
-      return <Subtitle {...props} />;
-    case "paragraph":
-      return <Paragraph {...props} />;
-    case "muted":
-      return <Muted {...props} />;
-    case "quote":
-      return <Quote {...props} />;
-    default:
-      return <Paragraph {...props} />;
-  }
-};
+const Typography = forwardRef<HTMLElement, TypographyControllerProps>(
+  ({ variant, ...props }, ref) => {
+    switch (variant) {
+      case "title":
+        return <Title ref={ref as React.Ref<HTMLHeadingElement>} {...props} />;
+      case "subtitle":
+        return (
+          <Subtitle ref={ref as React.Ref<HTMLHeadingElement>} {...props} />
+        );
+      case "paragraph":
+        return (
+          <Paragraph ref={ref as React.Ref<HTMLParagraphElement>} {...props} />
+        );
+      case "muted":
+        return (
+          <Muted ref={ref as React.Ref<HTMLParagraphElement>} {...props} />
+        );
+      case "quote":
+        return <Quote ref={ref as React.Ref<HTMLQuoteElement>} {...props} />;
+      default:
+        return (
+          <Paragraph ref={ref as React.Ref<HTMLParagraphElement>} {...props} />
+        );
+    }
+  },
+);
 
 Typography.displayName = "Typography";
 
