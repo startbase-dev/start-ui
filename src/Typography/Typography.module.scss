@@ -1,3 +1,216 @@
 .root {
+  display: flex;
   font-family: var(--sui-font-family);
+}
+
+.title {
+  font-weight: 500;
+
+  &.lead {
+    font-size: var(--sui-lead-fs);
+    line-height: var(--sui-lead-lh);
+  }
+
+  &.large {
+    font-size: var(--sui-h1-fs);
+    line-height: var(--sui-h1-lh);
+  }
+
+  &.medium {
+    font-size: var(--sui-h2-fs);
+    line-height: var(--sui-h2-lh);
+  }
+
+  &.small {
+    font-size: var(--sui-h3-fs);
+    line-height: var(--sui-h3-lh);
+  }
+
+}
+
+.subtitle {
+  font-weight: 400;
+
+  &.h2 {
+    font-size: var(--sui-h2-fs);
+    line-height: var(--sui-h2-lh);
+  }
+
+  &.h3 {
+    font-size: var(--sui-h3-fs);
+    line-height: var(--sui-h3-lh);
+  }
+
+  &.h4 {
+    font-size: var(--sui-h4-fs);
+    line-height: var(--sui-h4-lh);
+  }
+
+  &.h5 {
+    font-size: var(--sui-h5-fs);
+    line-height: var(--sui-h5-lh);
+  }
+
+  &.h6 {
+    font-size: var(--sui-h6-fs);
+    line-height: var(--sui-h6-lh);
+  }
+}
+
+.paragraph {
+
+  &.lead {
+    font-size: var(--sui-text-lead-fs);
+    line-height: var(--sui-text-lead-lh);
+  }
+
+  &.large {
+    font-size: var(--sui-text-large-fs);
+    line-height: var(--sui-text-large-lh);
+  }
+
+  &.medium {
+    font-size: var(--sui-text-fs);
+    line-height: var(--sui-text-lh);
+  }
+
+  &.small {
+    font-size: var(--sui-text-small-fs);
+    line-height: var(--sui-text-small-lh);
+  }
+}
+
+.muted {
+
+  &.default {
+    color: var(--sui-typography-muted-text);
+  }
+
+  &.gradient {
+    background: linear-gradient(to bottom left, var(--sui-typography-muted-text), var(--sui-typography-muted-gradient));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: var(--sui-transparent);
+  }
+
+  &.lead {
+    font-size: var(--sui-text-lead-fs);
+    line-height: var(--sui-text-lead-lh);
+  }
+
+  &.large {
+    font-size: var(--sui-text-large-fs);
+    line-height: var(--sui-text-large-lh);
+  }
+
+  &.medium {
+    font-size: var(--sui-text-fs);
+    line-height: var(--sui-text-lh);
+  }
+
+  &.small {
+    font-size: var(--sui-text-small-fs);
+    line-height: var(--sui-text-small-lh);
+  }
+}
+
+.quote {
+  border-left: 1px solid var(--sui-typography-quote-border);
+  font-style: italic;
+  padding-left: var(--sui-padding);
+
+  &.lead {
+    font-size: var(--sui-text-lead-fs);
+    line-height: var(--sui-text-lead-lh);
+  }
+
+  &.large {
+    font-size: var(--sui-text-large-fs);
+    line-height: var(--sui-text-large-lh);
+  }
+
+  &.medium {
+    font-size: var(--sui-text-fs);
+    line-height: var(--sui-text-lh);
+  }
+
+  &.small {
+    font-size: var(--sui-text-small-fs);
+    line-height: var(--sui-text-small-lh);
+  }
+}
+
+.default {
+  color: var(--sui-current);
+
+  &.gradient {
+    background: linear-gradient(to bottom left, var(--sui-current), var(--sui-typography-quote-gradient));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: var(--sui-transparent);
+  }
+}
+
+.info {
+  color: var(--sui-typography-info-text);
+
+  &.gradient {
+    background: linear-gradient(to bottom left, var(--sui-typography-info-text), var(--sui-typography-info-gradient));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: var(--sui-transparent);
+  }
+}
+
+.warning {
+  color: var(--sui-typography-warning-text);
+
+  &.gradient {
+    background: linear-gradient(to bottom left, var(--sui-typography-warning-text), var(--sui-typography-warning-gradient));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: var(--sui-transparent);
+  }
+}
+
+.error {
+  color: var(--sui-typography-error-text);
+
+  &.gradient {
+    background: linear-gradient(to bottom left, var(--sui-typography-error-text), var(--sui-typography-error-gradient));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: var(--sui-transparent);
+  }
+}
+
+.success {
+  color: var(--sui-typography-success-text);
+
+  &.gradient {
+    background: linear-gradient(to bottom left, var(--sui-typography-success-text), var(--sui-typography-success-gradient));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: var(--sui-transparent);
+  }
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.overline {
+  text-decoration: overline;
+}
+
+.linethrough {
+  text-decoration: line-through;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
 }
