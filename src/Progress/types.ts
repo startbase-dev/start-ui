@@ -5,6 +5,7 @@ export interface ProgressProps extends React.SVGAttributes<SVGSVGElement> {
   size?: number;
   trackSize?: number;
   variant?: "linear" | "circular";
+  color?: "default" | "success" | "info" | "warning" | "error";
   progressLabel?: boolean;
   determinate?: boolean;
   className?: string;

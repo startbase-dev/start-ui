@@ -13,6 +13,7 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
     progressLabel = false,
     determinate = true,
     className = "",
+    color = "default",
     containerClassName = "",
     trackClassName = "",
     progressClassName = "",
@@ -20,7 +21,7 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
     ...rest
   } = props;
 
-  const rootClassNames = clsx(s.root, className);
+  const rootClassNames = clsx(s.root, s[color], className);
   const containerClassNames = clsx(s.container, containerClassName);
   const trackClassNames = clsx(s.track, trackClassName);
   const progressClassNames = clsx(s.progress, progressClassName);
@@ -29,6 +30,7 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
   const indeterminateValue = 0.25;
   const center = size * 0.5;
   const radius = size * 0.4;
+  const fontSize = size * 0.2;
   const circumference = 2 * Math.PI * radius;
   const normalizedValue = determinate
     ? normalizeValue(value, max, min)
@@ -76,7 +78,9 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
         ></circle>
       </svg>
       {labelAndDeterminate && (
-        <span className={labelClassNames}>{percentage}</span>
+        <span className={labelClassNames} style={{ fontSize: fontSize }}>
+          {percentage}
+        </span>
       )}
     </div>
   );

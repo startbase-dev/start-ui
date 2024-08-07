@@ -101,6 +101,12 @@
     }
   }
 
+  &.icon {
+    height: 32px;
+    padding: 0;
+    width: 32px;
+  }
+
   &.small {
     height: 24px;
     font-size: 0.75rem;
