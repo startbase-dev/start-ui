@@ -1,8 +1,22 @@
+import { Tabs } from "nextra/components";
+import '@start-base/react-form-elements/styles.css';
+import Switch from '@start-base/react-form-elements/Switch';
+import Preview from '../../components/Preview/Preview';
+import ApiReferenceButton from '../../components/ApiReferenceButton/ApiReferenceButton';
+import FormOnChange from './formOnChange'
+import { Steps } from 'nextra/components'
+
 # Switch
 
 The Switch component is designed for toggling between two states, such as "on" and "off," with a user-friendly sliding interface. It provides a clear and intuitive way for users to make binary choices, with support for custom labels, colors, and sizes to fit your application's design. 
 
+<ApiReferenceButton path="form-switch--docs" />
+
 ## Installation
+
+<Steps>
+
+### Install the package
 
 <Tabs items={["npm", "yarn", "pnpm"]}>
 <Tabs.Tab>
@@ -21,26 +35,27 @@ The Switch component is designed for toggling between two states, such as "on" a
     ```
   </Tabs.Tab>
 </Tabs>
-
+ 
+### Add the styles
+ 
 Make sure to add css file to your app root file
 
 ``` tsx copy
 import '@start-base/react-form-elements/styles.css';
 ```
 
-import { Tabs } from "nextra/components";
-import '@start-base/react-form-elements/styles.css';
-import Switch from '@start-base/react-form-elements/Switch';
-import Preview from '../../components/Preview/Preview';
+</Steps>
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-    <Switch
+   
+    <FormOnChange>
+     <Switch
       label="Switch"
       name="default"
-      onChange={() => {}}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -51,7 +66,7 @@ import Preview from '../../components/Preview/Preview';
     <Switch
       label="Switch"
       name="default"
-      onChange={() => {}}
+      onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -62,12 +77,14 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-    <Switch
+    
+     <FormOnChange>
+     <Switch
       checked
       label="Switch"
       name="default"
-      onChange={() => {}}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -79,7 +96,7 @@ import Preview from '../../components/Preview/Preview';
       checked
       label="Switch"
       name="default"
-      onChange={() => {}}
+      onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -90,12 +107,14 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-    <Switch
+    
+    <FormOnChange>
+     <Switch
       disabled
       label="Switch"
       name="default"
-      onChange={() => {}}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -107,7 +126,7 @@ import Preview from '../../components/Preview/Preview';
       disabled
       label="Switch"
       name="default"
-      onChange={() => {}}
+      onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -118,12 +137,14 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-    <Switch
+    
+    <FormOnChange>
+     <Switch
       error="Error Message"
       label="Switch"
       name="default"
-      onChange={() => {}}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -135,7 +156,7 @@ import Preview from '../../components/Preview/Preview';
       error="Error Message"
       label="Switch"
       name="default"
-      onChange={() => {}}
+      onChange={handleChange}
     />
     ```
   </Tabs.Tab>
