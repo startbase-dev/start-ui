@@ -1,6 +1,7 @@
 import React from "react";
 import { Meta, StoryFn } from "@storybook/react";
 import Typography from "./index";
+import Storybook from "../Storybook";
 
 export default {
   title: "UI/Typography",
@@ -48,7 +49,9 @@ export default {
   },
 } as Meta<typeof Typography>;
 
-const Template: StoryFn<typeof Typography> = (args) => <Typography {...args} />;
+const Template: StoryFn<typeof Typography> = (args) => {
+  return <Typography {...args}>{args.children}</Typography>;
+};
 
 export const Title = Template.bind({});
 Title.args = {
@@ -69,11 +72,11 @@ TitleWithGradient.args = {
   variant: "title",
   size: "lead",
   color: "default",
-  children: "This is a Title",
+  children: "This is a Title with Gradient",
   bold: true,
   gradient: true,
 };
-Title.parameters = {
+TitleWithGradient.parameters = {
   controls: {
     exclude: ["elementType"],
   },
@@ -97,7 +100,7 @@ Paragraph.args = {
   variant: "paragraph",
   size: "medium",
   color: "success",
-  children: "This is a Paragraph",
+  children: "This is a Paragraph with Italic Text",
   italic: true,
 };
 Paragraph.parameters = {
@@ -112,7 +115,7 @@ Muted.args = {
   size: "medium",
   color: "default",
   bold: true,
-  children: "This is Muted Text with Medium Size",
+  children: "This is a Muted Text with Medium Size",
 };
 Muted.parameters = {
   controls: {
@@ -132,3 +135,65 @@ Quote.parameters = {
     exclude: ["elementType"],
   },
 };
+
+const FullShowcaseTemplate: StoryFn<typeof Typography> = () => {
+  return (
+    <Storybook title="A Typography Page">
+      <Typography variant="title" size="lead">
+        StartUi
+      </Typography>
+      <Typography variant="title" size="large" gradient>
+        StartUi
+      </Typography>
+      <Typography variant="subtitle" elementType="h2" color="success" gradient>
+        Open-Source UI Library for Customizable, Modern, and Accessible Web
+        Interfaces
+      </Typography>
+      <Typography variant="subtitle" elementType="h3" color="success">
+        Open-Source UI Library for Customizable, Modern, and Accessible Web
+        Interfaces
+      </Typography>
+      <Typography variant="paragraph" size="lead">
+        StartUI is an open-source UI library designed to make web development
+        more efficient and enjoyable. It offers a comprehensive set of pre-built
+        components and utilities that integrate seamlessly with your CSS
+        workflow. StartUI emphasizes customization and flexibility, allowing you
+        to easily adjust colors, typography, layouts, and other design elements
+        to match your project&apos;s unique requirements.
+      </Typography>
+      <Typography variant="paragraph" size="large" color="warning">
+        StartUI is an open-source UI library designed to make web development
+        more efficient and enjoyable. It offers a comprehensive set of pre-built
+        components and utilities that integrate seamlessly with your CSS
+        workflow. StartUI emphasizes customization and flexibility, allowing you
+        to easily adjust colors, typography, layouts, and other design elements
+        to match your project&apos;s unique requirements.
+      </Typography>
+      <Typography variant="paragraph" size="medium">
+        StartUI is an open-source UI library designed to make web development
+        more efficient and enjoyable. It offers a comprehensive set of pre-built
+        components and utilities that integrate seamlessly with your CSS
+        workflow. StartUI emphasizes customization and flexibility, allowing you
+        to easily adjust colors, typography, layouts, and other design elements
+        to match your project&apos;s unique requirements.
+      </Typography>
+      <Typography variant="paragraph" size="small" color="info">
+        StartUI is an open-source UI library designed to make web development
+        more efficient and enjoyable. It offers a comprehensive set of pre-built
+        components and utilities that integrate seamlessly with your CSS
+        workflow. StartUI emphasizes customization and flexibility, allowing you
+        to easily adjust colors, typography, layouts, and other design elements
+        to match your project&apos;s unique requirements.
+      </Typography>
+      <Typography variant="muted" size="small" bold>
+        An Important Notice
+      </Typography>
+      <Typography variant="quote" size="lead" color="error">
+        &quot;Simplicity is the ultimate sophistication.&quot; <br />— Leonardo
+        da Vinci
+      </Typography>
+    </Storybook>
+  );
+};
+
+export const ATypographyPage = FullShowcaseTemplate.bind({});

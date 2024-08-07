@@ -83,14 +83,14 @@
 .muted {
 
   &.default {
-    color: var(--sui-typography-gray-450-text);
+    color: var(--sui-typography-muted-text);
   }
 
   &.gradient {
-    background: linear-gradient(to bottom left, var(--sui-typography-gray-450-text), var(--sui-typography-gray-550-gradient));
+    background: linear-gradient(to bottom left, var(--sui-typography-muted-text), var(--sui-typography-muted-gradient));
     -webkit-background-clip: text;
     background-clip: text;
-    color: var(--sui-typography-transparent-text);
+    color: var(--sui-transparent);
   }
 
   &.lead {
@@ -115,7 +115,7 @@
 }
 
 .quote {
-  border-left: 1px solid var(--sui-typography-gray-450-border);
+  border-left: 1px solid var(--sui-typography-quote-border);
   font-style: italic;
   padding-left: var(--sui-padding);
 
@@ -141,13 +141,13 @@
 }
 
 .default {
-  color: var(--sui-typography-current-text);
+  color: var(--sui-current);
 
   &.gradient {
-    background: linear-gradient(to bottom left, var(--sui-typography-current-text), var(--sui-typography-gray-950-gradient));
+    background: linear-gradient(to bottom left, var(--sui-current), var(--sui-typography-quote-gradient));
     -webkit-background-clip: text;
     background-clip: text;
-    color: var(--sui-typography-transparent-text);
+    color: var(--sui-transparent);
   }
 }
 
@@ -155,10 +155,10 @@
   color: var(--sui-typography-info-text);
 
   &.gradient {
-    background: linear-gradient(to bottom left, var(--sui-typography-info-text), var(--sui-typography-info-d600-gradient));
+    background: linear-gradient(to bottom left, var(--sui-typography-info-text), var(--sui-typography-info-gradient));
     -webkit-background-clip: text;
     background-clip: text;
-    color: var(--sui-typography-transparent-text);
+    color: var(--sui-transparent);
   }
 }
 
@@ -166,10 +166,10 @@
   color: var(--sui-typography-warning-text);
 
   &.gradient {
-    background: linear-gradient(to bottom left, var(--sui-typography-warning-text), var(--sui-typography-warning-d600-gradient));
+    background: linear-gradient(to bottom left, var(--sui-typography-warning-text), var(--sui-typography-warning-gradient));
     -webkit-background-clip: text;
     background-clip: text;
-    color: var(--sui-typography-transparent-text);
+    color: var(--sui-transparent);
   }
 }
 
@@ -177,10 +177,10 @@
   color: var(--sui-typography-error-text);
 
   &.gradient {
-    background: linear-gradient(to bottom left, var(--sui-typography-error-text), var(--sui-typography-error-d600-gradient));
+    background: linear-gradient(to bottom left, var(--sui-typography-error-text), var(--sui-typography-error-gradient));
     -webkit-background-clip: text;
     background-clip: text;
-    color: var(--sui-typography-transparent-text);
+    color: var(--sui-transparent);
   }
 }
 
@@ -188,10 +188,10 @@
   color: var(--sui-typography-success-text);
 
   &.gradient {
-    background: linear-gradient(to bottom left, var(--sui-typography-success-text), var(--sui-typography-success-d600-gradient));
+    background: linear-gradient(to bottom left, var(--sui-typography-success-text), var(--sui-typography-success-gradient));
     -webkit-background-clip: text;
     background-clip: text;
-    color: var(--sui-typography-transparent-text);
+    color: var(--sui-transparent);
   }
 }
 
