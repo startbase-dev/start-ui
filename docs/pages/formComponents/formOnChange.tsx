@@ -25,11 +25,13 @@ const FormOnChange: React.FC<FormOnChangeProps> = ({ children }) => {
     }));
   };
 
-  return cloneElement(children, {
-    name: "input",
-    value: inputs.input || "",
-    onChange: onChange,
-  });
+  return children
+    ? cloneElement(children, {
+        name: "input",
+        value: inputs.input || "",
+        onChange: onChange,
+      })
+    : null;
 };
 
 export default FormOnChange;

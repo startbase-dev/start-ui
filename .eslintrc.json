@@ -15,12 +15,14 @@
     "plugin:compat/recommended",
     "plugin:prettier/recommended",
     "prettier",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
+    "plugin:mdx/recommended"
   ],
   "plugins": ["@typescript-eslint", "compat", "prettier", "css-modules"],
   "parserOptions": {
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
+      "mdx/code-blocks": true
     },
     "ecmaVersion": 12,
     "sourceType": "module"
@@ -42,5 +44,14 @@
       }
     ],
     "no-useless-catch": 0
-  }
+  },
+  "overrides": [
+    {
+      "files": "*.mdx",
+      "extends": "plugin:mdx/recommended",
+      "rules": {
+        "semi": 0
+      }
+    }
+  ]
 }
