@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from "react";
+import React, { forwardRef, useState, useEffect } from "react";
 import s from "./Tab.module.scss";
 import clsx from "clsx";
 import type { TabProps } from "./types";
@@ -12,13 +12,19 @@ const Index = forwardRef<HTMLDivElement, TabProps>((props, ref) => {
 
   const [tabIndex, setTabIndex] = useState(0);
 
-  const buttons = tabs.map((tab, index) => (
-    <li key={`${tab.button}`} data-selected={index === tabIndex}>
-      <button onClick={() => setTabIndex(index)} disabled={tab.disabled}>
-        {tab.button}
-      </button>
-    </li>
-  ));
+  const buttons = tabs.map((tab, index) => {
+    return (
+      <li key={`${tab.button}`} data-selected={index === tabIndex}>
+        <button onClick={() => setTabIndex(index)} disabled={tab.disabled}>
+          {tab.button}
+        </button>
+      </li>
+    );
+  });
+
+  useEffect(() => tabs.forEach((tab, index) => {
+    if (tab.defaultOpen) setTabIndex(index);
+  }), [tabs]);
 
   return (
     <div className={rootClassNames} ref={ref} {...rest}>

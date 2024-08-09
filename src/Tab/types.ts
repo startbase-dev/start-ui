@@ -2,6 +2,7 @@ type Tab = {
   button: React.ReactNode;
   content: React.ReactNode;
   disabled?: boolean;
+  defaultOpen?: boolean;
 };
 
 export interface TabProps extends React.AllHTMLAttributes<HTMLDivElement> {
