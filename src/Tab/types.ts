@@ -2,7 +2,7 @@ export type TabType = {
   button: React.ReactNode;
   content: React.ReactNode;
   disabled?: boolean;
-  defaultOpen?: boolean;
+  open?: boolean;
 };
 
 export interface TabProps extends React.AllHTMLAttributes<HTMLDivElement> {
@@ -10,7 +10,7 @@ export interface TabProps extends React.AllHTMLAttributes<HTMLDivElement> {
   className?: string;
   buttonsClassName?: string;
   contentClassName?: string;
-  variant?: "default" | "ghost";
+  variant?: "default" | "tab";
 }
 
 export interface TemplateProps extends TabProps {

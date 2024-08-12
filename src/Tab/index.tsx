@@ -17,9 +17,7 @@ const Index = forwardRef<HTMLDivElement, TabProps>((props, ref) => {
   const contentClassNames = clsx(s.content, contentClassName);
 
   // find the first defaultOpen tab that is not disabled
-  const defaultOpenIndex = tabs.findIndex(
-    (tab) => tab.defaultOpen && !tab.disabled,
-  );
+  const defaultOpenIndex = tabs.findIndex((tab) => tab.open && !tab.disabled);
 
   // find the first not disabled tab
   const notDisabledTab = tabs.findIndex((tab) =>
