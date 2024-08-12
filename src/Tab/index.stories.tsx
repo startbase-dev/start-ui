@@ -81,7 +81,7 @@ const Template: React.FC<TemplateProps> = (props) => {
       content:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam odio nisi, consequat sit amet erat eget, fringilla placerat augue. Integer venenatis facilisis leo nec pulvinar. Quisque bibendum risus vitae diam tristique facilisis. Nunc nec purus in tortor tempus placerat. Aliquam ante diam, ornare et consectetur ac, condimentum non felis. Aenean egestas dignissim tincidunt. Nam tristique, purus vitae tempor tincidunt, felis lorem sagittis urna, ac pharetra ex metus vitae dolor. Sed augue elit, hendrerit eget auctor eget, egestas ut orci. Aliquam malesuada placerat nibh quis fermentum. Duis sit amet volutpat tellus.",
     },
-  ]
+  ];
 
   return (
     <StoryBook title={title}>
