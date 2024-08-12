@@ -4,7 +4,7 @@ import clsx from "clsx";
 import type { TabProps } from "./types";
 
 const Index = forwardRef<HTMLDivElement, TabProps>((props, ref) => {
-  const { tabs, className, buttonsClassName, contentClassName, ...rest } =
+  const { tabs, className, buttonsClassName, contentClassName, variant, ...rest } =
     props;
   const rootClassNames = clsx(s.root, className);
   const buttonsClassNames = clsx(s.buttons, buttonsClassName);
@@ -34,7 +34,7 @@ const Index = forwardRef<HTMLDivElement, TabProps>((props, ref) => {
   });
 
   return (
-    <div className={rootClassNames} ref={ref} {...rest}>
+    <div className={rootClassNames} ref={ref} data-variant={variant} {...rest}>
       <menu className={buttonsClassNames}>{buttons}</menu>
       <div className={contentClassNames}>{tabs[tabIndex]?.content}</div>
     </div>

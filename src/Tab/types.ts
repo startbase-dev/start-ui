@@ -10,6 +10,7 @@ export interface TabProps extends React.AllHTMLAttributes<HTMLDivElement> {
   className?: string;
   buttonsClassName?: string;
   contentClassName?: string;
+  variant?: "default" | "ghost";
 }
 
 export interface TemplateProps extends TabProps {
