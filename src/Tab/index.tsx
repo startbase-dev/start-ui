@@ -1,4 +1,4 @@
-import React, { forwardRef, useState, useEffect } from "react";
+import React, { forwardRef, useState } from "react";
 import s from "./Tab.module.scss";
 import clsx from "clsx";
 import type { TabProps } from "./types";
@@ -10,7 +10,18 @@ const Index = forwardRef<HTMLDivElement, TabProps>((props, ref) => {
   const buttonsClassNames = clsx(s.buttons, buttonsClassName);
   const contentClassNames = clsx(s.content, contentClassName);
 
-  const [tabIndex, setTabIndex] = useState(0);
+  // find the first defaultOpen tab that is not disabled
+  const defaultOpenIndex = tabs.findIndex(
+    tab => tab.defaultOpen && !tab.disabled
+  );
+
+  // find the first not disabled tab
+  const notDisabledTab = tabs.findIndex(
+    tab => tab.disabled === undefined ? true : !tab.disabled
+  );
+
+  const defaultIndex = defaultOpenIndex === -1 ? notDisabledTab : defaultOpenIndex;
+  const [tabIndex, setTabIndex] = useState(defaultIndex);
 
   const buttons = tabs.map((tab, index) => {
     return (
@@ -21,10 +32,6 @@ const Index = forwardRef<HTMLDivElement, TabProps>((props, ref) => {
       </li>
     );
   });
-
-  useEffect(() => tabs.forEach((tab, index) => {
-    if (tab.defaultOpen) setTabIndex(index);
-  }), [tabs]);
 
   return (
     <div className={rootClassNames} ref={ref} {...rest}>

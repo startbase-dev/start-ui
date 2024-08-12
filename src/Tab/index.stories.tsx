@@ -1,12 +1,12 @@
 import React from "react";
 import Tab from "./index";
 import StoryBook from "../Storybook/index";
-import type { TemplateProps } from "./types";
+import type { TemplateProps, TabType } from "./types";
 
 const Template: React.FC<TemplateProps> = (props) => {
   const { title, ...rest } = props;
 
-  const tabs = [
+  const tabs: TabType[] = [
     {
       button: "Tab 1",
       content:
@@ -24,7 +24,7 @@ const Template: React.FC<TemplateProps> = (props) => {
     },
   ];
 
-  const disabledTabs = [
+  const disabledTabs: TabType[] = [
     {
       button: "Tab 1",
       disabled: true,
@@ -44,7 +44,7 @@ const Template: React.FC<TemplateProps> = (props) => {
     },
   ];
 
-  const defaultOpenTabs = [
+  const defaultOpenTabs: TabType[] = [
     {
       button: "Tab 1",
       content:
@@ -69,14 +69,13 @@ const Template: React.FC<TemplateProps> = (props) => {
       <span>Tab allows you to display a set of content one at a time.</span>
       <Tab {...rest} tabs={tabs} />
       <span>
-        {`Disabled buttons won't display their content unless it is already
-        displayed.`}
-      </span>
-      <Tab {...rest} tabs={disabledTabs} />
-      <span>
-        {`Tabs with 'defaultOpen' set true will be open on page load. Beware that only the last 'defaultOpen' tab will be open if multiple tabs have 'defaultOpen'.`}
+        {`Tabs with 'defaultOpen' set true will be open on page load. Only the first 'defaultOpen' tab will be open if multiple tabs have 'defaultOpen'.`}
       </span>
       <Tab {...rest} tabs={defaultOpenTabs} />
+      <span>
+        {`Disabled buttons won't display their content even if it is 'defaultOpen'.`}
+      </span>
+      <Tab {...rest} tabs={disabledTabs} />
     </StoryBook>
   );
 };

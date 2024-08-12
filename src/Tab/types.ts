@@ -1,4 +1,4 @@
-type Tab = {
+export type TabType = {
   button: React.ReactNode;
   content: React.ReactNode;
   disabled?: boolean;
@@ -6,7 +6,7 @@ type Tab = {
 };
 
 export interface TabProps extends React.AllHTMLAttributes<HTMLDivElement> {
-  tabs: Tab[];
+  tabs: TabType[];
   className?: string;
   buttonsClassName?: string;
   contentClassName?: string;
