@@ -4,8 +4,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: .75rem;
-  background-color: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) 77% / .1);
+  border-radius: 0.75rem;
+  background-color: hsl(
+    var(--nextra-primary-hue) var(--nextra-primary-saturation) 77% / 0.1
+  );
 }
 
 .children {

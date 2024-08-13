@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "./index";
 import Storybook from "../Storybook";
+import { CloseIcon } from "@storybook/icons";
 
 interface TemplateProps {
   title: string;
@@ -41,6 +42,16 @@ const Template: React.FC<TemplateProps> = (props) => {
         Button Destructive Ghost
       </Button>
 
+      <Button size="medium" variant="default" color="primary">
+        <CloseIcon /> Button With Icon
+      </Button>
+      <Button size="medium" variant="default" color="secondary">
+        <CloseIcon /> Button With Icon
+      </Button>
+      <Button size="medium" variant="default" color="destructive">
+        <CloseIcon /> Button With Icon
+      </Button>
+
       <Button size="medium" variant="default" color="primary" disabled>
         Button Primary Default Disabled
       </Button>
@@ -59,6 +70,10 @@ const Template: React.FC<TemplateProps> = (props) => {
       </Button>
       <Button size="large" variant="default" color="destructive" loading>
         Button Destructive Default Disabled
+      </Button>
+
+      <Button size="icon" variant="default" color="primary">
+        <CloseIcon />
       </Button>
 
       <Button size="medium" variant="default" color="primary" fluid>

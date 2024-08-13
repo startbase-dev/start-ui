@@ -6,7 +6,7 @@
   border-radius: var(--sui-border-radius-medium);
   box-shadow: var(--sui-elevation-1);
   border: 1px solid var(--sui-popover-border);
-  z-index: 1;
+  z-index: 99999999;
 
   &.visible {
     visibility: visible;

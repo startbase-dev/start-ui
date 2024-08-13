@@ -13,6 +13,7 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
     progressLabel = false,
     determinate = true,
     className = "",
+    color = "default",
     containerClassName = "",
     trackClassName = "",
     progressClassName = "",
@@ -21,7 +22,7 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
     ...rest
   } = props;
 
-  const rootClassNames = clsx(s.root, className);
+  const rootClassNames = clsx(s.root, s[color], className);
   const containerClassNames = clsx(s.container, containerClassName);
   const trackClassNames = clsx(s.track, trackClassName);
   const progressClassNames = clsx(s.progress, progressClassName);

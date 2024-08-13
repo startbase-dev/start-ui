@@ -1,3 +1,82 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  position: relative;
+  font-family: var(--sui-font-family);
+
+  .root {
+    .progress {
+      transform: rotate(-90deg) translateX(-100%);
+    }
+
+    &.default {
+      .track {
+        color: var(--sui-progress-circular-default-track-bg);
+      }
+
+      .progress {
+        color: var(--sui-progress-circular-default-progress-bg);
+      }
+    }
+
+    &.success {
+      .track {
+        color: var(--sui-progress-circular-success-track-bg);
+      }
+
+      .progress {
+        color: var(--sui-progress-circular-success-progress-bg);
+      }
+    }
+
+    &.info {
+      .track {
+        color: var(--sui-progress-circular-info-track-bg);
+      }
+
+      .progress {
+        color: var(--sui-progress-circular-info-progress-bg);
+      }
+    }
+
+    &.warning {
+      .track {
+        color: var(--sui-progress-circular-warning-track-bg);
+      }
+
+      .progress {
+        color: var(--sui-progress-circular-warning-progress-bg);
+      }
+    }
+
+    &.error {
+      .track {
+        color: var(--sui-progress-circular-error-track-bg);
+      }
+
+      .progress {
+        color: var(--sui-progress-circular-error-progress-bg);
+      }
+    }
+
+    &[data-determinate="false"] {
+      animation: 0.5s linear both infinite spin;
+    }
+  }
+
+  .label {
+    fill: none;
+    font-size: inherit;
+    font-family: inherit;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
 @keyframes spin {
   from {
     rotate: 0deg;
@@ -6,36 +85,4 @@
   to {
     rotate: 360deg;
   }
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: fit-content;
-  position: relative;
-  font-family: var(--sui-font-family);
-}
-
-.root[data-determinate="false"] {
-  animation: 0.5s linear both infinite spin;
-}
-
-.track {
-  color: var(--sui-gray-200);
-}
-
-.progress {
-  color: var(--sui-primary);
-  transform: rotate(-90deg) translateX(-100%);
-}
-
-.label {
-  fill: inherit;
-  font-size: inherit;
-  font-family: inherit;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }

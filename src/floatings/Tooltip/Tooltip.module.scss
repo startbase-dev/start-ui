@@ -8,7 +8,7 @@
   box-shadow: var(--sui-elevation-1);
   font-size: var(--sui-text-fs);
   line-height: var(--sui-text-lh);
-  z-index: 1;
+  z-index: 99999999;
 
   &.visible {
     visibility: visible;

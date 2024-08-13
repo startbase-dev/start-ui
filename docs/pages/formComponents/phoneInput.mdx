@@ -1,8 +1,24 @@
-# PhoneInput
+import { Tabs } from "nextra/components";
+import '@start-base/react-form-elements/styles.css';
+import PhoneInput from '@start-base/react-form-elements/PhoneInput';
+import Preview from '../../components/Preview/Preview';
+import { FaChartPie } from "react-icons/fa";
+import ApiReferenceButton from '../../components/ApiReferenceButton/ApiReferenceButton';
+import FormOnChange from './formOnChange'
+import { Steps } from 'nextra/components'
+import '@start-base/react-form-elements/styles.css';
+
+# Phone Input
 
 The PhoneInput component is designed for accurate and user-friendly phone number entry. It features an intuitive interface that allows users to input their phone numbers with automatic formatting and validation based on international standards.
 
+<ApiReferenceButton path="form-phoneInput--docs" />
+
 ## Installation
+
+<Steps>
+
+### Install the package
 
 <Tabs items={["npm", "yarn", "pnpm"]}>
 <Tabs.Tab>
@@ -21,27 +37,27 @@ The PhoneInput component is designed for accurate and user-friendly phone number
     ```
   </Tabs.Tab>
 </Tabs>
-
+ 
+### Add the styles
+ 
 Make sure to add css file to your app root file
 
 ``` tsx copy
 import '@start-base/react-form-elements/styles.css';
 ```
 
-import { Tabs } from "nextra/components";
-import '@start-base/react-form-elements/styles.css';
-import PhoneInput from '@start-base/react-form-elements/PhoneInput';
-import Preview from '../../components/Preview/Preview';
-import { FaChartPie } from "react-icons/fa";
+</Steps>
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-  <PhoneInput
+
+  <FormOnChange>
+      <PhoneInput
     name="input"
-    onChange={() => {}}
     title="PhoneInput"
   />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -51,7 +67,7 @@ import { FaChartPie } from "react-icons/fa";
 
     <PhoneInput
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -62,11 +78,13 @@ import { FaChartPie } from "react-icons/fa";
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-   <PhoneInput
+   
+    <FormOnChange>
+     <PhoneInput
         label="Label"
         name="input"
-        onChange={() => {}}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -77,7 +95,7 @@ import { FaChartPie } from "react-icons/fa";
    <PhoneInput
         label="Label"
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -88,11 +106,13 @@ import { FaChartPie } from "react-icons/fa";
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-   <PhoneInput
+  
+        <FormOnChange>
+      <PhoneInput
         name="input"
-        onChange={() => {}}
         placeholder="+1 234 567 8901"
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -102,7 +122,7 @@ import { FaChartPie } from "react-icons/fa";
 
    <PhoneInput
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
         placeholder="+1 234 567 8901"
     />
     ```
@@ -114,12 +134,14 @@ import { FaChartPie } from "react-icons/fa";
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-   <PhoneInput
+   
+       <FormOnChange>
+     <PhoneInput
         label="Label"
         name="input"
-        onChange={() => {}}
         placeholder="+1 234 567 8901"
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -130,7 +152,7 @@ import { FaChartPie } from "react-icons/fa";
    <PhoneInput
       label="Label"
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
         placeholder="+1 234 567 8901"
     />
     ```
@@ -142,13 +164,15 @@ import { FaChartPie } from "react-icons/fa";
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-   <PhoneInput
+  
+           <FormOnChange>
+      <PhoneInput
         disableShrink
         label="Label"
         name="input"
-        onChange={() => {}}
         placeholder="+1 234 567 8901"
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -160,7 +184,7 @@ import { FaChartPie } from "react-icons/fa";
         disableShrink
         label="Label"
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
         placeholder="+1 234 567 8901"
     />
     ```
@@ -172,13 +196,15 @@ import { FaChartPie } from "react-icons/fa";
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-   <PhoneInput
+  
+     <FormOnChange>
+       <PhoneInput
         disabled
         label="Label"
         name="input"
-        onChange={() => {}}
         placeholder="+1 234 567 8901"
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -190,7 +216,7 @@ import { FaChartPie } from "react-icons/fa";
         disabled
         label="Label"
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
         placeholder="+1 234 567 8901"
     />
     ```
@@ -202,13 +228,15 @@ import { FaChartPie } from "react-icons/fa";
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-   <PhoneInput
+  
+     <FormOnChange>
+       <PhoneInput
         label="Label"
         name="input"
-        onChange={() => {}}
         placeholder="+1 234 567 8901"
         prepend={<FaChartPie />}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -219,7 +247,7 @@ import { FaChartPie } from "react-icons/fa";
     <PhoneInput
         label="Label"
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
         placeholder="+1 234 567 8901"
         prepend={<FaChartPie />}
     />
@@ -232,12 +260,14 @@ import { FaChartPie } from "react-icons/fa";
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-   <PhoneInput
+   
+     <FormOnChange>
+      <PhoneInput
         error="Error Message"
         label="Label"
         name="input"
-        onChange={() => {}}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -249,7 +279,7 @@ import { FaChartPie } from "react-icons/fa";
         error="Error Message"
         label="Label"
         name="input"
-        onChange={() => {}}
+        onChange={handleChange}
     />
     ```
   </Tabs.Tab>

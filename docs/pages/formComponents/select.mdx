@@ -1,8 +1,23 @@
+import { Tabs } from "nextra/components";
+import '@start-base/react-form-elements/styles.css';
+import Select from '@start-base/react-form-elements/Select';
+import Preview from '../../components/Preview/Preview';
+import ApiReferenceButton from '../../components/ApiReferenceButton/ApiReferenceButton';
+import FormOnChange from './formOnChange'
+import { Steps } from 'nextra/components'
+import '@start-base/react-form-elements/styles.css';
+
 # Select
 
 The Select component provides a versatile and user-friendly dropdown menu for selecting a single option from a list.
 
+<ApiReferenceButton path="form-select--docs" />
+
 ## Installation
+
+<Steps>
+
+### Install the package
 
 <Tabs items={["npm", "yarn", "pnpm"]}>
 <Tabs.Tab>
@@ -21,24 +36,24 @@ The Select component provides a versatile and user-friendly dropdown menu for se
     ```
   </Tabs.Tab>
 </Tabs>
-
+ 
+### Add the styles
+ 
 Make sure to add css file to your app root file
 
 ``` tsx copy
 import '@start-base/react-form-elements/styles.css';
 ```
 
-import { Tabs } from "nextra/components";
-import '@start-base/react-form-elements/styles.css';
-import Select from '@start-base/react-form-elements/Select';
-import Preview from '../../components/Preview/Preview';
+</Steps>
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="600px">
+    
+    <FormOnChange>
     <Select
         name="select"
-        onChange={() => {}}
         options={[
         {
             label: 'Item 1',
@@ -62,6 +77,7 @@ import Preview from '../../components/Preview/Preview';
         }
         ]}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -71,7 +87,7 @@ import Preview from '../../components/Preview/Preview';
 
     <Select
         name="select"
-        onChange={() => {}}
+        onChange={handleChange}
         options={[
         {
             label: 'Item 1',
@@ -104,10 +120,11 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="600px">
+   
+        <FormOnChange>
    <Select
         label="Label"
         name="select"
-        onChange={() => {}}
         options={[
         {
             label: 'Item 1',
@@ -131,6 +148,7 @@ import Preview from '../../components/Preview/Preview';
         }
         ]}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -141,7 +159,7 @@ import Preview from '../../components/Preview/Preview';
     <Select
         label="Label"
         name="select"
-        onChange={() => {}}
+        onChange={handleChange}
         options={[
         {
             label: 'Item 1',
@@ -174,10 +192,11 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="600px">
+   
+            <FormOnChange>
    <Select
         placeholder="Placeholder"
         name="select"
-        onChange={() => {}}
         options={[
         {
             label: 'Item 1',
@@ -201,6 +220,7 @@ import Preview from '../../components/Preview/Preview';
         }
         ]}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -211,7 +231,7 @@ import Preview from '../../components/Preview/Preview';
     <Select
         placeholder="Placeholder"
         name="select"
-        onChange={() => {}}
+        onChange={handleChange}
         options={[
         {
             label: 'Item 1',
@@ -244,11 +264,12 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="600px">
+   
+     <FormOnChange>
    <Select
         label="Label"
         placeholder="Placeholder"
         name="select"
-        onChange={() => {}}
         options={[
         {
             label: 'Item 1',
@@ -272,6 +293,7 @@ import Preview from '../../components/Preview/Preview';
         }
         ]}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -283,7 +305,7 @@ import Preview from '../../components/Preview/Preview';
         label="Label"
         placeholder="Placeholder"
         name="select"
-        onChange={() => {}}
+        onChange={handleChange}
         options={[
         {
             label: 'Item 1',
@@ -316,12 +338,13 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="600px">
-    <Select
+    
+         <FormOnChange>
+   <Select
         disableShrink
         label="Label"
         placeholder="Placeholder"
         name="select"
-        onChange={() => {}}
         options={[
         {
             label: 'Item 1',
@@ -345,6 +368,7 @@ import Preview from '../../components/Preview/Preview';
         }
         ]}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -357,7 +381,7 @@ import Preview from '../../components/Preview/Preview';
         label="Label"
         placeholder="Placeholder"
         name="select"
-        onChange={() => {}}
+        onChange={handleChange}
         options={[
         {
             label: 'Item 1',
@@ -390,11 +414,12 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="600px">
-    <Select
+
+     <FormOnChange>
+       <Select
         disabled
         placeholder="Placeholder"
         name="select"
-        onChange={() => {}}
         options={[
         {
             label: 'Item 1',
@@ -418,6 +443,7 @@ import Preview from '../../components/Preview/Preview';
         }
         ]}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -429,7 +455,7 @@ import Preview from '../../components/Preview/Preview';
         disabled
         placeholder="Placeholder"
         name="select"
-        onChange={() => {}}
+        onChange={handleChange}
         options={[
         {
             label: 'Item 1',
@@ -462,11 +488,12 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="600px">
-    <Select
+   
+         <FormOnChange>
+        <Select
         isMulti
         placeholder="Placeholder"
         name="select"
-        onChange={() => {}}
         options={[
         {
             label: 'Item 1',
@@ -490,6 +517,7 @@ import Preview from '../../components/Preview/Preview';
         }
         ]}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -501,7 +529,7 @@ import Preview from '../../components/Preview/Preview';
         isMulti
         placeholder="Placeholder"
         name="select"
-        onChange={() => {}}
+        onChange={handleChange}
         options={[
         {
             label: 'Item 1',
@@ -534,11 +562,12 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="600px">
-    <Select
+   
+             <FormOnChange>
+        <Select
         error="Error Message"
         label="Label"
         name="select"
-        onChange={() => {}}
         options={[
         {
             label: 'Item 1',
@@ -562,6 +591,7 @@ import Preview from '../../components/Preview/Preview';
         }
         ]}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -573,7 +603,7 @@ import Preview from '../../components/Preview/Preview';
         error="Error Message"
         label="Label"
         name="select"
-        onChange={() => {}}
+        onChange={handleChange}
         options={[
         {
             label: 'Item 1',

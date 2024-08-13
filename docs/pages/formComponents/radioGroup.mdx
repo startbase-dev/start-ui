@@ -1,8 +1,23 @@
+import { Tabs } from "nextra/components";
+import '@start-base/react-form-elements/styles.css';
+import RadioGroup from '@start-base/react-form-elements/RadioGroup';
+import Preview from '../../components/Preview/Preview';
+import ApiReferenceButton from '../../components/ApiReferenceButton/ApiReferenceButton';
+import FormOnChange from './formOnChange'
+import { Steps } from 'nextra/components'
+import '@start-base/react-form-elements/styles.css';
+
 # Radio Group
 
 The RadioGroup component is designed to manage a set of radio buttons that allows users to select a single option from multiple choices. It groups multiple Radio components together, ensuring that only one option can be selected at a time.
 
+<ApiReferenceButton path="form-radioGroup--docs" />
+
 ## Installation
+
+<Steps>
+
+### Install the package
 
 <Tabs items={["npm", "yarn", "pnpm"]}>
 <Tabs.Tab>
@@ -21,25 +36,25 @@ The RadioGroup component is designed to manage a set of radio buttons that allow
     ```
   </Tabs.Tab>
 </Tabs>
-
+ 
+### Add the styles
+ 
 Make sure to add css file to your app root file
 
 ``` tsx copy
 import '@start-base/react-form-elements/styles.css';
 ```
 
-import { Tabs } from "nextra/components";
-import '@start-base/react-form-elements/styles.css';
-import RadioGroup from '@start-base/react-form-elements/RadioGroup';
-import Preview from '../../components/Preview/Preview';
+</Steps>
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-    <RadioGroup
+    
+    <FormOnChange>
+   <RadioGroup
       label="RadioGroup"
       name="default"
-      onChange={() => {}}
       options={[
         {
           label: 'Radio Option 1',
@@ -51,6 +66,7 @@ import Preview from '../../components/Preview/Preview';
         }
       ]}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -61,7 +77,7 @@ import Preview from '../../components/Preview/Preview';
     <RadioGroup
       label="RadioGroup"
       name="default"
-      onChange={() => {}}
+      onChange={handleChange}
       options={[
         {
           label: 'Radio Option 1',
@@ -82,11 +98,12 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-   <RadioGroup
+
+        <FormOnChange>
+      <RadioGroup
       checked
       label="RadioGroup"
       name="default"
-      onChange={() => {}}
       options={[
         {
           label: 'Radio Option 1',
@@ -98,6 +115,7 @@ import Preview from '../../components/Preview/Preview';
         }
       ]}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -109,7 +127,7 @@ import Preview from '../../components/Preview/Preview';
       checked
       label="RadioGroup"
       name="default"
-      onChange={() => {}}
+      onChange={handleChange}
       options={[
         {
           label: 'Radio Option 1',
@@ -130,11 +148,12 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-   <RadioGroup
+   
+     <FormOnChange>
+     <RadioGroup
       disabled
       label="RadioGroup"
       name="default"
-      onChange={() => {}}
       options={[
         {
           label: 'Radio Option 1',
@@ -146,6 +165,7 @@ import Preview from '../../components/Preview/Preview';
         }
       ]}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -157,7 +177,7 @@ import Preview from '../../components/Preview/Preview';
       disabled
       label="RadioGroup"
       name="default"
-      onChange={() => {}}
+      onChange={handleChange}
       options={[
         {
           label: 'Radio Option 1',
@@ -178,11 +198,12 @@ import Preview from '../../components/Preview/Preview';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-   <RadioGroup
+  
+     <FormOnChange>
+     <RadioGroup
       error="Error Message"
       label="RadioGroup"
       name="default"
-      onChange={() => {}}
       options={[
         {
           label: 'Radio Option 1',
@@ -194,6 +215,7 @@ import Preview from '../../components/Preview/Preview';
         }
       ]}
     />
+  </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -205,7 +227,7 @@ import Preview from '../../components/Preview/Preview';
       error="Error Message"
       label="RadioGroup"
       name="default"
-      onChange={() => {}}
+      onChange={handleChange}
       options={[
         {
           label: 'Radio Option 1',

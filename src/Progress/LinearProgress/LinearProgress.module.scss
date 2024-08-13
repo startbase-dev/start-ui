@@ -1,3 +1,76 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  font-family: var(--sui-font-family);
+
+  .label {
+    fill: none;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: 100%;
+  }
+
+  .root {
+    border-radius: var(--sui-border-radius);
+
+    &.default {
+      .track {
+        color: var(--sui-progress-linear-default-track-bg);
+      }
+
+      .progress {
+        color: var(--sui-progress-linear-default-progress-bg);
+      }
+    }
+
+    &.success {
+      .track {
+        color: var(--sui-progress-linear-success-track-bg);
+      }
+
+      .progress {
+        color: var(--sui-progress-linear-success-progress-bg);
+      }
+    }
+
+    &.info {
+      .track {
+        color: var(--sui-progress-linear-info-track-bg);
+      }
+
+      .progress {
+        color: var(--sui-progress-linear-info-progress-bg);
+      }
+    }
+
+    &.warning {
+      .track {
+        color: var(--sui-progress-linear-warning-track-bg);
+      }
+
+      .progress {
+        color: var(--sui-progress-linear-warning-progress-bg);
+      }
+    }
+
+    &.error {
+      .track {
+        color: var(--sui-progress-linear-error-track-bg);
+      }
+
+      .progress {
+        color: var(--sui-progress-linear-error-progress-bg);
+      }
+    }
+
+    &[data-determinate="false"] .progress {
+      animation: 1.25s cubic-bezier(0.1, 0, 0.2, 1) both infinite slide;
+    }
+  }
+}
+
 @keyframes slide {
   from {
     transform: translateX(-150%);
@@ -6,36 +79,4 @@
   to {
     transform: translateX(150%);
   }
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: fit-content;
-  font-family: var(--sui-font-family);
-}
-
-.root {
-  border-radius: var(--sui-border-radius);
-
-  &[data-determinate="false"] .progress {
-    animation: 0.75s ease-in-out both infinite slide;
-  }
-}
-
-.track,
-.progress {
-  color: var(--sui-gray-200);
-}
-
-.progress {
-  color: var(--sui-primary);
-}
-
-.label {
-  fill: inherit;
-  font-size: inherit;
-  font-family: inherit;
-  line-height: 100%;
 }

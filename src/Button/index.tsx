@@ -12,7 +12,7 @@ type ButtonProps = {
   loading?: boolean;
   color?: "primary" | "secondary" | "destructive";
   variant?: "default" | "link" | "outline" | "ghost";
-  size?: "small" | "medium" | "large";
+  size?: "icon" | "small" | "medium" | "large";
   fluid?: boolean;
   type?: "submit" | "reset" | "button";
 } & ButtonHTMLAttributes<HTMLButtonElement>;

@@ -1,0 +1,45 @@
+:root {
+  --sui-progress-circular-default-track-bg: var(--sui-gray-150);
+  --sui-progress-circular-default-progress-bg: var(--sui-black);
+  --sui-progress-circular-success-track-bg: var(--sui-gray-150);
+  --sui-progress-circular-success-progress-bg: var(--sui-success);
+  --sui-progress-circular-info-track-bg: var(--sui-gray-150);
+  --sui-progress-circular-info-progress-bg: var(--sui-info);
+  --sui-progress-circular-warning-track-bg: var(--sui-gray-150);
+  --sui-progress-circular-warning-progress-bg: var(--sui-warning);
+  --sui-progress-circular-error-track-bg: var(--sui-gray-150);
+  --sui-progress-circular-error-progress-bg: var(--sui-error);
+  --sui-progress-linear-default-track-bg: var(--sui-gray-150);
+  --sui-progress-linear-default-progress-bg: var(--sui-black);
+  --sui-progress-linear-success-track-bg: var(--sui-gray-150);
+  --sui-progress-linear-success-progress-bg: var(--sui-success);
+  --sui-progress-linear-info-track-bg: var(--sui-gray-150);
+  --sui-progress-linear-info-progress-bg: var(--sui-info);
+  --sui-progress-linear-warning-track-bg: var(--sui-gray-150);
+  --sui-progress-linear-warning-progress-bg: var(--sui-warning);
+  --sui-progress-linear-error-track-bg: var(--sui-gray-150);
+  --sui-progress-linear-error-progress-bg: var(--sui-error);
+}
+
+[data-theme="dark"] {
+  --sui-progress-circular-default-track-bg: var(--sui-gray-800);
+  --sui-progress-circular-default-progress-bg: var(--sui-white);
+  --sui-progress-circular-success-track-bg: var(--sui-gray-800);
+  --sui-progress-circular-success-progress-bg: var(--sui-success);
+  --sui-progress-circular-info-track-bg: var(--sui-gray-800);
+  --sui-progress-circular-info-progress-bg: var(--sui-info);
+  --sui-progress-circular-warning-track-bg: var(--sui-gray-800);
+  --sui-progress-circular-warning-progress-bg: var(--sui-warning);
+  --sui-progress-circular-error-track-bg: var(--sui-gray-800);
+  --sui-progress-circular-error-progress-bg: var(--sui-error);
+  --sui-progress-linear-default-track-bg: var(--sui-gray-800);
+  --sui-progress-linear-default-progress-bg: var(--sui-black);
+  --sui-progress-linear-success-track-bg: var(--sui-gray-800);
+  --sui-progress-linear-success-progress-bg: var(--sui-success);
+  --sui-progress-linear-info-track-bg: var(--sui-gray-800);
+  --sui-progress-linear-info-progress-bg: var(--sui-info);
+  --sui-progress-linear-warning-track-bg: var(--sui-gray-800);
+  --sui-progress-linear-warning-progress-bg: var(--sui-warning);
+  --sui-progress-linear-error-track-bg: var(--sui-gray-800);
+  --sui-progress-linear-error-progress-bg: var(--sui-error);
+}

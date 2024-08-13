@@ -18,19 +18,17 @@
   },
   "homepage": "https://github.com/shuding/nextra-docs-template#readme",
   "dependencies": {
-    "@start-base/react-consent-manager": "^1.10.4",
-    "@start-base/react-form-elements": "^1.9.11",
-    "next": "^13.0.6",
+    "@start-base/react-consent-manager": "1.10.4",
+    "@start-base/react-form-elements": "1.9.13",
+    "next": "13.5.6",
     "nextra": "latest",
     "nextra-theme-docs": "latest",
-    "prettier": "^3.3.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-icons": "^5.2.1"
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-icons": "5.2.1"
   },
   "devDependencies": {
-    "@types/node": "18.11.10",
-    "eslint": "^8.57.0",
-    "typescript": "^4.9.3"
+    "@types/node": "22.1.0",
+    "typescript": "5.5.4"
   }
 }
