@@ -56,21 +56,11 @@
   position: relative;
   background-color: var(--sui-bento-card-bg);
   border-radius: 16px;
+  border: 1px solid var(--sui-bento-card-border);
   transition: background-color 600ms;
   line-height: 40px;
   font-family: var(--sui-font-family);
-
-  /* COLOR CODES */
-  --sui-bento-card-bg: var(--sui-white);
-  --sui-bento-card-bg-active: var(--sui-primary);
-  --sui-bento-card-title: var(--sui-black);
-  --sui-bento-card-title-active: var(--sui-white);
-  --sui-bento-card-button-bg: var(--sui-gray-500);
-  --sui-bento-card-button-bg-hover: var(--sui-gray-600);
-  --sui-bento-card-button-icon: var(--sui-white);
-  --sui-bento-card-button-active-bg: var(--sui-gray-500);
-  --sui-bento-card-button-active-bg-hover: var(--sui-gray-600);
-  --sui-bento-card-button-active-icon: var(--sui-white);
+  color: var(--sui-bento-card-content);
 }
 
 .rootActive {
@@ -117,7 +107,6 @@
 }
 
 .content {
-  color: var(--sui-white);
   transition:
     margin-top 600ms,
     opacity 600ms;

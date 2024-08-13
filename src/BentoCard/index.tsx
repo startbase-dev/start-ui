@@ -2,6 +2,7 @@ import React, { forwardRef, useMemo, useState } from "react";
 import clsx from "clsx";
 import s from "./BentoCard.module.scss";
 import Plus from "../icons/Plus";
+import ArrowForwardIos from "../icons/ArrowForwardIos";
 import type { IndexProps } from "./types";
 
 const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
@@ -17,6 +18,7 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     activeButtonClassName,
     isTitleVisibleInFirst = true,
     isTitleVisibleInSecond = true,
+    redirectTo,
   } = props;
   const [isActive, setIsActive] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
@@ -31,6 +33,10 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     } else {
       setIsActive(true);
     }
+  };
+
+  const handleClickRedirectTo = () => {
+    window.open(redirectTo, "_blank");
   };
 
   const titleHandler = useMemo(() => {
@@ -85,7 +91,7 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
           </div>
         </div>
       )}
-      {secondContent && (
+      {!redirectTo && secondContent ? (
         <button
           className={clsx(s.button, buttonClassName, {
             [activeButtonClassName as string]: isActive,
@@ -95,6 +101,17 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
           onClick={handleClick}
         >
           <Plus className={s.plusIcon} />
+        </button>
+      ) : (
+        <button
+          className={clsx(s.button, buttonClassName, {
+            [activeButtonClassName as string]: isActive,
+            [s.activeButton]: isActive,
+            [s.exitingButton]: isExiting,
+          })}
+          onClick={handleClickRedirectTo}
+        >
+          <ArrowForwardIos className={s.plusIcon} />
         </button>
       )}
     </div>

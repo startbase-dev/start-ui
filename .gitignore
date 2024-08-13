@@ -72,6 +72,8 @@ package-lock.json
 /ToggleGroup
 /Tooltip
 /Typography
+/Container
+/Collapsible
 
 /index.js
 /styles.css
@@ -79,3 +81,6 @@ package-lock.json
 /index.mjs
 
 *storybook.log
+
+# Visual Studio Code
+.vscode
