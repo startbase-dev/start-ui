@@ -59,18 +59,6 @@
   transition: background-color 600ms;
   line-height: 40px;
   font-family: var(--sui-font-family);
-
-  /* COLOR CODES */
-  --sui-bento-card-bg: var(--sui-white);
-  --sui-bento-card-bg-active: var(--sui-primary);
-  --sui-bento-card-title: var(--sui-black);
-  --sui-bento-card-title-active: var(--sui-white);
-  --sui-bento-card-button-bg: var(--sui-gray-500);
-  --sui-bento-card-button-bg-hover: var(--sui-gray-600);
-  --sui-bento-card-button-icon: var(--sui-white);
-  --sui-bento-card-button-active-bg: var(--sui-gray-500);
-  --sui-bento-card-button-active-bg-hover: var(--sui-gray-600);
-  --sui-bento-card-button-active-icon: var(--sui-white);
 }
 
 .rootActive {

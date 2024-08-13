@@ -48,6 +48,7 @@ const Template: React.FC<TemplateProps> = (props) => {
               them when others are using your device.
             </div>
           }
+          redirectTo="https://startbase.dev"
           secondContent={
             <div style={{ padding: "40px" }}>
               Lock an app to require Face ID, Touch ID, or your passcode for

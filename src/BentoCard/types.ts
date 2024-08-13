@@ -10,6 +10,7 @@ export interface IndexProps {
   isTitleVisibleInSecond?: boolean;
   firstContent?: React.ReactNode | string;
   secondContent?: React.ReactNode | string;
+  redirectTo?: string;
 }
 
 export interface TemplateProps extends IndexProps {
