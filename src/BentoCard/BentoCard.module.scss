@@ -56,9 +56,11 @@
   position: relative;
   background-color: var(--sui-bento-card-bg);
   border-radius: 16px;
+  border: 1px solid var(--sui-bento-card-border);
   transition: background-color 600ms;
   line-height: 40px;
   font-family: var(--sui-font-family);
+  color: var(--sui-bento-card-content);
 }
 
 .rootActive {
@@ -105,7 +107,6 @@
 }
 
 .content {
-  color: var(--sui-white);
   transition:
     margin-top 600ms,
     opacity 600ms;
