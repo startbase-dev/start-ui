@@ -52,11 +52,13 @@ const Countdown = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
     itemClassName,
     type !== "default" && s[type],
   );
+
   const valueClassNames = clsx(
     s.value,
     valueClassName,
     type !== "default" && s[type],
   );
+
   const labelClassNames = clsx(
     s.label,
     labelClassName,
@@ -79,28 +81,47 @@ const Countdown = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
       )}
 
       {showHour && timeLeft.hour !== undefined && (
-        <div className={itemClassNames}>
-          <div className={valueClassNames}>{timeLeft.hour}</div>
-          <div className={labelClassNames}>{getUnitLabel("hour", format)}</div>
-        </div>
+        <>
+          {type === "withSeparator" && timeLeft.day !== undefined && (
+            <span className={s.separator}>:</span>
+          )}
+          <div className={itemClassNames}>
+            <div className={valueClassNames}>{timeLeft.hour}</div>
+            <div className={labelClassNames}>
+              {getUnitLabel("hour", format)}
+            </div>
+          </div>
+        </>
       )}
 
       {showMinute && timeLeft.minute !== undefined && (
-        <div className={itemClassNames}>
-          <div className={valueClassNames}>{timeLeft.minute}</div>
-          <div className={labelClassNames}>
-            {getUnitLabel("minute", format)}
+        <>
+          {type === "withSeparator" &&
+            (timeLeft.day !== undefined || timeLeft.hour !== undefined) && (
+              <span className={s.separator}>:</span>
+            )}
+          <div className={itemClassNames}>
+            <div className={valueClassNames}>{timeLeft.minute}</div>
+            <div className={labelClassNames}>
+              {getUnitLabel("minute", format)}
+            </div>
           </div>
-        </div>
+        </>
       )}
 
       {showSecond && timeLeft.second !== undefined && (
-        <div className={itemClassNames}>
-          <div className={valueClassNames}>{timeLeft.second}</div>
-          <div className={labelClassNames}>
-            {getUnitLabel("second", format)}
+        <>
+          {type === "withSeparator" &&
+            (timeLeft.hour !== undefined || timeLeft.minute !== undefined) && (
+              <span className={s.separator}>:</span>
+            )}
+          <div className={itemClassNames}>
+            <div className={valueClassNames}>{timeLeft.second}</div>
+            <div className={labelClassNames}>
+              {getUnitLabel("second", format)}
+            </div>
           </div>
-        </div>
+        </>
       )}
     </div>
   );

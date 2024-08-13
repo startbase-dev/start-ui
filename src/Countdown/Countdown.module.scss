@@ -22,13 +22,16 @@
   font-weight: bold;
 }
 
-.withSeparator:not(:last-child)::after {
-  content: ":";
+.separator {
+  line-height: 32px;
+  font-weight: bold;
+  margin: 0 5px;
+  font-size: 32px;
 }
 
 .withLabels {
   align-items: flex-end;
-  margin-right: 12px;
+  margin-right: 8px;
   max-width: 100px;
   font-size: 16px;
 }
@@ -44,10 +47,10 @@
 }
 
 .inBoxes {
-  border: 1px solid var(--sui-border);
+  border: 1px solid var(--sui-countdown-border);
   padding: 10px;
   border-radius: 5px;
-  background-color: var(--sui-black);
+  background-color: var(--sui-countdown-bg);
   flex-direction: column;
   gap: 5px;
   margin-right: 12px;
@@ -59,9 +62,9 @@
 
 .inBoxes .label {
   font-size: 16px;
-  color: var(--sui-white);
+  color: var(--sui-countdown-label);
 }
 
 .inBoxes .value {
-  color: var(--sui-white);
+  color: var(--sui-countdown-label);
 }

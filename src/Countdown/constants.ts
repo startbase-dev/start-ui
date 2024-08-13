@@ -31,6 +31,5 @@ const UnitFormat: Record<Unit, UnitFormatType> = {
 };
 
 export function getUnitLabel(unit: Unit, format: Format): string {
-  const safeFormat = format ?? "none";
-  return UnitFormat[unit][safeFormat];
+  return UnitFormat[unit][format];
 }
