@@ -1,24 +1,33 @@
 import React from "react";
 import Stepper from "./index";
+import Storybook from "../Storybook";
+import type { StepperTemplateProps, Step } from "./types";
 
-interface TemplateProps {
-  title: string;
-}
+const Template: React.FC<StepperTemplateProps> = (props) => {
+  const { title, ...rest } = props;
 
-const Template: React.FC<TemplateProps> = (props) => {
+  const steps: Step[] = [
+    {
+      id: "step-1",
+      label: "Step 1",
+      content: "Step 1 content",
+    },
+    {
+      id: "step-2",
+      label: "Step 2",
+      content: "Step 2 content",
+    },
+    {
+      id: "step-3",
+      label: "Step 3",
+      content: "Step 3 content",
+    },
+  ];
+
   return (
-    <>
-      <h2>{props.title}</h2>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexDirection: "column",
-        }}
-      >
-        <Stepper />
-      </div>
-    </>
+    <Storybook title={props.title}>
+      <Stepper {...rest} steps={steps} finishedContent={"All steps are finished!"} />
+    </Storybook>
   );
 };
 
