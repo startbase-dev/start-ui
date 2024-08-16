@@ -59,7 +59,9 @@
   border: none;
   outline: none;
   font-family: inherit;
-  font-size: var(--sui-text-large-fs);
+  font-size: var(--sui-text-fs);
+  line-height: var(--sui-text-lh);
+  font-weight: bold;
   cursor: pointer;
 
   &:focus-visible {

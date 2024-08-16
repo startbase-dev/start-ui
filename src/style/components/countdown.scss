@@ -1,12 +1,11 @@
 :root {
-    --sui-countdown-bg: var(--sui-black);
-    --sui-countdown-border: var(--sui-border);
-    --sui-countdown-label: var(--sui-white);
-  }
-  
-  [data-theme="dark"] {
-    --sui-countdown-bg: var(--sui-white);
-    --sui-countdown-border: var(--sui-gray-500);
-    --sui-countdown-label: var(--sui-black);
-  }
-  
+  --sui-countdown-bg: var(--sui-black);
+  --sui-countdown-border: var(--sui-border);
+  --sui-countdown-label: var(--sui-white);
+}
+
+[data-theme="dark"] {
+  --sui-countdown-bg: var(--sui-white);
+  --sui-countdown-border: var(--sui-gray-500);
+  --sui-countdown-label: var(--sui-black);
+}

@@ -15,7 +15,12 @@ const Template: React.FC<TemplateProps> = (args) => {
           flexDirection: "column",
         }}
       >
-        <Chip {...rest} />
+        <Chip {...rest} color="primary" />
+        <Chip {...rest} color="secondary" />
+        <Chip {...rest} color="info" />
+        <Chip {...rest} color="warning" />
+        <Chip {...rest} color="success" />
+        <Chip {...rest} color="error" />
       </div>
     </>
   );

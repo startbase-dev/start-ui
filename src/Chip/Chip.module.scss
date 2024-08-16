@@ -4,10 +4,40 @@
   justify-content: center;
   align-self: center;
   border: 1px solid transparent;
-  border-radius: 0.4em;
+  border-radius: var(--sui-border-radius-large);
   padding: 0.125rem 0.625rem;
   font-size: 0.75rem;
-  color: var(--sui-white);
-  background-color: var(--sui-black);
+  height: 1rem;
+  width: fit-content;
   font-family: var(--sui-font-family);
+
+  &.primary {
+    background-color: var(--sui-black);
+    color: var(--sui-white);
+  }
+
+  &.secondary {
+    background-color: var(--sui-white);
+    color: var(--sui-black);
+  }
+
+  &.success {
+    background-color: var(--sui-success);
+    color: var(--sui-white);
+  }
+
+  &.info {
+    background-color: var(--sui-info);
+    color: var(--sui-white);
+  }
+
+  &.warning {
+    background-color: var(--sui-warning);
+    color: var(--sui-white);
+  }
+
+  &.error {
+    background-color: var(--sui-error);
+    color: var(--sui-white);
+  }
 }
