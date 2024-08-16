@@ -6,7 +6,9 @@
   border: 1px solid transparent;
   border-radius: var(--sui-border-radius-large);
   padding: 0.125rem 0.625rem;
-  font-size: 0.75rem;
+  font-weight: 500;
+  font-size: var(--sui-text-small-fs);
+  line-height: var(--sui-text-small-lh);
   height: 1rem;
   width: fit-content;
   font-family: var(--sui-font-family);
@@ -38,6 +40,6 @@
 
   &.error {
     background-color: var(--sui-error);
-    color: var(--sui-white);
+    color: var(--sui-black);
   }
 }
