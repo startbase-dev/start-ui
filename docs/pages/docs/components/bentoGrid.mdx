@@ -1,0 +1,72 @@
+import { Tabs } from "nextra/components";
+import { BentoGrid } from "../../../../index";
+import "@start-base/react-form-elements/styles.css";
+import "react-day-picker/dist/style.css";
+import Preview from "../../../components/Preview/Preview";
+import ApiReferenceButton from "../../../components/ApiReferenceButton/ApiReferenceButton";
+import { Steps } from "nextra/components";
+import s from "../../../../styles.css";
+
+# Bento Grid
+
+The component is a flexible grid layout that allows for dynamic placement of elements,
+enabling customization of grid items' width and height. It's ideal for creating responsive,
+visually appealing grids that adjust seamlessly across various screen sizes.
+
+<ApiReferenceButton path="ui-bentogrid--docs" />
+
+## Installation
+
+<Steps>
+
+### Install the package
+
+<Tabs items={["npm", "yarn", "pnpm"]}>
+  <Tabs.Tab>``` bash copy npm install --save @start-base/start-ui ```</Tabs.Tab>
+  <Tabs.Tab>``` bash copy yarn add @start-base/start-ui ```</Tabs.Tab>
+  <Tabs.Tab>``` bash copy pnpm add @start-base/start-ui ```</Tabs.Tab>
+</Tabs>
+### Add the styles Make sure to add css file to your app root file
+
+```tsx copy
+import "@start-base/start-ui/styles.css";
+```
+
+</Steps>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="500px">
+     <BentoGrid items={[
+    { element: <div style={{ backgroundColor: "lightblue", padding: "12px"}}>Item 1</div>, width: 2, height: 1 },
+    { element: <div style={{ backgroundColor: "lightgreen", padding: "12px" }}>Item 2</div>, width: 1, height: 1 },
+    { element: <div style={{ backgroundColor: "lightcoral", padding: "12px" }}>Item 3</div>, width: 1, height: 1 },
+    { element: <div style={{ backgroundColor: "lightgoldenrodyellow", padding: "12px" }}>Item 4</div>, width: 1, height: 1 },
+    { element: <div style={{ backgroundColor: "lightcoral", padding: "12px" }}>Item 5</div>, width: 3, height: 1 },
+    { element: <div style={{ backgroundColor: "lightblue", padding: "12px"}}>Item 6</div>, width: 1, height: 1 },
+    { element: <div style={{ backgroundColor: "lightgreen", padding: "12px" }}>Item 7</div>, width: 2, height: 1 },
+    { element: <div style={{ backgroundColor: "lightcoral", padding: "12px" }}>Item 8</div>, width: 1, height: 1 },
+  ]}
+    />
+   </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import Checkbox from '@start-base/react-form-elements/Checkbox';
+    import '@start-base/start-ui/styles.css';
+
+    <BentoGrid items={[
+      { element: <div style={{ backgroundColor: "lightblue", padding: "12px"}}>Item 1</div>, width: 2, height: 1 },
+      { element: <div style={{ backgroundColor: "lightgreen", padding: "12px" }}>Item 2</div>, width: 1, height: 1 },
+      { element: <div style={{ backgroundColor: "lightcoral", padding: "12px" }}>Item 3</div>, width: 1, height: 1 },
+      { element: <div style={{ backgroundColor: "lightgoldenrodyellow", padding: "12px" }}>Item 4</div>, width: 1, height: 1 },
+      { element: <div style={{ backgroundColor: "lightcoral", padding: "12px" }}>Item 5</div>, width: 3, height: 1 },
+      { element: <div style={{ backgroundColor: "lightblue", padding: "12px"}}>Item 6</div>, width: 1, height: 1 },
+      { element: <div style={{ backgroundColor: "lightgreen", padding: "12px" }}>Item 7</div>, width: 2, height: 1 },
+      { element: <div style={{ backgroundColor: "lightcoral", padding: "12px" }}>Item 8</div>, width: 1, height: 1 },
+    ]}
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>

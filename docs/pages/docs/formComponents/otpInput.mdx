@@ -1,0 +1,402 @@
+import { Tabs } from "nextra/components";
+import "@start-base/react-form-elements/styles.css";
+import OTPInput from "@start-base/react-form-elements/OTPInput";
+import Preview from "../../../components/Preview/Preview";
+import ApiReferenceButton from "../../../components/ApiReferenceButton/ApiReferenceButton";
+import FormOnChange from "./formOnChange";
+import { Steps } from "nextra/components";
+import "@start-base/react-form-elements/styles.css";
+
+# OTPInput
+
+The OTPInput component is designed for secure and user-friendly input of One-Time Passwords (OTPs). It features multiple input fields to capture each digit of the OTP individually, providing a clear and intuitive interface for users.
+
+<ApiReferenceButton path="form-otpinput--docs" />
+
+## Installation
+
+<Steps>
+
+### Install the package
+
+<Tabs items={["npm", "yarn", "pnpm"]}>
+  <Tabs.Tab>
+    ``` bash copy npm install --save @start-base/react-form-elements ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ``` bash copy yarn add @start-base/react-form-elements ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ``` bash copy pnpm add @start-base/react-form-elements ```
+  </Tabs.Tab>
+</Tabs>
+### Add the styles Make sure to add css file to your app root file
+
+```tsx copy
+import "@start-base/react-form-elements/styles.css";
+```
+
+</Steps>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+  <FormOnChange>
+    <OTPInput
+    length={5}
+    name="input"
+  />
+  </FormOnChange>
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import OTPInput from '@start-base/react-form-elements/OTPInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <OTPInput
+        length={5}
+        name="input"
+        onChange={handleChange}
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### OTP Input With Label
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+    <FormOnChange>
+      <OTPInput
+    label="Label"
+    length={5}
+    name="input"
+  />
+  </FormOnChange>
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import OTPInput from '@start-base/react-form-elements/OTPInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <OTPInput
+        label="Label"
+        length={5}
+        name="input"
+        onChange={handleChange}
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### OTP Input With Length
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+      <FormOnChange>
+      <OTPInput
+    label="Label"
+    length={4}
+    name="input"
+  />
+  </FormOnChange>
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import OTPInput from '@start-base/react-form-elements/OTPInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <OTPInput
+        label="Label"
+        length={4}
+        name="input"
+        onChange={handleChange}
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### OTP Input With Format
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+     <FormOnChange>
+      <OTPInput
+    format={[
+      2,
+      2,
+      2
+    ]}
+    length={6}
+    name="input"
+  />
+  </FormOnChange>
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import OTPInput from '@start-base/react-form-elements/OTPInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <OTPInput
+        format={[2,2,2]}
+        length={6}
+        name="input"
+        onChange={handleChange}
+
+/>
+
+````
+
+  </Tabs.Tab>
+</Tabs>
+
+### OTP Input With Separator
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+
+    <FormOnChange>
+      <OTPInput
+    format={[3,3]}
+    length={6}
+    name="input"
+    separator="/"
+  />
+  </FormOnChange>
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import OTPInput from '@start-base/react-form-elements/OTPInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <OTPInput
+        format={[3,3]}
+        length={6}
+        name="input"
+        separator="/"
+        onChange={handleChange}
+
+/>
+````
+
+  </Tabs.Tab>
+</Tabs>
+
+### OTP Input With Timer
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+  
+   <FormOnChange>
+     <OTPInput
+    format={[
+      3,
+      3
+    ]}
+    length={6}
+    name="input"
+    timer={120}
+  />
+  </FormOnChange>
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import OTPInput from '@start-base/react-form-elements/OTPInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <OTPInput
+        format={[3,3]}
+        length={6}
+        name="input"
+        onChange={handleChange}
+        timer={120}
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### OTP Input With On Complete
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+  
+   <FormOnChange>
+     <OTPInput
+    format={[
+      3,
+      3
+    ]}
+    length={6}
+    name="input"
+    onComplete={() => {}}
+    timer={120}
+  />
+  </FormOnChange>
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import OTPInput from '@start-base/react-form-elements/OTPInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <OTPInput
+        format={[3,3]}
+        length={6}
+        name="input"
+        onChange={handleChange}
+        onComplete={() => {}}
+        timer={120}
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### OTP Input With On Resend
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+  
+   <FormOnChange>
+     <OTPInput
+    length={6}
+    name="input"
+    onResend={() => {}}
+    timer={120}
+  />
+  </FormOnChange>
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import OTPInput from '@start-base/react-form-elements/OTPInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <OTPInput
+        length={6}
+        name="input"
+        onChange={handleChange}
+        onResend={() => {}}
+        timer={120}
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### OTP Input Disabled
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   
+  <FormOnChange>
+   <OTPInput
+    disabled
+    label="Label"
+    length={5}
+    name="input"
+    placeholder="Placeholder"
+  />
+  </FormOnChange>
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import OTPInput from '@start-base/react-form-elements/OTPInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <OTPInput
+        disabled
+        label="Label"
+        length={5}
+        name="input"
+        onChange={handleChange}
+        placeholder="Placeholder"
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### OTP Input Error Message
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+ 
+    <FormOnChange>
+    <OTPInput
+    error="Error Message"
+    label="Label"
+    length={5}
+    name="input"
+  />
+  </FormOnChange>
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import OTPInput from '@start-base/react-form-elements/OTPInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <OTPInput
+        error="Error Message"
+        label="Label"
+        length={5}
+        name="input"
+        onChange={handleChange}
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### OTP Input Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+      <FormOnChange>
+    <OTPInput
+    error
+    label="Label"
+    length={5}
+    name="input"
+  />
+  </FormOnChange>
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import OTPInput from '@start-base/react-form-elements/OTPInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <OTPInput
+        error
+        label="Label"
+        length={5}
+        name="input"
+        onChange={handleChange}
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>

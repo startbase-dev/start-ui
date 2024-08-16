@@ -20,6 +20,7 @@
   "dependencies": {
     "@start-base/react-consent-manager": "1.10.4",
     "@start-base/react-form-elements": "1.9.13",
+    "framer-motion": "^11.3.26",
     "next": "13.5.6",
     "nextra": "latest",
     "nextra-theme-docs": "latest",

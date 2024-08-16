@@ -1,0 +1,170 @@
+# ScrollArea
+
+The ScrollArea provides customizable scrolling functionality for its child elements. It can be configured for horizontal or vertical scrolling, making it suitable for a variety of use cases where content exceeds the visible area.
+
+import { ScrollArea } from "../../../index";
+
+import { Tabs } from "nextra/components";
+import s from "../../style.module.css";
+
+### Vertical ScrollArea
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <div className={s.previewContainer}>
+      <ScrollArea orientation="vertical">
+        The Young Woman and the Sea" is a biographical drama that tells the
+        story of Gertrude "Trudy" Ederle, who in 1926 became the first woman to
+        swim across the English Channel. Directed by Joachim Rønning and written
+        by Jeff Nathanson, the film stars Daisy Ridley as Ederle. It is based on
+        the book "Young Woman and the Sea: How Trudy Ederle Conquered the
+        English Channel and Inspired the World" by Glenn Stout​.The movie
+        follows Trudy's journey from her early life in Manhattan, where she
+        struggled with health issues, to becoming an Olympic swimmer and
+        ultimately achieving her historic Channel swim. The film highlights her
+        training, the societal challenges she faced as a woman in sports, and
+        the physical and mental obstacles she overcame during her 21-mile swim
+        from France to England​ The film has received praise for its
+        inspirational storytelling and Ridley's performance, capturing the
+        determination and resilience of Ederle. It underscores the broader
+        cultural impact of her achievement, marking a significant moment in
+        women's sports history​​.The film highlights her training, the societal
+        challenges she faced as a woman in sports, and the physical and mental
+        obstacles she overcame during her 21-mile swim from France to England​
+        The film has received praise for its inspirational storytelling and
+        Ridley's performance, capturing the determination and resilience of
+        Ederle. It underscores the broader cultural impact of her achievement,
+        marking a significant moment in women's sports history​​.
+      </ScrollArea>
+    </div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+    <ScrollArea orientation="vertical">
+      The Young Woman and the Sea" is a biographical drama that tells the story
+      of Gertrude "Trudy" Ederle, who in 1926 became the first woman to swim
+      across the English Channel. Directed by Joachim Rønning and written by
+      Jeff Nathanson, the film stars Daisy Ridley as Ederle. It is based on the
+      book "Young Woman and the Sea: How Trudy Ederle Conquered the English
+      Channel and Inspired the World" by Glenn Stout​.The movie follows Trudy's
+      journey from her early life in Manhattan, where she struggled with health
+      issues, to becoming an Olympic swimmer and ultimately achieving her
+      historic Channel swim. The film highlights her training, the societal
+      challenges she faced as a woman in sports, and the physical and mental
+      obstacles she overcame during her 21-mile swim from France to England​ The
+      film has received praise for its inspirational storytelling and Ridley's
+      performance, capturing the determination and resilience of Ederle. It
+      underscores the broader cultural impact of her achievement, marking a
+      significant moment in women's sports history​​.The film highlights her
+      training, the societal challenges she faced as a woman in sports, and the
+      physical and mental obstacles she overcame during her 21-mile swim from
+      France to England​ The film has received praise for its inspirational
+      storytelling and Ridley's performance, capturing the determination and
+      resilience of Ederle. It underscores the broader cultural impact of her
+      achievement, marking a significant moment in women's sports history​​.
+    </ScrollArea>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Horizontal ScrollArea
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <div className={s.previewContainer}>
+      <ScrollArea orientation="horizontal" style={{ width: "400px" }}>
+        The Young Woman and the Sea" is a biographical drama that tells the
+        story of Gertrude "Trudy" Ederle, who in 1926 became the first woman to
+        swim across the English Channel. Directed by Joachim Rønning and written
+        by Jeff Nathanson, the film stars Daisy Ridley as Ederle. It is based on
+        the book "Young Woman and the Sea: How Trudy Ederle Conquered the
+        English Channel and Inspired the World" by Glenn Stout​.The movie
+        follows Trudy's journey from her early life in Manhattan, where she
+        struggled with health issues, to becoming an Olympic swimmer and
+        ultimately achieving her historic Channel swim. The film highlights her
+        training, the societal challenges she faced as a woman in sports, and
+        the physical and mental obstacles she overcame during her 21-mile swim
+        from France to England​ The film has received praise for its
+        inspirational storytelling and Ridley's performance, capturing the
+        determination and resilience of Ederle. It underscores the broader
+        cultural impact of her achievement, marking a significant moment in
+        women's sports history​​.
+      </ScrollArea>
+    </div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+    <ScrollArea orientation="horizontal" style={{ width: "400px" }}>
+      The Young Woman and the Sea" is a biographical drama that tells the story
+      of Gertrude "Trudy" Ederle, who in 1926 became the first woman to swim
+      across the English Channel. Directed by Joachim Rønning and written by
+      Jeff Nathanson, the film stars Daisy Ridley as Ederle. It is based on the
+      book "Young Woman and the Sea: How Trudy Ederle Conquered the English
+      Channel and Inspired the World" by Glenn Stout​.The movie follows Trudy's
+      journey from her early life in Manhattan, where she struggled with health
+      issues, to becoming an Olympic swimmer and ultimately achieving her
+      historic Channel swim. The film highlights her training, the societal
+      challenges she faced as a woman in sports, and the physical and mental
+      obstacles she overcame during her 21-mile swim from France to England​ The
+      film has received praise for its inspirational storytelling and Ridley's
+      performance, capturing the determination and resilience of Ederle. It
+      underscores the broader cultural impact of her achievement, marking a
+      significant moment in women's sports history​​.
+    </ScrollArea>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Vertical ScrollArea with Styling
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <div className={s.previewContainer}>
+      <ScrollArea
+        orientation="vertical"
+        style={{ height: "200px", width: "100%", border: "1px solid purple" }}
+      >
+        The Young Woman and the Sea" is a biographical drama that tells the
+        story of Gertrude "Trudy" Ederle, who in 1926 became the first woman to
+        swim across the English Channel. Directed by Joachim Rønning and written
+        by Jeff Nathanson, the film stars Daisy Ridley as Ederle. It is based on
+        the book "Young Woman and the Sea: How Trudy Ederle Conquered the
+        English Channel and Inspired the World" by Glenn Stout​.The movie
+        follows Trudy's journey from her early life in Manhattan, where she
+        struggled with health issues, to becoming an Olympic swimmer and
+        ultimately achieving her historic Channel swim. The film highlights her
+        training, the societal challenges she faced as a woman in sports, and
+        the physical and mental obstacles she overcame during her 21-mile swim
+        from France to England​ The film has received praise for its
+        inspirational storytelling and Ridley's performance, capturing the
+        determination and resilience of Ederle. It underscores the broader
+        cultural impact of her achievement, marking a significant moment in
+        women's sports history​​.
+      </ScrollArea>
+    </div>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+    <ScrollArea
+      orientation="vertical"
+      style={{ height: "200px", width: "100%", border: "1px solid purple" }}
+    >
+      The Young Woman and the Sea" is a biographical drama that tells the story
+      of Gertrude "Trudy" Ederle, who in 1926 became the first woman to swim
+      across the English Channel. Directed by Joachim Rønning and written by
+      Jeff Nathanson, the film stars Daisy Ridley as Ederle. It is based on the
+      book "Young Woman and the Sea: How Trudy Ederle Conquered the English
+      Channel and Inspired the World" by Glenn Stout​.The movie follows Trudy's
+      journey from her early life in Manhattan, where she struggled with health
+      issues, to becoming an Olympic swimmer and ultimately achieving her
+      historic Channel swim. The film highlights her training, the societal
+      challenges she faced as a woman in sports, and the physical and mental
+      obstacles she overcame during her 21-mile swim from France to England​ The
+      film has received praise for its inspirational storytelling and Ridley's
+      performance, capturing the determination and resilience of Ederle. It
+      underscores the broader cultural impact of her achievement, marking a
+      significant moment in women's sports history​​.
+    </ScrollArea>
+    ```
+  </Tabs.Tab>
+</Tabs>

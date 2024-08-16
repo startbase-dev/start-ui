@@ -1,0 +1,160 @@
+import { SkeletonAvatar } from "../../../../index";
+import { SkeletonButton } from "../../../../index";
+import { SkeletonCard } from "../../../../index";
+import { SkeletonImage } from "../../../../index";
+import { SkeletonInput } from "../../../../index";
+import { SkeletonList } from "../../../../index";
+import { SkeletonTable } from "../../../../index";
+import { SkeletonParagraph } from "../../../../index";
+import Preview from "../../../components/Preview/Preview";
+import ApiReferenceButton from "../../../components/ApiReferenceButton/ApiReferenceButton";
+import { Tabs } from "nextra/components";
+import { Steps } from "nextra/components";
+import s from "../../../../styles.css";
+
+# Skeleton
+
+The Skeleton displays placeholder shapes for various UI elements.
+It helps improve the user experience by indicating that content is
+loading without causing abrupt layout shifts.
+
+<ApiReferenceButton path="ui-bentogrid--docs" />
+
+## Installation
+
+<Steps>
+
+### Install the package
+
+<Tabs items={["npm", "yarn", "pnpm"]}>
+  <Tabs.Tab>``` bash copy npm install --save @start-base/start-ui ```</Tabs.Tab>
+  <Tabs.Tab>``` bash copy yarn add @start-base/start-ui ```</Tabs.Tab>
+  <Tabs.Tab>``` bash copy pnpm add @start-base/start-ui ```</Tabs.Tab>
+</Tabs>
+### Add the styles Make sure to add css file to your app root file
+
+```tsx copy
+import "@start-base/start-ui/styles.css";
+```
+
+</Steps>
+
+### Avatar Skeleton
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="300px">
+      <SkeletonAvatar size={"50px"} />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    <SkeletonAvatar size={"50px"} />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Button Skeleton
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="300px">
+      <SkeletonButton width="100px" height="50px" />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    <SkeletonButton width="100px" height="50px" />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Card Skeleton
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="300px">
+      <SkeletonCard width="300px" height="250px" />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    <SkeletonCard width="300px" height="250px" />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Image Skeleton
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="300px">
+      <SkeletonImage width="300px" height="250px" />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    <SkeletonImage width="300px" height="250px" />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Input Skeleton
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="300px">
+      <SkeletonInput width="150px" height="50px" />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    <SkeletonInput width="150px" height="50px" />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### List Skeleton
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="300px">
+      <SkeletonList itemCount={5} />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    <SkeletonList itemCount={5} />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Table Skeleton
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="300px">
+      <SkeletonTable rows={5} columns={3} />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    <SkeletonTable rows={5} columns={3} />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Paragraph Skeleton
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="300px">
+      <SkeletonParagraph lines={4} />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    <SkeletonParagraph lines={4} />
+    ```
+  </Tabs.Tab>
+</Tabs>

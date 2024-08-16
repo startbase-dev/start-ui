@@ -1,0 +1,276 @@
+import { Tabs } from "nextra/components";
+import { FaChartPie } from "react-icons/fa";
+import Preview from "../../components/Preview/Preview";
+import Input from "@start-base/react-form-elements/Input";
+import ApiReferenceButton from "../../components/ApiReferenceButton/ApiReferenceButton";
+import FormOnChange from "./formOnChange";
+import { Steps } from "nextra/components";
+import "@start-base/react-form-elements/styles.css";
+
+# Input
+
+The Input component is a versatile and customizable form element designed to capture user input efficiently.
+
+<ApiReferenceButton path="form-input--docs" />
+
+## Installation
+
+<Steps>
+
+### Install the package
+
+<Tabs items={["npm", "yarn", "pnpm"]}>
+  <Tabs.Tab>
+    ``` bash copy npm install --save @start-base/react-form-elements ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ``` bash copy yarn add @start-base/react-form-elements ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ``` bash copy pnpm add @start-base/react-form-elements ```
+  </Tabs.Tab>
+</Tabs>
+### Add the styles Make sure to add css file to your app root file
+
+```tsx copy
+import "@start-base/react-form-elements/styles.css";
+```
+
+</Steps>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="200px">
+      <FormOnChange>
+        <Input
+          name="input"
+        />
+      </FormOnChange>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import Input from '@start-base/react-form-elements/Input';
+    import '@start-base/react-form-elements/styles.css';
+
+    <Input
+      name="input"
+      onChange={handleChange}
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Input with Label
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+  <FormOnChange>
+        <Input
+          name="input"
+          label="Label"
+        />
+      </FormOnChange>
+     </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import Input from '@start-base/react-form-elements/Input';
+    import '@start-base/react-form-elements/styles.css';
+
+    <Input
+        label="Label"
+        name="input"
+        onChange={handleChange}
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Input with Placeholder
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+    <FormOnChange>
+        <Input
+          name="input"
+          placeholder="Placeholder"
+        />
+      </FormOnChange>
+     </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import Input from '@start-base/react-form-elements/Input';
+    import '@start-base/react-form-elements/styles.css';
+
+    <Input
+      placeholder="Placeholder"
+      name="input"
+      onChange={handleChange}
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Input with Placeholder and Label
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="200px">
+      <FormOnChange>
+        <Input name="input" placeholder="Placeholder" label="Label" />
+      </FormOnChange>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers import Input from
+    '@start-base/react-form-elements/Input'; import
+    '@start-base/react-form-elements/styles.css';
+    <Input
+      placeholder="Placeholder"
+      label="Label"
+      name="input"
+      onChange={handleChange}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Input with Placeholder And Label And Disable Shrink
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+     <FormOnChange>
+        <Input
+          name="input"
+          placeholder="Placeholder"
+          label="Label"
+          disableShrink
+        />
+      </FormOnChange>
+     </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import Input from '@start-base/react-form-elements/Input';
+    import '@start-base/react-form-elements/styles.css';
+
+    <Input
+      disableShrink
+      placeholder="Placeholder"
+      label="Label"
+      name="input"
+      onChange={handleChange}
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Input Disabled
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="200px">
+      <FormOnChange>
+        <Input name="input" placeholder="Placeholder" label="Label" disabled />
+      </FormOnChange>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    <Input
+      disabled
+      placeholder="Placeholder"
+      label="Label"
+      name="input"
+      onChange={handleChange}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Input Append
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="200px">
+      <FormOnChange>
+        <Input name="input" append={<FaChartPie />} label="Label" />
+      </FormOnChange>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers import Input from
+    '@start-base/react-form-elements/Input'; import
+    '@start-base/react-form-elements/styles.css';
+    <Input
+      label="Label"
+      name="input"
+      onChange={handleChange}
+      append={<FaChartPie />}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Input Prepend
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+     <FormOnChange>
+        <Input
+          name="input"
+          prepend={<FaChartPie />}
+          label="Label"
+        />
+      </FormOnChange>
+     </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import Input from '@start-base/react-form-elements/Input';
+    import '@start-base/react-form-elements/styles.css';
+
+    <Input
+        label="Label"
+        name="input"
+        onChange={handleChange}
+        prepend={<FaChartPie />}
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Input Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="200px">
+      <FormOnChange>
+        <Input name="input" error="Error Message" label="Label" />
+      </FormOnChange>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers import Input from
+    '@start-base/react-form-elements/Input'; import
+    '@start-base/react-form-elements/styles.css';
+    <Input
+      label="Label"
+      name="input"
+      onChange={handleChange}
+      error="Error Message"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
