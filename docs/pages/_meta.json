@@ -1,28 +1,28 @@
 {
-    "index": {
-      "type": "page",
-      "title": "Start UI",
-      "display": "hidden",
-      "theme": {
-        "layout": "raw"
-      }
-    },
-    "docs": {
-      "type": "page",
-      "title": "Documentation"
-    },
-    "about": {
-      "type": "page",
-      "title": "About",
-      "theme": {
-        "typesetting": "article"
-      }
-    },
-    "404": {
-      "type": "page",
-      "theme": {
-        "timestamp": false,
-        "typesetting": "article"
-      }
+  "index": {
+    "type": "page",
+    "title": "Start UI",
+    "display": "hidden",
+    "theme": {
+      "layout": "raw"
+    }
+  },
+  "docs": {
+    "type": "page",
+    "title": "Documentation"
+  },
+  "about": {
+    "type": "page",
+    "title": "About",
+    "theme": {
+      "typesetting": "article"
+    }
+  },
+  "404": {
+    "type": "page",
+    "theme": {
+      "timestamp": false,
+      "typesetting": "article"
     }
   }
+}

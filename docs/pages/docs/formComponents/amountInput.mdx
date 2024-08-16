@@ -1,12 +1,11 @@
 import { Tabs } from "nextra/components";
-import { Steps } from 'nextra/components'
-import AmountInput from '@start-base/react-form-elements/AmountInput';
+import { Steps } from "nextra/components";
+import AmountInput from "@start-base/react-form-elements/AmountInput";
 import { AiOutlineDollarCircle } from "react-icons/ai";
-import Preview from '../../components/Preview/Preview';
-import FormOnChange from './formOnChange'
-import ApiReferenceButton from '../../components/ApiReferenceButton/ApiReferenceButton';
-import '@start-base/react-form-elements/styles.css';
-
+import Preview from "../../components/Preview/Preview";
+import FormOnChange from "./formOnChange";
+import ApiReferenceButton from "../../components/ApiReferenceButton/ApiReferenceButton";
+import "@start-base/react-form-elements/styles.css";
 
 # Amount Input
 
@@ -21,29 +20,20 @@ The AmountInput component is a customizable input field designed for users to en
 ### Install the package
 
 <Tabs items={["npm", "yarn", "pnpm"]}>
-<Tabs.Tab>
-    ``` bash copy
-    npm install --save @start-base/react-form-elements
-    ```
+  <Tabs.Tab>
+    ``` bash copy npm install --save @start-base/react-form-elements ```
   </Tabs.Tab>
   <Tabs.Tab>
-    ``` bash copy
-    yarn add @start-base/react-form-elements
-    ```
+    ``` bash copy yarn add @start-base/react-form-elements ```
   </Tabs.Tab>
   <Tabs.Tab>
-    ``` bash copy
-    pnpm add @start-base/react-form-elements
-    ```
+    ``` bash copy pnpm add @start-base/react-form-elements ```
   </Tabs.Tab>
 </Tabs>
- 
-### Add the styles
- 
-Make sure to add css file to your app root file
+### Add the styles Make sure to add css file to your app root file
 
-``` tsx copy
-import '@start-base/react-form-elements/styles.css';
+```tsx copy
+import "@start-base/react-form-elements/styles.css";
 ```
 
 </Steps>
@@ -68,6 +58,7 @@ import '@start-base/react-form-elements/styles.css';
         onChange={() => {}}
     />
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -95,6 +86,7 @@ import '@start-base/react-form-elements/styles.css';
         onChange={() => {}}
     />
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -122,6 +114,7 @@ import '@start-base/react-form-elements/styles.css';
       onChange={() => {}}
     />
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -151,6 +144,7 @@ import '@start-base/react-form-elements/styles.css';
         onChange={() => {}}
     />
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -182,6 +176,7 @@ import '@start-base/react-form-elements/styles.css';
         disableShrink
     />
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -213,6 +208,7 @@ import '@start-base/react-form-elements/styles.css';
         disabled
     />
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -220,28 +216,27 @@ import '@start-base/react-form-elements/styles.css';
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-   <Preview height="200px">
-            <FormOnChange>
-    <AmountInput
-     label="Label"
-        placeholder="Placeholder"
-        name="input"
-        append={<AiOutlineDollarCircle />}
-    />
-  </FormOnChange>
-   </Preview>
+    <Preview height="200px">
+      <FormOnChange>
+        <AmountInput
+          label="Label"
+          placeholder="Placeholder"
+          name="input"
+          append={<AiOutlineDollarCircle />}
+        />
+      </FormOnChange>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy showLineNumbers
-    import AmountInput from '@start-base/react-form-elements/AmountInput';
-    import '@start-base/react-form-elements/styles.css';
-  
+    ```ts copy showLineNumbers import AmountInput from
+    '@start-base/react-form-elements/AmountInput'; import
+    '@start-base/react-form-elements/styles.css';
     <AmountInput
-        label="Label"
-        placeholder="Placeholder"
-        name="input"
-        onChange={() => {}}
-        append={<AiOutlineDollarCircle />}
+      label="Label"
+      placeholder="Placeholder"
+      name="input"
+      onChange={() => {}}
+      append={<AiOutlineDollarCircle />}
     />
     ```
   </Tabs.Tab>
@@ -275,6 +270,7 @@ import '@start-base/react-form-elements/styles.css';
         prepend={<AiOutlineDollarCircle />}
     />
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -304,5 +300,6 @@ import '@start-base/react-form-elements/styles.css';
         onChange={() => {}}
     />
     ```
+
   </Tabs.Tab>
 </Tabs>

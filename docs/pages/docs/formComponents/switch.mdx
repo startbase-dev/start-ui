@@ -1,14 +1,14 @@
 import { Tabs } from "nextra/components";
-import '@start-base/react-form-elements/styles.css';
-import Switch from '@start-base/react-form-elements/Switch';
-import Preview from '../../components/Preview/Preview';
-import ApiReferenceButton from '../../components/ApiReferenceButton/ApiReferenceButton';
-import FormOnChange from './formOnChange'
-import { Steps } from 'nextra/components'
+import "@start-base/react-form-elements/styles.css";
+import Switch from "@start-base/react-form-elements/Switch";
+import Preview from "../../components/Preview/Preview";
+import ApiReferenceButton from "../../components/ApiReferenceButton/ApiReferenceButton";
+import FormOnChange from "./formOnChange";
+import { Steps } from "nextra/components";
 
 # Switch
 
-The Switch component is designed for toggling between two states, such as "on" and "off," with a user-friendly sliding interface. It provides a clear and intuitive way for users to make binary choices, with support for custom labels, colors, and sizes to fit your application's design. 
+The Switch component is designed for toggling between two states, such as "on" and "off," with a user-friendly sliding interface. It provides a clear and intuitive way for users to make binary choices, with support for custom labels, colors, and sizes to fit your application's design.
 
 <ApiReferenceButton path="form-switch--docs" />
 
@@ -19,29 +19,20 @@ The Switch component is designed for toggling between two states, such as "on" a
 ### Install the package
 
 <Tabs items={["npm", "yarn", "pnpm"]}>
-<Tabs.Tab>
-    ``` bash copy
-    npm install --save @start-base/react-form-elements
-    ```
+  <Tabs.Tab>
+    ``` bash copy npm install --save @start-base/react-form-elements ```
   </Tabs.Tab>
   <Tabs.Tab>
-    ``` bash copy
-    yarn add @start-base/react-form-elements
-    ```
+    ``` bash copy yarn add @start-base/react-form-elements ```
   </Tabs.Tab>
   <Tabs.Tab>
-    ``` bash copy
-    pnpm add @start-base/react-form-elements
-    ```
+    ``` bash copy pnpm add @start-base/react-form-elements ```
   </Tabs.Tab>
 </Tabs>
- 
-### Add the styles
- 
-Make sure to add css file to your app root file
+### Add the styles Make sure to add css file to your app root file
 
-``` tsx copy
-import '@start-base/react-form-elements/styles.css';
+```tsx copy
+import "@start-base/react-form-elements/styles.css";
 ```
 
 </Steps>
@@ -69,6 +60,7 @@ import '@start-base/react-form-elements/styles.css';
       onChange={handleChange}
     />
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -99,6 +91,7 @@ import '@start-base/react-form-elements/styles.css';
       onChange={handleChange}
     />
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -129,6 +122,7 @@ import '@start-base/react-form-elements/styles.css';
       onChange={handleChange}
     />
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -159,5 +153,6 @@ import '@start-base/react-form-elements/styles.css';
       onChange={handleChange}
     />
     ```
+
   </Tabs.Tab>
 </Tabs>

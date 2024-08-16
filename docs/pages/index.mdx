@@ -2,23 +2,38 @@
 title: Start UI – Next Generation Component Library
 ---
 
-import { Feature, Features } from '@components/features'
-import cn from 'clsx'
-import { motion } from 'framer-motion'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useState } from 'react'
-import styles from './index.module.css'
-import LandingBento from "@components/LandingBento"
+import { Feature, Features } from "@components/features";
+import cn from "clsx";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import styles from "./index.module.css";
+import LandingBento from "@components/LandingBento";
 import s from "../../styles.css";
 
 <div>
   <div className={styles.contentContainer}>
-    <h1 className={styles.headline}>Make beautiful websites <br className='sm:block hidden'/>with Start UI</h1>
-    <p className={styles.subtitle}>Simple, powerful and flexible React component library developed by <a className="nextjs-link" href="https://startbase.dev" target="_blank">Startbase</a></p>
+    <h1 className={styles.headline}>
+      Make beautiful websites <br className="sm:block hidden" />
+      with Start UI
+    </h1>
     <p className={styles.subtitle}>
-      <Link className={styles.cta} href="/docs">Get started <span>→</span></Link>
+      Simple, powerful and flexible React component library developed by{" "}
+      <a
+        className="nextjs-link"
+        href="https://startbase.dev"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Startbase
+      </a>
+    </p>
+    <p className={styles.subtitle}>
+      <Link className={styles.cta} href="/docs">
+        Get started <span>→</span>
+      </Link>
     </p>
     <LandingBento />
   </div>
- </div>
+</div>

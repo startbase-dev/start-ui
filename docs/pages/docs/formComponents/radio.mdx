@@ -1,12 +1,11 @@
-
 import { Tabs } from "nextra/components";
-import '@start-base/react-form-elements/styles.css';
-import Radio from '@start-base/react-form-elements/Radio';
-import Preview from '../../components/Preview/Preview';
-import ApiReferenceButton from '../../components/ApiReferenceButton/ApiReferenceButton';
-import FormOnChange from './formOnChange'
-import { Steps } from 'nextra/components'
-import '@start-base/react-form-elements/styles.css';
+import "@start-base/react-form-elements/styles.css";
+import Radio from "@start-base/react-form-elements/Radio";
+import Preview from "../../components/Preview/Preview";
+import ApiReferenceButton from "../../components/ApiReferenceButton/ApiReferenceButton";
+import FormOnChange from "./formOnChange";
+import { Steps } from "nextra/components";
+import "@start-base/react-form-elements/styles.css";
 
 # Radio
 
@@ -21,29 +20,20 @@ The Radio component is designed for selecting a single option from a set of mutu
 ### Install the package
 
 <Tabs items={["npm", "yarn", "pnpm"]}>
-<Tabs.Tab>
-    ``` bash copy
-    npm install --save @start-base/react-form-elements
-    ```
+  <Tabs.Tab>
+    ``` bash copy npm install --save @start-base/react-form-elements ```
   </Tabs.Tab>
   <Tabs.Tab>
-    ``` bash copy
-    yarn add @start-base/react-form-elements
-    ```
+    ``` bash copy yarn add @start-base/react-form-elements ```
   </Tabs.Tab>
   <Tabs.Tab>
-    ``` bash copy
-    pnpm add @start-base/react-form-elements
-    ```
+    ``` bash copy pnpm add @start-base/react-form-elements ```
   </Tabs.Tab>
 </Tabs>
- 
-### Add the styles
- 
-Make sure to add css file to your app root file
+### Add the styles Make sure to add css file to your app root file
 
-``` tsx copy
-import '@start-base/react-form-elements/styles.css';
+```tsx copy
+import "@start-base/react-form-elements/styles.css";
 ```
 
 </Steps>
@@ -110,7 +100,9 @@ import '@start-base/react-form-elements/styles.css';
       flexDirection: 'column',
       justifyContent: 'space-evenly'
     }}
-  >
+
+>
+
     <Radio
       checked
       label="Radio Option 1"
@@ -125,6 +117,7 @@ import '@start-base/react-form-elements/styles.css';
       title="Radio"
       value="default2"
     />
+
   </div>
   </FormOnChange>
   </Preview>
@@ -151,9 +144,9 @@ import '@start-base/react-form-elements/styles.css';
         />
     </div>
     ```
+
   </Tabs.Tab>
 </Tabs>
-
 
 ### Radio Component Disabled
 
@@ -168,7 +161,9 @@ import '@start-base/react-form-elements/styles.css';
       flexDirection: 'column',
       justifyContent: 'space-evenly'
     }}
-  >
+
+>
+
     <Radio
       disabled
       label="Radio Option 1"
@@ -183,6 +178,7 @@ import '@start-base/react-form-elements/styles.css';
       title="Radio"
       value="default2"
     />
+
   </div>
   </FormOnChange>
   </Preview>
@@ -209,9 +205,9 @@ import '@start-base/react-form-elements/styles.css';
         />
     </div>
     ```
+
   </Tabs.Tab>
 </Tabs>
-
 
 ### Radio Component Error
 
@@ -267,6 +263,6 @@ import '@start-base/react-form-elements/styles.css';
         />
     </div>
     ```
+
   </Tabs.Tab>
 </Tabs>
-

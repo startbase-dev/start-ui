@@ -1,11 +1,11 @@
 import { Tabs } from "nextra/components";
-import '@start-base/react-form-elements/styles.css';
-import OTPInput from '@start-base/react-form-elements/OTPInput';
-import Preview from '../../../components/Preview/Preview';
-import ApiReferenceButton from '../../../components/ApiReferenceButton/ApiReferenceButton';
-import FormOnChange from './formOnChange'
-import { Steps } from 'nextra/components'
-import '@start-base/react-form-elements/styles.css';
+import "@start-base/react-form-elements/styles.css";
+import OTPInput from "@start-base/react-form-elements/OTPInput";
+import Preview from "../../../components/Preview/Preview";
+import ApiReferenceButton from "../../../components/ApiReferenceButton/ApiReferenceButton";
+import FormOnChange from "./formOnChange";
+import { Steps } from "nextra/components";
+import "@start-base/react-form-elements/styles.css";
 
 # OTPInput
 
@@ -20,29 +20,20 @@ The OTPInput component is designed for secure and user-friendly input of One-Tim
 ### Install the package
 
 <Tabs items={["npm", "yarn", "pnpm"]}>
-<Tabs.Tab>
-    ``` bash copy
-    npm install --save @start-base/react-form-elements
-    ```
+  <Tabs.Tab>
+    ``` bash copy npm install --save @start-base/react-form-elements ```
   </Tabs.Tab>
   <Tabs.Tab>
-    ``` bash copy
-    yarn add @start-base/react-form-elements
-    ```
+    ``` bash copy yarn add @start-base/react-form-elements ```
   </Tabs.Tab>
   <Tabs.Tab>
-    ``` bash copy
-    pnpm add @start-base/react-form-elements
-    ```
+    ``` bash copy pnpm add @start-base/react-form-elements ```
   </Tabs.Tab>
 </Tabs>
- 
-### Add the styles
- 
-Make sure to add css file to your app root file
+### Add the styles Make sure to add css file to your app root file
 
-``` tsx copy
-import '@start-base/react-form-elements/styles.css';
+```tsx copy
+import "@start-base/react-form-elements/styles.css";
 ```
 
 </Steps>
@@ -69,6 +60,7 @@ import '@start-base/react-form-elements/styles.css';
         onChange={handleChange}
     />
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -98,6 +90,7 @@ import '@start-base/react-form-elements/styles.css';
         onChange={handleChange}
     />
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -127,6 +120,7 @@ import '@start-base/react-form-elements/styles.css';
         onChange={handleChange}
     />
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -158,8 +152,11 @@ import '@start-base/react-form-elements/styles.css';
         length={6}
         name="input"
         onChange={handleChange}
-  />
-    ```
+
+/>
+
+````
+
   </Tabs.Tab>
 </Tabs>
 
@@ -168,7 +165,7 @@ import '@start-base/react-form-elements/styles.css';
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-  
+
     <FormOnChange>
       <OTPInput
     format={[3,3]}
@@ -190,8 +187,10 @@ import '@start-base/react-form-elements/styles.css';
         name="input"
         separator="/"
         onChange={handleChange}
-  />
-    ```
+
+/>
+````
+
   </Tabs.Tab>
 </Tabs>
 
@@ -227,6 +226,7 @@ import '@start-base/react-form-elements/styles.css';
         timer={120}
     />
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -264,6 +264,7 @@ import '@start-base/react-form-elements/styles.css';
         timer={120}
     />
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -296,6 +297,7 @@ import '@start-base/react-form-elements/styles.css';
         timer={120}
     />
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -330,6 +332,7 @@ import '@start-base/react-form-elements/styles.css';
         placeholder="Placeholder"
     />
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -362,6 +365,7 @@ import '@start-base/react-form-elements/styles.css';
         onChange={handleChange}
     />
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -393,5 +397,6 @@ import '@start-base/react-form-elements/styles.css';
         onChange={handleChange}
     />
     ```
+
   </Tabs.Tab>
 </Tabs>
