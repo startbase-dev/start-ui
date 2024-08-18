@@ -12,15 +12,15 @@
   width: 100%;
   height: 100%;
   border-radius: 16px;
-  object-fit: cover; /* Adjust as needed: 'cover' to zoom or 'contain' to fit */
+  object-fit: cover;
 }
 
 .button {
   position: absolute;
-  bottom: 20px; /* Adjust positioning as needed */
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: transparent;
+  background-color: var(--sui-transparent);
   padding: 10px 20px;
   cursor: pointer;
   display: flex;
@@ -29,5 +29,5 @@
   justify-content: center;
   gap: 4px;
   border: none;
-  color: white;
+  color: var(--sui-white);
 }

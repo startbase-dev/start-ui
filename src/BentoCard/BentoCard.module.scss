@@ -1,4 +1,4 @@
-@keyframes fadeIn {
+@keyframes fade-in {
   from {
     opacity: 0.5;
   }
@@ -8,7 +8,7 @@
   }
 }
 
-@keyframes slideUp {
+@keyframes slide-up {
   from {
     margin-top: 0;
     opacity: 1;
@@ -20,7 +20,7 @@
   }
 }
 
-@keyframes slideDown {
+@keyframes slide-down {
   from {
     margin-top: -200px;
   }
@@ -30,7 +30,7 @@
   }
 }
 
-@keyframes rotateIn {
+@keyframes rotate-in {
   from {
     transform: rotate(0deg);
   }
@@ -40,7 +40,7 @@
   }
 }
 
-@keyframes rotateOut {
+@keyframes rotate-out {
   from {
     transform: rotate(45deg);
   }
@@ -144,7 +144,7 @@
 }
 
 .activeButton {
-  animation: rotateIn 600ms forwards;
+  animation: rotate-in 600ms forwards;
   background-color: var(--sui-bento-card-button-active-bg);
 
   &:hover {
@@ -153,15 +153,15 @@
 }
 
 .exitingButton {
-  animation: rotateOut 600ms forwards;
+  animation: rotate-out 600ms forwards;
 }
 
 .enteringContent {
-  animation: slideDown 600ms forwards;
+  animation: slide-down 600ms forwards;
 }
 
 .exitingContent {
-  animation: slideUp 600ms forwards;
+  animation: slide-up 600ms forwards;
 }
 
 .root[data-active="false"] .plusIcon {
