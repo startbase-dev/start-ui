@@ -83,3 +83,10 @@
   border-radius: var(--sui-border-radius-small);
   border: 1px solid var(--sui-gray-200);
 }
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: var(--sui-gap);
+}

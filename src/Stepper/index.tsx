@@ -3,6 +3,7 @@ import s from "./Stepper.module.scss";
 import clsx from "clsx";
 import Check from "../icons/Check";
 import useStepper from "./useStepper";
+import Button from "../Button";
 import type { StepperProps } from "./types";
 
 const Index = forwardRef<HTMLDivElement, StepperProps>((props, ref) => {
@@ -12,34 +13,47 @@ const Index = forwardRef<HTMLDivElement, StepperProps>((props, ref) => {
 
   const rootClassNames = clsx(s.root, className);
 
+  const stepsNode = steps.map((step, index) => {
+    let state = "unfinished";
+
+    if (currentStep === index) state = "ongoing";
+    if (currentStep > index) state = "finished";
+
+    return (
+      <li key={step.id} className={s.step} onClick={() => setStep(index)} data-state={state}>
+        <div className={s.icon}>
+          {state === "finished" ? <Check size={24} /> : index}
+        </div>
+        <span className={s.label}>
+          {step.label}
+        </span>
+      </li>
+    );
+  });
+
   return (
     <div className={rootClassNames} ref={ref} {...rest}>
       <ul className={s.steps}>
-        {steps.map((step, index) => {
-          let state = "unfinished";
-
-          if (currentStep === index) state = "ongoing";
-          if (currentStep > index) state = "finished";
-
-          return (
-            <li key={step.id} className={s.step} onClick={() => setStep(index)} data-state={state}>
-              <div className={s.icon}>
-                {state === "finished" ? <Check size={24} /> : index}
-              </div>
-              <span className={s.label}>
-                {step.label}
-              </span>
-            </li>
-          );
-        })}
+        {stepsNode}
       </ul>
       <div className={s.content}>
         {steps[currentStep]?.content ?? finishedContent}
       </div>
-      <div>
-        <button onClick={() => previousStep()} disabled={currentStep === 0}>Previous</button>
-        <button onClick={() => nextStep()} disabled={currentStep === steps.length}>Next</button>
-        <button onClick={() => resetStep()}>Reset</button>
+      <div className={s.buttons}>
+        <Button
+          size="small"
+          onClick={() => previousStep()}
+          disabled={currentStep === 0}
+        >Previous</Button>
+        <Button
+          size="small"
+          onClick={() => nextStep()}
+          disabled={currentStep === steps.length}
+        >Next</Button>
+        <Button
+          size="small"
+          onClick={() => resetStep()}
+        >Reset</Button>
       </div>
     </div>
   );

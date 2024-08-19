@@ -17,11 +17,6 @@ const Template: React.FC<StepperTemplateProps> = (props) => {
       label: "Step 2",
       content: "Step 2 content",
     },
-    {
-      id: "step-3",
-      label: "Step 3",
-      content: "Step 3 content",
-    },
   ];
 
   return (
