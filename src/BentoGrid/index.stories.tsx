@@ -52,7 +52,6 @@ BentoGridComponent.args = {
       element: (
         <div
           style={{ backgroundColor: "lightgoldenrodyellow", padding: "12px", height: "calc(100% - 24px)" }}>
-        >
           Item 4
         </div>
       ),
