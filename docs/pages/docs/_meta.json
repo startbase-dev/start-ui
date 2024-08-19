@@ -1,11 +1,13 @@
 {
-  "index": "Introduction",
-  "installation": "Installation",
-  "---": {
+  "index": "Overview",
+  "gettingStarted": "Getting Started",
+  "boilerplates": "Boilerplates",
+  "--": {
     "type": "separator"
   },
+  "animations": "Animations",
   "components": "Components",
-  "marketingComponents": "Marketing Components",
   "formComponents": "Form Components",
+  "marketingComponents": "Marketing Components",
   "overlayComponents": "Overlay Components"
 }
