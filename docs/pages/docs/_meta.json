@@ -6,5 +6,6 @@
   },
   "components": "Components",
   "marketingComponents": "Marketing Components",
-  "formComponents": "Form Components"
+  "formComponents": "Form Components",
+  "overlayComponents": "Overlay Components"
 }

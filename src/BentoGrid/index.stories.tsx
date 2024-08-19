@@ -51,13 +51,13 @@ BentoGridComponent.args = {
     {
       element: (
         <div
-          style={{ backgroundColor: "lightgoldenrodyellow", padding: "12px" }}
+          style={{ backgroundColor: "lightgoldenrodyellow", padding: "12px", height: "calc(100% - 24px)" }}>
         >
           Item 4
         </div>
       ),
       width: 1,
-      height: 1,
+      height: 2,
     },
     {
       element: (
@@ -84,15 +84,6 @@ BentoGridComponent.args = {
         </div>
       ),
       width: 2,
-      height: 1,
-    },
-    {
-      element: (
-        <div style={{ backgroundColor: "lightcoral", padding: "12px" }}>
-          Item 8
-        </div>
-      ),
-      width: 1,
       height: 1,
     },
   ],
