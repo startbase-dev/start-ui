@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "nextra/components";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import { BASE_DOCS_PATH } from "../../constants/paths";
+import { BASE_DOCS_PATH } from "../constants/paths";
 
 interface Props {
   path: string;

@@ -2,8 +2,7 @@ import { Tabs } from "nextra/components";
 import "@start-base/react-form-elements/styles.css";
 import Radio from "@start-base/react-form-elements/Radio";
 import Preview from "@components/Preview/Preview";
-import ApiReferenceButton from "@components/ApiReferenceButton/ApiReferenceButton";
-import FormOnChange from "./formOnChange";
+import FormOnChange from "@components/formOnChange";
 import { Steps } from "nextra/components";
 import "@start-base/react-form-elements/styles.css";
 
@@ -11,32 +10,66 @@ import "@start-base/react-form-elements/styles.css";
 
 The Radio component is designed for selecting a single option from a set of mutually exclusive choices. It features a clear and intuitive interface, displaying radio buttons that users can select with a simple click.
 
-<ApiReferenceButton path="form-radio--docs" />
-
 ## Installation
 
 <Steps>
+    ### Install the package
+    ```sh copy npm2yarn
+    npm i @start-base/react-form-elements
+    ```
+    ### Add the styles
 
-### Install the package
+    <Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+        <Tabs.Tab label="Next.js 14 (App Directory)">
+            To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
 
-<Tabs items={["npm", "yarn", "pnpm"]}>
-  <Tabs.Tab>
-    ``` bash copy npm install --save @start-base/react-form-elements ```
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ``` bash copy yarn add @start-base/react-form-elements ```
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ``` bash copy pnpm add @start-base/react-form-elements ```
-  </Tabs.Tab>
-</Tabs>
-### Add the styles Make sure to add css file to your app root file
+            ```tsx copy filename="app/layout.tsx"
+            import "@start-base/react-form-elements/styles.css";
+            ```
 
-```tsx copy
-import "@start-base/react-form-elements/styles.css";
-```
+        </Tabs.Tab>
+        <Tabs.Tab label="Next.js 13">
+            For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+            ```tsx copy filename="pages/_app.tsx"
+            import "@start-base/react-form-elements/styles.css";
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="React.js">
+            In a React.js project, you should import the styles directly into your `App.js` file.
+
+            ```tsx copy filename="App.js"
+            import "@start-base/react-form-elements/styles.css";
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+    ### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import Radio from '@start-base/react-form-elements/Radio';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { Radio } from '@start-base/react-form-elements';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
 
 </Steps>
+
+## Usages
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
@@ -266,3 +299,24 @@ import "@start-base/react-form-elements/styles.css";
 
   </Tabs.Tab>
 </Tabs>
+
+## API
+
+A basic radio input component.
+
+| Name           | Type                              | Default | Description                                                                                                                                    |
+| -------------- | --------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| name           | `string`                          |         | Name of the input                                                                                                                              |
+| label          | `string`                          | `null`  | Label of the input                                                                                                                             |
+| placeholder    | `string`                          | `null`  | Placeholder of the input                                                                                                                       |
+| disableShrink  | `boolean`                         | `false` | Position the label outside of the input                                                                                                        |
+| value          | `string` or `number`              |         | Value of the input                                                                                                                             |
+| onChange       | `function`                        |         | Callback function that is fired when the value changes.                                                                                        |
+| inputClassName | `string`                          | `null`  | Classname for input element                                                                                                                    |
+| labelClassName | `string`                          | `null`  | Classname for label element                                                                                                                    |
+| errorClassName | `string`                          | `null`  | Classname for error element                                                                                                                    |
+| disabled       | `boolean`                         | `false` | Disable the input                                                                                                                              |
+| error          | `string` or `boolean` or `object` | `null`  | Error message to display below the input. if value is a boolean input border will be change. Also you can pass schema validator error objects. |
+| checked        | `boolean`                         | `false` | Checked state of the radio                                                                                                                     |
+
+## Styling
