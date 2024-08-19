@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 import { BentoGrid, BentoCard } from "@start-base/start-ui";
 import "@start-base/start-ui/styles.css";
 
