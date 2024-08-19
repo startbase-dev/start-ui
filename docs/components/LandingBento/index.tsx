@@ -1,12 +1,8 @@
-import React, { useState } from "react";
-import { BentoGrid } from "../../../index";
-import BentoCard from "../../../BentoCard";
+"use client";
+import { BentoGrid, BentoCard } from "@start-base/start-ui";
+import "@start-base/start-ui/styles.css";
 
-interface Props {
-  items: string;
-}
-
-const LandingBento: React.FC<Props> = () => {
+const LandingBento: React.FC = () => {
   return (
     <BentoGrid
       items={[

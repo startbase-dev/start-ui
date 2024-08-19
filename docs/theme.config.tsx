@@ -20,6 +20,15 @@ const config: DocsThemeConfig = {
   feedback: {
     content: null,
   },
+  banner: {
+    key: "startbase 1.0",
+    text: (
+      <a href="https://startbase.dev" target="_blank" rel="noreferrer">
+        🎉 Startbase is launched. Vist →
+      </a>
+    ),
+    dismissible: false,
+  },
   gitTimestamp: null,
   docsRepositoryBase: "https://github.com/startbase-dev/start-ui",
   footer: {
