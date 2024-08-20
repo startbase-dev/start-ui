@@ -4,8 +4,10 @@
   --sui-popover-border: var(--sui-gray-200);
 }
 
-[data-theme="dark"] {
-  --sui-popover-bg: var(--sui-black);
-  --sui-popover-text: var(--sui-white);
-  --sui-popover-border: var(--sui-gray-700);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sui-popover-bg: var(--sui-black);
+    --sui-popover-text: var(--sui-white);
+    --sui-popover-border: var(--sui-gray-700);
+  }
 }

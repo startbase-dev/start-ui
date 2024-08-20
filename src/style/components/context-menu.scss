@@ -3,7 +3,9 @@
   --sui-context-menu-border: var(--sui-gray-200);
 }
 
-[data-theme="dark"] {
-  --sui-context-menu-bg: var(--sui-black);
-  --sui-context-menu-border: var(--sui-gray-700);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sui-context-menu-bg: var(--sui-black);
+    --sui-context-menu-border: var(--sui-gray-700);
+  }
 }

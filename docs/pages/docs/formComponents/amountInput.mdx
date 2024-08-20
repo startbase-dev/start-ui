@@ -77,85 +77,73 @@ npm i @start-base/react-form-elements
   <Tabs.Tab>
   <Preview height="200px">
   <FormOnChange>
-    <AmountInput />
+    <AmountInput name="input1" onChange={()=>{}} />
   </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-      ```tsx copy showLineNumbers
-      import React, { useState } from 'react';
-      import AmountInput from '@start-base/react-form-elements/AmountInput';
-
-      export default function Form() {
-        const [inputs, setInputs] = useState({});
-
-        const onChange = (e) => {
-          const { name, value, type } = e.target;
-
-          setInputs((prevState) => {
-            return {
-              ...prevState,
-              [name]: type === 'checkbox' ? !prevState[name] : value,
-            };
-          });
-        };
-
-        return <AmountInput name="input" value={inputs.input} onChange={onChange} />;
-    }
-    ```
+      ```jsx copy showLineNumbers
+      <AmountInput
+          name="input"
+          value={inputs.input}
+          onChange={onChange}
+      />
+      ```
 
   </Tabs.Tab>
     <Tabs.Tab>
-        ```tsx copy showLineNumbers
-        import React, { useState } from 'react';
-        import AmountInput from '@start-base/react-form-elements/AmountInput';
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+            <AmountInput
+                value={watch("input")}
+                {...field}
+            />
+        )}
+    />
+````
 
-        export default function Form() {
-          const [inputs, setInputs] = useState({});
-
-          const onChange = (e) => {
-            const { name, value, type } = e.target;
-
-            setInputs((prevState) => {
-              return {
-                ...prevState,
-                [name]: type === 'checkbox' ? !prevState[name] : value,
-              };
-            });
-          };
-
-          return <AmountInput name="input" value={inputs.input} onChange={onChange} />;
-       }
-       ````
-
-    </Tabs.Tab>
+ </Tabs.Tab>
 
 </Tabs>
 
 ### Amount Input With Floating Label
 
 <Tabs items={["Preview", "Code", "React Hook Form"]}>
-  <Tabs.Tab>
-    <Preview height="200px">
-      <FormOnChange>
-        <AmountInput label="Label"/>
-      </FormOnChange>
-    </Preview>
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ```tsx copy showLineNumbers
-    import AmountInput from '@start-base/react-form-elements/AmountInput';
-
-    <AmountInput  label="Label" name="input" />
-    ```
-
-  </Tabs.Tab>
+<Tabs.Tab>
+ <Preview height="200px">
+   <FormOnChange>
+     <AmountInput name="input2" label="Label" onChange={()=>{}} />
+   </FormOnChange>
+ </Preview>
+</Tabs.Tab>
     <Tabs.Tab>
-        ```tsx copy showLineNumbers
-        import AmountInput from '@start-base/react-form-elements/AmountInput';
-
-        <AmountInput name="input" />
+        ```jsx copy showLineNumbers
+        <AmountInput
+            label="Label"
+            name="input"
+            value={inputs.input}
+            onChange={onChange}
+        />
         ```
+
+    </Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <Controller
+            name="input"
+            control={control}
+            render={({ field }) => (
+                <AmountInput
+                    label="Label"
+                    value={watch("input")}
+                    {...field}
+                />
+            )}
+        />
+        ````
 
     </Tabs.Tab>
 
@@ -164,30 +152,42 @@ npm i @start-base/react-form-elements
 ### Amount Input With Placeholder
 
 <Tabs items={["Preview", "Code", "React Hook Form"]}>
-  <Tabs.Tab>
-   <Preview height="200px">
-          <FormOnChange>
-    <AmountInput
-      name="input3"
-      placeholder="Placeholder"
-    />
-  </FormOnChange>
-   </Preview>
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ```tsx copy showLineNumbers
-    import AmountInput from '@start-base/react-form-elements/AmountInput';
-
-    <AmountInput placeholder="Placeholder" name="input" />
-    ```
-
-  </Tabs.Tab>
+<Tabs.Tab>
+<Preview height="200px">
+       <FormOnChange>
+ <AmountInput
+   name="input3"
+   placeholder="Placeholder"
+   onChange={()=>{}}
+ />
+</FormOnChange>
+</Preview>
+</Tabs.Tab>
     <Tabs.Tab>
-        ```tsx copy showLineNumbers
-        import AmountInput from '@start-base/react-form-elements/AmountInput';
-
-        <AmountInput name="input" />
+        ```jsx copy showLineNumbers
+        <AmountInput
+            placeholder="Placeholder"
+            name="input"
+            value={inputs.input}
+            onChange={onChange}
+        />
         ```
+
+    </Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <Controller
+            name="input"
+            control={control}
+            render={({ field }) => (
+                <AmountInput
+                    placeholder="Placeholder"
+                    value={watch("input")}
+                    {...field}
+                />
+            )}
+        />
+        ````
 
     </Tabs.Tab>
 
@@ -196,31 +196,45 @@ npm i @start-base/react-form-elements
 ### Amount Input With Floating Label and Placeholder
 
 <Tabs items={["Preview", "Code", "React Hook Form"]}>
-  <Tabs.Tab>
-   <Preview height="200px">
-  <FormOnChange>
-    <AmountInput
-      name="input4"
-     label="Label"
-        placeholder="Placeholder"
-    />
-  </FormOnChange>
-   </Preview>
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ```tsx copy showLineNumbers
-    import AmountInput from '@start-base/react-form-elements/AmountInput';
-
-    <AmountInput label="Label" placeholder="Placeholder" name="input" />
-    ```
-
-  </Tabs.Tab>
+<Tabs.Tab>
+<Preview height="200px">
+<FormOnChange>
+ <AmountInput
+   name="input4"
+   label="Label"
+   placeholder="Placeholder"
+   onChange={()=>{}}
+ />
+</FormOnChange>
+</Preview>
+</Tabs.Tab>
     <Tabs.Tab>
-        ```tsx copy showLineNumbers
-        import AmountInput from '@start-base/react-form-elements/AmountInput';
-
-        <AmountInput name="input" />
+        ```jsx copy showLineNumbers
+        <AmountInput
+            label="Label"
+            placeholder="Placeholder"
+            name="input"
+            value={inputs.input}
+            onChange={onChange}
+        />
         ```
+
+    </Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <Controller
+            name="input"
+            control={control}
+            render={({ field }) => (
+                <AmountInput
+                    label="Label"
+                    placeholder="Placeholder"
+                    value={watch("input")}
+                    {...field}
+                />
+            )}
+        />
+        ````
 
     </Tabs.Tab>
 
@@ -229,32 +243,48 @@ npm i @start-base/react-form-elements
 ### Amount Input With Placeholder And Disable Shrink
 
 <Tabs items={["Preview", "Code", "React Hook Form"]}>
-  <Tabs.Tab>
-   <Preview height="200px">
-    <FormOnChange>
-    <AmountInput
-      name="input5"
-     label="Label"
-        placeholder="Placeholder"
-        disableShrink
-    />
-  </FormOnChange>
-   </Preview>
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ```tsx copy showLineNumbers
-    import AmountInput from '@start-base/react-form-elements/AmountInput';
-
-    <AmountInput label="Label" placeholder="Placeholder" name="input" disableShrink />
-    ```
-
-  </Tabs.Tab>
+<Tabs.Tab>
+<Preview height="200px">
+ <FormOnChange>
+ <AmountInput
+   name="input5"
+   label="Label"
+   placeholder="Placeholder"
+   onChange={()=>{}}
+   disableShrink
+ />
+</FormOnChange>
+</Preview>
+</Tabs.Tab>
     <Tabs.Tab>
-        ```tsx copy showLineNumbers
-        import AmountInput from '@start-base/react-form-elements/AmountInput';
-
-        <AmountInput name="input" />
+        ```jsx copy showLineNumbers
+        <AmountInput
+            label="Label"
+            placeholder="Placeholder"
+            disableShrink
+            name="input"
+            value={inputs.input}
+            onChange={onChange}
+        />
         ```
+
+    </Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <Controller
+            name="input"
+            control={control}
+            render={({ field }) => (
+                <AmountInput
+                    label="Label"
+                    placeholder="Placeholder"
+                    disableShrink
+                    value={watch("input")}
+                    {...field}
+                />
+            )}
+        />
+        ````
 
     </Tabs.Tab>
 
@@ -263,32 +293,48 @@ npm i @start-base/react-form-elements
 ### Disabled Amount Input
 
 <Tabs items={["Preview", "Code", "React Hook Form"]}>
-  <Tabs.Tab>
-   <Preview height="200px">
-        <FormOnChange>
-    <AmountInput
-      name="input6"
-     label="Label"
-        placeholder="Placeholder"
-        disabled
-    />
-  </FormOnChange>
-   </Preview>
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ```tsx copy showLineNumbers
-    import AmountInput from '@start-base/react-form-elements/AmountInput';
-
-    <AmountInput label="Label" placeholder="Placeholder" name="input" disabled />
-    ```
-
-  </Tabs.Tab>
+<Tabs.Tab>
+<Preview height="200px">
+     <FormOnChange>
+ <AmountInput
+   name="input6"
+   label="Label"
+   placeholder="Placeholder"
+   disabled
+   onChange={()=>{}}
+ />
+</FormOnChange>
+</Preview>
+</Tabs.Tab>
     <Tabs.Tab>
-        ```tsx copy showLineNumbers
-        import AmountInput from '@start-base/react-form-elements/AmountInput';
-
-        <AmountInput name="input" />
+        ```jsx copy showLineNumbers
+        <AmountInput
+            name="input"
+            label="Label"
+            placeholder="Placeholder"
+            disabled
+            value={inputs.input}
+            onChange={onChange}
+        />
         ```
+
+    </Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <Controller
+            name="input"
+            control={control}
+            render={({ field }) => (
+                <AmountInput
+                    label="Label"
+                    placeholder="Placeholder"
+                    disabled
+                    value={watch("input")}
+                    {...field}
+                />
+            )}
+        />
+        ````
 
     </Tabs.Tab>
 
@@ -297,37 +343,48 @@ npm i @start-base/react-form-elements
 ### Amount Input With Append
 
 <Tabs items={["Preview", "Code", "React Hook Form"]}>
-  <Tabs.Tab>
-    <Preview height="200px">
-      <FormOnChange>
-        <AmountInput
-          label="Label"
-          placeholder="Placeholder"
-          name="input7"
-          append={<AiOutlineDollarCircle />}
-        />
-      </FormOnChange>
-    </Preview>
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ```tsx copy showLineNumbers
-      import AmountInput from '@start-base/react-form-elements/AmountInput';
-
-      <AmountInput
-          label="Label"
-          placeholder="Placeholder"
-          name="input"
-          append={<AiOutlineDollarCircle />}
-      />
-    ```
-
-  </Tabs.Tab>
+<Tabs.Tab>
+ <Preview height="200px">
+   <FormOnChange>
+     <AmountInput
+       label="Label"
+       placeholder="Placeholder"
+       name="input7"
+       append={<AiOutlineDollarCircle />}
+       onChange={()=>{}}
+     />
+   </FormOnChange>
+ </Preview>
+</Tabs.Tab>
     <Tabs.Tab>
-        ```tsx copy showLineNumbers
-        import AmountInput from '@start-base/react-form-elements/AmountInput';
-
-        <AmountInput name="input" />
+        ```jsx copy showLineNumbers
+        <AmountInput
+            name="input"
+            label="Label"
+            placeholder="Placeholder"
+            append={<AiOutlineDollarCircle />}
+            value={inputs.input}
+            onChange={onChange}
+        />
         ```
+
+    </Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <Controller
+            name="input"
+            control={control}
+            render={({ field }) => (
+                <AmountInput
+                    label="Label"
+                    placeholder="Placeholder"
+                    append={<AiOutlineDollarCircle />}
+                    value={watch("input")}
+                    {...field}
+                />
+            )}
+        />
+        ````
 
     </Tabs.Tab>
 
@@ -336,37 +393,48 @@ npm i @start-base/react-form-elements
 ### Amount Input With Prepend
 
 <Tabs items={["Preview", "Code", "React Hook Form"]}>
-  <Tabs.Tab>
-   <Preview height="200px">
-      <FormOnChange>
-    <AmountInput
-     label="Label"
-        placeholder="Placeholder"
-        name="input8"
-        prepend={<AiOutlineDollarCircle />}
-    />
-      </FormOnChange>
-  </Preview>
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ```tsx copy showLineNumbers
-    import AmountInput from '@start-base/react-form-elements/AmountInput';
-
-    <AmountInput
-        label="Label"
-        placeholder="Placeholder"
-        name="input"
-        prepend={<AiOutlineDollarCircle />}
-    />
-    ```
-
-  </Tabs.Tab>
+<Tabs.Tab>
+<Preview height="200px">
+   <FormOnChange>
+     <AmountInput
+      label="Label"
+      placeholder="Placeholder"
+      name="input8"
+      prepend={<AiOutlineDollarCircle />}
+      onChange={()=>{}}
+     />
+   </FormOnChange>
+</Preview>
+</Tabs.Tab>
     <Tabs.Tab>
-        ```tsx copy showLineNumbers
-        import AmountInput from '@start-base/react-form-elements/AmountInput';
-
-        <AmountInput name="input" />
+        ```jsx copy showLineNumbers
+        <AmountInput
+            label="Label"
+            placeholder="Placeholder"
+            prepend={<AiOutlineDollarCircle />}
+            name="input"
+            value={inputs.input}
+            onChange={onChange}
+        />
         ```
+
+    </Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <Controller
+            name="input"
+            control={control}
+            render={({ field }) => (
+                <AmountInput
+                    label="Label"
+                    placeholder="Placeholder"
+                    prepend={<AiOutlineDollarCircle />}
+                    value={watch("input")}
+                    {...field}
+                />
+            )}
+        />
+        ````
 
     </Tabs.Tab>
 
@@ -375,31 +443,45 @@ npm i @start-base/react-form-elements
 ### Amount Input With Error Message
 
 <Tabs items={["Preview", "Code", "React Hook Form"]}>
-  <Tabs.Tab>
-   <Preview height="200px">
-     <FormOnChange>
-    <AmountInput
-        label="Label"
-        error="Error Message"
-        name="input9"
-    />
-      </FormOnChange>
-  </Preview>
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ```tsx copy showLineNumbers
-    import AmountInput from '@start-base/react-form-elements/AmountInput';
-
-    <AmountInput label="Label"  name="input"  error="Error Message" />
-    ```
-
-  </Tabs.Tab>
+<Tabs.Tab>
+<Preview height="200px">
+  <FormOnChange>
+ <AmountInput
+     label="Label"
+     error="Error Message"
+     name="input9"
+     onChange={()=>{}}
+ />
+   </FormOnChange>
+</Preview>
+</Tabs.Tab>
     <Tabs.Tab>
-        ```tsx copy showLineNumbers
-        import AmountInput from '@start-base/react-form-elements/AmountInput';
-
-        <AmountInput name="input" />
+        ```jsx copy showLineNumbers
+        <AmountInput
+            label="Label"
+            error="Error Message"
+            name="input"
+            value={inputs.input}
+            onChange={onChange}
+        />
         ```
+
+    </Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <Controller
+            name="input"
+            control={control}
+            render={({ field }) => (
+                <AmountInput
+                    label="Label"
+                    error="Error Message"
+                    value={watch("input")}
+                    {...field}
+                />
+            )}
+        />
+        ````
 
     </Tabs.Tab>
 
@@ -408,30 +490,45 @@ npm i @start-base/react-form-elements
 ### Amount Input With Error
 
 <Tabs items={["Preview", "Code", "React Hook Form"]}>
+ <Tabs.Tab>
+     <Preview height="200px">
+         <FormOnChange>
+             <AmountInput
+                 label="Label"
+                 error
+                 name="input10"
+                 onChange={()=>{}}
+             />
+         </FormOnChange>
+     </Preview>
+ </Tabs.Tab>
     <Tabs.Tab>
-        <Preview height="200px">
-            <FormOnChange>
+        ```jsx copy showLineNumbers
+        <AmountInput
+            label="Label"
+            error
+            name="input"
+            value={inputs.input}
+            onChange={onChange}
+        />
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <Controller
+            name="input"
+            control={control}
+            render={({ field }) => (
                 <AmountInput
                     label="Label"
                     error
-                    name="input10"
+                    value={watch("input")}
+                    {...field}
                 />
-            </FormOnChange>
-        </Preview>
-    </Tabs.Tab>
-    <Tabs.Tab>
-        ```tsx copy showLineNumbers
-        import AmountInput from '@start-base/react-form-elements/AmountInput';
-
-        <AmountInput label="Label"  name="input"  error />
-        ```
-    </Tabs.Tab>
-    <Tabs.Tab>
-        ```tsx copy showLineNumbers
-        import AmountInput from '@start-base/react-form-elements/AmountInput';
-
-        <AmountInput name="input" />
-        ```
+            )}
+        />
+        ````
 
     </Tabs.Tab>
 
@@ -447,7 +544,7 @@ This component is a wrapper around [react-currency-input-field](https://www.npmj
 | label                  | `string`                          | `null`         | Label of the input                                                                                                                             |
 | placeholder            | `string`                          | `null`         | Placeholder of the input                                                                                                                       |
 | disableShrink          | `boolean`                         | `false`        | Position the label outside of the input                                                                                                        |
-| value                  | `string` or `number`              |                | Value of the input                                                                                                                             |
+| value                  | `number`                          |                | Value of the input                                                                                                                             |
 | onChange               | `function`                        |                | Callback function that is fired when the value changes.                                                                                        |
 | inputClassName         | `string`                          | `null`         | Classname for input element                                                                                                                    |
 | labelClassName         | `string`                          | `null`         | Classname for label element                                                                                                                    |

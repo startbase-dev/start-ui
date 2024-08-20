@@ -19,12 +19,12 @@
   "homepage": "https://github.com/shuding/nextra-docs-template#readme",
   "dependencies": {
     "@start-base/react-consent-manager": "1.10.4",
-    "@start-base/react-form-elements": "1.9.13",
+    "@start-base/react-form-elements": "1.10.0",
     "@start-base/start-ui": "0.0.19-alpha",
     "framer-motion": "11.3.28",
     "next": "13.5.6",
-    "nextra": "latest",
-    "nextra-theme-docs": "latest",
+    "nextra": "2.13.4",
+    "nextra-theme-docs": "2.13.4",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-icons": "5.3.0"

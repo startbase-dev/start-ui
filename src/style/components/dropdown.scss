@@ -3,7 +3,9 @@
   --sui-dropdown-menu-border: var(--sui-gray-200);
 }
 
-[data-theme="dark"] {
-  --sui-dropdown-menu-bg: var(--sui-black);
-  --sui-dropdown-menu-border: var(--sui-gray-700);
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sui-dropdown-menu-bg: var(--sui-black);
+    --sui-dropdown-menu-border: var(--sui-gray-700);
+  }
 }
