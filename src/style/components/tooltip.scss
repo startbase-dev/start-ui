@@ -1,13 +1,14 @@
-:root {
+.light,
+:root,
+[data-theme="light"] {
   --sui-tooltip-bg: var(--sui-white);
   --sui-tooltip-text: var(--sui-black);
   --sui-tooltip-border: var(--sui-gray-200);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --sui-tooltip-bg: var(--sui-black);
-    --sui-tooltip-text: var(--sui-white);
-    --sui-tooltip-border: var(--sui-gray-700);
-  }
+.dark,
+[data-theme="dark"] {
+  --sui-tooltip-bg: var(--sui-black);
+  --sui-tooltip-text: var(--sui-white);
+  --sui-tooltip-border: var(--sui-gray-700);
 }

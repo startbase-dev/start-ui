@@ -1,8 +1,10 @@
-:root {
+.light,
+:root,
+[data-theme="light"] {
   --sui-floating-menu-item-active: var(--sui-gray-200);
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --sui-floating-menu-item-active: var(--sui-gray-700);
-  }
+
+.dark,
+[data-theme="dark"] {
+  --sui-floating-menu-item-active: var(--sui-gray-700);
 }

@@ -1,11 +1,12 @@
-:root {
+.light,
+:root,
+[data-theme="light"] {
   --sui-context-menu-bg: var(--sui-white);
   --sui-context-menu-border: var(--sui-gray-200);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --sui-context-menu-bg: var(--sui-black);
-    --sui-context-menu-border: var(--sui-gray-700);
-  }
+.dark,
+[data-theme="dark"] {
+  --sui-context-menu-bg: var(--sui-black);
+  --sui-context-menu-border: var(--sui-gray-700);
 }

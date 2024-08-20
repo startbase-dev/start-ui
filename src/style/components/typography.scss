@@ -1,4 +1,6 @@
-:root {
+.light,
+:root,
+[data-theme="light"] {
   --sui-typography-muted-text: var(--sui-gray-450);
   --sui-typography-success-text: var(--sui-success);
   --sui-typography-error-text: var(--sui-error);
@@ -29,35 +31,34 @@
   --sui-typography-quote-border: var(--sui-gray-450);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --sui-typography-muted-text: var(--sui-gray-450);
-    --sui-typography-success-text: var(--sui-success);
-    --sui-typography-error-text: var(--sui-error);
-    --sui-typography-warning-text: var(--sui-warning);
-    --sui-typography-info-text: var(--sui-info);
-    --sui-typography-quote-gradient: var(--sui-gray-250);
-    --sui-typography-muted-gradient: var(--sui-gray-250);
-    --sui-typography-info-gradient: color-mix(
-      in srgb,
-      var(--sui-typography-info-text) 60%,
-      var(--sui-gray-250)
-    );
-    --sui-typography-success-gradient: color-mix(
-      in srgb,
-      var(--sui-typography-success-text) 60%,
-      var(--sui-gray-250)
-    );
-    --sui-typography-warning-gradient: color-mix(
-      in srgb,
-      var(--sui-typography-warning-text) 60%,
-      var(--sui-gray-250)
-    );
-    --sui-typography-error-gradient: color-mix(
-      in srgb,
-      var(--sui-typography-error-text) 60%,
-      var(--sui-gray-250)
-    );
-    --sui-typography-quote-border: var(--sui-gray-450);
-  }
+.dark,
+[data-theme="dark"] {
+  --sui-typography-muted-text: var(--sui-gray-450);
+  --sui-typography-success-text: var(--sui-success);
+  --sui-typography-error-text: var(--sui-error);
+  --sui-typography-warning-text: var(--sui-warning);
+  --sui-typography-info-text: var(--sui-info);
+  --sui-typography-quote-gradient: var(--sui-gray-250);
+  --sui-typography-muted-gradient: var(--sui-gray-250);
+  --sui-typography-info-gradient: color-mix(
+    in srgb,
+    var(--sui-typography-info-text) 60%,
+    var(--sui-gray-250)
+  );
+  --sui-typography-success-gradient: color-mix(
+    in srgb,
+    var(--sui-typography-success-text) 60%,
+    var(--sui-gray-250)
+  );
+  --sui-typography-warning-gradient: color-mix(
+    in srgb,
+    var(--sui-typography-warning-text) 60%,
+    var(--sui-gray-250)
+  );
+  --sui-typography-error-gradient: color-mix(
+    in srgb,
+    var(--sui-typography-error-text) 60%,
+    var(--sui-gray-250)
+  );
+  --sui-typography-quote-border: var(--sui-gray-450);
 }
