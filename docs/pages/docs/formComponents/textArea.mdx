@@ -82,10 +82,7 @@ The TextArea component is designed for multi-line text input, providing users wi
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy showLineNumbers
-    import TextArea from '@start-base/react-form-elements/TextArea';
-    import '@start-base/react-form-elements/styles.css';
-
+    ```jsx copy showLineNumbers
     <TextArea
         name="input"
         onChange={handleChange}
@@ -99,26 +96,15 @@ The TextArea component is designed for multi-line text input, providing users wi
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-  <Preview height="200px">
-   
+    <Preview height="200px">
       <FormOnChange>
-     <TextArea
-        label="TextArea Label"
-        name="input"
-    />
-  </FormOnChange>
-  </Preview>
+        <TextArea label="TextArea Label" name="input" />
+      </FormOnChange>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy showLineNumbers
-    import TextArea from '@start-base/react-form-elements/TextArea';
-    import '@start-base/react-form-elements/styles.css';
-
-   <TextArea
-        label="TextArea Label"
-        name="input"
-        onChange={handleChange}
-    />
+    ```jsx copy showLineNumbers
+    <TextArea label="TextArea Label" name="input" onChange={handleChange} />
     ```
   </Tabs.Tab>
 </Tabs>
@@ -127,25 +113,18 @@ The TextArea component is designed for multi-line text input, providing users wi
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-  <Preview height="200px">
-   
-    <FormOnChange>
-     <TextArea
-        placeholder="TextArea Placeholder"
-        name="input"
-    />
-  </FormOnChange>
-  </Preview>
+    <Preview height="200px">
+      <FormOnChange>
+        <TextArea placeholder="TextArea Placeholder" name="input" />
+      </FormOnChange>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy showLineNumbers
-    import TextArea from '@start-base/react-form-elements/TextArea';
-    import '@start-base/react-form-elements/styles.css';
-
-   <TextArea
-        placeholder="TextArea Placeholder"
-        name="input"
-        onChange={handleChange}
+    ```jsx copy showLineNumbers
+    <TextArea
+      placeholder="TextArea Placeholder"
+      name="input"
+      onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -155,27 +134,23 @@ The TextArea component is designed for multi-line text input, providing users wi
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-  <Preview height="200px">
-   
-    <FormOnChange>
-     <TextArea
-        label="TextArea Label"
-        placeholder="TextArea Placeholder"
-        name="input"
-    />
-  </FormOnChange>
-  </Preview>
+    <Preview height="200px">
+      <FormOnChange>
+        <TextArea
+          label="TextArea Label"
+          placeholder="TextArea Placeholder"
+          name="input"
+        />
+      </FormOnChange>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy showLineNumbers
-    import TextArea from '@start-base/react-form-elements/TextArea';
-    import '@start-base/react-form-elements/styles.css';
-
-   <TextArea
-        label="TextArea Label"
-        placeholder="TextArea Placeholder"
-        name="input"
-        onChange={handleChange}
+    ```jsx copy showLineNumbers
+    <TextArea
+      label="TextArea Label"
+      placeholder="TextArea Placeholder"
+      name="input"
+      onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -185,29 +160,25 @@ The TextArea component is designed for multi-line text input, providing users wi
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-  <Preview height="200px">
-   
-    <FormOnChange>
-     <TextArea
-        autoGrow
-        label="TextArea Label"
-        placeholder="TextArea Placeholder"
-        name="input"
-    />
-  </FormOnChange>
-  </Preview>
+    <Preview height="200px">
+      <FormOnChange>
+        <TextArea
+          autoGrow
+          label="TextArea Label"
+          placeholder="TextArea Placeholder"
+          name="input"
+        />
+      </FormOnChange>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy showLineNumbers
-    import TextArea from '@start-base/react-form-elements/TextArea';
-    import '@start-base/react-form-elements/styles.css';
-
-   <TextArea
-        autoGrow
-        label="TextArea Label"
-        placeholder="TextArea Placeholder"
-        name="input"
-        onChange={handleChange}
+    ```jsx copy showLineNumbers
+    <TextArea
+      autoGrow
+      label="TextArea Label"
+      placeholder="TextArea Placeholder"
+      name="input"
+      onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -217,29 +188,25 @@ The TextArea component is designed for multi-line text input, providing users wi
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-  <Preview height="200px">
-   
-    <FormOnChange>
-     <TextArea
-        disableShrink
-        label="TextArea Label"
-        placeholder="TextArea Placeholder"
-        name="input"
-    />
-  </FormOnChange>
-  </Preview>
+    <Preview height="200px">
+      <FormOnChange>
+        <TextArea
+          disableShrink
+          label="TextArea Label"
+          placeholder="TextArea Placeholder"
+          name="input"
+        />
+      </FormOnChange>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy showLineNumbers
-    import TextArea from '@start-base/react-form-elements/TextArea';
-    import '@start-base/react-form-elements/styles.css';
-
-   <TextArea
-        disableShrink
-        label="TextArea Label"
-        placeholder="TextArea Placeholder"
-        name="input"
-        onChange={handleChange}
+    ```jsx copy showLineNumbers
+    <TextArea
+      disableShrink
+      label="TextArea Label"
+      placeholder="TextArea Placeholder"
+      name="input"
+      onChange={handleChange}
     />
     ```
   </Tabs.Tab>
@@ -249,27 +216,19 @@ The TextArea component is designed for multi-line text input, providing users wi
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-  <Preview height="200px">
-   
-    <FormOnChange>
-     <TextArea
-        error="Error Message"
-        label="TextArea Label"
-        name="input"
-    />
-  </FormOnChange>
-  </Preview>
+    <Preview height="200px">
+      <FormOnChange>
+        <TextArea error="Error Message" label="TextArea Label" name="input" />
+      </FormOnChange>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy showLineNumbers
-    import TextArea from '@start-base/react-form-elements/TextArea';
-    import '@start-base/react-form-elements/styles.css';
-
-   <TextArea
-        error="Error Message"
-        label="TextArea Label"
-        name="input"
-        onChange={handleChange}
+    ```jsx copy showLineNumbers
+    <TextArea
+      error="Error Message"
+      label="TextArea Label"
+      name="input"
+      onChange={handleChange}
     />
     ```
   </Tabs.Tab>

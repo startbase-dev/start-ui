@@ -72,43 +72,40 @@ The CheckboxCards component provides a user-friendly interface for toggling betw
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-  <Preview height="200px">
-    <FormOnChange>
-    <CheckboxCards
-      label="CheckboxCards"
-      name="default"
-      options={[
-        {
-          label: 'Checkbox Option 1',
-          value: 'default1'
-        },
-        {
-          label: 'Checkbox Option 2',
-          value: 'default2'
-        }
-      ]}
-    />
-  </FormOnChange>
-  </Preview>
+    <Preview height="200px">
+      <FormOnChange>
+        <CheckboxCards
+          label="CheckboxCards"
+          name="default"
+          options={[
+            {
+              label: "Checkbox Option 1",
+              value: "default1",
+            },
+            {
+              label: "Checkbox Option 2",
+              value: "default2",
+            },
+          ]}
+        />
+      </FormOnChange>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy showLineNumbers
-    import CheckboxCards from '@start-base/react-form-elements/CheckboxCards';
-    import '@start-base/react-form-elements/styles.css';
-
-   <CheckboxCards
+    ```jsx copy showLineNumbers
+    <CheckboxCards
       label="CheckboxCards"
       name="default"
       onChange={handleChange}
       options={[
         {
-          label: 'Checkbox Option 1',
-          value: 'default1'
+          label: "Checkbox Option 1",
+          value: "default1",
         },
         {
-          label: 'Checkbox Option 2',
-          value: 'default2'
-        }
+          label: "Checkbox Option 2",
+          value: "default2",
+        },
       ]}
     />
     ```
@@ -119,52 +116,43 @@ The CheckboxCards component provides a user-friendly interface for toggling betw
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-  <Preview height="200px">
-     <FormOnChange>
-    <CheckboxCards
-      label="CheckboxCards"
-      name="default"
-      options={[
-        {
-          label: 'Checkbox Option 1',
-          value: 'default1'
-        },
-        {
-          label: 'Checkbox Option 2',
-          value: 'default2'
-        }
-      ]}
-      value={[
-        'default1',
-        'default2'
-      ]}
-    />
-     </FormOnChange>
-  </Preview>
+    <Preview height="200px">
+      <FormOnChange>
+        <CheckboxCards
+          label="CheckboxCards"
+          name="default"
+          options={[
+            {
+              label: "Checkbox Option 1",
+              value: "default1",
+            },
+            {
+              label: "Checkbox Option 2",
+              value: "default2",
+            },
+          ]}
+          value={["default1", "default2"]}
+        />
+      </FormOnChange>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy showLineNumbers
-    import CheckboxCards from '@start-base/react-form-elements/CheckboxCards';
-    import '@start-base/react-form-elements/styles.css';
-
-  <CheckboxCards
+    ```jsx copy showLineNumbers
+    <CheckboxCards
       label="CheckboxCards"
       name="default"
       onChange={handleChange}
       options={[
         {
-          label: 'Checkbox Option 1',
-          value: 'default1'
+          label: "Checkbox Option 1",
+          value: "default1",
         },
         {
-          label: 'Checkbox Option 2',
-          value: 'default2'
-        }
+          label: "Checkbox Option 2",
+          value: "default2",
+        },
       ]}
-      value={[
-        'default1',
-        'default2'
-      ]}
+      value={["default1", "default2"]}
     />
     ```
   </Tabs.Tab>
@@ -174,45 +162,42 @@ The CheckboxCards component provides a user-friendly interface for toggling betw
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-  <Preview height="200px">
-   <FormOnChange>
-    <CheckboxCards
-      direction="row"
-      label="CheckboxCards"
-      name="default"
-      options={[
-        {
-          label: 'Checkbox Option 1',
-          value: 'default1'
-        },
-        {
-          label: 'Checkbox Option 2',
-          value: 'default2'
-        }
-      ]}
-    />
-     </FormOnChange>
-  </Preview>
+    <Preview height="200px">
+      <FormOnChange>
+        <CheckboxCards
+          direction="row"
+          label="CheckboxCards"
+          name="default"
+          options={[
+            {
+              label: "Checkbox Option 1",
+              value: "default1",
+            },
+            {
+              label: "Checkbox Option 2",
+              value: "default2",
+            },
+          ]}
+        />
+      </FormOnChange>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy showLineNumbers
-    import CheckboxCards from '@start-base/react-form-elements/CheckboxCards';
-    import '@start-base/react-form-elements/styles.css';
-
-   <CheckboxCards
+    ```jsx copy showLineNumbers
+    <CheckboxCards
       direction="row"
       label="CheckboxCards"
       name="default"
       onChange={handleChange}
       options={[
         {
-          label: 'Checkbox Option 1',
-          value: 'default1'
+          label: "Checkbox Option 1",
+          value: "default1",
         },
         {
-          label: 'Checkbox Option 2',
-          value: 'default2'
-        }
+          label: "Checkbox Option 2",
+          value: "default2",
+        },
       ]}
     />
     ```
@@ -223,45 +208,42 @@ The CheckboxCards component provides a user-friendly interface for toggling betw
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-  <Preview height="200px">
-    <FormOnChange>
-    <CheckboxCards
-      disabled
-      label="CheckboxCards"
-      name="default"
-      options={[
-        {
-          label: 'Checkbox Option 1',
-          value: 'default1'
-        },
-        {
-          label: 'Checkbox Option 2',
-          value: 'default2'
-        }
-      ]}
-    />
-     </FormOnChange>
-  </Preview>
+    <Preview height="200px">
+      <FormOnChange>
+        <CheckboxCards
+          disabled
+          label="CheckboxCards"
+          name="default"
+          options={[
+            {
+              label: "Checkbox Option 1",
+              value: "default1",
+            },
+            {
+              label: "Checkbox Option 2",
+              value: "default2",
+            },
+          ]}
+        />
+      </FormOnChange>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy showLineNumbers
-    import CheckboxCards from '@start-base/react-form-elements/CheckboxCards';
-    import '@start-base/react-form-elements/styles.css';
-
-   <CheckboxCards
+    ```jsx copy showLineNumbers
+    <CheckboxCards
       disabled
       label="CheckboxCards"
       name="default"
       onChange={handleChange}
       options={[
         {
-          label: 'Checkbox Option 1',
-          value: 'default1'
+          label: "Checkbox Option 1",
+          value: "default1",
         },
         {
-          label: 'Checkbox Option 2',
-          value: 'default2'
-        }
+          label: "Checkbox Option 2",
+          value: "default2",
+        },
       ]}
     />
     ```
@@ -272,43 +254,40 @@ The CheckboxCards component provides a user-friendly interface for toggling betw
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-  <Preview height="200px">
+    <Preview height="200px">
       <FormOnChange>
-    <CheckboxCards
-      label="CheckboxCards"
-      name="default"
-      options={[
-        {
-          label: 'Checkbox Option 1',
-          value: 'default1'
-        },
-        {
-          label: 'Checkbox Option 2',
-          value: 'default2'
-        }
-      ]}
-    />
-     </FormOnChange>
-  </Preview>
+        <CheckboxCards
+          label="CheckboxCards"
+          name="default"
+          options={[
+            {
+              label: "Checkbox Option 1",
+              value: "default1",
+            },
+            {
+              label: "Checkbox Option 2",
+              value: "default2",
+            },
+          ]}
+        />
+      </FormOnChange>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy showLineNumbers
-    import CheckboxCards from '@start-base/react-form-elements/CheckboxCards';
-    import '@start-base/react-form-elements/styles.css';
-
-  <CheckboxCards
+    ```jsx copy showLineNumbers
+    <CheckboxCards
       label="CheckboxCards"
       name="default"
       onChange={handleChange}
       options={[
         {
-          label: 'Checkbox Option 1',
-          value: 'default1'
+          label: "Checkbox Option 1",
+          value: "default1",
         },
         {
-          label: 'Checkbox Option 2',
-          value: 'default2'
-        }
+          label: "Checkbox Option 2",
+          value: "default2",
+        },
       ]}
     />
     ```
@@ -319,45 +298,42 @@ The CheckboxCards component provides a user-friendly interface for toggling betw
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-  <Preview height="200px">
-   <FormOnChange>
-    <CheckboxCards
-      error="Error Message"
-      label="CheckboxCards"
-      name="default"
-      options={[
-        {
-          label: 'Checkbox Option 1',
-          value: 'default1'
-        },
-        {
-          label: 'Checkbox Option 2',
-          value: 'default2'
-        }
-      ]}
-    />
-     </FormOnChange>
-  </Preview>
+    <Preview height="200px">
+      <FormOnChange>
+        <CheckboxCards
+          error="Error Message"
+          label="CheckboxCards"
+          name="default"
+          options={[
+            {
+              label: "Checkbox Option 1",
+              value: "default1",
+            },
+            {
+              label: "Checkbox Option 2",
+              value: "default2",
+            },
+          ]}
+        />
+      </FormOnChange>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy showLineNumbers
-    import CheckboxCards from '@start-base/react-form-elements/CheckboxCards';
-    import '@start-base/react-form-elements/styles.css';
-
-  <CheckboxCards
+    ```jsx copy showLineNumbers
+    <CheckboxCards
       error="Error Message"
       label="CheckboxCards"
       name="default"
       onChange={handleChange}
       options={[
         {
-          label: 'Checkbox Option 1',
-          value: 'default1'
+          label: "Checkbox Option 1",
+          value: "default1",
         },
         {
-          label: 'Checkbox Option 2',
-          value: 'default2'
-        }
+          label: "Checkbox Option 2",
+          value: "default2",
+        },
       ]}
     />
     ```
