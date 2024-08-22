@@ -98,6 +98,7 @@ The DatePicker component is a user-friendly and customizable calendar input desi
 ## API
 
 This component combined with Calendar component and Select component. All props from Calendar component and Select can be passed to this component.
+The Calendar component is a wrapper around [react-day-picker](https://www.npmjs.com/package/react-day-picker) DayPicker component. All props from [DayPicker API Reference](https://daypicker.dev/api/type-aliases/DayPickerProps) can be passed to this component.
 
 | Name              | Type                              | Default      | Description                                                                                                                                    |
 | ----------------- | --------------------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -110,6 +111,10 @@ This component combined with Calendar component and Select component. All props 
 | inputClassName    | `string`                          | `null`       | Classname for input element                                                                                                                    |
 | labelClassName    | `string`                          | `null`       | Classname for label element                                                                                                                    |
 | errorClassName    | `string`                          | `null`       | Classname for error element                                                                                                                    |
+| prepend           | `string` or `element`             | `null`       | Prepend text to the input                                                                                                                      |
+| append            | `string` or `element`             | `null`       | Append text to the input                                                                                                                       |
+| appendClassName   | `string`                          | `null`       | Classname for append element                                                                                                                   |
+| prependClassName  | `string`                          | `null`       | Classname for prepend element                                                                                                                  |
 | disabled          | `boolean`                         | `false`      | Disable the input                                                                                                                              |
 | error             | `string` or `boolean` or `object` | `null`       | Error message to display below the input. if value is a boolean input border will be change. Also you can pass schema validator error objects. |
 | value             | `object`                          | ` ""`        | to - from object                                                                                                                               |

@@ -273,21 +273,25 @@ The PhoneInput component is designed for accurate and user-friendly phone number
 
 ## API
 
-This component is a wrapper around [react-international-phone](https://www.npmjs.com/package/react-international-phone) component. All props from react-international-phone can be passed to this component.
+This component is a wrapper around [react-international-phone](https://www.npmjs.com/package/react-international-phone) component.
 
-| Name           | Type                              | Default | Description                                                                                                                                    |
-| -------------- | --------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| name           | `string`                          |         | Name of the input                                                                                                                              |
-| label          | `string`                          | `null`  | Label of the input                                                                                                                             |
-| placeholder    | `string`                          | `null`  | Placeholder of the input                                                                                                                       |
-| disableShrink  | `boolean`                         | `false` | Position the label outside of the input                                                                                                        |
-| value          | `string` or `number`              |         | Value of the input                                                                                                                             |
-| onChange       | `function`                        |         | Callback function that is fired when the value changes.                                                                                        |
-| inputClassName | `string`                          | `null`  | Classname for input element                                                                                                                    |
-| labelClassName | `string`                          | `null`  | Classname for label element                                                                                                                    |
-| errorClassName | `string`                          | `null`  | Classname for error element                                                                                                                    |
-| disabled       | `boolean`                         | `false` | Disable the input                                                                                                                              |
-| error          | `string` or `boolean` or `object` | `null`  | Error message to display below the input. if value is a boolean input border will be change. Also you can pass schema validator error objects. |
-| defaultCountry | `string`                          | `us`    | Default country code for phone starting code and flag                                                                                          |
+| Name             | Type                              | Default | Description                                                                                                                                    |
+| ---------------- | --------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| name             | `string`                          |         | Name of the input                                                                                                                              |
+| label            | `string`                          | `null`  | Label of the input                                                                                                                             |
+| placeholder      | `string`                          | `null`  | Placeholder of the input                                                                                                                       |
+| disableShrink    | `boolean`                         | `false` | Position the label outside of the input                                                                                                        |
+| value            | `string` or `number`              |         | Value of the input                                                                                                                             |
+| onChange         | `function`                        |         | Callback function that is fired when the value changes.                                                                                        |
+| inputClassName   | `string`                          | `null`  | Classname for input element                                                                                                                    |
+| labelClassName   | `string`                          | `null`  | Classname for label element                                                                                                                    |
+| errorClassName   | `string`                          | `null`  | Classname for error element                                                                                                                    |
+| disabled         | `boolean`                         | `false` | Disable the input                                                                                                                              |
+| error            | `string` or `boolean` or `object` | `null`  | Error message to display below the input. if value is a boolean input border will be change. Also you can pass schema validator error objects. |
+| defaultCountry   | `string`                          | `us`    | Default country code for phone starting code and flag                                                                                          |
+| prepend          | `string` or `element`             | `null`  | Prepend text to the input                                                                                                                      |
+| append           | `string` or `element`             | `null`  | Append text to the input                                                                                                                       |
+| appendClassName  | `string`                          | `null`  | Classname for append element                                                                                                                   |
+| prependClassName | `string`                          | `null`  | Classname for prepend element                                                                                                                  |
 
 ## Styling

@@ -97,6 +97,7 @@ The MultipleDatePicker component allows users to select multiple dates efficient
 ## API
 
 This component combined with Calendar component and Select component. All props from Calendar component and Select can be passed to this component.
+The Calendar component is a wrapper around [react-day-picker](https://www.npmjs.com/package/react-day-picker) DayPicker component. All props from [DayPicker API Reference](https://daypicker.dev/api/type-aliases/DayPickerProps) can be passed to this component.
 
 | Name              | Type                              | Default      | Description                                                                                                                                    |
 | ----------------- | --------------------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -104,10 +105,10 @@ This component combined with Calendar component and Select component. All props 
 | label             | `string`                          | `null`       | Label of the input                                                                                                                             |
 | placeholder       | `string`                          | `null`       | Placeholder of the input                                                                                                                       |
 | disableShrink     | `boolean`                         | `false`      | Position the label outside of the input                                                                                                        |
-| value             | `string` or `number`              |              | Value of the input                                                                                                                             |
 | onChange          | `function`                        |              | Callback function that is fired when the value changes.                                                                                        |
 | inputClassName    | `string`                          | `null`       | Classname for input element                                                                                                                    |
 | labelClassName    | `string`                          | `null`       | Classname for label element                                                                                                                    |
+| errorClassName    | `string`                          | `null`       | Classname for error element                                                                                                                    |
 | errorClassName    | `string`                          | `null`       | Classname for error element                                                                                                                    |
 | disabled          | `boolean`                         | `false`      | Disable the input                                                                                                                              |
 | error             | `string` or `boolean` or `object` | `null`       | Error message to display below the input. if value is a boolean input border will be change. Also you can pass schema validator error objects. |
@@ -115,5 +116,7 @@ This component combined with Calendar component and Select component. All props 
 | locale            | `object`                          | `null`       | date-fns locale object                                                                                                                         |
 | format            | `string`                          | `MM/dd/yyyy` | Date format                                                                                                                                    |
 | calendarClassName | `string`                          | `null`       | Classname for calendar element                                                                                                                 |
+| classNames        | `object`                          | `null`       | ClassNames object for select components                                                                                                        |
+| components        | `object`                          | `null`       | Components object for select                                                                                                                   |
 
 ## Styling
