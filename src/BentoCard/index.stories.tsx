@@ -3,33 +3,22 @@ import BentoCard from "./index";
 import s from "./stories.module.scss";
 import VideoPlayer from "./demoContent/Video/VideoPlayer";
 import Image from "./demoContent/Image/Image";
+import StoryBook from "../Storybook";
 
 interface TemplateProps {
   title: string;
 }
 
-const Template: React.FC<TemplateProps> = (props) => {
+const Template: React.FC<TemplateProps> = (args) => {
+  const { title, ...props } = args;
+
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "32px",
-      }}
-    >
-      <h2>{props.title}</h2>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexDirection: "row",
-          height: "600px",
-          width: "100%",
-          gap: "32px",
-        }}
-      >
+    <StoryBook title={title}>
+      <span>{`Default expanded accordions will be expanded upon page load.`}</span>
+      <div style={{ width: "100%", height: "600px" }}>
         <BentoCard
-          title="Rearrange and resize your controls"
+          {...props}
+          title="Control your videos"
           firstContent={<VideoPlayer />}
           rootClassName={s.firstCardRoot}
           secondContent={
@@ -39,7 +28,11 @@ const Template: React.FC<TemplateProps> = (props) => {
             </div>
           }
         />
+      </div>
+      <span>{`Disabled accordions will not expand or collapse on click. But they will persist their state.`}</span>
+      <div style={{ width: "100%", height: "600px" }}>
         <BentoCard
+          {...props}
           title="Title"
           rootClassName={s.secondCardRoot}
           firstContent={
@@ -48,6 +41,7 @@ const Template: React.FC<TemplateProps> = (props) => {
               them when others are using your device.
             </div>
           }
+          redirectTo="https://startbase.dev"
           secondContent={
             <div style={{ padding: "40px" }}>
               Lock an app to require Face ID, Touch ID, or your passcode for
@@ -59,17 +53,10 @@ const Template: React.FC<TemplateProps> = (props) => {
           }
         />
       </div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexDirection: "row",
-          height: "600px",
-          width: "100%",
-          gap: "32px",
-        }}
-      >
+      <span>{`Controlled accordions' state is controlled by its parent. In this example, only one accordion can be expanded at a time.`}</span>
+      <div style={{ width: "100%", height: "600px" }}>
         <BentoCard
+          {...props}
           title="Messages via alian ships"
           rootClassName={s.thirdCardRoot}
           firstContent={<Image />}
@@ -85,12 +72,18 @@ const Template: React.FC<TemplateProps> = (props) => {
           }
         />
       </div>
-    </div>
+    </StoryBook>
   );
 };
 
 export const BentoCardComponent = Template.bind({});
-BentoCardComponent.args = { title: "BentoCard" };
+BentoCardComponent.args = {
+  title: "",
+  rootClassName: "",
+  firstContent: null,
+  secondContent: null,
+  redirectTo: false,
+};
 
 const Component = {
   title: "UI/BentoCard",

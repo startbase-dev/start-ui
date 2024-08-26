@@ -1,0 +1,381 @@
+import { Tabs } from "nextra/components";
+import Slider from "@start-base/react-form-elements/Slider";
+import Preview from "@components/Preview/Preview";
+import "@start-base/react-form-elements/styles.css";
+import { Steps } from "nextra/components";
+
+# Slider
+
+A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+
+## Installation
+
+<Steps>
+    ### Install the package
+    ```sh copy npm2yarn
+    npm i @start-base/react-form-elements
+    ```
+    ### Add the styles
+
+    <Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+        <Tabs.Tab label="Next.js 14 (App Directory)">
+            To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+            ```tsx copy filename="app/layout.tsx"
+            import "@start-base/react-form-elements/styles.css";
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Next.js 13">
+            For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+            ```tsx copy filename="pages/_app.tsx"
+            import "@start-base/react-form-elements/styles.css";
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="React.js">
+            In a React.js project, you should import the styles directly into your `App.js` file.
+
+            ```tsx copy filename="App.js"
+            import "@start-base/react-form-elements/styles.css";
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+    ### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import Slider from '@start-base/react-form-elements/Slider';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { Slider } from '@start-base/react-form-elements';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <Slider
+      label="Slider"
+      max={100}
+      min={0}
+      name="slider"
+      onChange={() => {}}
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import AmountInput from '@start-base/react-form-elements/AmountInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <Slider
+      label="Slider"
+      max={100}
+      min={0}
+      name="slider"
+      onChange={() => {}}
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Slider Disabled
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+    <Slider
+      disabled
+      label="Slider"
+      max={100}
+      min={0}
+      name="slider"
+      onChange={() => {}}
+    />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import Slider from '@start-base/react-form-elements/Slider';
+    import '@start-base/react-form-elements/styles.css';
+
+    <Slider
+      disabled
+      label="Slider"
+      max={100}
+      min={0}
+      name="slider"
+      onChange={() => {}}
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Slider Marks
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+      <Slider
+      label="Slider"
+      marks={{
+        '0': <strong>0°C</strong>,
+        '26': '26°C',
+        '37': '37°C',
+        '50': '50°C',
+        '100': {
+          label: <strong>100°C</strong>,
+          style: {
+            color: 'red'
+          }
+        }
+      }}
+      max={100}
+      min={0}
+      name="slider"
+      onChange={() => {}}
+    />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import Slider from '@start-base/react-form-elements/Slider';
+    import '@start-base/react-form-elements/styles.css';
+
+    <Slider
+      label="Slider"
+      marks={{
+        '0': <strong>0°C</strong>,
+        '26': '26°C',
+        '37': '37°C',
+        '50': '50°C',
+        '100': {
+          label: <strong>100°C</strong>,
+          style: {
+            color: 'red'
+          }
+        }
+      }}
+      max={100}
+      min={0}
+      name="slider"
+      onChange={() => {}}
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Slider Marks Vertical
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="400px">
+    <Slider
+      label="Slider"
+      marks={{
+        '0': <strong>0°C</strong>,
+        '26': '26°C',
+        '37': '37°C',
+        '50': '50°C',
+        '100': {
+          label: <strong>100°C</strong>,
+          style: {
+            color: 'red'
+          }
+        }
+      }}
+      max={100}
+      min={0}
+      name="slider"
+      onChange={() => {}}
+      vertical
+    />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import Slider from '@start-base/react-form-elements/Slider';
+    import '@start-base/react-form-elements/styles.css';
+
+    <Slider
+      label="Slider"
+      marks={{
+        '0': <strong>0°C</strong>,
+        '26': '26°C',
+        '37': '37°C',
+        '50': '50°C',
+        '100': {
+          label: <strong>100°C</strong>,
+          style: {
+            color: 'red'
+          }
+        }
+      }}
+      max={100}
+      min={0}
+      name="slider"
+      onChange={() => {}}
+      vertical
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Slider Range Component
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <Slider
+      defaultValue={[
+        20,
+        50
+      ]}
+      label="Slider"
+      max={100}
+      min={0}
+      name="slider"
+      onChange={() => {}}
+      range
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import Slider from '@start-base/react-form-elements/Slider';
+    import '@start-base/react-form-elements/styles.css';
+
+    <Slider
+      defaultValue={[
+        20,
+        50
+      ]}
+      label="Slider"
+      max={100}
+      min={0}
+      name="slider"
+      onChange={() => {}}
+      range
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Slider Vertical
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <Slider
+      defaultValue={50}
+      label="Slider"
+      max={100}
+      min={0}
+      name="slider"
+      onChange={() => {}}
+      vertical
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import Slider from '@start-base/react-form-elements/Slider';
+    import '@start-base/react-form-elements/styles.css';
+
+    <Slider
+      defaultValue={50}
+      label="Slider"
+      max={100}
+      min={0}
+      name="slider"
+      onChange={() => {}}
+      vertical
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+### Slider Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <Slider
+      error="Error Message"
+      label="Slider"
+      max={100}
+      min={0}
+      name="slider"
+      onChange={() => {}}
+    />
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import AmountInput from '@start-base/react-form-elements/AmountInput';
+    import '@start-base/react-form-elements/styles.css';
+
+    <Slider
+      error="Error Message"
+      label="Slider"
+      max={100}
+      min={0}
+      name="slider"
+      onChange={() => {}}
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## API
+
+This component is a wrapper around [rc-slider](https://slider-react-component.vercel.app/) component. All props from rc-slider can be passed to this component.
+
+| Name            | Type                              | Default | Description                                                                                                                                    |
+| --------------- | --------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| name            | `string`                          |         | Name of the input                                                                                                                              |
+| label           | `string`                          | `null`  | Label of the input                                                                                                                             |
+| placeholder     | `string`                          | `null`  | Placeholder of the input                                                                                                                       |
+| disableShrink   | `boolean`                         | `false` | Position the label outside of the input                                                                                                        |
+| value           | `string` or `number`              |         | Value of the input                                                                                                                             |
+| onChange        | `function`                        |         | Callback function that is fired when the value changes.                                                                                        |
+| inputClassName  | `string`                          | `null`  | Classname for input element                                                                                                                    |
+| labelClassName  | `string`                          | `null`  | Classname for label element                                                                                                                    |
+| errorClassName  | `string`                          | `null`  | Classname for error element                                                                                                                    |
+| disabled        | `boolean`                         | `false` | Disable the input                                                                                                                              |
+| error           | `string` or `boolean` or `object` | `null`  | Error message to display below the input. if value is a boolean input border will be change. Also you can pass schema validator error objects. |
+| min             | `number`                          | `null`  | Min value of the slider                                                                                                                        |
+| max             | `number`                          | `null`  | Max value of the slider                                                                                                                        |
+| step            | `number`                          | `null`  | Step count of the handle movement                                                                                                              |
+| tracksClassName | `string`                          | `null`  | Classname for slider tracks                                                                                                                    |
+| trackClassName  | `string`                          | `null`  | Classname for slider track                                                                                                                     |
+| railClassName   | `string`                          | `null`  | Classname for slider rail                                                                                                                      |
+| handleClassName | `string`                          | `null`  | Classname for slider handle                                                                                                                    |
+| dotClassName    | `string`                          | `null`  | Classname for slider dots                                                                                                                      |
+
+## Styling

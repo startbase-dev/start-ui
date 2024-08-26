@@ -10,9 +10,13 @@
 @import "components/popover";
 @import "components/progress";
 @import "components/tab";
+@import "components/bentoCard";
+@import "components/countdown";
 @import "components/tooltip";
 
-:root {
+.light,
+:root,
+[data-theme="light"] {
   /* GRAY */
   --sui-gray-950: #0a0a0a;
   --sui-gray-900: #171717;
@@ -37,7 +41,6 @@
   /* TYPOGRAPHY */
   --sui-title-lead-fs: 4rem;
   --sui-title-lead-lh: 5rem;
-
   --sui-h1-fs: 2.25rem;
   --sui-h1-lh: 2.8125rem;
   --sui-h2-fs: 2rem;
@@ -50,7 +53,6 @@
   --sui-h5-lh: 1.5625rem;
   --sui-h6-fs: 1rem;
   --sui-h6-lh: 1.25rem;
-
   --sui-text-small-fs: 0.875rem;
   --sui-text-small-lh: 1rem;
   --sui-text-fs: 1rem;
@@ -59,7 +61,6 @@
   --sui-text-large-lh: 1.875rem;
   --sui-text-lead-fs: 2.25rem;
   --sui-text-lead-lh: 2.8125rem;
-
 
   /* PADDING */
   --sui-padding-small: 0.25rem;
@@ -102,22 +103,29 @@
   --sui-info-50: color-mix(in srgb, var(--sui-info) 5%, var(--sui-white));
   --sui-warning-50: color-mix(in srgb, var(--sui-warning) 5%, var(--sui-white));
   --sui-error-50: color-mix(in srgb, var(--sui-error) 5%, var(--sui-white));
-  --sui-success-200: color-mix(in srgb,
-      var(--sui-success) 20%,
-      var(--sui-white));
+  --sui-success-200: color-mix(
+    in srgb,
+    var(--sui-success) 20%,
+    var(--sui-white)
+  );
   --sui-info-200: color-mix(in srgb, var(--sui-info) 20%, var(--sui-white));
-  --sui-warning-200: color-mix(in srgb,
-      var(--sui-warning) 20%,
-      var(--sui-white));
+  --sui-warning-200: color-mix(
+    in srgb,
+    var(--sui-warning) 20%,
+    var(--sui-white)
+  );
   --sui-error-200: color-mix(in srgb, var(--sui-error) 20%, var(--sui-white));
-  --sui-success-d600: color-mix(in srgb,
-      var(--sui-success) 60%,
-      var(--sui-black));
+  --sui-success-d600: color-mix(
+    in srgb,
+    var(--sui-success) 60%,
+    var(--sui-black)
+  );
   --sui-info-d600: color-mix(in srgb, var(--sui-info) 60%, var(--sui-black));
-  --sui-warning-d600: color-mix(in srgb,
-      var(--sui-warning) 60%,
-      var(--sui-black));
+  --sui-warning-d600: color-mix(
+    in srgb,
+    var(--sui-warning) 60%,
+    var(--sui-black)
+  );
   --sui-error-d600: color-mix(in srgb, var(--sui-error) 60%, var(--sui-black));
   --active-unfocused: red;
-
 }

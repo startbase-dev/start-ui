@@ -1,0 +1,32 @@
+.light,
+:root,
+[data-theme="light"] {
+  --sui-bento-card-bg: var(--sui-white);
+  --sui-bento-card-border: var(--sui-gray-300);
+  --sui-bento-card-content: var(--sui-black);
+  --sui-bento-card-bg-active: var(--sui-primary);
+  --sui-bento-card-title: var(--sui-black);
+  --sui-bento-card-title-active: var(--sui-white);
+  --sui-bento-card-button-bg: var(--sui-gray-500);
+  --sui-bento-card-button-bg-hover: var(--sui-gray-600);
+  --sui-bento-card-button-icon: var(--sui-white);
+  --sui-bento-card-button-active-bg: var(--sui-gray-500);
+  --sui-bento-card-button-active-bg-hover: var(--sui-gray-600);
+  --sui-bento-card-button-active-icon: var(--sui-white);
+}
+
+.dark,
+[data-theme="dark"] {
+  --sui-bento-card-bg: var(--sui-black);
+  --sui-bento-card-border: var(--sui-gray-300);
+  --sui-bento-card-content: var(--sui-black);
+  --sui-bento-card-bg-active: var(--sui-primary);
+  --sui-bento-card-title: var(--sui-white);
+  --sui-bento-card-title-active: var(--sui-black);
+  --sui-bento-card-button-bg: var(--sui-gray-500);
+  --sui-bento-card-button-bg-hover: var(--sui-gray-600);
+  --sui-bento-card-button-icon: var(--sui-black);
+  --sui-bento-card-button-active-bg: var(--sui-gray-500);
+  --sui-bento-card-button-active-bg-hover: var(--sui-gray-600);
+  --sui-bento-card-button-active-icon: var(--sui-black);
+}

@@ -4,8 +4,8 @@ import clsx from "clsx";
 import type { ChipProps } from "./types";
 
 const Index = forwardRef<HTMLSpanElement, ChipProps>((props, ref) => {
-  const { children, className = "", ...rest } = props;
-  const rootClassNames = clsx(s.root, className);
+  const { children, className = "", color = "primary", ...rest } = props;
+  const rootClassNames = clsx(s.root, className, s[color]);
 
   return (
     <span className={rootClassNames} ref={ref} {...rest}>

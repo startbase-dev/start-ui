@@ -70,6 +70,7 @@ const Popover = forwardRef<HTMLElement, PopoverProps>(
     const closeTimerRef = useRef<number | null>(null);
     const openTimerRef = useRef<number | null>(null);
     const arrowRef = useRef<HTMLDivElement | null>(null);
+    const popoverRef = useRef<HTMLDivElement | null>(null);
 
     let arrowMiddleware: Middleware[] = [];
     if (!hideArrow) {
@@ -149,7 +150,10 @@ const Popover = forwardRef<HTMLElement, PopoverProps>(
       if (trigger !== "hover") {
         return;
       }
-      hide();
+
+      if (popoverRef.current && !popoverRef.current.matches(":hover")) {
+        hide();
+      }
     }, [hide, trigger]);
 
     const handleClickOutside = useCallback(() => {
@@ -158,20 +162,31 @@ const Popover = forwardRef<HTMLElement, PopoverProps>(
 
     useEffect(() => {
       const reference = refs?.domReference?.current;
+      const popoverElement = popoverRef.current;
 
       if (reference) {
         reference.addEventListener("click", handleClick);
         reference.addEventListener("mouseenter", handleMouseEnter);
         reference.addEventListener("mouseleave", handleMouseLeave);
+      }
 
-        return function cleanup() {
+      if (popoverElement) {
+        popoverElement.addEventListener("mouseenter", handleMouseEnter);
+        popoverElement.addEventListener("mouseleave", handleMouseLeave);
+      }
+
+      return function cleanup() {
+        if (reference) {
           reference.removeEventListener("click", handleClick);
           reference.removeEventListener("mouseenter", handleMouseEnter);
           reference.removeEventListener("mouseleave", handleMouseLeave);
-        };
-      }
+        }
 
-      return undefined;
+        if (popoverElement) {
+          popoverElement.removeEventListener("mouseenter", handleMouseEnter);
+          popoverElement.removeEventListener("mouseleave", handleMouseLeave);
+        }
+      };
     }, [refs, handleClick, handleMouseEnter, handleMouseLeave]);
 
     useOutsideClick({
@@ -182,7 +197,10 @@ const Popover = forwardRef<HTMLElement, PopoverProps>(
 
     const popover = (
       <div
-        ref={refs.setFloating}
+        ref={(el) => {
+          popoverRef.current = el;
+          refs.setFloating(el);
+        }}
         style={{
           position: strategy,
           top: y ?? 0,

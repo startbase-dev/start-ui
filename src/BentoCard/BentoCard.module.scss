@@ -1,4 +1,4 @@
-@keyframes fadeIn {
+@keyframes fade-in {
   from {
     opacity: 0.5;
   }
@@ -8,7 +8,7 @@
   }
 }
 
-@keyframes slideUp {
+@keyframes slide-up {
   from {
     margin-top: 0;
     opacity: 1;
@@ -20,7 +20,7 @@
   }
 }
 
-@keyframes slideDown {
+@keyframes slide-down {
   from {
     margin-top: -200px;
   }
@@ -30,7 +30,7 @@
   }
 }
 
-@keyframes rotateIn {
+@keyframes rotate-in {
   from {
     transform: rotate(0deg);
   }
@@ -40,7 +40,7 @@
   }
 }
 
-@keyframes rotateOut {
+@keyframes rotate-out {
   from {
     transform: rotate(45deg);
   }
@@ -56,21 +56,11 @@
   position: relative;
   background-color: var(--sui-bento-card-bg);
   border-radius: 16px;
+  border: 1px solid var(--sui-bento-card-border);
   transition: background-color 600ms;
   line-height: 40px;
   font-family: var(--sui-font-family);
-
-  /* COLOR CODES */
-  --sui-bento-card-bg: var(--sui-white);
-  --sui-bento-card-bg-active: var(--sui-primary);
-  --sui-bento-card-title: var(--sui-black);
-  --sui-bento-card-title-active: var(--sui-white);
-  --sui-bento-card-button-bg: var(--sui-gray-500);
-  --sui-bento-card-button-bg-hover: var(--sui-gray-600);
-  --sui-bento-card-button-icon: var(--sui-white);
-  --sui-bento-card-button-active-bg: var(--sui-gray-500);
-  --sui-bento-card-button-active-bg-hover: var(--sui-gray-600);
-  --sui-bento-card-button-active-icon: var(--sui-white);
+  color: var(--sui-bento-card-content);
 }
 
 .rootActive {
@@ -117,7 +107,6 @@
 }
 
 .content {
-  color: var(--sui-white);
   transition:
     margin-top 600ms,
     opacity 600ms;
@@ -155,7 +144,7 @@
 }
 
 .activeButton {
-  animation: rotateIn 600ms forwards;
+  animation: rotate-in 600ms forwards;
   background-color: var(--sui-bento-card-button-active-bg);
 
   &:hover {
@@ -164,15 +153,15 @@
 }
 
 .exitingButton {
-  animation: rotateOut 600ms forwards;
+  animation: rotate-out 600ms forwards;
 }
 
 .enteringContent {
-  animation: slideDown 600ms forwards;
+  animation: slide-down 600ms forwards;
 }
 
 .exitingContent {
-  animation: slideUp 600ms forwards;
+  animation: slide-up 600ms forwards;
 }
 
 .root[data-active="false"] .plusIcon {

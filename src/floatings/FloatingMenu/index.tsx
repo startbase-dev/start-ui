@@ -46,11 +46,32 @@ interface FloatingMenuProps {
   className?: string;
   menuClassName?: string;
   onFocus?: (event: React.FocusEvent<HTMLDivElement>) => void;
+  placement?:
+    | "top"
+    | "bottom"
+    | "left"
+    | "right"
+    | "top-start"
+    | "top-end"
+    | "bottom-start"
+    | "bottom-end"
+    | "left-start"
+    | "left-end"
+    | "right-start"
+    | "right-end";
 }
 
 const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
   (
-    { children, component, label, className, menuClassName, ...props },
+    {
+      children,
+      component,
+      label,
+      className,
+      menuClassName,
+      placement,
+      ...props
+    },
     forwardedRef,
   ) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -72,7 +93,11 @@ const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
       nodeId,
       open: isOpen,
       onOpenChange: setIsOpen,
-      placement: isNested ? "right-start" : "bottom-end",
+      placement: isNested
+        ? "right-start"
+        : placement
+          ? placement
+          : "bottom-end",
       middleware: [
         offset({
           mainAxis: isNested ? 0 : 4,

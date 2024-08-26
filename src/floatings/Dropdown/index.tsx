@@ -9,6 +9,19 @@ interface DropdownProps {
   className?: string;
   menuClassName?: string;
   onFocus?: (event: React.FocusEvent<HTMLDivElement>) => void;
+  placement?:
+    | "top"
+    | "bottom"
+    | "left"
+    | "right"
+    | "top-start"
+    | "top-end"
+    | "bottom-start"
+    | "bottom-end"
+    | "left-start"
+    | "left-end"
+    | "right-start"
+    | "right-end";
 }
 
 const Dropdown = forwardRef<HTMLDivElement, DropdownProps>((props, ref) => {

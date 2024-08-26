@@ -1,0 +1,13 @@
+{
+  "index": "Overview",
+  "gettingStarted": "Getting Started",
+  "boilerplates": "Boilerplates",
+  "--": {
+    "type": "separator"
+  },
+  "animations": "Animations",
+  "components": "Components",
+  "formComponents": "Form Components",
+  "marketingComponents": "Marketing Components",
+  "overlayComponents": "Overlay Components"
+}

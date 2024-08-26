@@ -1,4 +1,6 @@
-:root {
+.light,
+:root,
+[data-theme="light"] {
   --sui-tab-buttons-bg: var(--sui-gray-100);
   --sui-tab-button-border: var(--sui-transparent);
   --sui-tab-button-fg: var(--sui-black);
@@ -11,6 +13,7 @@
   --sui-tab-content-border: var(--sui-gray-300);
 }
 
+.dark,
 [data-theme="dark"] {
   --sui-tab-buttons-bg: var(--sui-gray-800);
   --sui-tab-button-fg: var(--sui-white);

@@ -1,0 +1,390 @@
+import { Tabs } from "nextra/components";
+import CheckboxCards from "@start-base/react-form-elements/CheckboxCards";
+import Preview from "@components/Preview/Preview";
+import FormOnChange from "@components/formOnChange";
+import { Steps } from "nextra/components";
+import "@start-base/react-form-elements/styles.css";
+
+# Checkbox Cards
+
+The CheckboxCards component provides a user-friendly interface for toggling between checked and unchecked states, with customizable labels and state management.
+
+## Installation
+
+<Steps>
+    ### Install the package
+    ```sh copy npm2yarn
+    npm i @start-base/react-form-elements
+    ```
+    ### Add the styles
+
+    <Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+        <Tabs.Tab label="Next.js 14 (App Directory)">
+            To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+            ```tsx copy filename="app/layout.tsx"
+            import "@start-base/react-form-elements/styles.css";
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Next.js 13">
+            For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+            ```tsx copy filename="pages/_app.tsx"
+            import "@start-base/react-form-elements/styles.css";
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="React.js">
+            In a React.js project, you should import the styles directly into your `App.js` file.
+
+            ```tsx copy filename="App.js"
+            import "@start-base/react-form-elements/styles.css";
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+    ### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import CheckboxCards from '@start-base/react-form-elements/CheckboxCards';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { CheckboxCards } from '@start-base/react-form-elements';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+    <FormOnChange>
+    <CheckboxCards
+      label="CheckboxCards"
+      name="default"
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+    />
+  </FormOnChange>
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import CheckboxCards from '@start-base/react-form-elements/CheckboxCards';
+    import '@start-base/react-form-elements/styles.css';
+
+   <CheckboxCards
+      label="CheckboxCards"
+      name="default"
+      onChange={handleChange}
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Checkbox Cards Component Checked
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+     <FormOnChange>
+    <CheckboxCards
+      label="CheckboxCards"
+      name="default"
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+      value={[
+        'default1',
+        'default2'
+      ]}
+    />
+     </FormOnChange>
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import CheckboxCards from '@start-base/react-form-elements/CheckboxCards';
+    import '@start-base/react-form-elements/styles.css';
+
+  <CheckboxCards
+      label="CheckboxCards"
+      name="default"
+      onChange={handleChange}
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+      value={[
+        'default1',
+        'default2'
+      ]}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Checkbox Cards Component Row
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <FormOnChange>
+    <CheckboxCards
+      direction="row"
+      label="CheckboxCards"
+      name="default"
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+    />
+     </FormOnChange>
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import CheckboxCards from '@start-base/react-form-elements/CheckboxCards';
+    import '@start-base/react-form-elements/styles.css';
+
+   <CheckboxCards
+      direction="row"
+      label="CheckboxCards"
+      name="default"
+      onChange={handleChange}
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Checkbox Cards Component Disabled
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+    <FormOnChange>
+    <CheckboxCards
+      disabled
+      label="CheckboxCards"
+      name="default"
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+    />
+     </FormOnChange>
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import CheckboxCards from '@start-base/react-form-elements/CheckboxCards';
+    import '@start-base/react-form-elements/styles.css';
+
+   <CheckboxCards
+      disabled
+      label="CheckboxCards"
+      name="default"
+      onChange={handleChange}
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Checkbox Cards Component With Input
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+      <FormOnChange>
+    <CheckboxCards
+      label="CheckboxCards"
+      name="default"
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+    />
+     </FormOnChange>
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import CheckboxCards from '@start-base/react-form-elements/CheckboxCards';
+    import '@start-base/react-form-elements/styles.css';
+
+  <CheckboxCards
+      label="CheckboxCards"
+      name="default"
+      onChange={handleChange}
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Checkbox Cards Component Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+   <FormOnChange>
+    <CheckboxCards
+      error="Error Message"
+      label="CheckboxCards"
+      name="default"
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+    />
+     </FormOnChange>
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import CheckboxCards from '@start-base/react-form-elements/CheckboxCards';
+    import '@start-base/react-form-elements/styles.css';
+
+  <CheckboxCards
+      error="Error Message"
+      label="CheckboxCards"
+      name="default"
+      onChange={handleChange}
+      options={[
+        {
+          label: 'Checkbox Option 1',
+          value: 'default1'
+        },
+        {
+          label: 'Checkbox Option 2',
+          value: 'default2'
+        }
+      ]}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## API
+
+A card-style checkbox group component for enhanced visual presentation.
+
+| Name                 | Type                              | Default  | Description                                                                                                                                    |
+| -------------------- | --------------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| name                 | `string`                          |          | Name of the input                                                                                                                              |
+| label                | `string`                          | `null`   | Label of the input                                                                                                                             |
+| placeholder          | `string`                          | `null`   | Placeholder of the input                                                                                                                       |
+| disableShrink        | `boolean`                         | `false`  | Position the label outside of the input                                                                                                        |
+| value                | `string` or `number`              |          | Value of the input                                                                                                                             |
+| onChange             | `function`                        |          | Callback function that is fired when the value changes.                                                                                        |
+| inputClassName       | `string`                          | `null`   | Classname for input element                                                                                                                    |
+| labelClassName       | `string`                          | `null`   | Classname for label element                                                                                                                    |
+| errorClassName       | `string`                          | `null`   | Classname for error element                                                                                                                    |
+| disabled             | `boolean`                         | `false`  | Disable the input                                                                                                                              |
+| error                | `string` or `boolean` or `object` | `null`   | Error message to display below the input. if value is a boolean input border will be change. Also you can pass schema validator error objects. |
+| options              | `array`                           | `[]`     | Array of options to display                                                                                                                    |
+| optionLabelClassName | `string`                          | `null`   | Classname for option label                                                                                                                     |
+| cardClassName        | `string`                          | `null`   | Classname for option card                                                                                                                      |
+| direction            | `string`                          | `column` | Options direction `column` or `row`                                                                                                            |
+| hideInput            | `boolean`                         | `true`   | Input hide option                                                                                                                              |
+
+## Styling

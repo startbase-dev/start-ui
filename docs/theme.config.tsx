@@ -1,6 +1,6 @@
 import React from "react";
 import { DocsThemeConfig } from "nextra-theme-docs";
-import Logo from "./pages/components/Logo";
+import Logo from "./pages/docs/components/Logo";
 
 const config: DocsThemeConfig = {
   logo: (
@@ -19,6 +19,15 @@ const config: DocsThemeConfig = {
   },
   feedback: {
     content: null,
+  },
+  banner: {
+    key: "startbase 1.0",
+    text: (
+      <a href="https://startbase.dev" target="_blank" rel="noreferrer">
+        🎉 Startbase is launched. Vist →
+      </a>
+    ),
+    dismissible: false,
   },
   gitTimestamp: null,
   docsRepositoryBase: "https://github.com/startbase-dev/start-ui",

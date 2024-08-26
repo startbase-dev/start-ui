@@ -1,0 +1,575 @@
+import { Tabs } from "nextra/components";
+import { Steps } from "nextra/components";
+import AmountInput from "@start-base/react-form-elements/AmountInput";
+import { AiOutlineDollarCircle } from "react-icons/ai";
+import Preview from "@components/Preview/Preview";
+import FormOnChange from "@components/formOnChange";
+import "@start-base/react-form-elements/styles.css";
+
+# Amount Input
+
+The AmountInput component is a customizable input field designed for users to enter numerical amounts, featuring validation and formatting options.
+
+## Installation
+
+<Steps>
+### Install the package
+```sh copy npm2yarn
+npm i @start-base/react-form-elements
+```
+### Add the styles
+
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/react-form-elements/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import "@start-base/react-form-elements/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import "@start-base/react-form-elements/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import AmountInput from '@start-base/react-form-elements/AmountInput';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { AmountInput } from '@start-base/react-form-elements';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
+
+### Amount Input Without Label
+
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+  <FormOnChange>
+    <AmountInput name="input1" onChange={()=>{}} />
+  </FormOnChange>
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+      ```jsx copy showLineNumbers
+      <AmountInput
+          name="input"
+          value={inputs.input}
+          onChange={onChange}
+      />
+      ```
+
+  </Tabs.Tab>
+    <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+            <AmountInput
+                value={watch("input")}
+                {...field}
+            />
+        )}
+    />
+````
+
+ </Tabs.Tab>
+
+</Tabs>
+
+### Amount Input With Floating Label
+
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
+<Tabs.Tab>
+ <Preview height="200px">
+   <FormOnChange>
+     <AmountInput name="input2" label="Label" onChange={()=>{}} />
+   </FormOnChange>
+ </Preview>
+</Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <AmountInput
+            label="Label"
+            name="input"
+            value={inputs.input}
+            onChange={onChange}
+        />
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <Controller
+            name="input"
+            control={control}
+            render={({ field }) => (
+                <AmountInput
+                    label="Label"
+                    value={watch("input")}
+                    {...field}
+                />
+            )}
+        />
+        ````
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Amount Input With Placeholder
+
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
+<Tabs.Tab>
+<Preview height="200px">
+       <FormOnChange>
+ <AmountInput
+   name="input3"
+   placeholder="Placeholder"
+   onChange={()=>{}}
+ />
+</FormOnChange>
+</Preview>
+</Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <AmountInput
+            placeholder="Placeholder"
+            name="input"
+            value={inputs.input}
+            onChange={onChange}
+        />
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <Controller
+            name="input"
+            control={control}
+            render={({ field }) => (
+                <AmountInput
+                    placeholder="Placeholder"
+                    value={watch("input")}
+                    {...field}
+                />
+            )}
+        />
+        ````
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Amount Input With Floating Label and Placeholder
+
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
+<Tabs.Tab>
+<Preview height="200px">
+<FormOnChange>
+ <AmountInput
+   name="input4"
+   label="Label"
+   placeholder="Placeholder"
+   onChange={()=>{}}
+ />
+</FormOnChange>
+</Preview>
+</Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <AmountInput
+            label="Label"
+            placeholder="Placeholder"
+            name="input"
+            value={inputs.input}
+            onChange={onChange}
+        />
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <Controller
+            name="input"
+            control={control}
+            render={({ field }) => (
+                <AmountInput
+                    label="Label"
+                    placeholder="Placeholder"
+                    value={watch("input")}
+                    {...field}
+                />
+            )}
+        />
+        ````
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Amount Input With Placeholder And Disable Shrink
+
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
+<Tabs.Tab>
+<Preview height="200px">
+ <FormOnChange>
+ <AmountInput
+   name="input5"
+   label="Label"
+   placeholder="Placeholder"
+   onChange={()=>{}}
+   disableShrink
+ />
+</FormOnChange>
+</Preview>
+</Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <AmountInput
+            label="Label"
+            placeholder="Placeholder"
+            disableShrink
+            name="input"
+            value={inputs.input}
+            onChange={onChange}
+        />
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <Controller
+            name="input"
+            control={control}
+            render={({ field }) => (
+                <AmountInput
+                    label="Label"
+                    placeholder="Placeholder"
+                    disableShrink
+                    value={watch("input")}
+                    {...field}
+                />
+            )}
+        />
+        ````
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Disabled Amount Input
+
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
+<Tabs.Tab>
+<Preview height="200px">
+     <FormOnChange>
+ <AmountInput
+   name="input6"
+   label="Label"
+   placeholder="Placeholder"
+   disabled
+   onChange={()=>{}}
+ />
+</FormOnChange>
+</Preview>
+</Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <AmountInput
+            name="input"
+            label="Label"
+            placeholder="Placeholder"
+            disabled
+            value={inputs.input}
+            onChange={onChange}
+        />
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <Controller
+            name="input"
+            control={control}
+            render={({ field }) => (
+                <AmountInput
+                    label="Label"
+                    placeholder="Placeholder"
+                    disabled
+                    value={watch("input")}
+                    {...field}
+                />
+            )}
+        />
+        ````
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Amount Input With Append
+
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
+<Tabs.Tab>
+ <Preview height="200px">
+   <FormOnChange>
+     <AmountInput
+       label="Label"
+       placeholder="Placeholder"
+       name="input7"
+       append={<AiOutlineDollarCircle />}
+       onChange={()=>{}}
+     />
+   </FormOnChange>
+ </Preview>
+</Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <AmountInput
+            name="input"
+            label="Label"
+            placeholder="Placeholder"
+            append={<AiOutlineDollarCircle />}
+            value={inputs.input}
+            onChange={onChange}
+        />
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <Controller
+            name="input"
+            control={control}
+            render={({ field }) => (
+                <AmountInput
+                    label="Label"
+                    placeholder="Placeholder"
+                    append={<AiOutlineDollarCircle />}
+                    value={watch("input")}
+                    {...field}
+                />
+            )}
+        />
+        ````
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Amount Input With Prepend
+
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
+<Tabs.Tab>
+<Preview height="200px">
+   <FormOnChange>
+     <AmountInput
+      label="Label"
+      placeholder="Placeholder"
+      name="input8"
+      prepend={<AiOutlineDollarCircle />}
+      onChange={()=>{}}
+     />
+   </FormOnChange>
+</Preview>
+</Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <AmountInput
+            label="Label"
+            placeholder="Placeholder"
+            prepend={<AiOutlineDollarCircle />}
+            name="input"
+            value={inputs.input}
+            onChange={onChange}
+        />
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <Controller
+            name="input"
+            control={control}
+            render={({ field }) => (
+                <AmountInput
+                    label="Label"
+                    placeholder="Placeholder"
+                    prepend={<AiOutlineDollarCircle />}
+                    value={watch("input")}
+                    {...field}
+                />
+            )}
+        />
+        ````
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Amount Input With Error Message
+
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
+<Tabs.Tab>
+<Preview height="200px">
+  <FormOnChange>
+ <AmountInput
+     label="Label"
+     error="Error Message"
+     name="input9"
+     onChange={()=>{}}
+ />
+   </FormOnChange>
+</Preview>
+</Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <AmountInput
+            label="Label"
+            error="Error Message"
+            name="input"
+            value={inputs.input}
+            onChange={onChange}
+        />
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <Controller
+            name="input"
+            control={control}
+            render={({ field }) => (
+                <AmountInput
+                    label="Label"
+                    error="Error Message"
+                    value={watch("input")}
+                    {...field}
+                />
+            )}
+        />
+        ````
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Amount Input With Error
+
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
+ <Tabs.Tab>
+     <Preview height="200px">
+         <FormOnChange>
+             <AmountInput
+                 label="Label"
+                 error
+                 name="input10"
+                 onChange={()=>{}}
+             />
+         </FormOnChange>
+     </Preview>
+ </Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <AmountInput
+            label="Label"
+            error
+            name="input"
+            value={inputs.input}
+            onChange={onChange}
+        />
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab>
+        ```jsx copy showLineNumbers
+        <Controller
+            name="input"
+            control={control}
+            render={({ field }) => (
+                <AmountInput
+                    label="Label"
+                    error
+                    value={watch("input")}
+                    {...field}
+                />
+            )}
+        />
+        ````
+
+    </Tabs.Tab>
+
+</Tabs>
+
+## API
+
+This component is a wrapper around [react-currency-input-field](https://www.npmjs.com/package/react-currency-input-field) component. All props from react-currency-input-field can be passed to this component.
+
+| Name                   | Type                              | Default        | Description                                                                                                                                    |
+| ---------------------- | --------------------------------- | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| name                   | `string`                          |                | Name of the input                                                                                                                              |
+| label                  | `string`                          | `null`         | Label of the input                                                                                                                             |
+| placeholder            | `string`                          | `null`         | Placeholder of the input                                                                                                                       |
+| disableShrink          | `boolean`                         | `false`        | Position the label outside of the input                                                                                                        |
+| value                  | `number`                          |                | Value of the input                                                                                                                             |
+| onChange               | `function`                        |                | Callback function that is fired when the value changes.                                                                                        |
+| inputClassName         | `string`                          | `null`         | Classname for input element                                                                                                                    |
+| labelClassName         | `string`                          | `null`         | Classname for label element                                                                                                                    |
+| errorClassName         | `string`                          | `null`         | Classname for error element                                                                                                                    |
+| disabled               | `boolean`                         | `false`        | Disable the input                                                                                                                              |
+| error                  | `string` or `boolean` or `object` | `null`         | Error message to display below the input. if value is a boolean input border will be change. Also you can pass schema validator error objects. |
+| prepend                | `string` or `element`             | `null`         | Prepend text to the input                                                                                                                      |
+| append                 | `string` or `element`             | `null`         | Append text to the input                                                                                                                       |
+| appendClassName        | `string`                          | `null`         | Classname for append element                                                                                                                   |
+| prependClassName       | `string`                          | `null`         | Classname for prepend element                                                                                                                  |
+| allowDecimals          | `boolean`                         | `true`         | Allow decimals                                                                                                                                 |
+| allowNegativeValue     | `boolean`                         | `true`         | Allow user to enter negative value                                                                                                             |
+| decimalsLimit          | `number`                          | `2`            | Limit length of decimals allowed                                                                                                               |
+| decimalScale           | `number`                          |                | Specify decimal scale for padding/trimming eg. 1.5 -> 1.50 or 1.234 -> 1.23 if decimal scale 2                                                 |
+| fixedDecimalLength     | `number`                          |                | Value will always have the specified length of decimals                                                                                        |
+| prefix                 | `string`                          |                | Include a prefix eg. £ or \$                                                                                                                   |
+| suffix                 | `string`                          |                | Include a suffix eg. € or %                                                                                                                    |
+| decimalSeparator       | `string`                          | locale default | Separator between integer part and fractional part of value                                                                                    |
+| groupSeparator         | `string`                          | locale default | Separator between thousand, million and billion                                                                                                |
+| intlConfig             | `object`                          |                | International locale config                                                                                                                    |
+| disabled               | `boolean`                         | `false`        | Disabled                                                                                                                                       |
+| disableAbbreviations   | `boolean`                         | `false`        | Disable abbreviations eg. 1k -> 1,000, 2m -> 2,000,000                                                                                         |
+| disableGroupSeparators | `boolean`                         | `false`        | Disable auto adding the group separator between values, eg. 1000 -> 1,000                                                                      |
+| maxLength              | `number`                          |                | Maximum characters the user can enter                                                                                                          |
+| step                   | `number`                          |                | Incremental value change on arrow down and arrow up key press                                                                                  |
+| transformRawValue      | `function`                        |                | Transform the raw value from the input before parsing. Needs to return `string`.                                                               |
+
+## Styling

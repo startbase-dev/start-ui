@@ -1,0 +1,112 @@
+import { Tabs } from "nextra/components";
+import "@start-base/react-form-elements/styles.css";
+import Form from "@start-base/react-form-elements/Form";
+import Input from "@start-base/react-form-elements/Input";
+import Preview from "@components/Preview/Preview";
+import FormOnChange from "@components/formOnChange";
+import { Steps } from "nextra/components";
+import "@start-base/react-form-elements/styles.css";
+
+# Form
+
+The Form component provides a structured and efficient way to manage user input and submission within your application.
+
+## Installation
+
+<Steps>
+    ### Install the package
+    ```sh copy npm2yarn
+    npm i @start-base/react-form-elements
+    ```
+    ### Add the styles
+
+    <Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+        <Tabs.Tab label="Next.js 14 (App Directory)">
+            To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+            ```tsx copy filename="app/layout.tsx"
+            import "@start-base/react-form-elements/styles.css";
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Next.js 13">
+            For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+            ```tsx copy filename="pages/_app.tsx"
+            import "@start-base/react-form-elements/styles.css";
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="React.js">
+            In a React.js project, you should import the styles directly into your `App.js` file.
+
+            ```tsx copy filename="App.js"
+            import "@start-base/react-form-elements/styles.css";
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+    ### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import Form from '@start-base/react-form-elements/Form';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { Form } from '@start-base/react-form-elements';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+    <FormOnChange>
+    <Input
+        label="Label"
+        name="input"
+    />
+  </FormOnChange>
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import Form from '@start-base/react-form-elements/Form';
+    import Input from '@start-base/react-form-elements/Input';
+    import '@start-base/react-form-elements/styles.css';
+
+    <Form>
+        <Input
+            label="Label"
+            name="input"
+            onChange={handleChange}
+        />
+    </Form>
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## API
+
+A wrapper component for form elements.
+
+| Name     | Type        | Default | Description          |
+| -------- | ----------- | ------- | -------------------- |
+| children | `ReactNode` |         | Children of the form |
+
+## Styling

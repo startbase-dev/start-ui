@@ -1,5 +1,6 @@
 import React from "react";
 import Countdown from "./index";
+import StoryBook from "../Storybook";
 
 interface TemplateProps {
   title: string;
@@ -14,18 +15,28 @@ const Template: React.FC<TemplateProps> = (args) => {
   const { title, ...props } = args;
 
   return (
-    <>
-      <h2>{title}</h2>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexDirection: "column",
-        }}
-      >
+    <StoryBook title={title}>
+      <span>{`Default view`}</span>
+      <div style={{ width: "100%" }}>
         <Countdown {...props} />
       </div>
-    </>
+      <span>{`Labels separator`}</span>
+      <div style={{ width: "100%" }}>
+        <Countdown {...props} type="withSeparator" />
+      </div>
+      <span>{`Labels view`}</span>
+      <div style={{ width: "100%" }}>
+        <Countdown {...props} type="withLabels" />
+      </div>
+      <span>{`Labels under view`}</span>
+      <div style={{ width: "100%" }}>
+        <Countdown {...props} type="labelsUnder" />
+      </div>
+      <span>{`Box view`}</span>
+      <div style={{ width: "100%" }}>
+        <Countdown {...props} type="inBoxes" />
+      </div>
+    </StoryBook>
   );
 };
 
@@ -36,39 +47,11 @@ CountdownComponent.args = {
   showDay: true,
   showHour: true,
   showMinute: true,
-  showSecond: true,
+  showSecond: false,
   itemClassName: "",
   rootClassName: "",
   valueClassName: "",
   labelClassName: "",
-};
-
-export const CountdownWithSeperator = Template.bind({});
-CountdownWithSeperator.args = {
-  ...CountdownComponent.args,
-  title: "With Separator",
-  type: "withSeperator",
-};
-
-export const CountdownWithLabel = Template.bind({});
-CountdownWithLabel.args = {
-  ...CountdownComponent.args,
-  title: "With Labels",
-  type: "withLabels",
-};
-
-export const CountdownLabelsUnder = Template.bind({});
-CountdownLabelsUnder.args = {
-  ...CountdownComponent.args,
-  title: "Labels Under",
-  type: "labelsUnder",
-};
-
-export const CountdownInBoxes = Template.bind({});
-CountdownInBoxes.args = {
-  ...CountdownComponent.args,
-  title: "In Boxes",
-  type: "inBoxes",
 };
 
 const Component = {
