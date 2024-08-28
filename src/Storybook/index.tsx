@@ -10,7 +10,7 @@ const Index = ({
 }) => {
   return (
     <>
-      <h2>{title}</h2>
+      <h2 style={{ display: "flex", justifyContent: "center" }}>{title}</h2>
       <div
         style={{
           display: "flex",
