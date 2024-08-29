@@ -26,18 +26,7 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
     },
     ref,
   ) => {
-    const getInitials = (name: string) => {
-      const nameParts = name.trim().split(" ");
-      if (nameParts.length > 2) {
-        return `${nameParts[0]![0]!.toUpperCase()}${nameParts[1]![0]!.toUpperCase()}${nameParts[2]![0]!.toUpperCase()}`;
-      } else if (nameParts.length === 2) {
-        return `${nameParts[0]![0]!.toUpperCase()}${nameParts[1]![0]!.toUpperCase()}`;
-      } else {
-        return name[0]!.toUpperCase();
-      }
-    };
-
-    const initials = name ? getInitials(name) : "SU";
+    const initials = name ? name.slice(0, 2) : "SU";
     const imageSrc = picture || defaultPicture || "";
 
     return (

@@ -15,10 +15,12 @@
         .circular, .square {
           width: 22px;
           height: 22px;
-          font-size: smaller;
+          font-size: var(--sui-text-small-fs);
+          line-height:var(--sui-text-small-lh);
   
           span.initials {
-            font-size: smaller;
+            font-size: var(--sui-text-small-fs);
+            line-height:var(--sui-text-small-lh);
           }
         }
       }
@@ -33,10 +35,12 @@
         .circular, .square {
           width: 30px;
           height: 30px;
-          font-size: 14px;
+          font-size: var(--sui-text-fs);
+          line-height: var(--sui-text-lh);
   
           span.initials {
-            font-size: 14px;
+            font-size: var(--sui-text-fs);
+            line-height: var(--sui-text-lh);
           }
         }
       }
@@ -51,10 +55,12 @@
         .circular, .square {
           width: 42px;
           height: 42px;
-          font-size: 14px ;
+          font-size: var(--sui-text-large-fs);
+          line-height:var(--sui-text-large-lh);
   
           span.initials {
-            font-size: 14px;
+            font-size: var(--sui-text-large-fs);
+            line-height:var(--sui-text-large-lh);
           }
         }
       }
@@ -64,7 +70,6 @@
       position: relative;
       display: inline-block;
       box-sizing: content-box;
-      transition: filter 0.2s;
   
       .circular, .square {
         position: relative;
@@ -91,18 +96,21 @@
           font-weight: 300;
           justify-content: center;
           align-items: center;
+          text-transform: uppercase;
           background-color: var(--sui-avatar-bg);
+          opacity: 0.6;
           color: var(--sui-avatar-text);
         }
 
         &:hover {
-          background-color: var(--sui-avatar-bg-hover);
+          opacity: 1;
         }
 
         .image {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: top;
           }
       }
   

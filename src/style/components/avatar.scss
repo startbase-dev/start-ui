@@ -1,16 +1,14 @@
 .light,
 :root,
 [data-theme="light"] {
---sui-avatar-box-shadow: rgb(var(--sui-primary-rgb) / 50%) 0 1px 0 0, rgb(var(--sui-secondary-rgb) / 50%) 0 1px 0 inset;
---sui-avatar-bg: rgb(var(--sui-white-rgb) / 60%);
+--sui-avatar-box-shadow: var(--sui-elevation-1);
+--sui-avatar-bg: var(--sui-white);
 --sui-avatar-text: var(--sui-black);
---sui-avatar-bg-hover: rgb(var(-sui-white-rgb) / 100%);
 }
 
 .dark,
 [data-theme="dark"] {
---sui-avatar-box-shadow: rgb(var(--sui-primary-rgb) / 50%) 0 1px 0 0, rgb(var(--sui-secondary-rgb) / 50%) 0 1px 0 inset;
---sui-avatar-bg: rgb(var(--sui-black-rgb) / 60%);
+--sui-avatar-box-shadow: var(--sui-elevation-1-light);
+--sui-avatar-bg: var(--sui-black);
 --sui-avatar-text: var(--sui-white);
---sui-avatar-bg-hover: rgb(var(-sui-black-rgb) / 100%);
 }
