@@ -8,7 +8,7 @@ export default {
   component: Avatar,
   argTypes: {
     picture: { control: "text" },
-    name: { control: "text" },
+    chars: { control: "text" },
     size: {
       options: ["small", "medium", "large"],
       control: { type: "select" },
@@ -24,7 +24,7 @@ export default {
     controls: {
       include: [
         "picture",
-        "name",
+        "chars",
         "size",
         "variant",
         "defaultPicture",
@@ -38,7 +38,7 @@ const Template: StoryFn<typeof Avatar> = (args) => <Avatar {...args} />;
 
 export const CircularMediumAvatarWithImage = Template.bind({});
 CircularMediumAvatarWithImage.args = {
-  name: "Scarecrow S.",
+  chars: "SC",
   size: "medium",
   variant: "circular",
   picture: "https://picsum.photos/1390/690",
@@ -47,14 +47,14 @@ CircularMediumAvatarWithImage.args = {
 
 export const CircularMediumAvatarWithoutImage = Template.bind({});
 CircularMediumAvatarWithoutImage.args = {
-  name: "Scarecrow S.",
+  chars: "BG",
   size: "medium",
   variant: "circular",
 };
 
 export const SquareLargeAvatar = Template.bind({});
 SquareLargeAvatar.args = {
-  name: "Scarecrow S.",
+  chars: "LF",
   size: "large",
   variant: "square",
 };
@@ -68,7 +68,7 @@ LargeAvatarWithImage.args = {
 
 export const AvatarWithDefaultImage = Template.bind({});
 AvatarWithDefaultImage.args = {
-  name: "The Cowardly Lion",
+  chars: "CL",
   size: "medium",
   variant: "square",
   defaultPicture: "https://picsum.photos/1390/690",
@@ -76,7 +76,7 @@ AvatarWithDefaultImage.args = {
 
 export const SmallCircularAvatar = Template.bind({});
 SmallCircularAvatar.args = {
-  name: "Tin Woodman",
+  chars: "TW",
   size: "small",
   variant: "circular",
 };
@@ -86,22 +86,30 @@ export const AnAvatarWithoutProps = Template.bind({});
 const FullShowcaseTemplate: StoryFn<typeof Avatar> = () => {
   return (
     <Storybook title="An Avatar Page">
-      <Avatar name="Tin Woodman" size="small" variant="circular" />
-      <Avatar name="The Cowardly Lion" size="medium" variant="square" />
+      <Avatar
+        chars="NM"
+        size="small"
+        variant="square"
+        defaultPicture="https://picsum.photos/1390/690"
+      />
+      <Avatar chars="BG" size="small" variant="circular" />
+      <Avatar chars="CL" size="medium" variant="square" />
       <Avatar
         picture="https://picsum.photos/1390/690"
         size="large"
         variant="circular"
       />
+      <Avatar chars="EE" size="large" variant="square" />
       <Avatar
-        name="The Wicked Witch of the West"
-        size="large"
-        variant="square"
-      />
-      <Avatar
-        name="Glinda D."
+        chars="GD"
         size="medium"
         variant="circular"
+        defaultPicture="https://picsum.photos/1390/690"
+      />
+      <Avatar
+        chars="GD"
+        size="large"
+        variant="square"
         defaultPicture="https://picsum.photos/1390/690"
       />
     </Storybook>

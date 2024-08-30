@@ -6,7 +6,7 @@ import "../style/components/avatar.scss";
 
 interface AvatarProps {
   picture?: string;
-  name?: string;
+  chars?: string;
   size?: "small" | "medium" | "large";
   variant?: "circular" | "square";
   defaultPicture?: string;
@@ -17,7 +17,7 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
   (
     {
       picture = "",
-      name = "",
+      chars = "SU",
       size = "medium",
       variant = "circular",
       defaultPicture = "",
@@ -26,7 +26,6 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
     },
     ref,
   ) => {
-    const initials = name ? name.slice(0, 2) : "SU";
     const imageSrc = picture || defaultPicture || "";
 
     return (
@@ -40,7 +39,7 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
             {imageSrc ? (
               <img alt="avatar" src={imageSrc} className={s.image} />
             ) : (
-              <span className={s.initials}>{initials}</span>
+              <span className={s.chars}>{chars}</span>
             )}
           </div>
         </div>

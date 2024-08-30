@@ -18,7 +18,7 @@
           font-size: var(--sui-text-small-fs);
           line-height:var(--sui-text-small-lh);
   
-          span.initials {
+          span.chars {
             font-size: var(--sui-text-small-fs);
             line-height:var(--sui-text-small-lh);
           }
@@ -38,7 +38,7 @@
           font-size: var(--sui-text-fs);
           line-height: var(--sui-text-lh);
   
-          span.initials {
+          span.chars {
             font-size: var(--sui-text-fs);
             line-height: var(--sui-text-lh);
           }
@@ -58,7 +58,7 @@
           font-size: var(--sui-text-large-fs);
           line-height:var(--sui-text-large-lh);
   
-          span.initials {
+          span.chars {
             font-size: var(--sui-text-large-fs);
             line-height:var(--sui-text-large-lh);
           }
@@ -88,7 +88,7 @@
           box-sizing: inherit;
         }
   
-        span.initials {
+        span.chars {
           display: flex;
           width: 100%;
           height: 100%;
