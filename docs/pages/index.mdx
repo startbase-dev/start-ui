@@ -2,15 +2,9 @@
 title: Start UI – Next Generation Component Library
 ---
 
-import { Feature, Features } from "@components/features";
-import cn from "clsx";
-import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import styles from "./index.module.css";
 import LandingBento from "@components/LandingBento";
-import s from "../../styles.css";
 
 <div>
   <div className={styles.contentContainer}>
@@ -34,6 +28,10 @@ import s from "../../styles.css";
         Get started <span>→</span>
       </Link>
     </p>
-    <LandingBento />
+  </div>
+  <div className={styles.bentoGridContainer}>
+    <div className={styles.bentoGridWrapper}>
+      <LandingBento />
+    </div>
   </div>
 </div>

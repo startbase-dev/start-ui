@@ -1,0 +1,15 @@
+.root {
+
+}
+
+.cardRoot {
+  --sui-bento-card-title: var(--sui-white);
+  --sui-bento-card-bg: linear-gradient(to right, #fc00ff, #00dbde);
+  --sui-bento-card-bg-active: var(--sui-primary);
+  --sui-bento-card-button-active-bg: var(--sui-white);
+  --sui-bento-card-button-active-bg-hover: var(--sui-gray-100);
+  --sui-bento-card-button-active-icon: var(--sui-black);
+  background: linear-gradient(to right, #7b4397, #dc2430);
+  color: white;
+  height: 400px;
+}
