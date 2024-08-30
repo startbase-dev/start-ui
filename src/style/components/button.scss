@@ -1,4 +1,6 @@
-:root {
+.light,
+:root,
+[data-theme="light"] {
   --sui-button-primary-default-bg: var(--sui-black);
   --sui-button-primary-default-text: var(--sui-white);
   --sui-button-primary-default-hover-bg: var(--sui-gray-750);
@@ -39,6 +41,7 @@
   --sui-button-disabled-text: var(--sui-black);
 }
 
+.dark,
 [data-theme="dark"] {
   --sui-button-primary-default-bg: var(--sui-gray-100);
   --sui-button-primary-default-text: var(--sui-black);

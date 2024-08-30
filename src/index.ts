@@ -1,5 +1,6 @@
 import Accordion from "./Accordion";
 import Alert from "./Alert";
+import Avatar from "./Avatar";
 import Badge from "./Badge";
 import Button from "./Button";
 import Card from "./Card";
@@ -43,6 +44,7 @@ import "./style/variables.scss";
 export {
   Accordion,
   Alert,
+  Avatar,
   Badge,
   Button,
   Card,

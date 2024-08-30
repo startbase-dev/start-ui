@@ -1,4 +1,6 @@
-:root {
+.light,
+:root,
+[data-theme="light"] {
   --sui-progress-circular-default-track-bg: var(--sui-gray-150);
   --sui-progress-circular-default-progress-bg: var(--sui-black);
   --sui-progress-circular-success-track-bg: var(--sui-gray-150);
@@ -21,6 +23,7 @@
   --sui-progress-linear-error-progress-bg: var(--sui-error);
 }
 
+.dark,
 [data-theme="dark"] {
   --sui-progress-circular-default-track-bg: var(--sui-gray-800);
   --sui-progress-circular-default-progress-bg: var(--sui-white);

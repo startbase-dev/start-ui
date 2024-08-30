@@ -1,4 +1,6 @@
-:root {
+.light,
+:root,
+[data-theme="light"] {
   --sui-typography-muted-text: var(--sui-gray-450);
   --sui-typography-success-text: var(--sui-success);
   --sui-typography-error-text: var(--sui-error);
@@ -29,6 +31,7 @@
   --sui-typography-quote-border: var(--sui-gray-450);
 }
 
+.dark,
 [data-theme="dark"] {
   --sui-typography-muted-text: var(--sui-gray-450);
   --sui-typography-success-text: var(--sui-success);

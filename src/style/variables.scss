@@ -14,7 +14,9 @@
 @import "components/countdown";
 @import "components/tooltip";
 
-:root {
+.light,
+:root,
+[data-theme="light"] {
   /* GRAY */
   --sui-gray-950: #0a0a0a;
   --sui-gray-900: #171717;
@@ -69,11 +71,11 @@
   --sui-elevation-1: rgb(0 0 0 / 0%) 0px 0px 0px 0px,
     rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 10%) 0px 4px 6px -1px,
     rgb(0 0 0 / 10%) 0px 2px 4px -2px;
-  --sui-elevation-2: rgb(0 0 0 / 10%) 0 3px 3px 0;
-  --sui-elevation-3: rgb(0 0 0 / 10%) 0 8px 8px 0;
-  --sui-elevation-4: rgb(0 0 0 / 10%) 0 16px 16px 0;
-  --sui-elevation-5: rgb(0 0 0 / 10%) 0 32px 32px 0;
-  --sui-elevation-6: rgb(0 0 0 / 10%) 0 64px 64px 0;
+    --sui-elevation-2: rgb(0 0 0 / 10%) 0 3px 3px 0;
+    --sui-elevation-3: rgb(0 0 0 / 10%) 0 8px 8px 0;
+    --sui-elevation-4: rgb(0 0 0 / 10%) 0 16px 16px 0;
+    --sui-elevation-5: rgb(0 0 0 / 10%) 0 32px 32px 0;
+    --sui-elevation-6: rgb(0 0 0 / 10%) 0 64px 64px 0;
 
   /* BORDER RADIUS */
   --sui-border-radius-small: 0.4rem;
