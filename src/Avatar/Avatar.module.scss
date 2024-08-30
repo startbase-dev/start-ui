@@ -1,0 +1,126 @@
+.root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-family: inherit;
+    cursor: pointer;
+  
+    &.small {
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+  
+      .container {
+        .circular, .square {
+          width: 22px;
+          height: 22px;
+          font-size: var(--sui-text-small-fs);
+          line-height:var(--sui-text-small-lh);
+  
+          span.chars {
+            font-size: var(--sui-text-small-fs);
+            line-height:var(--sui-text-small-lh);
+          }
+        }
+      }
+    }
+  
+    &.medium {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+  
+      .container {
+        .circular, .square {
+          width: 30px;
+          height: 30px;
+          font-size: var(--sui-text-fs);
+          line-height: var(--sui-text-lh);
+  
+          span.chars {
+            font-size: var(--sui-text-fs);
+            line-height: var(--sui-text-lh);
+          }
+        }
+      }
+    }
+  
+    &.large {
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+  
+      .container {
+        .circular, .square {
+          width: 42px;
+          height: 42px;
+          font-size: var(--sui-text-large-fs);
+          line-height:var(--sui-text-large-lh);
+  
+          span.chars {
+            font-size: var(--sui-text-large-fs);
+            line-height:var(--sui-text-large-lh);
+          }
+        }
+      }
+    }
+  
+    .container {
+      position: relative;
+      display: inline-block;
+      box-sizing: content-box;
+  
+      .circular, .square {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        line-height: 1;
+        overflow: hidden;
+        user-select: none;
+        background-color: var(--sui-avatar-bg);
+        font-weight: 500;
+        box-shadow: var(--sui-avatar-box-shadow);
+  
+        &::before, &::after {
+          box-sizing: inherit;
+        }
+  
+        span.chars {
+          display: flex;
+          width: 100%;
+          height: 100%;
+          padding: 4px 8px;
+          font-weight: 300;
+          justify-content: center;
+          align-items: center;
+          text-transform: uppercase;
+          background-color: var(--sui-avatar-bg);
+          opacity: 0.6;
+          color: var(--sui-avatar-text);
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+
+        .image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+          }
+      }
+  
+      .circular {
+        border-radius: var(--sui-border-radius-full);
+      }
+  
+      .square {
+        border-radius: var(--sui-border-radius-small);
+      }
+    }
+  }
+  
