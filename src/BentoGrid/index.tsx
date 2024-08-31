@@ -3,7 +3,7 @@ import s from "./BentoGrid.module.scss";
 import { BentoGridProps, BentoItem } from "./types";
 
 const Index = forwardRef<HTMLDivElement, BentoGridProps>(
-  ({ items, gridCols, rowHeight = 100, ...rest }, ref) => {
+  ({ items, gridCols = 4, rowHeight = 100, ...rest }, ref) => {
     return (
       <div
         className={s.bentoGrid}
