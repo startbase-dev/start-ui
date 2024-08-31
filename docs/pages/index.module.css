@@ -47,6 +47,20 @@ a.cta:focus-visible span {
   margin: 0 auto;
 }
 
+.bentoGridContainer {
+  background-color: #000;
+  padding: 100px 0;
+  margin-top: 200px;
+}
+
+.bentoGridWrapper {
+  max-width: 90rem;
+  padding-left: max(env(safe-area-inset-left), 1.5rem);
+  padding-right: max(env(safe-area-inset-right), 1.5rem);
+  margin: 0 auto;
+  margin-top: -250px;
+}
+
 .headline {
   display: inline-flex;
   font-size: 3.125rem;
