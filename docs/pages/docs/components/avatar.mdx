@@ -1,3 +1,142 @@
 # Avatar
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+The Avatar component is used to display a user's profile picture or initials in a visually appealing manner. It supports various sizes and shapes, including circular and square variants.
+
+import { Tabs } from "nextra/components";
+import Preview from "../../../components/Preview/Preview";
+import { Avatar } from "@start-base/start-ui";
+
+### Medium Circular Avatar
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Avatar
+        name="SC"
+        size="medium"
+        variant="circular"
+        picture="https://picsum.photos/1390/690"
+        className="custom-class"
+      />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+    <Avatar
+      name="SC"
+      size="medium"
+      variant="circular"
+      picture="https://picsum.photos/1390/690"
+      className="custom-class"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Avatar Without Image
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Avatar name="BG" size="medium" variant="circular" />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy
+    <Avatar name="BG" size="medium" variant="circular" />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Square Large Avatar
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Avatar name="LF" size="large" variant="square" />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ``` ts copy
+    <Avatar name="LF" size="large" variant="square" />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Large Avatar with Image
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Avatar
+        picture="https://picsum.photos/1390/690"
+        size="large"
+        variant="circular"
+      />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ``` ts copy
+    <Avatar
+      picture="https://picsum.photos/1390/690"
+      size="large"
+      variant="circular"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Avatar with Default Image
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Avatar
+        name="CL"
+        size="medium"
+        variant="square"
+        defaultPicture="https://picsum.photos/1390/690"
+      />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ``` ts copy
+    <Avatar
+      name="CL"
+      size="medium"
+      variant="square"
+      defaultPicture="https://picsum.photos/1390/690"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Small Circular Avatar
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Avatar name="TW" size="small" variant="circular" />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ``` ts copy
+    <Avatar name="TW" size="small" variant="circular" />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Avatar Without Props
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Avatar />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ``` ts copy
+    <Avatar />
+    ```
+  </Tabs.Tab>
+</Tabs>
