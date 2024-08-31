@@ -20,19 +20,36 @@ const Template: React.FC<TemplateProps> = (args) => {
 export const BentoGridComponent = Template.bind({});
 BentoGridComponent.args = {
   title: "BentoGrid",
+  gridCols: 4,
   items: [
     {
       element: (
-        <div style={{ backgroundColor: "lightblue", padding: "12px" }}>
+        <div
+          style={{
+            backgroundColor: "lightblue",
+            width: "auto",
+            height: "-webkit-fill-available",
+            borderRadius: "0.8rem",
+            padding: "0.5rem",
+          }}
+        >
           Item 1
         </div>
       ),
-      width: 2,
+      width: 1,
       height: 1,
     },
     {
       element: (
-        <div style={{ backgroundColor: "lightgreen", padding: "12px" }}>
+        <div
+          style={{
+            backgroundColor: "lightgreen",
+            width: "auto",
+            height: "-webkit-fill-available",
+            borderRadius: "0.8rem",
+            padding: "0.5rem",
+          }}
+        >
           Item 2
         </div>
       ),
@@ -41,7 +58,15 @@ BentoGridComponent.args = {
     },
     {
       element: (
-        <div style={{ backgroundColor: "lightcoral", padding: "12px" }}>
+        <div
+          style={{
+            backgroundColor: "lightcoral",
+            width: "auto",
+            height: "-webkit-fill-available",
+            borderRadius: "0.8rem",
+            padding: "0.5rem",
+          }}
+        >
           Item 3
         </div>
       ),
@@ -53,8 +78,10 @@ BentoGridComponent.args = {
         <div
           style={{
             backgroundColor: "lightgoldenrodyellow",
-            padding: "12px",
-            height: "calc(100% - 24px)",
+            width: "auto",
+            height: "-webkit-fill-available",
+            borderRadius: "0.8rem",
+            padding: "0.5rem",
           }}
         >
           Item 4
@@ -65,7 +92,15 @@ BentoGridComponent.args = {
     },
     {
       element: (
-        <div style={{ backgroundColor: "lightcoral", padding: "12px" }}>
+        <div
+          style={{
+            backgroundColor: "lightcoral",
+            width: "auto",
+            height: "-webkit-fill-available",
+            borderRadius: "0.8rem",
+            padding: "0.5rem",
+          }}
+        >
           Item 5
         </div>
       ),
@@ -74,16 +109,32 @@ BentoGridComponent.args = {
     },
     {
       element: (
-        <div style={{ backgroundColor: "lightblue", padding: "12px" }}>
+        <div
+          style={{
+            backgroundColor: "lightblue",
+            width: "auto",
+            height: "-webkit-fill-available",
+            borderRadius: "0.8rem",
+            padding: "0.5rem",
+          }}
+        >
           Item 6
         </div>
       ),
-      width: 1,
+      width: 2,
       height: 1,
     },
     {
       element: (
-        <div style={{ backgroundColor: "lightgreen", padding: "12px" }}>
+        <div
+          style={{
+            backgroundColor: "lightgreen",
+            width: "auto",
+            height: "-webkit-fill-available",
+            borderRadius: "0.8rem",
+            padding: "0.5rem",
+          }}
+        >
           Item 7
         </div>
       ),

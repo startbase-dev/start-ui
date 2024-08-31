@@ -1,25 +1,35 @@
 import React, { forwardRef } from "react";
 import s from "./BentoGrid.module.scss";
-import { Props } from "./types";
+import { BentoGridProps, BentoItem } from "./types";
 
-const Index = forwardRef<HTMLDivElement, Props>(({ items, ...rest }, ref) => {
-  return (
-    <div className={s.libraries} ref={ref} {...rest}>
-      {items?.map((item, index) => (
-        <div
-          key={index}
-          className={s.library}
-          style={{
-            gridColumn: `span ${item.width}`,
-            gridRow: `span ${item.height}`,
-          }}
-        >
-          {item.element}
-        </div>
-      ))}
-    </div>
-  );
-});
+const Index = forwardRef<HTMLDivElement, BentoGridProps>(
+  ({ items, gridCols, rowHeight = 100, ...rest }, ref) => {
+    return (
+      <div
+        className={s.bentoGrid}
+        ref={ref}
+        {...rest}
+        style={{
+          gridTemplateColumns: `repeat(${gridCols}, minmax(0, 1fr))`,
+          gridAutoRows: `${rowHeight}px`,
+        }}
+      >
+        {items?.map((item: BentoItem, index: number) => (
+          <div
+            key={index}
+            className={s.bentoBox}
+            style={{
+              gridColumn: `span ${item.width}`,
+              gridRow: `span ${item.height}`,
+            }}
+          >
+            {item.element}
+          </div>
+        ))}
+      </div>
+    );
+  },
+);
 
 Index.displayName = "BentoGrid";
 

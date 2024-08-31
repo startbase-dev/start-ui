@@ -1,11 +1,15 @@
-import { ReactNode } from "react";
+import React from "react";
 
-type Item = {
-  element: ReactNode;
+export type BentoItem = {
+  element: React.ReactNode;
   width: number;
   height: number;
 };
 
-export type Props = {
-  items: Item[];
+export type BentoItems = BentoItem[];
+
+export type BentoGridProps = {
+  items: BentoItems;
+  gridCols?: number;
+  rowHeight?: number;
 };
