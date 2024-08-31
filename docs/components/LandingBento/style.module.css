@@ -1,20 +1,21 @@
-.root {
 
+
+.root {
+  --background-pink: #ffddfb;
+  --background-blue: #d7e8ff;
 }
 
 .cardRoot {
-  --sui-bento-card-title: var(--sui-black);
-  --sui-bento-card-bg: linear-gradient(to right, #fc00ff, #00dbde);
-  --sui-bento-card-bg-active: var(--sui-primary);
-  --sui-bento-card-button-bg: var(--sui-white);
-  --sui-bento-card-button-bg-hover: var(--sui-gray-100);
-  --sui-bento-card-button-active-bg: var(--sui-white);
-  --sui-bento-card-button-active-bg-hover: var(--sui-gray-100);
-  --sui-bento-card-button-active-icon: var(--sui-black);
-  background: linear-gradient(to right, #7b4397, #dc2430);
-  color: white;
-  min-height: 500px;
-  min-width: 200px;
+  background-image: linear-gradient(to right, #bdc3c7, #2c3e50);
+  background-color: var(--sui-black);
+  height: -webkit-fill-available;
+  min-height: 300px;
+  width: auto;
+}
+
+.titleClassName {
+  font-size: var(--sui-h1-fs);
+  line-height: var(--sui-h1-lh);
 }
 
 .cardContent {
@@ -22,5 +23,10 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  
+}
+
+.secondContent {
+  padding: 1rem;
+  font-size: var(--sui-text-lead-fs);
+  line-height: var(--sui-text-lead-lh);
 }
