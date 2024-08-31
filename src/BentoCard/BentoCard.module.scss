@@ -1,59 +1,6 @@
-@keyframes fade-in {
-  from {
-    opacity: 0.5;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slide-up {
-  from {
-    margin-top: 0;
-    opacity: 1;
-  }
-
-  to {
-    margin-top: -100px;
-    opacity: 0;
-  }
-}
-
-@keyframes slide-down {
-  from {
-    margin-top: -200px;
-  }
-
-  to {
-    margin-top: 0;
-  }
-}
-
-@keyframes rotate-in {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(45deg);
-  }
-}
-
-@keyframes rotate-out {
-  from {
-    transform: rotate(45deg);
-  }
-
-  to {
-    transform: rotate(0deg);
-  }
-}
-
 .root {
   width: 100%;
   height: 100%;
-  position: relative;
   background-color: var(--sui-bento-card-bg);
   border-radius: 16px;
   border: 1px solid var(--sui-bento-card-border);
@@ -61,6 +8,11 @@
   line-height: 40px;
   font-family: var(--sui-font-family);
   color: var(--sui-bento-card-content);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
 }
 
 .rootActive {
@@ -69,15 +21,16 @@
 }
 
 .title {
-  font-size: 21px;
-  line-height: 1.2;
+  font-size: var(--sui-h1-fs);
+  line-height: var(--sui-h1-lh);
   font-weight: 600;
   letter-spacing: 0.011em;
   color: var(--sui-bento-card-title);
-  width: 100%;
   padding: 36px 40px;
   position: absolute;
   z-index: 4;
+  flex-shrink: 0;
+  max-height: 100px;
 }
 
 .activeTitle {
@@ -86,20 +39,34 @@
 
 .layer {
   width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
-  position: absolute;
+  flex-grow: 1;
+  overflow: hidden;
 }
 
 .firstLayer {
   z-index: 2;
-  animation: fadeIn 600ms;
+  animation: fade-in 600ms;
+  transition: opacity 600ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .secondLayer {
   z-index: 1;
-  animation: opacity 600ms;
+  transition: transform 600ms, opacity 600ms;
+  transform: translateY(100%);
+}
+
+.root[data-active="true"] .secondLayer {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.root[data-active="true"] .firstLayer {
+  display: none;
 }
 
 .hiddenLayer {
@@ -107,17 +74,15 @@
 }
 
 .content {
-  transition:
-    margin-top 600ms,
-    opacity 600ms;
-  animation: slideUp 600ms forwards;
+  transition: transform 600ms, opacity 600ms;
+  animation: slide-up 600ms forwards;
+  width: 100%;
+  font-size: var(--sui-text-large-fs);
+  line-height: var(--sui-text-large-lh);
 }
 
 .root[data-active="true"] .content {
-  transition:
-    margin-top 600ms,
-    opacity 600ms;
-  animation: slideDown 600ms forwards;
+  animation: slide-down 600ms forwards;
 }
 
 .button {
@@ -127,29 +92,28 @@
   bottom: 20px;
   right: 20px;
   border: none;
-  z-index: 3;
+  z-index: 4;
   transition: transform 600ms;
   border-radius: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
   padding: 0;
   cursor: pointer;
   background-color: var(--sui-bento-card-button-bg);
+}
 
-  &:hover {
-    background-color: var(--sui-bento-card-button-bg-hover);
-  }
+.button:hover {
+  background-color: var(--sui-bento-card-button-bg-hover);
 }
 
 .activeButton {
   animation: rotate-in 600ms forwards;
   background-color: var(--sui-bento-card-button-active-bg);
+}
 
-  &:hover {
-    background-color: var(--sui-bento-card-button-active-bg-hover);
-  }
+.activeButton:hover {
+  background-color: var(--sui-bento-card-button-active-bg-hover);
 }
 
 .exitingButton {
@@ -174,4 +138,56 @@
   width: 24px;
   height: 24px;
   color: var(--sui-bento-card-button-active-icon);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotate-in {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes rotate-out {
+  from {
+    transform: rotate(45deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
 }

@@ -89,6 +89,7 @@ const VideoPlayer: React.FC = () => {
         ref={videoRef}
         className={s.player}
         autoPlay
+        muted
         width="100%"
         height="100%"
         src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
