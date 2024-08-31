@@ -1,1 +1,292 @@
-# Styling
+# 🎨 Styling & Color System Documentation
+
+## Overview
+
+This document outlines the color system used in our project. It includes the definition of primary colors and their variations using the color-mix function. The colors are defined in both light and dark themes, allowing for a consistent design language across different themes.
+
+## Start UI
+
+### Color Variables
+
+#### Primary Colors
+
+Primary colors are the main colors used throughout the UI. Each primary color has variations created by mixing the base color with white.
+
+```css copy filename="colors.css"
+:root {
+  --sui-white: #fff;
+  --sui-black: #000;
+  --sui-success: #22c55e;
+  --sui-info: #3b82f6;
+  --sui-warning: #f97316;
+  --sui-error: #ef4444;
+  --sui-primary: #952fd3;
+  --sui-secondary: #145477;
+}
+```
+
+Each of these colors is defined with shades ranging from 50 to 950, where 50 is the lightest and 950 is the closest to the base color.
+
+#### Theme Configuration Variables
+
+This document outlines the structure and usage of CSS variables for managing the theme of a UI library. The theme is defined using CSS variables `(--sui-*)`, which control various aspects like typography, padding, elevation, border radius, gaps, margins, paddings, transitions, font families, and component colors. These variables are set within different selectors, including `:root`, `[data-theme="light"]`, and `[data-theme="dark"]`, allowing easy theme management for light and dark modes.
+
+```css copy filename="variables.css"
+:root {
+  /* TYPOGRAPHY */
+  --sui-title-lead-fs: 4rem;
+  --sui-title-lead-lh: 5rem;
+  --sui-h1-fs: 2.25rem;
+  --sui-h1-lh: 2.8125rem;
+  --sui-h2-fs: 2rem;
+  --sui-h2-lh: 2.5rem;
+  --sui-h3-fs: 1.75rem;
+  --sui-h3-lh: 2.1875rem;
+  --sui-h4-fs: 1.5rem;
+  --sui-h4-lh: 1.875rem;
+  --sui-h5-fs: 1.25rem;
+  --sui-h5-lh: 1.5625rem;
+  --sui-h6-fs: 1rem;
+  --sui-h6-lh: 1.25rem;
+  --sui-text-small-fs: 0.875rem;
+  --sui-text-small-lh: 1rem;
+  --sui-text-fs: 1rem;
+  --sui-text-lh: 1.25rem;
+  --sui-text-large-fs: 1.5rem;
+  --sui-text-large-lh: 1.875rem;
+  --sui-text-lead-fs: 2.25rem;
+  --sui-text-lead-lh: 2.8125rem;
+
+  /* PADDING */
+  --sui-padding-small: 0.25rem;
+  --sui-padding: 0.5rem;
+  --sui-padding-large: 1rem;
+
+  /* ELEVATIONS */
+  --sui-elevation-1: rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 10%) 0px 4px 6px -1px,
+    rgb(0 0 0 / 10%) 0px 2px 4px -2px;
+  --sui-elevation-2: rgb(0 0 0 / 10%) 0 3px 3px 0;
+  --sui-elevation-3: rgb(0 0 0 / 10%) 0 8px 8px 0;
+  --sui-elevation-4: rgb(0 0 0 / 10%) 0 16px 16px 0;
+  --sui-elevation-5: rgb(0 0 0 / 10%) 0 32px 32px 0;
+  --sui-elevation-6: rgb(0 0 0 / 10%) 0 64px 64px 0;
+
+  /* BORDER RADIUS */
+  --sui-border-radius-small: 0.4rem;
+  --sui-border-radius-medium: 0.6rem;
+  --sui-border-radius-large: 0.8rem;
+  --sui-border-radius-full: 100%;
+
+  /* GAPS MARGINS PADDINGS */
+  --sui-text-margin: 0.5rem;
+  --sui-gap: 1rem;
+  --sui-transition: all 0.3s ease-in-out;
+  --sui-font-family: galanogrotesque, "Noto Sans", -apple-system,
+    blinkmacsystemfont, "Segoe UI", roboto, oxygen, ubuntu, cantarell,
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+  /* NEUTRAL COLORS */
+  --sui-transparent: transparent;
+  --sui-current: currentcolor;
+
+  /* COMPONENT COLORS */
+  --sui-border: var(--sui-gray-200);
+}
+```
+
+### Light Mode
+
+In light mode, the base colors are mixed with white `var(--sui-white)` to create lighter shades.
+
+#### Success
+
+```css copy
+:root {
+  --sui-success-50: color-mix(in srgb, var(--sui-success) 5%, var(--sui-white));
+  --sui-success-100: color-mix(in srgb, var(--sui-success) 10%, var(--sui-white));
+  ...
+  --sui-success-950: color-mix(in srgb, var(--sui-success) 95%, var(--sui-white));
+}
+```
+
+#### Info
+
+```css copy
+:root {
+  --sui-info-50: color-mix(in srgb, var(--sui-info) 5%, var(--sui-white));
+  --sui-info-100: color-mix(in srgb, var(--sui-info) 10%, var(--sui-white));
+  ...
+  --sui-info-950: color-mix(in srgb, var(--sui-info) 95%, var(--sui-white));
+}
+```
+
+#### Warning
+
+```css copy
+:root {
+  --sui-warning-50: color-mix(in srgb, var(--sui-warning) 5%, var(--sui-white));
+  --sui-warning-100: color-mix(in srgb, var(--sui-warning) 10%, var(--sui-white));
+  ...
+  --sui-warning-950: color-mix(in srgb, var(--sui-warning) 95%, var(--sui-white));
+}
+```
+
+#### Error
+
+```css copy
+:root {
+  --sui-error-50: color-mix(in srgb, var(--sui-error) 5%, var(--sui-white));
+  --sui-error-100: color-mix(in srgb, var(--sui-error) 10%, var(--sui-white));
+  ...
+  --sui-error-950: color-mix(in srgb, var(--sui-error) 95%, var(--sui-white));
+}
+```
+
+#### Primary
+
+```css copy
+:root {
+  --sui-primary-50: color-mix(in srgb, var(--sui-primary) 5%, var(--sui-white));
+  --sui-primary-100: color-mix(in srgb, var(--sui-primary) 10%, var(--sui-white));
+  ...
+  --sui-primary-950: color-mix(in srgb, var(--sui-primary) 95%, var(--sui-white));
+}
+```
+
+#### Secondary
+
+```css copy
+:root {
+  --sui-secondary-50: color-mix(in srgb, var(--sui-secondary) 5%, var(--sui-white));
+  --sui-secondary-100: color-mix(in srgb, var(--sui-secondary) 10%, var(--sui-white));
+  ...
+  --sui-secondary-950: color-mix(in srgb, var(--sui-secondary) 95%, var(--sui-white));
+}
+```
+
+### Dark Mode
+
+In dark mode, the base colors are mixed with black (var(--sui-black)) to create darker shades.
+
+#### Success
+
+```css copy
+.dark {
+  --sui-success-50: color-mix(in srgb, var(--sui-success) 5%, var(--sui-black));
+  --sui-success-100: color-mix(in srgb, var(--sui-success) 10%, var(--sui-black));
+  ...
+  --sui-success-950: color-mix(in srgb, var(--sui-success) 95%, var(--sui-black));
+}
+```
+
+#### Info
+
+```css copy
+.dark {
+  --sui-info-50: color-mix(in srgb, var(--sui-info) 5%, var(--sui-black));
+  --sui-info-100: color-mix(in srgb, var(--sui-info) 10%, var(--sui-black));
+  ...
+  --sui-info-950: color-mix(in srgb, var(--sui-info) 95%, var(--sui-black));
+}
+```
+
+#### Warning
+
+```css copy
+.dark {
+  --sui-warning-50: color-mix(in srgb, var(--sui-warning) 5%, var(--sui-black));
+  --sui-warning-100: color-mix(in srgb, var(--sui-warning) 10%, var(--sui-black));
+  ...
+  --sui-warning-950: color-mix(in srgb, var(--sui-warning) 95%, var(--sui-black));
+}
+```
+
+#### Error
+
+```css copy
+.dark {
+  --sui-error-50: color-mix(in srgb, var(--sui-error) 5%, var(--sui-black));
+  --sui-error-100: color-mix(in srgb, var(--sui-error) 10%, var(--sui-black));
+  ...
+  --sui-error-950: color-mix(in srgb, var(--sui-error) 95%, var(--sui-black));
+}
+```
+
+#### Primary
+
+```css copy
+.dark {
+  --sui-primary-50: color-mix(in srgb, var(--sui-primary) 5%, var(--sui-black));
+  --sui-primary-100: color-mix(in srgb, var(--sui-primary) 10%, var(--sui-black));
+  ...
+  --sui-primary-950: color-mix(in srgb, var(--sui-primary) 95%, var(--sui-black));
+}
+```
+
+#### Secondary
+
+```css copy
+.dark {
+  --sui-secondary-50: color-mix(in srgb, var(--sui-secondary) 5%, var(--sui-black));
+  --sui-secondary-100: color-mix(in srgb, var(--sui-secondary) 10%, var(--sui-black));
+  ...
+  --sui-secondary-950: color-mix(in srgb, var(--sui-secondary) 95%, var(--sui-black));
+}
+```
+
+### Usage Guidelines
+
+- **Shades:** Utilize the lighter shades (50-400) for backgrounds and the darker shades (500-950) for text and borders.
+- **Accessibility:** Ensure sufficient contrast between text and background colors, especially in dark mode.
+
+This style documentation provides a clear and organized overview of how to implement and use the color system across different themes in your project.
+
+## Form Elements
+
+You can use CSS variables to customize the look and feel of the components. Here's a list of all available variables
+
+```css copy filename="globals.css"
+:root {
+  --rfe-transparent: transparent;
+  --rfe-white: #fff;
+  --rfe-white-rgb: 255 255 255;
+  --rfe-black: #000;
+  --rfe-black-rgb: 0 0 0;
+  --rfe-color: #000;
+  --rfe-color-placeholder: #646464;
+  --rfe-color-error: #ff383e;
+  --rfe-border: #e6e6e6;
+  --rfe-background: #fafafa;
+  --rfe-background-selected: #f0f0f0;
+  --rfe-background-disabled: #e1e1e1;
+  --rfe-border-radius: 6px;
+  --rfe-font-size: 16px;
+  --rfe-placeholder-font-size: 14px;
+  --rfe-focused-font-size: 12px;
+  --rfe-error-font-size: 12px;
+  --rfe-input-height: 56px;
+  --rfe-spacing: 16px;
+  --rfe-label-spacing: 10px;
+  --rfe-focus: 0 0 10px #dcdcdc;
+  --rfe-font-family: "Arial", sans-serif;
+}
+```
+
+## Consent Manager
+
+You can use CSS variables to customize the look and feel of the components. Here's a list of all available variables
+
+```css copy filename="globals.css"
+:root {
+  --rcm-transparent: transparent;
+  --rcm-white: #fff;
+  --rcm-white-rgb: 255 255 255;
+  --rcm-black: #000;
+  --rcm-black-rgb: 0 0 0;
+  --rcm-primary: #007bff;
+  --rcm-primary-rgb: 0 123 255;
+  --rcm-secondary: #73fa58;
+  --rcm-secondary-rgb: 115 250 88;
+}
+```

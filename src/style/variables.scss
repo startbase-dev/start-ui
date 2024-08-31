@@ -13,31 +13,10 @@
 @import "components/bentoCard";
 @import "components/countdown";
 @import "components/tooltip";
+@import "components/alert";
 
-.light,
-:root,
-[data-theme="light"] {
-  /* GRAY */
-  --sui-gray-950: #0a0a0a;
-  --sui-gray-900: #171717;
-  --sui-gray-850: #1f1f1f;
-  --sui-gray-800: #262626;
-  --sui-gray-750: #333;
-  --sui-gray-700: #404040;
-  --sui-gray-650: #4b4b4b;
-  --sui-gray-600: #525252;
-  --sui-gray-550: #5f5f5f;
-  --sui-gray-500: #737373;
-  --sui-gray-450: #8c8c8c;
-  --sui-gray-400: #a3a3a3;
-  --sui-gray-350: #bfbfbf;
-  --sui-gray-300: #d4d4d4;
-  --sui-gray-250: #e0e0e0;
-  --sui-gray-200: #e5e5e5;
-  --sui-gray-150: #ededed;
-  --sui-gray-100: #f5f5f5;
-  --sui-gray-50: #fafafa;
 
+:root {
   /* TYPOGRAPHY */
   --sui-title-lead-fs: 4rem;
   --sui-title-lead-lh: 5rem;
@@ -98,34 +77,4 @@
   /* COMPONENT COLORS/ */
   --sui-border: var(--sui-gray-200);
 
-  /* ALERT */
-  --sui-success-50: color-mix(in srgb, var(--sui-success) 5%, var(--sui-white));
-  --sui-info-50: color-mix(in srgb, var(--sui-info) 5%, var(--sui-white));
-  --sui-warning-50: color-mix(in srgb, var(--sui-warning) 5%, var(--sui-white));
-  --sui-error-50: color-mix(in srgb, var(--sui-error) 5%, var(--sui-white));
-  --sui-success-200: color-mix(
-    in srgb,
-    var(--sui-success) 20%,
-    var(--sui-white)
-  );
-  --sui-info-200: color-mix(in srgb, var(--sui-info) 20%, var(--sui-white));
-  --sui-warning-200: color-mix(
-    in srgb,
-    var(--sui-warning) 20%,
-    var(--sui-white)
-  );
-  --sui-error-200: color-mix(in srgb, var(--sui-error) 20%, var(--sui-white));
-  --sui-success-d600: color-mix(
-    in srgb,
-    var(--sui-success) 60%,
-    var(--sui-black)
-  );
-  --sui-info-d600: color-mix(in srgb, var(--sui-info) 60%, var(--sui-black));
-  --sui-warning-d600: color-mix(
-    in srgb,
-    var(--sui-warning) 60%,
-    var(--sui-black)
-  );
-  --sui-error-d600: color-mix(in srgb, var(--sui-error) 60%, var(--sui-black));
-  --active-unfocused: red;
 }

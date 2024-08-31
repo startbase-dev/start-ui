@@ -1,1 +1,82 @@
-# Dark Mode
+# Dark Mode Support in Start UI Library
+
+Start UI Library provides comprehensive support for dark mode, ensuring that all components adapt seamlessly between light and dark themes. The library includes base components and form components, each with individualized style key sets to maintain consistency and visual coherence across different themes.
+
+## Implementation Overview
+
+Dark mode in the Start UI Library is managed using a combination of CSS variables and theme-specific imports. The following CSS code illustrates the dark mode setup:
+
+```css
+@import "colors/colors";
+@import "colors/colors-light";
+@import "colors/colors-dark";
+
+@import "components/accordion";
+@import "components/button";
+@import "components/context-menu";
+@import "components/dropdown";
+@import "components/floating-menu-item";
+@import "components/popover";
+@import "components/progress";
+@import "components/tab";
+@import "components/bentoCard";
+@import "components/countdown";
+@import "components/tooltip";
+```
+
+## Theme Variables
+
+The theme is defined using CSS variables, which are set under different selectors for light mode (.light, :root, [data-theme="light"]). These variables control various aspects such as color schemes, typography, spacing, elevation, and more.
+
+```css copy filename="globals.css"
+.light,
+:root,
+[data-theme="light"] {
+}
+```
+
+```css copy filename="globals.css"
+.dark,
+[data-theme="dark"] {
+}
+```
+
+### Example Variables
+
+- **Gray Shades:** --sui-gray-950 to --sui-gray-50 define a range of grayscale colors for different components.
+- **Typography:** Font sizes and line heights are managed using variables like --sui-h1-fs (font size for H1) and --sui-h1-lh (line height for H1).
+- **Elevation:** Elevation effects, such as shadows, are controlled with variables like --sui-elevation-1 to --sui-elevation-6.
+- **Border Radius:** Different levels of border radius are set with variables such as --sui-border-radius-small to --sui-border-radius-full.
+
+## Components Customization
+
+Each component in the library has its own set of style keys, allowing for fine-tuned customization across different themes. This approach ensures that the design remains consistent while providing the flexibility to adapt to specific design needs.
+
+### Example Component Customization
+
+For example, the Avatar component might have the following style keys:
+
+```css copy filename="globals.css"
+.light,
+:root,
+[data-theme="light"] {
+  --sui-avatar-box-shadow: var(--sui-elevation-1);
+  --sui-avatar-bg: var(--sui-white);
+  --sui-avatar-text: var(--sui-black);
+}
+```
+
+```css copy filename="globals.css"
+.dark,
+[data-theme="dark"] {
+  --sui-avatar-box-shadow: var(--sui-elevation-1);
+  --sui-avatar-bg: var(--sui-black);
+  --sui-avatar-text: var(--sui-white);
+}
+```
+
+These variables allow developers to adjust the button’s appearance according to the active theme without changing the component's underlying structure.
+
+## Conclusion
+
+The Start UI Library's dark mode support is robust, ensuring that all components look great in both light and dark themes. By utilizing CSS variables and theme-specific imports, the library provides a flexible and consistent design system that can be easily customized to meet the needs of various projects.
