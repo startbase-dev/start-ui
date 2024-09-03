@@ -1,14 +1,14 @@
 import { Tabs } from "nextra/components";
 import Preview from "../../../components/Preview/Preview";
-import ApiReferenceButton from "../../../components/ApiReferenceButton";
 import { Steps } from "nextra/components";
-import { Countdown } from "../../../../index";
+import { Countdown } from "@start-base/start-ui";
+import "@start-base/start-ui/styles.css";
 
 # Countdown
 
-A customizable React countdown component that dynamically displays only active time units, supporting multiple formats and precise millisecond accuracy.
-
-<ApiReferenceButton path="form-input--docs" />
+A customizable React countdown component that dynamically
+displays only active time units, supporting multiple
+formats and precise millisecond accuracy.
 
 ## Installation
 
@@ -16,31 +16,138 @@ A customizable React countdown component that dynamically displays only active t
 
 ### Install the package
 
-<Tabs items={["npm", "yarn", "pnpm"]}>
-  <Tabs.Tab>``` bash copy npm install --save @start-base/start-ui ```</Tabs.Tab>
-  <Tabs.Tab>``` bash copy yarn add@start-base/start-ui ```</Tabs.Tab>
-  <Tabs.Tab>``` bash copy pnpm add @start-base/start-ui ```</Tabs.Tab>
-</Tabs>
-### Add the styles Make sure to add css file to your app root file
-
-```tsx copy
-import "@start-base/start-ui/styles.css";
+```sh copy npm2yarn
+npm i @start-base/start-ui
 ```
+
+### Add the styles
+
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import @start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import @start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
 
 </Steps>
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
-    <Countdown date="1735689600" />
+    <Countdown date={1735773364000} />
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
     ```ts copy showLineNumbers
-    import OTPInput from '@start-base/react-form-elements/OTPInput';
-    import '@start-base/react-form-elements/styles.css';
+    import Countdown from '@start-base/start-ui/Countdown';
+    import '@start-base/start-ui/styles.css';
 
-   <Countdown />
+    <Countdown date={1735773364000} />
     ```
+
   </Tabs.Tab>
 </Tabs>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+    <Countdown date={1735773364000} type="withSeparator"/>
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import Countdown from '@start-base/start-ui/Countdown';
+    import '@start-base/start-ui/styles.css';
+
+    <Countdown date={1735773364000} type="withSeparator"/>
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+    <Countdown date={1735773364000} type="withLabels"/>
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import Countdown from '@start-base/start-ui/Countdown';
+    import '@start-base/start-ui/styles.css';
+
+    <Countdown date={1735773364000} type="withLabels"/>
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+    <Countdown date={1735773364000} type="labelsUnder"/>
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import Countdown from '@start-base/start-ui/Countdown';
+    import '@start-base/start-ui/styles.css';
+
+    <Countdown date={1735773364000} type="labelsUnder"/>
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+  <Preview height="200px">
+    <Countdown date={1735773364000} type="inBoxes"/>
+  </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import Countdown from '@start-base/start-ui/Countdown';
+    import '@start-base/start-ui/styles.css';
+
+    <Countdown date={1735773364000} type="inBoxes"/>
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## API
+
+| Name           | Type              | Default   | Description                                                            |
+| -------------- | ----------------- | --------- | ---------------------------------------------------------------------- |
+| date           | `Date` - `number` |           | Countdown Date                                                         |
+| showDay        | `bolean`          | true      | Show day                                                               |
+| showHour       | `bolean`          | true      | Show hour                                                              |
+| showMinute     | `bolean`          | true      | Show minute                                                            |
+| showSecond     | `bolean`          | true      | Show second                                                            |
+| type           | `string`          | `default` | `withSeparator` - `withLabels` - `labelsUnder` - `inBoxes` - `default` |
+| itemClassName  | `string`          |           | Item className                                                         |
+| rootClassName  | `string`          |           | Root className                                                         |
+| valueClassName | `string`          |           | Value className                                                        |
+| labelClassName | `string`          |           | Label className                                                        |

@@ -29,7 +29,7 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
       setTimeout(() => {
         setIsActive(false);
         setIsExiting(false);
-      }, 600); // Duration of exit animation
+      }, 600);
     } else {
       setIsActive(true);
     }

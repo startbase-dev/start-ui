@@ -4,26 +4,7 @@ import s from "./Countdown.module.scss";
 import { getUnitLabel } from "./constants";
 import useCountdown from "./hooks/useCountdown";
 import clsx from "clsx";
-
-type Type =
-  | "withSeparator"
-  | "withLabels"
-  | "labelsUnder"
-  | "inBoxes"
-  | "default";
-
-interface IndexProps {
-  date: Date | number;
-  showDay?: boolean;
-  showHour?: boolean;
-  showMinute?: boolean;
-  showSecond?: boolean;
-  type?: Type;
-  itemClassName?: string;
-  rootClassName?: string;
-  valueClassName?: string;
-  labelClassName?: string;
-}
+import { IndexProps } from "./types";
 
 const Countdown = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
   const {

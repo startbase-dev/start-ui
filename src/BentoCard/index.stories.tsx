@@ -14,7 +14,6 @@ const Template: React.FC<TemplateProps> = (args) => {
 
   return (
     <StoryBook title={title}>
-      <span>{`Default expanded accordions will be expanded upon page load.`}</span>
       <div style={{ width: "100%", height: "600px" }}>
         <BentoCard
           {...props}
@@ -29,7 +28,6 @@ const Template: React.FC<TemplateProps> = (args) => {
           }
         />
       </div>
-      <span>{`Disabled accordions will not expand or collapse on click. But they will persist their state.`}</span>
       <div style={{ width: "100%", height: "600px" }}>
         <BentoCard
           {...props}
@@ -53,7 +51,6 @@ const Template: React.FC<TemplateProps> = (args) => {
           }
         />
       </div>
-      <span>{`Controlled accordions' state is controlled by its parent. In this example, only one accordion can be expanded at a time.`}</span>
       <div style={{ width: "100%", height: "600px" }}>
         <BentoCard
           {...props}
@@ -82,7 +79,7 @@ BentoCardComponent.args = {
   rootClassName: "",
   firstContent: null,
   secondContent: null,
-  redirectTo: false,
+  redirectTo: "",
 };
 
 const Component = {
