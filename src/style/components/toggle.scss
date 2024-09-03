@@ -1,0 +1,61 @@
+.light,
+:root,
+[data-theme="light"] {
+  --sui-toggle-primary-default-bg: var(--sui-black);
+  --sui-toggle-primary-default-text: var(--sui-white);
+  --sui-toggle-primary-default-hover-bg: var(--sui-gray-750);
+  --sui-toggle-secondary-default-bg: var(--sui-gray-200);
+  --sui-toggle-secondary-default-text: var(--sui-black);
+  --sui-toggle-secondary-default-hover-bg: var(--sui-gray-100);
+  --sui-toggle-destructive-default-bg: var(--sui-error);
+  --sui-toggle-destructive-default-text: var(--sui-white);
+  --sui-toggle-destructive-default-hover-bg: var(--sui-error-800);
+  --sui-toggle-primary-outline-border: var(--sui-gray-800);
+  --sui-toggle-primary-outline-hover-bg: var(--sui-gray-800);
+  --sui-toggle-primary-outline-bg: var(--sui-gray-800);
+  --sui-toggle-primary-outline-hover-text: var(--sui-white);
+  --sui-toggle-primary-outline-text: var(--sui-white);
+  --sui-toggle-secondary-outline-text: var(--sui-black);
+  --sui-toggle-secondary-outline-hover-text: var(--sui-black);
+  --sui-toggle-secondary-outline-border: var(--sui-gray-200);
+  --sui-toggle-secondary-outline-bg: var(--sui-gray-200);
+  --sui-toggle-secondary-outline-hover-bg: var(--sui-gray-200);
+  --sui-toggle-destructive-outline-text: var(--sui-error-800);
+  --sui-toggle-destructive-outline-hover-text: var(--sui-white);
+  --sui-toggle-destructive-outline-border: var(--sui-error-200);
+  --sui-toggle-destructive-outline-hover-bg: var(--sui-error-800);
+  --sui-toggle-destructive-outline-bg: var(--sui-error-800);
+  --sui-toggle-disabled-bg: var(--sui-gray-600);
+  --sui-toggle-disabled-text: var(--sui-black);
+}
+
+.dark,
+[data-theme="dark"] {
+  --sui-toggle-primary-default-bg: var(--sui-gray-100);
+  --sui-toggle-primary-default-text: var(--sui-black);
+  --sui-toggle-primary-default-hover-bg: var(--sui-gray-200);
+  --sui-toggle-secondary-default-bg: var(--sui-gray-700);
+  --sui-toggle-secondary-default-text: var(--sui-white);
+  --sui-toggle-secondary-default-hover-bg: var(--sui-gray-750);
+  --sui-toggle-destructive-default-bg: var(--sui-error-dark-650);
+  --sui-toggle-destructive-default-text: var(--sui-white);
+  --sui-toggle-destructive-default-hover-bg: var(--sui-error-dark-600);
+  --sui-toggle-primary-outline-border: var(--sui-gray-100);
+  --sui-toggle-primary-outline-hover-bg: var(--sui-gray-100);
+  --sui-toggle-primary-outline-bg: var(--sui-gray-100);
+  --sui-toggle-primary-outline-hover-text: var(--sui-black);
+  --sui-toggle-primary-outline-text: var(--sui-black);
+  --sui-toggle-secondary-outline-text: var(--sui-gray-100);
+  --sui-toggle-secondary-outline-hover-text: var(--sui-gray-100);
+  --sui-toggle-secondary-outline-border: var(--sui-gray-500);
+  --sui-toggle-secondary-outline-bg: var(--sui-gray-400);
+  --sui-toggle-secondary-outline-hover-bg: var(--sui-gray-500);
+  --sui-toggle-destructive-outline-text: var(--sui-error);
+  --sui-toggle-destructive-outline-hover-text: var(--sui-white);
+  --sui-toggle-destructive-outline-hover-bg: var(--sui-error-dark-600);
+  --sui-toggle-destructive-outline-bg: var(--sui-error-dark-600);
+  --sui-toggle-destructive-outline-border:var(--sui-error-800);
+  --sui-toggle-destructive-outline-hover-border: var(--sui-error-dark-600);
+  --sui-toggle-disabled-bg: var(--sui-gray-600);
+  --sui-toggle-disabled-text: var(--sui-white);
+}
