@@ -1,0 +1,14 @@
+.light,
+:root,
+[data-theme="light"] {
+  --sui-table-black: var(--sui-white);
+  --sui-table-white: var(--sui-black);
+  --sui-table-border: color-mix(in srgb, var(--sui-black) 75%, var(--sui-white));
+}
+
+.dark,
+[data-theme="dark"] {
+  --sui-table-black: var(--sui-black);
+  --sui-table-white: var(--sui-white);
+  --sui-table-border: color-mix(in srgb, var(--sui-black) 75%, var(--sui-white));
+}

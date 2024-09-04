@@ -220,7 +220,8 @@
     "@floating-ui/react": "^0.26.23",
     "clsx": "^2.1.1",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "rc-table": "^7.47.5"
   },
   "dependencies": {
     "@floating-ui/core": "^1.6.7",
@@ -228,7 +229,8 @@
     "@floating-ui/react": "^0.26.23",
     "clsx": "^2.1.1",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "rc-table": "^7.47.5"
   },
   "devDependencies": {
     "@babel/core": "7.25.2",
