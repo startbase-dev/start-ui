@@ -1,0 +1,101 @@
+import { Tabs } from "nextra/components";
+import { BentoGrid } from "@start-base/start-ui";
+import "@start-base/start-ui/styles.css";
+import Preview from "../../../components/Preview/Preview";
+
+import { Steps } from "nextra/components";
+
+# Bento Grid
+
+The component is a flexible grid layout that allows for dynamic placement of elements,
+enabling customization of grid items' width and height. It's ideal for creating responsive,
+visually appealing grids that adjust seamlessly across various screen sizes.
+
+## Installation
+
+<Steps>
+
+### Install the package
+
+```sh copy npm2yarn
+npm i @start-base/start-ui
+```
+
+### Add the styles
+
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import @start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import @start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+</Steps>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="500px">
+     <BentoGrid rowHeight={100} gridCols={4} 
+     items={[
+    { element: <div style={{ color: "black", backgroundColor: "lightblue", padding: "12px"}}>Item 1</div>, width: 2, height: 1 },
+    { element: <div style={{ color: "black", backgroundColor: "lightgreen", padding: "12px" }}>Item 2</div>, width: 1, height: 1 },
+    { element: <div style={{ color: "black", backgroundColor: "lightcoral", padding: "12px" }}>Item 3</div>, width: 1, height: 1 },
+    { element: <div style={{ color: "black", backgroundColor: "lightgoldenrodyellow", padding: "12px" }}>Item 4</div>, width: 1, height: 1 },
+    { element: <div style={{ color: "black", backgroundColor: "lightcoral", padding: "12px" }}>Item 5</div>, width: 3, height: 1 },
+    { element: <div style={{ color: "black", backgroundColor: "lightblue", padding: "12px"}}>Item 6</div>, width: 1, height: 1 },
+    { element: <div style={{ color: "black", backgroundColor: "lightgreen", padding: "12px" }}>Item 7</div>, width: 2, height: 1 },
+    { element: <div style={{ color: "black", backgroundColor: "lightcoral", padding: "12px" }}>Item 8</div>, width: 1, height: 1 },
+  ]}
+    />
+   </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import BentoGrid from '@start-base/react-form-elements/BentoGrid';
+    import '@start-base/start-ui/styles.css';
+
+    <BentoGrid rowHeight={100} gridCols={4}
+      items={[
+        { element: <div style={{ color: "black", backgroundColor: "lightblue", padding: "12px"}}>Item 1</div>, width: 2, height: 1 },
+        { element: <div style={{ color: "black", backgroundColor: "lightgreen", padding: "12px" }}>Item 2</div>, width: 1, height: 1 },
+        { element: <div style={{ color: "black", backgroundColor: "lightcoral", padding: "12px" }}>Item 3</div>, width: 1, height: 1 },
+        { element: <div style={{ color: "black", backgroundColor: "lightgoldenrodyellow", padding: "12px" }}>Item 4</div>, width: 1, height: 1 },
+        { element: <div style={{ color: "black", backgroundColor: "lightcoral", padding: "12px" }}>Item 5</div>, width: 3, height: 1 },
+        { element: <div style={{ color: "black", backgroundColor: "lightblue", padding: "12px"}}>Item 6</div>, width: 1, height: 1 },
+        { element: <div style={{ color: "black", backgroundColor: "lightgreen", padding: "12px" }}>Item 7</div>, width: 2, height: 1 },
+        { element: <div style={{ color: "black", backgroundColor: "lightcoral", padding: "12px" }}>Item 8</div>, width: 1, height: 1 },
+      ]}
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## API
+
+| Name      | Type     | Default | Description                             |
+| --------- | -------- | ------- | --------------------------------------- |
+| gridCols  | `number` | 4       | Number of columns                       |
+| items     | `array`  |         | Items for the grid ordered by ascendant |
+| rowHeight | `number` | 100     | single row height as pixels             |
