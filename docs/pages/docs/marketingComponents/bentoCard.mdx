@@ -1,8 +1,110 @@
+import { Tabs } from "nextra/components";
+import { BentoCard } from "@start-base/start-ui";
+import "@start-base/start-ui/styles.css";
+import Preview from "../../../components/Preview/Preview";
+import VideoPlayer from "../../../components/BentoCardDemoContent/Video/VideoPlayer";
+import { Steps } from "nextra/components";
+
 # Bento Card
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+The BentoCard component is a versatile and customizable card component
+designed to display content in a bento-style layout. It is ideal for use
+in marketing pages, dashboards, and other interfaces where information
+needs to be presented in a visually appealing and organized manner.
 
-import BentoCard from "@start-base/start-ui";
+## Installation
 
-import { Tabs } from "nextra/components";
-import s from "../../index.module.css";
+<Steps>
+
+### Install the package
+
+```sh copy npm2yarn
+npm i @start-base/start-ui
+```
+
+### Add the styles
+
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import @start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import @start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+</Steps>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="500px">
+     <div style={{ width: "100%", height: "400px" }}>
+        <BentoCard
+          title="Control your videos"
+          firstContent={<VideoPlayer />}
+     
+          secondContent={
+            <div style={{ padding: "40px" }}>
+              Customize how your controls are laid out, resize them, or build
+              your own groups of controls so they’re always just a swipe away.
+            </div>
+          }
+        />
+        </div>
+   </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```ts copy showLineNumbers
+    import BentoCard from '@start-base/react-form-elements/BentoCard';
+    import '@start-base/start-ui/styles.css';
+
+    <BentoCard
+        title="Control your videos"
+        firstContent={<VideoPlayer />}
+        secondContent={
+          <div style={{ padding: "40px" }}>
+            Customize how your controls are laid out, resize them, or build
+            your own groups of controls so they’re always just a swipe away.
+          </div>
+        }
+    />
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+## API
+
+| Name                   | Type      | Default | Description                                   |
+| ---------------------- | --------- | ------- | --------------------------------------------- |
+| title                  | `string`  |         | Card Title                                    |
+| firstContent           | `object`  |         | First Card Face Contetent                     |
+| secondContent          | `object`  |         | Second Card Face Contetent                    |
+| rootClassName          | `string`  |         | Root className                                |
+| rootActiveClassName    | `string`  |         | Root className                                |
+| titleClassName         | `string`  |         | Title className                               |
+| titleActiveClassName   | `string`  |         | Title Active className                        |
+| buttonClassName        | `string`  |         | Button className                              |
+| activeButtonClassName  | `string`  |         | Active Button className                       |
+| isTitleVisibleInFirst  | `boolean` |         | Title visiblity flag for the first Card Face  |
+| isTitleVisibleInSecond | `boolean` |         | Title visiblity flag for the second Card Face |
+| redirectTo             | `string`  |         | Redirect Button url                           |
