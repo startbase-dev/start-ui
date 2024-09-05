@@ -8,7 +8,7 @@ export default {
   component: ToggleGroup.ToggleWrapper,
   parameters: {
     controls: {
-      include: ["value", "onChange"],
+      include: ["value", "onChange", "direction"],
     },
   },
 } as Meta<typeof ToggleGroup.ToggleWrapper>;
