@@ -31,7 +31,7 @@ import Stepper from "./Stepper";
 import Tab from "./Tab";
 import Table from "./Table";
 import Toggle from "./Toggle";
-import ToggleGroup from "./ToggleGroup";
+import { ToggleGroup } from "./ToggleGroup";
 import Tooltip from "./floatings/Tooltip";
 import Popover from "./floatings/Popover";
 import Dropdown from "./floatings/Dropdown";

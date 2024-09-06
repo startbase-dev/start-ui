@@ -1,0 +1,12 @@
+.light,
+:root,
+[data-theme="light"] {
+  --sui-toggle-group-bg:var(--sui-gray-100);
+  --sui-toggle-group-border: var(--sui-gray-200)
+}
+
+.dark,
+[data-theme="dark"] {
+  --sui-toggle-group-bg:var(--sui-gray-900);
+  --sui-toggle-group-border: var(--sui-gray-800)
+}

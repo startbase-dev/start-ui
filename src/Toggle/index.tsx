@@ -1,25 +1,9 @@
-import React, {
-  ButtonHTMLAttributes,
-  forwardRef,
-  useState,
-  ReactNode,
-} from "react";
+import React, { forwardRef, useState } from "react";
 import cx from "clsx";
 // eslint-disable-next-line css-modules/no-unused-class
 import s from "./Toggle.module.scss";
 import "../style/components/toggle.scss";
-
-type ToggleProps = {
-  initialState?: boolean;
-  onToggle?: (state: boolean) => void;
-  color?: "primary" | "secondary" | "destructive";
-  variant?: "default" | "outline";
-  size?: "small" | "medium" | "large";
-  fluid?: boolean;
-  className?: string;
-  disabled?: boolean;
-  children?: ReactNode;
-} & ButtonHTMLAttributes<HTMLButtonElement>;
+import { ToggleProps } from "./types";
 
 const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
   (
