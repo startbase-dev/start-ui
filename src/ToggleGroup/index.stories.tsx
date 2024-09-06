@@ -150,6 +150,31 @@ const FullShowcaseTemplate: StoryFn<typeof ToggleGroup.ToggleWrapper> = () => {
           Disabled Option
         </ToggleGroup.ToggleItem>
       </ToggleGroup.ToggleWrapper>
+      <ToggleGroup.ToggleWrapper value={selected} onChange={setSelected}>
+        <ToggleGroup.ToggleItem
+          value="option1"
+          color="primary"
+          variant="default"
+          size="small"
+        >
+          🚀
+        </ToggleGroup.ToggleItem>
+        <ToggleGroup.ToggleItem
+          value="option2"
+          color="secondary"
+          variant="default"
+          size="small"
+        >
+          🐘
+        </ToggleGroup.ToggleItem>
+        <ToggleGroup.ToggleItem
+          value="option3"
+          color="destructive"
+          size="small"
+        >
+          🎧
+        </ToggleGroup.ToggleItem>
+      </ToggleGroup.ToggleWrapper>
     </Storybook>
   );
 };
