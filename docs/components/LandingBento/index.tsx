@@ -5,10 +5,12 @@ import "@start-base/start-ui/styles.css";
 import style from "./style.module.css";
 import VideoPlayer from "@components/VideoPlayer/VideoPlayer";
 import { DotLottiePlayer } from "@dotlottie/react-player";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 const LandingBento: React.FC = () => {
   return (
-    <div className={style.root}>
+    <div>
       <BentoGrid
         rowHeight={300}
         gridCols={4}
@@ -19,20 +21,22 @@ const LandingBento: React.FC = () => {
                 title="React UI Library"
                 isTitleVisibleInSecond={false}
                 firstContent={
-                  <div className={style.cardContent}>
+                  <div className={style.firstContentLibrary}>
                     <DotLottiePlayer src="lotties/ui.lottie" autoplay loop />
                   </div>
                 }
                 secondContent={
-                  <div className={style.secondContent}>
+                  <div className={style.secondContentLibrary}>
                     Unlock a universe of possibilities with over 50+ components
                     designed to empower your web projects. From minimalistic
                     designs to bold statements, Start UI is your toolkit for
                     crafting digital experiences that stand out
                   </div>
                 }
-                rootClassName={style.cardRoot}
+                rootClassName={style.cardRootLibrary}
+                rootActiveClassName={style.cardRootActiveLibrary}
                 titleClassName={style.titleClassName}
+                buttonClassName={style.buttonClassName}
               />
             ),
             width: 3,
@@ -42,20 +46,69 @@ const LandingBento: React.FC = () => {
             element: (
               <BentoCard
                 firstContent={
-                  <div className={style.cardContent}>
-                    <div style={{ padding: "40px", fontSize: "32px" }}>
-                      Build Your Foundation
-                    </div>
+                  <div className={style.cardContentDarkMode}>
+                    <motion.div
+                      animate={{
+                        backgroundPosition: ["0% 0%", "50% 40%"],
+                        backgroundImage: [
+                          `radial-gradient(farthest-corner, #e2e5ea, #e2e5ea)`,
+                          "radial-gradient(farthest-corner, #3168a0, #e2e5ea)",
+                          "radial-gradient(farthest-corner, #3168a0, #e2e5ea)",
+                          "radial-gradient(farthest-corner, #e2e5ea, #e2e5ea)",
+                        ],
+                      }}
+                      transition={{
+                        backgroundPosition: {
+                          times: [0, 0.5, 0.5, 1],
+                          type: "inertia",
+                          repeat: Infinity,
+                          duration: 10,
+                          delay: 1,
+                        },
+                        backgroundImage: {
+                          times: [0, 0.2, 0.8, 1],
+                          repeat: Infinity,
+                          duration: 10,
+                          delay: 1,
+                        },
+                      }}
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        backgroundImage: `radial-gradient(farthest-corner, #3168a0, #e2e5ea)`,
+                        backgroundSize: "400% 400%",
+                        backgroundRepeat: "no-repeat",
+                      }}
+                    />
+                    <motion.h3
+                      animate={{
+                        color: ["#dae5ff", "#fff"],
+                      }}
+                      transition={{
+                        color: {
+                          times: [0.25, 0.35, 0.7, 0.8],
+                          type: "spring",
+                          repeat: Infinity,
+                          duration: 10,
+                          delay: 1,
+                        },
+                      }}
+                      style={{
+                        position: "relative",
+                        mixBlendMode: "difference",
+                      }}
+                    >
+                      Well <br />
+                      Documented
+                    </motion.h3>
                   </div>
                 }
-                secondContent={
-                  <div className={style.secondContent}>
-                    Start with the essentials. Our basic components are the
-                    backbone of your next big idea—engineered for simplicity,
-                    designed for impact.
-                  </div>
-                }
-                rootClassName={style.cardRoot}
+                rootClassName={style.cardRootFoundation}
+                redirectTo="/docs/docs/gettingStarted/installation"
+                buttonClassName={style.buttonClassName}
               />
             ),
             width: 1,
@@ -64,98 +117,138 @@ const LandingBento: React.FC = () => {
           {
             element: (
               <BentoCard
-                isTitleVisibleInSecond={false}
                 firstContent={
-                  <div className={style.cardContent}>
-                    <div style={{ padding: "40px", fontSize: "32px" }}>
-                      Transform Your Workflow
-                    </div>
+                  <div className={style.cardContentDarkMode}>
+                    <motion.div
+                      animate={{
+                        backgroundPosition: ["0% 0%", "50% 40%"],
+                        backgroundImage: [
+                          `radial-gradient(farthest-corner, #e2e5ea, #e2e5ea)`,
+                          "radial-gradient(farthest-corner, #06080a, #e2e5ea)",
+                          "radial-gradient(farthest-corner, #06080a, #e2e5ea)",
+                          "radial-gradient(farthest-corner, #e2e5ea, #e2e5ea)",
+                        ],
+                      }}
+                      transition={{
+                        backgroundPosition: {
+                          times: [0, 0.5, 0.5, 1],
+                          type: "spring",
+                          repeat: Infinity,
+                          duration: 10,
+                          delay: 1,
+                        },
+                        backgroundImage: {
+                          times: [0, 0.2, 0.8, 1],
+                          repeat: Infinity,
+                          duration: 10,
+                          delay: 1,
+                        },
+                      }}
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        backgroundImage: `radial-gradient(farthest-corner, #06080a, #e2e5ea)`,
+                        backgroundSize: "400% 400%",
+                        backgroundRepeat: "no-repeat",
+                      }}
+                    />
+                    <motion.h3
+                      animate={{
+                        color: ["#dae5ff", "#fff"],
+                      }}
+                      transition={{
+                        color: {
+                          times: [0.25, 0.35, 0.7, 0.8],
+                          type: "spring",
+                          repeat: Infinity,
+                          duration: 10,
+                          delay: 1,
+                        },
+                      }}
+                      style={{
+                        position: "relative",
+                        mixBlendMode: "difference",
+                      }}
+                    >
+                      Dark <br />
+                      Mode <br />
+                      Support
+                    </motion.h3>
                   </div>
                 }
-                secondContent={
-                  <div style={{ padding: "40px" }}>
-                    Comprehensive, clear, and always here for you. Our
-                    documentation and support ensure you’re never alone on your
-                    journey to greatness
-                  </div>
-                }
-                rootClassName={style.cardRoot}
+                rootClassName={style.cardRootFoundation}
+                redirectTo="/docs/gettingStarted/darkMode"
+                buttonClassName={style.buttonClassName}
               />
             ),
             width: 1,
             height: 1,
           },
-
           {
             element: (
               <BentoCard
-                title="Unleash Creativity with 50+ components"
+                title="Unleash Creativity with basic components"
+                isTitleVisibleInSecond={false}
+                secondContent={
+                  <div className={style.secondContent}>
+                    Start with the essentials. Our basic components are designed
+                    for simplicity and reliability, forming the backbone of your
+                    projects. Whether you`&apos;`re laying out a page or
+                    creating responsive designs, these components ensure a solid
+                    foundation.
+                    <br />
+                    <br />
+                    <Link target="_blank" href="/docs/components/accordion">
+                      Explore More <span>→</span>
+                    </Link>
+                  </div>
+                }
+                rootClassName={style.cardRootUnleash}
+                titleClassName={style.titleClassNameUnleash}
+                rootActiveClassName={style.cardRootUnleash}
+                buttonClassName={style.buttonClassName}
+              />
+            ),
+            width: 2,
+            height: 1,
+          },
+          {
+            element: (
+              <BentoCard
+                title="Form Components"
                 isTitleVisibleInSecond={false}
                 firstContent={
-                  <div className={style.cardContent}>
-                    <DotLottiePlayer src="lotties/ui.lottie" autoplay loop />
+                  <div className={style.formContent}>
+                    Seamless form experiences for any application.
+                    <img
+                      src="images/dateRangePicker.png"
+                      className={style.formImage}
+                    />
                   </div>
                 }
                 secondContent={
                   <div className={style.secondContent}>
-                    Unlock a universe of possibilities with over 50+ components
-                    designed to empower your web projects. From minimalistic
-                    designs to bold statements, Start UI is your toolkit for
-                    crafting digital experiences that stand out
+                    Transform user interactions with our intuitive form
+                    components. Designed to be user-friendly and highly
+                    customizable, they help you create forms that are both
+                    functional and aesthetically pleasing. Make every input
+                    count with effortless form flows.
+                    <br />
+                    <br />
+                    <Link
+                      target="_blank"
+                      href="/docs/formComponents/amountInput"
+                    >
+                      Explore More <span>→</span>
+                    </Link>
                   </div>
                 }
-                rootClassName={style.cardRoot}
+                rootClassName={style.cardRootForm}
                 titleClassName={style.titleClassName}
-              />
-            ),
-            width: 1,
-            height: 1,
-          },
-          {
-            element: (
-              <BentoCard
-                title="Unleash Creativity with 50+ components"
-                isTitleVisibleInSecond={false}
-                firstContent={
-                  <div className={style.cardContent}>
-                    <DotLottiePlayer src="lotties/ui.lottie" autoplay loop />
-                  </div>
-                }
-                secondContent={
-                  <div className={style.secondContent}>
-                    Unlock a universe of possibilities with over 50+ components
-                    designed to empower your web projects. From minimalistic
-                    designs to bold statements, Start UI is your toolkit for
-                    crafting digital experiences that stand out
-                  </div>
-                }
-                rootClassName={style.cardRoot}
-                titleClassName={style.titleClassName}
-              />
-            ),
-            width: 1,
-            height: 1,
-          },
-          {
-            element: (
-              <BentoCard
-                title="Unleash Creativity with 50+ components"
-                isTitleVisibleInSecond={false}
-                firstContent={
-                  <div className={style.cardContent}>
-                    <DotLottiePlayer src="lotties/ui.lottie" autoplay loop />
-                  </div>
-                }
-                secondContent={
-                  <div className={style.secondContent}>
-                    Unlock a universe of possibilities with over 50+ components
-                    designed to empower your web projects. From minimalistic
-                    designs to bold statements, Start UI is your toolkit for
-                    crafting digital experiences that stand out
-                  </div>
-                }
-                rootClassName={style.cardRoot}
-                titleClassName={style.titleClassName}
+                buttonClassName={style.buttonClassName}
               />
             ),
             width: 2,
@@ -164,51 +257,28 @@ const LandingBento: React.FC = () => {
           {
             element: (
               <BentoCard
-                title="Unleash Creativity with 50+ components"
+                title="Marketing Components"
                 isTitleVisibleInSecond={false}
-                firstContent={
-                  <div className={style.cardContent}>
-                    <DotLottiePlayer src="lotties/ui.lottie" autoplay loop />
-                  </div>
-                }
                 secondContent={
-                  <div className={style.secondContent}>
-                    Unlock a universe of possibilities with over 50+ components
-                    designed to empower your web projects. From minimalistic
-                    designs to bold statements, Start UI is your toolkit for
-                    crafting digital experiences that stand out
+                  <div className={style.secondContentMarketing}>
+                    Your brand deserves to shine. With our marketing components,
+                    you can craft eye-catching visuals that engage and convert.
+                    <br />
+                    <br />
+                    <Link
+                      target="_blank"
+                      href="/docs/marketingComponents/bentoGrid"
+                    >
+                      Explore More <span>→</span>
+                    </Link>
                   </div>
                 }
-                rootClassName={style.cardRoot}
-                titleClassName={style.titleClassName}
+                rootClassName={style.cardRootMarketing}
+                titleClassName={style.titleClassNameMarketing}
+                buttonClassName={style.buttonClassName}
               />
             ),
-            width: 1,
-            height: 1,
-          },
-          {
-            element: (
-              <BentoCard
-                title="Unleash Creativity with 50+ components"
-                isTitleVisibleInSecond={false}
-                firstContent={
-                  <div className={style.cardContent}>
-                    <DotLottiePlayer src="lotties/ui.lottie" autoplay loop />
-                  </div>
-                }
-                secondContent={
-                  <div className={style.secondContent}>
-                    Unlock a universe of possibilities with over 50+ components
-                    designed to empower your web projects. From minimalistic
-                    designs to bold statements, Start UI is your toolkit for
-                    crafting digital experiences that stand out
-                  </div>
-                }
-                rootClassName={style.cardRoot}
-                titleClassName={style.titleClassName}
-              />
-            ),
-            width: 1,
+            width: 2,
             height: 1,
           },
           {
@@ -230,6 +300,7 @@ const LandingBento: React.FC = () => {
                 }
                 redirectTo="https://www.startbase.dev/studio"
                 rootClassName={style.cardRoot}
+                buttonClassName={style.buttonClassName}
               />
             ),
             width: 2,
@@ -251,58 +322,11 @@ const LandingBento: React.FC = () => {
                 }
                 redirectTo="https://www.startbase.dev/boilerplates"
                 rootClassName={style.cardRoot}
+                buttonClassName={style.buttonClassName}
               />
             ),
             width: 2,
             height: 2,
-          },
-          {
-            element: (
-              <BentoCard
-                firstContent={
-                  <div className={style.cardContent}>
-                    <div style={{ padding: "40px", fontSize: "32px" }}>
-                      Capture Attention, Drive Action
-                    </div>
-                  </div>
-                }
-                secondContent={
-                  <div style={{ padding: "40px" }}>
-                    Your brand deserves to shine. With our marketing components,
-                    you can craft eye-catching visuals that engage and convert.
-                    From banners to pop-ups, these elements are designed to
-                    capture attention and inspire action, helping you achieve
-                    your marketing goals.
-                  </div>
-                }
-                rootClassName={style.cardRoot}
-              />
-            ),
-            width: 1,
-            height: 1,
-          },
-          {
-            element: (
-              <BentoCard
-                firstContent={
-                  <div className={style.cardContent}>
-                    <div style={{ padding: "40px", fontSize: "32px" }}>
-                      Build Your Foundation
-                    </div>
-                  </div>
-                }
-                secondContent={
-                  <div style={{ padding: "40px" }}>
-                    Start with the essentials. Our basic components are the
-                    backbone of your next big idea—engineered for simplicity,
-                    designed for impact.
-                  </div>
-                }
-                rootClassName={style.cardRoot}
-              />
-            ),
-            width: 1,
-            height: 1,
           },
         ]}
       />
