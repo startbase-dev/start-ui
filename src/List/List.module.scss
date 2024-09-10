@@ -1,3 +1,64 @@
-.root {
-  font-family: var(--sui-font-family);
+.list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  background-color: transparent;
+  color: var(--sui-list-text);
+  border-radius:var(--sui-border-radius-small);
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  padding: var(--sui-padding);
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: var(--sui-list-bg-hover);
+  }
+}
+
+.listItemButton {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.listItemIcon {
+  padding-right: var(--sui-padding-large);
+}
+
+.listItemSubtitle {
+  padding-right: var(--sui-padding-large);
+  font-size: var(--sui-h6-fs);
+  line-height: var(--sui-h6-lh);
+  color: var(--sui-list-subtitle-text);
+}
+
+.listDivider {
+  margin: var(--sui-text-margin) 0;
+  border: 0;
+  height: 1px;
+  background-color: var(--sui-list-divider-bg);
+}
+
+.listSubheader {
+  padding: var(--sui-padding-small) var(--sui-padding);
+  font-size: var(--sui-h6-fs);
+  line-height: var(--sui-h6-lh);
+  font-weight: 600;
+  background-color: var(--sui-list-subheader-bg);
+  color: var(--sui-list-subheader-text);
 }
