@@ -2,7 +2,7 @@ import React from "react";
 import s from "./Row.module.scss";
 import clsx from "clsx";
 
-interface RowProps extends React.AllHTMLAttributes<HTMLDivElement> {
+export interface RowProps extends React.AllHTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
 }
 

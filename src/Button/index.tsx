@@ -5,7 +5,7 @@ import cx from "clsx";
 import s from "./Button.module.scss";
 import Progress from "../Progress";
 
-type ButtonProps = {
+export type ButtonProps = {
   children: ReactNode;
   className?: string;
   disabled?: boolean;

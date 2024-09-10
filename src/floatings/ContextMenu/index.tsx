@@ -2,7 +2,7 @@ import React, { forwardRef, ReactElement } from "react";
 import { FloatingTree, useFloatingParentNodeId } from "@floating-ui/react";
 import FloatingContextMenu from "../FloatingContextMenu";
 
-interface ContextMenuProps {
+export interface ContextMenuProps {
   children: ReactElement | ReactElement[];
   component?: ReactElement;
   label?: ReactElement | ReactElement[] | string;

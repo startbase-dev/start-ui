@@ -224,7 +224,7 @@ Quote.displayName = "Quote";
 
 type TypographyVariant = "title" | "subtitle" | "paragraph" | "muted" | "quote";
 
-interface TypographyControllerProps extends CombinedTypographyProps {
+export interface TypographyControllerProps extends CombinedTypographyProps {
   variant: TypographyVariant;
 }
 

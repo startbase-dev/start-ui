@@ -22,7 +22,7 @@ import styles from "./Popover.module.scss";
 
 const OFFSET = 4;
 
-interface PopoverProps {
+export interface PopoverProps {
   popper: ReactElement;
   open?: boolean;
   placement?:

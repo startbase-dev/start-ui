@@ -7,7 +7,7 @@ import MenuContext from "../FloatingMenuContext";
 import styles from "./FloatingMenuItem.module.scss";
 import cx from "clsx";
 
-interface MenuItemProps {
+export interface MenuItemProps {
   label: string;
   className: string;
   disabled?: boolean;

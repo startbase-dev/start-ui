@@ -2,7 +2,7 @@ import React, { forwardRef, ReactElement } from "react";
 import { FloatingTree, useFloatingParentNodeId } from "@floating-ui/react";
 import FloatingMenu from "../FloatingMenu";
 
-interface DropdownProps {
+export interface DropdownProps {
   children: ReactElement | ReactElement[];
   component?: ReactElement;
   label?: string;

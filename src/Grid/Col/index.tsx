@@ -2,7 +2,7 @@ import React from "react";
 import s from "./Col.module.scss";
 import clsx from "clsx";
 
-interface ColumnProps extends React.AllHTMLAttributes<HTMLDivElement> {
+export interface ColumnProps extends React.AllHTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
   className?: string;
   span?: number;

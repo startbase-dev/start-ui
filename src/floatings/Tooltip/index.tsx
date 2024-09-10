@@ -22,7 +22,7 @@ import styles from "./Tooltip.module.scss";
 
 const OFFSET = 4;
 
-interface TooltipProps {
+export interface TooltipProps {
   text: string;
   open?: boolean;
   placement?:

@@ -40,7 +40,7 @@ import MenuContext from "../FloatingMenuContext";
 import styles from "./FloatingContextMenu.module.scss";
 import cx from "clsx";
 
-interface FloatingContextMenuProps {
+export interface FloatingContextMenuProps {
   children: ReactElement | ReactElement[];
   component?: ReactElement;
   label?: ReactElement | ReactElement[] | string;

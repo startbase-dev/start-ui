@@ -1,6 +1,6 @@
 import { createContext, Dispatch, SetStateAction } from "react";
 
-interface MenuContextProps {
+export interface MenuContextProps {
   getItemProps: (props?: any) => any;
   activeIndex: number | null;
   setActiveIndex: Dispatch<SetStateAction<number | null>>;

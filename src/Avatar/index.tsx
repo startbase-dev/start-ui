@@ -4,7 +4,7 @@ import clsx from "clsx";
 import s from "./Avatar.module.scss";
 import "../style/components/avatar.scss";
 
-interface AvatarProps {
+export interface AvatarProps {
   picture?: string;
   chars?: string;
   size?: "small" | "medium" | "large";

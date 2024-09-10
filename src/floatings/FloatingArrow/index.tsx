@@ -4,7 +4,7 @@ import styles from "./FloatingArrow.module.scss";
 
 const OFFSET = 5;
 
-interface FloatingArrowProps {
+export interface FloatingArrowProps {
   placement?:
     | "top"
     | "top-end"
