@@ -1,0 +1,20 @@
+.light,
+:root,
+[data-theme="light"] {
+--sui-list-text: var(--sui-black);
+--sui-list-bg-hover:var(--sui-gray-100);
+--sui-list-subtitle-text:var(--sui-gray-500);
+--sui-list-subheader-text:var(--sui-gray-500);
+--sui-list-divider-bg:var(--sui-gray-200);
+--sui-list-subheader-bg:var(--sui-gray-100);
+}
+
+.dark,
+[data-theme="dark"] {
+--sui-list-text: var(--sui-white);
+--sui-list-bg-hover:var(--sui-gray-900);
+--sui-list-subtitle-text:var(--sui-gray-400);
+--sui-list-divider-bg:var(--sui-gray-900);
+--sui-list-subheader-text:var(--sui-gray-800);
+--sui-list-subheader-bg:var(--sui-gray-300);
+}
