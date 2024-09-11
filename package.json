@@ -52,6 +52,7 @@
     "start-base"
   ],
   "main": "./index.cjs",
+  "types": "./src/types.d.ts",
   "module": "./index.js",
   "exports": {
     ".": {
