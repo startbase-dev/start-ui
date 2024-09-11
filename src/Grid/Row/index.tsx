@@ -1,10 +1,7 @@
 import React from "react";
 import s from "./Row.module.scss";
 import clsx from "clsx";
-
-interface RowProps extends React.AllHTMLAttributes<HTMLDivElement> {
-  children?: React.ReactNode;
-}
+import type { RowProps } from "../types";
 
 export default function Row({
   children,

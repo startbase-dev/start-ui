@@ -5,7 +5,7 @@ type Type =
   | "inBoxes"
   | "default";
 
-export type IndexProps = {
+export interface CountdownProps extends React.AllHTMLAttributes<HTMLDivElement> {
   date: Date | number;
   showDay?: boolean;
   showHour?: boolean;

@@ -13,6 +13,7 @@
     "./index.mjs",
     "./styles.css",
     "./variables.css",
+    "./index.d.ts",
     "Accordion",
     "Alert",
     "Badge",
@@ -52,6 +53,7 @@
     "start-base"
   ],
   "main": "./index.cjs",
+  "types": "./index.d.ts",
   "module": "./index.js",
   "exports": {
     ".": {
@@ -181,7 +183,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "build:all": "npm run build && npm run build:variables && npm run build:Accordion && npm run build:ContextMenu && npm run build:FloatingMenuItem && npm run build:Alert && npm run build:Badge && npm run build:BentoCard && npm run build:Button && npm run build:Card && npm run build:Chip && npm run build:Col && npm run build:BentoGrid && npm run build:Grid && npm run build:Countdown && npm run build:DataTable && npm run build:Divider && npm run build:Dropdown && npm run build:List && npm run build:Popover && npm run build:Progress && npm run build:Row && npm run build:ScrollArea && npm run build:Skeleton && npm run build:Stepper && npm run build:Tab && npm run build:Table && npm run build:Toggle && npm run build:ToggleGroup && npm run build:Tooltip && npm run build:Typography && npm run build:Avatar",
-    "build": "tsup --out-dir ./ --no-splitting --treeshake --minify terser",
+    "build": "tsup --dts --out-dir ./ --no-splitting --treeshake --minify terser",
     "build:variables": "tsup src/style/variables.scss --out-dir ./ --no-splitting --treeshake --minify terser",
     "build:Accordion": "tsup src/Accordion/index.tsx --out-dir ./Accordion --no-splitting --treeshake --minify terser",
     "build:Avatar": "tsup src/Avatar/index.tsx --out-dir ./Avatar --no-splitting --treeshake --minify terser",

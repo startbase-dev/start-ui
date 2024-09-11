@@ -3,7 +3,7 @@ import UncontrolledAccordion from "./UncontrolledAccordion/UncontrolledAccordion
 import ControlledAccordion from "./ControlledAccordion/ControlledAccordion";
 import type { AccordionProps } from "./types";
 
-const Index = forwardRef<HTMLDivElement, AccordionProps>((props, ref) => {
+const Accordion = forwardRef<HTMLDivElement, AccordionProps>((props, ref) => {
   const { expanded } = props;
   const isControlled = typeof expanded === "boolean";
 
@@ -19,6 +19,6 @@ const Index = forwardRef<HTMLDivElement, AccordionProps>((props, ref) => {
   return <UncontrolledAccordion {...props} ref={ref} />;
 });
 
-Index.displayName = "Accordion";
+Accordion.displayName = "Accordion";
 
-export default Index;
+export default Accordion;

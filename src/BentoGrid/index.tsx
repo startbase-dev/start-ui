@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 import s from "./BentoGrid.module.scss";
 import { BentoGridProps, BentoItem } from "./types";
 
-const Index = forwardRef<HTMLDivElement, BentoGridProps>(
+const BentoGrid = forwardRef<HTMLDivElement, BentoGridProps>(
   ({ items, gridCols = 4, rowHeight = 100, ...rest }, ref) => {
     return (
       <div
@@ -30,6 +30,6 @@ const Index = forwardRef<HTMLDivElement, BentoGridProps>(
   },
 );
 
-Index.displayName = "BentoGrid";
+BentoGrid.displayName = "BentoGrid";
 
-export default Index;
+export default BentoGrid;

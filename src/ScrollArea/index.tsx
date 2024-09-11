@@ -1,8 +1,8 @@
 import React, { forwardRef, CSSProperties } from "react";
 import s from "./ScrollArea.module.scss";
-import { IndexProps } from "./types";
+import { ScrollAreaProps } from "./types";
 
-const ScrollArea = forwardRef<HTMLDivElement, IndexProps>(
+const ScrollArea = forwardRef<HTMLDivElement, ScrollAreaProps>(
   ({ orientation, className, style, children, ...rest }, ref) => {
     const getScrollContainerStyles = (): CSSProperties => {
       let scrollStyles: CSSProperties = {

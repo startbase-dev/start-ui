@@ -1,14 +1,7 @@
-import { createContext, Dispatch, SetStateAction } from "react";
+import { createContext } from "react";
+import type { FloatingMenuContextProps } from "./types";
 
-interface MenuContextProps {
-  getItemProps: (props?: any) => any;
-  activeIndex: number | null;
-  setActiveIndex: Dispatch<SetStateAction<number | null>>;
-  setHasFocusInside: Dispatch<SetStateAction<boolean>>;
-  isOpen: boolean;
-}
-
-const MenuContext = createContext<MenuContextProps>({
+const FloatingMenuContext = createContext<FloatingMenuContextProps>({
   getItemProps: () => ({}),
   activeIndex: null,
   setActiveIndex: () => {},
@@ -16,4 +9,6 @@ const MenuContext = createContext<MenuContextProps>({
   isOpen: false,
 });
 
-export default MenuContext;
+FloatingMenuContext.displayName = "FloatingMenuContext";
+
+export default FloatingMenuContext;

@@ -3,7 +3,7 @@ import s from "./Badge.module.scss";
 import clsx from "clsx";
 import type { BadgeProps } from "./types";
 
-const Index = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {
+const Badge = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {
   const {
     children,
     content,
@@ -36,6 +36,6 @@ const Index = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {
   );
 });
 
-Index.displayName = "Badge";
+Badge.displayName = "Badge";
 
-export default Index;
+export default Badge;
