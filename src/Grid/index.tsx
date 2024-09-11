@@ -3,7 +3,7 @@ import s from "./Grid.module.scss";
 import clsx from "clsx";
 import type { GridProps } from "./types";
 
-const Index = forwardRef<HTMLDivElement, GridProps>((props, ref) => {
+const Grid = forwardRef<HTMLDivElement, GridProps>((props, ref) => {
   const { children, className = "", breakpoints = {}, style, ...rest } = props;
   const rootClassNames = clsx(s.root, className);
 
@@ -32,6 +32,6 @@ const Index = forwardRef<HTMLDivElement, GridProps>((props, ref) => {
   );
 });
 
-Index.displayName = "Grid";
+Grid.displayName = "Grid";
 
-export default Index;
+export default Grid;

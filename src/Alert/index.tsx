@@ -4,7 +4,7 @@ import IconSelector from "./IconSelector";
 import clsx from "clsx";
 import type { AlertProps } from "./types";
 
-const Index = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
+const Alert = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
   const {
     children,
     severity = "success",
@@ -73,6 +73,6 @@ const Index = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
   );
 });
 
-Index.displayName = "Alert";
+Alert.displayName = "Alert";
 
-export default Index;
+export default Alert;

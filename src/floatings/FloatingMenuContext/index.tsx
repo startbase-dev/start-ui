@@ -1,7 +1,7 @@
 import { createContext } from "react";
 import type { FloatingMenuContextProps } from "./types";
 
-const MenuContext = createContext<FloatingMenuContextProps>({
+const FloatingMenuContext = createContext<FloatingMenuContextProps>({
   getItemProps: () => ({}),
   activeIndex: null,
   setActiveIndex: () => {},
@@ -9,4 +9,6 @@ const MenuContext = createContext<FloatingMenuContextProps>({
   isOpen: false,
 });
 
-export default MenuContext;
+FloatingMenuContext.displayName = "FloatingMenuContext";
+
+export default FloatingMenuContext;
