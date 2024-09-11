@@ -4,7 +4,6 @@ import React, {
   useEffect,
   useRef,
   useState,
-  ReactElement,
   useMemo,
 } from "react";
 
@@ -39,27 +38,7 @@ import MenuContext from "../FloatingMenuContext";
 import styles from "./FloatingMenu.module.scss";
 import cx from "clsx";
 
-export interface FloatingMenuProps extends Omit<React.AllHTMLAttributes<HTMLDivElement>, "label"> {
-  children: ReactElement | ReactElement[];
-  component?: ReactElement;
-  label?: ReactElement | ReactElement[] | string;
-  className?: string;
-  menuClassName?: string;
-  onFocus?: (event: React.FocusEvent<HTMLDivElement>) => void;
-  placement?:
-    | "top"
-    | "bottom"
-    | "left"
-    | "right"
-    | "top-start"
-    | "top-end"
-    | "bottom-start"
-    | "bottom-end"
-    | "left-start"
-    | "left-end"
-    | "right-start"
-    | "right-end";
-}
+import type { FloatingMenuProps } from "./types";
 
 const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
   (

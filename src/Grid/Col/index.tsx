@@ -1,20 +1,7 @@
 import React from "react";
 import s from "./Col.module.scss";
 import clsx from "clsx";
-
-export interface ColProps extends React.AllHTMLAttributes<HTMLDivElement> {
-  children?: React.ReactNode;
-  className?: string;
-  span?: number;
-  columns?: number;
-  spanSizes?: {
-    sm?: number;
-    md?: number;
-    lg?: number;
-    xl?: number;
-  };
-  padding?: string;
-}
+import type { ColProps } from "../types";
 
 function getWidth(span: number, columns: number) {
   return `${(span / columns) * 100}%`;

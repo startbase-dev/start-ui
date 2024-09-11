@@ -1,11 +1,11 @@
 import { FC } from "react";
 import { AccordionProps } from "./Accordion/types";
 import { AlertProps } from "./Alert/types";
-import { AvatarProps } from "./Avatar";
+import { AvatarProps } from "./Avatar/types";
 import { BadgeProps } from "./Badge/types";
 import { BentoCardProps } from "./BentoCard/types";
 import { BentoGridProps } from "./BentoGrid/types";
-import { ButtonProps } from "./Button";
+import { ButtonProps } from "./Button/types";
 // import CardProps
 import { ChipProps } from "./Chip/types";
 import { CountdownProps } from "./Countdown/types";
@@ -13,19 +13,17 @@ import { CountdownProps } from "./Countdown/types";
 import { DividerProps } from "./Divider/types";
 
 // FLOATINGS
-import { ContextMenuProps } from "./floatings/ContextMenu";
-import { DropdownProps } from "./floatings/Dropdown";
-import { FloatingArrowProps } from "./floatings/FloatingArrow";
-import { FloatingContextMenuProps } from "./floatings/FloatingContextMenu";
-import { FloatingMenuProps } from "./floatings/FloatingMenu";
-import { FloatingMenuContextProps } from "./floatings/FloatingMenuContext";
-import { FloatingMenuItemProps } from "./floatings/FloatingMenuItem";
-import { PopoverProps } from "./floatings/Popover";
-import { TooltipProps } from "./floatings/Tooltip";
+import { ContextMenuProps } from "./floatings/ContextMenu/types";
+import { DropdownProps } from "./floatings/Dropdown/types";
+import { FloatingArrowProps } from "./floatings/FloatingArrow/types";
+import { FloatingContextMenuProps } from "./floatings/FloatingContextMenu/types";
+import { FloatingMenuProps } from "./floatings/FloatingMenu/types";
+import { FloatingMenuContextProps } from "./floatings/FloatingMenuContext/types";
+import { FloatingMenuItemProps } from "./floatings/FloatingMenuItem/types";
+import { PopoverProps } from "./floatings/Popover/types";
+import { TooltipProps } from "./floatings/Tooltip/types";
 
-import { GridProps } from "./Grid/types";
-import { ColProps } from "./Grid/Col";
-import { RowProps } from "./Grid/Row";
+import { GridProps, ColProps, RowProps } from "./Grid/types";
 
 // import ListProps
 import { ProgressProps } from "./Progress/types";
@@ -50,7 +48,7 @@ import { ToggleProps } from "./Toggle/types";
 import { ToggleWrapperProps } from "./ToggleGroup/types";
 import { ToggleItemProps } from "./ToggleGroup/types";
 
-import { TypographyProps } from "./Typography";
+import { TypographyProps } from "./Typography/types";
 
 declare module "@start-base/start-ui" {
   export const Accordion: FC<AccordionProps>;

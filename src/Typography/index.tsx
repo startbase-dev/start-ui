@@ -4,46 +4,7 @@ import clsx from "clsx";
 import s from "./Typography.module.scss";
 import "../style/components/typography.scss";
 
-type TypographySize = "small" | "medium" | "large" | "lead";
-type TypographyColor = "default" | "info" | "warning" | "error" | "success";
-type TypographyDecoration = "underline" | "overline" | "linethrough";
-type TypographyElement = "h2" | "h3" | "h4" | "h5" | "h6";
-
-interface BaseTypographyProps extends Omit<React.AllHTMLAttributes<HTMLElement>, "size"> {
-  color?: TypographyColor;
-  decoration?: TypographyDecoration;
-  italic?: boolean;
-  bold?: boolean;
-  gradient?: boolean;
-  children: React.ReactNode;
-  className?: string;
-}
-
-interface TitleProps extends BaseTypographyProps {
-  size?: TypographySize;
-}
-
-interface SubtitleProps extends BaseTypographyProps {
-  elementType?: TypographyElement;
-}
-
-interface ParagraphProps extends BaseTypographyProps {
-  size?: TypographySize;
-}
-
-interface MutedProps extends BaseTypographyProps {
-  size?: TypographySize;
-}
-
-interface QuoteProps extends BaseTypographyProps {
-  size?: TypographySize;
-}
-
-type CombinedTypographyProps = TitleProps &
-  SubtitleProps &
-  ParagraphProps &
-  MutedProps &
-  QuoteProps;
+import type { TitleProps, SubtitleProps, ParagraphProps, MutedProps, QuoteProps, TypographyProps } from "./types";
 
 const Title = forwardRef<HTMLHeadingElement, TitleProps>((props, ref) => {
   const {
@@ -221,12 +182,6 @@ const Quote = forwardRef<HTMLQuoteElement, QuoteProps>((props, ref) => {
   );
 });
 Quote.displayName = "Quote";
-
-type TypographyVariant = "title" | "subtitle" | "paragraph" | "muted" | "quote";
-
-export interface TypographyProps extends CombinedTypographyProps {
-  variant: TypographyVariant;
-}
 
 const Typography = forwardRef<HTMLElement, TypographyProps>(
   ({ variant, ...props }, ref) => {

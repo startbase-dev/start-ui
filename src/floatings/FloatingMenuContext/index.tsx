@@ -1,12 +1,5 @@
-import { createContext, Dispatch, SetStateAction } from "react";
-
-export interface FloatingMenuContextProps extends React.AllHTMLAttributes<HTMLDivElement> {
-  getItemProps: (props?: any) => any;
-  activeIndex: number | null;
-  setActiveIndex: Dispatch<SetStateAction<number | null>>;
-  setHasFocusInside: Dispatch<SetStateAction<boolean>>;
-  isOpen: boolean;
-}
+import { createContext } from "react";
+import type { FloatingMenuContextProps } from "./types";
 
 const MenuContext = createContext<FloatingMenuContextProps>({
   getItemProps: () => ({}),

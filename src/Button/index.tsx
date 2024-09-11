@@ -1,21 +1,11 @@
-import React, { ButtonHTMLAttributes, forwardRef, ReactNode } from "react";
+import React, { forwardRef } from "react";
 import cx from "clsx";
 
 // eslint-disable-next-line css-modules/no-unused-class
 import s from "./Button.module.scss";
 import Progress from "../Progress";
 
-export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  children: ReactNode;
-  className?: string;
-  disabled?: boolean;
-  loading?: boolean;
-  color?: "primary" | "secondary" | "destructive";
-  variant?: "default" | "link" | "outline" | "ghost";
-  size?: "icon" | "small" | "medium" | "large";
-  fluid?: boolean;
-  type?: "submit" | "reset" | "button";
-}
+import type { ButtonProps } from "./types";
 
 const styles: Record<string, string> = s;
 

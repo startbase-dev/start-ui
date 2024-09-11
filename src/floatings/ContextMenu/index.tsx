@@ -1,15 +1,7 @@
-import React, { forwardRef, ReactElement } from "react";
+import React, { forwardRef } from "react";
 import { FloatingTree, useFloatingParentNodeId } from "@floating-ui/react";
 import FloatingContextMenu from "../FloatingContextMenu";
-
-export interface ContextMenuProps extends Omit<React.AllHTMLAttributes<HTMLDivElement>, "label"> {
-  children: ReactElement | ReactElement[];
-  component?: ReactElement;
-  label?: ReactElement | ReactElement[] | string;
-  className?: string;
-  menuClassName?: string;
-  onFocus?: (event: React.FocusEvent<HTMLDivElement>) => void;
-}
+import type { ContextMenuProps } from "./types";
 
 const ContextMenu = forwardRef<HTMLDivElement, ContextMenuProps>(
   (props, ref) => {
