@@ -8,11 +8,11 @@ type RootBaseProps = {
   direction?: string;
 };
 
-type RootProps = RootBaseProps &
+type ToggleWrapperProps = RootBaseProps &
   Omit<React.ComponentPropsWithoutRef<"div">, keyof RootBaseProps>;
 
-type ToggleGroupButtonProps = ToggleProps & {
+type ToggleItemProps = ToggleProps & {
   value: string;
 };
 
-export { RootProps, ToggleGroupButtonProps };
+export { ToggleWrapperProps, ToggleItemProps };

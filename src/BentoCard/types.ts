@@ -1,4 +1,4 @@
-export interface IndexProps {
+export interface BentoCardProps {
   rootClassName?: string;
   rootActiveClassName?: string;
   title?: string;
@@ -13,6 +13,6 @@ export interface IndexProps {
   redirectTo?: string;
 }
 
-export interface TemplateProps extends IndexProps {
+export interface TemplateProps extends BentoCardProps {
   title: string;
 }

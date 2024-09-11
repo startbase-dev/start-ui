@@ -2,7 +2,7 @@ import React from "react";
 import s from "./Col.module.scss";
 import clsx from "clsx";
 
-export interface ColumnProps extends React.AllHTMLAttributes<HTMLDivElement> {
+export interface ColProps extends React.AllHTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;
   className?: string;
   span?: number;
@@ -20,7 +20,7 @@ function getWidth(span: number, columns: number) {
   return `${(span / columns) * 100}%`;
 }
 
-export default function Column({
+export default function Col({
   children,
   className = "",
   span = 12,
@@ -29,7 +29,7 @@ export default function Column({
   padding = "8px",
   style,
   ...rest
-}: Readonly<ColumnProps>) {
+}: Readonly<ColProps>) {
   const rootClassNames = clsx(s.root, className);
 
   const { sm, md, lg, xl } = spanSizes;

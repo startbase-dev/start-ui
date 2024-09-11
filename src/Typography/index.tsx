@@ -224,11 +224,11 @@ Quote.displayName = "Quote";
 
 type TypographyVariant = "title" | "subtitle" | "paragraph" | "muted" | "quote";
 
-export interface TypographyControllerProps extends CombinedTypographyProps {
+export interface TypographyProps extends CombinedTypographyProps {
   variant: TypographyVariant;
 }
 
-const Typography = forwardRef<HTMLElement, TypographyControllerProps>(
+const Typography = forwardRef<HTMLElement, TypographyProps>(
   ({ variant, ...props }, ref) => {
     switch (variant) {
       case "title":

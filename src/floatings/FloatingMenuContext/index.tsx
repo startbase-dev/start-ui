@@ -1,6 +1,6 @@
 import { createContext, Dispatch, SetStateAction } from "react";
 
-export interface MenuContextProps {
+export interface FloatingMenuContextProps {
   getItemProps: (props?: any) => any;
   activeIndex: number | null;
   setActiveIndex: Dispatch<SetStateAction<number | null>>;
@@ -8,7 +8,7 @@ export interface MenuContextProps {
   isOpen: boolean;
 }
 
-const MenuContext = createContext<MenuContextProps>({
+const MenuContext = createContext<FloatingMenuContextProps>({
   getItemProps: () => ({}),
   activeIndex: null,
   setActiveIndex: () => {},

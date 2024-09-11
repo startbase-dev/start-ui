@@ -3,12 +3,12 @@ import { AccordionProps } from "./Accordion/types";
 import { AlertProps } from "./Alert/types";
 import { AvatarProps } from "./Avatar";
 import { BadgeProps } from "./Badge/types";
-import { IndexProps as BentoCardProps } from "./BentoCard/types";
+import { BentoCardProps } from "./BentoCard/types";
 import { BentoGridProps } from "./BentoGrid/types";
 import { ButtonProps } from "./Button";
 // import CardProps
 import { ChipProps } from "./Chip/types";
-import { IndexProps as CountdownProps } from "./Countdown/types";
+import { CountdownProps } from "./Countdown/types";
 // import DataTableProps
 import { DividerProps } from "./Divider/types";
 
@@ -18,18 +18,18 @@ import { DropdownProps } from "./floatings/Dropdown";
 import { FloatingArrowProps } from "./floatings/FloatingArrow";
 import { FloatingContextMenuProps } from "./floatings/FloatingContextMenu";
 import { FloatingMenuProps } from "./floatings/FloatingMenu";
-import { MenuContextProps as FloatingMenuContextProps } from "./floatings/FloatingMenuContext";
-import { MenuItemProps as FloatingMenuItemProps } from "./floatings/FloatingMenuItem";
+import { FloatingMenuContextProps } from "./floatings/FloatingMenuContext";
+import { FloatingMenuItemProps } from "./floatings/FloatingMenuItem";
 import { PopoverProps } from "./floatings/Popover";
 import { TooltipProps } from "./floatings/Tooltip";
 
 import { GridProps } from "./Grid/types";
-import { ColumnProps as ColProps } from "./Grid/Col";
+import { ColProps } from "./Grid/Col";
 import { RowProps } from "./Grid/Row";
 
 // import ListProps
 import { ProgressProps } from "./Progress/types";
-import { IndexProps as ScrollAreaProps } from "./ScrollArea/types";
+import { ScrollAreaProps } from "./ScrollArea/types";
 
 // SKELETONS
 import { SkeletonAvatarProps } from "./Skeleton/types";
@@ -47,10 +47,10 @@ import { TableProps } from "./Table/types";
 import { ToggleProps } from "./Toggle/types";
 
 // TOGGLEGROUP
-import { RootProps as ToggleWrapperProps } from "./ToggleGroup/types";
-import { ToggleGroupButtonProps as ToggleItemProps } from "./ToggleGroup/types";
+import { ToggleWrapperProps } from "./ToggleGroup/types";
+import { ToggleItemProps } from "./ToggleGroup/types";
 
-import { TypographyControllerProps as TypographyProps } from "./Typography";
+import { TypographyProps } from "./Typography";
 
 declare module "@start-base/start-ui" {
   export const Accordion: FC<AccordionProps>;
@@ -78,7 +78,7 @@ declare module "@start-base/start-ui" {
   export const Tooltip: FC<TooltipProps>;
 
   export const Grid: FC<GridProps>;
-  export const Col: FC<ColProps>; // TODO: Col component is exported as "Column" but used as "Col". Decide on a single name
+  export const Col: FC<ColProps>;
   export const Row: FC<RowProps>;
 
   // export const List: FC<>; // TODO: Pull changes from List branch

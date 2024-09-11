@@ -5,7 +5,7 @@ type Type =
   | "inBoxes"
   | "default";
 
-export type IndexProps = {
+export type CountdownProps = {
   date: Date | number;
   showDay?: boolean;
   showHour?: boolean;

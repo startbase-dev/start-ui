@@ -7,7 +7,7 @@ import MenuContext from "../FloatingMenuContext";
 import styles from "./FloatingMenuItem.module.scss";
 import cx from "clsx";
 
-export interface MenuItemProps {
+export interface FloatingMenuItemProps {
   label: string;
   className: string;
   disabled?: boolean;
@@ -15,7 +15,7 @@ export interface MenuItemProps {
   onFocus?: (event: React.FocusEvent<HTMLDivElement>) => void;
 }
 
-const FloatingMenuItem = forwardRef<HTMLDivElement, MenuItemProps>(
+const FloatingMenuItem = forwardRef<HTMLDivElement, FloatingMenuItemProps>(
   ({ label, disabled, className, ...props }, forwardedRef) => {
     const menu = useContext(MenuContext);
     const item = useListItem({ label: disabled ? null : label });
