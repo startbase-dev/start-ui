@@ -9,7 +9,7 @@ type TypographyColor = "default" | "info" | "warning" | "error" | "success";
 type TypographyDecoration = "underline" | "overline" | "linethrough";
 type TypographyElement = "h2" | "h3" | "h4" | "h5" | "h6";
 
-interface BaseTypographyProps {
+interface BaseTypographyProps extends Omit<React.AllHTMLAttributes<HTMLElement>, "size"> {
   color?: TypographyColor;
   decoration?: TypographyDecoration;
   italic?: boolean;

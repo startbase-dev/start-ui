@@ -7,7 +7,7 @@ import MenuContext from "../FloatingMenuContext";
 import styles from "./FloatingMenuItem.module.scss";
 import cx from "clsx";
 
-export interface FloatingMenuItemProps {
+export interface FloatingMenuItemProps extends React.AllHTMLAttributes<HTMLDivElement> {
   label: string;
   className: string;
   disabled?: boolean;

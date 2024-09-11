@@ -22,7 +22,7 @@ export interface CustomColumnType {
   ) => HTMLAttributes<HTMLElement> & TdHTMLAttributes<HTMLElement>;
 }
 
-export interface TableProps {
+export interface TableProps extends Omit<React.AllHTMLAttributes<HTMLDivElement>, "data" | "summary"> {
   data?: DataItem[];
   columns: CustomColumnType[];
   hidePagination?: boolean;

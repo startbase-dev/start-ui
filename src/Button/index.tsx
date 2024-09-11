@@ -5,7 +5,7 @@ import cx from "clsx";
 import s from "./Button.module.scss";
 import Progress from "../Progress";
 
-export type ButtonProps = {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   className?: string;
   disabled?: boolean;
@@ -15,7 +15,7 @@ export type ButtonProps = {
   size?: "icon" | "small" | "medium" | "large";
   fluid?: boolean;
   type?: "submit" | "reset" | "button";
-} & ButtonHTMLAttributes<HTMLButtonElement>;
+}
 
 const styles: Record<string, string> = s;
 

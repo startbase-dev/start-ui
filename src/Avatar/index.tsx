@@ -4,7 +4,7 @@ import clsx from "clsx";
 import s from "./Avatar.module.scss";
 import "../style/components/avatar.scss";
 
-export interface AvatarProps {
+export interface AvatarProps extends Omit<React.AllHTMLAttributes<HTMLDivElement>, "size"> {
   picture?: string;
   chars?: string;
   size?: "small" | "medium" | "large";

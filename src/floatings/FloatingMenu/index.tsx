@@ -39,7 +39,7 @@ import MenuContext from "../FloatingMenuContext";
 import styles from "./FloatingMenu.module.scss";
 import cx from "clsx";
 
-export interface FloatingMenuProps {
+export interface FloatingMenuProps extends Omit<React.AllHTMLAttributes<HTMLDivElement>, "label"> {
   children: ReactElement | ReactElement[];
   component?: ReactElement;
   label?: ReactElement | ReactElement[] | string;

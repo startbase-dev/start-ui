@@ -2,7 +2,7 @@ import React, { forwardRef, ReactElement } from "react";
 import { FloatingTree, useFloatingParentNodeId } from "@floating-ui/react";
 import FloatingContextMenu from "../FloatingContextMenu";
 
-export interface ContextMenuProps {
+export interface ContextMenuProps extends Omit<React.AllHTMLAttributes<HTMLDivElement>, "label"> {
   children: ReactElement | ReactElement[];
   component?: ReactElement;
   label?: ReactElement | ReactElement[] | string;

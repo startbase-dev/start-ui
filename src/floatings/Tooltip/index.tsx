@@ -22,7 +22,7 @@ import styles from "./Tooltip.module.scss";
 
 const OFFSET = 4;
 
-export interface TooltipProps {
+export interface TooltipProps extends React.AllHTMLAttributes<HTMLElement> {
   text: string;
   open?: boolean;
   placement?:

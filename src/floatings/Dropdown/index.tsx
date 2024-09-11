@@ -2,7 +2,7 @@ import React, { forwardRef, ReactElement } from "react";
 import { FloatingTree, useFloatingParentNodeId } from "@floating-ui/react";
 import FloatingMenu from "../FloatingMenu";
 
-export interface DropdownProps {
+export interface DropdownProps extends Omit<React.AllHTMLAttributes<HTMLDivElement>, "onFocus"> {
   children: ReactElement | ReactElement[];
   component?: ReactElement;
   label?: string;

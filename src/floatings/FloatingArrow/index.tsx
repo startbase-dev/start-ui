@@ -4,7 +4,7 @@ import styles from "./FloatingArrow.module.scss";
 
 const OFFSET = 5;
 
-export interface FloatingArrowProps {
+export interface FloatingArrowProps extends React.AllHTMLAttributes<HTMLDivElement> {
   placement?:
     | "top"
     | "top-end"
