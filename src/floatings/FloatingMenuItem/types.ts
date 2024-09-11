@@ -1,6 +1,7 @@
 import type { AllHTMLAttributes } from "react";
 
-export interface FloatingMenuItemProps extends AllHTMLAttributes<HTMLDivElement> {
+export interface FloatingMenuItemProps
+  extends AllHTMLAttributes<HTMLDivElement> {
   label: string;
   className: string;
   disabled?: boolean;

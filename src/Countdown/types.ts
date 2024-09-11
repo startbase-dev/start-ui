@@ -5,7 +5,8 @@ type Type =
   | "inBoxes"
   | "default";
 
-export interface CountdownProps extends React.AllHTMLAttributes<HTMLDivElement> {
+export interface CountdownProps
+  extends React.AllHTMLAttributes<HTMLDivElement> {
   date: Date | number;
   showDay?: boolean;
   showHour?: boolean;
@@ -16,4 +17,4 @@ export interface CountdownProps extends React.AllHTMLAttributes<HTMLDivElement> 
   rootClassName?: string;
   valueClassName?: string;
   labelClassName?: string;
-};
+}

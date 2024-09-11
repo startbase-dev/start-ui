@@ -12,7 +12,15 @@ import Grid from "./Grid";
 import Countdown from "./Countdown";
 import DataTable from "./DataTable";
 import Divider from "./Divider";
-import List from "./List";
+import {
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemSubtitle,
+  ListDivider,
+  ListSubheader,
+} from "./List";
 import Progress from "./Progress";
 import Row from "./Grid/Row";
 import ScrollArea from "./ScrollArea";
@@ -58,6 +66,12 @@ export {
   Divider,
   Dropdown,
   List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemSubtitle,
+  ListDivider,
+  ListSubheader,
   Popover,
   Progress,
   Row,

@@ -8,8 +8,9 @@ export type BentoItem = {
 
 export type BentoItems = BentoItem[];
 
-export interface BentoGridProps extends React.AllHTMLAttributes<HTMLDivElement> {
+export interface BentoGridProps
+  extends React.AllHTMLAttributes<HTMLDivElement> {
   items: BentoItems;
   gridCols?: number;
   rowHeight?: number;
-};
+}

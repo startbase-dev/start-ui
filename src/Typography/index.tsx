@@ -4,7 +4,14 @@ import clsx from "clsx";
 import s from "./Typography.module.scss";
 import "../style/components/typography.scss";
 
-import type { TitleProps, SubtitleProps, ParagraphProps, MutedProps, QuoteProps, TypographyProps } from "./types";
+import type {
+  TitleProps,
+  SubtitleProps,
+  ParagraphProps,
+  MutedProps,
+  QuoteProps,
+  TypographyProps,
+} from "./types";
 
 const Title = forwardRef<HTMLHeadingElement, TitleProps>((props, ref) => {
   const {

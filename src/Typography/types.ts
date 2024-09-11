@@ -5,7 +5,8 @@ type TypographyColor = "default" | "info" | "warning" | "error" | "success";
 type TypographyDecoration = "underline" | "overline" | "linethrough";
 type TypographyElement = "h2" | "h3" | "h4" | "h5" | "h6";
 
-export interface BaseTypographyProps extends Omit<AllHTMLAttributes<HTMLElement>, "size"> {
+export interface BaseTypographyProps
+  extends Omit<AllHTMLAttributes<HTMLElement>, "size"> {
   color?: TypographyColor;
   decoration?: TypographyDecoration;
   italic?: boolean;
@@ -35,13 +36,11 @@ export interface QuoteProps extends BaseTypographyProps {
   size?: TypographySize;
 }
 
-type CombinedTypographyProps = (
-  TitleProps &
+type CombinedTypographyProps = TitleProps &
   SubtitleProps &
   ParagraphProps &
   MutedProps &
-  QuoteProps
-);
+  QuoteProps;
 
 type TypographyVariant = "title" | "subtitle" | "paragraph" | "muted" | "quote";
 

@@ -1,6 +1,7 @@
 import type { ReactElement, AllHTMLAttributes } from "react";
 
-export interface DropdownProps extends Omit<AllHTMLAttributes<HTMLDivElement>, "onFocus"> {
+export interface DropdownProps
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, "onFocus"> {
   children: ReactElement | ReactElement[];
   component?: ReactElement;
   label?: string;

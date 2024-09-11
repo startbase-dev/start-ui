@@ -1,6 +1,7 @@
 import { ReactElement, AllHTMLAttributes } from "react";
 
-export interface FloatingMenuProps extends Omit<AllHTMLAttributes<HTMLDivElement>, "label"> {
+export interface FloatingMenuProps
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, "label"> {
   children: ReactElement | ReactElement[];
   component?: ReactElement;
   label?: ReactElement | ReactElement[] | string;

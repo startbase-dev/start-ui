@@ -1,4 +1,5 @@
-export interface BentoCardProps extends React.AllHTMLAttributes<HTMLDivElement> {
+export interface BentoCardProps
+  extends React.AllHTMLAttributes<HTMLDivElement> {
   rootClassName?: string;
   rootActiveClassName?: string;
   title?: string;

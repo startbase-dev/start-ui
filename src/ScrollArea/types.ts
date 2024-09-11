@@ -2,7 +2,8 @@ import { CSSProperties } from "react";
 
 type ScrollOrientation = "vertical" | "horizontal";
 
-export interface ScrollAreaProps extends React.AllHTMLAttributes<HTMLDivElement> {
+export interface ScrollAreaProps
+  extends React.AllHTMLAttributes<HTMLDivElement> {
   orientation: ScrollOrientation;
   className?: string;
   style?: CSSProperties;
