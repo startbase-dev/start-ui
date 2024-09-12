@@ -35,7 +35,7 @@ import {
   SkeletonInput,
 } from "./Skeleton";
 
-import Stepper from "./Stepper";
+import { Stepper, StepConnector, Step, StepIcon, StepLabel } from "./Stepper";
 import Tab from "./Tab";
 import Table from "./Table";
 import Toggle from "./Toggle";
@@ -85,6 +85,10 @@ export {
   SkeletonImage,
   SkeletonInput,
   Stepper,
+  StepConnector,
+  Step,
+  StepIcon,
+  StepLabel,
   Tab,
   Table,
   Toggle,
