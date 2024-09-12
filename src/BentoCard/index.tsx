@@ -3,9 +3,9 @@ import clsx from "clsx";
 import s from "./BentoCard.module.scss";
 import Plus from "../icons/Plus";
 import ArrowForwardIos from "../icons/ArrowForwardIos";
-import type { IndexProps } from "./types";
+import type { BentoCardProps } from "./types";
 
-const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
+const BentoCard = forwardRef<HTMLDivElement, BentoCardProps>((props, ref) => {
   const {
     rootClassName,
     rootActiveClassName,
@@ -118,6 +118,6 @@ const Index = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
   );
 });
 
-Index.displayName = "BentoCard";
+BentoCard.displayName = "BentoCard";
 
-export default Index;
+export default BentoCard;

@@ -4,9 +4,9 @@ import s from "./Countdown.module.scss";
 import { getUnitLabel } from "./constants";
 import useCountdown from "./hooks/useCountdown";
 import clsx from "clsx";
-import { IndexProps } from "./types";
+import { CountdownProps } from "./types";
 
-const Countdown = forwardRef<HTMLDivElement, IndexProps>((props, ref) => {
+const Countdown = forwardRef<HTMLDivElement, CountdownProps>((props, ref) => {
   const {
     date,
     showDay = true,

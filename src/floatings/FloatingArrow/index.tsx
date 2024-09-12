@@ -1,26 +1,9 @@
 import React, { forwardRef, CSSProperties } from "react";
 import cx from "clsx";
 import styles from "./FloatingArrow.module.scss";
+import type { FloatingArrowProps } from "./types";
 
 const OFFSET = 5;
-
-interface FloatingArrowProps {
-  placement?:
-    | "top"
-    | "top-end"
-    | "top-start"
-    | "bottom"
-    | "bottom-start"
-    | "bottom-end"
-    | "left"
-    | "left-start"
-    | "left-end"
-    | "right"
-    | "right-start"
-    | "right-end";
-  x?: number | null;
-  y?: number | null;
-}
 
 const FloatingArrow = forwardRef<HTMLDivElement, FloatingArrowProps>(
   ({ placement = "bottom", x, y }, ref) => {

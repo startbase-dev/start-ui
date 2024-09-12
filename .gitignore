@@ -80,6 +80,8 @@ package-lock.json
 /styles.css
 /variables.css
 /index.mjs
+/index.d.mts
+/index.d.ts
 
 *storybook.log
 

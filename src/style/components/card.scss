@@ -1,0 +1,14 @@
+.light,
+:root,
+[data-theme="light"] {
+  --sui-card-border: var(--sui-gray-200);
+  --sui-card-description-text: var(--sui-gray-450);
+  --sui-card-body-text: var(--sui-gray-950);
+}
+
+.dark,
+[data-theme="dark"] {
+    --sui-card-border: var(--sui-gray-800);
+    --sui-card-description-text: var(--sui-gray-550);
+    --sui-card-body-text: var(--sui-gray-100);
+}

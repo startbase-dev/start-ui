@@ -1,18 +1,16 @@
 import React, { ReactNode } from "react";
 import { ToggleProps } from "../Toggle/types";
 
-type RootBaseProps = {
+interface ToggleWrapperProps
+  extends Omit<React.AllHTMLAttributes<HTMLDivElement>, "value" | "onChange"> {
   children: ReactNode | ReactNode[];
   value: string | null;
   onChange: (value: string) => void;
   direction?: string;
-};
+}
 
-type RootProps = RootBaseProps &
-  Omit<React.ComponentPropsWithoutRef<"div">, keyof RootBaseProps>;
-
-type ToggleGroupButtonProps = ToggleProps & {
+interface ToggleItemProps extends ToggleProps {
   value: string;
-};
+}
 
-export { RootProps, ToggleGroupButtonProps };
+export { ToggleWrapperProps, ToggleItemProps };

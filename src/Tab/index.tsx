@@ -3,7 +3,7 @@ import s from "./Tab.module.scss";
 import clsx from "clsx";
 import type { TabProps } from "./types";
 
-const Index = forwardRef<HTMLDivElement, TabProps>((props, ref) => {
+const Tab = forwardRef<HTMLDivElement, TabProps>((props, ref) => {
   const {
     tabs,
     className,
@@ -46,6 +46,6 @@ const Index = forwardRef<HTMLDivElement, TabProps>((props, ref) => {
   );
 });
 
-Index.displayName = "Tab";
+Tab.displayName = "Tab";
 
-export default Index;
+export default Tab;
