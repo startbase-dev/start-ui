@@ -148,9 +148,9 @@ const Muted = forwardRef<HTMLParagraphElement, MutedProps>((props, ref) => {
   );
 
   return (
-    <p className={typographyClass} ref={ref} {...rest}>
+    <span className={typographyClass} ref={ref} {...rest}>
       {children}
-    </p>
+    </span>
   );
 });
 Muted.displayName = "Muted";
