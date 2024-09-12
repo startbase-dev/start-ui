@@ -1,7 +1,7 @@
 .stepperWrapper {
   display: flex;
   flex-direction: column;
-  gap:var(--sui-gap);
+  gap: var(--sui-gap);
   justify-content: center;
   width: 100%;
 }
@@ -20,7 +20,7 @@
   flex-direction: column;
   align-items: start;
   justify-content: start;
-  gap:var(--sui-gap);
+  gap: var(--sui-gap);
 }
 
 .step {
@@ -35,10 +35,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius:var(--sui-border-radius-full);
+  border-radius: var(--sui-border-radius-full);
   background-color: var(--sui-stepper-stepicon-bg);
   font-size: var(--sui-text-small-fs);
-  line-height:var(--sui-text-small-lh) ;
+  line-height: var(--sui-text-small-lh);
   font-weight: bold;
   transition: background-color 0.3s;
   border: 2px solid transparent;
@@ -67,7 +67,7 @@
   height: 3rem;
   min-width: 0.25rem;
   max-width: 0.25rem;
-  flex:auto;
+  flex: auto;
   display: flex;
   margin-left: 1rem;
 }
@@ -86,7 +86,7 @@
     height: 3rem;
     min-width: 0.25rem;
     max-width: 0.25rem;
-    flex:auto;
+    flex: auto;
     align-self: center;
   }
   .stepper {
@@ -97,12 +97,12 @@
 
 .primary .stepIcon.active,
 .primary .stepIcon.completed {
-  background-color: var(--sui-stepper-stepicon-primary-active-bg)
+  background-color: var(--sui-stepper-stepicon-primary-active-bg);
 }
 
 .primary .stepConnector.active,
 .primary .stepConnector.completed {
-  background-color: var(--sui-stepper-stepicon-primary-active-bg)
+  background-color: var(--sui-stepper-stepicon-primary-active-bg);
 }
 
 .secondary .stepIcon.active,

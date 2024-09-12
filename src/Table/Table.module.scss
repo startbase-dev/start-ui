@@ -21,7 +21,11 @@
         overflow: hidden;
         padding: 0;
         position: absolute;
-        background-color: color-mix(in srgb, var(--sui-table-black) 90%, var(--sui-table-white));
+        background-color: color-mix(
+          in srgb,
+          var(--sui-table-black) 90%,
+          var(--sui-table-white)
+        );
         width: 1px;
       }
 

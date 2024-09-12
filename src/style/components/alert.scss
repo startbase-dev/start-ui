@@ -2,33 +2,61 @@
 .dark,
 :root,
 [data-theme="light"] {
-  --sui-alert-success-50: color-mix(in srgb, var(--sui-success) 5%, var(--sui-white));
+  --sui-alert-success-50: color-mix(
+    in srgb,
+    var(--sui-success) 5%,
+    var(--sui-white)
+  );
   --sui-alert-info-50: color-mix(in srgb, var(--sui-info) 5%, var(--sui-white));
-  --sui-alert-warning-50: color-mix(in srgb, var(--sui-warning) 5%, var(--sui-white));
-  --sui-alert-error-50: color-mix(in srgb, var(--sui-error) 5%, var(--sui-white));
+  --sui-alert-warning-50: color-mix(
+    in srgb,
+    var(--sui-warning) 5%,
+    var(--sui-white)
+  );
+  --sui-alert-error-50: color-mix(
+    in srgb,
+    var(--sui-error) 5%,
+    var(--sui-white)
+  );
   --sui-alert-success-200: color-mix(
     in srgb,
     var(--sui-success) 20%,
     var(--sui-white)
   );
-  --sui-alert-info-200: color-mix(in srgb, var(--sui-info) 20%, var(--sui-white));
+  --sui-alert-info-200: color-mix(
+    in srgb,
+    var(--sui-info) 20%,
+    var(--sui-white)
+  );
   --sui-alert-warning-200: color-mix(
     in srgb,
     var(--sui-warning) 20%,
     var(--sui-white)
   );
-  --sui-alert-error-200: color-mix(in srgb, var(--sui-error) 20%, var(--sui-white));
+  --sui-alert-error-200: color-mix(
+    in srgb,
+    var(--sui-error) 20%,
+    var(--sui-white)
+  );
   --sui-alert-success-d600: color-mix(
     in srgb,
     var(--sui-success) 60%,
     var(--sui-black)
   );
-  --sui-alert-info-d600: color-mix(in srgb, var(--sui-info) 60%, var(--sui-black));
+  --sui-alert-info-d600: color-mix(
+    in srgb,
+    var(--sui-info) 60%,
+    var(--sui-black)
+  );
   --sui-alert-warning-d600: color-mix(
     in srgb,
     var(--sui-warning) 60%,
     var(--sui-black)
   );
-  --sui-alert-error-d600: color-mix(in srgb, var(--sui-error) 60%, var(--sui-black));
+  --sui-alert-error-d600: color-mix(
+    in srgb,
+    var(--sui-error) 60%,
+    var(--sui-black)
+  );
   --sui-alert-active-unfocused: red;
 }

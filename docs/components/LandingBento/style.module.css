@@ -38,9 +38,9 @@
   line-height: var(--sui-h1-lh);
 }
 
-.cardRootFoundation{
-  background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
-  background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);
+.cardRootFoundation {
+  background: -webkit-linear-gradient(to right, #c06c84, #6c5b7b, #355c7d);
+  background: linear-gradient(to right, #c06c84, #6c5b7b, #355c7d);
   height: -webkit-fill-available;
   min-height: 300px;
   width: auto;
@@ -48,9 +48,9 @@
   --sui-text-lead-lh: 32px;
 }
 
-.cardRootUnleash{
-  background: #F524D7;
-  background: conic-gradient(from 315deg, #F524D7, #9A1164);
+.cardRootUnleash {
+  background: #f524d7;
+  background: conic-gradient(from 315deg, #f524d7, #9a1164);
   height: -webkit-fill-available;
   min-height: 300px;
   width: auto;
@@ -63,9 +63,9 @@
   color: var(--sui-white);
 }
 
-.cardRootForm{
-  background: #F524D7;
-  background: conic-gradient(from 315deg, #F524D7, #9A1164);
+.cardRootForm {
+  background: #f524d7;
+  background: conic-gradient(from 315deg, #f524d7, #9a1164);
   height: -webkit-fill-available;
   min-height: 300px;
   width: auto;
@@ -93,9 +93,9 @@
   bottom: -20px;
 }
 
-.cardRootMarketing{
-  background: #F524D7;
-  background: radial-gradient(at center, #F524D7, #9A1164);
+.cardRootMarketing {
+  background: #f524d7;
+  background: radial-gradient(at center, #f524d7, #9a1164);
   height: -webkit-fill-available;
   min-height: 300px;
   width: auto;
