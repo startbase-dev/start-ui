@@ -1,10 +1,168 @@
+import { Chip } from "@start-base/start-ui";
+import { Tabs } from "nextra/components";
+import { Steps } from "nextra/components";
+import "@start-base/start-ui/styles.css";
+import Preview from "@components/Preview/Preview";
+
 # Chip
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+The Chip component is a flexible and customizable UI element used to display small pieces of information, tags, or actions. It supports different variants, colors, sizes, and can include icons or be dismissible for enhanced interactivity.
 
-import { Chip } from "@start-base/start-ui";
+## Installation
 
-import { Tabs } from "nextra/components";
-import s from "../../index.module.css";
+<Steps>
+### Install the package
+```sh copy npm2yarn
+npm i @start-base/start-ui
+```
+### Add the styles
 
-;
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import Chip from '@start-base/start-ui/Chip';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { Chip } from '@start-base/start-ui';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
+
+### Chip Default(Primary)
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="100px">
+      <Chip color="primary">Chip</Chip>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Chip color="primary">Chip</Chip>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Chip Secondary
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="100px">
+      <Chip color="primary">Chip</Chip>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Chip color="secondary">Chip</Chip>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Chip Info
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="100px">
+      <Chip color="info">Chip</Chip>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Chip color="info">Chip</Chip>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Chip Success
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="100px">
+      <Chip color="success">Chip</Chip>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Chip color="success">Chip</Chip>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Chip Warning
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="100px">
+      <Chip color="warning">Chip</Chip>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Chip color="warning">Chip</Chip>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Chip Error
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="100px">
+      <Chip color="error">Chip</Chip>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Chip color="error">Chip</Chip>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## API
+
+| Name      | Type     | Default   | Variants                                                 | Description           |
+| --------- | -------- | --------- | -------------------------------------------------------- | --------------------- |
+| children  | `string` |           |                                                          | Children of the Chip  |
+| color     | `string` | `primary` | `primary` `secondary` `success` `info` `warning` `error` | Color of the Chip     |
+| className | `string` |           |                                                          | Classname of the Chip |

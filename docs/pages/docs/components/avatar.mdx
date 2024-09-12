@@ -1,16 +1,79 @@
+import { Tabs } from "nextra/components";
+import "@start-base/start-ui/styles.css";
+import Preview from "@components/Preview/Preview";
+import { Avatar } from "@start-base/start-ui";
+import { Steps } from "nextra/components";
+
 # Avatar
 
 The Avatar component is used to display a user's profile picture or initials in a visually appealing manner. It supports various sizes and shapes, including circular and square variants.
 
-import { Tabs } from "nextra/components";
-import Preview from "../../../components/Preview/Preview";
-import { Avatar } from "@start-base/start-ui";
+## Installation
+
+<Steps>
+### Install the package
+```sh copy npm2yarn
+npm i @start-base/start-ui
+```
+### Add the styles
+
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import Avatar from '@start-base/start-ui/Avatar';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { Avatar } from '@start-base/start-ui';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
 
 ### Medium Circular Avatar
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-    <Preview>
+    <Preview height="200px">
       <Avatar
         name="SC"
         size="medium"
@@ -21,7 +84,7 @@ import { Avatar } from "@start-base/start-ui";
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy
+    ```jsx copy showLineNumbers
     <Avatar
       name="SC"
       size="medium"
@@ -37,12 +100,12 @@ import { Avatar } from "@start-base/start-ui";
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-    <Preview>
+    <Preview height="200px">
       <Avatar name="BG" size="medium" variant="circular" />
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy
+    ```jsx copy showLineNumbers
     <Avatar name="BG" size="medium" variant="circular" />
     ```
   </Tabs.Tab>
@@ -52,7 +115,7 @@ import { Avatar } from "@start-base/start-ui";
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-    <Preview>
+    <Preview height="200px">
       <Avatar name="LF" size="large" variant="square" />
     </Preview>
   </Tabs.Tab>
@@ -67,7 +130,7 @@ import { Avatar } from "@start-base/start-ui";
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-    <Preview>
+    <Preview height="200px">
       <Avatar
         picture="https://picsum.photos/1390/690"
         size="large"
@@ -90,7 +153,7 @@ import { Avatar } from "@start-base/start-ui";
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-    <Preview>
+    <Preview height="200px">
       <Avatar
         name="CL"
         size="medium"
@@ -115,7 +178,7 @@ import { Avatar } from "@start-base/start-ui";
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-    <Preview>
+    <Preview height="200px">
       <Avatar name="TW" size="small" variant="circular" />
     </Preview>
   </Tabs.Tab>
@@ -130,7 +193,7 @@ import { Avatar } from "@start-base/start-ui";
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-    <Preview>
+    <Preview height="200px">
       <Avatar />
     </Preview>
   </Tabs.Tab>
@@ -140,3 +203,14 @@ import { Avatar } from "@start-base/start-ui";
     ```
   </Tabs.Tab>
 </Tabs>
+
+## API
+
+| Name           | Type                     | Default    | Description                   |
+| -------------- | ------------------------ | ---------- | ----------------------------- |
+| chars          | `string`                 | "SU"       | Chars of the Avatar           |
+| size           | `small` `medium` `large` | `medium`   | Size of the Avatar            |
+| variant        | `circular` `square`      | `circular` | Variant of the Avatar         |
+| picture        | `string`                 | ""         | Picture of the Avatar         |
+| className      | `string`                 | ""         | ClassName of the Avatar       |
+| defaultPicture | `string`                 | ""         | Default Picture of the Avatar |

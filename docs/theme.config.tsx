@@ -1,6 +1,7 @@
 import React from "react";
 import { DocsThemeConfig } from "nextra-theme-docs";
 import Logo from "./pages/docs/components/Logo";
+import { Chip } from "@start-base/start-ui";
 
 const config: DocsThemeConfig = {
   logo: (
@@ -46,6 +47,43 @@ const config: DocsThemeConfig = {
         .
       </span>
     ),
+  },
+  sidebar: {
+    titleComponent({ title }: { title: string }) {
+      if (title.includes("--soon")) {
+        return (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: "0.5rem",
+              width: "100%",
+            }}
+          >
+            {title.replace("--soon", "")}
+            <Chip color="warning">Soon</Chip>
+          </div>
+        );
+      } else if (title.includes("--new")) {
+        return (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              gap: "0.5rem",
+              width: "100%",
+            }}
+          >
+            {title.replace("--new", "")}
+            <Chip color="success">New</Chip>
+          </div>
+        );
+      } else {
+        return <>{title}</>;
+      }
+    },
   },
 };
 

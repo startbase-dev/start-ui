@@ -1,8 +1,253 @@
+import { Toggle } from "@start-base/start-ui";
+import { Tabs } from "nextra/components";
+import { Steps } from "nextra/components";
+import "@start-base/start-ui/styles.css";
+import Preview from "@components/Preview/Preview";
+
 # Toggle
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+The Toggle component is a versatile switch that allows users to toggle between two states, such as on and off. It can be customized with different colors, sizes, and variants to fit various design needs.
 
-import { Toggle } from "@start-base/start-ui";
+## Installation
 
-import { Tabs } from "nextra/components";
-import s from "../../index.module.css";
+<Steps>
+### Install the package
+```sh copy npm2yarn
+npm i @start-base/start-ui
+```
+### Add the styles
+
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import Toggle from '@start-base/start-ui/Toggle';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { Toggle } from '@start-base/start-ui';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
+
+### Default Primary Toggle
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Toggle color="primary" size="medium" variant="default">
+        Toggle
+      </Toggle>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Toggle color="primary" size="medium" variant="default">
+      Toggle
+    </Toggle>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Default Destructive Toggle
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Toggle color="destructive" size="medium" variant="default">
+        Destructive
+      </Toggle>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Toggle color="destructive" size="medium" variant="default">
+      Destructive
+    </Toggle>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Default Secondary Toggle
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Toggle color="secondary" size="medium" variant="default">
+        Destructive
+      </Toggle>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Toggle color="secondary" size="medium" variant="default">
+      Destructive
+    </Toggle>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Outline Primary Toggle
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Toggle color="primary" size="medium" variant="outline">
+        Destructive
+      </Toggle>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Toggle color="primary" size="medium" variant="outline">
+      Destructive
+    </Toggle>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Outline Secondary Toggle
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Toggle color="secondary" size="medium" variant="outline">
+        Destructive
+      </Toggle>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Toggle color="secondary" size="medium" variant="outline">
+      Destructive
+    </Toggle>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Outline Destructive Toggle
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Toggle color="destructive" size="medium" variant="outline">
+        Destructive
+      </Toggle>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Toggle color="destructive" size="medium" variant="outline">
+      Destructive
+    </Toggle>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Small Icon Toggle
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Toggle color="secondary" size="icon" variant="outline">
+        🔔
+      </Toggle>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Toggle color="secondary" size="icon" variant="outline">
+      🔔
+    </Toggle>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Large Fluid Toggle
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Toggle color="destructive" fluid size="large" variant="outline">
+        Fluid Destructive
+      </Toggle>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Toggle color="destructive" fluid size="large" variant="outline">
+      Fluid Destructive
+    </Toggle>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Disabled Primary Toggle
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Toggle color="primary" disabled size="medium" variant="default">
+        Disabled Toggle
+      </Toggle>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Toggle color="primary" disabled size="medium" variant="default">
+      Disabled Toggle
+    </Toggle>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## API
+
+| Name         | Type      | Default   | Variants                            | Description                 |
+| ------------ | --------- | --------- | ----------------------------------- | --------------------------- |
+| initialState | `boolean` | `false`   |                                     | Initial state of the Toggle |
+| color        | `string`  | `primary` | `primary` `secondary` `destructive` | Color of the Toggle         |
+| size         | `string`  | `medium`  | `small` `medium` `large` `icon`     | Size of the Toggle          |
+| variant      | `string`  | `default` | `default` `outline`                 | Variant of the Toggle       |
+| disabled     | `boolean` | `false`   |                                     | Disabled of the Toggle      |
+| className    | `string`  |           |                                     | Classname of the Toggle     |
+| fluid        | `boolean` | `false`   |                                     | Fluid of the Toggle         |

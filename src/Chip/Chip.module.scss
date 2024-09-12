@@ -9,7 +9,7 @@
   font-weight: 500;
   font-size: var(--sui-text-small-fs);
   line-height: var(--sui-text-small-lh);
-  height: 1rem;
+  height: auto;
   width: fit-content;
   font-family: var(--sui-font-family);
 
@@ -40,6 +40,6 @@
 
   &.error {
     background-color: var(--sui-error);
-    color: var(--sui-black);
+    color: var(--sui-white);
   }
 }

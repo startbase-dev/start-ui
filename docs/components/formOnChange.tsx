@@ -18,7 +18,6 @@ const FormOnChange: React.FC<FormOnChangeProps> = ({ children }) => {
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
-    console.log("emre", e.target);
     setInputs((prevState) => ({
       ...prevState,
       [name]: type === "checkbox" ? checked : value,

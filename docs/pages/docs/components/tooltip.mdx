@@ -1,8 +1,306 @@
+import { Tooltip, Button } from "@start-base/start-ui";
+import { Tabs } from "nextra/components";
+import { Steps } from "nextra/components";
+import "@start-base/start-ui/styles.css";
+import Preview from "@components/Preview/Preview";
+
 # Tooltip
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+A Tooltip is a small overlay that opens on user interaction, providing contextual information or options without navigating away from the current page.
 
-import { Tooltip } from "@start-base/start-ui";
+## Installation
 
-import { Tabs } from "nextra/components";
-import s from "../../index.module.css";
+<Steps>
+### Install the package
+```sh copy npm2yarn
+npm i @start-base/start-ui
+```
+### Add the styles
+
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import Tooltip from '@start-base/start-ui/Tooltip';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { Tooltip } from '@start-base/start-ui';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
+
+### Popover With Left Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Tooltip text="left" placement="left">
+        <Button>left</Button>
+      </Tooltip>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Tooltip text="left" placement="left">
+      <Button>left</Button>
+    </Tooltip>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Popover With Left Start Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Tooltip text="left-start" placement="left-start">
+        <Button>left-start</Button>
+      </Tooltip>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Tooltip text="left-start" placement="left-start">
+      <Button>left-start</Button>
+    </Tooltip>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Tooltip With Left End Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Tooltip text="left-end" placement="left-end">
+        <Button>left-end</Button>
+      </Tooltip>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Tooltip text="left-end" placement="left-end">
+      <Button>left-end</Button>
+    </Tooltip>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Tooltip With Right Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Tooltip text="right" placement="right">
+        <Button>right</Button>
+      </Tooltip>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Tooltip text="right" placement="right">
+      <Button>right</Button>
+    </Tooltip>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Tooltip With Right Start Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Tooltip text="right-start" placement="right-start">
+        <Button>right-start</Button>
+      </Tooltip>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Tooltip text="right-start" placement="right-start">
+      <Button>right-start</Button>
+    </Tooltip>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Tooltip With Right End Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Tooltip text="right-end" placement="right-end">
+        <Button>right-end</Button>
+      </Tooltip>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Tooltip text="right-end" placement="right-end">
+      <Button>right-end</Button>
+    </Tooltip>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Tooltip With Top Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Tooltip text="top" placement="top">
+        <Button>top</Button>
+      </Tooltip>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Tooltip text="top" placement="top">
+      <Button>top</Button>
+    </Tooltip>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Tooltip With Top Start Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Tooltip text="top-start" placement="top-start">
+        <Button>top-start</Button>
+      </Tooltip>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Tooltip text="top-start" placement="top-start">
+      <Button>top-start</Button>
+    </Tooltip>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Tooltip With Top End Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Tooltip text="top-end" placement="top-end">
+        <Button>top-end</Button>
+      </Tooltip>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Tooltip text="top-end" placement="top-end">
+      <Button>top-end</Button>
+    </Tooltip>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Tooltip With Bottom Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Tooltip text="bottom" placement="bottom">
+        <Button>bottom</Button>
+      </Tooltip>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Tooltip text="bottom" placement="bottom">
+      <Button>bottom</Button>
+    </Tooltip>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Tooltip With Bottom Start Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Tooltip text="bottom-start" placement="bottom-start">
+        <Button>bottom-start</Button>
+      </Tooltip>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Tooltip text="bottom-start" placement="bottom-start">
+      <Button>bottom-start</Button>
+    </Tooltip>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Tooltip With Bottom End Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Tooltip text="bottom-end" placement="bottom-end">
+        <Button>bottom-end</Button>
+      </Tooltip>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Tooltip text="bottom-end" placement="bottom-end">
+      <Button>bottom-end</Button>
+    </Tooltip>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## API
+
+| Name      | Type     | Default  | Variants                                                                                                                          | Description              |
+| --------- | -------- | -------- | --------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
+| text      | `string` |          |                                                                                                                                   | Text of the Tooltip      |
+| placement | `string` | `bottom` | `top` `bottom` `left` `right` `top-start` `top-end` `bottom-start` `bottom-end` `left-start` `left-end` `right-start` `right-end` | Placement of the Tooltip |
+| children  | `node`   |          |                                                                                                                                   | Content of the Tooltip   |
