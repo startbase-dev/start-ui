@@ -1,8 +1,251 @@
+import React from "react";
+import { ToggleGroup } from "@start-base/start-ui";
+import { Tabs } from "nextra/components";
+import { Steps } from "nextra/components";
+import "@start-base/start-ui/styles.css";
+import Preview from "@components/Preview/Preview";
+
 # ToggleGroup
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+The ToggleGroup component is a flexible UI element that enables users to switch between multiple options or states. It supports customization in terms of colors, sizes, and variants, making it adaptable to different design requirements.
 
-import { ToggleGroup } from "@start-base/start-ui";
+## Installation
 
-import { Tabs } from "nextra/components";
-import s from "../../index.module.css";
+<Steps>
+### Install the package
+```sh copy npm2yarn
+npm i @start-base/start-ui
+```
+### Add the styles
+
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import ToggleGroup from '@start-base/start-ui/ToggleGroup';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { ToggleGroup } from '@start-base/start-ui';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
+
+### Default Toggle Group
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200} width={500}>
+      <ToggleGroup.ToggleWrapper value={null}>
+        <React.Fragment key=".0">
+          <ToggleGroup.ToggleItem color="primary" value="option1" variant="default">
+            Option 🛸
+          </ToggleGroup.ToggleItem>
+          <ToggleGroup.ToggleItem color="secondary" value="option2" variant="outline">
+            Option 🌈
+          </ToggleGroup.ToggleItem>
+          <ToggleGroup.ToggleItem color="destructive" value="option3" variant="default">
+            Option 🦄
+          </ToggleGroup.ToggleItem>
+        </React.Fragment>
+      </ToggleGroup.ToggleWrapper>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <ToggleGroup.ToggleWrapper value={null}>
+      <React.Fragment key=".0">
+        <ToggleGroup.ToggleItem color="primary" value="option1" variant="default">
+          Option 🛸
+        </Toggle>
+        <ToggleGroup.ToggleItem color="secondary" value="option2" variant="outline">
+          Option 🌈
+        </Toggle>
+        <ToggleGroup.ToggleItem color="destructive" value="option3" variant="default">
+          Option 🦄
+        </Toggle>
+      </React.Fragment>
+    </ToggleGroup.ToggleWrapper>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Default Destructive Toggle
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200} width={500}>
+      <ToggleGroup.ToggleWrapper value={null}>
+        <React.Fragment key=".0">
+          <ToggleGroup.ToggleItem color="primary" disabled value="option1">
+            Option 🎉
+          </ToggleGroup.ToggleItem>
+          <ToggleGroup.ToggleItem color="secondary" value="option2">
+            Option 🎧
+          </ToggleGroup.ToggleItem>
+          <ToggleGroup.ToggleItem color="destructive" disabled value="option3">
+            Option 🐱
+          </ToggleGroup.ToggleItem>
+        </React.Fragment>
+      </ToggleGroup.ToggleWrapper>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <ToggleGroup.ToggleWrapper value={null}>
+      <React.Fragment key=".0">
+        <ToggleGroup.ToggleItem color="primary" disabled value="option1">
+          Option 🎉
+        </Toggle>
+        <ToggleGroup.ToggleItem color="secondary" value="option2">
+          Option 🎧
+        </Toggle>
+        <ToggleGroup.ToggleItem color="destructive" disabled value="option3">
+          Option 🐱
+        </Toggle>
+      </React.Fragment>
+    </ToggleGroup.ToggleWrapper>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Outline Style Toggle Group
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200} width={500}>
+      <ToggleGroup.ToggleWrapper value={null}>
+        <React.Fragment key=".0">
+          <ToggleGroup.ToggleItem color="primary" value="option1" variant="outline">
+            Option Killer 💡
+            </ToggleGroup.ToggleItem>
+          <ToggleGroup.ToggleItem color="secondary" value="option2" variant="outline">
+            Option 📚
+          </ToggleGroup.ToggleItem>
+          <ToggleGroup.ToggleItem color="destructive" value="option3" variant="outline">
+            Option 🚀
+          </ToggleGroup.ToggleItem>
+        </React.Fragment>
+      </ToggleGroup.ToggleWrapper>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <ToggleGroup.ToggleWrapper value={null}>
+      <React.Fragment key=".0">
+        <ToggleGroup.ToggleItem color="primary" value="option1" variant="outline">
+          Option Killer 💡
+        </Toggle>
+        <ToggleGroup.ToggleItem color="secondary" value="option2" variant="outline">
+          Option 📚
+        </Toggle>
+        <ToggleGroup.ToggleItem color="destructive" value="option3" variant="outline">
+          Option 🚀
+        </Toggle>
+      </React.Fragment>
+    </ToggleGroup.ToggleWrapper>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Large Size Toggle Group
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200} width={700}>
+      <ToggleGroup.ToggleWrapper value={null}>
+        <React.Fragment key=".0">
+          <ToggleGroup.ToggleItem color="primary" size="large" value="option1">
+            Option 🕶️
+          </ToggleGroup.ToggleItem>
+          <ToggleGroup.ToggleItem
+            color="secondary"
+            size="large"
+            value="option2"
+          >
+            Option 🎸
+          </ToggleGroup.ToggleItem>
+          <ToggleGroup.ToggleItem
+            color="destructive"
+            size="large"
+            value="option3"
+          >
+            Option 🐘
+          </ToggleGroup.ToggleItem>
+        </React.Fragment>
+      </ToggleGroup.ToggleWrapper>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <ToggleGroup.ToggleWrapper value={null}>
+      <React.Fragment key=".0">
+        <ToggleGroup.ToggleItem color="primary" size="large" value="option1">
+          Option 🕶️
+        </ToggleGroup.ToggleItem>
+        <ToggleGroup.ToggleItem color="secondary" size="large" value="option2">
+          Option 🎸
+        </ToggleGroup.ToggleItem>
+        <ToggleGroup.ToggleItem
+          color="destructive"
+          size="large"
+          value="option3"
+        >
+          Option 🐘
+        </ToggleGroup.ToggleItem>
+      </React.Fragment>
+    </ToggleGroup.ToggleWrapper>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## API
+
+| Name         | Type      | Default   | Variants                            | Description                 |
+| ------------ | --------- | --------- | ----------------------------------- | --------------------------- |
+| initialState | `boolean` | `false`   |                                     | Initial state of the Toggle |
+| size         | `string`  | `medium`  | `large` `medium` `small`            | Size of the Toggle          |
+| variant      | `string`  | `default` | `default` `outline`                 | Variant of the Toggle       |
+| color        | `string`  | `primary` | `primary` `secondary` `destructive` | Color of the Toggle         |
+| value        | `string`  |           |                                     | Value of the Toggle         |
+| disabled     | `boolean` | `false`   |                                     | Disabled of the Toggle      |
+| children     | `node`    |           |                                     | Children of the Toggle      |

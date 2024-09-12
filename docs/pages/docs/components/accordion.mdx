@@ -1,7 +1,413 @@
+import { Accordion } from "@start-base/start-ui";
+import { Tabs } from "nextra/components";
+import { Steps } from "nextra/components";
+import "@start-base/start-ui/styles.css";
+import Preview from "@components/Preview/Preview";
+import ControlledAccordion from "@components/ControlledAccordion";
+import { Button } from "@start-base/start-ui";
+
 # Accordion
 
 A series of interactive headings arranged vertically, each revealing a section of content when clicked.
 
-import { Accordion } from "@start-base/start-ui";
+## Installation
 
-import { Tabs } from "nextra/components";
+<Steps>
+### Install the package
+```sh copy npm2yarn
+npm i @start-base/start-ui
+```
+### Add the styles
+
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import Accordion from '@start-base/start-ui/Accordion';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { Accordion } from '@start-base/start-ui';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
+
+### Default Expanded Accordion
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="800px">
+      <div style={{ width: "100%" }}>
+        <Accordion summary="Accordion 1">
+          Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
+          gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit
+          vehicula. Nulla eget ligula ac orci mollis ornare. Nullam facilisis
+          ornare est, vitae vehicula augue aliquam semper. Integer convallis
+          blandit odio, vitae eleifend lectus aliquam at. Phasellus sagittis,
+          dui eget congue vehicula, felis purus consectetur sem, nec dapibus
+          libero lectus in nibh.
+        </Accordion>
+        <Accordion summary="Default Expanded Accordion" defaultExpanded>
+          Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
+          gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit
+          vehicula. Nulla eget ligula ac orci mollis ornare. Nullam facilisis
+          ornare est, vitae vehicula augue aliquam semper. Integer convallis
+          blandit odio, vitae eleifend lectus aliquam at. Phasellus sagittis,
+          dui eget congue vehicula, felis purus consectetur sem, nec dapibus
+          libero lectus in nibh.
+        </Accordion>
+        <Accordion summary="Accordion 3">
+          Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
+          gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit
+          vehicula. Nulla eget ligula ac orci mollis ornare. Nullam facilisis
+          ornare est, vitae vehicula augue aliquam semper. Integer convallis
+          blandit odio, vitae eleifend lectus aliquam at. Phasellus sagittis,
+          dui eget congue vehicula, felis purus consectetur sem, nec dapibus
+          libero lectus in nibh.
+        </Accordion>
+      </div>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <div style={{ width: "100%" }}>
+      <Accordion summary="Accordion 1">
+        Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
+        sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
+        Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est,
+        vitae vehicula augue aliquam semper. Integer convallis blandit odio,
+        vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue
+        vehicula, felis purus consectetur sem, nec dapibus libero lectus in
+        nibh.
+      </Accordion>
+      <Accordion summary="Default Expanded Accordion" defaultExpanded>
+        Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
+        sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
+        Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est,
+        vitae vehicula augue aliquam semper. Integer convallis blandit odio,
+        vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue
+        vehicula, felis purus consectetur sem, nec dapibus libero lectus in
+        nibh.
+      </Accordion>
+      <Accordion summary="Accordion 3">
+        Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
+        sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
+        Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est,
+        vitae vehicula augue aliquam semper. Integer convallis blandit odio,
+        vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue
+        vehicula, felis purus consectetur sem, nec dapibus libero lectus in
+        nibh.
+      </Accordion>
+    </div>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Disabled Accordions
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="800px">
+      <div style={{ width: "100%" }}>
+        <Accordion summary="Accordion 1">
+          Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
+          gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit
+          vehicula. Nulla eget ligula ac orci mollis ornare. Nullam facilisis
+          ornare est, vitae vehicula augue aliquam semper. Integer convallis
+          blandit odio, vitae eleifend lectus aliquam at. Phasellus sagittis,
+          dui eget congue vehicula, felis purus consectetur sem, nec dapibus
+          libero lectus in nibh.
+        </Accordion>
+        <Accordion disabled summary="Accordion 2">
+          Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
+          gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit
+          vehicula. Nulla eget ligula ac orci mollis ornare. Nullam facilisis
+          ornare est, vitae vehicula augue aliquam semper. Integer convallis
+          blandit odio, vitae eleifend lectus aliquam at. Phasellus sagittis,
+          dui eget congue vehicula, felis purus consectetur sem, nec dapibus
+          libero lectus in nibh.
+        </Accordion>
+        <Accordion summary="Accordion 3">
+          Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
+          gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit
+          vehicula. Nulla eget ligula ac orci mollis ornare. Nullam facilisis
+          ornare est, vitae vehicula augue aliquam semper. Integer convallis
+          blandit odio, vitae eleifend lectus aliquam at. Phasellus sagittis,
+          dui eget congue vehicula, felis purus consectetur sem, nec dapibus
+          libero lectus in nibh.
+        </Accordion>
+      </div>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <div style={{ width: "100%" }}>
+      <Accordion summary="Accordion 1">
+        Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
+        sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
+        Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est,
+        vitae vehicula augue aliquam semper. Integer convallis blandit odio,
+        vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue
+        vehicula, felis purus consectetur sem, nec dapibus libero lectus in
+        nibh.
+      </Accordion>
+      <Accordion disabled summary="Accordion 2">
+        Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
+        sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
+        Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est,
+        vitae vehicula augue aliquam semper. Integer convallis blandit odio,
+        vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue
+        vehicula, felis purus consectetur sem, nec dapibus libero lectus in
+        nibh.
+      </Accordion>
+      <Accordion summary="Accordion 3">
+        Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
+        sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
+        Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est,
+        vitae vehicula augue aliquam semper. Integer convallis blandit odio,
+        vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue
+        vehicula, felis purus consectetur sem, nec dapibus libero lectus in
+        nibh.
+      </Accordion>
+    </div>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Controlled Accordions
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="800px">
+      <div style={{ width: "100%" }}>
+        <ControlledAccordion summary="Controlled Accordion 1" expanded="a1">
+          Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
+          gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit
+          vehicula. Nulla eget ligula ac orci mollis ornare. Nullam facilisis
+          ornare est, vitae vehicula augue aliquam semper. Integer convallis
+          blandit odio, vitae eleifend lectus aliquam at. Phasellus sagittis,
+          dui eget congue vehicula, felis purus consectetur sem, nec dapibus
+          libero lectus in nibh.
+        </ControlledAccordion>
+        <ControlledAccordion summary="Controlled Accordion 2" expanded="a2">
+          Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
+          gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit
+          vehicula. Nulla eget ligula ac orci mollis ornare. Nullam facilisis
+          ornare est, vitae vehicula augue aliquam semper. Integer convallis
+          blandit odio, vitae eleifend lectus aliquam at. Phasellus sagittis,
+          dui eget congue vehicula, felis purus consectetur sem, nec dapibus
+          libero lectus in nibh.
+        </ControlledAccordion>
+        <ControlledAccordion summary="Controlled Accordion 3" expanded="a3">
+          Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
+          gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit
+          vehicula. Nulla eget ligula ac orci mollis ornare. Nullam facilisis
+          ornare est, vitae vehicula augue aliquam semper. Integer convallis
+          blandit odio, vitae eleifend lectus aliquam at. Phasellus sagittis,
+          dui eget congue vehicula, felis purus consectetur sem, nec dapibus
+          libero lectus in nibh.
+        </ControlledAccordion>
+      </div>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    const [expanded, setExpanded] = useState("a0");
+
+function handleExpanded(value: string) {
+if (value === expanded) return setExpanded("a0");
+setExpanded(value);
+}
+
+    <div style={{ width: "100%" }}>
+      <Accordion
+        summary="Controlled Accordion 1"
+        expanded={expanded === "a1"}
+        onExpand={() => handleExpanded("a1")}
+      >
+        Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
+        sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
+        Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est,
+        vitae vehicula augue aliquam semper. Integer convallis blandit odio,
+        vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue
+        vehicula, felis purus consectetur sem, nec dapibus libero lectus in
+        nibh.
+      </Accordion>
+      <Accordion
+        summary="Controlled Accordion 2"
+        expanded={expanded === "a2"}
+        onExpand={() => handleExpanded("a2")}
+      >
+        Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
+        sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
+        Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est,
+        vitae vehicula augue aliquam semper. Integer convallis blandit odio,
+        vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue
+        vehicula, felis purus consectetur sem, nec dapibus libero lectus in
+        nibh.
+      </Accordion>
+      <Accordion
+        summary="Controlled Accordion 3"
+        expanded={expanded === "a2"}
+        onExpand={() => handleExpanded("a2")}
+      >
+        Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
+        sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
+        Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est,
+        vitae vehicula augue aliquam semper. Integer convallis blandit odio,
+        vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue
+        vehicula, felis purus consectetur sem, nec dapibus libero lectus in
+        nibh.
+      </Accordion>
+    </div>
+    ```
+
+  </Tabs.Tab>
+</Tabs>
+
+#### Accordions with "unmountOnExit"
+
+Will not render their details when collapsed to increase performance. This option also disables the animations.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="600px">
+      <div style={{ width: "100%" }}>
+        <Accordion
+          actions={<Button>Accordion Actions</Button>}
+          summary="Accordion 1"
+          unmountOnExit
+        >
+          Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
+          gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit
+          vehicula. Nulla eget ligula ac orci mollis ornare. Nullam facilisis
+          ornare est, vitae vehicula augue aliquam semper. Integer convallis
+          blandit odio, vitae eleifend lectus aliquam at. Phasellus sagittis,
+          dui eget congue vehicula, felis purus consectetur sem, nec dapibus
+          libero lectus in nibh.
+        </Accordion>
+        <Accordion
+          actions={<Button>Accordion Actions</Button>}
+          summary="Accordion 2"
+          unmountOnExit
+        >
+          Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
+          elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
+          gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit
+          vehicula. Nulla eget ligula ac orci mollis ornare. Nullam facilisis
+          ornare est, vitae vehicula augue aliquam semper. Integer convallis
+          blandit odio, vitae eleifend lectus aliquam at. Phasellus sagittis,
+          dui eget congue vehicula, felis purus consectetur sem, nec dapibus
+          libero lectus in nibh.
+        </Accordion>
+      </div>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <div style={{ width: "100%" }}>
+      <Accordion
+        actions={<Button>Accordion Actions</Button>}
+        summary="Accordion 1"
+        unmountOnExit
+      >
+        Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
+        sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
+        Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est,
+        vitae vehicula augue aliquam semper. Integer convallis blandit odio,
+        vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue
+        vehicula, felis purus consectetur sem, nec dapibus libero lectus in
+        nibh.
+      </Accordion>
+      <Accordion
+        actions={<Button>Accordion Actions</Button>}
+        summary="Accordion 2"
+        unmountOnExit
+      >
+        Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
+        sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
+        Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est,
+        vitae vehicula augue aliquam semper. Integer convallis blandit odio,
+        vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue
+        vehicula, felis purus consectetur sem, nec dapibus libero lectus in
+        nibh.
+      </Accordion>
+    </div>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## API
+
+| Name               | Type      | Default | Description                       |
+| ------------------ | --------- | ------- | --------------------------------- |
+| summary            | `string`  |         | Summary of the accordion          |
+| children           | `string`  |         | Children of the accordion         |
+| actions            | `object`  |         | Actions of the accordion          |
+| className          | `string`  |         | Classname the accordion           |
+| actionsClassName   | `string`  |         | Action Classname the accordion    |
+| summaryClassName   | `string`  |         | Summary Classname the accordion   |
+| containerClassName | `string`  |         | Container Classname the accordion |
+| defaultExpanded    | `boolean` | `false` | Default Expanded the accordion    |
+| disabled           | `boolean` | `false` | Disabled the accordion            |
+| unmountOnExit      | `boolean` | `false` | Unmount the accordion on exit     |

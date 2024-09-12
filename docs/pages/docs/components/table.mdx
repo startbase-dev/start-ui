@@ -1,8 +1,326 @@
+import { Table } from "@start-base/start-ui";
+import { Tabs } from "nextra/components";
+import { Steps } from "nextra/components";
+import "@start-base/start-ui/styles.css";
+import Preview from "@components/Preview/Preview";
+
 # Table
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+The Table component is used to display data in a structured format with rows and columns. It supports various features such as sorting, pagination, and customizable styling.
 
-import { Table } from "@start-base/start-ui";
+## Installation
 
-import { Tabs } from "nextra/components";
-import s from "../../index.module.css";
+<Steps>
+### Install the package
+```sh copy npm2yarn
+npm i @start-base/start-ui
+```
+### Add the styles
+
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import Table from '@start-base/start-ui/Table';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { Table } from '@start-base/start-ui';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
+
+### Table Default
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Table
+        columns={[
+          {
+            dataIndex: "name",
+            key: "name",
+            title: "Name",
+          },
+          {
+            dataIndex: "age",
+            key: "age",
+            title: "Age",
+          },
+          {
+            dataIndex: "email",
+            key: "email",
+            title: "Email",
+          },
+        ]}
+        data={[
+          {
+            age: 28,
+            email: "john.doe@example.com",
+            key: 1,
+            name: "John Doe",
+          },
+          {
+            age: 34,
+            email: "jane.smith@example.com",
+            key: 2,
+            name: "Jane Smith",
+          },
+          {
+            age: 45,
+            email: "alice.johnson@example.com",
+            key: 3,
+            name: "Alice Johnson",
+          },
+        ]}
+        emptyText="No data available"
+        rowClassName=""
+      />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Table
+      columns={[
+        {
+          dataIndex: "name",
+          key: "name",
+          title: "Name",
+        },
+        {
+          dataIndex: "age",
+          key: "age",
+          title: "Age",
+        },
+        {
+          dataIndex: "email",
+          key: "email",
+          title: "Email",
+        },
+      ]}
+      data={[
+        {
+          age: 28,
+          email: "john.doe@example.com",
+          key: 1,
+          name: "John Doe",
+        },
+        {
+          age: 34,
+          email: "jane.smith@example.com",
+          key: 2,
+          name: "Jane Smith",
+        },
+        {
+          age: 45,
+          email: "alice.johnson@example.com",
+          key: 3,
+          name: "Alice Johnson",
+        },
+      ]}
+      emptyText="No data available"
+      rowClassName=""
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Table Pagination Hidden
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Table
+        columns={[
+          {
+            dataIndex: "name",
+            key: "name",
+            title: "Name",
+          },
+          {
+            dataIndex: "age",
+            key: "age",
+            title: "Age",
+          },
+          {
+            dataIndex: "email",
+            key: "email",
+            title: "Email",
+          },
+        ]}
+        data={[
+          {
+            age: 28,
+            email: "john.doe@example.com",
+            key: 1,
+            name: "John Doe",
+          },
+          {
+            age: 34,
+            email: "jane.smith@example.com",
+            key: 2,
+            name: "Jane Smith",
+          },
+          {
+            age: 45,
+            email: "alice.johnson@example.com",
+            key: 3,
+            name: "Alice Johnson",
+          },
+        ]}
+        emptyText="No data available"
+        hidePagination
+        rowClassName=""
+      />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Table
+      columns={[
+        {
+          dataIndex: "name",
+          key: "name",
+          title: "Name",
+        },
+        {
+          dataIndex: "age",
+          key: "age",
+          title: "Age",
+        },
+        {
+          dataIndex: "email",
+          key: "email",
+          title: "Email",
+        },
+      ]}
+      data={[
+        {
+          age: 28,
+          email: "john.doe@example.com",
+          key: 1,
+          name: "John Doe",
+        },
+        {
+          age: 34,
+          email: "jane.smith@example.com",
+          key: 2,
+          name: "Jane Smith",
+        },
+        {
+          age: 45,
+          email: "alice.johnson@example.com",
+          key: 3,
+          name: "Alice Johnson",
+        },
+      ]}
+      emptyText="No data available"
+      hidePagination
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Table With Custom Empty Text
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Table
+        columns={[
+          {
+            dataIndex: "name",
+            key: "name",
+            title: "Name",
+          },
+          {
+            dataIndex: "age",
+            key: "age",
+            title: "Age",
+          },
+          {
+            dataIndex: "email",
+            key: "email",
+            title: "Email",
+          },
+        ]}
+        data={[]}
+        emptyText="Custom empty text"
+      />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Table
+      columns={[
+        {
+          dataIndex: "name",
+          key: "name",
+          title: "Name",
+        },
+        {
+          dataIndex: "age",
+          key: "age",
+          title: "Age",
+        },
+        {
+          dataIndex: "email",
+          key: "email",
+          title: "Email",
+        },
+      ]}
+      data={[]}
+      emptyText="Custom empty text"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## API
+
+| Name           | Type      | Default | Variants | Description                  |
+| -------------- | --------- | ------- | -------- | ---------------------------- |
+| columns        | `array`   |         |          | Columns of the table         |
+| data           | `array`   |         |          | Data of the table            |
+| emptyText      | `string`  |         |          | Empty text of the table      |
+| hidePagination | `boolean` | `false` |          | Hide pagination of the table |
+| rowClassName   | `string`  |         |          | Row class name of the table  |

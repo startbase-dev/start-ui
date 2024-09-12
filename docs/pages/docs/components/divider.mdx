@@ -1,8 +1,237 @@
+import { Divider } from "@start-base/start-ui";
+import { Tabs } from "nextra/components";
+import { Steps } from "nextra/components";
+import "@start-base/start-ui/styles.css";
+import Preview from "@components/Preview/Preview";
+
 # Divider
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+The Divider component is a versatile component that displays a message to the user with various customization options. It supports different severity levels, variants, colors, and additional actions.
 
-import { Divider } from "@start-base/start-ui";
+## Installation
 
-import { Tabs } from "nextra/components";
-import s from "../../index.module.css";
+<Steps>
+### Install the package
+```sh copy npm2yarn
+npm i @start-base/start-ui
+```
+### Add the styles
+
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import Divider from '@start-base/start-ui/Divider';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { Divider } from '@start-base/start-ui';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
+
+### Divider With Horizontal Orientation
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview width="200px">
+      <div
+        style={{
+          display: "flex",
+          textAlign: "center",
+          justifyContent: "space-evenly",
+          flexDirection: "column",
+          height: "200px",
+        }}
+      >
+        <span>Hello</span>
+        <Divider
+          className=""
+          component="li"
+          contentAlign="center"
+          orientation="horizontal"
+          variant="fullWidth"
+        />
+        <span>World</span>
+      </div>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <div
+      style={{
+        display: "flex",
+        textAlign: "center",
+        justifyContent: "space-evenly",
+        flexDirection: "column",
+        height: "200px",
+      }}
+    >
+      <span>Hello</span>
+      <Divider
+        className=""
+        component="li"
+        contentAlign="center"
+        orientation="horizontal"
+        variant="fullWidth"
+      />
+      <span>World</span>
+    </div>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Divider With Vertical Orientation
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview width="200px">
+      <div
+        style={{
+          display: "flex",
+          textAlign: "center",
+          justifyContent: "space-evenly",
+          flexDirection: "row",
+          height: "200px",
+        }}
+      >
+        <span>Hello</span>
+        <Divider
+          className=""
+          component="div"
+          contentAlign="center"
+          orientation="vertical"
+          variant="fullWidth"
+        />
+        <span>World</span>
+      </div>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <div
+      style={{
+        display: "flex",
+        textAlign: "center",
+        justifyContent: "space-evenly",
+        flexDirection: "row",
+        height: "200px",
+      }}
+    >
+      <span>Hello</span>
+      <Divider
+        className=""
+        component="div"
+        contentAlign="center"
+        orientation="vertical"
+        variant="fullWidth"
+      />
+      <span>World</span>
+    </div>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Divider With Children
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview width="200px">
+      <div
+        style={{
+          display: "flex",
+          textAlign: "center",
+          justifyContent: "space-evenly",
+          flexDirection: "column",
+          height: "200px",
+        }}
+      >
+        <span>Hello</span>
+        <Divider
+          className=""
+          component="div"
+          contentAlign="center"
+          orientation="horizontal"
+          variant="fullWidth"
+        >
+          Startbase
+        </Divider>
+        <span>World</span>
+      </div>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <div
+      style={{
+        display: "flex",
+        textAlign: "center",
+        justifyContent: "space-evenly",
+        flexDirection: "column",
+        height: "200px",
+      }}
+    >
+      <span>Hello</span>
+      <Divider
+        className=""
+        component="div"
+        contentAlign="center"
+        orientation="horizontal"
+        variant="fullWidth"
+      >
+        Startbase
+      </Divider>
+      <span>World</span>
+    </div>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## API
+
+| Name         | Type     | Default      | Variants                               | Description                  |
+| ------------ | -------- | ------------ | -------------------------------------- | ---------------------------- |
+| orientation  | `string` | `horizontal` | `horizontal` `vertical`                | Orientation of the Divider   |
+| variant      | `string` | `default`    | `default` `fullWidth` `inset` `middle` | Variant of the Divider       |
+| component    | `string` | `div`        |                                        | Component of the Divider     |
+| contentAlign | `string` | `center`     |                                        | Content align of the Divider |
+| className    | `string` |              |                                        | Classname of the Divider     |

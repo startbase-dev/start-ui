@@ -1,8 +1,135 @@
+import { Dropdown, FloatingMenuItem, Button } from "@start-base/start-ui";
+import { Tabs } from "nextra/components";
+import { Steps } from "nextra/components";
+import "@start-base/start-ui/styles.css";
+import Preview from "@components/Preview/Preview";
+
 # Dropdown
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+The Dropdown component is a versatile UI element that allows users to select an option from a list of choices. It's commonly used in forms, navigation menus, and other interactive interfaces.
 
-import { Dropdown } from "@start-base/start-ui";
+## Installation
 
-import { Tabs } from "nextra/components";
-import s from "../../index.module.css";
+<Steps>
+### Install the package
+```sh copy npm2yarn
+npm i @start-base/start-ui
+```
+### Add the styles
+
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import Dropdown from '@start-base/start-ui/Dropdown';
+            import FloatingMenuItem from '@start-base/start-ui/FloatingMenuItem';
+            import Button from '@start-base/start-ui/Button';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import {Dropdown, FloatingMenuItem, Button} from "@start-base/start-ui";
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Dropdown component={<Button>Dropdown Menu</Button>}>
+        <FloatingMenuItem label="Undo" />
+        <FloatingMenuItem label="Redo" disabled />
+        <FloatingMenuItem label="Cut" />
+        <Dropdown label="Copy as">
+          <FloatingMenuItem label="Text" />
+          <FloatingMenuItem label="Video" />
+          <Dropdown label="Image">
+            <FloatingMenuItem label=".png" />
+            <FloatingMenuItem label=".jpg" />
+            <FloatingMenuItem label=".svg" />
+            <FloatingMenuItem label=".gif" />
+          </Dropdown>
+          <FloatingMenuItem label="Audio" />
+        </Dropdown>
+        <Dropdown label="Share">
+          <FloatingMenuItem label="Mail" />
+          <FloatingMenuItem label="Instagram" />
+        </Dropdown>
+      </Dropdown>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Dropdown component={<Button>Dropdown Menu</Button>}>
+      <FloatingMenuItem label="Undo" />
+      <FloatingMenuItem label="Redo" disabled />
+      <FloatingMenuItem label="Cut" />
+      <Dropdown label="Copy as">
+        <FloatingMenuItem label="Text" />
+        <FloatingMenuItem label="Video" />
+        <Dropdown label="Image">
+          <FloatingMenuItem label=".png" />
+          <FloatingMenuItem label=".jpg" />
+          <FloatingMenuItem label=".svg" />
+          <FloatingMenuItem label=".gif" />
+        </Dropdown>
+        <FloatingMenuItem label="Audio" />
+      </Dropdown>
+      <Dropdown label="Share">
+        <FloatingMenuItem label="Mail" />
+        <FloatingMenuItem label="Instagram" />
+      </Dropdown>
+    </Dropdown>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## API
+
+| Name          | Type             | Default | Description                                                                                                                                                                              |
+| ------------- | ---------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| children      | `ReactElement[]` |         | Child elements of the dropdown                                                                                                                                                           |
+| component     | `ReactElement`   |         | Component to trigger the dropdown                                                                                                                                                        |
+| label         | `string`         |         | Label for nested dropdown items                                                                                                                                                          |
+| className     | `string`         |         | CSS class for the dropdown container                                                                                                                                                     |
+| menuClassName | `string`         |         | CSS class for the dropdown menu                                                                                                                                                          |
+| onFocus       | `function`       |         | Callback function when dropdown gains focus                                                                                                                                              |
+| placement     | `string`         |         | Positioning of the dropdown menu. Variants: `top`, `bottom`, `left`, `right`, `top-start`, `top-end`, `bottom-start`, `bottom-end`, `left-start`, `left-end`, `right-start`, `right-end` |
