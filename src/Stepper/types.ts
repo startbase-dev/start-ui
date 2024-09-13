@@ -1,10 +1,10 @@
 export interface StepperProps {
-  steps: Array<{
+  steps: {
     label: string;
     optional?: boolean;
     icon?: React.ReactNode;
     content?: React.ReactNode;
-  }>;
+  }[];
   direction?: "horizontal" | "vertical";
   color?: "primary" | "secondary";
   className?: string;

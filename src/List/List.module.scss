@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
   list-style-type: none;
-  background-color: transparent;
+  background-color: var(--sui-transparent);
   color: var(--sui-list-text);
   border-radius: var(--sui-border-radius-small);
 }
@@ -25,7 +25,6 @@
   width: 100%;
   background: none;
   border: none;
-  color: inherit;
   font: inherit;
   padding: 0;
   text-align: left;

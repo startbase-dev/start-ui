@@ -5,8 +5,7 @@ import ArrowForwardIos from "../../icons/ArrowForwardIos";
 import type { AccordionProps } from "../types";
 
 // Omit "expanded" | "onExpand" which are only required for controlled accordions
-interface UncontrolledAccordionProps
-  extends Omit<AccordionProps, "expanded" | "onExpand"> {}
+type UncontrolledAccordionProps = Omit<AccordionProps, "expanded" | "onExpand">;
 
 const UncontrolledAccordion = forwardRef<
   HTMLDivElement,

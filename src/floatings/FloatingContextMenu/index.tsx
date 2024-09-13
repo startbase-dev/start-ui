@@ -53,8 +53,8 @@ const FloatingContextMenu = forwardRef<
     const [hasFocusInside, setHasFocusInside] = useState(false);
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-    const elementsRef = useRef<Array<HTMLDivElement | null>>([]);
-    const labelsRef = useRef<Array<string>>([]);
+    const elementsRef = useRef<(HTMLDivElement | null)[]>([]);
+    const labelsRef = useRef<string[]>([]);
     const allowMouseUpCloseRef = useRef(false);
     const parent = useContext(MenuContext);
     const tree = useFloatingTree();

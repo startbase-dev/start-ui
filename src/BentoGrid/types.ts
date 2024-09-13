@@ -1,10 +1,10 @@
 import React from "react";
 
-export type BentoItem = {
+export interface BentoItem {
   element: React.ReactNode;
   width: number;
   height: number;
-};
+}
 
 export type BentoItems = BentoItem[];
 

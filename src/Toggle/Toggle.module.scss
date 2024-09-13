@@ -23,7 +23,7 @@
     }
 
     &.untoggled {
-      background-color: transparent;
+      background-color: var(--sui-transparent);
       color: var(--sui-toggle-primary-default-bg);
 
       &:hover {
@@ -44,7 +44,7 @@
     }
 
     &.untoggled {
-      background-color: transparent;
+      background-color: var(--sui-transparent);
       color: var(--sui-toggle-secondary-default-bg);
 
       &:hover {
@@ -65,7 +65,7 @@
     }
 
     &.untoggled {
-      background-color: transparent;
+      background-color: var(--sui-transparent);
       color: var(--sui-toggle-destructive-default-bg);
 
       &:hover {
@@ -110,7 +110,7 @@
     }
 
     &.untoggled {
-      background-color: transparent;
+      background-color: var(--sui-transparent);
       color: var(--sui-toggle-secondary-outline-text);
 
       &:hover {
@@ -134,7 +134,7 @@
     }
 
     &.untoggled {
-      background-color: transparent;
+      background-color: var(--sui-transparent);
       color: var(--sui-toggle-destructive-outline-text);
 
       &:hover {

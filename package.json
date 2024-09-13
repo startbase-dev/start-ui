@@ -2,7 +2,7 @@
   "name": "@start-base/start-ui",
   "author": "Start-Base",
   "description": "",
-  "version": "0.0.28-alpha",
+  "version": "0.0.29-alpha",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -259,7 +259,7 @@
     "esbuild-sass-plugin": "3.3.1",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-compat": "6.0.0",
+    "eslint-plugin-compat": "6.0.1",
     "eslint-plugin-css-modules": "2.12.0",
     "eslint-plugin-mdx": "3.1.5",
     "eslint-plugin-prettier": "5.2.1",
@@ -277,7 +277,7 @@
     "storybook": "8.3.0",
     "storybook-dark-mode": "4.0.2",
     "style-loader": "4.0.0",
-    "stylelint": "16.9.0",
+    "stylelint": "16.7.0",
     "stylelint-config-prettier-scss": "1.0.0",
     "stylelint-config-standard-scss": "13.1.0",
     "stylelint-declaration-strict-value": "1.10.6",
@@ -286,11 +286,14 @@
     "terser": "5.32.0",
     "ts-node": "10.9.2",
     "tsup": "8.2.4",
-    "typescript": "5.6.2",
+    "typescript": "5.5.4",
     "typescript-plugin-css-modules": "5.1.0",
     "webpack": "5.94.0",
     "webpack-bundle-analyzer": "4.10.2",
     "webpack-cli": "5.1.4"
+  },
+  "overrides": {
+    "caniuse-lite": "1.0.30001653"
   },
   "bugs": {
     "url": "https://github.com/startbase-dev/start-ui/issues"

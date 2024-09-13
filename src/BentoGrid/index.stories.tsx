@@ -4,7 +4,7 @@ import Storybook from "../Storybook";
 
 interface TemplateProps {
   title: string;
-  items: Array<{ element: React.ReactNode; width: number; height: number }>;
+  items: { element: React.ReactNode; width: number; height: number }[];
 }
 
 const Template: React.FC<TemplateProps> = (args) => {
