@@ -40,7 +40,7 @@ export const Stepper = forwardRef<HTMLDivElement, StepperProps>(
 
     return (
       <div ref={ref} className={cx(s.stepperWrapper, s[color], className)}>
-        <div className={cx(s.stepper, s[direction])}>
+        <div className={cx(s.stepper, s[direction as keyof typeof s])}>
           {steps.map((step, index) => (
             <React.Fragment key={index}>
               <Step
@@ -100,13 +100,19 @@ export const Stepper = forwardRef<HTMLDivElement, StepperProps>(
         )}
 
         <div className={s.buttonContainer}>
-          <button onClick={handleBack} disabled={currentStep === 0}>
+          <button
+            className={s.button}
+            onClick={handleBack}
+            disabled={currentStep === 0}
+          >
             Back
           </button>
           {completed ? (
-            <button onClick={handleReset}>Reset</button>
+            <button className={s.button} onClick={handleReset}>
+              Reset
+            </button>
           ) : (
-            <button onClick={handleNext}>
+            <button className={s.button} onClick={handleNext}>
               {currentStep === steps.length - 1 ? "Complete" : "Next"}
             </button>
           )}

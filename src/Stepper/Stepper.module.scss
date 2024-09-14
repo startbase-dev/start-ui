@@ -140,7 +140,7 @@
   color: var(--sui-stepper-stepcontent-text);
 }
 
-button {
+.button {
   padding: 0.5em 0.75em;
   border: 1px solid var(--sui-stepper-button-border);
   background-color: var(--sui-stepper-button-bg);
@@ -150,11 +150,11 @@ button {
   border-radius: var(--sui-border-radius-small);
 }
 
-button:disabled {
+.button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-button:not(:disabled):hover {
+.button:not(:disabled):hover {
   background-color: var(--sui-stepper-button-bg-hover);
 }
