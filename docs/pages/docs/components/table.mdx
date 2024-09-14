@@ -6,7 +6,7 @@ import Preview from "@components/Preview/Preview";
 
 # Table
 
-The Table component is used to display data in a structured format with rows and columns. It supports various features such as sorting, pagination, and customizable styling.
+The Table component is used to display data in a structured format with rows and columns. It supports various features such as sorting, and customizable styling.
 
 ## Installation
 
@@ -164,102 +164,6 @@ npm i @start-base/start-ui
   </Tabs.Tab>
 </Tabs>
 
-### Table Pagination Hidden
-
-<Tabs items={["Preview", "Code"]}>
-  <Tabs.Tab>
-    <Preview>
-      <Table
-        columns={[
-          {
-            dataIndex: "name",
-            key: "name",
-            title: "Name",
-          },
-          {
-            dataIndex: "age",
-            key: "age",
-            title: "Age",
-          },
-          {
-            dataIndex: "email",
-            key: "email",
-            title: "Email",
-          },
-        ]}
-        data={[
-          {
-            age: 28,
-            email: "john.doe@example.com",
-            key: 1,
-            name: "John Doe",
-          },
-          {
-            age: 34,
-            email: "jane.smith@example.com",
-            key: 2,
-            name: "Jane Smith",
-          },
-          {
-            age: 45,
-            email: "alice.johnson@example.com",
-            key: 3,
-            name: "Alice Johnson",
-          },
-        ]}
-        emptyText="No data available"
-        hidePagination
-        rowClassName=""
-      />
-    </Preview>
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ```jsx copy showLineNumbers
-    <Table
-      columns={[
-        {
-          dataIndex: "name",
-          key: "name",
-          title: "Name",
-        },
-        {
-          dataIndex: "age",
-          key: "age",
-          title: "Age",
-        },
-        {
-          dataIndex: "email",
-          key: "email",
-          title: "Email",
-        },
-      ]}
-      data={[
-        {
-          age: 28,
-          email: "john.doe@example.com",
-          key: 1,
-          name: "John Doe",
-        },
-        {
-          age: 34,
-          email: "jane.smith@example.com",
-          key: 2,
-          name: "Jane Smith",
-        },
-        {
-          age: 45,
-          email: "alice.johnson@example.com",
-          key: 3,
-          name: "Alice Johnson",
-        },
-      ]}
-      emptyText="No data available"
-      hidePagination
-    />
-    ```
-  </Tabs.Tab>
-</Tabs>
-
 ### Table With Custom Empty Text
 
 <Tabs items={["Preview", "Code"]}>
@@ -322,5 +226,4 @@ npm i @start-base/start-ui
 | columns        | `array`   |         |          | Columns of the table         |
 | data           | `array`   |         |          | Data of the table            |
 | emptyText      | `string`  |         |          | Empty text of the table      |
-| hidePagination | `boolean` | `false` |          | Hide pagination of the table |
 | rowClassName   | `string`  |         |          | Row class name of the table  |
