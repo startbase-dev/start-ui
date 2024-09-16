@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export type ToggleItemProps = {
+export interface ToggleItemProps {
   value: string;
   initialState?: boolean;
   onToggle?: (toggled: boolean) => void;
@@ -11,11 +11,11 @@ export type ToggleItemProps = {
   className?: string;
   disabled?: boolean;
   children?: ReactNode;
-};
+}
 
-export type ToggleWrapperProps = {
+export interface ToggleWrapperProps {
   value: string | null;
   onChange: (value: string) => void;
   children: ReactNode | ReactNode[];
   direction?: "horizontal" | "vertical";
-};
+}
