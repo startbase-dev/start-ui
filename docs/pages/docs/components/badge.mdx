@@ -1,10 +1,413 @@
+import { Badge } from "@start-base/start-ui";
+import { Tabs } from "nextra/components";
+import { Steps } from "nextra/components";
+import "@start-base/start-ui/styles.css";
+import Preview from "@components/Preview/Preview";
+
 # Badge
 
 A series of interactive headings arranged vertically, each revealing a section of content when clicked.
 
-import { Badge } from "@start-base/start-ui";
+## Installation
 
-import { Tabs } from "nextra/components";
-import s from "../../index.module.css";
+<Steps>
+### Install the package
+```sh copy npm2yarn
+npm i @start-base/start-ui
+```
+### Add the styles
 
-;
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import Badge from '@start-base/start-ui/Badge';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { Badge } from '@start-base/start-ui';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
+
+### Badge Default
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="200px" width="auto">
+      <Badge
+        className=""
+        color="primary"
+        containerClassName=""
+        content={10}
+        position="top-end"
+        variant="default"
+      >
+        <span
+          style={{
+            alignItems: "center",
+            border: "1px solid red",
+            display: "grid",
+            height: "50px",
+            textAlign: "center",
+            width: "70px",
+          }}
+        >
+          Example
+        </span>
+      </Badge>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Badge
+      className=""
+      color="primary"
+      containerClassName=""
+      content={10}
+      position="top-end"
+      variant="default"
+    >
+      <span
+        style={{
+          alignItems: "center",
+          border: "1px solid red",
+          display: "grid",
+          height: "50px",
+          textAlign: "center",
+          width: "70px",
+        }}
+      >
+        Example
+      </span>
+    </Badge>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Badge With Color
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="200px" width="fit-content">
+      <Badge
+        className=""
+        color="success"
+        containerClassName=""
+        content={10}
+        position="top-end"
+        variant="default"
+      >
+        <span
+          style={{
+            alignItems: "center",
+            border: "1px solid red",
+            display: "grid",
+            height: "50px",
+            textAlign: "center",
+            width: "70px",
+          }}
+        >
+          Example
+        </span>
+      </Badge>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Badge
+      className=""
+      color="success"
+      containerClassName=""
+      content={10}
+      position="top-end"
+      variant="default"
+    >
+      <span
+        style={{
+          alignItems: "center",
+          border: "1px solid red",
+          display: "grid",
+          height: "50px",
+          textAlign: "center",
+          width: "70px",
+        }}
+      >
+        Example
+      </span>
+    </Badge>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Badge with dot variant
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="200px" width="auto">
+      <Badge
+        className=""
+        color="primary"
+        containerClassName=""
+        content={10}
+        position="top-end"
+        variant="dot"
+      >
+        <span
+          style={{
+            alignItems: "center",
+            border: "1px solid red",
+            display: "grid",
+            height: "50px",
+            textAlign: "center",
+            width: "70px",
+          }}
+        >
+          Example
+        </span>
+      </Badge>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Badge
+      className=""
+      color="primary"
+      containerClassName=""
+      content={10}
+      position="top-end"
+      variant="dot"
+    >
+      <span
+        style={{
+          alignItems: "center",
+          border: "1px solid red",
+          display: "grid",
+          height: "50px",
+          textAlign: "center",
+          width: "70px",
+        }}
+      >
+        Example
+      </span>
+    </Badge>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Badge with position
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="200px" width="auto">
+      <Badge
+        className=""
+        color="primary"
+        containerClassName=""
+        content={10}
+        position="top-start"
+        variant="default"
+      >
+        <span
+          style={{
+            alignItems: "center",
+            border: "1px solid red",
+            display: "grid",
+            height: "50px",
+            textAlign: "center",
+            width: "70px",
+          }}
+        >
+          Example
+        </span>
+      </Badge>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Badge
+      className=""
+      color="primary"
+      containerClassName=""
+      content={10}
+      position="top-start"
+      variant="default"
+    >
+      <span
+        style={{
+          alignItems: "center",
+          border: "1px solid red",
+          display: "grid",
+          height: "50px",
+          textAlign: "center",
+          width: "70px",
+        }}
+      >
+        Example
+      </span>
+    </Badge>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Badge with position
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="200px" width="auto">
+      <Badge
+        className=""
+        color="primary"
+        containerClassName=""
+        content={10}
+        position="top-start"
+        variant="default"
+      >
+        <span
+          style={{
+            alignItems: "center",
+            border: "1px solid red",
+            display: "grid",
+            height: "50px",
+            textAlign: "center",
+            width: "70px",
+          }}
+        >
+          Example
+        </span>
+      </Badge>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Badge
+      className=""
+      color="primary"
+      containerClassName=""
+      content={10}
+      position="top-start"
+      variant="default"
+    >
+      <span
+        style={{
+          alignItems: "center",
+          border: "1px solid red",
+          display: "grid",
+          height: "50px",
+          textAlign: "center",
+          width: "70px",
+        }}
+      >
+        Example
+      </span>
+    </Badge>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Badge with max content
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="200px" width="auto">
+      <Badge
+        className=""
+        color="primary"
+        containerClassName=""
+        content={500}
+        position="top-end"
+        variant="default"
+      >
+        <span
+          style={{
+            alignItems: "center",
+            border: "1px solid red",
+            display: "grid",
+            height: "50px",
+            textAlign: "center",
+            width: "70px",
+          }}
+        >
+          Example
+        </span>
+      </Badge>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Badge
+      className=""
+      color="primary"
+      containerClassName=""
+      content={500}
+      position="top-end"
+      variant="default"
+    >
+      <span
+        style={{
+          alignItems: "center",
+          border: "1px solid red",
+          display: "grid",
+          height: "50px",
+          textAlign: "center",
+          width: "70px",
+        }}
+      >
+        Example
+      </span>
+    </Badge>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## API
+
+| Name               | Type      | Default   | Variants                                                                       | Description                      |
+| ------------------ | --------- | --------- | ------------------------------------------------------------------------------ | -------------------------------- |
+| content            | `string`  |           |                                                                                | Content of the Badge             |
+| color              | `number`  |           | `primary` `secondary` `success` `error`                                        | Color of the Badge               |
+| variant            | `string`  | `default` | `default` `dot`                                                                | Variant of the Badge             |
+| position           | `string`  |           | `top-end` `top` `top-start` `start` `bottom-start` `bottom` `bottom-end` `end` | Position of the Badge            |
+| invisible          | `boolean` | `false`   |                                                                                | Invisible of the Badge           |
+| className          | `string`  |           |                                                                                | Classname of the Badge           |
+| containerClassName | `string`  |           |                                                                                | Container Classname of the Badge |
+| children           | `object`  |           |                                                                                | Children of the Badge            |

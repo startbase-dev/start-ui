@@ -56,7 +56,9 @@
 
 .secondLayer {
   z-index: 1;
-  transition: transform 600ms, opacity 600ms;
+  transition:
+    transform 600ms,
+    opacity 600ms;
   transform: translateY(100%);
 }
 
@@ -74,7 +76,9 @@
 }
 
 .content {
-  transition: transform 600ms, opacity 600ms;
+  transition:
+    transform 600ms,
+    opacity 600ms;
   animation: slide-up 600ms forwards;
   width: 100%;
   font-size: var(--sui-text-large-fs);

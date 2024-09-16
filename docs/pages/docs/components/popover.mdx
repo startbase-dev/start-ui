@@ -1,8 +1,380 @@
+import { Popover, Button } from "@start-base/start-ui";
+import { Tabs } from "nextra/components";
+import { Steps } from "nextra/components";
+import "@start-base/start-ui/styles.css";
+import Preview from "@components/Preview/Preview";
+
 # Popover
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+A Popover is a small overlay that opens on user interaction, providing contextual information or options without navigating away from the current page.
 
-import { Popover } from "@start-base/start-ui";
+## Installation
 
-import { Tabs } from "nextra/components";
-import s from "../../index.module.css";
+<Steps>
+### Install the package
+```sh copy npm2yarn
+npm i @start-base/start-ui
+```
+### Add the styles
+
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import Popover from '@start-base/start-ui/Popover';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { Popover } from '@start-base/start-ui';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
+
+### Popover With Left Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Popover popper={<Button>left</Button>} placement="left">
+        <>
+          <h3>Title</h3>
+          <div>Lorem dolor sit amet.</div>
+        </>
+      </Popover>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Popover popper={<Button>left</Button>} placement="left">
+      <>
+        <h3>Title</h3>
+        <div>Lorem dolor sit amet.</div>
+      </>
+    </Popover>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Popover With Left Start Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Popover popper={<Button>left-start</Button>} placement="left-start">
+        <>
+          <h3>Title</h3>
+          <div>Lorem dolor sit amet.</div>
+        </>
+      </Popover>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Popover popper={<Button>left-start</Button>} placement="left-start">
+      <>
+        <h3>Title</h3>
+        <div>Lorem dolor sit amet.</div>
+      </>
+    </Popover>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Popover With Left End Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Popover popper={<Button>left-end</Button>} placement="left-end">
+        <>
+          <h3>Title</h3>
+          <div>Lorem dolor sit amet.</div>
+        </>
+      </Popover>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Popover popper={<Button>left-end</Button>} placement="left-end">
+      <>
+        <h3>Title</h3>
+        <div>Lorem dolor sit amet.</div>
+      </>
+    </Popover>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Popover With Right Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Popover popper={<Button>right</Button>} placement="right">
+        <>
+          <h3>Title</h3>
+          <div>Lorem dolor sit amet.</div>
+        </>
+      </Popover>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Popover popper={<Button>right</Button>} placement="right">
+      <>
+        <h3>Title</h3>
+        <div>Lorem dolor sit amet.</div>
+      </>
+    </Popover>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Popover With Right Start Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Popover popper={<Button>right-start</Button>} placement="right-start">
+        <>
+          <h3>Title</h3>
+          <div>Lorem dolor sit amet.</div>
+        </>
+      </Popover>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Popover popper={<Button>right-start</Button>} placement="right-start">
+      <>
+        <h3>Title</h3>
+        <div>Lorem dolor sit amet.</div>
+      </>
+    </Popover>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Popover With Right End Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Popover popper={<Button>right-end</Button>} placement="right-end">
+        <>
+          <h3>Title</h3>
+          <div>Lorem dolor sit amet.</div>
+        </>
+      </Popover>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Popover popper={<Button>right-end</Button>} placement="right-end">
+      <>
+        <h3>Title</h3>
+        <div>Lorem dolor sit amet.</div>
+      </>
+    </Popover>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Popover With Top Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Popover popper={<Button>top</Button>} placement="top">
+        <>
+          <h3>Title</h3>
+          <div>Lorem dolor sit amet.</div>
+        </>
+      </Popover>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Popover popper={<Button>top</Button>} placement="top">
+      <>
+        <h3>Title</h3>
+        <div>Lorem dolor sit amet.</div>
+      </>
+    </Popover>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Popover With Top Start Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Popover popper={<Button>top-start</Button>} placement="top-start">
+        <>
+          <h3>Title</h3>
+          <div>Lorem dolor sit amet.</div>
+        </>
+      </Popover>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Popover popper={<Button>top-start</Button>} placement="top-start">
+      <>
+        <h3>Title</h3>
+        <div>Lorem dolor sit amet.</div>
+      </>
+    </Popover>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Popover With Top End Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Popover popper={<Button>top-end</Button>} placement="top-end">
+        <>
+          <h3>Title</h3>
+          <div>Lorem dolor sit amet.</div>
+        </>
+      </Popover>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Popover popper={<Button>top-end</Button>} placement="top-end">
+      <>
+        <h3>Title</h3>
+        <div>Lorem dolor sit amet.</div>
+      </>
+    </Popover>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Popover With Bottom Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Popover popper={<Button>bottom</Button>} placement="bottom">
+        <>
+          <h3>Title</h3>
+          <div>Lorem dolor sit amet.</div>
+        </>
+      </Popover>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Popover popper={<Button>bottom</Button>} placement="bottom">
+      <>
+        <h3>Title</h3>
+        <div>Lorem dolor sit amet.</div>
+      </>
+    </Popover>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Popover With Bottom Start Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Popover popper={<Button>bottom-start</Button>} placement="bottom-start">
+        <>
+          <h3>Title</h3>
+          <div>Lorem dolor sit amet.</div>
+        </>
+      </Popover>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Popover popper={<Button>bottom-start</Button>} placement="bottom-start">
+      <>
+        <h3>Title</h3>
+        <div>Lorem dolor sit amet.</div>
+      </>
+    </Popover>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Popover With Bottom End Placement
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Popover popper={<Button>bottom-end</Button>} placement="bottom-end">
+        <>
+          <h3>Title</h3>
+          <div>Lorem dolor sit amet.</div>
+        </>
+      </Popover>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Popover popper={<Button>bottom-end</Button>} placement="bottom-end">
+      <>
+        <h3>Title</h3>
+        <div>Lorem dolor sit amet.</div>
+      </>
+    </Popover>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## API
+
+| Name      | Type     | Default  | Variants                                                                                                                          | Description                   |
+| --------- | -------- | -------- | --------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| popper    | `node`   |          |                                                                                                                                   | Element that triggers popover |
+| placement | `string` | `bottom` | `top` `bottom` `left` `right` `top-start` `top-end` `bottom-start` `bottom-end` `left-start` `left-end` `right-start` `right-end` | Placement of the popover      |
+| isOpen    | `bool`   | `false`  |                                                                                                                                   | Controls the visibility       |
+| onClose   | `func`   |          |                                                                                                                                   | Function to close the popover |
+| children  | `node`   |          |                                                                                                                                   | Content of the popover        |

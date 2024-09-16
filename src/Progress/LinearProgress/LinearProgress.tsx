@@ -1,4 +1,5 @@
 import React, { forwardRef } from "react";
+// eslint-disable-next-line css-modules/no-unused-class
 import s from "./LinearProgress.module.scss";
 import clsx from "clsx";
 import type { ProgressProps } from "../types";
@@ -28,10 +29,10 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
   const progressClassNames = clsx(s.progress, progressClassName);
   const labelClassNames = clsx(s.label, labelClassName);
 
-  const intedeterminateValue = 0.75;
+  const indeterminateValue = 0.75;
   const normalizedValue = determinate
     ? normalizeValue(value, max, min)
-    : intedeterminateValue;
+    : indeterminateValue;
   const offset = size - size * normalizedValue;
   const percentage = toPercentage(normalizedValue);
   const borderRadius = trackSize * 0.5;

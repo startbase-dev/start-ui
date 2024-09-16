@@ -3,7 +3,7 @@ import type { ProgressProps } from "./types";
 import CircularProgress from "./CircularProgress/CircularProgress";
 import LinearProgress from "./LinearProgress/LinearProgress";
 
-const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
+const Progress = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
   const { variant = "circular", ...rest } = props;
   const isVariantCircular = variant === "circular";
 
@@ -14,6 +14,6 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
   );
 });
 
-Index.displayName = "Progress";
+Progress.displayName = "Progress";
 
-export default Index;
+export default Progress;

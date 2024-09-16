@@ -1,3 +1,160 @@
-.root {
-  font-family: var(--sui-font-family);
+.stepperWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sui-gap);
+  justify-content: center;
+  width: 100%;
+}
+
+.stepper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--sui-gap);
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.stepIcon {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--sui-border-radius-full);
+  background-color: var(--sui-stepper-stepicon-bg);
+  font-size: var(--sui-text-small-fs);
+  line-height: var(--sui-text-small-lh);
+  font-weight: bold;
+  transition: background-color 0.3s;
+  border: 2px solid transparent;
+}
+
+.stepIcon.active {
+  color: var(--sui-stepper-stepicon-active-text);
+}
+
+.stepIcon.completed {
+  color: var(--sui-stepper-stepicon-active-text);
+}
+
+.stepLabel {
+  font-size: var(--sui-text-small-fs);
+  line-height: var(--sui-text-small-lh);
+  margin: 0 var(--sui-text-margin);
+  color: var(--sui-stepper-steplabel-text);
+}
+
+.stepLabel.active {
+  color: var(--sui-stepper-steplabel-active-text);
+}
+
+.vertical .stepConnector {
+  height: 3rem;
+  min-width: 0.25rem;
+  max-width: 0.25rem;
+  flex: auto;
+  display: flex;
+  margin-left: 1rem;
+}
+
+.stepConnector {
+  height: 0.25rem;
+  min-width: 2rem;
+  max-width: 6rem;
+  background-color: var(--sui-stepper-stepconnector-bg);
+  margin: 0 var(--sui-text-margin);
+  transition: background-color 0.3s;
+}
+
+@media screen and (max-width: 400px) {
+  .stepConnector {
+    height: 3rem;
+    min-width: 0.25rem;
+    max-width: 0.25rem;
+    flex: auto;
+    align-self: center;
+  }
+
+  .stepper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.primary .stepIcon.active,
+.primary .stepIcon.completed {
+  background-color: var(--sui-stepper-stepicon-primary-active-bg);
+}
+
+.primary .stepConnector.active,
+.primary .stepConnector.completed {
+  background-color: var(--sui-stepper-stepicon-primary-active-bg);
+}
+
+.secondary .stepIcon.active,
+.secondary .stepIcon.completed {
+  background-color: var(--sui-stepper-stepicon-secondary-active-bg) !important;
+}
+
+.secondary .stepConnector.active,
+.secondary .stepConnector.completed {
+  background-color: var(--sui-stepper-stepicon-secondary-active-bg) !important;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 10rem;
+  align-self: center;
+}
+
+.vertical .buttonContainer {
+  align-self: flex-start;
+}
+
+.stepContent {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  padding: 1em;
+  background-color: var(--sui-stepper-stepcontent-bg);
+  border: 1px solid var(--sui-stepper-stepcontent-border);
+  border-radius: var(--sui-border-radius-small);
+  font-size: var(--sui-text-fs);
+  line-height: var(--sui-text-lh);
+  color: var(--sui-stepper-stepcontent-text);
+}
+
+.button {
+  padding: 0.5em 0.75em;
+  border: 1px solid var(--sui-stepper-button-border);
+  background-color: var(--sui-stepper-button-bg);
+  cursor: pointer;
+  font-size: var(--sui-text-small-fs);
+  line-height: var(--sui-text-small-lh);
+  border-radius: var(--sui-border-radius-small);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button:not(:disabled):hover {
+  background-color: var(--sui-stepper-button-bg-hover);
 }

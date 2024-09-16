@@ -4,7 +4,6 @@ import React, {
   useEffect,
   useRef,
   useState,
-  ReactElement,
   useMemo,
 } from "react";
 
@@ -39,27 +38,7 @@ import MenuContext from "../FloatingMenuContext";
 import styles from "./FloatingMenu.module.scss";
 import cx from "clsx";
 
-interface FloatingMenuProps {
-  children: ReactElement | ReactElement[];
-  component?: ReactElement;
-  label?: ReactElement | ReactElement[] | string;
-  className?: string;
-  menuClassName?: string;
-  onFocus?: (event: React.FocusEvent<HTMLDivElement>) => void;
-  placement?:
-    | "top"
-    | "bottom"
-    | "left"
-    | "right"
-    | "top-start"
-    | "top-end"
-    | "bottom-start"
-    | "bottom-end"
-    | "left-start"
-    | "left-end"
-    | "right-start"
-    | "right-end";
-}
+import type { FloatingMenuProps } from "./types";
 
 const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
   (
@@ -78,8 +57,8 @@ const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
     const [hasFocusInside, setHasFocusInside] = useState(false);
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-    const elementsRef = useRef<Array<HTMLDivElement | null>>([]);
-    const labelsRef = useRef<Array<string>>([]);
+    const elementsRef = useRef<(HTMLDivElement | null)[]>([]);
+    const labelsRef = useRef<string[]>([]);
     const parent = useContext(MenuContext);
 
     const tree = useFloatingTree();

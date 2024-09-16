@@ -1,68 +1,238 @@
+import { ScrollArea } from "@start-base/start-ui";
+import { Tabs } from "nextra/components";
+import { Steps } from "nextra/components";
+import "@start-base/start-ui/styles.css";
+import Preview from "@components/Preview/Preview";
+
 # ScrollArea
 
 The ScrollArea provides customizable scrolling functionality for its child elements. It can be configured for horizontal or vertical scrolling, making it suitable for a variety of use cases where content exceeds the visible area.
 
-import { ScrollArea } from "@start-base/start-ui";
+## Installation
 
-import { Tabs } from "nextra/components";
-import s from "../../index.module.css";
+<Steps>
+### Install the package
+```sh copy npm2yarn
+npm i @start-base/start-ui
+```
+### Add the styles
+
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import ScrollArea from '@start-base/start-ui/ScrollArea';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { ScrollArea } from '@start-base/start-ui';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
 
 ### Vertical ScrollArea
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-    <div className={s.previewContainer}>
-      <ScrollArea orientation="vertical">
-        The Young Woman and the Sea" is a biographical drama that tells the
-        story of Gertrude "Trudy" Ederle, who in 1926 became the first woman to
-        swim across the English Channel. Directed by Joachim Rønning and written
-        by Jeff Nathanson, the film stars Daisy Ridley as Ederle. It is based on
-        the book "Young Woman and the Sea: How Trudy Ederle Conquered the
-        English Channel and Inspired the World" by Glenn Stout​.The movie
-        follows Trudy's journey from her early life in Manhattan, where she
-        struggled with health issues, to becoming an Olympic swimmer and
-        ultimately achieving her historic Channel swim. The film highlights her
-        training, the societal challenges she faced as a woman in sports, and
-        the physical and mental obstacles she overcame during her 21-mile swim
-        from France to England​ The film has received praise for its
-        inspirational storytelling and Ridley's performance, capturing the
-        determination and resilience of Ederle. It underscores the broader
-        cultural impact of her achievement, marking a significant moment in
-        women's sports history​​.The film highlights her training, the societal
-        challenges she faced as a woman in sports, and the physical and mental
-        obstacles she overcame during her 21-mile swim from France to England​
-        The film has received praise for its inspirational storytelling and
-        Ridley's performance, capturing the determination and resilience of
-        Ederle. It underscores the broader cultural impact of her achievement,
-        marking a significant moment in women's sports history​​.
-      </ScrollArea>
-    </div>
+    <Preview>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-evenly",
+          marginBottom: "16px",
+        }}
+      >
+        <ScrollArea
+          orientation="vertical"
+          style={{
+            height: "200px",
+          }}
+        >
+          <div
+            style={{
+              backgroundColor: "var(--sui-gray-100)",
+              height: "auto",
+              padding: "16px",
+              width: "auto",
+            }}
+          >
+            In a distant galaxy, far beyond the reaches of the known universe,
+            the remnants of the fallen Jedi Order were gathering in secret. Led
+            by the last surviving Jedi Knight, Jor-El, they sought refuge on the
+            forgotten planet of Thar&apos;os. Hidden beneath the planet&apos;s
+            crimson sands lay ancient temples imbued with the Force, offering a
+            glimmer of hope to the exiled warriors. As the Empire&apos;s shadow
+            grew ever darker, whispers of a new hope began to spread among the
+            remaining rebels, kindling the flame of resistance once more. Amidst
+            the whispers, a young and untested Jedi named Lyria discovered a
+            forgotten holocron that contained secrets of the Force long thought
+            lost. This relic revealed the existence of a powerful artifact
+            capable of restoring balance to the Force and weakening the
+            Sith&apos;s grasp on the galaxy. Determined to find the artifact,
+            Lyria embarked on a perilous journey across the stars, guided by
+            visions of ancient Jedi Masters. Along the way, she encountered
+            allies and enemies, each with their own motivations and ties to the
+            Force. As Lyria&apos;s quest unfolded, the Emperor sensed a
+            disturbance and dispatched his most formidable enforcer, Darth
+            Malak, to hunt her down. The final confrontation took place on the
+            storm-ravaged moon of Veltros, where Lyria, armed with the ancient
+            artifact, faced Darth Malak in a battle that would decide the fate
+            of the galaxy. With the strength of her ancestors flowing through
+            her, Lyria defeated Malak and shattered the Sith&apos;s hold on the
+            Force, igniting a new era of hope and unity for the galaxy. With
+            Darth Malak vanquished, Lyria returned to Thar&apos;os with the
+            ancient artifact, greeted by a renewed sense of hope among the
+            surviving Jedi and rebels. The once-hidden temples of Thar&apos;os
+            now thrummed with vibrant energy, as the Force began to heal from
+            the Sith&apos;s corruption. Under Jor-El&apos;s wise leadership, the
+            Jedi Order started to rebuild, training a new generation of Jedi who
+            would safeguard peace and justice in the galaxy. The rebels,
+            inspired by Lyria&apos;s courage and victory, rallied more systems
+            to their cause, slowly but surely eroding the Empire&apos;s power.
+            However, the Emperor was far from defeated. In the dark recesses of
+            his throne room on Coruscant, he plotted his revenge. Summoning the
+            most sinister dark lords and ruthless bounty hunters, he launched a
+            relentless campaign to crush the rebellion and reclaim control.
+            Despite their growing strength, the rebels faced overwhelming odds,
+            with skirmishes breaking out across the galaxy. Lyria, now a symbol
+            of hope, took on a crucial role in unifying the scattered rebel
+            factions, using her connection to the Force to foresee and counter
+            the Empire&apos;s attacks. In a climactic showdown, the rebels laid
+            siege to the Emperor&apos;s stronghold on Coruscant. The battle
+            raged in the streets and skies, with the fate of the galaxy hanging
+            in the balance. Lyria, accompanied by Jor-El and her closest allies,
+            infiltrated the Emperor&apos;s citadel. The final confrontation was
+            intense, as the Emperor unleashed his full dark powers. But Lyria,
+            drawing strength from the ancient artifact and the unity of the
+            Force, stood firm. In a moment of sheer willpower, she and Jor-El
+            combined their abilities, creating a wave of pure Force energy that
+            obliterated the Emperor and his dark influence. Peace was finally
+            restored, and the galaxy, now free from tyranny, began to heal and
+            flourish under the guidance of the reborn Jedi Order.
+          </div>
+        </ScrollArea>
+      </div>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
     ```ts copy
-    <ScrollArea orientation="vertical">
-      The Young Woman and the Sea" is a biographical drama that tells the story
-      of Gertrude "Trudy" Ederle, who in 1926 became the first woman to swim
-      across the English Channel. Directed by Joachim Rønning and written by
-      Jeff Nathanson, the film stars Daisy Ridley as Ederle. It is based on the
-      book "Young Woman and the Sea: How Trudy Ederle Conquered the English
-      Channel and Inspired the World" by Glenn Stout​.The movie follows Trudy's
-      journey from her early life in Manhattan, where she struggled with health
-      issues, to becoming an Olympic swimmer and ultimately achieving her
-      historic Channel swim. The film highlights her training, the societal
-      challenges she faced as a woman in sports, and the physical and mental
-      obstacles she overcame during her 21-mile swim from France to England​ The
-      film has received praise for its inspirational storytelling and Ridley's
-      performance, capturing the determination and resilience of Ederle. It
-      underscores the broader cultural impact of her achievement, marking a
-      significant moment in women's sports history​​.The film highlights her
-      training, the societal challenges she faced as a woman in sports, and the
-      physical and mental obstacles she overcame during her 21-mile swim from
-      France to England​ The film has received praise for its inspirational
-      storytelling and Ridley's performance, capturing the determination and
-      resilience of Ederle. It underscores the broader cultural impact of her
-      achievement, marking a significant moment in women's sports history​​.
-    </ScrollArea>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-evenly",
+        marginBottom: "16px",
+      }}
+    >
+      <ScrollArea
+        orientation="vertical"
+        style={{
+          height: "200px",
+        }}
+      >
+        <div
+          style={{
+            backgroundColor: "var(--sui-gray-100)",
+            height: "500px",
+            padding: "16px",
+            width: "auto",
+          }}
+        >
+          In a distant galaxy, far beyond the reaches of the known universe, the
+          remnants of the fallen Jedi Order were gathering in secret. Led by the
+          last surviving Jedi Knight, Jor-El, they sought refuge on the
+          forgotten planet of Thar&apos;os. Hidden beneath the planet&apos;s
+          crimson sands lay ancient temples imbued with the Force, offering a
+          glimmer of hope to the exiled warriors. As the Empire&apos;s shadow
+          grew ever darker, whispers of a new hope began to spread among the
+          remaining rebels, kindling the flame of resistance once more. Amidst
+          the whispers, a young and untested Jedi named Lyria discovered a
+          forgotten holocron that contained secrets of the Force long thought
+          lost. This relic revealed the existence of a powerful artifact capable
+          of restoring balance to the Force and weakening the Sith&apos;s grasp
+          on the galaxy. Determined to find the artifact, Lyria embarked on a
+          perilous journey across the stars, guided by visions of ancient Jedi
+          Masters. Along the way, she encountered allies and enemies, each with
+          their own motivations and ties to the Force. As Lyria&apos;s quest
+          unfolded, the Emperor sensed a disturbance and dispatched his most
+          formidable enforcer, Darth Malak, to hunt her down. The final
+          confrontation took place on the storm-ravaged moon of Veltros, where
+          Lyria, armed with the ancient artifact, faced Darth Malak in a battle
+          that would decide the fate of the galaxy. With the strength of her
+          ancestors flowing through her, Lyria defeated Malak and shattered the
+          Sith&apos;s hold on the Force, igniting a new era of hope and unity
+          for the galaxy. With Darth Malak vanquished, Lyria returned to
+          Thar&apos;os with the ancient artifact, greeted by a renewed sense of
+          hope among the surviving Jedi and rebels. The once-hidden temples of
+          Thar&apos;os now thrummed with vibrant energy, as the Force began to
+          heal from the Sith&apos;s corruption. Under Jor-El&apos;s wise
+          leadership, the Jedi Order started to rebuild, training a new
+          generation of Jedi who would safeguard peace and justice in the
+          galaxy. The rebels, inspired by Lyria&apos;s courage and victory,
+          rallied more systems to their cause, slowly but surely eroding the
+          Empire&apos;s power. However, the Emperor was far from defeated. In
+          the dark recesses of his throne room on Coruscant, he plotted his
+          revenge. Summoning the most sinister dark lords and ruthless bounty
+          hunters, he launched a relentless campaign to crush the rebellion and
+          reclaim control. Despite their growing strength, the rebels faced
+          overwhelming odds, with skirmishes breaking out across the galaxy.
+          Lyria, now a symbol of hope, took on a crucial role in unifying the
+          scattered rebel factions, using her connection to the Force to foresee
+          and counter the Empire&apos;s attacks. In a climactic showdown, the
+          rebels laid siege to the Emperor&apos;s stronghold on Coruscant. The
+          battle raged in the streets and skies, with the fate of the galaxy
+          hanging in the balance. Lyria, accompanied by Jor-El and her closest
+          allies, infiltrated the Emperor&apos;s citadel. The final
+          confrontation was intense, as the Emperor unleashed his full dark
+          powers. But Lyria, drawing strength from the ancient artifact and the
+          unity of the Force, stood firm. In a moment of sheer willpower, she
+          and Jor-El combined their abilities, creating a wave of pure Force
+          energy that obliterated the Emperor and his dark influence. Peace was
+          finally restored, and the galaxy, now free from tyranny, began to heal
+          and flourish under the guidance of the reborn Jedi Order.
+        </div>
+      </ScrollArea>
+    </div>
     ```
   </Tabs.Tab>
 </Tabs>
@@ -71,100 +241,155 @@ import s from "../../index.module.css";
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-    <div className={s.previewContainer}>
-      <ScrollArea orientation="horizontal" style={{ width: "400px" }}>
-        The Young Woman and the Sea" is a biographical drama that tells the
-        story of Gertrude "Trudy" Ederle, who in 1926 became the first woman to
-        swim across the English Channel. Directed by Joachim Rønning and written
-        by Jeff Nathanson, the film stars Daisy Ridley as Ederle. It is based on
-        the book "Young Woman and the Sea: How Trudy Ederle Conquered the
-        English Channel and Inspired the World" by Glenn Stout​.The movie
-        follows Trudy's journey from her early life in Manhattan, where she
-        struggled with health issues, to becoming an Olympic swimmer and
-        ultimately achieving her historic Channel swim. The film highlights her
-        training, the societal challenges she faced as a woman in sports, and
-        the physical and mental obstacles she overcame during her 21-mile swim
-        from France to England​ The film has received praise for its
-        inspirational storytelling and Ridley's performance, capturing the
-        determination and resilience of Ederle. It underscores the broader
-        cultural impact of her achievement, marking a significant moment in
-        women's sports history​​.
-      </ScrollArea>
-    </div>
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ```ts copy
-    <ScrollArea orientation="horizontal" style={{ width: "400px" }}>
-      The Young Woman and the Sea" is a biographical drama that tells the story
-      of Gertrude "Trudy" Ederle, who in 1926 became the first woman to swim
-      across the English Channel. Directed by Joachim Rønning and written by
-      Jeff Nathanson, the film stars Daisy Ridley as Ederle. It is based on the
-      book "Young Woman and the Sea: How Trudy Ederle Conquered the English
-      Channel and Inspired the World" by Glenn Stout​.The movie follows Trudy's
-      journey from her early life in Manhattan, where she struggled with health
-      issues, to becoming an Olympic swimmer and ultimately achieving her
-      historic Channel swim. The film highlights her training, the societal
-      challenges she faced as a woman in sports, and the physical and mental
-      obstacles she overcame during her 21-mile swim from France to England​ The
-      film has received praise for its inspirational storytelling and Ridley's
-      performance, capturing the determination and resilience of Ederle. It
-      underscores the broader cultural impact of her achievement, marking a
-      significant moment in women's sports history​​.
-    </ScrollArea>
-    ```
-  </Tabs.Tab>
-</Tabs>
-
-### Vertical ScrollArea with Styling
-
-<Tabs items={["Preview", "Code"]}>
-  <Tabs.Tab>
-    <div className={s.previewContainer}>
+    <Preview height={800}>
       <ScrollArea
-        orientation="vertical"
-        style={{ height: "200px", width: "100%", border: "1px solid purple" }}
+        orientation="horizontal"
+        style={{
+          width: "600px",
+        }}
       >
-        The Young Woman and the Sea" is a biographical drama that tells the
-        story of Gertrude "Trudy" Ederle, who in 1926 became the first woman to
-        swim across the English Channel. Directed by Joachim Rønning and written
-        by Jeff Nathanson, the film stars Daisy Ridley as Ederle. It is based on
-        the book "Young Woman and the Sea: How Trudy Ederle Conquered the
-        English Channel and Inspired the World" by Glenn Stout​.The movie
-        follows Trudy's journey from her early life in Manhattan, where she
-        struggled with health issues, to becoming an Olympic swimmer and
-        ultimately achieving her historic Channel swim. The film highlights her
-        training, the societal challenges she faced as a woman in sports, and
-        the physical and mental obstacles she overcame during her 21-mile swim
-        from France to England​ The film has received praise for its
-        inspirational storytelling and Ridley's performance, capturing the
-        determination and resilience of Ederle. It underscores the broader
-        cultural impact of her achievement, marking a significant moment in
-        women's sports history​​.
+        <div
+          style={{
+            backgroundColor: "var(--sui-gray-100)",
+            height: "auto",
+            padding: "16px",
+            width: "1000px",
+          }}
+        >
+          In a distant galaxy, far beyond the reaches of the known universe, the
+          remnants of the fallen Jedi Order were gathering in secret. Led by the
+          last surviving Jedi Knight, Jor-El, they sought refuge on the
+          forgotten planet of Thar&apos;os. Hidden beneath the planet&apos;s
+          crimson sands lay ancient temples imbued with the Force, offering a
+          glimmer of hope to the exiled warriors. As the Empire&apos;s shadow
+          grew ever darker, whispers of a new hope began to spread among the
+          remaining rebels, kindling the flame of resistance once more. Amidst
+          the whispers, a young and untested Jedi named Lyria discovered a
+          forgotten holocron that contained secrets of the Force long thought
+          lost. This relic revealed the existence of a powerful artifact capable
+          of restoring balance to the Force and weakening the Sith&apos;s grasp
+          on the galaxy. Determined to find the artifact, Lyria embarked on a
+          perilous journey across the stars, guided by visions of ancient Jedi
+          Masters. Along the way, she encountered allies and enemies, each with
+          their own motivations and ties to the Force. As Lyria&apos;s quest
+          unfolded, the Emperor sensed a disturbance and dispatched his most
+          formidable enforcer, Darth Malak, to hunt her down. The final
+          confrontation took place on the storm-ravaged moon of Veltros, where
+          Lyria, armed with the ancient artifact, faced Darth Malak in a battle
+          that would decide the fate of the galaxy. With the strength of her
+          ancestors flowing through her, Lyria defeated Malak and shattered the
+          Sith&apos;s hold on the Force, igniting a new era of hope and unity
+          for the galaxy. With Darth Malak vanquished, Lyria returned to
+          Thar&apos;os with the ancient artifact, greeted by a renewed sense of
+          hope among the surviving Jedi and rebels. The once-hidden temples of
+          Thar&apos;os now thrummed with vibrant energy, as the Force began to
+          heal from the Sith&apos;s corruption. Under Jor-El&apos;s wise
+          leadership, the Jedi Order started to rebuild, training a new
+          generation of Jedi who would safeguard peace and justice in the
+          galaxy. The rebels, inspired by Lyria&apos;s courage and victory,
+          rallied more systems to their cause, slowly but surely eroding the
+          Empire&apos;s power. However, the Emperor was far from defeated. In
+          the dark recesses of his throne room on Coruscant, he plotted his
+          revenge. Summoning the most sinister dark lords and ruthless bounty
+          hunters, he launched a relentless campaign to crush the rebellion and
+          reclaim control. Despite their growing strength, the rebels faced
+          overwhelming odds, with skirmishes breaking out across the galaxy.
+          Lyria, now a symbol of hope, took on a crucial role in unifying the
+          scattered rebel factions, using her connection to the Force to foresee
+          and counter the Empire&apos;s attacks. In a climactic showdown, the
+          rebels laid siege to the Emperor&apos;s stronghold on Coruscant. The
+          battle raged in the streets and skies, with the fate of the galaxy
+          hanging in the balance. Lyria, accompanied by Jor-El and her closest
+          allies, infiltrated the Emperor&apos;s citadel. The final
+          confrontation was intense, as the Emperor unleashed his full dark
+          powers. But Lyria, drawing strength from the ancient artifact and the
+          unity of the Force, stood firm. In a moment of sheer willpower, she
+          and Jor-El combined their abilities, creating a wave of pure Force
+          energy that obliterated the Emperor and his dark influence. Peace was
+          finally restored, and the galaxy, now free from tyranny, began to heal
+          and flourish under the guidance of the reborn Jedi Order.
+        </div>
       </ScrollArea>
-    </div>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
     ```ts copy
     <ScrollArea
-      orientation="vertical"
-      style={{ height: "200px", width: "100%", border: "1px solid purple" }}
+      orientation="horizontal"
+      style={{
+        width: "600px",
+      }}
     >
-      The Young Woman and the Sea" is a biographical drama that tells the story
-      of Gertrude "Trudy" Ederle, who in 1926 became the first woman to swim
-      across the English Channel. Directed by Joachim Rønning and written by
-      Jeff Nathanson, the film stars Daisy Ridley as Ederle. It is based on the
-      book "Young Woman and the Sea: How Trudy Ederle Conquered the English
-      Channel and Inspired the World" by Glenn Stout​.The movie follows Trudy's
-      journey from her early life in Manhattan, where she struggled with health
-      issues, to becoming an Olympic swimmer and ultimately achieving her
-      historic Channel swim. The film highlights her training, the societal
-      challenges she faced as a woman in sports, and the physical and mental
-      obstacles she overcame during her 21-mile swim from France to England​ The
-      film has received praise for its inspirational storytelling and Ridley's
-      performance, capturing the determination and resilience of Ederle. It
-      underscores the broader cultural impact of her achievement, marking a
-      significant moment in women's sports history​​.
+      <div
+        style={{
+          backgroundColor: "var(--sui-gray-100)",
+          height: "auto",
+          padding: "16px",
+          width: "1000px",
+        }}
+      >
+        In a distant galaxy, far beyond the reaches of the known universe, the
+        remnants of the fallen Jedi Order were gathering in secret. Led by the
+        last surviving Jedi Knight, Jor-El, they sought refuge on the forgotten
+        planet of Thar&apos;os. Hidden beneath the planet&apos;s crimson sands
+        lay ancient temples imbued with the Force, offering a glimmer of hope to
+        the exiled warriors. As the Empire&apos;s shadow grew ever darker,
+        whispers of a new hope began to spread among the remaining rebels,
+        kindling the flame of resistance once more. Amidst the whispers, a young
+        and untested Jedi named Lyria discovered a forgotten holocron that
+        contained secrets of the Force long thought lost. This relic revealed
+        the existence of a powerful artifact capable of restoring balance to the
+        Force and weakening the Sith&apos;s grasp on the galaxy. Determined to
+        find the artifact, Lyria embarked on a perilous journey across the
+        stars, guided by visions of ancient Jedi Masters. Along the way, she
+        encountered allies and enemies, each with their own motivations and ties
+        to the Force. As Lyria&apos;s quest unfolded, the Emperor sensed a
+        disturbance and dispatched his most formidable enforcer, Darth Malak, to
+        hunt her down. The final confrontation took place on the storm-ravaged
+        moon of Veltros, where Lyria, armed with the ancient artifact, faced
+        Darth Malak in a battle that would decide the fate of the galaxy. With
+        the strength of her ancestors flowing through her, Lyria defeated Malak
+        and shattered the Sith&apos;s hold on the Force, igniting a new era of
+        hope and unity for the galaxy. With Darth Malak vanquished, Lyria
+        returned to Thar&apos;os with the ancient artifact, greeted by a renewed
+        sense of hope among the surviving Jedi and rebels. The once-hidden
+        temples of Thar&apos;os now thrummed with vibrant energy, as the Force
+        began to heal from the Sith&apos;s corruption. Under Jor-El&apos;s wise
+        leadership, the Jedi Order started to rebuild, training a new generation
+        of Jedi who would safeguard peace and justice in the galaxy. The rebels,
+        inspired by Lyria&apos;s courage and victory, rallied more systems to
+        their cause, slowly but surely eroding the Empire&apos;s power. However,
+        the Emperor was far from defeated. In the dark recesses of his throne
+        room on Coruscant, he plotted his revenge. Summoning the most sinister
+        dark lords and ruthless bounty hunters, he launched a relentless
+        campaign to crush the rebellion and reclaim control. Despite their
+        growing strength, the rebels faced overwhelming odds, with skirmishes
+        breaking out across the galaxy. Lyria, now a symbol of hope, took on a
+        crucial role in unifying the scattered rebel factions, using her
+        connection to the Force to foresee and counter the Empire&apos;s
+        attacks. In a climactic showdown, the rebels laid siege to the
+        Emperor&apos;s stronghold on Coruscant. The battle raged in the streets
+        and skies, with the fate of the galaxy hanging in the balance. Lyria,
+        accompanied by Jor-El and her closest allies, infiltrated the
+        Emperor&apos;s citadel. The final confrontation was intense, as the
+        Emperor unleashed his full dark powers. But Lyria, drawing strength from
+        the ancient artifact and the unity of the Force, stood firm. In a moment
+        of sheer willpower, she and Jor-El combined their abilities, creating a
+        wave of pure Force energy that obliterated the Emperor and his dark
+        influence. Peace was finally restored, and the galaxy, now free from
+        tyranny, began to heal and flourish under the guidance of the reborn
+        Jedi Order.
+      </div>
     </ScrollArea>
     ```
   </Tabs.Tab>
 </Tabs>
+
+## API
+
+| Name        | Type     | Default    | Variants                | Description                    |
+| ----------- | -------- | ---------- | ----------------------- | ------------------------------ |
+| children    | `string` |            |                         | Children of the alert          |
+| orientation | `string` | `vertical` | `vertical` `horizontal` | Orientation of the scroll area |
+| style       | `object` |            |                         | Style of the scroll area       |
+| className   | `string` |            |                         | Classname of the scroll area   |

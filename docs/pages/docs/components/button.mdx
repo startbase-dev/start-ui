@@ -1,10 +1,447 @@
+import { Button } from "@start-base/start-ui";
+import { Tabs } from "nextra/components";
+import { Steps } from "nextra/components";
+import "@start-base/start-ui/styles.css";
+import Preview from "@components/Preview/Preview";
+
 # Button
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+The Button component is a versatile and customizable button element that can be used in various contexts. It supports different variants, colors, sizes, and additional actions.
 
-import { Button } from "@start-base/start-ui";
+## Installation
 
-import { Tabs } from "nextra/components";
-import s from "../../index.module.css";
+<Steps>
+### Install the package
+```sh copy npm2yarn
+npm i @start-base/start-ui
+```
+### Add the styles
 
-<Button>Hello</Button>
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import Button from '@start-base/start-ui/Button';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { Button } from '@start-base/start-ui';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
+
+### Button Primary
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Button color="primary" size="medium" variant="default">
+        Button Primary Default
+      </Button>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Button color="primary" size="medium" variant="default">
+      Button Primary Default
+    </Button>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Button color="primary" size="medium" variant="outline">
+        Button Primary Outline
+      </Button>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Button color="primary" size="medium" variant="outline">
+      Button Primary Outline
+    </Button>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Button color="primary" size="medium" variant="ghost">
+        Button Primary Ghost
+      </Button>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Button color="primary" size="medium" variant="ghost">
+      Button Primary Ghost
+    </Button>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Button color="primary" size="medium" variant="default">
+        Button With Icon
+      </Button>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Button color="primary" size="medium" variant="default">
+      Button With Icon
+    </Button>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Button color="primary" disabled size="medium" variant="default">
+        Button Primary Default Disabled
+      </Button>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Button color="primary" disabled size="medium" variant="default">
+      Button Primary Default Disabled
+    </Button>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Button color="primary" size="icon" variant="default">
+        🔔
+      </Button>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Button color="primary" size="icon" variant="default">
+      🔔
+    </Button>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Button color="primary" fluid size="medium" variant="default">
+        Button Primary Default Fluid
+      </Button>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Button color="primary" fluid size="medium" variant="default">
+      Button Primary Default Fluid
+    </Button>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Button Secondary
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Button color="secondary" size="medium" variant="default">
+        Button Secondary Default
+      </Button>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Button color="secondary" size="medium" variant="default">
+      Button Secondary Default
+    </Button>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Button color="secondary" size="medium" variant="outline">
+        Button Secondary Outline
+      </Button>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Button color="secondary" size="medium" variant="outline">
+      Button Secondary Outline
+    </Button>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Button color="secondary" size="medium" variant="ghost">
+        Button Secondary Ghost
+      </Button>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Button color="secondary" size="medium" variant="ghost">
+      Button Secondary Ghost
+    </Button>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Button color="secondary" size="medium" variant="default">
+        Button With Icon
+      </Button>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Button color="secondary" size="medium" variant="default">
+      Button With Icon
+    </Button>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Button color="secondary" disabled size="medium" variant="default">
+        Button Secondary Default Disabled
+      </Button>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Button color="secondary" disabled size="medium" variant="default">
+      Button Secondary Default Disabled
+    </Button>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Button color="secondary" size="icon" variant="default">
+        🔔
+      </Button>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Button color="secondary" size="icon" variant="default">
+      🔔
+    </Button>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Button color="secondary" fluid size="medium" variant="default">
+        Button Secondary Default Fluid
+      </Button>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Button color="secondary" fluid size="medium" variant="default">
+      Button Secondary Default Fluid
+    </Button>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Button Destructive
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Button color="destructive" size="medium" variant="default">
+        Button Destructive Default
+      </Button>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Button color="destructive" size="medium" variant="default">
+      Button Destructive Default
+    </Button>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Button color="destructive" size="medium" variant="outline">
+        Button Destructive Outline
+      </Button>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Button color="destructive" size="medium" variant="outline">
+      Button Destructive Outline
+    </Button>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Button color="destructive" size="medium" variant="ghost">
+        Button Destructive Ghost
+      </Button>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Button color="destructive" size="medium" variant="ghost">
+      Button Destructive Ghost
+    </Button>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Button color="destructive" size="medium" variant="default">
+        Button With Icon
+      </Button>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Button color="destructive" size="medium" variant="default">
+      Button With Icon
+    </Button>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Button color="destructive" disabled size="medium" variant="default">
+        Button Destructive Default Disabled
+      </Button>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Button color="destructive" disabled size="medium" variant="default">
+      Button Destructive Default Disabled
+    </Button>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Button color="destructive" size="icon" variant="default">
+        🔔
+      </Button>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Button color="destructive" size="icon" variant="default">
+      🔔
+    </Button>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height={200}>
+      <Button color="destructive" fluid size="medium" variant="default">
+        Button Destructive Default Fluid
+      </Button>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Button color="destructive" fluid size="medium" variant="default">
+      Button Destructive Default Fluid
+    </Button>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## API
+
+| Name      | Type        | Default   | Variants                            | Description             |
+| --------- | ----------- | --------- | ----------------------------------- | ----------------------- |
+| children  | `ReactNode` |           |                                     | Children of the Button  |
+| className | `string`    |           |                                     | Classname of the Button |
+| variant   | `string`    | `default` | `default` `link` `outline` `ghost`  | Variant of the button   |
+| color     | `string`    | `primary` | `primary` `secondary` `destructive` | Color of the button     |
+| size      | `string`    | `medium`  | `icon` `small` `medium` `large`     | Size of the button      |
+| fluid     | `boolean`   | `false`   |                                     | Fluid of the button     |
+| type      | `string`    | `button`  | `submit` `reset` `button`           | Type of the Button      |
+| disabled  | `boolean`   | `false`   |                                     | Disabled of the Button  |
+| loading   | `boolean`   | `false`   |                                     | Loading of the Button   |

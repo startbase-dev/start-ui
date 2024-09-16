@@ -1,4 +1,5 @@
 import React, { forwardRef } from "react";
+// eslint-disable-next-line css-modules/no-unused-class
 import s from "./CircularProgress.module.scss";
 import clsx from "clsx";
 import type { ProgressProps } from "../types";

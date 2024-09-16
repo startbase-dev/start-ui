@@ -5,12 +5,11 @@ import cx from "clsx";
 import RCTable from "rc-table";
 
 import styles from "./Table.module.scss";
-import { TableProps, CustomColumnType } from "./types";
-
+import { TableProps, DataItem } from "./types";
+import { ColumnType } from "rc-table";
 const Table: React.FC<TableProps> = ({
   data,
   columns,
-  hidePagination,
   rowClassName,
   emptyText,
   ...rest
@@ -20,7 +19,7 @@ const Table: React.FC<TableProps> = ({
     onCell: () => ({
       "data-title": column.title as React.ReactNode,
     }),
-  })) as CustomColumnType[];
+  })) as ColumnType<DataItem>[];
 
   return (
     <div className={styles.table}>
@@ -33,8 +32,7 @@ const Table: React.FC<TableProps> = ({
         tableLayout="fixed"
         className={styles.tableContainer}
         rowClassName={cx(styles.row, {
-          [styles.rowLast]: !(!hidePagination && data?.length),
-          [rowClassName!]: rowClassName,
+          [rowClassName as string]: rowClassName,
         })}
         emptyText={emptyText}
         {...rest}

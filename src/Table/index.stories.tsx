@@ -45,7 +45,6 @@ export const DefaultTable = Template.bind({});
 DefaultTable.args = {
   data: dummyData,
   columns: dummyColumns,
-  hidePagination: false,
   rowClassName: "",
   emptyText: "No data available",
 };
@@ -54,7 +53,6 @@ export const TableWithPaginationHidden = Template.bind({});
 TableWithPaginationHidden.args = {
   data: dummyData,
   columns: dummyColumns,
-  hidePagination: true,
   rowClassName: "",
   emptyText: "No data available",
 };
@@ -63,7 +61,6 @@ export const TableWithCustomEmptyText = Template.bind({});
 TableWithCustomEmptyText.args = {
   data: [],
   columns: dummyColumns,
-  hidePagination: false,
   rowClassName: "",
   emptyText: "Custom empty text",
 };
@@ -72,9 +69,6 @@ const Component = {
   title: "UI/Table",
   component: Table,
   argTypes: {
-    hidePagination: {
-      control: "boolean",
-    },
     rowClassName: {
       control: "text",
     },

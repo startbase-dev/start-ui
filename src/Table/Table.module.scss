@@ -21,7 +21,11 @@
         overflow: hidden;
         padding: 0;
         position: absolute;
-        background-color: color-mix(in srgb, var(--sui-table-black) 90%, var(--sui-table-white));
+        background-color: color-mix(
+          in srgb,
+          var(--sui-table-black) 90%,
+          var(--sui-table-white)
+        );
         width: 1px;
       }
 
@@ -89,9 +93,7 @@
     height: 56px;
     border-bottom: 1px solid var(--sui-table-border);
 
-    &.rowLast:last-child {
-      border-bottom: none;
-    }
+   
   }
 
   @media (min-width: 576px) {

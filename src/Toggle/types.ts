@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
 
-export type ToggleProps = {
+export interface ToggleProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   initialState?: boolean;
   onToggle?: (state: boolean) => void;
   color?: "primary" | "secondary" | "destructive";
@@ -10,4 +10,4 @@ export type ToggleProps = {
   className?: string;
   disabled?: boolean;
   children?: ReactNode;
-} & ButtonHTMLAttributes<HTMLButtonElement>;
+}

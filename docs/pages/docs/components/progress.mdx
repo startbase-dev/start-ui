@@ -1,17 +1,79 @@
+import { Progress } from "@start-base/start-ui";
+import { Tabs } from "nextra/components";
+import { Steps } from "nextra/components";
+import "@start-base/start-ui/styles.css";
+import Preview from "@components/Preview/Preview";
+
 # Progress
 
 The Progress visualize the completion status of an operation. It supports different shapes such as circular and linear progress bars, making it suitable for a variety of use cases.
 
-import { Progress } from "@start-base/start-ui";
+## Installation
 
-import { Tabs } from "nextra/components";
-import s from "../../index.module.css";
+<Steps>
+### Install the package
+```sh copy npm2yarn
+npm i @start-base/start-ui
+```
+### Add the styles
+
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import Progress from '@start-base/start-ui/Progress';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { Progress } from '@start-base/start-ui';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
 
 ### Progress
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-    <div className={s.previewContainer}>
+    <Preview>
       <Progress
         value={20}
         max={100}
@@ -20,10 +82,10 @@ import s from "../../index.module.css";
         trackSize={10}
         determinate={true}
       />
-    </div>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy
+    ```jsx copy showLineNumbers
     <Progress
       value={20}
       max={100}
@@ -39,7 +101,7 @@ import s from "../../index.module.css";
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-    <div className={s.previewContainer}>
+    <Preview>
       <Progress
         value={20}
         max={100}
@@ -49,10 +111,10 @@ import s from "../../index.module.css";
         determinate={true}
         progressLabel={true}
       />
-    </div>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy
+    ```jsx copy showLineNumbers
     <Progress
       value={20}
       max={100}
@@ -70,7 +132,7 @@ import s from "../../index.module.css";
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-    <div className={s.previewContainer}>
+    <Preview>
       <Progress
         value={20}
         max={100}
@@ -79,10 +141,10 @@ import s from "../../index.module.css";
         trackSize={10}
         determinate={false}
       />
-    </div>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy
+    ```jsx copy showLineNumbers
     <Progress
       value={20}
       max={100}
@@ -99,7 +161,7 @@ import s from "../../index.module.css";
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-    <div className={s.previewContainer}>
+    <Preview>
       <Progress
         value={20}
         max={100}
@@ -109,10 +171,10 @@ import s from "../../index.module.css";
         determinate={true}
         variant={"linear"}
       />
-    </div>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy
+    ```jsx copy showLineNumbers
     <Progress
       value={20}
       max={100}
@@ -125,3 +187,20 @@ import s from "../../index.module.css";
     ```
   </Tabs.Tab>
 </Tabs>
+
+## API
+
+| Name              | Type      | Default  | Variants            | Description                       |
+| ----------------- | --------- | -------- | ------------------- | --------------------------------- |
+| value             | `number`  |          |                     | Value of the progress             |
+| max               | `number`  | `100`    |                     | Maximum value of the progress     |
+| min               | `number`  | `0`      |                     | Minimum value of the progress     |
+| size              | `number`  |          |                     | Size of the progress              |
+| trackSize         | `number`  |          |                     | Track size of the progress        |
+| determinate       | `boolean` | `true`   |                     | Determinate state of the progress |
+| variant           | `string`  | `linear` | `linear` `circular` | Variant of the progress           |
+| className         | `string`  |          |                     | Classname of the progress         |
+| trackClassName    | `string`  |          |                     | TrackClassName of the progress    |
+| progressClassName | `string`  |          |                     | ProgressClassName of the progress |
+| labelClassName    | `string`  |          |                     | LabelClassName of the progress    |
+| label             | `string`  |          |                     | Label of the progress             |

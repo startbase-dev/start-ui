@@ -9,16 +9,13 @@ interface FormOnChangeProps {
   children: ReactElement;
 }
 
-interface InputState {
-  [key: string]: string | boolean;
-}
+type InputState = Record<string, string | boolean>;
 
 const FormOnChange: React.FC<FormOnChangeProps> = ({ children }) => {
   const [inputs, setInputs] = useState<InputState>({});
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target;
-    console.log("emre", e.target);
     setInputs((prevState) => ({
       ...prevState,
       [name]: type === "checkbox" ? checked : value,

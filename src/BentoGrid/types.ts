@@ -1,15 +1,16 @@
 import React from "react";
 
-export type BentoItem = {
+export interface BentoItem {
   element: React.ReactNode;
   width: number;
   height: number;
-};
+}
 
 export type BentoItems = BentoItem[];
 
-export type BentoGridProps = {
+export interface BentoGridProps
+  extends React.AllHTMLAttributes<HTMLDivElement> {
   items: BentoItems;
   gridCols?: number;
   rowHeight?: number;
-};
+}

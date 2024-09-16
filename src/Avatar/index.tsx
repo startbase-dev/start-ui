@@ -3,15 +3,7 @@ import clsx from "clsx";
 // eslint-disable-next-line css-modules/no-unused-class
 import s from "./Avatar.module.scss";
 import "../style/components/avatar.scss";
-
-interface AvatarProps {
-  picture?: string;
-  chars?: string;
-  size?: "small" | "medium" | "large";
-  variant?: "circular" | "square";
-  defaultPicture?: string;
-  className?: string;
-}
+import type { AvatarProps } from "./types";
 
 const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
   (

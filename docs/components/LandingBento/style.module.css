@@ -1,10 +1,3 @@
-
-
-.root {
-  --background-pink: #ffddfb;
-  --background-blue: #d7e8ff;
-}
-
 .cardRoot {
   background-image: linear-gradient(to right, #bdc3c7, #2c3e50);
   background-color: var(--sui-black);
@@ -13,9 +6,112 @@
   width: auto;
 }
 
+.cardRootLibrary {
+  background-color: var(--sui-button-secondary-default-bg);
+  height: -webkit-fill-available;
+  min-height: 300px;
+  width: auto;
+}
+
+.cardRootActiveLibrary {
+  background-color: #0f4d0f;
+  color: var(--sui-white);
+}
+
+.firstContentLibrary {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.secondContentLibrary {
+  padding: 1.5rem;
+  font-size: var(--sui-text-lead-fs);
+  line-height: var(--sui-text-lead-lh);
+}
+
+.cardContentDarkMode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: var(--sui-h1-fs);
+  line-height: var(--sui-h1-lh);
+}
+
+.cardRootFoundation {
+  background: -webkit-linear-gradient(to right, #c06c84, #6c5b7b, #355c7d);
+  background: linear-gradient(to right, #c06c84, #6c5b7b, #355c7d);
+  height: -webkit-fill-available;
+  min-height: 300px;
+  width: auto;
+  --sui-text-lead-fs: 22px;
+  --sui-text-lead-lh: 32px;
+}
+
+.cardRootUnleash {
+  background: #f524d7;
+  background: conic-gradient(from 315deg, #f524d7, #9a1164);
+  height: -webkit-fill-available;
+  min-height: 300px;
+  width: auto;
+  --sui-text-lead-fs: 22px;
+  --sui-text-lead-lh: 32px;
+  color: var(--sui-white);
+}
+
+.titleClassNameUnleash {
+  color: var(--sui-white);
+}
+
+.cardRootForm {
+  background: #f524d7;
+  background: conic-gradient(from 315deg, #f524d7, #9a1164);
+  height: -webkit-fill-available;
+  min-height: 300px;
+  width: auto;
+  --sui-text-lead-fs: 32px;
+  --sui-text-lead-lh: 46px;
+  color: var(--sui-white);
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: var(--sui-white);
+  font-size: 32px;
+  line-height: 40px;
+  height: 100%;
+  justify-content: center;
+  padding: 16px;
+  position: relative;
+}
+
+.formImage {
+  width: 140%;
+  position: absolute;
+  bottom: -20px;
+}
+
+.cardRootMarketing {
+  background: #f524d7;
+  background: radial-gradient(at center, #f524d7, #9a1164);
+  height: -webkit-fill-available;
+  min-height: 300px;
+  width: auto;
+  --sui-text-lead-fs: 32px;
+  --sui-text-lead-lh: 46px;
+  color: var(--sui-white);
+}
+
+.titleClassNameMarketing {
+  color: var(--sui-white);
+}
+
 .titleClassName {
   font-size: var(--sui-h1-fs);
   line-height: var(--sui-h1-lh);
+  color: var(--sui-white);
 }
 
 .cardContent {
@@ -29,4 +125,14 @@
   padding: 1rem;
   font-size: var(--sui-text-lead-fs);
   line-height: var(--sui-text-lead-lh);
+}
+
+.secondContentMarketing {
+  padding: 1rem;
+  font-size: var(--sui-text-large-fs);
+  line-height: var(--sui-text-large-lh);
+}
+
+.buttonClassName {
+  background-color: var(--sui-button-primary-ghost-hover-bg);
 }

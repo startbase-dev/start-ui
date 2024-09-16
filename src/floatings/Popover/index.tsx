@@ -5,7 +5,6 @@ import React, {
   useEffect,
   useRef,
   useState,
-  ReactElement,
   MutableRefObject,
 } from "react";
 
@@ -22,31 +21,7 @@ import styles from "./Popover.module.scss";
 
 const OFFSET = 4;
 
-interface PopoverProps {
-  popper: ReactElement;
-  open?: boolean;
-  placement?:
-    | "top"
-    | "bottom"
-    | "left"
-    | "right"
-    | "top-start"
-    | "top-end"
-    | "bottom-start"
-    | "bottom-end"
-    | "left-start"
-    | "left-end"
-    | "right-start"
-    | "right-end";
-  trigger?: "click" | "hover";
-  className?: string;
-  spacing?: number;
-  hideArrow?: boolean;
-  openDelay?: boolean | number;
-  closeDelay?: boolean | number;
-  clickToClose?: boolean;
-  children: ReactElement;
-}
+import type { PopoverProps } from "./types";
 
 const Popover = forwardRef<HTMLElement, PopoverProps>(
   (

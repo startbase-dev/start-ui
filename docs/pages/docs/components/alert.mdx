@@ -1,22 +1,84 @@
+import { Alert } from "@start-base/start-ui";
+import { Tabs } from "nextra/components";
+import { Steps } from "nextra/components";
+import "@start-base/start-ui/styles.css";
+import Preview from "@components/Preview/Preview";
+
 # Alert
 
 The Alert component is a versatile component that displays a message to the user with various customization options. It supports different severity levels, variants, colors, and additional actions.
 
-import { Alert } from "@start-base/start-ui";
+## Installation
 
-import { Tabs } from "nextra/components";
-import s from "../../index.module.css";
+<Steps>
+### Install the package
+```sh copy npm2yarn
+npm i @start-base/start-ui
+```
+### Add the styles
+
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import Alert from '@start-base/start-ui/Alert';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { Alert } from '@start-base/start-ui';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
 
 ### Alert With Severity
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-    <div className={s.previewContainer}>
+    <Preview>
       <Alert severity="error">This is an error</Alert>
-    </div>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy
+    ```jsx copy showLineNumbers
     <Alert severity="error">This is an error</Alert>
     ```
   </Tabs.Tab>
@@ -26,12 +88,12 @@ import s from "../../index.module.css";
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-    <div className={s.previewContainer}>
+    <Preview>
       <Alert variant="filled">This is a filled alert</Alert>
-    </div>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy
+    ```jsx copy showLineNumbers
     <Alert variant="filled">This is a filled alert</Alert>
     ```
   </Tabs.Tab>
@@ -41,14 +103,14 @@ import s from "../../index.module.css";
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-    <div className={s.previewContainer}>
+    <Preview>
       <Alert color="warning" severity="info">
         This is an info disguised as a warning
       </Alert>
-    </div>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```jsx copy
+    ```jsx copy showLineNumbers
     <Alert color="warning" severity="info">
       This is an info disguised as a warning
     </Alert>
@@ -60,7 +122,7 @@ import s from "../../index.module.css";
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-    <div className={s.previewContainer}>
+    <Preview>
       <Alert
         action={
           <button onClick={() => window.alert("You clicked me!")}>
@@ -70,10 +132,10 @@ import s from "../../index.module.css";
       >
         This is an alert with an action button. Try clicking on the button.
       </Alert>
-    </div>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy
+    ```jsx copy showLineNumbers
     <Alert
       action={
         <button onClick={() => window.alert("You clicked me!")}>
@@ -91,17 +153,35 @@ import s from "../../index.module.css";
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-    <div className={s.previewContainer}>
+    <Preview>
       <Alert alertTitle="Custom Alert Title!" severity="info">
         This is an alert with title
       </Alert>
-    </div>
+    </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy
+    ```jsx copy showLineNumbers
     <Alert alertTitle="Custom Alert Title!" severity="info">
       This is an alert with title
     </Alert>
     ```
   </Tabs.Tab>
 </Tabs>
+
+## API
+
+| Name           | Type      | Default   | Variants                                     | Description                 |
+| -------------- | --------- | --------- | -------------------------------------------- | --------------------------- |
+| children       | `string`  |           |                                              | Children of the alert       |
+| severity       | `string`  | `success` | `success` `info` `warning` `error`           | Severity of the alert       |
+| variant        | `string`  | `default` | `default` `filled` `outlined`                | Variant of the alert        |
+| color          | `string`  | `inherit` | `inherit` `success` `info` `warning` `error` | Color of the alert          |
+| actionElement  | `object`  |           |                                              | Action element of the alert |
+| icon           | `boolean` | `true`    |                                              | Icon of the alert           |
+| alertTitle     | `boolean` | `true`    |                                              | Alert title of the alert    |
+| open           | `boolean` | `true`    |                                              | Open of the alert           |
+| className      | `string`  |           |                                              | Classname of the alert      |
+| iconClassName  | `string`  |           |                                              | IconClassName of the alert  |
+| bodyClassName  | `string`  |           |                                              | BodyClassName of the alert  |
+| titleClassName | `string`  |           |                                              | TitleClassName of the alert |
+| textClassName  | `string`  |           |                                              | TextClassName of the alert  |

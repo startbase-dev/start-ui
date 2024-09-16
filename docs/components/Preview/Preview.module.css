@@ -6,11 +6,10 @@
   align-items: center;
   border-radius: 0.75rem;
   background-color: hsl(
-    var(--nextra-primary-hue) var(--nextra-primary-saturation) 39% / 0.05
+    var(--nextra-primary-hue) var(--nextra-primary-saturation) 39% / 5%
   );
 }
 
 .children {
-  min-width: 300px;
-  width: 300px;
+  width: auto;
 }

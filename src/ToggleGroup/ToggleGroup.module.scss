@@ -1,21 +1,20 @@
 .togglegroup {
-    display: inline-flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--sui-toggle-group-bg);
-    padding: var(--sui-padding-small);
-    border-radius: var(--sui-border-radius-small);
-    gap:0.5rem;
-    border: 1px solid var(--sui-toggle-group-border);
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--sui-toggle-group-bg);
+  padding: var(--sui-padding-small);
+  border-radius: var(--sui-border-radius-small);
+  gap: 0.5rem;
+  border: 1px solid var(--sui-toggle-group-border);
 
-    &.horizontal {
-        flex-direction: row;
-      }
-    
-      &.vertical {
-        flex-direction: column;
-      }
+  &.horizontal {
+    flex-direction: row;
   }
-  
+
+  &.vertical {
+    flex-direction: column;
+  }
+}

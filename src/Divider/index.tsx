@@ -3,7 +3,7 @@ import s from "./Divider.module.scss";
 import clsx from "clsx";
 import type { DividerProps } from "./types";
 
-const Index = forwardRef<HTMLDivElement, DividerProps>((props, ref) => {
+const Divider = forwardRef<HTMLDivElement, DividerProps>((props, ref) => {
   const {
     children = null,
     variant = "fullWidth",
@@ -53,6 +53,6 @@ const Index = forwardRef<HTMLDivElement, DividerProps>((props, ref) => {
   return createElement(component, componentParams, children);
 });
 
-Index.displayName = "Divider";
+Divider.displayName = "Divider";
 
-export default Index;
+export default Divider;

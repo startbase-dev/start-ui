@@ -1,31 +1,18 @@
-import {
-  HTMLAttributes,
-  TdHTMLAttributes,
-  CSSProperties,
-  ReactNode,
-} from "react";
+import { CSSProperties, ReactNode } from "react";
 import { Key } from "react";
-
+import { ColumnType } from "rc-table";
 export interface DataItem {
   key?: Key;
   [key: string]: unknown;
 }
 
-export interface CustomColumnType {
-  title: ReactNode;
-  dataIndex?: string | number;
-  key?: Key;
-  render?: (value: unknown, record: DataItem, index: number) => React.ReactNode;
-  onCell?: (
-    record: DataItem,
-    rowIndex: number,
-  ) => HTMLAttributes<HTMLElement> & TdHTMLAttributes<HTMLElement>;
-}
-
-export interface TableProps {
+export interface TableProps
+  extends Omit<
+    React.AllHTMLAttributes<HTMLDivElement>,
+    "data" | "summary" | "title"
+  > {
   data?: DataItem[];
-  columns: CustomColumnType[];
-  hidePagination?: boolean;
+  columns: ColumnType<DataItem>[];
   rowClassName?: string;
   emptyText?: ReactNode;
   summary?: (data: readonly DataItem[]) => ReactNode;
