@@ -11,7 +11,7 @@ import "../style/components/toggle-group.scss";
 // eslint-disable-next-line css-modules/no-unused-class
 import s from "../Toggle/Toggle.module.scss";
 
-import { ToggleGroupButtonProps, RootProps } from "./types";
+import { ToggleItemProps, ToggleWrapperProps } from "./types";
 
 const ToggleGroupContext = createContext<{
   value: string | null;
@@ -21,7 +21,7 @@ const ToggleGroupContext = createContext<{
   onChange: () => {},
 });
 
-const ToggleWrapper = forwardRef<HTMLDivElement, RootProps>(
+export const ToggleWrapper = forwardRef<HTMLDivElement, ToggleWrapperProps>(
   ({ value, onChange, children, direction = "horizontal", ...props }, ref) => {
     const providerValue = useMemo(
       () => ({ value, onChange }),
@@ -45,7 +45,8 @@ const ToggleWrapper = forwardRef<HTMLDivElement, RootProps>(
   },
 );
 ToggleWrapper.displayName = "ToggleWrapper";
-const ToggleItem = ({
+
+export const ToggleItem = ({
   value,
   initialState = false,
   onToggle,
@@ -57,7 +58,7 @@ const ToggleItem = ({
   disabled = false,
   children,
   ...props
-}: ToggleGroupButtonProps) => {
+}: ToggleItemProps) => {
   const { value: selectedValue, onChange } = useContext(ToggleGroupContext);
   const [isToggled, setIsToggled] = useState(initialState);
 
@@ -96,5 +97,6 @@ const ToggleItem = ({
     </button>
   );
 };
+ToggleItem.displayName = "ToggleItem";
 
 export const ToggleGroup = { ToggleWrapper, ToggleItem };

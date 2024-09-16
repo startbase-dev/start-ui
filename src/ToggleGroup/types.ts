@@ -1,18 +1,21 @@
-import React, { ReactNode } from "react";
-import { ToggleProps } from "../Toggle/types";
+import { ReactNode } from "react";
 
-type RootBaseProps = {
-  children: ReactNode | ReactNode[];
+export type ToggleItemProps = {
+  value: string;
+  initialState?: boolean;
+  onToggle?: (toggled: boolean) => void;
+  color?: "primary" | "secondary" | "destructive";
+  variant?: "default" | "outline";
+  size?: "small" | "medium" | "large";
+  fluid?: boolean;
+  className?: string;
+  disabled?: boolean;
+  children?: ReactNode;
+};
+
+export type ToggleWrapperProps = {
   value: string | null;
   onChange: (value: string) => void;
-  direction?: string;
+  children: ReactNode | ReactNode[];
+  direction?: "horizontal" | "vertical";
 };
-
-type RootProps = RootBaseProps &
-  Omit<React.ComponentPropsWithoutRef<"div">, keyof RootBaseProps>;
-
-type ToggleGroupButtonProps = ToggleProps & {
-  value: string;
-};
-
-export { RootProps, ToggleGroupButtonProps };
