@@ -21,7 +21,7 @@ const ToggleGroupContext = createContext<{
   onChange: () => {},
 });
 
-const ToggleWrapper = forwardRef<HTMLDivElement, ToggleWrapperProps>(
+export const ToggleWrapper = forwardRef<HTMLDivElement, ToggleWrapperProps>(
   ({ value, onChange, children, direction = "horizontal", ...props }, ref) => {
     const providerValue = useMemo(
       () => ({ value, onChange }),
@@ -45,7 +45,8 @@ const ToggleWrapper = forwardRef<HTMLDivElement, ToggleWrapperProps>(
   },
 );
 ToggleWrapper.displayName = "ToggleWrapper";
-const ToggleItem = ({
+
+export const ToggleItem = ({
   value,
   initialState = false,
   onToggle,
@@ -96,5 +97,6 @@ const ToggleItem = ({
     </button>
   );
 };
+ToggleItem.displayName = "ToggleItem";
 
 export const ToggleGroup = { ToggleWrapper, ToggleItem };
