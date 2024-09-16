@@ -1,7 +1,279 @@
+import { Grid, Row, Col } from "@start-base/start-ui";
+import { Tabs } from "nextra/components";
+import { Steps } from "nextra/components";
+import "@start-base/start-ui/styles.css";
+import Preview from "@components/Preview/Preview";
+
 # Grid
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+The Grid component is a flexible layout system that allows you to create responsive grid-based designs. It includes the Row and Col components to define the structure of your grid. The Row component is used to create horizontal groups of columns, while the Col component specifies the width and content of each column within a row. Together, these components enable you to build complex and adaptive layouts with ease.
 
-import { Grid } from "@start-base/start-ui";
+## Installation
 
-import s from "../../index.module.css";
+<Steps>
+### Install the package
+```sh copy npm2yarn
+npm i @start-base/start-ui
+```
+### Add the styles
+
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import Grid from '@start-base/start-ui/Grid';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { Grid } from '@start-base/start-ui';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
+
+### Grid Default
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Grid>
+        <Row>
+          <Col span={4}>Column 1 (4/12)</Col>
+          <Col span={4}>Column 2 (4/12)</Col>
+          <Col span={4}>Column 3 (4/12)</Col>
+        </Row>
+        <Row>
+          <Col span={6}>Column 1 (6/12)</Col>
+          <Col span={6}>Column 2 (6/12)</Col>
+        </Row>
+      </Grid>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Grid>
+      <Row>
+        <Col span={4}>Column 1 (4/12)</Col>
+        <Col span={4}>Column 2 (4/12)</Col>
+        <Col span={4}>Column 3 (4/12)</Col>
+      </Row>
+      <Row>
+        <Col span={6}>Column 1 (6/12)</Col>
+        <Col span={6}>Column 2 (6/12)</Col>
+      </Row>
+    </Grid>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Grid with Padding
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Grid>
+        <Row>
+          <Col padding="24px" span={4}>
+            Column 1 (4/12)
+          </Col>
+          <Col padding="24px" span={4}>
+            Column 2 (4/12)
+          </Col>
+          <Col padding="24px" span={4}>
+            Column 3 (4/12)
+          </Col>
+        </Row>
+        <Row>
+          <Col padding="24px" span={6}>
+            Column 1 (6/12)
+          </Col>
+          <Col padding="24px" span={6}>
+            Column 2 (6/12)
+          </Col>
+        </Row>
+      </Grid>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Grid>
+      <Row>
+        <Col padding="24px" span={4}>
+          Column 1 (4/12)
+        </Col>
+        <Col padding="24px" span={4}>
+          Column 2 (4/12)
+        </Col>
+        <Col padding="24px" span={4}>
+          Column 3 (4/12)
+        </Col>
+      </Row>
+      <Row>
+        <Col padding="24px" span={6}>
+          Column 1 (6/12)
+        </Col>
+        <Col padding="24px" span={6}>
+          Column 2 (6/12)
+        </Col>
+      </Row>
+    </Grid>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Grid with Responsive
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Grid>
+        <Row>
+          <Col
+            padding="24px"
+            span={12}
+            spanSizes={{
+              lg: 6,
+              md: 12,
+              sm: 12,
+              xl: 4,
+            }}
+          >
+            Column 1 (4/12)
+          </Col>
+          <Col
+            padding="24px"
+            span={12}
+            spanSizes={{
+              lg: 6,
+              md: 12,
+              sm: 12,
+              xl: 4,
+            }}
+          >
+            Column 2 (4/12)
+          </Col>
+          <Col
+            padding="24px"
+            span={12}
+            spanSizes={{
+              lg: 6,
+              md: 12,
+              sm: 12,
+              xl: 4,
+            }}
+          >
+            Column 3 (4/12)
+          </Col>
+        </Row>
+        <Row>
+          <Col padding="24px" span={6}>
+            Column 1 (6/12)
+          </Col>
+          <Col padding="24px" span={6}>
+            Column 2 (6/12)
+          </Col>
+        </Row>
+      </Grid>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Grid>
+      <Row>
+        <Col
+          padding="24px"
+          span={12}
+          spanSizes={{
+            lg: 6,
+            md: 12,
+            sm: 12,
+            xl: 4,
+          }}
+        >
+          Column 1 (4/12)
+        </Col>
+        <Col
+          padding="24px"
+          span={12}
+          spanSizes={{
+            lg: 6,
+            md: 12,
+            sm: 12,
+            xl: 4,
+          }}
+        >
+          Column 2 (4/12)
+        </Col>
+        <Col
+          padding="24px"
+          span={12}
+          spanSizes={{
+            lg: 6,
+            md: 12,
+            sm: 12,
+            xl: 4,
+          }}
+        >
+          Column 3 (4/12)
+        </Col>
+      </Row>
+      <Row>
+        <Col padding="24px" span={6}>
+          Column 1 (6/12)
+        </Col>
+        <Col padding="24px" span={6}>
+          Column 2 (6/12)
+        </Col>
+      </Row>
+    </Grid>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## API
+
+| Name        | Type        | Default                                                                                      | Variants                                                                                                                                    | Description                       |
+| ----------- | ----------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- |
+| children    | `ReactNode` |                                                                                              |                                                                                                                                             | Children of the Grid              |
+| span        | `number`    |                                                                                              |                                                                                                                                             | Span of the Col                   |
+| spanSizes   | `object`    |                                                                                              | `{ lg: number, md: number, sm: number, xl: number, xxl: number }`                                                                           | Responsive span sizes for the Col |
+| padding     | `string`    |                                                                                              |                                                                                                                                             | Padding of the Col                |
+| breakpoints | `object`    | `smMinWidth = "576px"` `mdMinWidth = "768px"` `lgMinWidth = "992px"` `xlMinWidth = "1200px"` | `smMinWidth: "--sui-sm-min-width"` `mdMinWidth: "--sui-md-min-width"` `lgMinWidth: "--sui-lg-min-width"` `xlMinWidth: "--sui-xl-min-width"` | Breakpoints for responsive design |
