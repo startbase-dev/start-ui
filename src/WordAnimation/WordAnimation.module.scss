@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.word {
+  margin-right: 5px;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateX(20px);
+}
