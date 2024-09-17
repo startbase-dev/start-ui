@@ -10,11 +10,11 @@
 
     a {
       text-decoration: none;
-      color: var(--white);
+      color: var(--sui-breadCrumbs-fg);
       transition: color 0.2s ease-in-out;
 
       &:hover {
-        color: var(--white);
+        color: var(--sui-breadCrumbs-fg);
       }
     }
   }
