@@ -6,4 +6,7 @@ export interface BreadcrumbReplace {
 export interface BreadcrumbsProps {
   separator?: string;
   breadcrumbReplace?: BreadcrumbReplace[];
+  className?: string;
+  activeClassName?: string;
+  listClassName?: string;
 }

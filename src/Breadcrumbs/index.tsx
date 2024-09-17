@@ -2,9 +2,19 @@ import React, { forwardRef, Fragment } from "react";
 import cx from "clsx";
 import s from "./Breadcrumbs.module.scss";
 import { BreadcrumbsProps } from "./types";
+import clsx from "clsx";
 
 const Breadcrumbs = forwardRef<HTMLDivElement, BreadcrumbsProps>(
-  ({ separator = "/", breadcrumbReplace = [] }, ref) => {
+  (
+    {
+      separator = "/",
+      breadcrumbReplace = [],
+      className = "",
+      activeClassName = "",
+      listClassName = "",
+    },
+    ref,
+  ) => {
     const paths = window.location.pathname;
     const pathNames = paths
       .split("/")
@@ -27,13 +37,17 @@ const Breadcrumbs = forwardRef<HTMLDivElement, BreadcrumbsProps>(
 
     return (
       <div ref={ref}>
-        <ul className={s.root}>
+        <ul className={clsx(s.root, className)}>
           {shouldShowReplaceDirectly
             ? breadcrumbReplace.map(({ replace }, index) => (
                 <Fragment key={index}>
                   <li
                     className={cx(s.list, {
                       [s.active]: index === breadcrumbReplace.length - 1,
+                      [activeClassName]:
+                        activeClassName &&
+                        index === breadcrumbReplace.length - 1,
+                      [listClassName]: listClassName,
                     })}
                   >
                     <span>{replace}</span>
@@ -48,6 +62,7 @@ const Breadcrumbs = forwardRef<HTMLDivElement, BreadcrumbsProps>(
                 const isActive = paths === href;
                 const itemClasses = cx(s.list, {
                   [s.active]: isActive,
+                  [activeClassName]: isActive,
                 });
                 const itemLink = replaceBreadcrumb(link);
                 return (
