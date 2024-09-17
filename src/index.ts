@@ -46,6 +46,7 @@ import Dropdown from "./floatings/Dropdown";
 import ContextMenu from "./floatings/ContextMenu";
 import FloatingMenuItem from "./floatings/FloatingMenuItem";
 import Typography from "./Typography";
+import Breadcrumbs from "./Breadcrumbs";
 
 import "./style/variables.scss";
 
@@ -54,6 +55,7 @@ export {
   Alert,
   Avatar,
   Badge,
+  Breadcrumbs,
   Button,
   Card,
   BentoCard,

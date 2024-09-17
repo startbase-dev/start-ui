@@ -1,0 +1,25 @@
+.root {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  .list {
+    margin: 0 0.5rem;
+
+    a {
+      text-decoration: none;
+      color: var(--white);
+      transition: color 0.2s ease-in-out;
+
+      &:hover {
+        color: var(--white);
+      }
+    }
+  }
+
+  .active {
+    font-weight: bold;
+  }
+}
