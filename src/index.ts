@@ -46,12 +46,14 @@ import Dropdown from "./floatings/Dropdown";
 import ContextMenu from "./floatings/ContextMenu";
 import FloatingMenuItem from "./floatings/FloatingMenuItem";
 import Typography from "./Typography";
+import WordAnimation from "./WordAnimation";
 import Breadcrumbs from "./Breadcrumbs";
 
 import "./style/variables.scss";
 
 export {
   Accordion,
+  WordAnimation,
   Alert,
   Avatar,
   Badge,
