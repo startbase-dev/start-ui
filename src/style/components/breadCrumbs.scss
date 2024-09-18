@@ -1,0 +1,10 @@
+.light,
+:root,
+[data-theme="light"] {
+  --sui-breadCrumbs-fg: var(--sui-black);
+}
+
+.dark,
+[data-theme="dark"] {
+  --sui-breadCrumbs-fg: var(--sui-white);
+}
