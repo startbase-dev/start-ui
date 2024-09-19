@@ -1,8 +1,8 @@
-import React from "react";
-import ContextMenu from "./index";
-import Button from "../../Button";
-import FloatingMenuItem from "../FloatingMenuItem";
-import Storybook from "../../Storybook";
+import React from 'react';
+import ContextMenu from './index';
+import Button from '../../Button';
+import FloatingMenuItem from '../FloatingMenuItem';
+import Storybook from '../../Storybook';
 
 interface TemplateProps {
   title: string;
@@ -38,10 +38,10 @@ const Template: React.FC<TemplateProps> = (props) => {
 };
 
 export const ContextMenuComponent = Template.bind({});
-ContextMenuComponent.args = { title: "ContextMenu" };
+ContextMenuComponent.args = { title: 'ContextMenu' };
 
 const Component = {
-  title: "UI/ContextMenu",
+  title: 'UI/ContextMenu',
   component: ContextMenuComponent,
 };
 

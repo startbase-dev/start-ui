@@ -1,7 +1,7 @@
-import React from "react";
-import Progress from "../index";
-import type { TemplateProps } from "../types";
-import Storybook from "../../Storybook";
+import React from 'react';
+import Progress from '../index';
+import type { TemplateProps } from '../types';
+import Storybook from '../../Storybook';
 
 const Template: React.FC<TemplateProps> = (args) => {
   const { title, variant } = args;
@@ -10,10 +10,10 @@ const Template: React.FC<TemplateProps> = (args) => {
     <Storybook title={title}>
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexDirection: "column",
-          height: "100px",
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexDirection: 'column',
+          height: '100px',
         }}
       >
         <Progress value={0.5} variant={variant} size={128} />
@@ -26,10 +26,10 @@ const Template: React.FC<TemplateProps> = (args) => {
       </div>
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexDirection: "column",
-          height: "100px",
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexDirection: 'column',
+          height: '100px',
         }}
       >
         <Progress value={0.5} variant={variant} size={128} color="success" />
@@ -43,10 +43,10 @@ const Template: React.FC<TemplateProps> = (args) => {
       </div>
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexDirection: "column",
-          height: "100px",
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexDirection: 'column',
+          height: '100px',
         }}
       >
         <Progress value={0.5} variant={variant} size={128} color="info" />
@@ -60,10 +60,10 @@ const Template: React.FC<TemplateProps> = (args) => {
       </div>
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexDirection: "column",
-          height: "100px",
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexDirection: 'column',
+          height: '100px',
         }}
       >
         <Progress value={0.5} variant={variant} size={128} color="warning" />
@@ -77,10 +77,10 @@ const Template: React.FC<TemplateProps> = (args) => {
       </div>
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexDirection: "column",
-          height: "100px",
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexDirection: 'column',
+          height: '100px',
         }}
       >
         <Progress value={0.5} variant={variant} size={128} color="error" />
@@ -95,10 +95,10 @@ const Template: React.FC<TemplateProps> = (args) => {
 
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexDirection: "column",
-          height: "100px",
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexDirection: 'column',
+          height: '100px',
         }}
       >
         <Progress value={0.5} variant={variant} size={128} progressLabel />
@@ -116,12 +116,12 @@ const Template: React.FC<TemplateProps> = (args) => {
 
 export const LinearProgressComponent = Template.bind({});
 LinearProgressComponent.args = {
-  title: "Linear Progress",
-  variant: "linear",
+  title: 'Linear Progress',
+  variant: 'linear',
 };
 
 const Component = {
-  title: "UI/Progress",
+  title: 'UI/Progress',
   component: LinearProgressComponent,
 };
 

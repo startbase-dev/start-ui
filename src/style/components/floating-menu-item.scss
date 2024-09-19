@@ -1,10 +1,10 @@
 .light,
 :root,
-[data-theme="light"] {
+[data-theme='light'] {
   --sui-floating-menu-item-active: var(--sui-gray-200);
 }
 
 .dark,
-[data-theme="dark"] {
+[data-theme='dark'] {
   --sui-floating-menu-item-active: var(--sui-gray-700);
 }

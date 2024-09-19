@@ -1,11 +1,11 @@
-import React, { forwardRef } from "react";
-import type { ProgressProps } from "./types";
-import CircularProgress from "./CircularProgress/CircularProgress";
-import LinearProgress from "./LinearProgress/LinearProgress";
+import React, { forwardRef } from 'react';
+import type { ProgressProps } from './types';
+import CircularProgress from './CircularProgress/CircularProgress';
+import LinearProgress from './LinearProgress/LinearProgress';
 
 const Progress = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
-  const { variant = "circular", ...rest } = props;
-  const isVariantCircular = variant === "circular";
+  const { variant = 'circular', ...rest } = props;
+  const isVariantCircular = variant === 'circular';
 
   return isVariantCircular ? (
     <CircularProgress ref={ref} {...rest} />
@@ -14,6 +14,6 @@ const Progress = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
   );
 });
 
-Progress.displayName = "Progress";
+Progress.displayName = 'Progress';
 
 export default Progress;

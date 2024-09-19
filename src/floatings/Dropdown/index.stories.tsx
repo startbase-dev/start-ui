@@ -1,8 +1,8 @@
-import React from "react";
-import Dropdown from "./index";
-import Button from "../../Button";
-import FloatingMenuItem from "../FloatingMenuItem";
-import Storybook from "../../Storybook";
+import React from 'react';
+import Dropdown from './index';
+import Button from '../../Button';
+import FloatingMenuItem from '../FloatingMenuItem';
+import Storybook from '../../Storybook';
 
 interface TemplateProps {
   title: string;
@@ -38,10 +38,10 @@ const Template: React.FC<TemplateProps> = (props) => {
 };
 
 export const DropdownComponent = Template.bind({});
-DropdownComponent.args = { title: "Dropdown" };
+DropdownComponent.args = { title: 'Dropdown' };
 
 const Component = {
-  title: "UI/Dropdown",
+  title: 'UI/Dropdown',
   component: DropdownComponent,
 };
 

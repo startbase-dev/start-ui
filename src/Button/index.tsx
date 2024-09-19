@@ -1,11 +1,11 @@
-import React, { forwardRef } from "react";
-import cx from "clsx";
+import React, { forwardRef } from 'react';
+import cx from 'clsx';
 
 // eslint-disable-next-line css-modules/no-unused-class
-import s from "./Button.module.scss";
-import Progress from "../Progress";
+import s from './Button.module.scss';
+import Progress from '../Progress';
 
-import type { ButtonProps } from "./types";
+import type { ButtonProps } from './types';
 
 const styles: Record<string, string> = s;
 
@@ -13,17 +13,17 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       children,
-      className = "",
+      className = '',
       disabled,
       loading,
-      color = "primary",
-      variant = "default",
-      size = "medium",
-      type = "button",
+      color = 'primary',
+      variant = 'default',
+      size = 'medium',
+      type = 'button',
       fluid = false,
       ...rest
     },
-    ref,
+    ref
   ) => {
     return (
       <button
@@ -36,7 +36,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           styles[size],
           fluid && styles.fluid,
           disabled && styles.disabled,
-          className,
+          className
         )}
         disabled={disabled || loading}
         {...rest}
@@ -45,7 +45,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           <Progress
             value={40}
             determinate={false}
-            size={size === "small" ? 14 : 20}
+            size={size === 'small' ? 14 : 20}
             trackSize={2}
           />
         ) : (
@@ -53,9 +53,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         )}
       </button>
     );
-  },
+  }
 );
 
-Button.displayName = "Button";
+Button.displayName = 'Button';
 
 export default Button;

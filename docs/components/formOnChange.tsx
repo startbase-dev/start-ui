@@ -3,7 +3,7 @@ import React, {
   useState,
   ChangeEvent,
   ReactElement,
-} from "react";
+} from 'react';
 
 interface FormOnChangeProps {
   children: ReactElement;
@@ -18,14 +18,14 @@ const FormOnChange: React.FC<FormOnChangeProps> = ({ children }) => {
     const { name, value, type, checked } = e.target;
     setInputs((prevState) => ({
       ...prevState,
-      [name]: type === "checkbox" ? checked : value,
+      [name]: type === 'checkbox' ? checked : value,
     }));
   };
 
   return children
     ? cloneElement(children, {
-        name: "input",
-        value: inputs.input || "",
+        name: 'input',
+        value: inputs.input || '',
         onChange: onChange,
       })
     : null;

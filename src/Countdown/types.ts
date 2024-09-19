@@ -1,9 +1,9 @@
 type Type =
-  | "withSeparator"
-  | "withLabels"
-  | "labelsUnder"
-  | "inBoxes"
-  | "default";
+  | 'withSeparator'
+  | 'withLabels'
+  | 'labelsUnder'
+  | 'inBoxes'
+  | 'default';
 
 export interface CountdownProps
   extends React.AllHTMLAttributes<HTMLDivElement> {

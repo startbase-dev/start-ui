@@ -1,13 +1,13 @@
 .light,
 :root,
-[data-theme="light"] {
+[data-theme='light'] {
   --sui-popover-bg: var(--sui-white);
   --sui-popover-text: var(--sui-black);
   --sui-popover-border: var(--sui-gray-200);
 }
 
 .dark,
-[data-theme="dark"] {
+[data-theme='dark'] {
   --sui-popover-bg: var(--sui-black);
   --sui-popover-text: var(--sui-white);
   --sui-popover-border: var(--sui-gray-700);

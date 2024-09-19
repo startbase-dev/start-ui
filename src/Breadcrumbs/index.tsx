@@ -1,24 +1,24 @@
-import React, { forwardRef, Fragment } from "react";
-import cx from "clsx";
-import s from "./Breadcrumbs.module.scss";
-import { BreadcrumbsProps } from "./types";
-import clsx from "clsx";
+import React, { forwardRef, Fragment } from 'react';
+import cx from 'clsx';
+import s from './Breadcrumbs.module.scss';
+import { BreadcrumbsProps } from './types';
+import clsx from 'clsx';
 
 const Breadcrumbs = forwardRef<HTMLDivElement, BreadcrumbsProps>(
   (
     {
-      separator = "/",
+      separator = '/',
       breadcrumbReplace = [],
-      className = "",
-      activeClassName = "",
-      listClassName = "",
+      className = '',
+      activeClassName = '',
+      listClassName = '',
     },
-    ref,
+    ref
   ) => {
     const paths = window.location.pathname;
     const pathNames = paths
-      .split("/")
-      .filter((path: string) => path && path !== "iframe.html");
+      .split('/')
+      .filter((path: string) => path && path !== 'iframe.html');
 
     const replaceBreadcrumb = (link: string) => {
       let replacedLink = link;
@@ -28,9 +28,9 @@ const Breadcrumbs = forwardRef<HTMLDivElement, BreadcrumbsProps>(
         }
       });
       return replacedLink
-        .split("-")
+        .split('-')
         .map((str: string) => str.charAt(0).toUpperCase() + str.slice(1))
-        .join(" ");
+        .join(' ');
     };
 
     const shouldShowReplaceDirectly = pathNames.length === 0;
@@ -58,7 +58,7 @@ const Breadcrumbs = forwardRef<HTMLDivElement, BreadcrumbsProps>(
                 </Fragment>
               ))
             : pathNames.map((link: string, index: number) => {
-                const href = `/${pathNames.slice(0, index + 1).join("/")}`;
+                const href = `/${pathNames.slice(0, index + 1).join('/')}`;
                 const isActive = paths === href;
                 const itemClasses = cx(s.list, {
                   [s.active]: isActive,
@@ -77,8 +77,8 @@ const Breadcrumbs = forwardRef<HTMLDivElement, BreadcrumbsProps>(
         </ul>
       </div>
     );
-  },
+  }
 );
 
-Breadcrumbs.displayName = "Breadcrumbs";
+Breadcrumbs.displayName = 'Breadcrumbs';
 export default Breadcrumbs;

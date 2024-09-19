@@ -1,5 +1,5 @@
 export interface AccordionProps
-  extends Omit<React.AllHTMLAttributes<HTMLDivElement>, "summary"> {
+  extends Omit<React.AllHTMLAttributes<HTMLDivElement>, 'summary'> {
   children?: React.ReactNode;
   summary?: React.ReactNode;
   actions?: React.ReactNode;

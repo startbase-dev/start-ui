@@ -1,5 +1,5 @@
-import React from "react";
-import { Meta, StoryFn } from "@storybook/react";
+import React from 'react';
+import { Meta, StoryFn } from '@storybook/react';
 import {
   SkeletonAvatar,
   SkeletonButton,
@@ -9,7 +9,7 @@ import {
   SkeletonList,
   SkeletonImage,
   SkeletonInput,
-} from "./index";
+} from './index';
 import {
   SkeletonAvatarProps,
   SkeletonButtonProps,
@@ -19,22 +19,22 @@ import {
   SkeletonListProps,
   SkeletonImageProps,
   SkeletonInputProps,
-} from "./types";
+} from './types';
 
 export default {
-  title: "UI/Skeleton",
+  title: 'UI/Skeleton',
 } as Meta;
 
 const style = {
-  display: "flex",
-  flexDirection: "column",
-  gap: "12px",
-  margin: "24px",
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '12px',
+  margin: '24px',
 };
 
 // Avatar Component
 const AvatarTemplate: StoryFn = (
-  args: React.JSX.IntrinsicAttributes & SkeletonAvatarProps,
+  args: React.JSX.IntrinsicAttributes & SkeletonAvatarProps
 ) => (
   <div style={style}>
     <SkeletonAvatar {...args} />
@@ -42,13 +42,13 @@ const AvatarTemplate: StoryFn = (
 );
 export const Avatar = AvatarTemplate.bind({});
 Avatar.args = {
-  size: "50px",
+  size: '50px',
 };
-Avatar.storyName = "Avatar Skeleton";
+Avatar.storyName = 'Avatar Skeleton';
 
 // Button Component
 const ButtonTemplate: StoryFn = (
-  args: React.JSX.IntrinsicAttributes & SkeletonButtonProps,
+  args: React.JSX.IntrinsicAttributes & SkeletonButtonProps
 ) => (
   <div style={style}>
     <SkeletonButton {...args} />
@@ -57,14 +57,14 @@ const ButtonTemplate: StoryFn = (
 
 export const Button = ButtonTemplate.bind({});
 Button.args = {
-  width: "150px",
-  height: "48px",
+  width: '150px',
+  height: '48px',
 };
-Button.storyName = "Button Skeleton";
+Button.storyName = 'Button Skeleton';
 
 // Paragraph Component
 const ParagraphTemplate: StoryFn = (
-  args: React.JSX.IntrinsicAttributes & SkeletonParagraphProps,
+  args: React.JSX.IntrinsicAttributes & SkeletonParagraphProps
 ) => (
   <div style={style}>
     <SkeletonParagraph {...args} />
@@ -75,11 +75,11 @@ export const Paragraph = ParagraphTemplate.bind({});
 Paragraph.args = {
   lines: 3,
 };
-Paragraph.storyName = "Paragraph Skeleton";
+Paragraph.storyName = 'Paragraph Skeleton';
 
 // Table Component
 const TableTemplate: StoryFn = (
-  args: React.JSX.IntrinsicAttributes & SkeletonTableProps,
+  args: React.JSX.IntrinsicAttributes & SkeletonTableProps
 ) => (
   <div style={style}>
     <SkeletonTable {...args} />
@@ -91,11 +91,11 @@ Table.args = {
   rows: 5,
   columns: 3,
 };
-Table.storyName = "Table Skeleton";
+Table.storyName = 'Table Skeleton';
 
 // Card Component
 const CardTemplate: StoryFn = (
-  args: React.JSX.IntrinsicAttributes & SkeletonCardProps,
+  args: React.JSX.IntrinsicAttributes & SkeletonCardProps
 ) => (
   <div style={style}>
     <SkeletonCard {...args} />
@@ -104,14 +104,14 @@ const CardTemplate: StoryFn = (
 
 export const Card = CardTemplate.bind({});
 Card.args = {
-  width: "300px",
-  height: "150px",
+  width: '300px',
+  height: '150px',
 };
-Card.storyName = "Card Skeleton";
+Card.storyName = 'Card Skeleton';
 
 // List Component
 const ListTemplate: StoryFn = (
-  args: React.JSX.IntrinsicAttributes & SkeletonListProps,
+  args: React.JSX.IntrinsicAttributes & SkeletonListProps
 ) => (
   <div style={style}>
     <SkeletonList {...args} />
@@ -121,11 +121,11 @@ export const List = ListTemplate.bind({});
 List.args = {
   itemCount: 5,
 };
-List.storyName = "List Skeleton";
+List.storyName = 'List Skeleton';
 
 // Image Component
 const ImageTemplate: StoryFn = (
-  args: React.JSX.IntrinsicAttributes & SkeletonImageProps,
+  args: React.JSX.IntrinsicAttributes & SkeletonImageProps
 ) => (
   <div style={style}>
     <SkeletonImage {...args} />
@@ -133,14 +133,14 @@ const ImageTemplate: StoryFn = (
 );
 export const Image = ImageTemplate.bind({});
 Image.args = {
-  width: "300px",
-  height: "200px",
+  width: '300px',
+  height: '200px',
 };
-Image.storyName = "Image Skeleton";
+Image.storyName = 'Image Skeleton';
 
 // Input Component
 const InputTemplate: StoryFn = (
-  args: React.JSX.IntrinsicAttributes & SkeletonInputProps,
+  args: React.JSX.IntrinsicAttributes & SkeletonInputProps
 ) => (
   <div style={style}>
     <SkeletonInput {...args} />
@@ -148,7 +148,7 @@ const InputTemplate: StoryFn = (
 );
 export const Input = InputTemplate.bind({});
 Input.args = {
-  width: "300px",
-  height: "40px",
+  width: '300px',
+  height: '40px',
 };
-Input.storyName = "Input Skeleton";
+Input.storyName = 'Input Skeleton';

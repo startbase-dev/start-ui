@@ -4,9 +4,9 @@ export interface ButtonProps
   className?: string;
   disabled?: boolean;
   loading?: boolean;
-  color?: "primary" | "secondary" | "destructive";
-  variant?: "default" | "link" | "outline" | "ghost";
-  size?: "icon" | "small" | "medium" | "large";
+  color?: 'primary' | 'secondary' | 'destructive';
+  variant?: 'default' | 'link' | 'outline' | 'ghost';
+  size?: 'icon' | 'small' | 'medium' | 'large';
   fluid?: boolean;
-  type?: "submit" | "reset" | "button";
+  type?: 'submit' | 'reset' | 'button';
 }

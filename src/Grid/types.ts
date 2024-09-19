@@ -1,4 +1,4 @@
-import type { AllHTMLAttributes } from "react";
+import type { AllHTMLAttributes } from 'react';
 
 export interface GridProps extends AllHTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;

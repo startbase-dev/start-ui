@@ -1,5 +1,5 @@
-import React from "react";
-import s from "./Image.module.scss";
+import React from 'react';
+import s from './Image.module.scss';
 
 const Image: React.FC = () => {
   return (

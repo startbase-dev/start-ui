@@ -6,30 +6,30 @@ import React, {
   useRef,
   useState,
   MutableRefObject,
-} from "react";
+} from 'react';
 
-import { arrow, offset, Middleware } from "@floating-ui/core";
-import { autoUpdate } from "@floating-ui/dom";
-import { FloatingPortal, useFloating } from "@floating-ui/react";
-import cx from "clsx";
+import { arrow, offset, Middleware } from '@floating-ui/core';
+import { autoUpdate } from '@floating-ui/dom';
+import { FloatingPortal, useFloating } from '@floating-ui/react';
+import cx from 'clsx';
 
-import { useOutsideClick } from "../../hooks/useOutsideClick";
+import { useOutsideClick } from '../../hooks/useOutsideClick';
 
-import FloatingArrow from "../FloatingArrow";
+import FloatingArrow from '../FloatingArrow';
 
-import styles from "./Popover.module.scss";
+import styles from './Popover.module.scss';
 
 const OFFSET = 4;
 
-import type { PopoverProps } from "./types";
+import type { PopoverProps } from './types';
 
 const Popover = forwardRef<HTMLElement, PopoverProps>(
   (
     {
       popper,
       open = false,
-      placement = "bottom",
-      trigger = "click",
+      placement = 'bottom',
+      trigger = 'click',
       className,
       spacing = 0,
       hideArrow = true,
@@ -38,7 +38,7 @@ const Popover = forwardRef<HTMLElement, PopoverProps>(
       clickToClose = true,
       children,
     },
-    ref,
+    ref
   ) => {
     const [visible, setVisible] = useState(open);
     const [hiding, setHiding] = useState(false);
@@ -71,9 +71,9 @@ const Popover = forwardRef<HTMLElement, PopoverProps>(
       }
 
       let delay = 0;
-      if (typeof openDelay === "boolean") {
+      if (typeof openDelay === 'boolean') {
         delay = 300;
-      } else if (typeof openDelay === "number") {
+      } else if (typeof openDelay === 'number') {
         delay = openDelay;
       }
 
@@ -96,16 +96,16 @@ const Popover = forwardRef<HTMLElement, PopoverProps>(
           setVisible(false);
           setHiding(false);
         },
-        closeDelay === true ? 200 : closeDelay === false ? 0 : closeDelay,
+        closeDelay === true ? 200 : closeDelay === false ? 0 : closeDelay
       );
     }, [closeDelay]);
 
     const handleClick = useCallback(() => {
-      if (trigger === "hover" && clickToClose) {
+      if (trigger === 'hover' && clickToClose) {
         hide();
       }
 
-      if (trigger === "click") {
+      if (trigger === 'click') {
         if (visible) {
           hide();
         } else {
@@ -115,18 +115,18 @@ const Popover = forwardRef<HTMLElement, PopoverProps>(
     }, [trigger, clickToClose, hide, visible, show]);
 
     const handleMouseEnter = useCallback(() => {
-      if (trigger !== "hover") {
+      if (trigger !== 'hover') {
         return;
       }
       show();
     }, [show, trigger]);
 
     const handleMouseLeave = useCallback(() => {
-      if (trigger !== "hover") {
+      if (trigger !== 'hover') {
         return;
       }
 
-      if (popoverRef.current && !popoverRef.current.matches(":hover")) {
+      if (popoverRef.current && !popoverRef.current.matches(':hover')) {
         hide();
       }
     }, [hide, trigger]);
@@ -140,26 +140,26 @@ const Popover = forwardRef<HTMLElement, PopoverProps>(
       const popoverElement = popoverRef.current;
 
       if (reference) {
-        reference.addEventListener("click", handleClick);
-        reference.addEventListener("mouseenter", handleMouseEnter);
-        reference.addEventListener("mouseleave", handleMouseLeave);
+        reference.addEventListener('click', handleClick);
+        reference.addEventListener('mouseenter', handleMouseEnter);
+        reference.addEventListener('mouseleave', handleMouseLeave);
       }
 
       if (popoverElement) {
-        popoverElement.addEventListener("mouseenter", handleMouseEnter);
-        popoverElement.addEventListener("mouseleave", handleMouseLeave);
+        popoverElement.addEventListener('mouseenter', handleMouseEnter);
+        popoverElement.addEventListener('mouseleave', handleMouseLeave);
       }
 
       return function cleanup() {
         if (reference) {
-          reference.removeEventListener("click", handleClick);
-          reference.removeEventListener("mouseenter", handleMouseEnter);
-          reference.removeEventListener("mouseleave", handleMouseLeave);
+          reference.removeEventListener('click', handleClick);
+          reference.removeEventListener('mouseenter', handleMouseEnter);
+          reference.removeEventListener('mouseleave', handleMouseLeave);
         }
 
         if (popoverElement) {
-          popoverElement.removeEventListener("mouseenter", handleMouseEnter);
-          popoverElement.removeEventListener("mouseleave", handleMouseLeave);
+          popoverElement.removeEventListener('mouseenter', handleMouseEnter);
+          popoverElement.removeEventListener('mouseleave', handleMouseLeave);
         }
       };
     }, [refs, handleClick, handleMouseEnter, handleMouseLeave]);
@@ -180,7 +180,7 @@ const Popover = forwardRef<HTMLElement, PopoverProps>(
           position: strategy,
           top: y ?? 0,
           left: x ?? 2,
-          width: "max-content",
+          width: 'max-content',
         }}
         className={cx(
           styles.popover,
@@ -189,7 +189,7 @@ const Popover = forwardRef<HTMLElement, PopoverProps>(
             [styles.hidden]: !visible,
             [styles.animate]: hiding,
           },
-          className && { [className]: true },
+          className && { [className]: true }
         )}
       >
         {!hideArrow && (
@@ -206,7 +206,7 @@ const Popover = forwardRef<HTMLElement, PopoverProps>(
 
     const handleMultipleRef = (el: HTMLElement) => {
       refs.setReference(el);
-      if (typeof ref === "function") {
+      if (typeof ref === 'function') {
         ref(el);
       } else if (ref) {
         ref.current = el;
@@ -219,9 +219,9 @@ const Popover = forwardRef<HTMLElement, PopoverProps>(
         <FloatingPortal>{popover}</FloatingPortal>
       </>
     );
-  },
+  }
 );
 
-Popover.displayName = "Popover";
+Popover.displayName = 'Popover';
 
 export default Popover;

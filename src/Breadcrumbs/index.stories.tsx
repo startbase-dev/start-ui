@@ -1,18 +1,18 @@
-import React from "react";
-import { Meta, StoryFn } from "@storybook/react";
-import Breadcrumbs from "./index";
-import Storybook from "../Storybook";
+import React from 'react';
+import { Meta, StoryFn } from '@storybook/react';
+import Breadcrumbs from './index';
+import Storybook from '../Storybook';
 
 export default {
-  title: "UI/Breadcrumbs",
+  title: 'UI/Breadcrumbs',
   component: Breadcrumbs,
 } as Meta<typeof Breadcrumbs>;
 
 const Template: StoryFn = () => {
   const breadcrumbReplace = [
-    { find: "dashboard", replace: "Dashboard" },
-    { find: "settings", replace: "Settings" },
-    { find: "profile", replace: "User Profile" },
+    { find: 'dashboard', replace: 'Dashboard' },
+    { find: 'settings', replace: 'Settings' },
+    { find: 'profile', replace: 'User Profile' },
   ];
 
   return (
@@ -26,9 +26,9 @@ export const DefaultBreadcrumbs = Template.bind({});
 
 const CustomSeparatorTemplate: StoryFn = () => {
   const breadcrumbReplace = [
-    { find: "home", replace: "Home" },
-    { find: "about", replace: "About Us" },
-    { find: "services", replace: "Our Services" },
+    { find: 'home', replace: 'Home' },
+    { find: 'about', replace: 'About Us' },
+    { find: 'services', replace: 'Our Services' },
   ];
 
   return (
@@ -42,9 +42,9 @@ export const CustomSeparatorBreadcrumbs = CustomSeparatorTemplate.bind({});
 
 const FullShowcaseTemplate: StoryFn = () => {
   const breadcrumbReplace = [
-    { find: "dashboard", replace: "Dashboard" },
-    { find: "settings", replace: "Settings" },
-    { find: "profile", replace: "User Profile" },
+    { find: 'dashboard', replace: 'Dashboard' },
+    { find: 'settings', replace: 'Settings' },
+    { find: 'profile', replace: 'User Profile' },
   ];
 
   return (

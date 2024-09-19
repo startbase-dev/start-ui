@@ -1,7 +1,7 @@
-import React from "react";
-import { DocsThemeConfig } from "nextra-theme-docs";
-import Logo from "./pages/docs/components/Logo";
-import { Chip } from "@start-base/start-ui";
+import React from 'react';
+import { DocsThemeConfig } from 'nextra-theme-docs';
+import Logo from './pages/docs/components/Logo';
+import { Chip } from '@start-base/start-ui';
 
 const config: DocsThemeConfig = {
   logo: (
@@ -10,10 +10,10 @@ const config: DocsThemeConfig = {
     </span>
   ),
   project: {
-    link: "https://github.com/startbase-dev/start-ui",
+    link: 'https://github.com/startbase-dev/start-ui',
   },
   chat: {
-    link: "https://discord.com/invite/4D5cpwvedq",
+    link: 'https://discord.com/invite/4D5cpwvedq',
   },
   editLink: {
     component: null,
@@ -22,7 +22,7 @@ const config: DocsThemeConfig = {
     content: null,
   },
   banner: {
-    key: "startbase 1.0",
+    key: 'startbase 1.0',
     text: (
       <a href="https://startbase.dev" target="_blank" rel="noreferrer">
         🎉 Startbase is launched. Vist →
@@ -31,7 +31,7 @@ const config: DocsThemeConfig = {
     dismissible: false,
   },
   gitTimestamp: null,
-  docsRepositoryBase: "https://github.com/startbase-dev/start-ui",
+  docsRepositoryBase: 'https://github.com/startbase-dev/start-ui',
   footer: {
     text: (
       <span>
@@ -50,33 +50,33 @@ const config: DocsThemeConfig = {
   },
   sidebar: {
     titleComponent({ title }: { title: string }) {
-      if (title.includes("--soon")) {
+      if (title.includes('--soon')) {
         return (
           <div
             style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              gap: "0.5rem",
-              width: "100%",
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              gap: '0.5rem',
+              width: '100%',
             }}
           >
-            {title.replace("--soon", "")}
+            {title.replace('--soon', '')}
             <Chip color="warning">Soon</Chip>
           </div>
         );
-      } else if (title.includes("--new")) {
+      } else if (title.includes('--new')) {
         return (
           <div
             style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              gap: "0.5rem",
-              width: "100%",
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              gap: '0.5rem',
+              width: '100%',
             }}
           >
-            {title.replace("--new", "")}
+            {title.replace('--new', '')}
             <Chip color="success">New</Chip>
           </div>
         );

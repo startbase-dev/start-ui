@@ -1,8 +1,8 @@
-import React, { forwardRef } from "react";
-import clsx from "clsx";
+import React, { forwardRef } from 'react';
+import clsx from 'clsx';
 // eslint-disable-next-line css-modules/no-unused-class
-import s from "./Typography.module.scss";
-import "../style/components/typography.scss";
+import s from './Typography.module.scss';
+import '../style/components/typography.scss';
 
 import type {
   TitleProps,
@@ -11,12 +11,12 @@ import type {
   MutedProps,
   QuoteProps,
   TypographyProps,
-} from "./types";
+} from './types';
 
 const Title = forwardRef<HTMLHeadingElement, TitleProps>((props, ref) => {
   const {
-    size = "lead",
-    color = "default",
+    size = 'lead',
+    color = 'default',
     decoration = false,
     italic = false,
     bold = false,
@@ -32,12 +32,12 @@ const Title = forwardRef<HTMLHeadingElement, TitleProps>((props, ref) => {
     s[size],
     s[color],
     {
-      [s[decoration || ""]]: decoration,
+      [s[decoration || '']]: decoration,
       [s.italic]: italic,
       [s.bold]: bold,
       [s.gradient]: gradient,
     },
-    className,
+    className
   );
 
   return (
@@ -46,16 +46,16 @@ const Title = forwardRef<HTMLHeadingElement, TitleProps>((props, ref) => {
     </h1>
   );
 });
-Title.displayName = "Title";
+Title.displayName = 'Title';
 
 const Subtitle = forwardRef<HTMLHeadingElement, SubtitleProps>((props, ref) => {
   const {
-    color = "default",
+    color = 'default',
     decoration = false,
     italic = false,
     bold = false,
     gradient = false,
-    elementType = "h3",
+    elementType = 'h3',
     children,
     className,
     ...rest
@@ -66,12 +66,12 @@ const Subtitle = forwardRef<HTMLHeadingElement, SubtitleProps>((props, ref) => {
     s.subtitle,
     s[color],
     {
-      [s[decoration || ""]]: decoration,
+      [s[decoration || '']]: decoration,
       [s.italic]: italic,
       [s.bold]: bold,
       [s.gradient]: gradient,
     },
-    className,
+    className
   );
 
   const Component = elementType;
@@ -82,13 +82,13 @@ const Subtitle = forwardRef<HTMLHeadingElement, SubtitleProps>((props, ref) => {
     </Component>
   );
 });
-Subtitle.displayName = "Subtitle";
+Subtitle.displayName = 'Subtitle';
 
 const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
   (props, ref) => {
     const {
-      size = "small",
-      color = "default",
+      size = 'small',
+      color = 'default',
       decoration = false,
       italic = false,
       bold = false,
@@ -104,12 +104,12 @@ const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
       s[size],
       s[color],
       {
-        [s[decoration || ""]]: decoration,
+        [s[decoration || '']]: decoration,
         [s.italic]: italic,
         [s.bold]: bold,
         [s.gradient]: gradient,
       },
-      className,
+      className
     );
 
     return (
@@ -117,13 +117,13 @@ const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
         {children}
       </p>
     );
-  },
+  }
 );
-Paragraph.displayName = "Paragraph";
+Paragraph.displayName = 'Paragraph';
 const Muted = forwardRef<HTMLParagraphElement, MutedProps>((props, ref) => {
   const {
-    size = "medium",
-    color = "default",
+    size = 'medium',
+    color = 'default',
     decoration = false,
     italic = false,
     bold = false,
@@ -139,12 +139,12 @@ const Muted = forwardRef<HTMLParagraphElement, MutedProps>((props, ref) => {
     s[size],
     s[color],
     {
-      [s[decoration || ""]]: decoration,
+      [s[decoration || '']]: decoration,
       [s.italic]: italic,
       [s.bold]: bold,
       [s.gradient]: gradient,
     },
-    className,
+    className
   );
 
   return (
@@ -153,12 +153,12 @@ const Muted = forwardRef<HTMLParagraphElement, MutedProps>((props, ref) => {
     </span>
   );
 });
-Muted.displayName = "Muted";
+Muted.displayName = 'Muted';
 
 const Quote = forwardRef<HTMLQuoteElement, QuoteProps>((props, ref) => {
   const {
-    size = "small",
-    color = "default",
+    size = 'small',
+    color = 'default',
     decoration = false,
     italic = false,
     bold = false,
@@ -174,12 +174,12 @@ const Quote = forwardRef<HTMLQuoteElement, QuoteProps>((props, ref) => {
     s[size],
     s[color],
     {
-      [s[decoration || ""]]: decoration,
+      [s[decoration || '']]: decoration,
       [s.italic]: italic,
       [s.bold]: bold,
       [s.gradient]: gradient,
     },
-    className,
+    className
   );
 
   return (
@@ -188,35 +188,35 @@ const Quote = forwardRef<HTMLQuoteElement, QuoteProps>((props, ref) => {
     </blockquote>
   );
 });
-Quote.displayName = "Quote";
+Quote.displayName = 'Quote';
 
 const Typography = forwardRef<HTMLElement, TypographyProps>(
   ({ variant, ...props }, ref) => {
     switch (variant) {
-      case "title":
+      case 'title':
         return <Title ref={ref as React.Ref<HTMLHeadingElement>} {...props} />;
-      case "subtitle":
+      case 'subtitle':
         return (
           <Subtitle ref={ref as React.Ref<HTMLHeadingElement>} {...props} />
         );
-      case "paragraph":
+      case 'paragraph':
         return (
           <Paragraph ref={ref as React.Ref<HTMLParagraphElement>} {...props} />
         );
-      case "muted":
+      case 'muted':
         return (
           <Muted ref={ref as React.Ref<HTMLParagraphElement>} {...props} />
         );
-      case "quote":
+      case 'quote':
         return <Quote ref={ref as React.Ref<HTMLQuoteElement>} {...props} />;
       default:
         return (
           <Paragraph ref={ref as React.Ref<HTMLParagraphElement>} {...props} />
         );
     }
-  },
+  }
 );
 
-Typography.displayName = "Typography";
+Typography.displayName = 'Typography';
 
 export default Typography;

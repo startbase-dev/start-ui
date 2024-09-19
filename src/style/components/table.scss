@@ -1,6 +1,6 @@
 .light,
 :root,
-[data-theme="light"] {
+[data-theme='light'] {
   --sui-table-black: var(--sui-white);
   --sui-table-white: var(--sui-black);
   --sui-table-border: color-mix(
@@ -11,7 +11,7 @@
 }
 
 .dark,
-[data-theme="dark"] {
+[data-theme='dark'] {
   --sui-table-black: var(--sui-black);
   --sui-table-white: var(--sui-white);
   --sui-table-border: color-mix(

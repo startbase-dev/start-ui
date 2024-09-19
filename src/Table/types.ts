@@ -1,6 +1,6 @@
-import { CSSProperties, ReactNode } from "react";
-import { Key } from "react";
-import { ColumnType } from "rc-table";
+import { CSSProperties, ReactNode } from 'react';
+import { Key } from 'react';
+import { ColumnType } from 'rc-table';
 export interface DataItem {
   key?: Key;
   [key: string]: unknown;
@@ -9,7 +9,7 @@ export interface DataItem {
 export interface TableProps
   extends Omit<
     React.AllHTMLAttributes<HTMLDivElement>,
-    "data" | "summary" | "title"
+    'data' | 'summary' | 'title'
   > {
   data?: DataItem[];
   columns: ColumnType<DataItem>[];

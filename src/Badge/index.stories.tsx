@@ -1,6 +1,6 @@
-import React from "react";
-import Badge from "./index";
-import type { TemplateProps } from "./types";
+import React from 'react';
+import Badge from './index';
+import type { TemplateProps } from './types';
 
 const Template: React.FC<TemplateProps> = (args) => {
   const { title, children, ...rest } = args;
@@ -10,9 +10,9 @@ const Template: React.FC<TemplateProps> = (args) => {
       <h2>{title}</h2>
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexDirection: "column",
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexDirection: 'column',
         }}
       >
         <Badge {...rest}>{children}</Badge>
@@ -23,23 +23,23 @@ const Template: React.FC<TemplateProps> = (args) => {
 
 export const BadgeComponent = Template.bind({});
 BadgeComponent.args = {
-  title: "Badge",
+  title: 'Badge',
   content: 10,
-  color: "primary",
-  variant: "default",
-  position: "top-end",
+  color: 'primary',
+  variant: 'default',
+  position: 'top-end',
   invisible: false,
-  className: "",
-  containerClassName: "",
+  className: '',
+  containerClassName: '',
   children: (
     <span
       style={{
-        display: "grid",
-        alignItems: "center",
-        textAlign: "center",
-        width: "70px",
-        height: "50px",
-        border: "1px solid red",
+        display: 'grid',
+        alignItems: 'center',
+        textAlign: 'center',
+        width: '70px',
+        height: '50px',
+        border: '1px solid red',
       }}
     >
       Example
@@ -50,27 +50,27 @@ BadgeComponent.args = {
 export const BadgeWithColor = Template.bind({});
 BadgeWithColor.args = {
   ...BadgeComponent.args,
-  color: "success",
+  color: 'success',
 };
 
 export const BadgeWithVariant = Template.bind({});
 BadgeWithVariant.args = {
   ...BadgeComponent.args,
-  title: "Badge with dot variant",
-  variant: "dot",
+  title: 'Badge with dot variant',
+  variant: 'dot',
 };
 
 export const BadgeWithPosition = Template.bind({});
 BadgeWithPosition.args = {
   ...BadgeComponent.args,
-  title: "Badge with position",
-  position: "top-left",
+  title: 'Badge with position',
+  position: 'top-left',
 };
 
 export const BadgeWithZero = Template.bind({});
 BadgeWithZero.args = {
   ...BadgeComponent.args,
-  title: "Badge with display zero",
+  title: 'Badge with display zero',
   showZero: true,
   badgeContent: 0,
 };
@@ -78,34 +78,34 @@ BadgeWithZero.args = {
 export const BadgeWithMax = Template.bind({});
 BadgeWithMax.args = {
   ...BadgeComponent.args,
-  title: "Badge with max content",
+  title: 'Badge with max content',
   badgeContent: 500,
 };
 
 const Component = {
-  title: "UI/Badge",
+  title: 'UI/Badge',
   component: BadgeComponent,
   argTypes: {
     color: {
-      options: ["primary", "secondary", "success", "error"],
-      control: "radio",
+      options: ['primary', 'secondary', 'success', 'error'],
+      control: 'radio',
     },
     variant: {
-      options: ["default", "dot"],
-      control: "radio",
+      options: ['default', 'dot'],
+      control: 'radio',
     },
     position: {
       options: [
-        "top-end",
-        "top",
-        "top-start",
-        "start",
-        "bottom-start",
-        "bottom",
-        "bottom-end",
-        "end",
+        'top-end',
+        'top',
+        'top-start',
+        'start',
+        'bottom-start',
+        'bottom',
+        'bottom-end',
+        'end',
       ],
-      control: "radio",
+      control: 'radio',
     },
   },
 };

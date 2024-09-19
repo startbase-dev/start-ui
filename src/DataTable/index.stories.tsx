@@ -1,5 +1,5 @@
-import React from "react";
-import DataTable from "./index";
+import React from 'react';
+import DataTable from './index';
 
 interface TemplateProps {
   title: string;
@@ -11,9 +11,9 @@ const Template: React.FC<TemplateProps> = (props) => {
       <h2>{props.title}</h2>
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexDirection: "column",
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexDirection: 'column',
         }}
       >
         <DataTable />
@@ -23,10 +23,10 @@ const Template: React.FC<TemplateProps> = (props) => {
 };
 
 export const DataTableComponent = Template.bind({});
-DataTableComponent.args = { title: "DataTable" };
+DataTableComponent.args = { title: 'DataTable' };
 
 const Component = {
-  title: "UI/DataTable",
+  title: 'UI/DataTable',
   component: DataTableComponent,
 };
 

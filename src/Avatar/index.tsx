@@ -1,24 +1,24 @@
-import React, { forwardRef } from "react";
-import clsx from "clsx";
+import React, { forwardRef } from 'react';
+import clsx from 'clsx';
 // eslint-disable-next-line css-modules/no-unused-class
-import s from "./Avatar.module.scss";
-import "../style/components/avatar.scss";
-import type { AvatarProps } from "./types";
+import s from './Avatar.module.scss';
+import '../style/components/avatar.scss';
+import type { AvatarProps } from './types';
 
 const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
   (
     {
-      picture = "",
-      chars = "SU",
-      size = "medium",
-      variant = "circular",
-      defaultPicture = "",
-      className = "",
+      picture = '',
+      chars = 'SU',
+      size = 'medium',
+      variant = 'circular',
+      defaultPicture = '',
+      className = '',
       ...rest
     },
-    ref,
+    ref
   ) => {
-    const imageSrc = picture || defaultPicture || "";
+    const imageSrc = picture || defaultPicture || '';
 
     return (
       <div
@@ -37,9 +37,9 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
         </div>
       </div>
     );
-  },
+  }
 );
 
-Avatar.displayName = "Avatar";
+Avatar.displayName = 'Avatar';
 
 export default Avatar;

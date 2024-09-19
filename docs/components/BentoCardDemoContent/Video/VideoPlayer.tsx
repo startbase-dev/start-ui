@@ -4,11 +4,11 @@ import React, {
   useCallback,
   useState,
   useMemo,
-} from "react";
-import s from "./VideoPlayer.module.scss";
-import Replay from "../Replay";
-import Pause from "../Pause";
-import Play from "../Play";
+} from 'react';
+import s from './VideoPlayer.module.scss';
+import Replay from '../Replay';
+import Pause from '../Pause';
+import Play from '../Play';
 
 const VideoPlayer: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -25,16 +25,16 @@ const VideoPlayer: React.FC = () => {
 
     const video = videoRef.current;
     if (video) {
-      video.addEventListener("play", handlePlay);
-      video.addEventListener("pause", handlePause);
-      video.addEventListener("ended", handleEnded);
+      video.addEventListener('play', handlePlay);
+      video.addEventListener('pause', handlePause);
+      video.addEventListener('ended', handleEnded);
     }
 
     return () => {
       if (video) {
-        video.removeEventListener("play", handlePlay);
-        video.removeEventListener("pause", handlePause);
-        video.removeEventListener("ended", handleEnded);
+        video.removeEventListener('play', handlePlay);
+        video.removeEventListener('pause', handlePause);
+        video.removeEventListener('ended', handleEnded);
       }
     };
   }, []);

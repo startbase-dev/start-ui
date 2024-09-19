@@ -1,6 +1,6 @@
 .light,
 :root,
-[data-theme="light"] {
+[data-theme='light'] {
   --sui-stepper-stepicon-bg: var(--sui-gray-200);
   --sui-stepper-stepicon-primary-active-bg: var(--sui-primary-900);
   --sui-stepper-stepicon-secondary-active-bg: var(--sui-secondary-900);
@@ -17,7 +17,7 @@
 }
 
 .dark,
-[data-theme="dark"] {
+[data-theme='dark'] {
   --sui-stepper-stepicon-bg: var(--sui-gray-800);
   --sui-stepper-stepicon-primary-active-bg: var(--sui-primary-800);
   --sui-stepper-stepicon-secondary-active-bg: var(--sui-secondary-800);

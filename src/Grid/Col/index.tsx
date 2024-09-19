@@ -1,7 +1,7 @@
-import React from "react";
-import s from "./Col.module.scss";
-import clsx from "clsx";
-import type { ColProps } from "../types";
+import React from 'react';
+import s from './Col.module.scss';
+import clsx from 'clsx';
+import type { ColProps } from '../types';
 
 function getWidth(span: number, columns: number) {
   return `${(span / columns) * 100}%`;
@@ -9,11 +9,11 @@ function getWidth(span: number, columns: number) {
 
 export default function Col({
   children,
-  className = "",
+  className = '',
   span = 12,
   columns = 12,
   spanSizes = {},
-  padding = "8px",
+  padding = '8px',
   style,
   ...rest
 }: Readonly<ColProps>) {
@@ -31,12 +31,12 @@ export default function Col({
     <div
       className={rootClassNames}
       style={{
-        "--sui-base-width": baseWidth,
-        "--sui-sm-width": smWidth,
-        "--sui-md-width": mdWidth,
-        "--sui-lg-width": lgWidth,
-        "--sui-xl-width": xlWidth,
-        "--sui-padding": padding,
+        '--sui-base-width': baseWidth,
+        '--sui-sm-width': smWidth,
+        '--sui-md-width': mdWidth,
+        '--sui-lg-width': lgWidth,
+        '--sui-xl-width': xlWidth,
+        '--sui-padding': padding,
         ...style,
       }}
       {...rest}
