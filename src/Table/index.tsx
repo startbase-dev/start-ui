@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import cx from 'clsx';
 import RCTable from 'rc-table';

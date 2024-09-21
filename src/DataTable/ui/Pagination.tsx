@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 // eslint-disable-next-line css-modules/no-unused-class
 import styles from '../DataTable.module.scss';
