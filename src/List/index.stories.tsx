@@ -1,5 +1,5 @@
-import React from "react";
-import { Meta, StoryFn } from "@storybook/react";
+import React from 'react';
+import { Meta, StoryFn } from '@storybook/react';
 import {
   List,
   ListItem,
@@ -8,12 +8,12 @@ import {
   ListItemSubtitle,
   ListDivider,
   ListSubheader,
-} from "./index";
+} from './index';
 
-import Storybook from "../Storybook";
+import Storybook from '../Storybook';
 
 export default {
-  title: "UI/List",
+  title: 'UI/List',
   component: List,
 } as Meta<typeof List>;
 

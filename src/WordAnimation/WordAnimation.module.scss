@@ -8,7 +8,9 @@
   margin-right: 5px;
   opacity: 0;
   transform: translateX(20px);
-  transition: opacity 0.3s ease-in, transform 0.3s ease-in;
+  transition:
+    opacity 0.3s ease-in,
+    transform 0.3s ease-in;
 }
 
 .visible {

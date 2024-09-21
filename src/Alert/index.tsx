@@ -1,24 +1,24 @@
-import React, { forwardRef } from "react";
-import s from "./Alert.module.scss";
-import IconSelector from "./IconSelector";
-import clsx from "clsx";
-import type { AlertProps } from "./types";
+import React, { forwardRef } from 'react';
+import s from './Alert.module.scss';
+import IconSelector from './IconSelector';
+import clsx from 'clsx';
+import type { AlertProps } from './types';
 
 const Alert = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
   const {
     children,
-    severity = "success",
-    variant = "default",
-    color = "inherit",
+    severity = 'success',
+    variant = 'default',
+    color = 'inherit',
     actionElement = undefined,
     icon = true,
     alertTitle = false,
     open = true,
-    className = "",
-    iconClassName = "",
-    bodyClassName = "",
-    titleClassName = "",
-    textClassName = "",
+    className = '',
+    iconClassName = '',
+    bodyClassName = '',
+    titleClassName = '',
+    textClassName = '',
     ...rest
   } = props;
   const rootClassNames = clsx(s.root, className);
@@ -28,18 +28,18 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
   const textClassNames = clsx(textClassName);
 
   // Define aria-live prop
-  const isAssertive = severity === "error" || severity === "warning";
-  const ariaLive = isAssertive ? "assertive" : "polite";
+  const isAssertive = severity === 'error' || severity === 'warning';
+  const ariaLive = isAssertive ? 'assertive' : 'polite';
 
   // Combine variant and color props
-  const variantColor = color === "inherit" ? severity : color;
+  const variantColor = color === 'inherit' ? severity : color;
   const dataVariant = `${variant}-${variantColor}`;
 
-  const iconBoolean = typeof icon === "boolean";
+  const iconBoolean = typeof icon === 'boolean';
 
   function getTitle() {
     if (alertTitle === true) return severity;
-    if (typeof alertTitle === "string") return alertTitle;
+    if (typeof alertTitle === 'string') return alertTitle;
     return null;
   }
   const title = getTitle();
@@ -73,6 +73,6 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
   );
 });
 
-Alert.displayName = "Alert";
+Alert.displayName = 'Alert';
 
 export default Alert;

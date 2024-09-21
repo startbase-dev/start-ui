@@ -1,20 +1,20 @@
-import React from "react";
-import { Meta, StoryFn } from "@storybook/react";
-import { Stepper } from "./index";
-import Storybook from "../Storybook";
-import AirplaneTaxiingIcon from "../icons/AirplaneTaxiing";
-import AirplaneTakeoffIcon from "../icons/AirplaneTakeoff";
-import AirplaneTiltIcon from "../icons/AirplaneTilt";
+import React from 'react';
+import { Meta, StoryFn } from '@storybook/react';
+import { Stepper } from './index';
+import Storybook from '../Storybook';
+import AirplaneTaxiingIcon from '../icons/AirplaneTaxiing';
+import AirplaneTakeoffIcon from '../icons/AirplaneTakeoff';
+import AirplaneTiltIcon from '../icons/AirplaneTilt';
 
 export default {
-  title: "UI/Stepper",
+  title: 'UI/Stepper',
   component: Stepper,
 } as Meta<typeof Stepper>;
 
 const Template: StoryFn = () => {
   const steps = [
     {
-      label: "Step 1: Plan the Website",
+      label: 'Step 1: Plan the Website',
       content: (
         <p>
           In this step, you gather requirements, research your audience, and
@@ -23,7 +23,7 @@ const Template: StoryFn = () => {
       ),
     },
     {
-      label: "Step 2: Design the Website",
+      label: 'Step 2: Design the Website',
       optional: true,
       content: (
         <p>
@@ -33,7 +33,7 @@ const Template: StoryFn = () => {
       ),
     },
     {
-      label: "Step 3: Develop the Website",
+      label: 'Step 3: Develop the Website',
       content: (
         <p>
           Start coding! Set up the environment, build the frontend, and connect
@@ -55,7 +55,7 @@ export const HorizontalStepper = Template.bind({});
 const VerticalTemplate: StoryFn = () => {
   const steps = [
     {
-      label: "Step 1: Gather Requirements",
+      label: 'Step 1: Gather Requirements',
       content: (
         <p>
           Identify key features, user personas, and the overall purpose of the
@@ -64,12 +64,12 @@ const VerticalTemplate: StoryFn = () => {
       ),
     },
     {
-      label: "Step 2: Create a Wireframe",
+      label: 'Step 2: Create a Wireframe',
       optional: true,
       content: <p>Design the structure and layout of the website.</p>,
     },
     {
-      label: "Step 3: Write the Code",
+      label: 'Step 3: Write the Code',
       content: <p>Implement the design with HTML, CSS, and JavaScript.</p>,
     },
   ];
@@ -86,7 +86,7 @@ export const VerticalStepper = VerticalTemplate.bind({});
 const HorizontalContent: StoryFn = () => {
   const steps = [
     {
-      label: "Step 1: Choose a Tech Stack",
+      label: 'Step 1: Choose a Tech Stack',
       icon: <AirplaneTaxiingIcon />,
       content: (
         <p>
@@ -96,7 +96,7 @@ const HorizontalContent: StoryFn = () => {
       ),
     },
     {
-      label: "Step 2: Implement the UI",
+      label: 'Step 2: Implement the UI',
       optional: true,
       icon: <AirplaneTakeoffIcon />,
       content: (
@@ -107,7 +107,7 @@ const HorizontalContent: StoryFn = () => {
       ),
     },
     {
-      label: "Step 3: Connect the Backend",
+      label: 'Step 3: Connect the Backend',
       icon: <AirplaneTiltIcon />,
       content: (
         <p>
@@ -129,7 +129,7 @@ export const HorizontalStepperWithContent = HorizontalContent.bind({});
 const ColorTemplate: StoryFn = () => {
   const steps = [
     {
-      label: "Step 1: Plan the Website",
+      label: 'Step 1: Plan the Website',
       content: (
         <p>
           Research and outline the website’s purpose and goals, and plan the
@@ -138,7 +138,7 @@ const ColorTemplate: StoryFn = () => {
       ),
     },
     {
-      label: "Step 2: Design the Interface",
+      label: 'Step 2: Design the Interface',
       optional: true,
       content: (
         <p>
@@ -148,7 +148,7 @@ const ColorTemplate: StoryFn = () => {
       ),
     },
     {
-      label: "Step 3: Develop the Code",
+      label: 'Step 3: Develop the Code',
       content: (
         <p>
           Write the code, connecting frontend and backend functionalities to
@@ -171,7 +171,7 @@ export const HorizontalStepperWithColors = ColorTemplate.bind({});
 const FullShowcaseTemplate: StoryFn = () => {
   const steps = [
     {
-      label: "Step 1: Plan the Website",
+      label: 'Step 1: Plan the Website',
       content: (
         <p>
           Research and outline the website’s purpose and goals, and plan the
@@ -180,7 +180,7 @@ const FullShowcaseTemplate: StoryFn = () => {
       ),
     },
     {
-      label: "Step 2: Design the Interface",
+      label: 'Step 2: Design the Interface',
       optional: true,
       content: (
         <p>
@@ -190,7 +190,7 @@ const FullShowcaseTemplate: StoryFn = () => {
       ),
     },
     {
-      label: "Step 3: Develop the Code",
+      label: 'Step 3: Develop the Code',
       content: (
         <p>
           Write the code, connecting frontend and backend functionalities to

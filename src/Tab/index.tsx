@@ -1,7 +1,7 @@
-import React, { forwardRef, useState } from "react";
-import s from "./Tab.module.scss";
-import clsx from "clsx";
-import type { TabProps } from "./types";
+import React, { forwardRef, useState } from 'react';
+import s from './Tab.module.scss';
+import clsx from 'clsx';
+import type { TabProps } from './types';
 
 const Tab = forwardRef<HTMLDivElement, TabProps>((props, ref) => {
   const {
@@ -21,7 +21,7 @@ const Tab = forwardRef<HTMLDivElement, TabProps>((props, ref) => {
 
   // find the first not disabled tab
   const notDisabledTab = tabs.findIndex((tab) =>
-    tab.disabled === undefined ? true : !tab.disabled,
+    tab.disabled === undefined ? true : !tab.disabled
   );
 
   const defaultIndex =
@@ -46,6 +46,6 @@ const Tab = forwardRef<HTMLDivElement, TabProps>((props, ref) => {
   );
 });
 
-Tab.displayName = "Tab";
+Tab.displayName = 'Tab';
 
 export default Tab;

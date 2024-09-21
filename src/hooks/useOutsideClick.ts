@@ -1,4 +1,4 @@
-import { useEffect, RefObject } from "react";
+import { useEffect, RefObject } from 'react';
 
 interface UseOutsideClickProps {
   ref: RefObject<HTMLElement>;
@@ -27,9 +27,9 @@ export function useOutsideClick({
       }
     }
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [handler, ref, withoutRef]);
 }

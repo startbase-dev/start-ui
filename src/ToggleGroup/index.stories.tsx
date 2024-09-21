@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { Meta, StoryFn } from "@storybook/react";
-import { ToggleGroup } from ".";
-import Storybook from "../Storybook";
+import React, { useState } from 'react';
+import { Meta, StoryFn } from '@storybook/react';
+import { ToggleGroup } from '.';
+import Storybook from '../Storybook';
 
 export default {
-  title: "UI/ToggleGroup",
+  title: 'UI/ToggleGroup',
   component: ToggleGroup.ToggleWrapper,
   parameters: {
     controls: {
-      include: ["value", "onChange", "direction"],
+      include: ['value', 'onChange', 'direction'],
     },
   },
 } as Meta<typeof ToggleGroup.ToggleWrapper>;

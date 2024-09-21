@@ -1,24 +1,24 @@
-import React, { forwardRef } from "react";
-import s from "./Badge.module.scss";
-import clsx from "clsx";
-import type { BadgeProps } from "./types";
+import React, { forwardRef } from 'react';
+import s from './Badge.module.scss';
+import clsx from 'clsx';
+import type { BadgeProps } from './types';
 
 const Badge = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {
   const {
     children,
     content,
-    color = "primary",
-    variant = "default",
-    position = "top-right",
+    color = 'primary',
+    variant = 'default',
+    position = 'top-right',
     invisible = false,
-    className = "",
-    containerClassName = "",
+    className = '',
+    containerClassName = '',
     ...rest
   } = props;
   const rootClassNames = clsx(s.root, className);
   const containerClassNames = clsx(s.container, containerClassName);
 
-  const isDefault = variant === "default";
+  const isDefault = variant === 'default';
 
   return (
     <div
@@ -36,6 +36,6 @@ const Badge = forwardRef<HTMLDivElement, BadgeProps>((props, ref) => {
   );
 });
 
-Badge.displayName = "Badge";
+Badge.displayName = 'Badge';
 
 export default Badge;

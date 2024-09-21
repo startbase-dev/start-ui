@@ -6,7 +6,7 @@ import React, {
   useRef,
   useState,
   useMemo,
-} from "react";
+} from 'react';
 
 import {
   FloatingFocusManager,
@@ -31,15 +31,15 @@ import {
   useMergeRefs,
   useRole,
   useTypeahead,
-} from "@floating-ui/react";
-import IoCaretForwardOutline from "../../icons/Play";
+} from '@floating-ui/react';
+import IoCaretForwardOutline from '../../icons/Play';
 
-import MenuContext from "../FloatingMenuContext";
+import MenuContext from '../FloatingMenuContext';
 
-import styles from "./FloatingContextMenu.module.scss";
-import cx from "clsx";
+import styles from './FloatingContextMenu.module.scss';
+import cx from 'clsx';
 
-import { FloatingContextMenuProps } from "./types";
+import { FloatingContextMenuProps } from './types';
 
 const FloatingContextMenu = forwardRef<
   HTMLDivElement,
@@ -47,7 +47,7 @@ const FloatingContextMenu = forwardRef<
 >(
   (
     { children, component, label, className, menuClassName, ...props },
-    forwardedRef,
+    forwardedRef
   ) => {
     const [isOpen, setIsOpen] = useState(false);
     const [hasFocusInside, setHasFocusInside] = useState(false);
@@ -70,7 +70,7 @@ const FloatingContextMenu = forwardRef<
       nodeId,
       open: isOpen,
       onOpenChange: setIsOpen,
-      placement: isNested ? "right-start" : "bottom-end",
+      placement: isNested ? 'right-start' : 'bottom-end',
       middleware: [
         offset({
           mainAxis: isNested ? 0 : 4,
@@ -88,11 +88,11 @@ const FloatingContextMenu = forwardRef<
       handleClose: safePolygon({ blockPointerEvents: true }),
     });
     const click = useClick(context, {
-      event: "mousedown",
+      event: 'mousedown',
       toggle: !isNested,
       ignoreMouse: isNested,
     });
-    const role = useRole(context, { role: "menu" });
+    const role = useRole(context, { role: 'menu' });
     const dismiss = useDismiss(context, { bubbles: true });
     const listNavigation = useListNavigation(context, {
       listRef: elementsRef,
@@ -175,11 +175,11 @@ const FloatingContextMenu = forwardRef<
         }
       }
 
-      document.addEventListener("contextmenu", onContextMenu);
-      document.addEventListener("mouseup", onMouseUp);
+      document.addEventListener('contextmenu', onContextMenu);
+      document.addEventListener('mouseup', onMouseUp);
       return () => {
-        document.removeEventListener("contextmenu", onContextMenu);
-        document.removeEventListener("mouseup", onMouseUp);
+        document.removeEventListener('contextmenu', onContextMenu);
+        document.removeEventListener('mouseup', onMouseUp);
         clearTimeout(timeout);
       };
     }, [refs, component]);
@@ -200,18 +200,18 @@ const FloatingContextMenu = forwardRef<
         }
       }
 
-      tree.events.on("click", handleTreeClick);
-      tree.events.on("menuopen", onSubMenuOpen);
+      tree.events.on('click', handleTreeClick);
+      tree.events.on('menuopen', onSubMenuOpen);
 
       return () => {
-        tree.events.off("click", handleTreeClick);
-        tree.events.off("menuopen", onSubMenuOpen);
+        tree.events.off('click', handleTreeClick);
+        tree.events.off('menuopen', onSubMenuOpen);
       };
     }, [tree, nodeId, parentId]);
 
     useEffect(() => {
       if (isOpen && tree) {
-        tree.events.emit("menuopen", { parentId, nodeId });
+        tree.events.emit('menuopen', { parentId, nodeId });
       }
     }, [tree, isOpen, nodeId, parentId]);
 
@@ -223,7 +223,7 @@ const FloatingContextMenu = forwardRef<
         setHasFocusInside,
         isOpen,
       }),
-      [],
+      []
     );
 
     return (
@@ -239,15 +239,15 @@ const FloatingContextMenu = forwardRef<
             tabIndex={
               !isNested ? undefined : parent.activeIndex === item.index ? 0 : -1
             }
-            role={isNested ? "menuitem" : undefined}
-            data-open={isOpen ? "" : undefined}
-            data-nested={isNested ? "" : undefined}
-            data-focus-inside={hasFocusInside ? "" : undefined}
+            role={isNested ? 'menuitem' : undefined}
+            data-open={isOpen ? '' : undefined}
+            data-nested={isNested ? '' : undefined}
+            data-focus-inside={hasFocusInside ? '' : undefined}
             className={cx(
               {
                 [styles.menuItem]: isNested,
               },
-              className && { [className]: true },
+              className && { [className]: true }
             )}
             {...getReferenceProps(
               parent.getItemProps({
@@ -257,7 +257,7 @@ const FloatingContextMenu = forwardRef<
                   setHasFocusInside(false);
                   parent.setHasFocusInside(true);
                 },
-              }),
+              })
             )}
           >
             {label}
@@ -277,7 +277,7 @@ const FloatingContextMenu = forwardRef<
                       ref={refs.setFloating}
                       className={cx(
                         styles.menu,
-                        menuClassName && { [menuClassName]: true },
+                        menuClassName && { [menuClassName]: true }
                       )}
                       style={floatingStyles}
                       {...getFloatingProps()}
@@ -292,9 +292,9 @@ const FloatingContextMenu = forwardRef<
         </FloatingNode>
       </>
     );
-  },
+  }
 );
 
-FloatingContextMenu.displayName = "FloatingContextMenu";
+FloatingContextMenu.displayName = 'FloatingContextMenu';
 
 export default FloatingContextMenu;

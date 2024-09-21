@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import s from "./WordAnimation.module.scss";
-import { WordAnimationProps } from "./types";
-import clsx from "clsx";
+import React, { useEffect, useState } from 'react';
+import s from './WordAnimation.module.scss';
+import { WordAnimationProps } from './types';
+import clsx from 'clsx';
 
 const WordAnimation: React.FC<WordAnimationProps> = ({
-  text = "",
-  className = "",
-  wordClassName = "",
+  text = '',
+  className = '',
+  wordClassName = '',
 }) => {
-  const words = text.split(" ");
+  const words = text.split(' ');
   const [visibleWords, setVisibleWords] = useState<number>(0);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const WordAnimation: React.FC<WordAnimationProps> = ({
           className={clsx(
             s.word,
             index < visibleWords ? s.visible : s.hidden,
-            wordClassName,
+            wordClassName
           )}
         >
           {word}

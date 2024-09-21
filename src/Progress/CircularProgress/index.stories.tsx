@@ -1,7 +1,7 @@
-import React from "react";
-import Progress from "../index";
-import type { TemplateProps } from "../types";
-import Storybook from "../../Storybook";
+import React from 'react';
+import Progress from '../index';
+import type { TemplateProps } from '../types';
+import Storybook from '../../Storybook';
 
 const Template: React.FC<TemplateProps> = (args) => {
   const { title, variant } = args;
@@ -10,9 +10,9 @@ const Template: React.FC<TemplateProps> = (args) => {
     <Storybook title={title}>
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexDirection: "row",
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexDirection: 'row',
         }}
       >
         <Progress value={0.5} variant={variant} size={16} />
@@ -27,9 +27,9 @@ const Template: React.FC<TemplateProps> = (args) => {
       </div>
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexDirection: "row",
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexDirection: 'row',
         }}
       >
         <Progress value={0.5} variant={variant} size={16} color="success" />
@@ -45,9 +45,9 @@ const Template: React.FC<TemplateProps> = (args) => {
       </div>
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexDirection: "row",
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexDirection: 'row',
         }}
       >
         <Progress value={0.5} variant={variant} size={16} color="info" />
@@ -63,9 +63,9 @@ const Template: React.FC<TemplateProps> = (args) => {
       </div>
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexDirection: "row",
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexDirection: 'row',
         }}
       >
         <Progress value={0.5} variant={variant} size={16} color="warning" />
@@ -81,9 +81,9 @@ const Template: React.FC<TemplateProps> = (args) => {
       </div>
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexDirection: "row",
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexDirection: 'row',
         }}
       >
         <Progress value={0.5} variant={variant} size={16} color="error" />
@@ -100,9 +100,9 @@ const Template: React.FC<TemplateProps> = (args) => {
 
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexDirection: "row",
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexDirection: 'row',
         }}
       >
         <Progress value={0.5} variant={variant} size={16} progressLabel />
@@ -122,12 +122,12 @@ const Template: React.FC<TemplateProps> = (args) => {
 
 export const CircularProgressComponent = Template.bind({});
 CircularProgressComponent.args = {
-  title: "Circular Progress",
-  variant: "circular",
+  title: 'Circular Progress',
+  variant: 'circular',
 };
 
 const Component = {
-  title: "UI/Progress",
+  title: 'UI/Progress',
   component: CircularProgressComponent,
 };
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {
   size?: number;
@@ -6,8 +6,8 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
 }
 
 const AirplaneTaxiingIcon = (
-  { size = 30, fill = "#ffffff", ...props }: IconProps,
-  ref: React.Ref<SVGSVGElement>,
+  { size = 30, fill = '#ffffff', ...props }: IconProps,
+  ref: React.Ref<SVGSVGElement>
 ) => {
   return (
     <svg

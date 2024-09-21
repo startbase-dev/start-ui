@@ -1,8 +1,8 @@
-import { Table } from "@start-base/start-ui";
-import { Tabs } from "nextra/components";
-import { Steps } from "nextra/components";
-import "@start-base/start-ui/styles.css";
-import Preview from "@components/Preview/Preview";
+import { Table } from '@start-base/start-ui';
+import { Tabs } from 'nextra/components';
+import { Steps } from 'nextra/components';
+import '@start-base/start-ui/styles.css';
+import Preview from '@components/Preview/Preview';
 
 # Table
 
@@ -71,45 +71,45 @@ npm i @start-base/start-ui
 
 ### Table Default
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <Preview>
       <Table
         columns={[
           {
-            dataIndex: "name",
-            key: "name",
-            title: "Name",
+            dataIndex: 'name',
+            key: 'name',
+            title: 'Name',
           },
           {
-            dataIndex: "age",
-            key: "age",
-            title: "Age",
+            dataIndex: 'age',
+            key: 'age',
+            title: 'Age',
           },
           {
-            dataIndex: "email",
-            key: "email",
-            title: "Email",
+            dataIndex: 'email',
+            key: 'email',
+            title: 'Email',
           },
         ]}
         data={[
           {
             age: 28,
-            email: "john.doe@example.com",
+            email: 'john.doe@example.com',
             key: 1,
-            name: "John Doe",
+            name: 'John Doe',
           },
           {
             age: 34,
-            email: "jane.smith@example.com",
+            email: 'jane.smith@example.com',
             key: 2,
-            name: "Jane Smith",
+            name: 'Jane Smith',
           },
           {
             age: 45,
-            email: "alice.johnson@example.com",
+            email: 'alice.johnson@example.com',
             key: 3,
-            name: "Alice Johnson",
+            name: 'Alice Johnson',
           },
         ]}
         emptyText="No data available"
@@ -122,39 +122,39 @@ npm i @start-base/start-ui
     <Table
       columns={[
         {
-          dataIndex: "name",
-          key: "name",
-          title: "Name",
+          dataIndex: 'name',
+          key: 'name',
+          title: 'Name',
         },
         {
-          dataIndex: "age",
-          key: "age",
-          title: "Age",
+          dataIndex: 'age',
+          key: 'age',
+          title: 'Age',
         },
         {
-          dataIndex: "email",
-          key: "email",
-          title: "Email",
+          dataIndex: 'email',
+          key: 'email',
+          title: 'Email',
         },
       ]}
       data={[
         {
           age: 28,
-          email: "john.doe@example.com",
+          email: 'john.doe@example.com',
           key: 1,
-          name: "John Doe",
+          name: 'John Doe',
         },
         {
           age: 34,
-          email: "jane.smith@example.com",
+          email: 'jane.smith@example.com',
           key: 2,
-          name: "Jane Smith",
+          name: 'Jane Smith',
         },
         {
           age: 45,
-          email: "alice.johnson@example.com",
+          email: 'alice.johnson@example.com',
           key: 3,
-          name: "Alice Johnson",
+          name: 'Alice Johnson',
         },
       ]}
       emptyText="No data available"
@@ -166,25 +166,25 @@ npm i @start-base/start-ui
 
 ### Table With Custom Empty Text
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <Preview>
       <Table
         columns={[
           {
-            dataIndex: "name",
-            key: "name",
-            title: "Name",
+            dataIndex: 'name',
+            key: 'name',
+            title: 'Name',
           },
           {
-            dataIndex: "age",
-            key: "age",
-            title: "Age",
+            dataIndex: 'age',
+            key: 'age',
+            title: 'Age',
           },
           {
-            dataIndex: "email",
-            key: "email",
-            title: "Email",
+            dataIndex: 'email',
+            key: 'email',
+            title: 'Email',
           },
         ]}
         data={[]}
@@ -197,19 +197,19 @@ npm i @start-base/start-ui
     <Table
       columns={[
         {
-          dataIndex: "name",
-          key: "name",
-          title: "Name",
+          dataIndex: 'name',
+          key: 'name',
+          title: 'Name',
         },
         {
-          dataIndex: "age",
-          key: "age",
-          title: "Age",
+          dataIndex: 'age',
+          key: 'age',
+          title: 'Age',
         },
         {
-          dataIndex: "email",
-          key: "email",
-          title: "Email",
+          dataIndex: 'email',
+          key: 'email',
+          title: 'Email',
         },
       ]}
       data={[]}

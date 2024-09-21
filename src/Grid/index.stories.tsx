@@ -1,8 +1,8 @@
-import React from "react";
-import Grid from "./index";
-import Row from "./Row";
-import Col from "./Col";
-import type { TemplateProps } from "./types";
+import React from 'react';
+import Grid from './index';
+import Row from './Row';
+import Col from './Col';
+import type { TemplateProps } from './types';
 
 const Template: React.FC<TemplateProps> = (args) => {
   return (
@@ -10,9 +10,9 @@ const Template: React.FC<TemplateProps> = (args) => {
       <h2>{args.title}</h2>
       <div
         style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexDirection: "column",
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexDirection: 'column',
         }}
       >
         <Grid>
@@ -36,9 +36,9 @@ const TemplateWithPadding: React.FC<TemplateProps> = (args) => (
     <h2>{args.title}</h2>
     <div
       style={{
-        display: "flex",
-        justifyContent: "space-evenly",
-        flexDirection: "column",
+        display: 'flex',
+        justifyContent: 'space-evenly',
+        flexDirection: 'column',
       }}
     >
       <Grid>
@@ -71,9 +71,9 @@ const TemplateWithResponsive: React.FC<TemplateProps> = (args) => (
     <h2>{args.title}</h2>
     <div
       style={{
-        display: "flex",
-        justifyContent: "space-evenly",
-        flexDirection: "column",
+        display: 'flex',
+        justifyContent: 'space-evenly',
+        flexDirection: 'column',
       }}
     >
       <Grid>
@@ -114,16 +114,16 @@ const TemplateWithResponsive: React.FC<TemplateProps> = (args) => (
 );
 
 export const GridComponent = Template.bind({});
-GridComponent.args = { title: "Grid" };
+GridComponent.args = { title: 'Grid' };
 
 export const GridWithPadding = TemplateWithPadding.bind({});
-GridWithPadding.args = { title: "Grid with padding" };
+GridWithPadding.args = { title: 'Grid with padding' };
 
 export const GridWithResponsive = TemplateWithResponsive.bind({});
-GridWithResponsive.args = { title: "Grid with responsive" };
+GridWithResponsive.args = { title: 'Grid with responsive' };
 
 const Component = {
-  title: "UI/Grid",
+  title: 'UI/Grid',
   component: GridComponent,
 };
 

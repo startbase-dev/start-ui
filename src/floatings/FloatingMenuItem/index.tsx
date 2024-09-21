@@ -1,13 +1,13 @@
-import React, { forwardRef, useContext } from "react";
+import React, { forwardRef, useContext } from 'react';
 
-import { useFloatingTree, useListItem, useMergeRefs } from "@floating-ui/react";
+import { useFloatingTree, useListItem, useMergeRefs } from '@floating-ui/react';
 
-import MenuContext from "../FloatingMenuContext";
+import MenuContext from '../FloatingMenuContext';
 
-import styles from "./FloatingMenuItem.module.scss";
-import cx from "clsx";
+import styles from './FloatingMenuItem.module.scss';
+import cx from 'clsx';
 
-import type { FloatingMenuItemProps } from "./types";
+import type { FloatingMenuItemProps } from './types';
 
 const FloatingMenuItem = forwardRef<HTMLDivElement, FloatingMenuItemProps>(
   ({ label, disabled, className, ...props }, forwardedRef) => {
@@ -26,7 +26,7 @@ const FloatingMenuItem = forwardRef<HTMLDivElement, FloatingMenuItemProps>(
         {...menu.getItemProps({
           onClick(event: React.MouseEvent<HTMLDivElement>) {
             props.onClick?.(event);
-            tree?.events.emit("click");
+            tree?.events.emit('click');
           },
           onFocus(event: React.FocusEvent<HTMLDivElement>) {
             props.onFocus?.(event);
@@ -37,9 +37,9 @@ const FloatingMenuItem = forwardRef<HTMLDivElement, FloatingMenuItemProps>(
         {label}
       </div>
     );
-  },
+  }
 );
 
-FloatingMenuItem.displayName = "FloatingMenuItem";
+FloatingMenuItem.displayName = 'FloatingMenuItem';
 
 export default FloatingMenuItem;

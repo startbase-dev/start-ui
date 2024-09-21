@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 // eslint-disable-next-line css-modules/no-unused-class
-import s from "../Skeleton.module.scss";
-import { SkeletonParagraphProps } from "../types";
+import s from '../Skeleton.module.scss';
+import { SkeletonParagraphProps } from '../types';
 
 const SkeletonParagraph: React.FC<SkeletonParagraphProps> = ({ lines = 3 }) => {
   return (

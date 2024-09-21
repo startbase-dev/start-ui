@@ -1,9 +1,9 @@
-import React from "react";
-import cn from "clsx";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import type { ReactNode } from "react";
-import styles from "./style.module.css";
+import React from 'react';
+import cn from 'clsx';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import type { ReactNode } from 'react';
+import styles from './style.module.css';
 
 export function Feature({
   large,
@@ -19,14 +19,14 @@ export function Feature({
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, margin: "-20px" }}
+      viewport={{ once: true, margin: '-20px' }}
       transition={{ duration: Math.min(0.25 + index * 0.2, 0.8) }}
       className={cn(
         styles.feature,
         large && styles.large,
         centered && styles.centered,
-        lightOnly && "light-only",
-        className,
+        lightOnly && 'light-only',
+        className
       )}
       {...props}
     >

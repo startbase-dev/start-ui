@@ -1,6 +1,6 @@
 .light,
 :root,
-[data-theme="light"] {
+[data-theme='light'] {
   --sui-typography-muted-text: var(--sui-gray-450);
   --sui-typography-success-text: var(--sui-success);
   --sui-typography-error-text: var(--sui-error);
@@ -32,7 +32,7 @@
 }
 
 .dark,
-[data-theme="dark"] {
+[data-theme='dark'] {
   --sui-typography-muted-text: var(--sui-gray-450);
   --sui-typography-success-text: var(--sui-success);
   --sui-typography-error-text: var(--sui-error);

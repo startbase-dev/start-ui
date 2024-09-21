@@ -1,6 +1,6 @@
-type Variant = "fullWidth" | "start" | "center" | "end";
-type Orientation = "horizontal" | "vertical";
-type ContentAlign = "start" | "center" | "end";
+type Variant = 'fullWidth' | 'start' | 'center' | 'end';
+type Orientation = 'horizontal' | 'vertical';
+type ContentAlign = 'start' | 'center' | 'end';
 type Component = keyof JSX.IntrinsicElements;
 
 export interface DividerProps extends React.AllHTMLAttributes<HTMLDivElement> {

@@ -1,16 +1,16 @@
-import { createElement, forwardRef } from "react";
-import s from "./Divider.module.scss";
-import clsx from "clsx";
-import type { DividerProps } from "./types";
+import { createElement, forwardRef } from 'react';
+import s from './Divider.module.scss';
+import clsx from 'clsx';
+import type { DividerProps } from './types';
 
 const Divider = forwardRef<HTMLDivElement, DividerProps>((props, ref) => {
   const {
     children = null,
-    variant = "fullWidth",
-    orientation = "horizontal",
-    contentAlign = "middle",
-    component = "div",
-    className = "",
+    variant = 'fullWidth',
+    orientation = 'horizontal',
+    contentAlign = 'middle',
+    component = 'div',
+    className = '',
     ...rest
   } = props;
 
@@ -19,30 +19,30 @@ const Divider = forwardRef<HTMLDivElement, DividerProps>((props, ref) => {
   const componentParams = {
     className: rootClassNames,
     ref,
-    role: "separator",
-    "aria-orientation": orientation,
-    "data-variant": variant,
-    "data-align": contentAlign,
+    role: 'separator',
+    'aria-orientation': orientation,
+    'data-variant': variant,
+    'data-align': contentAlign,
     ...rest,
   };
 
   // Void elements throw error if a child is passed: https://developer.mozilla.org/en-US/docs/Glossary/Void_element
   // Avoid passing child if a void element is used
   const voidElements = [
-    "area",
-    "base",
-    "br",
-    "col",
-    "embed",
-    "hr",
-    "img",
-    "input",
-    "link",
-    "meta",
-    "param",
-    "source",
-    "track",
-    "wbr",
+    'area',
+    'base',
+    'br',
+    'col',
+    'embed',
+    'hr',
+    'img',
+    'input',
+    'link',
+    'meta',
+    'param',
+    'source',
+    'track',
+    'wbr',
   ];
 
   // Return void divider
@@ -53,6 +53,6 @@ const Divider = forwardRef<HTMLDivElement, DividerProps>((props, ref) => {
   return createElement(component, componentParams, children);
 });
 
-Divider.displayName = "Divider";
+Divider.displayName = 'Divider';
 
 export default Divider;

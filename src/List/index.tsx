@@ -1,7 +1,7 @@
-import React, { forwardRef } from "react";
-import cx from "clsx";
-import s from "./List.module.scss";
-import "../style/components/list.scss";
+import React, { forwardRef } from 'react';
+import cx from 'clsx';
+import s from './List.module.scss';
+import '../style/components/list.scss';
 import {
   ListProps,
   ListItemProps,
@@ -10,28 +10,28 @@ import {
   ListItemSubtitleProps,
   ListDividerProps,
   ListSubheaderProps,
-} from "./types";
+} from './types';
 
 export const List = forwardRef<HTMLUListElement, ListProps>(
-  ({ children, className = "" }, ref) => {
+  ({ children, className = '' }, ref) => {
     return (
       <ul ref={ref} className={cx(s.list, className)}>
         {children}
       </ul>
     );
-  },
+  }
 );
-List.displayName = "List";
+List.displayName = 'List';
 
-export const ListItem = ({ children, className = "" }: ListItemProps) => {
+export const ListItem = ({ children, className = '' }: ListItemProps) => {
   return <li className={cx(s.listItem, className)}>{children}</li>;
 };
-ListItem.displayName = "ListItem";
+ListItem.displayName = 'ListItem';
 
 export const ListItemButton = ({
   children,
   onClick,
-  className = "",
+  className = '',
 }: ListItemButtonProps) => {
   return (
     <button onClick={onClick} className={cx(s.listItemButton, className)}>
@@ -39,30 +39,30 @@ export const ListItemButton = ({
     </button>
   );
 };
-ListItemButton.displayName = "ListItemButton";
+ListItemButton.displayName = 'ListItemButton';
 
-export const ListItemIcon = ({ icon, className = "" }: ListItemIconProps) => {
+export const ListItemIcon = ({ icon, className = '' }: ListItemIconProps) => {
   return <span className={cx(s.listItemIcon, className)}>{icon}</span>;
 };
-ListItemIcon.displayName = "ListItemIcon";
+ListItemIcon.displayName = 'ListItemIcon';
 
 export const ListItemSubtitle = ({
   subtitle,
-  className = "",
+  className = '',
 }: ListItemSubtitleProps) => {
   return <span className={cx(s.listItemSubtitle, className)}>{subtitle}</span>;
 };
-ListItemSubtitle.displayName = "ListItemSubtitle";
+ListItemSubtitle.displayName = 'ListItemSubtitle';
 
-export const ListDivider = ({ className = "" }: ListDividerProps) => {
+export const ListDivider = ({ className = '' }: ListDividerProps) => {
   return <hr className={cx(s.listDivider, className)} />;
 };
-ListDivider.displayName = "ListDivider";
+ListDivider.displayName = 'ListDivider';
 
 export const ListSubheader = ({
   children,
-  className = "",
+  className = '',
 }: ListSubheaderProps) => {
   return <div className={cx(s.listSubheader, className)}>{children}</div>;
 };
-ListSubheader.displayName = "ListSubheader";
+ListSubheader.displayName = 'ListSubheader';

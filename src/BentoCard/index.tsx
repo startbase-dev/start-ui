@@ -1,9 +1,9 @@
-import React, { forwardRef, useMemo, useState } from "react";
-import clsx from "clsx";
-import s from "./BentoCard.module.scss";
-import Plus from "../icons/Plus";
-import ArrowForwardIos from "../icons/ArrowForwardIos";
-import type { BentoCardProps } from "./types";
+import React, { forwardRef, useMemo, useState } from 'react';
+import clsx from 'clsx';
+import s from './BentoCard.module.scss';
+import Plus from '../icons/Plus';
+import ArrowForwardIos from '../icons/ArrowForwardIos';
+import type { BentoCardProps } from './types';
 
 const BentoCard = forwardRef<HTMLDivElement, BentoCardProps>((props, ref) => {
   const {
@@ -36,7 +36,7 @@ const BentoCard = forwardRef<HTMLDivElement, BentoCardProps>((props, ref) => {
   };
 
   const handleClickRedirectTo = () => {
-    window.open(redirectTo, "_blank");
+    window.open(redirectTo, '_blank');
   };
 
   const titleHandler = useMemo(() => {
@@ -118,6 +118,6 @@ const BentoCard = forwardRef<HTMLDivElement, BentoCardProps>((props, ref) => {
   );
 });
 
-BentoCard.displayName = "BentoCard";
+BentoCard.displayName = 'BentoCard';
 
 export default BentoCard;

@@ -1,12 +1,12 @@
 .light,
 :root,
-[data-theme="light"] {
+[data-theme='light'] {
   --sui-dropdown-menu-bg: var(--sui-white);
   --sui-dropdown-menu-border: var(--sui-gray-200);
 }
 
 .dark,
-[data-theme="dark"] {
+[data-theme='dark'] {
   --sui-dropdown-menu-bg: var(--sui-black);
   --sui-dropdown-menu-border: var(--sui-gray-700);
 }

@@ -1,5 +1,5 @@
-import React, { useState, ReactElement } from "react";
-import { Accordion } from "@start-base/start-ui";
+import React, { useState, ReactElement } from 'react';
+import { Accordion } from '@start-base/start-ui';
 interface Props {
   children: ReactElement;
 }
@@ -14,8 +14,8 @@ const ControlledAccordion: React.FC<Props> = ({ children, ...props }) => {
   return (
     <Accordion
       {...props}
-      expanded={expanded === "a1"}
-      onExpand={() => handleExpanded("a1")}
+      expanded={expanded === 'a1'}
+      onExpand={() => handleExpanded('a1')}
     >
       {children}
     </Accordion>

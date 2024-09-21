@@ -1,6 +1,6 @@
 .light,
 :root,
-[data-theme="light"] {
+[data-theme='light'] {
   --sui-list-text: var(--sui-black);
   --sui-list-bg-hover: var(--sui-gray-100);
   --sui-list-subtitle-text: var(--sui-gray-500);
@@ -10,7 +10,7 @@
 }
 
 .dark,
-[data-theme="dark"] {
+[data-theme='dark'] {
   --sui-list-text: var(--sui-white);
   --sui-list-bg-hover: var(--sui-gray-900);
   --sui-list-subtitle-text: var(--sui-gray-400);

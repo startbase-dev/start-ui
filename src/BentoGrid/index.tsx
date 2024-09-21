@@ -1,6 +1,6 @@
-import React, { forwardRef } from "react";
-import s from "./BentoGrid.module.scss";
-import { BentoGridProps, BentoItem } from "./types";
+import React, { forwardRef } from 'react';
+import s from './BentoGrid.module.scss';
+import { BentoGridProps, BentoItem } from './types';
 
 const BentoGrid = forwardRef<HTMLDivElement, BentoGridProps>(
   ({ items, gridCols = 4, rowHeight = 100, ...rest }, ref) => {
@@ -27,9 +27,9 @@ const BentoGrid = forwardRef<HTMLDivElement, BentoGridProps>(
         ))}
       </div>
     );
-  },
+  }
 );
 
-BentoGrid.displayName = "BentoGrid";
+BentoGrid.displayName = 'BentoGrid';
 
 export default BentoGrid;

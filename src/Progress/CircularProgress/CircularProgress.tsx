@@ -1,8 +1,8 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef } from 'react';
 // eslint-disable-next-line css-modules/no-unused-class
-import s from "./CircularProgress.module.scss";
-import clsx from "clsx";
-import type { ProgressProps } from "../types";
+import s from './CircularProgress.module.scss';
+import clsx from 'clsx';
+import type { ProgressProps } from '../types';
 
 const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
   const {
@@ -13,12 +13,12 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
     trackSize = size * 0.1, // trackSize is 1/10 of size parameter by default
     progressLabel = false,
     determinate = true,
-    className = "",
-    color = "default",
-    containerClassName = "",
-    trackClassName = "",
-    progressClassName = "",
-    labelClassName = "",
+    className = '',
+    color = 'default',
+    containerClassName = '',
+    trackClassName = '',
+    progressClassName = '',
+    labelClassName = '',
     ...rest
   } = props;
 
@@ -87,13 +87,13 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
   );
 });
 
-Index.displayName = "CircularProgress";
+Index.displayName = 'CircularProgress';
 
 function toPercentage(value: number, max?: number, min?: number) {
   if (!max || !min) return `${Math.round(value * 100)}%`;
 
   if (max === min) {
-    throw new Error("Max and min values cannot be the same.");
+    throw new Error('Max and min values cannot be the same.');
   }
 
   const percentage = ((value - min) / (max - min)) * 100;

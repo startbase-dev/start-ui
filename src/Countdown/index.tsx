@@ -1,10 +1,10 @@
-import React, { forwardRef, useMemo } from "react";
+import React, { forwardRef, useMemo } from 'react';
 // eslint-disable-next-line css-modules/no-unused-class
-import s from "./Countdown.module.scss";
-import { getUnitLabel } from "./constants";
-import useCountdown from "./hooks/useCountdown";
-import clsx from "clsx";
-import { CountdownProps } from "./types";
+import s from './Countdown.module.scss';
+import { getUnitLabel } from './constants';
+import useCountdown from './hooks/useCountdown';
+import clsx from 'clsx';
+import { CountdownProps } from './types';
 
 const Countdown = forwardRef<HTMLDivElement, CountdownProps>((props, ref) => {
   const {
@@ -13,7 +13,7 @@ const Countdown = forwardRef<HTMLDivElement, CountdownProps>((props, ref) => {
     showHour = true,
     showMinute = true,
     showSecond = true,
-    type = "default",
+    type = 'default',
     itemClassName,
     rootClassName,
     valueClassName,
@@ -31,25 +31,25 @@ const Countdown = forwardRef<HTMLDivElement, CountdownProps>((props, ref) => {
   const itemClassNames = clsx(
     s.item,
     itemClassName,
-    type !== "default" && s[type],
+    type !== 'default' && s[type]
   );
 
   const valueClassNames = clsx(
     s.value,
     valueClassName,
-    type !== "default" && s[type],
+    type !== 'default' && s[type]
   );
 
   const labelClassNames = clsx(
     s.label,
     labelClassName,
-    type !== "default" && s[type],
+    type !== 'default' && s[type]
   );
 
   const format = useMemo(() => {
-    if (type === "withSeparator") return "none";
-    else if (type === "default") return "oneChar";
-    else return "full";
+    if (type === 'withSeparator') return 'none';
+    else if (type === 'default') return 'oneChar';
+    else return 'full';
   }, [type]);
 
   return (
@@ -57,19 +57,19 @@ const Countdown = forwardRef<HTMLDivElement, CountdownProps>((props, ref) => {
       {showDay && timeLeft.day !== undefined && (
         <div className={itemClassNames}>
           <div className={valueClassNames}>{timeLeft.day}</div>
-          <div className={labelClassNames}>{getUnitLabel("day", format)}</div>
+          <div className={labelClassNames}>{getUnitLabel('day', format)}</div>
         </div>
       )}
 
       {showHour && timeLeft.hour !== undefined && (
         <>
-          {type === "withSeparator" && timeLeft.day !== undefined && (
+          {type === 'withSeparator' && timeLeft.day !== undefined && (
             <span className={s.separator}>:</span>
           )}
           <div className={itemClassNames}>
             <div className={valueClassNames}>{timeLeft.hour}</div>
             <div className={labelClassNames}>
-              {getUnitLabel("hour", format)}
+              {getUnitLabel('hour', format)}
             </div>
           </div>
         </>
@@ -77,14 +77,14 @@ const Countdown = forwardRef<HTMLDivElement, CountdownProps>((props, ref) => {
 
       {showMinute && timeLeft.minute !== undefined && (
         <>
-          {type === "withSeparator" &&
+          {type === 'withSeparator' &&
             (timeLeft.day !== undefined || timeLeft.hour !== undefined) && (
               <span className={s.separator}>:</span>
             )}
           <div className={itemClassNames}>
             <div className={valueClassNames}>{timeLeft.minute}</div>
             <div className={labelClassNames}>
-              {getUnitLabel("minute", format)}
+              {getUnitLabel('minute', format)}
             </div>
           </div>
         </>
@@ -92,14 +92,14 @@ const Countdown = forwardRef<HTMLDivElement, CountdownProps>((props, ref) => {
 
       {showSecond && timeLeft.second !== undefined && (
         <>
-          {type === "withSeparator" &&
+          {type === 'withSeparator' &&
             (timeLeft.hour !== undefined || timeLeft.minute !== undefined) && (
               <span className={s.separator}>:</span>
             )}
           <div className={itemClassNames}>
             <div className={valueClassNames}>{timeLeft.second}</div>
             <div className={labelClassNames}>
-              {getUnitLabel("second", format)}
+              {getUnitLabel('second', format)}
             </div>
           </div>
         </>
@@ -108,6 +108,6 @@ const Countdown = forwardRef<HTMLDivElement, CountdownProps>((props, ref) => {
   );
 });
 
-Countdown.displayName = "Countdown";
+Countdown.displayName = 'Countdown';
 
 export default Countdown;

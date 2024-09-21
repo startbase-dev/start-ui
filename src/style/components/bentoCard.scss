@@ -1,6 +1,6 @@
 .light,
 :root,
-[data-theme="light"] {
+[data-theme='light'] {
   --sui-bento-card-bg: var(--sui-white);
   --sui-bento-card-border: var(--sui-gray-300);
   --sui-bento-card-content: var(--sui-black);
@@ -16,7 +16,7 @@
 }
 
 .dark,
-[data-theme="dark"] {
+[data-theme='dark'] {
   --sui-bento-card-bg: var(--sui-black);
   --sui-bento-card-border: var(--sui-gray-300);
   --sui-bento-card-content: var(--sui-black);

@@ -1,3 +1,3 @@
-declare module "csstype" {
+declare module 'csstype' {
   type Properties = Record<`--${string}`, string>;
 }

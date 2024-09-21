@@ -12,18 +12,18 @@
 .root::before,
 .root::after {
   display: flex;
-  content: "";
+  content: '';
   height: 1px;
   width: 100%;
   border: none;
   border-bottom: 1px solid var(--sui-border);
 }
 
-.root[data-align="start"]::before {
+.root[data-align='start']::before {
   width: 10%;
 }
 
-.root[data-align="end"]::after {
+.root[data-align='end']::after {
   width: 10%;
 }
 
@@ -37,60 +37,60 @@
   display: none;
 }
 
-.root[data-variant="start"] {
+.root[data-variant='start'] {
   width: 90%;
 }
 
-.root[data-variant="end"] {
+.root[data-variant='end'] {
   width: 90%;
   align-self: flex-end;
 }
 
-.root[data-variant="center"] {
+.root[data-variant='center'] {
   width: 90%;
   align-self: center;
 }
 
-.root[aria-orientation="vertical"] {
+.root[aria-orientation='vertical'] {
   width: max-content;
   min-width: 1px;
   height: 100%;
   flex-direction: column;
 }
 
-.root[aria-orientation="vertical"]::after,
-.root[aria-orientation="vertical"]::before {
+.root[aria-orientation='vertical']::after,
+.root[aria-orientation='vertical']::before {
   width: 1px;
   height: 100%;
   border: none;
   border-right: 1px solid var(--sui-border);
 }
 
-.root[aria-orientation="vertical"]:empty {
+.root[aria-orientation='vertical']:empty {
   width: 1px;
   height: 100%;
   border: none;
   border-right: 1px solid var(--sui-border);
 }
 
-.root[aria-orientation="vertical"][data-align="start"]::before {
+.root[aria-orientation='vertical'][data-align='start']::before {
   height: 10%;
 }
 
-.root[aria-orientation="vertical"][data-align="end"]::after {
+.root[aria-orientation='vertical'][data-align='end']::after {
   height: 10%;
 }
 
-.root[aria-orientation="vertical"][data-variant="start"] {
+.root[aria-orientation='vertical'][data-variant='start'] {
   height: 90%;
 }
 
-.root[aria-orientation="vertical"][data-variant="end"] {
+.root[aria-orientation='vertical'][data-variant='end'] {
   height: 90%;
   align-self: flex-end;
 }
 
-.root[aria-orientation="vertical"][data-variant="center"] {
+.root[aria-orientation='vertical'][data-variant='center'] {
   height: 90%;
   align-self: center;
 }
