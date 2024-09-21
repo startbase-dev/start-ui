@@ -1,20 +1,21 @@
-@import "colors/colors";
-@import "colors/colors-light";
-@import "colors/colors-dark";
+@import 'colors/colors';
+@import 'colors/colors-light';
+@import 'colors/colors-dark';
 
-@import "components/accordion";
-@import "components/button";
-@import "components/context-menu";
-@import "components/dropdown";
-@import "components/floating-menu-item";
-@import "components/popover";
-@import "components/progress";
-@import "components/tab";
-@import "components/bentoCard";
-@import "components/countdown";
-@import "components/tooltip";
-@import "components/alert";
-@import "components/table";
+@import 'components/accordion';
+@import 'components/button';
+@import 'components/context-menu';
+@import 'components/dropdown';
+@import 'components/floating-menu-item';
+@import 'components/popover';
+@import 'components/progress';
+@import 'components/tab';
+@import 'components/bentoCard';
+@import 'components/countdown';
+@import 'components/tooltip';
+@import 'components/alert';
+@import 'components/table';
+@import 'components/breadCrumbs';
 
 :root {
   /* TYPOGRAPHY */
@@ -66,9 +67,9 @@
   --sui-text-margin: 0.5rem;
   --sui-gap: 1rem;
   --sui-transition: all 0.3s ease-in-out;
-  --sui-font-family: galanogrotesque, "Noto Sans", -apple-system,
-    blinkmacsystemfont, "Segoe UI", roboto, oxygen, ubuntu, cantarell,
-    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --sui-font-family: galanogrotesque, 'Noto Sans', -apple-system,
+    blinkmacsystemfont, 'Segoe UI', roboto, oxygen, ubuntu, cantarell,
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 
   /* NEUTRAL COLORS/ */
   --sui-transparent: transparent;

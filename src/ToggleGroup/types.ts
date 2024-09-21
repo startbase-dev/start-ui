@@ -1,16 +1,21 @@
-import React, { ReactNode } from "react";
-import { ToggleProps } from "../Toggle/types";
+import { ReactNode } from 'react';
 
-interface ToggleWrapperProps
-  extends Omit<React.AllHTMLAttributes<HTMLDivElement>, "value" | "onChange"> {
-  children: ReactNode | ReactNode[];
+export interface ToggleItemProps {
+  value: string;
+  initialState?: boolean;
+  onToggle?: (toggled: boolean) => void;
+  color?: 'primary' | 'secondary' | 'destructive';
+  variant?: 'default' | 'outline';
+  size?: 'small' | 'medium' | 'large';
+  fluid?: boolean;
+  className?: string;
+  disabled?: boolean;
+  children?: ReactNode;
+}
+
+export interface ToggleWrapperProps {
   value: string | null;
   onChange: (value: string) => void;
-  direction?: string;
+  children: ReactNode | ReactNode[];
+  direction?: 'horizontal' | 'vertical';
 }
-
-interface ToggleItemProps extends ToggleProps {
-  value: string;
-}
-
-export { ToggleWrapperProps, ToggleItemProps };

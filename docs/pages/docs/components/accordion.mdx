@@ -1,10 +1,10 @@
-import { Accordion } from "@start-base/start-ui";
-import { Tabs } from "nextra/components";
-import { Steps } from "nextra/components";
-import "@start-base/start-ui/styles.css";
-import Preview from "@components/Preview/Preview";
-import ControlledAccordion from "@components/ControlledAccordion";
-import { Button } from "@start-base/start-ui";
+import { Accordion } from '@start-base/start-ui';
+import { Tabs } from 'nextra/components';
+import { Steps } from 'nextra/components';
+import '@start-base/start-ui/styles.css';
+import Preview from '@components/Preview/Preview';
+import ControlledAccordion from '@components/ControlledAccordion';
+import { Button } from '@start-base/start-ui';
 
 # Accordion
 
@@ -73,10 +73,10 @@ npm i @start-base/start-ui
 
 ### Default Expanded Accordion
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <Preview height="800px">
-      <div style={{ width: "100%" }}>
+      <div style={{ width: '100%' }}>
         <Accordion summary="Accordion 1">
           Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
@@ -112,7 +112,7 @@ npm i @start-base/start-ui
   </Tabs.Tab>
   <Tabs.Tab>
     ```jsx copy showLineNumbers
-    <div style={{ width: "100%" }}>
+    <div style={{ width: '100%' }}>
       <Accordion summary="Accordion 1">
         Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
@@ -150,10 +150,10 @@ npm i @start-base/start-ui
 
 ### Disabled Accordions
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <Preview height="800px">
-      <div style={{ width: "100%" }}>
+      <div style={{ width: '100%' }}>
         <Accordion summary="Accordion 1">
           Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
@@ -189,7 +189,7 @@ npm i @start-base/start-ui
   </Tabs.Tab>
   <Tabs.Tab>
     ```jsx copy showLineNumbers
-    <div style={{ width: "100%" }}>
+    <div style={{ width: '100%' }}>
       <Accordion summary="Accordion 1">
         Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
@@ -326,10 +326,10 @@ setExpanded(value);
 
 Will not render their details when collapsed to increase performance. This option also disables the animations.
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <Preview height="600px">
-      <div style={{ width: "100%" }}>
+      <div style={{ width: '100%' }}>
         <Accordion
           actions={<Button>Accordion Actions</Button>}
           summary="Accordion 1"
@@ -363,7 +363,7 @@ Will not render their details when collapsed to increase performance. This optio
   </Tabs.Tab>
   <Tabs.Tab>
     ```jsx copy showLineNumbers
-    <div style={{ width: "100%" }}>
+    <div style={{ width: '100%' }}>
       <Accordion
         actions={<Button>Accordion Actions</Button>}
         summary="Accordion 1"

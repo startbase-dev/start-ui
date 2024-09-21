@@ -1,49 +1,49 @@
-import React, { forwardRef, CSSProperties } from "react";
-import cx from "clsx";
-import styles from "./FloatingArrow.module.scss";
-import type { FloatingArrowProps } from "./types";
+import React, { forwardRef, CSSProperties } from 'react';
+import cx from 'clsx';
+import styles from './FloatingArrow.module.scss';
+import type { FloatingArrowProps } from './types';
 
 const OFFSET = 5;
 
 const FloatingArrow = forwardRef<HTMLDivElement, FloatingArrowProps>(
-  ({ placement = "bottom", x, y }, ref) => {
+  ({ placement = 'bottom', x, y }, ref) => {
     let style: CSSProperties = {};
 
     switch (placement) {
-      case "top":
+      case 'top':
         style = { bottom: (y ?? 0) - OFFSET, left: x ?? 0 };
         break;
-      case "top-end":
+      case 'top-end':
         style = { bottom: (y ?? 0) - OFFSET, left: (x ?? 0) + 10 };
         break;
-      case "top-start":
+      case 'top-start':
         style = { bottom: (y ?? 0) - OFFSET, left: (x ?? 0) - 10 };
         break;
-      case "bottom":
+      case 'bottom':
         style = { top: (y ?? 0) - OFFSET, left: x ?? 0 };
         break;
-      case "bottom-start":
+      case 'bottom-start':
         style = { top: (y ?? 0) - OFFSET, left: (x ?? 0) - 10 };
         break;
-      case "bottom-end":
+      case 'bottom-end':
         style = { top: (y ?? 0) - OFFSET, left: (x ?? 0) + 10 };
         break;
-      case "left":
+      case 'left':
         style = { top: y ?? 0, right: (x ?? 0) - OFFSET };
         break;
-      case "left-start":
+      case 'left-start':
         style = { top: (y ?? 0) - 5, right: (x ?? 0) - OFFSET };
         break;
-      case "left-end":
+      case 'left-end':
         style = { top: (y ?? 0) + 5, right: (x ?? 0) - OFFSET };
         break;
-      case "right":
+      case 'right':
         style = { top: y ?? 0, left: (x ?? 0) - OFFSET };
         break;
-      case "right-start":
+      case 'right-start':
         style = { top: (y ?? 0) - 5, left: (x ?? 0) - OFFSET };
         break;
-      case "right-end":
+      case 'right-end':
         style = { top: (y ?? 0) + 5, left: (x ?? 0) - OFFSET };
         break;
       default:
@@ -54,21 +54,21 @@ const FloatingArrow = forwardRef<HTMLDivElement, FloatingArrowProps>(
       <div
         ref={ref}
         className={cx(styles.arrow, {
-          [styles.top]: ["top", "top-end", "top-start"].includes(placement),
-          [styles.bottom]: ["bottom", "bottom-end", "bottom-start"].includes(
-            placement,
+          [styles.top]: ['top', 'top-end', 'top-start'].includes(placement),
+          [styles.bottom]: ['bottom', 'bottom-end', 'bottom-start'].includes(
+            placement
           ),
-          [styles.left]: ["left", "left-end", "left-start"].includes(placement),
-          [styles.right]: ["right", "right-end", "right-start"].includes(
-            placement,
+          [styles.left]: ['left', 'left-end', 'left-start'].includes(placement),
+          [styles.right]: ['right', 'right-end', 'right-start'].includes(
+            placement
           ),
         })}
         style={style}
       ></div>
     );
-  },
+  }
 );
 
-FloatingArrow.displayName = "FloatingArrow";
+FloatingArrow.displayName = 'FloatingArrow';
 
 export default FloatingArrow;

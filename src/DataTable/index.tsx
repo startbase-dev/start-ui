@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import RCTable, { VirtualTable } from "rc-table";
 import cx from "clsx";
@@ -12,7 +10,6 @@ import Typography from "../Typography/index";
 import Checkbox from "./ui/Checkbox";
 // eslint-disable-next-line css-modules/no-unused-class
 import styles from "./DataTable.module.scss";
-import ".././style/components/datatable.scss";
 
 const DataTable = () => {
   const {

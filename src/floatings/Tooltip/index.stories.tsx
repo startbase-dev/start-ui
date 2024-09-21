@@ -1,7 +1,7 @@
-import React from "react";
-import Tooltip from "./index";
-import Button from "../../Button";
-import Storybook from "../../Storybook";
+import React from 'react';
+import Tooltip from './index';
+import Button from '../../Button';
+import Storybook from '../../Storybook';
 
 interface TemplateProps {
   title: string;
@@ -53,10 +53,10 @@ const Template: React.FC<TemplateProps> = (props) => {
 };
 
 export const TooltipComponent = Template.bind({});
-TooltipComponent.args = { title: "Tooltip" };
+TooltipComponent.args = { title: 'Tooltip' };
 
 const Component = {
-  title: "UI/Tooltip",
+  title: 'UI/Tooltip',
   component: TooltipComponent,
 };
 

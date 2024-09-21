@@ -1,33 +1,33 @@
-import React from "react";
-import { Meta, StoryFn } from "@storybook/react";
-import Card from "./index";
-import Storybook from "../Storybook";
+import React from 'react';
+import { Meta, StoryFn } from '@storybook/react';
+import Card from './index';
+import Storybook from '../Storybook';
 
 export default {
-  title: "UI/Card",
+  title: 'UI/Card',
   component: Card,
   argTypes: {
-    title: { control: "text" },
-    description: { control: "text" },
-    collapsible: { control: "boolean" },
+    title: { control: 'text' },
+    description: { control: 'text' },
+    collapsible: { control: 'boolean' },
     size: {
-      options: ["small", "medium", "large"],
-      control: { type: "select" },
+      options: ['small', 'medium', 'large'],
+      control: { type: 'select' },
     },
-    fluid: { control: "boolean" },
-    children: { control: "text" },
-    className: { control: "text" },
+    fluid: { control: 'boolean' },
+    children: { control: 'text' },
+    className: { control: 'text' },
   },
   parameters: {
     controls: {
       include: [
-        "title",
-        "description",
-        "collapsible",
-        "size",
-        "fluid",
-        "children",
-        "className",
+        'title',
+        'description',
+        'collapsible',
+        'size',
+        'fluid',
+        'children',
+        'className',
       ],
     },
   },
@@ -37,48 +37,48 @@ const Template: StoryFn<typeof Card> = (args) => <Card {...args} />;
 
 export const DefaultCard = Template.bind({});
 DefaultCard.args = {
-  title: "Introduction to StartUI",
-  description: "Learn how StartUI helps you build scalable web apps faster.",
+  title: 'Introduction to StartUI',
+  description: 'Learn how StartUI helps you build scalable web apps faster.',
   collapsible: false,
-  size: "medium",
+  size: 'medium',
   fluid: false,
   children:
-    "StartUI provides a comprehensive set of customizable UI components for SaaS applications.",
+    'StartUI provides a comprehensive set of customizable UI components for SaaS applications.',
 };
 
 export const FluidCard = Template.bind({});
 FluidCard.args = {
-  title: "StartUI - Full-Width Design",
+  title: 'StartUI - Full-Width Design',
   description:
     "This card showcases StartUI's ability to scale across different screen sizes.",
   collapsible: false,
-  size: "medium",
+  size: 'medium',
   fluid: true,
   children:
-    "StartUI components are fully responsive, adjusting seamlessly to the size of the container.",
+    'StartUI components are fully responsive, adjusting seamlessly to the size of the container.',
 };
 
 export const SmallCard = Template.bind({});
 SmallCard.args = {
-  title: "Small Card",
-  description: "This is an example of a small card in StartUI.",
+  title: 'Small Card',
+  description: 'This is an example of a small card in StartUI.',
   collapsible: false,
-  size: "small",
+  size: 'small',
   fluid: false,
   children:
-    "Small cards are great for compact data displays and minimal content blocks.",
+    'Small cards are great for compact data displays and minimal content blocks.',
 };
 
 export const LargeCollapsibleCard = Template.bind({});
 LargeCollapsibleCard.args = {
-  title: "Collapsible Large Card",
+  title: 'Collapsible Large Card',
   description:
-    "Click to expand and learn about how StartUI handles collapsible components.",
+    'Click to expand and learn about how StartUI handles collapsible components.',
   collapsible: true,
-  size: "large",
+  size: 'large',
   fluid: false,
   children:
-    "StartUI components support advanced interactivity like collapsibility, perfect for dashboards.",
+    'StartUI components support advanced interactivity like collapsibility, perfect for dashboards.',
 };
 
 const FullShowcaseTemplate: StoryFn<typeof Card> = () => {

@@ -61,7 +61,7 @@
       }
     }
 
-    &[data-determinate="false"] {
+    &[data-determinate='false'] {
       animation: 0.5s linear both infinite spin;
     }
   }

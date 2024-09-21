@@ -1,14 +1,14 @@
-import React, { forwardRef, CSSProperties } from "react";
-import s from "./ScrollArea.module.scss";
-import { ScrollAreaProps } from "./types";
+import React, { forwardRef, CSSProperties } from 'react';
+import s from './ScrollArea.module.scss';
+import { ScrollAreaProps } from './types';
 
 const ScrollArea = forwardRef<HTMLDivElement, ScrollAreaProps>(
   ({ orientation, className, style, children, ...rest }, ref) => {
     const getScrollContainerStyles = (): CSSProperties => {
       let scrollStyles: CSSProperties = {
-        overflowX: orientation === "horizontal" ? "auto" : "hidden",
-        overflowY: orientation === "vertical" ? "auto" : "hidden",
-        WebkitOverflowScrolling: "touch", // Optional: Smooth scrolling on iOS
+        overflowX: orientation === 'horizontal' ? 'auto' : 'hidden',
+        overflowY: orientation === 'vertical' ? 'auto' : 'hidden',
+        WebkitOverflowScrolling: 'touch', // Optional: Smooth scrolling on iOS
       };
 
       if (style) {
@@ -28,9 +28,9 @@ const ScrollArea = forwardRef<HTMLDivElement, ScrollAreaProps>(
         {children}
       </div>
     );
-  },
+  }
 );
 
-ScrollArea.displayName = "ScrollArea";
+ScrollArea.displayName = 'ScrollArea';
 
 export default ScrollArea;

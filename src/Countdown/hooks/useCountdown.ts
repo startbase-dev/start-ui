@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 interface CountdownProps {
   date: Date | number;
@@ -25,7 +25,7 @@ const useCountdown = ({
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({});
 
   useEffect(() => {
-    const targetDate = typeof date === "number" ? new Date(date) : date;
+    const targetDate = typeof date === 'number' ? new Date(date) : date;
 
     const calculateTimeLeft = () => {
       const now = new Date();
@@ -40,22 +40,22 @@ const useCountdown = ({
       const totalDays = Math.floor(totalHours / 24);
 
       if (showDay) {
-        timeLeft.day = String(totalDays).padStart(2, "0");
+        timeLeft.day = String(totalDays).padStart(2, '0');
       }
 
       if (showHour) {
         const hours = showDay ? totalHours % 24 : totalHours;
-        timeLeft.hour = String(hours).padStart(2, "0");
+        timeLeft.hour = String(hours).padStart(2, '0');
       }
 
       if (showMinute) {
         const minutes = showHour ? totalMinutes % 60 : totalMinutes;
-        timeLeft.minute = String(minutes).padStart(2, "0");
+        timeLeft.minute = String(minutes).padStart(2, '0');
       }
 
       if (showSecond) {
         const seconds = showMinute ? totalSeconds % 60 : totalSeconds;
-        timeLeft.second = String(seconds).padStart(2, "0");
+        timeLeft.second = String(seconds).padStart(2, '0');
       }
 
       setTimeLeft(timeLeft);

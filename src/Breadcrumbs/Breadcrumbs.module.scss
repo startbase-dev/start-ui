@@ -1,0 +1,35 @@
+.root {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list {
+  margin: 0 0.5rem;
+
+  a {
+    text-decoration: none;
+    color: var(--sui-breadCrumbs-fg);
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: var(--sui-breadCrumbs-hover-fg);
+    }
+  }
+
+  &.active {
+    font-weight: bold;
+  }
+}
+
+.separator {
+  margin: 0 0.5rem;
+}
+
+.icon {
+  margin-right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+}

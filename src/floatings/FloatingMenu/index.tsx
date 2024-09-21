@@ -5,7 +5,7 @@ import React, {
   useRef,
   useState,
   useMemo,
-} from "react";
+} from 'react';
 
 import {
   FloatingFocusManager,
@@ -30,15 +30,15 @@ import {
   useMergeRefs,
   useRole,
   useTypeahead,
-} from "@floating-ui/react";
-import IoCaretForwardOutline from "../../icons/Play";
+} from '@floating-ui/react';
+import IoCaretForwardOutline from '../../icons/Play';
 
-import MenuContext from "../FloatingMenuContext";
+import MenuContext from '../FloatingMenuContext';
 
-import styles from "./FloatingMenu.module.scss";
-import cx from "clsx";
+import styles from './FloatingMenu.module.scss';
+import cx from 'clsx';
 
-import type { FloatingMenuProps } from "./types";
+import type { FloatingMenuProps } from './types';
 
 const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
   (
@@ -51,7 +51,7 @@ const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
       placement,
       ...props
     },
-    forwardedRef,
+    forwardedRef
   ) => {
     const [isOpen, setIsOpen] = useState(false);
     const [hasFocusInside, setHasFocusInside] = useState(false);
@@ -73,10 +73,10 @@ const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
       open: isOpen,
       onOpenChange: setIsOpen,
       placement: isNested
-        ? "right-start"
+        ? 'right-start'
         : placement
           ? placement
-          : "bottom-end",
+          : 'bottom-end',
       middleware: [
         offset({
           mainAxis: isNested ? 0 : 4,
@@ -94,11 +94,11 @@ const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
       handleClose: safePolygon({ blockPointerEvents: true }),
     });
     const click = useClick(context, {
-      event: "mousedown",
+      event: 'mousedown',
       toggle: !isNested,
       ignoreMouse: isNested,
     });
-    const role = useRole(context, { role: "menu" });
+    const role = useRole(context, { role: 'menu' });
     const dismiss = useDismiss(context, { bubbles: true });
     const listNavigation = useListNavigation(context, {
       listRef: elementsRef,
@@ -134,18 +134,18 @@ const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
         }
       }
 
-      tree.events.on("click", handleTreeClick);
-      tree.events.on("menuopen", onSubMenuOpen);
+      tree.events.on('click', handleTreeClick);
+      tree.events.on('menuopen', onSubMenuOpen);
 
       return () => {
-        tree.events.off("click", handleTreeClick);
-        tree.events.off("menuopen", onSubMenuOpen);
+        tree.events.off('click', handleTreeClick);
+        tree.events.off('menuopen', onSubMenuOpen);
       };
     }, [tree, nodeId, parentId]);
 
     useEffect(() => {
       if (isOpen && tree) {
-        tree.events.emit("menuopen", { parentId, nodeId });
+        tree.events.emit('menuopen', { parentId, nodeId });
       }
     }, [tree, isOpen, nodeId, parentId]);
 
@@ -157,7 +157,7 @@ const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
         setHasFocusInside,
         isOpen,
       }),
-      [],
+      []
     );
 
     return (
@@ -167,15 +167,15 @@ const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
           tabIndex={
             !isNested ? undefined : parent.activeIndex === item.index ? 0 : -1
           }
-          role={isNested ? "menuitem" : undefined}
-          data-open={isOpen ? "" : undefined}
-          data-nested={isNested ? "" : undefined}
-          data-focus-inside={hasFocusInside ? "" : undefined}
+          role={isNested ? 'menuitem' : undefined}
+          data-open={isOpen ? '' : undefined}
+          data-nested={isNested ? '' : undefined}
+          data-focus-inside={hasFocusInside ? '' : undefined}
           className={cx(
             {
               [styles.menuItem]: isNested,
             },
-            className && { [className]: true },
+            className && { [className]: true }
           )}
           {...getReferenceProps(
             parent.getItemProps({
@@ -185,7 +185,7 @@ const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
                 setHasFocusInside(false);
                 parent.setHasFocusInside(true);
               },
-            }),
+            })
           )}
         >
           {component || label}
@@ -205,7 +205,7 @@ const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
                     ref={refs.setFloating}
                     className={cx(
                       styles.menu,
-                      menuClassName && { [menuClassName]: true },
+                      menuClassName && { [menuClassName]: true }
                     )}
                     style={floatingStyles}
                     {...getFloatingProps()}
@@ -219,9 +219,9 @@ const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
         </MenuContext.Provider>
       </FloatingNode>
     );
-  },
+  }
 );
 
-FloatingMenu.displayName = "FloatingMenu";
+FloatingMenu.displayName = 'FloatingMenu';
 
 export default FloatingMenu;

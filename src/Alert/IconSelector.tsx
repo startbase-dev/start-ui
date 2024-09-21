@@ -1,9 +1,9 @@
-import React from "react";
-import CheckCircleOutline from "../icons/CheckCircleOutline";
-import InfoCircleOutline from "../icons/InfoCircleOutline";
-import WarningCircleOutline from "../icons/WarningCircleOutline";
-import ErrorCircleOutline from "../icons/ErrorCircleOutline";
-import type { AlertSeverity } from "./types";
+import React from 'react';
+import CheckCircleOutline from '../icons/CheckCircleOutline';
+import InfoCircleOutline from '../icons/InfoCircleOutline';
+import WarningCircleOutline from '../icons/WarningCircleOutline';
+import ErrorCircleOutline from '../icons/ErrorCircleOutline';
+import type { AlertSeverity } from './types';
 
 interface SelectorProps extends React.SVGAttributes<SVGSVGElement> {
   iconName: AlertSeverity;

@@ -7,21 +7,21 @@ Start UI Library provides comprehensive support for dark mode, ensuring that all
 Dark mode in the Start UI Library is managed using a combination of CSS variables and theme-specific imports. The following CSS code illustrates the dark mode setup:
 
 ```css
-@import "colors/colors";
-@import "colors/colors-light";
-@import "colors/colors-dark";
+@import 'colors/colors';
+@import 'colors/colors-light';
+@import 'colors/colors-dark';
 
-@import "components/accordion";
-@import "components/button";
-@import "components/context-menu";
-@import "components/dropdown";
-@import "components/floating-menu-item";
-@import "components/popover";
-@import "components/progress";
-@import "components/tab";
-@import "components/bentoCard";
-@import "components/countdown";
-@import "components/tooltip";
+@import 'components/accordion';
+@import 'components/button';
+@import 'components/context-menu';
+@import 'components/dropdown';
+@import 'components/floating-menu-item';
+@import 'components/popover';
+@import 'components/progress';
+@import 'components/tab';
+@import 'components/bentoCard';
+@import 'components/countdown';
+@import 'components/tooltip';
 ```
 
 ## Theme Variables
@@ -31,13 +31,13 @@ The theme is defined using CSS variables, which are set under different selector
 ```css copy filename="globals.css"
 .light,
 :root,
-[data-theme="light"] {
+[data-theme='light'] {
 }
 ```
 
 ```css copy filename="globals.css"
 .dark,
-[data-theme="dark"] {
+[data-theme='dark'] {
 }
 ```
 
@@ -59,7 +59,7 @@ For example, the Avatar component might have the following style keys:
 ```css copy filename="globals.css"
 .light,
 :root,
-[data-theme="light"] {
+[data-theme='light'] {
   --sui-avatar-box-shadow: var(--sui-elevation-1);
   --sui-avatar-bg: var(--sui-white);
   --sui-avatar-text: var(--sui-black);
@@ -68,7 +68,7 @@ For example, the Avatar component might have the following style keys:
 
 ```css copy filename="globals.css"
 .dark,
-[data-theme="dark"] {
+[data-theme='dark'] {
   --sui-avatar-box-shadow: var(--sui-elevation-1);
   --sui-avatar-bg: var(--sui-black);
   --sui-avatar-text: var(--sui-white);

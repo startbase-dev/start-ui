@@ -1,49 +1,49 @@
-import React from "react";
-import { Meta, StoryFn } from "@storybook/react";
-import Typography from "./index";
-import Storybook from "../Storybook";
+import React from 'react';
+import { Meta, StoryFn } from '@storybook/react';
+import Typography from './index';
+import Storybook from '../Storybook';
 
 export default {
-  title: "UI/Typography",
+  title: 'UI/Typography',
   component: Typography,
   argTypes: {
     variant: {
-      options: ["title", "subtitle", "paragraph", "muted", "quote"],
-      control: { type: "select" },
+      options: ['title', 'subtitle', 'paragraph', 'muted', 'quote'],
+      control: { type: 'select' },
     },
     size: {
-      options: ["small", "medium", "large", "lead"],
-      control: { type: "select" },
+      options: ['small', 'medium', 'large', 'lead'],
+      control: { type: 'select' },
     },
     color: {
-      options: ["default", "info", "warning", "error", "success"],
-      control: { type: "select" },
+      options: ['default', 'info', 'warning', 'error', 'success'],
+      control: { type: 'select' },
     },
     decoration: {
-      options: ["none", "underline", "overline", "linethrough"],
-      control: { type: "select" },
+      options: ['none', 'underline', 'overline', 'linethrough'],
+      control: { type: 'select' },
     },
     elementType: {
-      options: ["h2", "h3", "h4", "h5", "h6"],
-      control: { type: "select" },
+      options: ['h2', 'h3', 'h4', 'h5', 'h6'],
+      control: { type: 'select' },
     },
-    italic: { control: "boolean" },
-    bold: { control: "boolean" },
-    gradient: { control: "boolean" },
-    className: { control: "text" },
+    italic: { control: 'boolean' },
+    bold: { control: 'boolean' },
+    gradient: { control: 'boolean' },
+    className: { control: 'text' },
   },
   parameters: {
     controls: {
       include: [
-        "variant",
-        "size",
-        "color",
-        "decoration",
-        "elementType",
-        "gradient",
-        "italic",
-        "bold",
-        "className",
+        'variant',
+        'size',
+        'color',
+        'decoration',
+        'elementType',
+        'gradient',
+        'italic',
+        'bold',
+        'className',
       ],
     },
   },
@@ -55,84 +55,84 @@ const Template: StoryFn<typeof Typography> = (args) => {
 
 export const Title = Template.bind({});
 Title.args = {
-  variant: "title",
-  size: "lead",
-  color: "default",
-  children: "This is a Title",
+  variant: 'title',
+  size: 'lead',
+  color: 'default',
+  children: 'This is a Title',
   bold: true,
 };
 Title.parameters = {
   controls: {
-    exclude: ["elementType"],
+    exclude: ['elementType'],
   },
 };
 
 export const TitleWithGradient = Template.bind({});
 TitleWithGradient.args = {
-  variant: "title",
-  size: "lead",
-  color: "default",
-  children: "This is a Title with Gradient",
+  variant: 'title',
+  size: 'lead',
+  color: 'default',
+  children: 'This is a Title with Gradient',
   bold: true,
   gradient: true,
 };
 TitleWithGradient.parameters = {
   controls: {
-    exclude: ["elementType"],
+    exclude: ['elementType'],
   },
 };
 
 export const Subtitle = Template.bind({});
 Subtitle.args = {
-  variant: "subtitle",
-  elementType: "h4",
-  color: "info",
-  children: "This is a Subtitle",
+  variant: 'subtitle',
+  elementType: 'h4',
+  color: 'info',
+  children: 'This is a Subtitle',
 };
 Subtitle.parameters = {
   controls: {
-    exclude: ["size"],
+    exclude: ['size'],
   },
 };
 
 export const Paragraph = Template.bind({});
 Paragraph.args = {
-  variant: "paragraph",
-  size: "medium",
-  color: "success",
-  children: "This is a Paragraph with Italic Text",
+  variant: 'paragraph',
+  size: 'medium',
+  color: 'success',
+  children: 'This is a Paragraph with Italic Text',
   italic: true,
 };
 Paragraph.parameters = {
   controls: {
-    exclude: ["elementType"],
+    exclude: ['elementType'],
   },
 };
 
 export const Muted = Template.bind({});
 Muted.args = {
-  variant: "muted",
-  size: "medium",
-  color: "default",
+  variant: 'muted',
+  size: 'medium',
+  color: 'default',
   bold: true,
-  children: "This is a Muted Text with Medium Size",
+  children: 'This is a Muted Text with Medium Size',
 };
 Muted.parameters = {
   controls: {
-    exclude: ["elementType"],
+    exclude: ['elementType'],
   },
 };
 
 export const Quote = Template.bind({});
 Quote.args = {
-  variant: "quote",
-  size: "large",
-  color: "error",
+  variant: 'quote',
+  size: 'large',
+  color: 'error',
   children: `"This is a Quote"`,
 };
 Quote.parameters = {
   controls: {
-    exclude: ["elementType"],
+    exclude: ['elementType'],
   },
 };
 

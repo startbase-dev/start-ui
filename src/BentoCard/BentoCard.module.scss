@@ -62,12 +62,12 @@
   transform: translateY(100%);
 }
 
-.root[data-active="true"] .secondLayer {
+.root[data-active='true'] .secondLayer {
   transform: translateY(0);
   opacity: 1;
 }
 
-.root[data-active="true"] .firstLayer {
+.root[data-active='true'] .firstLayer {
   display: none;
 }
 
@@ -85,7 +85,7 @@
   line-height: var(--sui-text-large-lh);
 }
 
-.root[data-active="true"] .content {
+.root[data-active='true'] .content {
   animation: slide-down 600ms forwards;
 }
 
@@ -132,13 +132,13 @@
   animation: slide-up 600ms forwards;
 }
 
-.root[data-active="false"] .plusIcon {
+.root[data-active='false'] .plusIcon {
   width: 24px;
   height: 24px;
   color: var(--sui-bento-card-button-icon);
 }
 
-.root[data-active="true"] .plusIcon {
+.root[data-active='true'] .plusIcon {
   width: 24px;
   height: 24px;
   color: var(--sui-bento-card-button-active-icon);

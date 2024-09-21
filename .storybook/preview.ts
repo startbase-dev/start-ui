@@ -1,5 +1,5 @@
-import "../src/style/variables.scss";
-import "./storybook.scss";
+import '../src/style/variables.scss';
+import './storybook.scss';
 
 const preview = {
   parameters: {
@@ -12,7 +12,7 @@ const preview = {
     },
   },
 
-  tags: ["autodocs"],
+  tags: ['autodocs'],
 };
 
 export default preview;

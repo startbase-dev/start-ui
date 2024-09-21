@@ -1,12 +1,12 @@
-"use client";
-import React from "react";
-import { BentoGrid, BentoCard } from "@start-base/start-ui";
-import "@start-base/start-ui/styles.css";
-import style from "./style.module.css";
-import VideoPlayer from "@components/VideoPlayer/VideoPlayer";
-import { DotLottiePlayer } from "@dotlottie/react-player";
-import { motion } from "framer-motion";
-import Link from "next/link";
+'use client';
+import React from 'react';
+import { BentoGrid, BentoCard } from '@start-base/start-ui';
+import '@start-base/start-ui/styles.css';
+import style from './style.module.css';
+import VideoPlayer from '@components/VideoPlayer/VideoPlayer';
+import { DotLottiePlayer } from '@dotlottie/react-player';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const LandingBento: React.FC = () => {
   return (
@@ -49,18 +49,18 @@ const LandingBento: React.FC = () => {
                   <div className={style.cardContentDarkMode}>
                     <motion.div
                       animate={{
-                        backgroundPosition: ["0% 0%", "50% 40%"],
+                        backgroundPosition: ['0% 0%', '50% 40%'],
                         backgroundImage: [
                           `radial-gradient(farthest-corner, #e2e5ea, #e2e5ea)`,
-                          "radial-gradient(farthest-corner, #3168a0, #e2e5ea)",
-                          "radial-gradient(farthest-corner, #3168a0, #e2e5ea)",
-                          "radial-gradient(farthest-corner, #e2e5ea, #e2e5ea)",
+                          'radial-gradient(farthest-corner, #3168a0, #e2e5ea)',
+                          'radial-gradient(farthest-corner, #3168a0, #e2e5ea)',
+                          'radial-gradient(farthest-corner, #e2e5ea, #e2e5ea)',
                         ],
                       }}
                       transition={{
                         backgroundPosition: {
                           times: [0, 0.5, 0.5, 1],
-                          type: "inertia",
+                          type: 'inertia',
                           repeat: Infinity,
                           duration: 10,
                           delay: 1,
@@ -73,32 +73,32 @@ const LandingBento: React.FC = () => {
                         },
                       }}
                       style={{
-                        position: "absolute",
+                        position: 'absolute',
                         top: 0,
                         left: 0,
-                        width: "100%",
-                        height: "100%",
+                        width: '100%',
+                        height: '100%',
                         backgroundImage: `radial-gradient(farthest-corner, #3168a0, #e2e5ea)`,
-                        backgroundSize: "400% 400%",
-                        backgroundRepeat: "no-repeat",
+                        backgroundSize: '400% 400%',
+                        backgroundRepeat: 'no-repeat',
                       }}
                     />
                     <motion.h3
                       animate={{
-                        color: ["#dae5ff", "#fff"],
+                        color: ['#dae5ff', '#fff'],
                       }}
                       transition={{
                         color: {
                           times: [0.25, 0.35, 0.7, 0.8],
-                          type: "spring",
+                          type: 'spring',
                           repeat: Infinity,
                           duration: 10,
                           delay: 1,
                         },
                       }}
                       style={{
-                        position: "relative",
-                        mixBlendMode: "difference",
+                        position: 'relative',
+                        mixBlendMode: 'difference',
                       }}
                     >
                       Well <br />
@@ -121,18 +121,18 @@ const LandingBento: React.FC = () => {
                   <div className={style.cardContentDarkMode}>
                     <motion.div
                       animate={{
-                        backgroundPosition: ["0% 0%", "50% 40%"],
+                        backgroundPosition: ['0% 0%', '50% 40%'],
                         backgroundImage: [
                           `radial-gradient(farthest-corner, #e2e5ea, #e2e5ea)`,
-                          "radial-gradient(farthest-corner, #06080a, #e2e5ea)",
-                          "radial-gradient(farthest-corner, #06080a, #e2e5ea)",
-                          "radial-gradient(farthest-corner, #e2e5ea, #e2e5ea)",
+                          'radial-gradient(farthest-corner, #06080a, #e2e5ea)',
+                          'radial-gradient(farthest-corner, #06080a, #e2e5ea)',
+                          'radial-gradient(farthest-corner, #e2e5ea, #e2e5ea)',
                         ],
                       }}
                       transition={{
                         backgroundPosition: {
                           times: [0, 0.5, 0.5, 1],
-                          type: "spring",
+                          type: 'spring',
                           repeat: Infinity,
                           duration: 10,
                           delay: 1,
@@ -145,32 +145,32 @@ const LandingBento: React.FC = () => {
                         },
                       }}
                       style={{
-                        position: "absolute",
+                        position: 'absolute',
                         top: 0,
                         left: 0,
-                        width: "100%",
-                        height: "100%",
+                        width: '100%',
+                        height: '100%',
                         backgroundImage: `radial-gradient(farthest-corner, #06080a, #e2e5ea)`,
-                        backgroundSize: "400% 400%",
-                        backgroundRepeat: "no-repeat",
+                        backgroundSize: '400% 400%',
+                        backgroundRepeat: 'no-repeat',
                       }}
                     />
                     <motion.h3
                       animate={{
-                        color: ["#dae5ff", "#fff"],
+                        color: ['#dae5ff', '#fff'],
                       }}
                       transition={{
                         color: {
                           times: [0.25, 0.35, 0.7, 0.8],
-                          type: "spring",
+                          type: 'spring',
                           repeat: Infinity,
                           duration: 10,
                           delay: 1,
                         },
                       }}
                       style={{
-                        position: "relative",
-                        mixBlendMode: "difference",
+                        position: 'relative',
+                        mixBlendMode: 'difference',
                       }}
                     >
                       Dark <br />
@@ -286,7 +286,7 @@ const LandingBento: React.FC = () => {
               <BentoCard
                 firstContent={
                   <div className={style.cardContent}>
-                    <div style={{ padding: "40px", fontSize: "32px" }}>
+                    <div style={{ padding: '40px', fontSize: '32px' }}>
                       Startbase Studio is where ideas come to life, effortlessly
                       bridging the gap between creativity and execution.Design,
                       develop, and deploy all in one place.

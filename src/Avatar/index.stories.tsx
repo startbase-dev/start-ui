@@ -1,34 +1,34 @@
-import React from "react";
-import { Meta, StoryFn } from "@storybook/react";
-import Avatar from "./index";
-import Storybook from "../Storybook";
+import React from 'react';
+import { Meta, StoryFn } from '@storybook/react';
+import Avatar from './index';
+import Storybook from '../Storybook';
 
 export default {
-  title: "UI/Avatar",
+  title: 'UI/Avatar',
   component: Avatar,
   argTypes: {
-    picture: { control: "text" },
-    chars: { control: "text" },
+    picture: { control: 'text' },
+    chars: { control: 'text' },
     size: {
-      options: ["small", "medium", "large"],
-      control: { type: "select" },
+      options: ['small', 'medium', 'large'],
+      control: { type: 'select' },
     },
     variant: {
-      options: ["circular", "square"],
-      control: { type: "select" },
+      options: ['circular', 'square'],
+      control: { type: 'select' },
     },
-    defaultPicture: { control: "text" },
-    className: { control: "text" },
+    defaultPicture: { control: 'text' },
+    className: { control: 'text' },
   },
   parameters: {
     controls: {
       include: [
-        "picture",
-        "chars",
-        "size",
-        "variant",
-        "defaultPicture",
-        "className",
+        'picture',
+        'chars',
+        'size',
+        'variant',
+        'defaultPicture',
+        'className',
       ],
     },
   },
@@ -38,47 +38,47 @@ const Template: StoryFn<typeof Avatar> = (args) => <Avatar {...args} />;
 
 export const CircularMediumAvatarWithImage = Template.bind({});
 CircularMediumAvatarWithImage.args = {
-  chars: "SC",
-  size: "medium",
-  variant: "circular",
-  picture: "https://picsum.photos/1390/690",
-  className: "custom-class",
+  chars: 'SC',
+  size: 'medium',
+  variant: 'circular',
+  picture: 'https://picsum.photos/1390/690',
+  className: 'custom-class',
 };
 
 export const CircularMediumAvatarWithoutImage = Template.bind({});
 CircularMediumAvatarWithoutImage.args = {
-  chars: "BG",
-  size: "medium",
-  variant: "circular",
+  chars: 'BG',
+  size: 'medium',
+  variant: 'circular',
 };
 
 export const SquareLargeAvatar = Template.bind({});
 SquareLargeAvatar.args = {
-  chars: "LF",
-  size: "large",
-  variant: "square",
+  chars: 'LF',
+  size: 'large',
+  variant: 'square',
 };
 
 export const LargeAvatarWithImage = Template.bind({});
 LargeAvatarWithImage.args = {
-  picture: "https://picsum.photos/1390/690",
-  size: "large",
-  variant: "circular",
+  picture: 'https://picsum.photos/1390/690',
+  size: 'large',
+  variant: 'circular',
 };
 
 export const AvatarWithDefaultImage = Template.bind({});
 AvatarWithDefaultImage.args = {
-  chars: "CL",
-  size: "medium",
-  variant: "square",
-  defaultPicture: "https://picsum.photos/1390/690",
+  chars: 'CL',
+  size: 'medium',
+  variant: 'square',
+  defaultPicture: 'https://picsum.photos/1390/690',
 };
 
 export const SmallCircularAvatar = Template.bind({});
 SmallCircularAvatar.args = {
-  chars: "TW",
-  size: "small",
-  variant: "circular",
+  chars: 'TW',
+  size: 'small',
+  variant: 'circular',
 };
 
 export const AnAvatarWithoutProps = Template.bind({});

@@ -1,20 +1,20 @@
-import React, { useState, forwardRef } from "react";
-import cx from "clsx";
+import React, { useState, forwardRef } from 'react';
+import cx from 'clsx';
 // eslint-disable-next-line css-modules/no-unused-class
-import s from "./Stepper.module.scss";
-import "../style/components/stepper.scss";
+import s from './Stepper.module.scss';
+import '../style/components/stepper.scss';
 import {
   StepperProps,
   StepProps,
   StepLabelProps,
   StepConnectorProps,
   StepIconProps,
-} from "./types";
+} from './types';
 
 export const Stepper = forwardRef<HTMLDivElement, StepperProps>(
   (
-    { steps, direction = "horizontal", color = "primary", className = "" },
-    ref,
+    { steps, direction = 'horizontal', color = 'primary', className = '' },
+    ref
   ) => {
     const [currentStep, setCurrentStep] = useState(0);
     const [completed, setCompleted] = useState(false);
@@ -113,66 +113,66 @@ export const Stepper = forwardRef<HTMLDivElement, StepperProps>(
             </button>
           ) : (
             <button className={s.button} onClick={handleNext}>
-              {currentStep === steps.length - 1 ? "Complete" : "Next"}
+              {currentStep === steps.length - 1 ? 'Complete' : 'Next'}
             </button>
           )}
         </div>
       </div>
     );
-  },
+  }
 );
 
-Stepper.displayName = "Stepper";
+Stepper.displayName = 'Stepper';
 
 export const Step = ({
   children,
   active,
   completed,
-  color = "primary",
-  className = "",
+  color = 'primary',
+  className = '',
 }: StepProps) => {
   return (
     <div
       className={cx(
         s.step,
         { [s.active]: active, [s.completed]: completed, [s[color]]: true },
-        className,
+        className
       )}
     >
       {children}
     </div>
   );
 };
-Step.displayName = "Step";
+Step.displayName = 'Step';
 
 export const StepLabel = ({
   label,
   optional,
   active,
   completed,
-  color = "primary",
-  className = "",
+  color = 'primary',
+  className = '',
 }: StepLabelProps) => {
   return (
     <div
       className={cx(
         s.stepLabel,
         { [s.active]: active, [s.completed]: completed, [s[color]]: true },
-        className,
+        className
       )}
     >
       {label} {optional && <span>(Optional)</span>}
     </div>
   );
 };
-StepLabel.displayName = "StepLabel";
+StepLabel.displayName = 'StepLabel';
 
 export const StepIcon = ({
   icon,
   active,
   completed,
-  color = "primary",
-  className = "",
+  color = 'primary',
+  className = '',
 }: StepIconProps) => {
   return (
     <div
@@ -183,29 +183,29 @@ export const StepIcon = ({
           [s.completed]: completed,
           [s[color]]: true,
         },
-        className,
+        className
       )}
     >
       {icon}
     </div>
   );
 };
-StepIcon.displayName = "StepIcon";
+StepIcon.displayName = 'StepIcon';
 
 export const StepConnector = ({
   active,
   completed,
-  color = "primary",
-  className = "",
+  color = 'primary',
+  className = '',
 }: StepConnectorProps) => {
   return (
     <div
       className={cx(
         s.stepConnector,
         { [s.active]: active, [s.completed]: completed, [s[color]]: true },
-        className,
+        className
       )}
     />
   );
 };
-StepConnector.displayName = "StepConnector";
+StepConnector.displayName = 'StepConnector';

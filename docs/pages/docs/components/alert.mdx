@@ -1,8 +1,8 @@
-import { Alert } from "@start-base/start-ui";
-import { Tabs } from "nextra/components";
-import { Steps } from "nextra/components";
-import "@start-base/start-ui/styles.css";
-import Preview from "@components/Preview/Preview";
+import { Alert } from '@start-base/start-ui';
+import { Tabs } from 'nextra/components';
+import { Steps } from 'nextra/components';
+import '@start-base/start-ui/styles.css';
+import Preview from '@components/Preview/Preview';
 
 # Alert
 
@@ -71,7 +71,7 @@ npm i @start-base/start-ui
 
 ### Alert With Severity
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <Preview>
       <Alert severity="error">This is an error</Alert>
@@ -86,7 +86,7 @@ npm i @start-base/start-ui
 
 ### Alert With Variant
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <Preview>
       <Alert variant="filled">This is a filled alert</Alert>
@@ -101,7 +101,7 @@ npm i @start-base/start-ui
 
 ### Alert With Color
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <Preview>
       <Alert color="warning" severity="info">
@@ -120,12 +120,12 @@ npm i @start-base/start-ui
 
 ### Alert With Action
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <Preview>
       <Alert
         action={
-          <button onClick={() => window.alert("You clicked me!")}>
+          <button onClick={() => window.alert('You clicked me!')}>
             Click me!
           </button>
         }
@@ -138,7 +138,7 @@ npm i @start-base/start-ui
     ```jsx copy showLineNumbers
     <Alert
       action={
-        <button onClick={() => window.alert("You clicked me!")}>
+        <button onClick={() => window.alert('You clicked me!')}>
           Click me!
         </button>
       }
@@ -151,7 +151,7 @@ npm i @start-base/start-ui
 
 ### Alert With Title
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <Preview>
       <Alert alertTitle="Custom Alert Title!" severity="info">

@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import React from "react";
-import cx from "clsx";
-import RCTable from "rc-table";
+import React from 'react';
+import cx from 'clsx';
+import RCTable from 'rc-table';
 
-import styles from "./Table.module.scss";
-import { TableProps, DataItem } from "./types";
-import { ColumnType } from "rc-table";
+import styles from './Table.module.scss';
+import { TableProps, DataItem } from './types';
+import { ColumnType } from 'rc-table';
 const Table: React.FC<TableProps> = ({
   data,
   columns,
@@ -17,7 +17,7 @@ const Table: React.FC<TableProps> = ({
   const modifiedColumns = columns.map((column) => ({
     ...column,
     onCell: () => ({
-      "data-title": column.title as React.ReactNode,
+      'data-title': column.title as React.ReactNode,
     }),
   })) as ColumnType<DataItem>[];
 

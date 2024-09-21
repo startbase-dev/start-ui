@@ -1,8 +1,398 @@
+import { Stepper } from '@start-base/start-ui';
+import { Tabs } from 'nextra/components';
+import { Steps } from 'nextra/components';
+import '@start-base/start-ui/styles.css';
+import Preview from '@components/Preview/Preview';
+import { GiAirplaneDeparture } from 'react-icons/gi';
+import { IoIosAirplane } from 'react-icons/io';
+import { GiCommercialAirplane } from 'react-icons/gi';
+
 # Stepper
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+The Stepper component provides a visual representation of a multi-step process, allowing users to navigate through different steps. Each step can contain a label, optional content, and can be marked as optional. The component supports both horizontal and vertical orientations and can be customized with different colors.
 
-import { Stepper } from "@start-base/start-ui";
+## Installation
 
-import { Tabs } from "nextra/components";
-import s from "../../index.module.css";
+<Steps>
+### Install the package
+```sh copy npm2yarn
+npm i @start-base/start-ui
+```
+### Add the styles
+
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import Stepper from '@start-base/start-ui/Stepper';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { Stepper } from '@start-base/start-ui';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
+
+### Stepper Default
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <Preview>
+      <Stepper
+        steps={[
+          {
+            label: 'Step 1: Plan',
+            content: (
+              <p>
+                Gather requirements, research your audience, and define the
+                goals and objectives of the website.
+              </p>
+            ),
+          },
+          {
+            label: 'Step 2: Design',
+            optional: true,
+            content: (
+              <p>
+                Create wireframes, mockups, and prototypes to visualize the
+                structure and design of the website.
+              </p>
+            ),
+          },
+          {
+            label: 'Step 3: Develop',
+            content: (
+              <p>
+                Start coding! Set up the environment, build the frontend, and
+                connect it with the backend if necessary.
+              </p>
+            ),
+          },
+        ]}
+      />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Stepper
+      steps={[
+        {
+          label: 'Step 1: Plan',
+          content: (
+            <p>
+              Gather requirements, research your audience, and define the goals
+              and objectives of the website.
+            </p>
+          ),
+        },
+        {
+          label: 'Step 2: Design',
+          optional: true,
+          content: (
+            <p>
+              Create wireframes, mockups, and prototypes to visualize the
+              structure and design of the website.
+            </p>
+          ),
+        },
+        {
+          label: 'Step 3: Develop',
+          content: (
+            <p>
+              Start coding! Set up the environment, build the frontend, and
+              connect it with the backend if necessary.
+            </p>
+          ),
+        },
+      ]}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Stepper Vertical
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <Preview>
+      <Stepper
+        steps={[
+          {
+            label: 'Step 1: Plan',
+            content: (
+              <p>
+                Gather requirements, research your audience, and define the
+                goals and objectives of the website.
+              </p>
+            ),
+          },
+          {
+            label: 'Step 2: Design',
+            optional: true,
+            content: (
+              <p>
+                Create wireframes, mockups, and prototypes to visualize the
+                structure and design of the website.
+              </p>
+            ),
+          },
+          {
+            label: 'Step 3: Develop',
+            content: (
+              <p>
+                Start coding! Set up the environment, build the frontend, and
+                connect it with the backend if necessary.
+              </p>
+            ),
+          },
+        ]}
+        direction="vertical"
+      />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Stepper
+      steps={[
+        {
+          label: 'Step 1: Plan',
+          content: (
+            <p>
+              Gather requirements, research your audience, and define the goals
+              and objectives of the website.
+            </p>
+          ),
+        },
+        {
+          label: 'Step 2: Design',
+          optional: true,
+          content: (
+            <p>
+              Create wireframes, mockups, and prototypes to visualize the
+              structure and design of the website.
+            </p>
+          ),
+        },
+        {
+          label: 'Step 3: Develop',
+          content: (
+            <p>
+              Start coding! Set up the environment, build the frontend, and
+              connect it with the backend if necessary.
+            </p>
+          ),
+        },
+      ]}
+      direction="vertical"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Stepper Step Content (Icon)
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <Preview>
+      <Stepper
+        steps={[
+          {
+            label: 'Step 1: Plan',
+            icon: <IoIosAirplane />,
+            content: (
+              <p>
+                Gather requirements, research your audience, and define the
+                goals and objectives of the website.
+              </p>
+            ),
+          },
+          {
+            label: 'Step 2: Design',
+            icon: <GiAirplaneDeparture />,
+            content: (
+              <p>
+                Create wireframes, mockups, and prototypes to visualize the
+                structure and design of the website.
+              </p>
+            ),
+          },
+          {
+            label: 'Step 3: Develop',
+            icon: <GiCommercialAirplane />,
+            content: (
+              <p>
+                Start coding! Set up the environment, build the frontend, and
+                connect it with the backend if necessary.
+              </p>
+            ),
+          },
+        ]}
+      />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Stepper
+      steps={[
+        {
+          label: 'Step 1: Plan',
+          content: (
+            <p>
+              Gather requirements, research your audience, and define the goals
+              and objectives of the website.
+            </p>
+          ),
+        },
+        {
+          label: 'Step 2: Design',
+          optional: true,
+          content: (
+            <p>
+              Create wireframes, mockups, and prototypes to visualize the
+              structure and design of the website.
+            </p>
+          ),
+        },
+        {
+          label: 'Step 3: Develop',
+          content: (
+            <p>
+              Start coding! Set up the environment, build the frontend, and
+              connect it with the backend if necessary.
+            </p>
+          ),
+        },
+      ]}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Stepper With Color
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <Preview>
+      <Stepper
+        steps={[
+          {
+            label: 'Step 1: Plan',
+            icon: <IoIosAirplane />,
+            content: (
+              <p>
+                Gather requirements, research your audience, and define the
+                goals and objectives of the website.
+              </p>
+            ),
+          },
+          {
+            label: 'Step 2: Design',
+            icon: <GiAirplaneDeparture />,
+            content: (
+              <p>
+                Create wireframes, mockups, and prototypes to visualize the
+                structure and design of the website.
+              </p>
+            ),
+          },
+          {
+            label: 'Step 3: Develop',
+            icon: <GiCommercialAirplane />,
+            content: (
+              <p>
+                Start coding! Set up the environment, build the frontend, and
+                connect it with the backend if necessary.
+              </p>
+            ),
+          },
+        ]}
+        color="secondary"
+      />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Stepper
+      steps={[
+        {
+          label: 'Step 1: Plan',
+          content: (
+            <p>
+              Gather requirements, research your audience, and define the goals
+              and objectives of the website.
+            </p>
+          ),
+        },
+        {
+          label: 'Step 2: Design',
+          optional: true,
+          content: (
+            <p>
+              Create wireframes, mockups, and prototypes to visualize the
+              structure and design of the website.
+            </p>
+          ),
+        },
+        {
+          label: 'Step 3: Develop',
+          content: (
+            <p>
+              Start coding! Set up the environment, build the frontend, and
+              connect it with the backend if necessary.
+            </p>
+          ),
+        },
+      ]}
+      color="secondary"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## API
+
+| Name      | Type                                                                                        | Default      | Description              |
+| --------- | ------------------------------------------------------------------------------------------- | ------------ | ------------------------ |
+| steps     | `{ label: string; optional?: boolean undefined; icon?: ReactNode; content?: ReactNode; }[]` |              | Steps of the Stepper     |
+| direction | `horizontal` `vertical`                                                                     | `horizontal` | Direction of the Stepper |
+| color     | `primary` `secondary`                                                                       | `primary`    | Color of the Stepper     |
+| className | `string`                                                                                    |              | className of the Stepper |

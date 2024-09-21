@@ -1,4 +1,4 @@
-import type { AllHTMLAttributes } from "react";
+import type { AllHTMLAttributes } from 'react';
 
 export interface FloatingMenuItemProps
   extends AllHTMLAttributes<HTMLDivElement> {

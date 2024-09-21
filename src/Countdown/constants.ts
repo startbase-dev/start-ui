@@ -1,5 +1,5 @@
-type Unit = "day" | "hour" | "minute" | "second";
-export type Format = "oneChar" | "full" | "none";
+type Unit = 'day' | 'hour' | 'minute' | 'second';
+export type Format = 'oneChar' | 'full' | 'none';
 
 interface UnitFormatType {
   oneChar: string;
@@ -9,24 +9,24 @@ interface UnitFormatType {
 
 const UnitFormat: Record<Unit, UnitFormatType> = {
   day: {
-    oneChar: "d",
-    full: "Days",
-    none: "",
+    oneChar: 'd',
+    full: 'Days',
+    none: '',
   },
   hour: {
-    oneChar: "h",
-    full: "Hours",
-    none: "",
+    oneChar: 'h',
+    full: 'Hours',
+    none: '',
   },
   minute: {
-    oneChar: "m",
-    full: "Minutes",
-    none: "",
+    oneChar: 'm',
+    full: 'Minutes',
+    none: '',
   },
   second: {
-    oneChar: "s",
-    full: "Seconds",
-    none: "",
+    oneChar: 's',
+    full: 'Seconds',
+    none: '',
   },
 };
 

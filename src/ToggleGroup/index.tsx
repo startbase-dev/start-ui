@@ -4,14 +4,14 @@ import React, {
   useMemo,
   useState,
   forwardRef,
-} from "react";
-import clsx from "clsx";
-import styles from "./ToggleGroup.module.scss";
-import "../style/components/toggle-group.scss";
+} from 'react';
+import clsx from 'clsx';
+import styles from './ToggleGroup.module.scss';
+import '../style/components/toggle-group.scss';
 // eslint-disable-next-line css-modules/no-unused-class
-import s from "../Toggle/Toggle.module.scss";
+import s from '../Toggle/Toggle.module.scss';
 
-import { ToggleItemProps, ToggleWrapperProps } from "./types";
+import { ToggleItemProps, ToggleWrapperProps } from './types';
 
 const ToggleGroupContext = createContext<{
   value: string | null;
@@ -21,11 +21,11 @@ const ToggleGroupContext = createContext<{
   onChange: () => {},
 });
 
-const ToggleWrapper = forwardRef<HTMLDivElement, ToggleWrapperProps>(
-  ({ value, onChange, children, direction = "horizontal", ...props }, ref) => {
+export const ToggleWrapper = forwardRef<HTMLDivElement, ToggleWrapperProps>(
+  ({ value, onChange, children, direction = 'horizontal', ...props }, ref) => {
     const providerValue = useMemo(
       () => ({ value, onChange }),
-      [onChange, value],
+      [onChange, value]
     );
 
     return (
@@ -35,25 +35,26 @@ const ToggleWrapper = forwardRef<HTMLDivElement, ToggleWrapperProps>(
           {...props}
           className={clsx(
             styles.togglegroup,
-            direction === "horizontal" ? styles.horizontal : styles.vertical,
+            direction === 'horizontal' ? styles.horizontal : styles.vertical
           )}
         >
           {children}
         </div>
       </ToggleGroupContext.Provider>
     );
-  },
+  }
 );
-ToggleWrapper.displayName = "ToggleWrapper";
-const ToggleItem = ({
+ToggleWrapper.displayName = 'ToggleWrapper';
+
+export const ToggleItem = ({
   value,
   initialState = false,
   onToggle,
-  color = "primary",
-  variant = "default",
-  size = "medium",
+  color = 'primary',
+  variant = 'default',
+  size = 'medium',
   fluid = false,
-  className = "",
+  className = '',
   disabled = false,
   children,
   ...props
@@ -87,7 +88,7 @@ const ToggleItem = ({
         isToggled ? s.toggled : s.untoggled,
         disabled && s.disabled,
         isSelected,
-        className,
+        className
       )}
       onClick={handleClick}
       disabled={disabled}
@@ -96,5 +97,6 @@ const ToggleItem = ({
     </button>
   );
 };
+ToggleItem.displayName = 'ToggleItem';
 
 export const ToggleGroup = { ToggleWrapper, ToggleItem };

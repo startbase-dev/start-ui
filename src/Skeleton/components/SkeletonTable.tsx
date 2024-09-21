@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 // eslint-disable-next-line css-modules/no-unused-class
-import s from "../Skeleton.module.scss";
-import { SkeletonTableProps } from "../types";
+import s from '../Skeleton.module.scss';
+import { SkeletonTableProps } from '../types';
 
 const SkeletonTable: React.FC<SkeletonTableProps> = ({
   rows = 5,

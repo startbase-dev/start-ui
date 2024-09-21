@@ -19,7 +19,7 @@
     border-bottom: 1px solid var(--sui-accordion-border);
   }
 
-  &[data-expanded="true"] {
+  &[data-expanded='true'] {
     .root,
     .actions {
       max-height: 200px;
@@ -32,13 +32,13 @@
     }
   }
 
-  &[data-expanded="false"] {
+  &[data-expanded='false'] {
     .icon {
       transform: rotate(90deg);
     }
   }
 
-  &[data-unmountonexit="true"] {
+  &[data-unmountonexit='true'] {
     .root,
     .actions {
       transition: none;

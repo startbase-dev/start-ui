@@ -1,7 +1,7 @@
-import React, { forwardRef } from "react";
-import { FloatingTree, useFloatingParentNodeId } from "@floating-ui/react";
-import FloatingMenu from "../FloatingMenu";
-import type { DropdownProps } from "./types";
+import React, { forwardRef } from 'react';
+import { FloatingTree, useFloatingParentNodeId } from '@floating-ui/react';
+import FloatingMenu from '../FloatingMenu';
+import type { DropdownProps } from './types';
 
 const Dropdown = forwardRef<HTMLDivElement, DropdownProps>((props, ref) => {
   const parentId = useFloatingParentNodeId();
@@ -17,6 +17,6 @@ const Dropdown = forwardRef<HTMLDivElement, DropdownProps>((props, ref) => {
   return <FloatingMenu {...props} ref={ref} />;
 });
 
-Dropdown.displayName = "Dropdown";
+Dropdown.displayName = 'Dropdown';
 
 export default Dropdown;

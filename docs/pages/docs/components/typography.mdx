@@ -1,8 +1,8 @@
-import { Typography } from "@start-base/start-ui";
-import { Tabs } from "nextra/components";
-import { Steps } from "nextra/components";
-import "@start-base/start-ui/styles.css";
-import Preview from "@components/Preview/Preview";
+import { Typography } from '@start-base/start-ui';
+import { Tabs } from 'nextra/components';
+import { Steps } from 'nextra/components';
+import '@start-base/start-ui/styles.css';
+import Preview from '@components/Preview/Preview';
 
 # Typography
 
@@ -71,12 +71,10 @@ npm i @start-base/start-ui
 
 ### Typography Title Lead
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <Preview height={200}>
-      <Typography variant="title" size="lead">
-        StartUi
-      </Typography>
+      <Typography variant="title" size="lead" children="StartUi" />
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -90,12 +88,10 @@ npm i @start-base/start-ui
 
 ### Typography Title Large Gradient
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <Preview height={200}>
-      <Typography variant="title" size="large" gradient>
-        StartUi
-      </Typography>
+      <Typography variant="title" size="large" gradient children="StartUi" />
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -109,13 +105,17 @@ npm i @start-base/start-ui
 
 ### Typography Subtitle Success Gradient
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <Preview height={200}>
-      <Typography variant="subtitle" elementType="h2" color="success" gradient>
-        Open-Source UI Library for Customizable, Modern, and Accessible Web
-        Interfaces
-      </Typography>
+      <Typography
+        variant="subtitle"
+        elementType="h2"
+        color="success"
+        gradient
+        children="Open-Source UI Library for Customizable, Modern, and Accessible Web
+        Interfaces"
+      />
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -130,13 +130,16 @@ npm i @start-base/start-ui
 
 ### Typography Subtitle Success
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <Preview height={200}>
-      <Typography variant="subtitle" elementType="h3" color="success">
-        Open-Source UI Library for Customizable, Modern, and Accessible Web
-        Interfaces
-      </Typography>
+      <Typography
+        variant="subtitle"
+        elementType="h3"
+        color="success"
+        children="Open-Source UI Library for Customizable, Modern, and Accessible Web
+        Interfaces"
+      />
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -151,17 +154,17 @@ npm i @start-base/start-ui
 
 ### Typography Paragraph Lead
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <Preview height={500} width={500}>
-      <Typography variant="paragraph" size="lead">
-        StartUI is an open-source UI library designed to make web development
+      <Typography
+        variant="paragraph"
+        size="lead"
+        children="StartUI is an open-source UI library designed to make web development
         more efficient and enjoyable. It offers a comprehensive set of pre-built
         components and utilities that integrate seamlessly with your CSS
-        workflow. StartUI emphasizes customization and flexibility, allowing you
-        to easily adjust colors, typography, layouts, and other design elements
-        to match your project&apos;s unique requirements.
-      </Typography>
+        workflow."
+      />
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -180,17 +183,20 @@ npm i @start-base/start-ui
 
 ### Typography Paragraph Large Warning
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <Preview height={400} width={500}>
-      <Typography variant="paragraph" size="large" color="warning">
-        StartUI is an open-source UI library designed to make web development
+      <Typography
+        variant="paragraph"
+        size="large"
+        color="warning"
+        children="StartUI is an open-source UI library designed to make web development
         more efficient and enjoyable. It offers a comprehensive set of pre-built
         components and utilities that integrate seamlessly with your CSS
         workflow. StartUI emphasizes customization and flexibility, allowing you
         to easily adjust colors, typography, layouts, and other design elements
-        to match your project&apos;s unique requirements.
-      </Typography>
+        to match your project's unique requirements."
+      />
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -209,17 +215,17 @@ npm i @start-base/start-ui
 
 ### Typography Paragraph Medium
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <Preview>
-      <Typography variant="paragraph" size="medium">
-        StartUI is an open-source UI library designed to make web development
+      <Typography
+        variant="paragraph"
+        size="medium"
+        children="StartUI is an open-source UI library designed to make web development
         more efficient and enjoyable. It offers a comprehensive set of pre-built
         components and utilities that integrate seamlessly with your CSS
-        workflow. StartUI emphasizes customization and flexibility, allowing you
-        to easily adjust colors, typography, layouts, and other design elements
-        to match your project&apos;s unique requirements.
-      </Typography>
+        workflow."
+      />
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -238,17 +244,20 @@ npm i @start-base/start-ui
 
 ### Typography Paragraph Small Info
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <Preview>
-      <Typography variant="paragraph" size="small" color="info">
-        StartUI is an open-source UI library designed to make web development
+      <Typography
+        variant="paragraph"
+        size="small"
+        color="info"
+        children="StartUI is an open-source UI library designed to make web development
         more efficient and enjoyable. It offers a comprehensive set of pre-built
         components and utilities that integrate seamlessly with your CSS
         workflow. StartUI emphasizes customization and flexibility, allowing you
         to easily adjust colors, typography, layouts, and other design elements
-        to match your project&apos;s unique requirements.
-      </Typography>
+        to match your project's unique requirements."
+      />
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -257,9 +266,6 @@ npm i @start-base/start-ui
       StartUI is an open-source UI library designed to make web development more
       efficient and enjoyable. It offers a comprehensive set of pre-built
       components and utilities that integrate seamlessly with your CSS workflow.
-      StartUI emphasizes customization and flexibility, allowing you to easily
-      adjust colors, typography, layouts, and other design elements to match
-      your project&apos;s unique requirements.
     </Typography>
     ```
   </Tabs.Tab>
@@ -267,12 +273,15 @@ npm i @start-base/start-ui
 
 ### Typography Muted Small Bold
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <Preview height={200}>
-      <Typography variant="muted" size="small" bold>
-        An Important Notice
-      </Typography>
+      <Typography
+        variant="muted"
+        size="small"
+        bold
+        children="An Important Notice"
+      />
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -286,13 +295,20 @@ npm i @start-base/start-ui
 
 ### Typography Quote Lead Error
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <Preview>
-      <Typography variant="quote" size="lead" color="error">
-        &quot;Simplicity is the ultimate sophistication.&quot; <br />— Leonardo
-        da Vinci
-      </Typography>
+      <Typography
+        variant="quote"
+        size="lead"
+        color="error"
+        children={
+          <>
+            &quot;Simplicity is the ultimate sophistication.&quot; <br />—
+            Leonardo da Vinci
+          </>
+        }
+      />
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>

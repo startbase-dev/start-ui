@@ -1,13 +1,13 @@
 .light,
 :root,
-[data-theme="light"] {
+[data-theme='light'] {
   --sui-avatar-box-shadow: var(--sui-elevation-1);
   --sui-avatar-bg: var(--sui-white);
   --sui-avatar-text: var(--sui-black);
 }
 
 .dark,
-[data-theme="dark"] {
+[data-theme='dark'] {
   --sui-avatar-box-shadow: var(--sui-elevation-1);
   --sui-avatar-bg: var(--sui-black);
   --sui-avatar-text: var(--sui-white);

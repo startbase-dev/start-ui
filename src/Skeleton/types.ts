@@ -1,5 +1,5 @@
 export interface SkeletonAvatarProps
-  extends Omit<React.AllHTMLAttributes<HTMLDivElement>, "size"> {
+  extends Omit<React.AllHTMLAttributes<HTMLDivElement>, 'size'> {
   size?: string;
 }
 

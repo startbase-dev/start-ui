@@ -1,6 +1,6 @@
 .light,
 :root,
-[data-theme="light"] {
+[data-theme='light'] {
   --sui-accordion-fg: var(--sui-black);
   --sui-accordion-bg: var(--sui-white);
   --sui-accordion-border: var(--sui-gray-300);
@@ -11,7 +11,7 @@
 }
 
 .dark,
-[data-theme="dark"] {
+[data-theme='dark'] {
   --sui-accordion-fg: var(--sui-white);
   --sui-accordion-bg: var(--sui-black);
   --sui-accordion-border: var(--sui-gray-700);

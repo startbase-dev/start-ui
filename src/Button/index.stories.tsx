@@ -1,7 +1,7 @@
-import React from "react";
-import Button from "./index";
-import Storybook from "../Storybook";
-import { CloseIcon } from "@storybook/icons";
+import React from 'react';
+import Button from './index';
+import Storybook from '../Storybook';
+import { CloseIcon } from '@storybook/icons';
 
 interface TemplateProps {
   title: string;
@@ -84,10 +84,10 @@ const Template: React.FC<TemplateProps> = (props) => {
 };
 
 export const ButtonComponent = Template.bind({});
-ButtonComponent.args = { title: "Button" };
+ButtonComponent.args = { title: 'Button' };
 
 const Component = {
-  title: "UI/Button",
+  title: 'UI/Button',
   component: ButtonComponent,
 };
 

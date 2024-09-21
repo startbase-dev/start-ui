@@ -1,8 +1,8 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef } from 'react';
 // eslint-disable-next-line css-modules/no-unused-class
-import s from "./LinearProgress.module.scss";
-import clsx from "clsx";
-import type { ProgressProps } from "../types";
+import s from './LinearProgress.module.scss';
+import clsx from 'clsx';
+import type { ProgressProps } from '../types';
 
 const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
   const {
@@ -13,12 +13,12 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
     trackSize = 10,
     progressLabel = false,
     determinate = true,
-    className = "",
-    color = "default",
-    containerClassName = "",
-    trackClassName = "",
-    progressClassName = "",
-    labelClassName = "",
+    className = '',
+    color = 'default',
+    containerClassName = '',
+    trackClassName = '',
+    progressClassName = '',
+    labelClassName = '',
     style,
     ...rest
   } = props;
@@ -46,7 +46,7 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
         width={size}
         height={trackSize}
         style={{
-          "--sui-border-radius": `${borderRadius}px`,
+          '--sui-border-radius': `${borderRadius}px`,
           ...style,
         }}
         role="progressbar"
@@ -60,9 +60,9 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
         <line
           className={trackClassNames}
           x1={0}
-          y1={"50%"}
+          y1={'50%'}
           x2={size}
-          y2={"50%"}
+          y2={'50%'}
           height={trackSize}
           width={size}
           fill="transparent"
@@ -73,9 +73,9 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
         <line
           className={progressClassNames}
           x1={0}
-          y1={"50%"}
+          y1={'50%'}
           x2={size}
-          y2={"50%"}
+          y2={'50%'}
           height={trackSize}
           width={size}
           fill="transparent"
@@ -93,13 +93,13 @@ const Index = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
   );
 });
 
-Index.displayName = "LinearProgress";
+Index.displayName = 'LinearProgress';
 
 function toPercentage(value: number, max?: number, min?: number) {
   if (!max || !min) return `${Math.round(value * 100)}%`;
 
   if (max === min) {
-    throw new Error("Max and min values cannot be the same.");
+    throw new Error('Max and min values cannot be the same.');
   }
 
   const percentage = ((value - min) / (max - min)) * 100;

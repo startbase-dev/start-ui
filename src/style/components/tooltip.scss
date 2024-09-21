@@ -1,13 +1,13 @@
 .light,
 :root,
-[data-theme="light"] {
+[data-theme='light'] {
   --sui-tooltip-bg: var(--sui-white);
   --sui-tooltip-text: var(--sui-black);
   --sui-tooltip-border: var(--sui-gray-200);
 }
 
 .dark,
-[data-theme="dark"] {
+[data-theme='dark'] {
   --sui-tooltip-bg: var(--sui-black);
   --sui-tooltip-text: var(--sui-white);
   --sui-tooltip-border: var(--sui-gray-700);

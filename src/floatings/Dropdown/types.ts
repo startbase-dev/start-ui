@@ -1,7 +1,7 @@
-import type { ReactElement, AllHTMLAttributes } from "react";
+import type { ReactElement, AllHTMLAttributes } from 'react';
 
 export interface DropdownProps
-  extends Omit<AllHTMLAttributes<HTMLDivElement>, "onFocus"> {
+  extends Omit<AllHTMLAttributes<HTMLDivElement>, 'onFocus'> {
   children: ReactElement | ReactElement[];
   component?: ReactElement;
   label?: string;
@@ -9,16 +9,16 @@ export interface DropdownProps
   menuClassName?: string;
   onFocus?: (event: React.FocusEvent<HTMLDivElement>) => void;
   placement?:
-    | "top"
-    | "bottom"
-    | "left"
-    | "right"
-    | "top-start"
-    | "top-end"
-    | "bottom-start"
-    | "bottom-end"
-    | "left-start"
-    | "left-end"
-    | "right-start"
-    | "right-end";
+    | 'top'
+    | 'bottom'
+    | 'left'
+    | 'right'
+    | 'top-start'
+    | 'top-end'
+    | 'bottom-start'
+    | 'bottom-end'
+    | 'left-start'
+    | 'left-end'
+    | 'right-start'
+    | 'right-end';
 }

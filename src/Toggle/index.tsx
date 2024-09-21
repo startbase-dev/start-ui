@@ -1,25 +1,25 @@
-import React, { forwardRef, useState } from "react";
-import cx from "clsx";
+import React, { forwardRef, useState } from 'react';
+import cx from 'clsx';
 // eslint-disable-next-line css-modules/no-unused-class
-import s from "./Toggle.module.scss";
-import "../style/components/toggle.scss";
-import { ToggleProps } from "./types";
+import s from './Toggle.module.scss';
+import '../style/components/toggle.scss';
+import { ToggleProps } from './types';
 
 const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
   (
     {
       initialState = false,
       onToggle,
-      color = "primary",
-      variant = "default",
-      size = "medium",
+      color = 'primary',
+      variant = 'default',
+      size = 'medium',
       fluid = false,
-      className = "",
+      className = '',
       disabled = false,
       children,
       ...rest
     },
-    ref,
+    ref
   ) => {
     const [isToggled, setIsToggled] = useState(initialState);
 
@@ -44,7 +44,7 @@ const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
           fluid && s.fluid,
           isToggled ? s.toggled : s.untoggled,
           disabled && s.disabled,
-          className,
+          className
         )}
         onClick={handleClick}
         disabled={disabled}
@@ -53,9 +53,9 @@ const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
         {children}
       </button>
     );
-  },
+  }
 );
 
-Toggle.displayName = "Toggle";
+Toggle.displayName = 'Toggle';
 
 export default Toggle;

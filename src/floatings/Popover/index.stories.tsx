@@ -1,7 +1,7 @@
-import React from "react";
-import Popover from "./index";
-import Button from "../../Button";
-import Storybook from "../../Storybook";
+import React from 'react';
+import Popover from './index';
+import Button from '../../Button';
+import Storybook from '../../Storybook';
 
 interface TemplateProps {
   title: string;
@@ -60,10 +60,10 @@ const Template: React.FC<TemplateProps> = (props) => {
 };
 
 export const PopoverComponent = Template.bind({});
-PopoverComponent.args = { title: "Popover" };
+PopoverComponent.args = { title: 'Popover' };
 
 const Component = {
-  title: "UI/Popover",
+  title: 'UI/Popover',
   component: PopoverComponent,
 };
 

@@ -1,11 +1,11 @@
-import React, { forwardRef, useState, useEffect, useRef } from "react";
-import s from "../Accordion.module.scss";
-import clsx from "clsx";
-import ArrowForwardIos from "../../icons/ArrowForwardIos";
-import type { AccordionProps } from "../types";
+import React, { forwardRef, useState, useEffect, useRef } from 'react';
+import s from '../Accordion.module.scss';
+import clsx from 'clsx';
+import ArrowForwardIos from '../../icons/ArrowForwardIos';
+import type { AccordionProps } from '../types';
 
 // Omit "expanded" | "onExpand" which are only required for controlled accordions
-type UncontrolledAccordionProps = Omit<AccordionProps, "expanded" | "onExpand">;
+type UncontrolledAccordionProps = Omit<AccordionProps, 'expanded' | 'onExpand'>;
 
 const UncontrolledAccordion = forwardRef<
   HTMLDivElement,
@@ -26,7 +26,7 @@ const UncontrolledAccordion = forwardRef<
       unmountOnExit = false,
       ...props
     },
-    ref,
+    ref
   ) => {
     const containerClassNames = clsx(s.container, containerClassName);
     const summaryClassNames = clsx(s.summary, summaryClassName);
@@ -45,11 +45,11 @@ const UncontrolledAccordion = forwardRef<
       if (!actionsRef.current) return;
 
       const focusableElements = actionsRef.current.querySelectorAll(
-        "a, button, input, textarea, select, [tabindex]",
+        'a, button, input, textarea, select, [tabindex]'
       );
       focusableElements.forEach((el) => {
-        const tabIndex = expanded ? "0" : "-1";
-        el.setAttribute("tabIndex", tabIndex);
+        const tabIndex = expanded ? '0' : '-1';
+        el.setAttribute('tabIndex', tabIndex);
       });
     }, [expanded]);
 
@@ -84,9 +84,9 @@ const UncontrolledAccordion = forwardRef<
         )}
       </div>
     );
-  },
+  }
 );
 
-UncontrolledAccordion.displayName = "UncontrolledAccordion";
+UncontrolledAccordion.displayName = 'UncontrolledAccordion';
 
 export default UncontrolledAccordion;

@@ -1,10 +1,225 @@
+import { Card } from '@start-base/start-ui';
+import { Tabs } from 'nextra/components';
+import { Steps } from 'nextra/components';
+import '@start-base/start-ui/styles.css';
+import Preview from '@components/Preview/Preview';
+
 # Card
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+The Card component is a versatile UI element used to display content and actions on a single topic. It can contain various elements such as text, images, and buttons.
 
-import { Card } from "@start-base/start-ui";
+## Installation
 
-import { Tabs } from "nextra/components";
-import s from "../../index.module.css";
+<Steps>
+### Install the package
+```sh copy npm2yarn
+npm i @start-base/start-ui
+```
+### Add the styles
 
-;
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import Card from '@start-base/start-ui/Card';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { Card } from '@start-base/start-ui';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
+
+### Card Default
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <Preview>
+      <Card
+        title="Introduction to StartUI"
+        description="Learn how StartUI helps you build scalable web apps faster."
+      >
+        StartUI provides a comprehensive set of customizable UI components for
+        SaaS applications.
+      </Card>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Card
+      title="Introduction to StartUI"
+      description="Learn how StartUI helps you build scalable web apps faster."
+    >
+      StartUI provides a comprehensive set of customizable UI components for
+      SaaS applications.
+    </Card>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Card Fluid
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <Preview>
+      <Card
+        title="StartUI - Full-Width Design"
+        description="This card showcases StartUI's ability to scale across different screen sizes."
+        fluid
+      >
+        StartUI components are fully responsive, adjusting seamlessly to the
+        size of the container.
+      </Card>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Card
+      title="StartUI - Full-Width Design"
+      description="This card showcases StartUI's ability to scale across different screen sizes."
+      fluid
+    >
+      StartUI components are fully responsive, adjusting seamlessly to the size
+      of the container.
+    </Card>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Card Small
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <Preview>
+      <Card
+        title="Small Card"
+        description="This is an example of a small card in StartUI."
+        size="small"
+      >
+        Small cards are great for compact data displays and minimal content
+        blocks.
+      </Card>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Card
+      title="Small Card"
+      description="This is an example of a small card in StartUI."
+      size="small"
+    >
+      Small cards are great for compact data displays and minimal content
+      blocks.
+    </Card>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Card Large
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <Preview>
+      <Card
+        title="Large Card"
+        description="Learn how StartUI helps you build scalable web apps faster."
+        size="large"
+      >
+        Large cards are great for compact data displays and minimal content
+        blocks.
+      </Card>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Card
+      title="Large Card"
+      description="Learn how StartUI helps you build scalable web apps faster."
+      size="large"
+    >
+      Large cards are great for compact data displays and minimal content
+      blocks.
+    </Card>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Card Collapsible
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <Preview>
+      <Card
+        title="Collapsible Card"
+        description="Click to expand and learn about how StartUI handles collapsible components."
+        collapsible
+      >
+        StartUI components support advanced interactivity like collapsibility,
+        perfect for dashboards.
+      </Card>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Card
+      title="Collapsible Card"
+      description="Click to expand and learn about how StartUI handles collapsible components."
+      collapsible
+    >
+      StartUI components support advanced interactivity like collapsibility,
+      perfect for dashboards.
+    </Card>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## API
+
+| Name        | Type        | Default  | Variants                 | Description             |
+| ----------- | ----------- | -------- | ------------------------ | ----------------------- |
+| children    | `string`    |          |                          | Children of the Card    |
+| title       | `ReactNode` |          |                          | Title of the Card       |
+| description | `ReactNode` |          |                          | Description of the Card |
+| collapsible | `boolean`   | `false`  |                          | Collapsible of the Card |
+| size        | `string`    | `medium` | `small` `medium` `large` | Size of the Card        |
+| fluid       | `boolean`   | `false`  |                          | Fluid of the Card       |
+| className   | `string`    |          |                          | Classname of the Card   |

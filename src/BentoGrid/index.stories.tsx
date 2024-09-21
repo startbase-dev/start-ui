@@ -1,6 +1,6 @@
-import React from "react";
-import BentoGrid from "./index";
-import Storybook from "../Storybook";
+import React from 'react';
+import BentoGrid from './index';
+import Storybook from '../Storybook';
 
 interface TemplateProps {
   title: string;
@@ -19,18 +19,18 @@ const Template: React.FC<TemplateProps> = (args) => {
 
 export const BentoGridComponent = Template.bind({});
 BentoGridComponent.args = {
-  title: "BentoGrid",
+  title: 'BentoGrid',
   gridCols: 4,
   items: [
     {
       element: (
         <div
           style={{
-            backgroundColor: "lightblue",
-            width: "auto",
-            height: "-webkit-fill-available",
-            borderRadius: "0.8rem",
-            padding: "0.5rem",
+            backgroundColor: 'lightblue',
+            width: 'auto',
+            height: '-webkit-fill-available',
+            borderRadius: '0.8rem',
+            padding: '0.5rem',
           }}
         >
           Item 1
@@ -43,11 +43,11 @@ BentoGridComponent.args = {
       element: (
         <div
           style={{
-            backgroundColor: "lightgreen",
-            width: "auto",
-            height: "-webkit-fill-available",
-            borderRadius: "0.8rem",
-            padding: "0.5rem",
+            backgroundColor: 'lightgreen',
+            width: 'auto',
+            height: '-webkit-fill-available',
+            borderRadius: '0.8rem',
+            padding: '0.5rem',
           }}
         >
           Item 2
@@ -60,11 +60,11 @@ BentoGridComponent.args = {
       element: (
         <div
           style={{
-            backgroundColor: "lightcoral",
-            width: "auto",
-            height: "-webkit-fill-available",
-            borderRadius: "0.8rem",
-            padding: "0.5rem",
+            backgroundColor: 'lightcoral',
+            width: 'auto',
+            height: '-webkit-fill-available',
+            borderRadius: '0.8rem',
+            padding: '0.5rem',
           }}
         >
           Item 3
@@ -77,11 +77,11 @@ BentoGridComponent.args = {
       element: (
         <div
           style={{
-            backgroundColor: "lightgoldenrodyellow",
-            width: "auto",
-            height: "-webkit-fill-available",
-            borderRadius: "0.8rem",
-            padding: "0.5rem",
+            backgroundColor: 'lightgoldenrodyellow',
+            width: 'auto',
+            height: '-webkit-fill-available',
+            borderRadius: '0.8rem',
+            padding: '0.5rem',
           }}
         >
           Item 4
@@ -94,11 +94,11 @@ BentoGridComponent.args = {
       element: (
         <div
           style={{
-            backgroundColor: "lightcoral",
-            width: "auto",
-            height: "-webkit-fill-available",
-            borderRadius: "0.8rem",
-            padding: "0.5rem",
+            backgroundColor: 'lightcoral',
+            width: 'auto',
+            height: '-webkit-fill-available',
+            borderRadius: '0.8rem',
+            padding: '0.5rem',
           }}
         >
           Item 5
@@ -111,11 +111,11 @@ BentoGridComponent.args = {
       element: (
         <div
           style={{
-            backgroundColor: "lightblue",
-            width: "auto",
-            height: "-webkit-fill-available",
-            borderRadius: "0.8rem",
-            padding: "0.5rem",
+            backgroundColor: 'lightblue',
+            width: 'auto',
+            height: '-webkit-fill-available',
+            borderRadius: '0.8rem',
+            padding: '0.5rem',
           }}
         >
           Item 6
@@ -128,11 +128,11 @@ BentoGridComponent.args = {
       element: (
         <div
           style={{
-            backgroundColor: "lightgreen",
-            width: "auto",
-            height: "-webkit-fill-available",
-            borderRadius: "0.8rem",
-            padding: "0.5rem",
+            backgroundColor: 'lightgreen',
+            width: 'auto',
+            height: '-webkit-fill-available',
+            borderRadius: '0.8rem',
+            padding: '0.5rem',
           }}
         >
           Item 7
@@ -145,7 +145,7 @@ BentoGridComponent.args = {
 };
 
 const Component = {
-  title: "UI/BentoGrid",
+  title: 'UI/BentoGrid',
   component: BentoGridComponent,
 };
 

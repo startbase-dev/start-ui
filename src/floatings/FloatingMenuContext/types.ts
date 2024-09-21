@@ -1,4 +1,4 @@
-import type { Dispatch, SetStateAction, AllHTMLAttributes } from "react";
+import type { Dispatch, SetStateAction, AllHTMLAttributes } from 'react';
 
 export interface FloatingMenuContextProps
   extends AllHTMLAttributes<HTMLDivElement> {
