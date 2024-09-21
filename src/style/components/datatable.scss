@@ -1,0 +1,22 @@
+.light,
+:root,
+[data-theme="light"] {
+  --sui-datatable-black: var(--sui-white);
+  --sui-datatable-white: var(--sui-black);
+  --sui-datatable-border: color-mix(
+    in srgb,
+    var(--sui-black) 75%,
+    var(--sui-white)
+  );
+}
+
+.dark,
+[data-theme="dark"] {
+  --sui-datatable-black: var(--sui-black);
+  --sui-datatable-white: var(--sui-white);
+  --sui-datatable-border: color-mix(
+    in srgb,
+    var(--sui-black) 75%,
+    var(--sui-white)
+  );
+}
