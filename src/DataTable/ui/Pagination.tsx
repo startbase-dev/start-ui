@@ -42,7 +42,7 @@ const Pagination = () => {
       <div className={styles.paginationContent}>
         <div className={styles.pageInfo}>
           <div className={styles.rowsPerPage}>
-            <label htmlFor="rowsPerPage">Rows per page:</label>
+            <label htmlFor="rowsPerPage">Rows:</label>
             <select
               id="rowsPerPage"
               value={currentRowsPerPage}

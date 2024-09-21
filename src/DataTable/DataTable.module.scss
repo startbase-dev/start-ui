@@ -21,7 +21,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0rem 0;
+  margin: 1rem 0;
   text-wrap: nowrap;
 }
 
@@ -29,7 +29,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 0.5rem;
 }
 
@@ -61,6 +60,7 @@
 
 .paginationButtons {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
 }
 

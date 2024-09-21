@@ -216,9 +216,8 @@ const DataTable = () => {
             })}
           />
         )}
-
-        {pagination && <Pagination />}
       </div>
+      {pagination && <Pagination />}
     </>
   );
 };

@@ -101,7 +101,7 @@ TableWithPagination.args = {
   rowClassName: "",
   emptyText: "No data available",
   pagination: true,
-  rowsPerPage: 2,
+  rowsPerPage: 5,
   rowsPerPageOptions: [5, 10, 15],
 };
 
