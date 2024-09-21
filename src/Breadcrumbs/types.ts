@@ -1,12 +1,14 @@
-export interface BreadcrumbReplace {
-  find: string;
-  replace: string;
+export interface BreadcrumbData {
+  label: string;
+  icon?: React.ReactNode;
+  href?: string;
 }
 
 export interface BreadcrumbsProps {
+  data: BreadcrumbData[];
   separator?: string;
-  breadcrumbReplace?: BreadcrumbReplace[];
   className?: string;
   activeClassName?: string;
   listClassName?: string;
+  itemClassName?: string;
 }

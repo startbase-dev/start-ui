@@ -1,0 +1,93 @@
+import { WordAnimation } from "@start-base/start-ui";
+import { Tabs } from "nextra/components";
+import { Steps } from "nextra/components";
+import "@start-base/start-ui/styles.css";
+import Preview from "@components/Preview/Preview";
+
+# Word Animation
+
+The WordAnimation component animates the appearance of words in a text, creating a visually engaging effect. It is highly customizable, allowing you to control the animation style, duration, and other properties to fit your design needs.
+
+## Installation
+
+<Steps>
+### Install the package
+```sh copy npm2yarn
+npm i @start-base/start-ui
+```
+### Add the styles
+
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import WordAnimation from '@start-base/start-ui/WordAnimation';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { WordAnimation } from '@start-base/start-ui';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
+
+### Word Animation
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview isReplayActive>
+      <WordAnimation text="Start UI is a comprehensive React UI library designed to streamline the development process by offering a versatile collection of over 50 components." />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <WordAnimation text="Start UI is a comprehensive React UI library designed to streamline the development process by offering a versatile collection of over 50 components." />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## API
+
+| Name          | Type     | Default | Description                         |
+| ------------- | -------- | ------- | ----------------------------------- |
+| text          | `string` | ``      | Text of the WordAnimation           |
+| className     | `string` | ``      | Classname of the WordAnimation      |
+| wordClassName | `string` | ``      | Text Classname of the WordAnimation |

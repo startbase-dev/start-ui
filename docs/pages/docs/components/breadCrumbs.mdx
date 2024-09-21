@@ -1,0 +1,82 @@
+import { Breadcrumbs } from "@start-base/start-ui";
+import { Tabs } from "nextra/components";
+import { Steps } from "nextra/components";
+import "@start-base/start-ui/styles.css";
+import Preview from "@components/Preview/Preview";
+
+# BreadCrumbs
+
+A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+
+## Installation
+
+<Steps>
+### Install the package
+```sh copy npm2yarn
+npm i @start-base/start-ui
+```
+### Add the styles
+
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
+
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import BreadCrumbs from '@start-base/start-ui/BreadCrumbs';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { BreadCrumbs } from '@start-base/start-ui';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
+
+### Default BreadCrumbs
+
+## API
+
+| Name              | Type     | Default | Description                        |
+| ----------------- | -------- | ------- | ---------------------------------- |
+| separator         | `string` | `/`     | Separator of the breadcrumbs       |
+| breadcrumbReplace | `string` | `[]`    | Replace array of the breadcrumbs   |
+| className         | `string` | ``      | Classname of the breadcrumbs       |
+| activeClassName   | `string` | ``      | Classname of the active breadcrumb |
+| listClassName     | `string` | ``      | Classname of the breadcrumb list   |
