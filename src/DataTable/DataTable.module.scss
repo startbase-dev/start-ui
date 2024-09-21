@@ -102,6 +102,11 @@
   gap: 0.5rem;
 }
 
+.columnSelect {
+  display: flex;
+  flex-direction: column;
+}
+
 .filterButton {
   display: flex;
   position: absolute;
