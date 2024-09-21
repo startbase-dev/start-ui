@@ -4,8 +4,8 @@ import type { FloatingMenuContextProps } from './types';
 const FloatingMenuContext = createContext<FloatingMenuContextProps>({
   getItemProps: () => ({}),
   activeIndex: null,
-  setActiveIndex: () => {},
-  setHasFocusInside: () => {},
+  setActiveIndex: () => ({}),
+  setHasFocusInside: () => ({}),
   isOpen: false,
 });
 

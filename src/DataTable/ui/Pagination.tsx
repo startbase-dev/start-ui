@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 // eslint-disable-next-line css-modules/no-unused-class
-import styles from "../DataTable.module.scss";
-import { useDataTableContext } from "../DataTableContext";
-import Button from "../../Button/index";
+import styles from '../DataTable.module.scss';
+import { useDataTableContext } from '../DataTableContext';
+import Button from '../../Button/index';
 
 const Pagination = () => {
   const {
@@ -23,7 +23,7 @@ const Pagination = () => {
   const endItem = Math.min(currentPage * currentRowsPerPage, totalItems);
 
   const handleRowsPerPageChange = (
-    event: React.ChangeEvent<HTMLSelectElement>,
+    event: React.ChangeEvent<HTMLSelectElement>
   ) => {
     setCurrentRowsPerPage(Number(event.target.value));
     setCurrentPage(1);

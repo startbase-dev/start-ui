@@ -82,6 +82,8 @@ package-lock.json
 /index.mjs
 /index.d.mts
 /index.d.ts
+/variables.d.mts
+/variables.d.ts
 
 *storybook.log
 

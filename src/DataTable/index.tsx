@@ -1,15 +1,15 @@
-import React from "react";
-import RCTable, { VirtualTable } from "rc-table";
-import cx from "clsx";
-import { ColumnType } from "rc-table";
-import { DataItem } from "./types";
-import { useDataTableContext } from "./DataTableContext";
-import Pagination from "./ui/Pagination";
-import Filter from "./ui/Filter";
-import Typography from "../Typography/index";
-import Checkbox from "./ui/Checkbox";
+import React from 'react';
+import RCTable, { VirtualTable } from 'rc-table';
+import cx from 'clsx';
+import { ColumnType } from 'rc-table';
+import { DataItem } from './types';
+import { useDataTableContext } from './DataTableContext';
+import Pagination from './ui/Pagination';
+import Filter from './ui/Filter';
+import Typography from '../Typography/index';
+import Checkbox from './ui/Checkbox';
 // eslint-disable-next-line css-modules/no-unused-class
-import styles from "./DataTable.module.scss";
+import styles from './DataTable.module.scss';
 
 const DataTable = () => {
   const {
@@ -39,29 +39,29 @@ const DataTable = () => {
   const applyFilter = (data: DataItem[]) => {
     return data.filter((item) => {
       const columnValue =
-        item[filterColumn ?? ""]?.toString().toLowerCase() ?? "";
+        item[filterColumn ?? '']?.toString().toLowerCase() ?? '';
 
-      const searchValue = filterValue?.toLowerCase() ?? "";
+      const searchValue = filterValue?.toLowerCase() ?? '';
 
       switch (filterOperator) {
-        case "contains":
+        case 'contains':
           return columnValue?.includes(searchValue);
-        case "does not contain":
+        case 'does not contain':
           return !columnValue?.includes(searchValue);
-        case "equals":
+        case 'equals':
           return columnValue === searchValue;
-        case "does not equal":
+        case 'does not equal':
           return columnValue !== searchValue;
-        case "starts with":
+        case 'starts with':
           return columnValue?.startsWith(searchValue);
-        case "ends with":
+        case 'ends with':
           return columnValue?.endsWith(searchValue);
-        case "is empty":
+        case 'is empty':
           return !columnValue;
-        case "is not empty":
+        case 'is not empty':
           return !!columnValue;
-        case "is any of":
-          return searchValue?.split(",").includes(columnValue);
+        case 'is any of':
+          return searchValue?.split(',').includes(columnValue);
         default:
           return true;
       }
@@ -77,9 +77,9 @@ const DataTable = () => {
       filteredData = applyFilter(filteredData);
 
       const highlightedRowIndices = filteredData.map(
-        (_item, index) => start + index,
+        (_item, index) => start + index
       );
-      console.log("Filtered Data:", filteredData);
+      console.log('Filtered Data:', filteredData);
       setHighlightedRows(highlightedRowIndices);
     }
 
@@ -135,7 +135,7 @@ const DataTable = () => {
               onChange={handleSelectAll}
             />
           ),
-          key: "checkbox",
+          key: 'checkbox',
           render: (_: unknown, __: DataItem, rowIndex: number) => (
             <Checkbox
               checked={selectedRows.includes(rowIndex)}
@@ -143,34 +143,34 @@ const DataTable = () => {
             />
           ),
           onCell: (): ExtendedTdHTMLAttributes => ({
-            "data-title": "",
+            'data-title': '',
           }),
         },
         ...columns.map(
           (column): ColumnType<DataItem> => ({
             ...column,
             onCell: (): ExtendedTdHTMLAttributes => ({
-              "data-title":
-                typeof column.title === "string" ? column.title : undefined,
+              'data-title':
+                typeof column.title === 'string' ? column.title : undefined,
             }),
-          }),
+          })
         ),
       ]
     : columns.map(
         (column): ColumnType<DataItem> => ({
           ...column,
           onCell: (): ExtendedTdHTMLAttributes => ({
-            "data-title":
-              typeof column.title === "string" ? column.title : undefined,
+            'data-title':
+              typeof column.title === 'string' ? column.title : undefined,
           }),
-        }),
+        })
       );
   return (
     <>
       <div className={styles.tableTop}>
         {title && (
           <div className={styles.tableTitle}>
-            {typeof title === "string" ? (
+            {typeof title === 'string' ? (
               <Typography variant="title" size="small">
                 {title}
               </Typography>
@@ -241,6 +241,6 @@ const DataTable = () => {
   );
 };
 
-DataTable.displayName = "DataTable";
+DataTable.displayName = 'DataTable';
 
 export default DataTable;

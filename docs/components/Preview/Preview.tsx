@@ -1,7 +1,6 @@
-
-import React, { useState } from "react";
-import s from "./Preview.module.css";
-import Replay from "../VideoPlayer/Replay";
+import React, { useState } from 'react';
+import s from './Preview.module.css';
+import Replay from '../VideoPlayer/Replay';
 
 interface Props {
   children: React.ReactNode;

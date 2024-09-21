@@ -1,9 +1,9 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState } from 'react';
 // eslint-disable-next-line css-modules/no-unused-class
-import styles from "../DataTable.module.scss";
-import Button from "../../Button/index";
-import { useDataTableContext } from "../DataTableContext";
-import Dropdown from "../../floatings/Dropdown/index";
+import styles from '../DataTable.module.scss';
+import Button from '../../Button/index';
+import { useDataTableContext } from '../DataTableContext';
+import Dropdown from '../../floatings/Dropdown/index';
 
 const Filter = () => {
   const {
@@ -21,13 +21,13 @@ const Filter = () => {
   const [selectedColumns, setSelectedColumns] = useState<string[]>([]);
 
   const operatorsRequiringValue = [
-    "contains",
-    "does not contain",
-    "equals",
-    "does not equal",
-    "starts with",
-    "ends with",
-    "is any of",
+    'contains',
+    'does not contain',
+    'equals',
+    'does not equal',
+    'starts with',
+    'ends with',
+    'is any of',
   ];
 
   const filteredData = useMemo(() => {
@@ -42,29 +42,29 @@ const Filter = () => {
 
     return data.filter((item) => {
       return selectedColumns.some((colKey) => {
-        const columnValue = item[colKey]?.toString().toLowerCase().trim() ?? "";
-        const searchValue = (filterValue ?? "").toLowerCase().trim();
+        const columnValue = item[colKey]?.toString().toLowerCase().trim() ?? '';
+        const searchValue = (filterValue ?? '').toLowerCase().trim();
 
         switch (filterOperator) {
-          case "contains":
+          case 'contains':
             return columnValue.includes(searchValue);
-          case "does not contain":
+          case 'does not contain':
             return !columnValue.includes(searchValue);
-          case "equals":
+          case 'equals':
             return columnValue === searchValue;
-          case "does not equal":
+          case 'does not equal':
             return columnValue !== searchValue;
-          case "starts with":
+          case 'starts with':
             return columnValue.startsWith(searchValue);
-          case "ends with":
+          case 'ends with':
             return columnValue.endsWith(searchValue);
-          case "is empty":
+          case 'is empty':
             return !columnValue;
-          case "is not empty":
+          case 'is not empty':
             return !!columnValue;
-          case "is any of":
+          case 'is any of':
             return searchValue
-              .split(",")
+              .split(',')
               .map((s) => s.trim())
               .includes(columnValue);
           default:
@@ -77,7 +77,7 @@ const Filter = () => {
   const applyFilterOnClick = () => {
     if (filteredData.length > 0) {
       const highlightedRowIndices = filteredData.map((item) =>
-        data.indexOf(item),
+        data.indexOf(item)
       );
 
       setHighlightedRows(highlightedRowIndices);
@@ -104,13 +104,13 @@ const Filter = () => {
               <input
                 type="checkbox"
                 value={col.key?.toString()}
-                checked={selectedColumns.includes(col.key?.toString() ?? "")}
+                checked={selectedColumns.includes(col.key?.toString() ?? '')}
                 onChange={(e) => {
                   const value = e.target.value;
                   setSelectedColumns((prev) =>
                     e.target.checked
                       ? [...prev, value]
-                      : prev.filter((colKey) => colKey !== value),
+                      : prev.filter((colKey) => colKey !== value)
                   );
                 }}
               />
@@ -136,8 +136,8 @@ const Filter = () => {
           onChange={(e) => setFilterValue?.(e.target.value)}
           placeholder={
             requiresValue.includes(filterOperator as string)
-              ? "Type value"
-              : "Not needed"
+              ? 'Type value'
+              : 'Not needed'
           }
           className={styles.filterInput}
           disabled={!requiresValue.includes(filterOperator as string)}
@@ -160,13 +160,13 @@ const Filter = () => {
 export default Filter;
 
 const filterOperators = [
-  "contains",
-  "does not contain",
-  "equals",
-  "does not equal",
-  "starts with",
-  "ends with",
-  "is empty",
-  "is not empty",
-  "is any of",
+  'contains',
+  'does not contain',
+  'equals',
+  'does not equal',
+  'starts with',
+  'ends with',
+  'is empty',
+  'is not empty',
+  'is any of',
 ];

@@ -37,6 +37,7 @@
     "jsx-a11y/alt-text": ["off"],
     "linebreak-style": [2, "unix"],
     "semi": [2, "always"],
+    "@typescript-eslint/no-explicit-any": 0,
     "no-multiple-empty-lines": [
       2,
       {

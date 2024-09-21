@@ -5,12 +5,12 @@ import React, {
   useEffect,
   forwardRef,
   Ref,
-} from "react";
-import { DataItem, DataTableContextProps } from "./types";
-import { ColumnType } from "rc-table";
+} from 'react';
+import { DataItem, DataTableContextProps } from './types';
+import { ColumnType } from 'rc-table';
 
 const DataTableContext = createContext<DataTableContextProps | undefined>(
-  undefined,
+  undefined
 );
 
 const DataTableWrapper = forwardRef<HTMLDivElement, DataTableContextProps>(
@@ -31,15 +31,15 @@ const DataTableWrapper = forwardRef<HTMLDivElement, DataTableContextProps>(
       virtualized = false,
       emptyText,
     },
-    ref: Ref<HTMLDivElement>,
+    ref: Ref<HTMLDivElement>
   ) => {
     const [currentPage, setCurrentPage] = useState(1);
     const [currentRowsPerPage, setCurrentRowsPerPage] = useState(rowsPerPage);
     const [selectedRows, setSelectedRows] = useState<number[]>([]);
     const [highlightedRows, setHighlightedRows] = useState<number[]>([]);
-    const [filterColumn, setFilterColumn] = useState("");
-    const [filterValue, setFilterValue] = useState<string>("");
-    const [filterOperator, setFilterOperator] = useState<string>("contains");
+    const [filterColumn, setFilterColumn] = useState('');
+    const [filterValue, setFilterValue] = useState<string>('');
+    const [filterOperator, setFilterOperator] = useState<string>('contains');
     const [data, setData] = useState<DataItem[]>(initialData);
     const [columns, setColumns] =
       useState<ColumnType<DataItem>[]>(initialColumns);
@@ -95,16 +95,16 @@ const DataTableWrapper = forwardRef<HTMLDivElement, DataTableContextProps>(
         </DataTableContext.Provider>
       </div>
     );
-  },
+  }
 );
 
-DataTableWrapper.displayName = "DataTableWrapper";
+DataTableWrapper.displayName = 'DataTableWrapper';
 
 export const useDataTableContext = () => {
   const context = useContext(DataTableContext);
   if (!context) {
     throw new Error(
-      "useDataTableContext must be used within a DataTableWrapper",
+      'useDataTableContext must be used within a DataTableWrapper'
     );
   }
   return context;

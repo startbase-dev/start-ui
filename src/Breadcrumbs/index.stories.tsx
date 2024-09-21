@@ -1,17 +1,17 @@
-import React from "react";
-import { Meta, StoryFn } from "@storybook/react";
-import Breadcrumbs from "./index";
-import Storybook from "../Storybook";
+import React from 'react';
+import { Meta, StoryFn } from '@storybook/react';
+import Breadcrumbs from './index';
+import Storybook from '../Storybook';
 
 export default {
-  title: "UI/Breadcrumbs",
+  title: 'UI/Breadcrumbs',
   component: Breadcrumbs,
 } as Meta<typeof Breadcrumbs>;
 
 const breadcrumbData = [
-  { label: "Dashboard", href: "/dashboard" },
-  { label: "Settings", href: "/settings" },
-  { label: "User Profile", href: "/profile" },
+  { label: 'Dashboard', href: '/dashboard' },
+  { label: 'Settings', href: '/settings' },
+  { label: 'User Profile', href: '/profile' },
 ];
 
 const Template: StoryFn = () => {
@@ -26,9 +26,9 @@ export const DefaultBreadcrumbs = Template.bind({});
 
 const CustomSeparatorTemplate: StoryFn = () => {
   const customBreadcrumbData = [
-    { label: "Home", href: "/" },
-    { label: "About Us", href: "/about" },
-    { label: "Our Services", href: "/services" },
+    { label: 'Home', href: '/' },
+    { label: 'About Us', href: '/about' },
+    { label: 'Our Services', href: '/services' },
   ];
 
   return (
@@ -42,9 +42,9 @@ export const CustomSeparatorBreadcrumbs = CustomSeparatorTemplate.bind({});
 
 const FullShowcaseTemplate: StoryFn = () => {
   const showcaseBreadcrumbData = [
-    { label: "Dashboard", href: "/dashboard" },
-    { label: "Settings", href: "/settings" },
-    { label: "User Profile", href: "/profile" },
+    { label: 'Dashboard', href: '/dashboard' },
+    { label: 'Settings', href: '/settings' },
+    { label: 'User Profile', href: '/profile' },
   ];
 
   return (
