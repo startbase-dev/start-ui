@@ -1,16 +1,17 @@
 "use client";
 
-import cx from "clsx";
+import React from "react";
 import RCTable, { VirtualTable } from "rc-table";
-// eslint-disable-next-line css-modules/no-unused-class
-import styles from "./DataTable.module.scss";
-import { DataItem, CheckboxProps } from "./types";
+import cx from "clsx";
 import { ColumnType } from "rc-table";
+import { DataItem } from "./types";
 import { useDataTableContext } from "./DataTableContext";
 import Pagination from "./ui/Pagination";
 import Filter from "./ui/Filter";
-import React from "react";
 import Typography from "../Typography/index";
+import Checkbox from "./ui/Checkbox";
+// eslint-disable-next-line css-modules/no-unused-class
+import styles from "./DataTable.module.scss";
 import ".././style/components/datatable.scss";
 
 const DataTable = () => {
@@ -111,10 +112,32 @@ const DataTable = () => {
   type ExtendedTdHTMLAttributes = React.TdHTMLAttributes<HTMLTableCellElement> &
     DataAttributes;
 
+  const isAllSelected = data.length > 0 && selectedRows.length === data.length;
+
+  const isIndeterminate =
+    selectedRows.length > 0 && selectedRows.length < data.length;
+
+  const handleSelectAll = () => {
+    if (selectedRows.length === data.length) {
+      setSelectedRows([]);
+      rowSelectAction?.([]);
+    } else {
+      const allRowIndices = data.map((_, index) => index);
+      setSelectedRows(allRowIndices);
+      rowSelectAction?.(allRowIndices);
+    }
+  };
+
   const modifiedColumns: ColumnType<DataItem>[] = checkboxAvailable
     ? [
         {
-          title: "",
+          title: (
+            <Checkbox
+              checked={isAllSelected}
+              indeterminate={isIndeterminate}
+              onChange={handleSelectAll}
+            />
+          ),
           key: "checkbox",
           render: (_: unknown, __: DataItem, rowIndex: number) => (
             <Checkbox
@@ -123,7 +146,7 @@ const DataTable = () => {
             />
           ),
           onCell: (): ExtendedTdHTMLAttributes => ({
-            "data-title": "checkbox",
+            "data-title": "",
           }),
         },
         ...columns.map(
@@ -145,7 +168,6 @@ const DataTable = () => {
           }),
         }),
       );
-
   return (
     <>
       <div className={styles.tableTop}>
@@ -225,14 +247,3 @@ const DataTable = () => {
 DataTable.displayName = "DataTable";
 
 export default DataTable;
-
-const Checkbox = ({ checked, onChange }: CheckboxProps) => {
-  return (
-    <input
-      type="checkbox"
-      checked={checked}
-      onChange={onChange}
-      style={{ cursor: "pointer" }}
-    />
-  );
-};
