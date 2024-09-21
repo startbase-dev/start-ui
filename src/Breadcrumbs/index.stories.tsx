@@ -1,23 +1,23 @@
-import React from 'react';
-import { Meta, StoryFn } from '@storybook/react';
-import Breadcrumbs from './index';
-import Storybook from '../Storybook';
+import React from "react";
+import { Meta, StoryFn } from "@storybook/react";
+import Breadcrumbs from "./index";
+import Storybook from "../Storybook";
 
 export default {
-  title: 'UI/Breadcrumbs',
+  title: "UI/Breadcrumbs",
   component: Breadcrumbs,
 } as Meta<typeof Breadcrumbs>;
 
-const Template: StoryFn = () => {
-  const breadcrumbReplace = [
-    { find: 'dashboard', replace: 'Dashboard' },
-    { find: 'settings', replace: 'Settings' },
-    { find: 'profile', replace: 'User Profile' },
-  ];
+const breadcrumbData = [
+  { label: "Dashboard", href: "/dashboard" },
+  { label: "Settings", href: "/settings" },
+  { label: "User Profile", href: "/profile" },
+];
 
+const Template: StoryFn = () => {
   return (
     <div>
-      <Breadcrumbs breadcrumbReplace={breadcrumbReplace} />
+      <Breadcrumbs data={breadcrumbData} />
     </div>
   );
 };
@@ -25,15 +25,15 @@ const Template: StoryFn = () => {
 export const DefaultBreadcrumbs = Template.bind({});
 
 const CustomSeparatorTemplate: StoryFn = () => {
-  const breadcrumbReplace = [
-    { find: 'home', replace: 'Home' },
-    { find: 'about', replace: 'About Us' },
-    { find: 'services', replace: 'Our Services' },
+  const customBreadcrumbData = [
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "Our Services", href: "/services" },
   ];
 
   return (
     <div>
-      <Breadcrumbs breadcrumbReplace={breadcrumbReplace} separator="|" />
+      <Breadcrumbs data={customBreadcrumbData} separator="|" />
     </div>
   );
 };
@@ -41,21 +41,21 @@ const CustomSeparatorTemplate: StoryFn = () => {
 export const CustomSeparatorBreadcrumbs = CustomSeparatorTemplate.bind({});
 
 const FullShowcaseTemplate: StoryFn = () => {
-  const breadcrumbReplace = [
-    { find: 'dashboard', replace: 'Dashboard' },
-    { find: 'settings', replace: 'Settings' },
-    { find: 'profile', replace: 'User Profile' },
+  const showcaseBreadcrumbData = [
+    { label: "Dashboard", href: "/dashboard" },
+    { label: "Settings", href: "/settings" },
+    { label: "User Profile", href: "/profile" },
   ];
 
   return (
     <Storybook title="Breadcrumbs Showcase">
       <div>
         <h3>Default Breadcrumbs</h3>
-        <Breadcrumbs breadcrumbReplace={breadcrumbReplace} />
+        <Breadcrumbs data={showcaseBreadcrumbData} />
       </div>
       <div>
         <h3>Custom Separator Breadcrumbs</h3>
-        <Breadcrumbs breadcrumbReplace={breadcrumbReplace} separator="|" />
+        <Breadcrumbs data={showcaseBreadcrumbData} separator="|" />
       </div>
     </Storybook>
   );
