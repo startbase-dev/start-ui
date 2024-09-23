@@ -1,5 +1,5 @@
-import { CSSProperties, Dispatch, ReactNode, SetStateAction, Key } from "react";
-import { ColumnType } from "rc-table";
+import { CSSProperties, Dispatch, ReactNode, SetStateAction, Key } from 'react';
+import { ColumnType } from 'rc-table';
 
 export interface DataItem {
   key?: Key;
@@ -9,6 +9,7 @@ export interface DataItem {
 export interface CheckboxProps {
   checked: boolean;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  indeterminate?: boolean;
 }
 
 export interface DataTableContextProps {

@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import { CheckboxProps } from "../types";
+import React, { useEffect, useRef } from 'react';
+import { CheckboxProps } from '../types';
 const Checkbox = ({ checked, onChange, indeterminate }: CheckboxProps) => {
   const ref = useRef<HTMLInputElement>(null);
 
@@ -15,7 +15,7 @@ const Checkbox = ({ checked, onChange, indeterminate }: CheckboxProps) => {
       ref={ref}
       checked={checked}
       onChange={onChange}
-      style={{ cursor: "pointer" }}
+      style={{ cursor: 'pointer' }}
     />
   );
 };
