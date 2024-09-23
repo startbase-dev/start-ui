@@ -1,12 +1,13 @@
-import { Breadcrumbs } from '@start-base/start-ui';
-import { Tabs } from 'nextra/components';
-import { Steps } from 'nextra/components';
-import '@start-base/start-ui/styles.css';
-import Preview from '@components/Preview/Preview';
+import { Breadcrumbs } from "@start-base/start-ui";
+import { Tabs } from "nextra/components";
+import { Steps } from "nextra/components";
+import "@start-base/start-ui/styles.css";
+import Preview from "@components/Preview/Preview";
+import { IoHomeOutline as HomeIcon } from "react-icons/io5";
 
 # BreadCrumbs
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+The Breadcrumbs component provides a navigational aid in web applications, allowing users to keep track of their locations within the app hierarchy. It displays a series of links representing the current page and its ancestors, making it easy for users to navigate back to previous sections.
 
 ## Installation
 
@@ -71,12 +72,111 @@ npm i @start-base/start-ui
 
 ### Default BreadCrumbs
 
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="200px" width="auto">
+      <Breadcrumbs
+        data={[
+          { label: "Home", href: "#" },
+          { label: "About Us", href: "#" },
+          { label: "Our Services", href: "#" },
+        ]}
+      />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Breadcrumbs
+      data={[
+        { label: "Home", href: "/" },
+        { label: "About Us", href: "/about" },
+        { label: "Our Services", href: "/services" },
+      ]}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### BreadCrumbs With Custom Separator
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="200px" width="auto">
+      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+        <Breadcrumbs
+          data={[
+            { label: "Home", href: "#" },
+            { label: "About Us", href: "#" },
+            { label: "Our Services", href: "#" },
+          ]}
+          separator=">"
+        />
+        <Breadcrumbs
+          data={[
+            { label: "Home", href: "#" },
+            { label: "About Us", href: "#" },
+            { label: "Our Services", href: "#" },
+          ]}
+          separator="|"
+        />
+      </div>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Breadcrumbs
+      data={[
+        { label: "Home", href: "/" },
+        { label: "About Us", href: "/about" },
+        { label: "Our Services", href: "/services" },
+      ]}
+      separator=">"
+    />
+    <Breadcrumbs
+      data={[
+        { label: "Home", href: "/" },
+        { label: "About Us", href: "/about" },
+        { label: "Our Services", href: "/services" },
+      ]}
+      separator="|"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### BreadCrumbs With Icon
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="200px" width="auto">
+      <Breadcrumbs
+        data={[
+          { label: "Home", icon: <HomeIcon />, href: "#" },
+          { label: "About Us", href: "#" },
+          { label: "Our Services", href: "#" },
+        ]}
+      />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Breadcrumbs
+      data={[
+        { label: "Home", icon: <HomeIcon />, href: "/" },
+        { label: "About Us", href: "/about" },
+        { label: "Our Services", href: "/services" },
+      ]}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
 ## API
 
-| Name              | Type     | Default | Description                        |
-| ----------------- | -------- | ------- | ---------------------------------- |
-| separator         | `string` | `/`     | Separator of the breadcrumbs       |
-| breadcrumbReplace | `string` | `[]`    | Replace array of the breadcrumbs   |
-| className         | `string` | ``      | Classname of the breadcrumbs       |
-| activeClassName   | `string` | ``      | Classname of the active breadcrumb |
-| listClassName     | `string` | ``      | Classname of the breadcrumb list   |
+| Name            | Type     | Default | Description                        |
+| --------------- | -------- | ------- | ---------------------------------- |
+| separator       | `string` | `/`     | Separator of the breadcrumbs       |
+| data            | `string` | `[]`    | Replace array of the breadcrumbs   |
+| className       | `string` | ``      | Classname of the breadcrumbs       |
+| activeClassName | `string` | ``      | Classname of the active breadcrumb |
+| listClassName   | `string` | ``      | Classname of the breadcrumb list   |
