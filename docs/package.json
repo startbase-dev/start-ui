@@ -20,7 +20,7 @@
   "dependencies": {
     "@start-base/react-consent-manager": "1.10.4",
     "@start-base/react-form-elements": "1.10.1",
-    "@start-base/start-ui": "0.0.33-alpha",
+    "@start-base/start-ui": "0.0.35-alpha",
     "framer-motion": "11.5.4",
     "next": "13.5.6",
     "nextra": "2.13.4",
