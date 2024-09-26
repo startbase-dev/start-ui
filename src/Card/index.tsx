@@ -3,7 +3,7 @@ import cx from 'clsx';
 // eslint-disable-next-line css-modules/no-unused-class
 import s from './Card.module.scss';
 import '../style/components/card.scss';
-import { CardProps } from './types';
+import type { CardProps } from './types';
 
 const Card = forwardRef<HTMLDivElement, CardProps>(
   (
@@ -52,3 +52,4 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
 Card.displayName = 'Card';
 
 export default Card;
+export { type CardProps };

@@ -49,3 +49,4 @@ const Tab = forwardRef<HTMLDivElement, TabProps>((props, ref) => {
 Tab.displayName = 'Tab';
 
 export default Tab;
+export { type TabProps };

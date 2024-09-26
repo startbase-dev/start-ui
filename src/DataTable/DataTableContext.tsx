@@ -6,7 +6,7 @@ import React, {
   forwardRef,
   Ref,
 } from 'react';
-import { DataItem, DataTableContextProps } from './types';
+import type { DataItem, DataTableContextProps } from './types';
 import { ColumnType } from 'rc-table';
 
 const DataTableContext = createContext<DataTableContextProps | undefined>(

@@ -121,3 +121,4 @@ const BentoCard = forwardRef<HTMLDivElement, BentoCardProps>((props, ref) => {
 BentoCard.displayName = 'BentoCard';
 
 export default BentoCard;
+export { type BentoCardProps };

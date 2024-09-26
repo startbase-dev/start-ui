@@ -1,6 +1,6 @@
 import React, { forwardRef, CSSProperties } from 'react';
 import s from './ScrollArea.module.scss';
-import { ScrollAreaProps } from './types';
+import type { ScrollAreaProps } from './types';
 
 const ScrollArea = forwardRef<HTMLDivElement, ScrollAreaProps>(
   ({ orientation, className, style, children, ...rest }, ref) => {
@@ -34,3 +34,4 @@ const ScrollArea = forwardRef<HTMLDivElement, ScrollAreaProps>(
 ScrollArea.displayName = 'ScrollArea';
 
 export default ScrollArea;
+export { type ScrollAreaProps };

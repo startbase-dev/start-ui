@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 import cx from 'clsx';
 import s from './List.module.scss';
 import '../style/components/list.scss';
-import {
+import type {
   ListProps,
   ListItemProps,
   ListItemButtonProps,
@@ -66,3 +66,13 @@ export const ListSubheader = ({
   return <div className={cx(s.listSubheader, className)}>{children}</div>;
 };
 ListSubheader.displayName = 'ListSubheader';
+
+export {
+  type ListProps,
+  type ListItemProps,
+  type ListItemButtonProps,
+  type ListItemIconProps,
+  type ListItemSubtitleProps,
+  type ListDividerProps,
+  type ListSubheaderProps,
+};

@@ -22,3 +22,4 @@ const ContextMenu = forwardRef<HTMLDivElement, ContextMenuProps>(
 ContextMenu.displayName = 'ContextMenu';
 
 export default ContextMenu;
+export { type ContextMenuProps };

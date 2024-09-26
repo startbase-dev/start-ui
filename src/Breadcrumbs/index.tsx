@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import cx from 'clsx';
 import s from './Breadcrumbs.module.scss';
-import { BreadcrumbsProps } from './types';
+import type { BreadcrumbsProps } from './types';
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
   separator = '/',
@@ -37,3 +37,4 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
 };
 
 export default Breadcrumbs;
+export { type BreadcrumbsProps };

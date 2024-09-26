@@ -1,6 +1,6 @@
 import React from 'react';
 import Table from './index';
-import { TableProps, DataItem } from './types';
+import type { TableProps, DataItem } from './types';
 import Storybook from '../Storybook';
 
 // Dummy data

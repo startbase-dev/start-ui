@@ -1,6 +1,6 @@
 import React from 'react';
 import DataTable from './index';
-import { DataTableContextProps, DataItem } from './types';
+import type { DataTableContextProps, DataItem } from './types';
 import DataTableWrapper from './DataTableContext';
 import Storybook from '../Storybook';
 

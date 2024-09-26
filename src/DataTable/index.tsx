@@ -2,7 +2,7 @@ import React from 'react';
 import RCTable, { VirtualTable } from 'rc-table';
 import cx from 'clsx';
 import { ColumnType } from 'rc-table';
-import { DataItem } from './types';
+import type { DataItem } from './types';
 import { useDataTableContext } from './DataTableContext';
 import Pagination from './ui/Pagination';
 import Filter from './ui/Filter';

@@ -17,7 +17,7 @@ import { type ChipProps } from './Chip/types';
 import Col from './Grid/Col';
 import { type ColProps } from './Grid/types';
 import BentoGrid from './BentoGrid';
-import { type BentoGridProps } from './BentoGrid/types';
+import { type BentoGridProps, type BentoItems } from './BentoGrid/types';
 import Grid from './Grid';
 import { type GridProps } from './Grid/types';
 import Countdown from './Countdown';
@@ -132,6 +132,7 @@ export {
   type ColProps,
   BentoGrid,
   type BentoGridProps,
+  type BentoItems,
   Grid,
   type GridProps,
   Countdown,
