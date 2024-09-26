@@ -71,7 +71,7 @@ The Radio component is designed for selecting a single option from a set of mutu
 
 ## Usages
 
-<Tabs items={['Preview', 'Code']}>
+<Tabs items={['Preview', 'Code', 'React Hook Form']}>
   <Tabs.Tab>
     <Preview height="200px">
       <FormOnChange>
@@ -112,11 +112,25 @@ The Radio component is designed for selecting a single option from a set of mutu
     </div>
     ```
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <Radio
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Radio Component Checked
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="200px">
 
@@ -170,11 +184,25 @@ The Radio component is designed for selecting a single option from a set of mutu
     ```
 
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <Radio
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Radio Component Disabled
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="200px">
 
@@ -228,11 +256,25 @@ The Radio component is designed for selecting a single option from a set of mutu
     ```
 
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <Radio
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Radio Component Error
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="200px">
   
@@ -282,6 +324,20 @@ The Radio component is designed for selecting a single option from a set of mutu
     </div>
     ```
 
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <Radio
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
   </Tabs.Tab>
 </Tabs>
 

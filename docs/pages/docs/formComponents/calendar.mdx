@@ -71,18 +71,18 @@ A calendar component that shows date as a picker
 
 ## Usages
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
     <Preview height="500px">
-     
-    <FormOnChange>
-     <Calendar
-        label="Label"
-        name="input"
-    />
-  </FormOnChange>
-   </Preview>
+      <FormOnChange>
+        <Calendar
+          label="Label"
+          name="input"
+        />
+      </FormOnChange>
+    </Preview>
   </Tabs.Tab>
+
   <Tabs.Tab>
     ```jsx copy showLineNumbers
     import Calendar from '@start-base/react-form-elements/Calendar';
@@ -94,7 +94,20 @@ A calendar component that shows date as a picker
       onChange={() => {}}
     />
     ```
-
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+      <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <Calendar
+            value={watch("input")}
+            {...field}
+          />
+        )}
+      />
+    ```
   </Tabs.Tab>
 </Tabs>
 

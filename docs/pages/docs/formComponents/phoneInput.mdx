@@ -72,7 +72,7 @@ The PhoneInput component is designed for accurate and user-friendly phone number
 
 ## Usages
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="200px">
 
@@ -93,11 +93,25 @@ The PhoneInput component is designed for accurate and user-friendly phone number
     ```
 
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <PhoneInput
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Phone Input With Label
 
-<Tabs items={['Preview', 'Code']}>
+<Tabs items={['Preview', 'Code', 'React Hook Form']}>
   <Tabs.Tab>
     <Preview height="200px">
       <FormOnChange>
@@ -110,11 +124,25 @@ The PhoneInput component is designed for accurate and user-friendly phone number
     <PhoneInput label="Label" name="input" onChange={handleChange} />
     ```
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <PhoneInput
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Phone Input With Placeholder
 
-<Tabs items={['Preview', 'Code']}>
+<Tabs items={['Preview', 'Code', 'React Hook Form']}>
   <Tabs.Tab>
     <Preview height="200px">
       <FormOnChange>
@@ -131,11 +159,25 @@ The PhoneInput component is designed for accurate and user-friendly phone number
     />
     ```
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <PhoneInput
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Phone Input With Placeholder And Label
 
-<Tabs items={['Preview', 'Code']}>
+<Tabs items={['Preview', 'Code', 'React Hook Form']}>
   <Tabs.Tab>
     <Preview height="200px">
       <FormOnChange>
@@ -153,11 +195,25 @@ The PhoneInput component is designed for accurate and user-friendly phone number
     />
     ```
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <PhoneInput
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Phone Input With Placeholder And Label And Disable Shrink
 
-<Tabs items={['Preview', 'Code']}>
+<Tabs items={['Preview', 'Code', 'React Hook Form']}>
   <Tabs.Tab>
     <Preview height="200px">
       <FormOnChange>
@@ -181,11 +237,26 @@ The PhoneInput component is designed for accurate and user-friendly phone number
     />
     ```
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <PhoneInput
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
+
 
 ### Phone Input Disabled
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="200px">
   
@@ -210,12 +281,27 @@ The PhoneInput component is designed for accurate and user-friendly phone number
     />
     ```
 
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <PhoneInput
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
   </Tabs.Tab>
 </Tabs>
 
+
 ### Phone Input Prepend
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="200px">
   
@@ -240,12 +326,26 @@ The PhoneInput component is designed for accurate and user-friendly phone number
     />
     ```
 
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <PhoneInput
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
   </Tabs.Tab>
 </Tabs>
 
 ### Phone Input Error
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="200px">
    
@@ -268,6 +368,20 @@ The PhoneInput component is designed for accurate and user-friendly phone number
     />
     ```
 
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <PhoneInput
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
   </Tabs.Tab>
 </Tabs>
 

@@ -70,7 +70,7 @@ The Switch component is designed for toggling between two states, such as "on" a
 
 ## Usages
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="200px">
    
@@ -92,11 +92,25 @@ The Switch component is designed for toggling between two states, such as "on" a
     ```
 
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <Switch
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Switch Component Checked
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="200px">
     
@@ -120,11 +134,25 @@ The Switch component is designed for toggling between two states, such as "on" a
     ```
 
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <Switch
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Switch Component Disabled
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="200px">
     
@@ -147,12 +175,26 @@ The Switch component is designed for toggling between two states, such as "on" a
     />
     ```
 
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <Switch
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
   </Tabs.Tab>
 </Tabs>
 
 ### Switch Component Error
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="200px">
     
@@ -175,6 +217,20 @@ The Switch component is designed for toggling between two states, such as "on" a
     />
     ```
 
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <Switch
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
   </Tabs.Tab>
 </Tabs>
 

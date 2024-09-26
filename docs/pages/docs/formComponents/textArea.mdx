@@ -70,7 +70,7 @@ The TextArea component is designed for multi-line text input, providing users wi
 
 ## Usages
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="200px">
    
@@ -90,11 +90,25 @@ The TextArea component is designed for multi-line text input, providing users wi
     ```
 
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <TextArea
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Text Area Component Label
 
-<Tabs items={['Preview', 'Code']}>
+<Tabs items={['Preview', 'Code', 'React Hook Form']}>
   <Tabs.Tab>
     <Preview height="200px">
       <FormOnChange>
@@ -107,11 +121,25 @@ The TextArea component is designed for multi-line text input, providing users wi
     <TextArea label="TextArea Label" name="input" onChange={handleChange} />
     ```
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <TextArea
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Text Area Component Placeholder
 
-<Tabs items={['Preview', 'Code']}>
+<Tabs items={['Preview', 'Code', 'React Hook Form']}>
   <Tabs.Tab>
     <Preview height="200px">
       <FormOnChange>
@@ -128,11 +156,25 @@ The TextArea component is designed for multi-line text input, providing users wi
     />
     ```
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <TextArea
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Text Area Component Placeholder And Label
 
-<Tabs items={['Preview', 'Code']}>
+<Tabs items={['Preview', 'Code', 'React Hook Form']}>
   <Tabs.Tab>
     <Preview height="200px">
       <FormOnChange>
@@ -154,11 +196,25 @@ The TextArea component is designed for multi-line text input, providing users wi
     />
     ```
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <TextArea
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Text Area Component Resizable
 
-<Tabs items={['Preview', 'Code']}>
+<Tabs items={['Preview', 'Code', 'React Hook Form']}>
   <Tabs.Tab>
     <Preview height="200px">
       <FormOnChange>
@@ -182,11 +238,25 @@ The TextArea component is designed for multi-line text input, providing users wi
     />
     ```
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <TextArea
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Text Area Component Disable Shrink
 
-<Tabs items={['Preview', 'Code']}>
+<Tabs items={['Preview', 'Code', 'React Hook Form']}>
   <Tabs.Tab>
     <Preview height="200px">
       <FormOnChange>
@@ -210,11 +280,25 @@ The TextArea component is designed for multi-line text input, providing users wi
     />
     ```
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <TextArea
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Text Area Component Error
 
-<Tabs items={['Preview', 'Code']}>
+<Tabs items={['Preview', 'Code', 'React Hook Form']}>
   <Tabs.Tab>
     <Preview height="200px">
       <FormOnChange>
@@ -229,6 +313,20 @@ The TextArea component is designed for multi-line text input, providing users wi
       label="TextArea Label"
       name="input"
       onChange={handleChange}
+    />
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <TextArea
+            value={watch("input")}
+            {...field}
+          />
+        )}
     />
     ```
   </Tabs.Tab>

@@ -72,7 +72,7 @@ A Date Picker component with input
 
 ## Usages
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="800px">
   <FormOnChange>
@@ -92,6 +92,20 @@ A Date Picker component with input
     />
     ```
 
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <DatePicker
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
   </Tabs.Tab>
 </Tabs>
 
