@@ -3,16 +3,7 @@ import cx from 'clsx';
 // eslint-disable-next-line css-modules/no-unused-class
 import s from './Card.module.scss';
 import '../style/components/card.scss';
-
-interface CardProps {
-  title?: string | React.ReactNode;
-  description?: string | React.ReactNode;
-  collapsible?: boolean;
-  size?: 'small' | 'medium' | 'large';
-  fluid?: boolean;
-  className?: string;
-  children: React.ReactNode;
-}
+import { CardProps } from './types';
 
 const Card = forwardRef<HTMLDivElement, CardProps>(
   (
