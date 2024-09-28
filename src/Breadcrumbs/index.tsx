@@ -1,15 +1,15 @@
-import React, { Fragment } from "react";
-import cx from "clsx";
-import s from "./Breadcrumbs.module.scss";
-import { BreadcrumbsProps } from "./types";
+import React, { Fragment } from 'react';
+import cx from 'clsx';
+import s from './Breadcrumbs.module.scss';
+import { BreadcrumbsProps } from './types';
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
-  separator = "/",
+  separator = '/',
   data = [],
-  className = "",
-  activeClassName = "",
-  listClassName = "",
-  itemClassName = "",
+  className = '',
+  activeClassName = '',
+  listClassName = '',
+  itemClassName = '',
 }) => {
   return (
     <ul className={cx(s.root, className)}>

@@ -1,26 +1,21 @@
-'use client';
-
 import React from 'react';
 // eslint-disable-next-line css-modules/no-unused-class
 import styles from '../DataTable.module.scss';
-import { useDataTableContext } from '../DataTableContext';
 import Button from '../../Button/index';
+import { PaginationProps } from '../types';
 
-const Pagination = () => {
-  const {
-    currentPage,
-    setCurrentPage,
-    currentRowsPerPage,
-    setCurrentRowsPerPage,
-    rowsPerPageOptions,
-    data,
-  } = useDataTableContext();
-
-  const totalItems = data.length;
-  const totalPages = Math.ceil(totalItems / currentRowsPerPage);
+const Pagination = ({
+  currentPage,
+  setCurrentPage,
+  currentRowsPerPage,
+  setCurrentRowsPerPage,
+  rowsPerPageOptions,
+  dataLength,
+}: PaginationProps) => {
+  const totalPages = Math.ceil(dataLength / currentRowsPerPage);
 
   const startItem = (currentPage - 1) * currentRowsPerPage + 1;
-  const endItem = Math.min(currentPage * currentRowsPerPage, totalItems);
+  const endItem = Math.min(currentPage * currentRowsPerPage, dataLength);
 
   const handleRowsPerPageChange = (
     event: React.ChangeEvent<HTMLSelectElement>
@@ -30,11 +25,11 @@ const Pagination = () => {
   };
 
   const handleNextPage = () => {
-    setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+    setCurrentPage(Math.min(currentPage + 1, totalPages));
   };
 
   const handlePreviousPage = () => {
-    setCurrentPage((prev) => Math.max(prev - 1, 1));
+    setCurrentPage(Math.max(currentPage - 1, 1));
   };
 
   return (
@@ -49,7 +44,7 @@ const Pagination = () => {
               onChange={handleRowsPerPageChange}
               className={styles.rowsPerPageSelect}
             >
-              {rowsPerPageOptions?.map((option) => (
+              {rowsPerPageOptions.map((option) => (
                 <option key={option} value={option}>
                   {option}
                 </option>
@@ -58,7 +53,7 @@ const Pagination = () => {
           </div>
           <div className={styles.paginationInfo}>
             <span>
-              {startItem}–{endItem} of {totalItems}
+              {startItem}–{endItem} of {dataLength}
             </span>
           </div>
         </div>
