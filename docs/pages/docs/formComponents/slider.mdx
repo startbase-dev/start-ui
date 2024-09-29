@@ -69,7 +69,7 @@ A series of interactive headings arranged vertically, each revealing a section o
 
 ## Usages
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="200px">
    <Slider
@@ -93,11 +93,25 @@ A series of interactive headings arranged vertically, each revealing a section o
     ```
 
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <Slider
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Slider Disabled
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="200px">
     <Slider
@@ -123,11 +137,25 @@ A series of interactive headings arranged vertically, each revealing a section o
     ```
 
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <Slider
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Slider Marks
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="200px">
       <Slider
@@ -175,11 +203,25 @@ A series of interactive headings arranged vertically, each revealing a section o
     ```
 
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <Slider
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Slider Marks Vertical
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="400px">
     <Slider
@@ -229,11 +271,25 @@ A series of interactive headings arranged vertically, each revealing a section o
     ```
 
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <Slider
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab> 
 </Tabs>
 
 ### Slider Range Component
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="200px">
    <Slider
@@ -266,12 +322,26 @@ A series of interactive headings arranged vertically, each revealing a section o
     />
     ```
 
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <Slider
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
   </Tabs.Tab>
 </Tabs>
 
 ### Slider Vertical
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="200px">
    <Slider
@@ -298,12 +368,26 @@ A series of interactive headings arranged vertically, each revealing a section o
     />
     ```
 
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <Slider
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
   </Tabs.Tab>
 </Tabs>
 
 ### Slider Error
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="200px">
    <Slider
@@ -328,6 +412,20 @@ A series of interactive headings arranged vertically, each revealing a section o
     />
     ```
 
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <Slider
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
   </Tabs.Tab>
 </Tabs>
 

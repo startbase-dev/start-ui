@@ -72,7 +72,7 @@ The DatePicker component is a user-friendly and customizable calendar input desi
 
 ## Usages
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="800px">
   <FormOnChange>
@@ -92,6 +92,20 @@ The DatePicker component is a user-friendly and customizable calendar input desi
     />
     ```
 
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <DateRangePicker
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
   </Tabs.Tab>
 </Tabs>
 
