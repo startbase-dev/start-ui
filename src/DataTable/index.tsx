@@ -353,3 +353,5 @@ DataTable.displayName = 'DataTable';
 export default DataTable;
 
 export const DataTableGroup = { DataTable, Filter, Checkbox, Pagination };
+
+export { type DataTableProps };
