@@ -71,7 +71,7 @@ The Checkbox Group component provides a user-friendly interface for toggling bet
 
 ## Usages
 
-<Tabs items={['Preview', 'Code', "React Hook Form"]}>
+<Tabs items={['Preview', 'Code', 'React Hook Form']}>
   <Tabs.Tab>
     <Preview height="200px">
       <FormOnChange>
@@ -114,14 +114,11 @@ The Checkbox Group component provides a user-friendly interface for toggling bet
   <Tabs.Tab>
     ```jsx copy showLineNumbers
     <Controller
-        name="input"
-        control={control}
-        render={({ field }) => (
-          <CheckboxGroup
-            value={watch("input")}
-            {...field}
-          />
-        )}
+      name="input"
+      control={control}
+      render={({ field }) => (
+        <CheckboxGroup value={watch('input')} {...field} />
+      )}
     />
     ```
   </Tabs.Tab>
@@ -257,7 +254,7 @@ The Checkbox Group component provides a user-friendly interface for toggling bet
 
 ### Checkbox Group Component Error
 
-<Tabs items={['Preview', 'Code', "React Hook Form"]}>
+<Tabs items={['Preview', 'Code', 'React Hook Form']}>
   <Tabs.Tab>
     <Preview height="200px">
       <FormOnChange>
@@ -302,14 +299,11 @@ The Checkbox Group component provides a user-friendly interface for toggling bet
   <Tabs.Tab>
     ```jsx copy showLineNumbers
     <Controller
-        name="input"
-        control={control}
-        render={({ field }) => (
-          <CheckboxGroup
-            value={watch("input")}
-            {...field}
-          />
-        )}
+      name="input"
+      control={control}
+      render={({ field }) => (
+        <CheckboxGroup value={watch('input')} {...field} />
+      )}
     />
     ```
   </Tabs.Tab>

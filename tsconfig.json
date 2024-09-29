@@ -22,7 +22,7 @@
     "allowUnreachableCode": false, // pick up dead code paths
     "noImplicitAny": true, // In some cases where no type annotations are present, TypeScript will fall back to a type of any for a variable when it cannot infer the type.
     "strictNullChecks": true, // When strictNullChecks is true, null and undefined have their own distinct types and you’ll get a type error if you try to use them where a concrete value is expected.
-
+    "rootDirs": ["src", "docs"],
     // Linter Checks
     "noImplicitReturns": true,
     "noUncheckedIndexedAccess": true, // accessing index must always check for undefined
@@ -31,6 +31,17 @@
     // Report errors on unused parameters in functions
     "jsx": "react"
   },
-  "include": ["./**/*.ts", "./**/*.tsx"],
-  "exclude": ["node_modules/**/*"]
+  "include": [
+    "./css.d.ts",
+    "./typings.d.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./docs/components/**/*.tsx",
+    "./docs/components/**/*.ts",
+    "./docs/pages/**/*.tsx",
+    "./docs/pages/**/*.ts",
+    "./docs/constants/**/*.tsx",
+    "./docs/constants/**/*.ts"
+  ],
+  "exclude": ["node_modules", "docs/node_modules"]
 }

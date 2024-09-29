@@ -191,6 +191,7 @@
     }
   },
   "scripts": {
+    "tsc": "tsc --noEmit ",
     "lint": "eslint . --ext js,jsx,ts,tsx --fix",
     "lint:docs": "eslint . --ext mdx --fix",
     "format": "prettier --write .",
