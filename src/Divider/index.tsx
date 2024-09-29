@@ -56,3 +56,4 @@ const Divider = forwardRef<HTMLDivElement, DividerProps>((props, ref) => {
 Divider.displayName = 'Divider';
 
 export default Divider;
+export { type DividerProps };

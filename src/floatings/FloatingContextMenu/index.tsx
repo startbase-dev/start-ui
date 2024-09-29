@@ -39,7 +39,7 @@ import MenuContext from '../FloatingMenuContext';
 import styles from './FloatingContextMenu.module.scss';
 import cx from 'clsx';
 
-import { FloatingContextMenuProps } from './types';
+import type { FloatingContextMenuProps } from './types';
 
 const FloatingContextMenu = forwardRef<
   HTMLDivElement,

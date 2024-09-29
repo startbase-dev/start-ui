@@ -45,3 +45,5 @@ export default function Col({
     </div>
   );
 }
+
+export { type ColProps };

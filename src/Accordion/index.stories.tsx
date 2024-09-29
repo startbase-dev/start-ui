@@ -1,6 +1,6 @@
 import React from 'react';
 import Accordion from './index';
-import { AccordionTemplateProps } from './types';
+import type { AccordionTemplateProps } from './types';
 import Button from '../Button/index';
 import { useState } from 'react';
 import StoryBook from '../Storybook';

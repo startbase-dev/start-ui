@@ -3,7 +3,7 @@ import cx from 'clsx';
 // eslint-disable-next-line css-modules/no-unused-class
 import s from './Toggle.module.scss';
 import '../style/components/toggle.scss';
-import { ToggleProps } from './types';
+import type { ToggleProps } from './types';
 
 const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
   (
@@ -59,3 +59,4 @@ const Toggle = forwardRef<HTMLButtonElement, ToggleProps>(
 Toggle.displayName = 'Toggle';
 
 export default Toggle;
+export { type ToggleProps };

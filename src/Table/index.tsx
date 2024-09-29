@@ -1,11 +1,9 @@
-'use client';
-
 import React from 'react';
 import cx from 'clsx';
 import RCTable from 'rc-table';
 
 import styles from './Table.module.scss';
-import { TableProps, DataItem } from './types';
+import type { TableProps, DataItem } from './types';
 import { ColumnType } from 'rc-table';
 const Table: React.FC<TableProps> = ({
   data,
@@ -42,3 +40,4 @@ const Table: React.FC<TableProps> = ({
 };
 
 export default Table;
+export { type TableProps };

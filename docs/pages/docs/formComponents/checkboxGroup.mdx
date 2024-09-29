@@ -71,7 +71,7 @@ The Checkbox Group component provides a user-friendly interface for toggling bet
 
 ## Usages
 
-<Tabs items={['Preview', 'Code']}>
+<Tabs items={['Preview', 'Code', "React Hook Form"]}>
   <Tabs.Tab>
     <Preview height="200px">
       <FormOnChange>
@@ -111,11 +111,25 @@ The Checkbox Group component provides a user-friendly interface for toggling bet
     />
     ```
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <CheckboxGroup
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Checkbox Group Component Checked
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="200px">
      <FormOnChange>
@@ -164,11 +178,25 @@ The Checkbox Group component provides a user-friendly interface for toggling bet
     ```
 
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <CheckboxGroup
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Checkbox Group Component Disabled
 
-<Tabs items={["Preview", "Code"]}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="200px">
     <FormOnChange>
@@ -211,11 +239,25 @@ The Checkbox Group component provides a user-friendly interface for toggling bet
     ```
 
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <CheckboxGroup
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Checkbox Group Component Error
 
-<Tabs items={['Preview', 'Code']}>
+<Tabs items={['Preview', 'Code', "React Hook Form"]}>
   <Tabs.Tab>
     <Preview height="200px">
       <FormOnChange>
@@ -254,6 +296,20 @@ The Checkbox Group component provides a user-friendly interface for toggling bet
           value: 'default2',
         },
       ]}
+    />
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <CheckboxGroup
+            value={watch("input")}
+            {...field}
+          />
+        )}
     />
     ```
   </Tabs.Tab>

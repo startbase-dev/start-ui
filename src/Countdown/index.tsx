@@ -4,7 +4,7 @@ import s from './Countdown.module.scss';
 import { getUnitLabel } from './constants';
 import useCountdown from './hooks/useCountdown';
 import clsx from 'clsx';
-import { CountdownProps } from './types';
+import type { CountdownProps } from './types';
 
 const Countdown = forwardRef<HTMLDivElement, CountdownProps>((props, ref) => {
   const {
@@ -111,3 +111,4 @@ const Countdown = forwardRef<HTMLDivElement, CountdownProps>((props, ref) => {
 Countdown.displayName = 'Countdown';
 
 export default Countdown;
+export { type CountdownProps };

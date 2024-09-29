@@ -17,3 +17,4 @@ const Progress = forwardRef<SVGSVGElement, ProgressProps>((props, ref) => {
 Progress.displayName = 'Progress';
 
 export default Progress;
+export { type ProgressProps };

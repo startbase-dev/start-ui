@@ -55,10 +55,13 @@ package-lock.json
 /Chip
 /Col
 /BentoGrid
+/Breadcrumbs
 /Grid
 /Countdown
 /DataTable
 /Divider
+/ContextMenu
+/FloatingMenuItem
 /Dropdown
 /List
 /Popover
@@ -82,6 +85,8 @@ package-lock.json
 /index.mjs
 /index.d.mts
 /index.d.ts
+/variables.d.mts
+/variables.d.ts
 
 *storybook.log
 

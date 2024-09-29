@@ -35,3 +35,4 @@ const Grid = forwardRef<HTMLDivElement, GridProps>((props, ref) => {
 Grid.displayName = 'Grid';
 
 export default Grid;
+export { type GridProps };

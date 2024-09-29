@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import s from './WordAnimation.module.scss';
-import { WordAnimationProps } from './types';
+import type { WordAnimationProps } from './types';
 import clsx from 'clsx';
 
 const WordAnimation: React.FC<WordAnimationProps> = ({
@@ -38,3 +38,4 @@ const WordAnimation: React.FC<WordAnimationProps> = ({
 };
 
 export default WordAnimation;
+export { type WordAnimationProps };

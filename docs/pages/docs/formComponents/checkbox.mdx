@@ -70,7 +70,7 @@ The Checkbox component provides a user-friendly interface for toggling between c
 
 ## Usages
 
-<Tabs items={['Preview', 'Code']}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
     <Preview height="200px">
       <FormOnChange>
@@ -83,11 +83,25 @@ The Checkbox component provides a user-friendly interface for toggling between c
     <Checkbox label="Checkbox" name="default" onChange={handleChange} />
     ```
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <Checkbox
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Checkbox Component Checked
 
-<Tabs items={['Preview', 'Code']}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
     <Preview height="200px">
       <FormOnChange>
@@ -100,11 +114,25 @@ The Checkbox component provides a user-friendly interface for toggling between c
     <Checkbox checked label="Checkbox" name="default" onChange={handleChange} />
     ```
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <Checkbox
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Checkbox Component Disabled
 
-<Tabs items={['Preview', 'Code']}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
     <Preview height="200px">
       <FormOnChange>
@@ -122,11 +150,25 @@ The Checkbox component provides a user-friendly interface for toggling between c
     />
     ```
   </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <Checkbox
+            value={watch("input")}
+            {...field}
+          />
+        )}
+    />
+    ```
+  </Tabs.Tab>
 </Tabs>
 
 ### Checkbox Component Error
 
-<Tabs items={['Preview', 'Code']}>
+<Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
     <Preview height="200px">
       <FormOnChange>
@@ -141,6 +183,20 @@ The Checkbox component provides a user-friendly interface for toggling between c
       label="Checkbox"
       name="default"
       onChange={handleChange}
+    />
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Controller
+        name="input"
+        control={control}
+        render={({ field }) => (
+          <Checkbox
+            value={watch("input")}
+            {...field}
+          />
+        )}
     />
     ```
   </Tabs.Tab>

@@ -3,7 +3,7 @@ import cx from 'clsx';
 // eslint-disable-next-line css-modules/no-unused-class
 import s from './Stepper.module.scss';
 import '../style/components/stepper.scss';
-import {
+import type {
   StepperProps,
   StepProps,
   StepLabelProps,
@@ -209,3 +209,11 @@ export const StepConnector = ({
   );
 };
 StepConnector.displayName = 'StepConnector';
+
+export {
+  type StepperProps,
+  type StepProps,
+  type StepLabelProps,
+  type StepConnectorProps,
+  type StepIconProps,
+};

@@ -16,3 +16,5 @@ export default function Row({
     </div>
   );
 }
+
+export { type RowProps };

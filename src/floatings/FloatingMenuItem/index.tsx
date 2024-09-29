@@ -43,3 +43,4 @@ const FloatingMenuItem = forwardRef<HTMLDivElement, FloatingMenuItemProps>(
 FloatingMenuItem.displayName = 'FloatingMenuItem';
 
 export default FloatingMenuItem;
+export { type FloatingMenuItemProps };

@@ -11,14 +11,14 @@ import '../style/components/toggle-group.scss';
 // eslint-disable-next-line css-modules/no-unused-class
 import s from '../Toggle/Toggle.module.scss';
 
-import { ToggleItemProps, ToggleWrapperProps } from './types';
+import type { ToggleItemProps, ToggleWrapperProps } from './types';
 
 const ToggleGroupContext = createContext<{
   value: string | null;
   onChange: (value: string) => void;
 }>({
   value: null,
-  onChange: () => {},
+  onChange: () => ({}),
 });
 
 export const ToggleWrapper = forwardRef<HTMLDivElement, ToggleWrapperProps>(
@@ -100,3 +100,4 @@ export const ToggleItem = ({
 ToggleItem.displayName = 'ToggleItem';
 
 export const ToggleGroup = { ToggleWrapper, ToggleItem };
+export { type ToggleItemProps, type ToggleWrapperProps };

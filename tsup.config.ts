@@ -1,11 +1,12 @@
-import { sassPlugin, postcssModules } from 'esbuild-sass-plugin';
+import { postcssModules, sassPlugin } from 'esbuild-sass-plugin';
 import { defineConfig } from 'tsup';
 import postcss from 'postcss';
 import fs from 'fs';
 import path from 'path';
 import cssnano from 'cssnano';
+import { Plugin } from 'esbuild';
 
-const renamePlugin = () => ({
+const renamePlugin = (): Plugin => ({
   name: 'rename-plugin',
   setup(build) {
     const write = build.initialOptions.write;
@@ -55,7 +56,7 @@ export default defineConfig({
     '.js': 'jsx',
     '.ts': 'tsx',
   },
-  dts: false,
+  dts: true,
   sourcemap: false,
   clean: false,
   esbuildPlugins: [

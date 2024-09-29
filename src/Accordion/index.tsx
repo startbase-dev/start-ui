@@ -22,3 +22,4 @@ const Accordion = forwardRef<HTMLDivElement, AccordionProps>((props, ref) => {
 Accordion.displayName = 'Accordion';
 
 export default Accordion;
+export { type AccordionProps };

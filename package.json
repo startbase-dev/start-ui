@@ -2,7 +2,7 @@
   "name": "@start-base/start-ui",
   "author": "Start-Base",
   "description": "",
-  "version": "0.0.33-alpha",
+  "version": "0.0.37-alpha",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -16,17 +16,22 @@
     "./index.d.ts",
     "Accordion",
     "Alert",
+    "Avatar",
     "Badge",
+    "BentoCard",
+    "BentoGrid",
+    "Breadcrumbs",
     "Button",
     "Card",
     "Chip",
     "Col",
-    "BentoGrid",
-    "Grid",
+    "ContextMenu",
     "Countdown",
     "DataTable",
     "Divider",
     "Dropdown",
+    "FloatingMenuItem",
+    "Grid",
     "List",
     "Popover",
     "Progress",
@@ -39,9 +44,7 @@
     "Toggle",
     "ToggleGroup",
     "Tooltip",
-    "Typography",
-    "ContextMenu",
-    "FloatingMenuItem"
+    "Typography"
   ],
   "keywords": [
     "ui",
@@ -70,9 +73,25 @@
       "require": "./Alert/index.cjs",
       "import": "./Alert/index.js"
     },
+    "./Avatar": {
+      "require": "./Avatar/index.cjs",
+      "import": "./Avatar/index.js"
+    },
     "./Badge": {
       "require": "./Badge/index.cjs",
       "import": "./Badge/index.js"
+    },
+    "./BentoCard": {
+      "require": "./BentoCard/index.cjs",
+      "import": "./BentoCard/index.js"
+    },
+    "./BentoGrid": {
+      "require": "./BentoGrid/index.cjs",
+      "import": "./BentoGrid/index.js"
+    },
+    "./Breadcrumbs": {
+      "require": "./Breadcrumbs/index.cjs",
+      "import": "./Breadcrumbs/index.js"
     },
     "./Button": {
       "require": "./Button/index.cjs",
@@ -90,13 +109,9 @@
       "require": "./Col/index.cjs",
       "import": "./Col/index.js"
     },
-    "./BentoGrid": {
-      "require": "./BentoGrid/index.cjs",
-      "import": "./BentoGrid/index.js"
-    },
-    "./Grid": {
-      "require": "./Grid/index.cjs",
-      "import": "./Grid/index.js"
+    "./ContextMenu": {
+      "require": "./ContextMenu/index.cjs",
+      "import": "./ContextMenu/index.js"
     },
     "./Countdown": {
       "require": "./Countdown/index.cjs",
@@ -113,6 +128,14 @@
     "./Dropdown": {
       "require": "./Dropdown/index.cjs",
       "import": "./Dropdown/index.js"
+    },
+    "./FloatingMenuItem": {
+      "require": "./FloatingMenuItem/index.cjs",
+      "import": "./FloatingMenuItem/index.js"
+    },
+    "./Grid": {
+      "require": "./Grid/index.cjs",
+      "import": "./Grid/index.js"
     },
     "./List": {
       "require": "./List/index.cjs",
@@ -165,14 +188,6 @@
     "./Typography": {
       "require": "./Typography/index.cjs",
       "import": "./Typography/index.js"
-    },
-    "./ContextMenu": {
-      "require": "./ContextMenu/index.cjs",
-      "import": "./ContextMenu/index.js"
-    },
-    "./FloatingMenuItem": {
-      "require": "./FloatingMenuItem/index.cjs",
-      "import": "./FloatingMenuItem/index.js"
     }
   },
   "scripts": {
@@ -182,26 +197,27 @@
     "stylelint": "stylelint \"src/**/*.scss\" --fix",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build:all": "npm run build && npm run build:variables && npm run build:Accordion && npm run build:ContextMenu && npm run build:FloatingMenuItem && npm run build:Alert && npm run build:Badge && npm run build:BentoCard && npm run build:Button && npm run build:Card && npm run build:Chip && npm run build:Col && npm run build:BentoGrid && npm run build:Grid && npm run build:Countdown && npm run build:DataTable && npm run build:Divider && npm run build:Dropdown && npm run build:List && npm run build:Popover && npm run build:Progress && npm run build:Row && npm run build:ScrollArea && npm run build:Skeleton && npm run build:Stepper && npm run build:Tab && npm run build:Table && npm run build:Toggle && npm run build:ToggleGroup && npm run build:Tooltip && npm run build:Typography && npm run build:Avatar",
-    "build": "tsup --dts --out-dir ./ --no-splitting --treeshake --minify terser",
+    "build:all": "npm run build && npm run build:variables && npm run build:Accordion && npm run build:Breadcrumbs && npm run build:ContextMenu && npm run build:FloatingMenuItem && npm run build:Alert && npm run build:Badge && npm run build:BentoCard && npm run build:Button && npm run build:Card && npm run build:Chip && npm run build:Col && npm run build:BentoGrid && npm run build:Grid && npm run build:Countdown && npm run build:DataTable && npm run build:Divider && npm run build:Dropdown && npm run build:List && npm run build:Popover && npm run build:Progress && npm run build:Row && npm run build:ScrollArea && npm run build:Skeleton && npm run build:Stepper && npm run build:Tab && npm run build:Table && npm run build:Toggle && npm run build:ToggleGroup && npm run build:Tooltip && npm run build:Typography && npm run build:Avatar",
+    "build": "tsup --out-dir ./ --no-splitting --treeshake --minify terser",
     "build:variables": "tsup src/style/variables.scss --out-dir ./ --no-splitting --treeshake --minify terser",
     "build:Accordion": "tsup src/Accordion/index.tsx --out-dir ./Accordion --no-splitting --treeshake --minify terser",
-    "build:Avatar": "tsup src/Avatar/index.tsx --out-dir ./Avatar --no-splitting --treeshake --minify terser",
-    "build:ContextMenu": "tsup src/floatings/ContextMenu/index.tsx --out-dir ./Accordion --no-splitting --treeshake --minify terser",
-    "build:FloatingMenuItem": "tsup src/floatings/FloatingMenuItem/index.tsx --out-dir ./Accordion --no-splitting --treeshake --minify terser",
     "build:Alert": "tsup src/Alert/index.tsx --out-dir ./Alert --no-splitting --treeshake --minify terser",
+    "build:Avatar": "tsup src/Avatar/index.tsx --out-dir ./Avatar --no-splitting --treeshake --minify terser",
     "build:Badge": "tsup src/Badge/index.tsx --out-dir ./Badge --no-splitting --treeshake --minify terser",
     "build:BentoCard": "tsup src/BentoCard/index.tsx --out-dir ./BentoCard --no-splitting --treeshake --minify terser",
+    "build:BentoGrid": "tsup src/BentoGrid/index.tsx --out-dir ./BentoGrid --no-splitting --treeshake --minify terser",
+    "build:Breadcrumbs": "tsup src/Breadcrumbs/index.tsx --out-dir ./Breadcrumbs --no-splitting --treeshake --minify terser",
     "build:Button": "tsup src/Button/index.tsx --out-dir ./Button --no-splitting --treeshake --minify terser",
     "build:Card": "tsup src/Card/index.tsx --out-dir ./Card --no-splitting --treeshake --minify terser",
     "build:Chip": "tsup src/Chip/index.tsx --out-dir ./Chip --no-splitting --treeshake --minify terser",
     "build:Col": "tsup src/Grid/Col/index.tsx --out-dir ./Col --no-splitting --treeshake --minify terser",
-    "build:BentoGrid": "tsup src/BentoGrid/index.tsx --out-dir ./BentoGrid --no-splitting --treeshake --minify terser",
-    "build:Grid": "tsup src/Grid/index.tsx --out-dir ./Grid --no-splitting --treeshake --minify terser",
+    "build:ContextMenu": "tsup src/floatings/ContextMenu/index.tsx --out-dir ./ContextMenu --no-splitting --treeshake --minify terser",
     "build:Countdown": "tsup src/Countdown/index.tsx --out-dir ./Countdown --no-splitting --treeshake --minify terser",
     "build:DataTable": "tsup src/DataTable/index.tsx --out-dir ./DataTable --no-splitting --treeshake --minify terser",
     "build:Divider": "tsup src/Divider/index.tsx --out-dir ./Divider --no-splitting --treeshake --minify terser",
     "build:Dropdown": "tsup src/floatings/Dropdown/index.tsx --out-dir ./Dropdown --no-splitting --treeshake --minify terser",
+    "build:FloatingMenuItem": "tsup src/floatings/FloatingMenuItem/index.tsx --out-dir ./FloatingMenuItem --no-splitting --treeshake --minify terser",
+    "build:Grid": "tsup src/Grid/index.tsx --out-dir ./Grid --no-splitting --treeshake --minify terser",
     "build:List": "tsup src/List/index.tsx --out-dir ./List --no-splitting --treeshake --minify terser",
     "build:Popover": "tsup src/floatings/Popover/index.tsx --out-dir ./Popover --no-splitting --treeshake --minify terser",
     "build:Progress": "tsup src/Progress/index.tsx --out-dir ./Progress --no-splitting --treeshake --minify terser",
@@ -250,8 +266,8 @@
     "@storybook/react": "8.3.0",
     "@storybook/react-webpack5": "8.3.0",
     "@storybook/test": "8.3.0",
-    "@typescript-eslint/eslint-plugin": "8.5.0",
-    "@typescript-eslint/parser": "8.5.0",
+    "@typescript-eslint/eslint-plugin": "8.7.0",
+    "@typescript-eslint/parser": "8.7.0",
     "autoprefixer": "10.4.20",
     "babel-loader": "9.2.1",
     "css-loader": "7.1.2",
@@ -270,10 +286,10 @@
     "mini-css-extract-plugin": "2.9.1",
     "postcss": "8.4.47",
     "postcss-modules": "6.0.0",
-    "postcss-preset-env": "10.0.3",
+    "postcss-preset-env": "10.0.5",
     "prettier": "3.3.3",
-    "sass": "1.78.0",
-    "sass-loader": "16.0.1",
+    "sass": "1.79.3",
+    "sass-loader": "16.0.2",
     "storybook": "8.3.0",
     "storybook-dark-mode": "4.0.2",
     "style-loader": "4.0.0",
@@ -282,13 +298,13 @@
     "stylelint-config-standard-scss": "13.1.0",
     "stylelint-declaration-strict-value": "1.10.6",
     "stylelint-no-unsupported-browser-features": "8.0.1",
-    "stylelint-scss": "6.6.0",
-    "terser": "5.32.0",
+    "stylelint-scss": "6.7.0",
+    "terser": "5.34.0",
     "ts-node": "10.9.2",
-    "tsup": "8.2.4",
+    "tsup": "8.3.0",
     "typescript": "5.5.4",
     "typescript-plugin-css-modules": "5.1.0",
-    "webpack": "5.94.0",
+    "webpack": "5.95.0",
     "webpack-bundle-analyzer": "4.10.2",
     "webpack-cli": "5.1.4"
   },
