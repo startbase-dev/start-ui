@@ -1,24 +1,26 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 // eslint-disable-next-line css-modules/no-unused-class
 import styles from '../DataTable.module.scss';
 import Button from '../../Button/index';
-import { useDataTableContext } from '../DataTableContext';
-import Dropdown from '../../floatings/Dropdown/index';
+import { FilterProps } from '../types';
+import clsx from 'clsx';
 
-const Filter = () => {
-  const {
-    filterValue,
-    setFilterValue,
-    filterOperator,
-    setFilterOperator,
-    filter,
-    columns,
-    data,
-    setHighlightedRows,
-    setCurrentPage,
-  } = useDataTableContext();
-
-  const [selectedColumns, setSelectedColumns] = useState<string[]>([]);
+const Filter = ({
+  columns,
+  data,
+  filterValue,
+  setFilterValue,
+  filterOperator,
+  setFilterOperator,
+  selectedColumns,
+  setSelectedColumns,
+  setHighlightedRows,
+  setCurrentPage,
+}: FilterProps) => {
+  const [isContainerOpen, setIsContainerOpen] = useState(false);
+  const [isColumnDropdownOpen, setIsColumnDropdownOpen] = useState(false);
+  const [debouncedFilterValue, setDebouncedFilterValue] = useState(filterValue);
+  const columnDropdownRef = useRef<HTMLDivElement>(null);
 
   const operatorsRequiringValue = [
     'contains',
@@ -30,134 +32,201 @@ const Filter = () => {
     'is any of',
   ];
 
-  const filteredData = useMemo(() => {
+  useEffect(() => {
     if (
-      !filter ||
-      selectedColumns.length === 0 ||
-      (operatorsRequiringValue.includes(filterOperator as string) &&
-        !filterValue)
+      filterOperator !== 'Operator' &&
+      !operatorsRequiringValue.includes(filterOperator)
     ) {
-      return [];
+      applyFilterOnClick();
+    }
+  }, [filterOperator]);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      if (debouncedFilterValue !== filterValue) {
+        setFilterValue(debouncedFilterValue);
+
+        if (filterOperator !== 'Operator') {
+          applyFilterOnClick();
+        }
+      }
+    }, 500);
+
+    return () => clearTimeout(handler);
+  }, [debouncedFilterValue]);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        columnDropdownRef.current &&
+        !columnDropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsColumnDropdownOpen(false);
+      }
+    };
+
+    if (isColumnDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
     }
 
-    return data.filter((item) => {
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isColumnDropdownOpen]);
+
+  const applyFilterOnClick = () => {
+    if (filterOperator === 'Operator' || selectedColumns.length === 0) {
+      setHighlightedRows([]);
+      return;
+    }
+
+    const searchValue = debouncedFilterValue?.toLowerCase().trim();
+
+    const filteredData = data.filter((item) => {
       return selectedColumns.some((colKey) => {
         const columnValue = item[colKey]?.toString().toLowerCase().trim() ?? '';
-        const searchValue = (filterValue ?? '').toLowerCase().trim();
 
         switch (filterOperator) {
           case 'contains':
+            if (!searchValue) return false;
             return columnValue.includes(searchValue);
           case 'does not contain':
+            if (!searchValue) return false;
             return !columnValue.includes(searchValue);
           case 'equals':
+            if (!searchValue) return false;
             return columnValue === searchValue;
           case 'does not equal':
+            if (!searchValue) return false;
             return columnValue !== searchValue;
           case 'starts with':
+            if (!searchValue) return false;
             return columnValue.startsWith(searchValue);
           case 'ends with':
+            if (!searchValue) return false;
             return columnValue.endsWith(searchValue);
           case 'is empty':
             return !columnValue;
           case 'is not empty':
             return !!columnValue;
           case 'is any of':
+            if (!searchValue) return false;
             return searchValue
               .split(',')
               .map((s) => s.trim())
               .includes(columnValue);
           default:
-            return true;
+            return false;
         }
       });
     });
-  }, [data, filter, selectedColumns, filterValue, filterOperator]);
 
-  const applyFilterOnClick = () => {
     if (filteredData.length > 0) {
-      const highlightedRowIndices = filteredData.map((item) =>
-        data.indexOf(item)
-      );
-
-      setHighlightedRows(highlightedRowIndices);
+      const highlightedRowKeys = filteredData.map((item) => item.key);
+      setHighlightedRows(highlightedRowKeys);
     } else {
       setHighlightedRows([]);
     }
-
     setCurrentPage(1);
   };
 
-  const requiresValue = operatorsRequiringValue;
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setDebouncedFilterValue(e.target.value);
+  };
 
   return (
-    <Dropdown
-      label="Filter"
-      className={styles.filterButton}
-      placement="bottom-end"
-    >
-      <div className={styles.filterContentInner}>
-        {/* Column Selection Checkboxes */}
-        <Dropdown label="Columns" menuClassName={styles.columnSelect}>
-          {columns.map((col) => (
-            <label key={col.key}>
-              <input
-                type="checkbox"
-                value={col.key?.toString()}
-                checked={selectedColumns.includes(col.key?.toString() ?? '')}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  setSelectedColumns((prev) =>
-                    e.target.checked
-                      ? [...prev, value]
-                      : prev.filter((colKey) => colKey !== value)
-                  );
-                }}
-              />
-              {col.title}
-            </label>
-          ))}
-        </Dropdown>
+    <div className={styles.filterContainer}>
+      <div
+        className={clsx(
+          styles.filterPanel,
+          isContainerOpen ? styles.openPanel : styles.closePanel
+        )}
+      >
+        <Button
+          size="small"
+          variant="link"
+          onClick={() => setIsColumnDropdownOpen(!isColumnDropdownOpen)}
+        >
+          Columns
+        </Button>
+        {isColumnDropdownOpen && (
+          <div className={styles.columnSelect} ref={columnDropdownRef}>
+            {columns.map((col) => (
+              <label key={col.key}>
+                <input
+                  type="checkbox"
+                  value={col.key?.toString()}
+                  checked={selectedColumns.includes(col.key?.toString() ?? '')}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setSelectedColumns((prev) =>
+                      e.target.checked
+                        ? [...prev, value]
+                        : prev.filter((colKey) => colKey !== value)
+                    );
+                  }}
+                />
+                {col.title}
+              </label>
+            ))}
+          </div>
+        )}
 
         <select
           value={filterOperator}
-          onChange={(e) => setFilterOperator?.(e.target.value)}
-          className={styles.filterDropdown}
+          onChange={(e) => setFilterOperator(e.target.value)}
+          className={styles.filterOperatorDropdown}
         >
+          <option disabled value="Operator">
+            Operator
+          </option>
           {filterOperators.map((operator) => (
             <option key={operator} value={operator}>
               {operator}
             </option>
           ))}
         </select>
+
         <input
           type="text"
-          value={filterValue}
-          onChange={(e) => setFilterValue?.(e.target.value)}
+          value={debouncedFilterValue}
+          onChange={handleInputChange}
           placeholder={
-            requiresValue.includes(filterOperator as string)
-              ? 'Type value'
-              : 'Not needed'
+            filterOperator === 'Operator'
+              ? 'Select operator first'
+              : operatorsRequiringValue.includes(filterOperator)
+                ? 'Type value'
+                : 'Not needed'
           }
           className={styles.filterInput}
-          disabled={!requiresValue.includes(filterOperator as string)}
-        />
-        <Button
-          size="small"
-          onClick={applyFilterOnClick}
           disabled={
-            selectedColumns.length === 0 ||
-            (requiresValue.includes(filterOperator as string) && !filterValue)
+            !operatorsRequiringValue.includes(filterOperator) ||
+            filterOperator === 'Operator'
           }
-        >
-          Apply
-        </Button>
+        />
       </div>
-    </Dropdown>
+
+      <Button
+        size="icon"
+        variant="link"
+        className={styles.filterIconButton}
+        onClick={() => setIsContainerOpen(!isContainerOpen)}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="#000"
+          viewBox="0 0 256 256"
+        >
+          <path d="M200,136a8,8,0,0,1-8,8H64a8,8,0,0,1,0-16H192A8,8,0,0,1,200,136Zm32-56H24a8,8,0,0,0,0,16H232a8,8,0,0,0,0-16Zm-80,96H104a8,8,0,0,0,0,16h48a8,8,0,0,0,0-16Z"></path>
+        </svg>
+      </Button>
+    </div>
   );
 };
-
-export default Filter;
 
 const filterOperators = [
   'contains',
@@ -170,3 +239,5 @@ const filterOperators = [
   'is not empty',
   'is any of',
 ];
+
+export default Filter;

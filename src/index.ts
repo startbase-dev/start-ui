@@ -23,6 +23,7 @@ import { type GridProps } from './Grid/types';
 import Countdown from './Countdown';
 import { type CountdownProps } from './Countdown/types';
 import DataTable from './DataTable';
+import { type DataTableProps } from './DataTable/types';
 import Divider from './Divider';
 import { type DividerProps } from './Divider/types';
 import {
@@ -138,6 +139,7 @@ export {
   Countdown,
   type CountdownProps,
   DataTable,
+  type DataTableProps,
   Divider,
   type DividerProps,
   Dropdown,

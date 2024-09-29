@@ -1,4 +1,4 @@
-import { CSSProperties, Dispatch, ReactNode, SetStateAction, Key } from 'react';
+import { Key } from 'react';
 import { ColumnType } from 'rc-table';
 
 export interface DataItem {
@@ -8,44 +8,59 @@ export interface DataItem {
 
 export interface CheckboxProps {
   checked: boolean;
-  indeterminate?: boolean;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  indeterminate?: boolean;
 }
 
-export interface DataTableContextProps {
-  children: ReactNode;
-  currentPage: number;
-  setCurrentPage: Dispatch<SetStateAction<number>>;
-  currentRowsPerPage: number;
-  setCurrentRowsPerPage: Dispatch<SetStateAction<number>>;
-  selectedRows: number[];
-  setSelectedRows: Dispatch<SetStateAction<number[]>>;
-  highlightedRows: number[];
-  setHighlightedRows: Dispatch<SetStateAction<number[]>>;
-  filterColumn?: string;
-  setFilterColumn?: Dispatch<SetStateAction<string>>;
-  filterOperator?: string;
-  setFilterOperator?: Dispatch<SetStateAction<string>>;
-  filterValue?: string;
-  setFilterValue?: Dispatch<SetStateAction<string>>;
-  rowsPerPageOptions?: number[];
-  setRowsPerPageOptions?: (options: number[]) => void;
+export interface DataTableProps {
   data: DataItem[];
-  setData: (data: DataItem[]) => void;
-  border?: boolean;
   columns: ColumnType<DataItem>[];
-  rowClassName?: string;
-  emptyText?: string | ReactNode;
-  summary?: (data: readonly DataItem[]) => ReactNode;
-  style?: CSSProperties;
-  pagination?: boolean;
   rowsPerPage?: number;
-  totalItemCount?: boolean;
+  pagination?: boolean;
+  rowsPerPageOptions?: number[];
+  border?: boolean;
   rowSelect?: boolean;
-  rowSelectAction?: (selectedRows: number[]) => void;
+  rowSelectAction?: (selectedRows: (string | number)[]) => void;
   checkboxAvailable?: boolean;
-  title?: ReactNode | string;
+  title?: React.ReactNode | string;
   filter?: boolean;
-  setColumns: Dispatch<SetStateAction<ColumnType<DataItem>[]>>;
-  virtualized: boolean;
+  virtualized?: boolean;
+  emptyText?: React.ReactNode;
+  rowClassName?: string;
+  maxHeight?: number;
+  minHeight?: number;
+  sorting?: boolean;
 }
+
+export interface FilterProps {
+  columns: ColumnType<DataItem>[];
+  data: DataItem[];
+  filterValue: string;
+  setFilterValue: (value: string) => void;
+  filterOperator: string;
+  setFilterOperator: (value: string) => void;
+  selectedColumns: string[];
+  setSelectedColumns: React.Dispatch<React.SetStateAction<string[]>>;
+  setHighlightedRows: (rows: (Key | undefined)[]) => void;
+  setCurrentPage: (page: number) => void;
+}
+
+export interface PaginationProps {
+  currentPage: number;
+  setCurrentPage: (page: number) => void;
+  currentRowsPerPage: number;
+  setCurrentRowsPerPage: (rowsPerPage: number) => void;
+  rowsPerPageOptions: number[];
+  dataLength: number;
+}
+
+export interface SortingProps {
+  column: ColumnType<DataItem>;
+  sortColumn: string | null;
+  sortOrder: SortOrder;
+  setSortColumn: (columnKey: string | null) => void;
+  setSortOrder: (order: SortOrder) => void;
+  showIcon: boolean;
+}
+
+export type SortOrder = 'ascend' | 'descend' | null;

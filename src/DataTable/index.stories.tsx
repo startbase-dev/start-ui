@@ -1,7 +1,6 @@
 import React from 'react';
 import DataTable from './index';
-import type { DataTableContextProps, DataItem } from './types';
-import DataTableWrapper from './DataTableContext';
+import { DataItem, DataTableProps } from './types';
 import Storybook from '../Storybook';
 
 const dummyData: DataItem[] = [
@@ -47,12 +46,10 @@ const dummyColumns = [
   },
 ];
 
-const Template = (args: DataTableContextProps) => {
+const Template = (args: DataTableProps) => {
   return (
     <Storybook title="Table Component">
-      <DataTableWrapper {...args}>
-        <DataTable />
-      </DataTableWrapper>
+      <DataTable {...args} />
     </Storybook>
   );
 };
@@ -146,20 +143,36 @@ TableWithFilter.args = {
   pagination: false,
 };
 
+export const TableWithSorting = Template.bind({});
+TableWithSorting.args = {
+  data: dummyData,
+  columns: dummyColumns,
+  filter: true,
+  pagination: false,
+  sorting: true,
+};
+
 const Component = {
   title: 'UI/DataTable',
   component: DataTable,
   argTypes: {
     data: { control: 'object' },
     columns: { control: 'object' },
-    border: { control: 'boolean' },
-    pagination: { control: 'boolean' },
     rowsPerPage: { control: 'number' },
     rowsPerPageOptions: { control: 'array' },
+    pagination: { control: 'boolean' },
+    border: { control: 'boolean' },
     rowSelect: { control: 'boolean' },
+    rowSelectAction: { control: 'function' },
     checkboxAvailable: { control: 'boolean' },
     title: { control: 'text' },
     filter: { control: 'boolean' },
+    sorting: { control: 'boolean' },
+    virtualized: { control: 'boolean' },
+    emptyText: { control: 'text' },
+    rowClassName: { control: 'text' },
+    maxHeight: { control: 'number' },
+    minHeight: { control: 'number' },
   },
 };
 

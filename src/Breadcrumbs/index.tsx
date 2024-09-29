@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import cx from 'clsx';
 import s from './Breadcrumbs.module.scss';
-import type { BreadcrumbsProps } from './types';
+import { BreadcrumbsProps } from './types';
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
   separator = '/',
