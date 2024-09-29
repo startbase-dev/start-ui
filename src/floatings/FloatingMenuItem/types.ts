@@ -1,8 +1,5 @@
-import type { AllHTMLAttributes } from 'react';
-
-export interface FloatingMenuItemProps
-  extends AllHTMLAttributes<HTMLDivElement> {
-  label: string;
+export interface FloatingMenuItemProps {
+  label: string | React.ReactNode;
   className?: string;
   disabled?: boolean;
   onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;

@@ -19,3 +19,13 @@
     background: var(--sui-floating-menu-item-active);
   }
 }
+
+.disabled {
+  background: var(--sui-floating-menu-item-disabled);
+  cursor: not-allowed;
+
+  &:hover,
+  &:focus {
+    background: var(--sui-floating-menu-item-disabled);
+  }
+}

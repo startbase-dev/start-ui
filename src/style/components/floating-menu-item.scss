@@ -2,9 +2,11 @@
 :root,
 [data-theme='light'] {
   --sui-floating-menu-item-active: var(--sui-gray-200);
+  --sui-floating-menu-item-disabled: var(--sui-gray-100);
 }
 
 .dark,
 [data-theme='dark'] {
   --sui-floating-menu-item-active: var(--sui-gray-700);
+  --sui-floating-menu-item-disabled: var(--sui-gray-600);
 }
