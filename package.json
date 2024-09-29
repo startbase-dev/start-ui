@@ -2,7 +2,7 @@
   "name": "@start-base/start-ui",
   "author": "Start-Base",
   "description": "",
-  "version": "0.0.36-alpha",
+  "version": "0.0.37-alpha",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -16,18 +16,22 @@
     "./index.d.ts",
     "Accordion",
     "Alert",
+    "Avatar",
     "Badge",
+    "BentoCard",
+    "BentoGrid",
+    "Breadcrumbs",
     "Button",
     "Card",
     "Chip",
     "Col",
-    "BentoGrid",
-    "Grid",
+    "ContextMenu",
     "Countdown",
-    "Breadcrumbs",
     "DataTable",
     "Divider",
     "Dropdown",
+    "FloatingMenuItem",
+    "Grid",
     "List",
     "Popover",
     "Progress",
@@ -40,9 +44,7 @@
     "Toggle",
     "ToggleGroup",
     "Tooltip",
-    "Typography",
-    "ContextMenu",
-    "FloatingMenuItem"
+    "Typography"
   ],
   "keywords": [
     "ui",
@@ -71,17 +73,29 @@
       "require": "./Alert/index.cjs",
       "import": "./Alert/index.js"
     },
+    "./Avatar": {
+      "require": "./Avatar/index.cjs",
+      "import": "./Avatar/index.js"
+    },
     "./Badge": {
       "require": "./Badge/index.cjs",
       "import": "./Badge/index.js"
     },
-    "./Button": {
-      "require": "./Button/index.cjs",
-      "import": "./Button/index.js"
+    "./BentoCard": {
+      "require": "./BentoCard/index.cjs",
+      "import": "./BentoCard/index.js"
+    },
+    "./BentoGrid": {
+      "require": "./BentoGrid/index.cjs",
+      "import": "./BentoGrid/index.js"
     },
     "./Breadcrumbs": {
       "require": "./Breadcrumbs/index.cjs",
       "import": "./Breadcrumbs/index.js"
+    },
+    "./Button": {
+      "require": "./Button/index.cjs",
+      "import": "./Button/index.js"
     },
     "./Card": {
       "require": "./Card/index.cjs",
@@ -95,13 +109,9 @@
       "require": "./Col/index.cjs",
       "import": "./Col/index.js"
     },
-    "./BentoGrid": {
-      "require": "./BentoGrid/index.cjs",
-      "import": "./BentoGrid/index.js"
-    },
-    "./Grid": {
-      "require": "./Grid/index.cjs",
-      "import": "./Grid/index.js"
+    "./ContextMenu": {
+      "require": "./ContextMenu/index.cjs",
+      "import": "./ContextMenu/index.js"
     },
     "./Countdown": {
       "require": "./Countdown/index.cjs",
@@ -118,6 +128,14 @@
     "./Dropdown": {
       "require": "./Dropdown/index.cjs",
       "import": "./Dropdown/index.js"
+    },
+    "./FloatingMenuItem": {
+      "require": "./FloatingMenuItem/index.cjs",
+      "import": "./FloatingMenuItem/index.js"
+    },
+    "./Grid": {
+      "require": "./Grid/index.cjs",
+      "import": "./Grid/index.js"
     },
     "./List": {
       "require": "./List/index.cjs",
@@ -170,14 +188,6 @@
     "./Typography": {
       "require": "./Typography/index.cjs",
       "import": "./Typography/index.js"
-    },
-    "./ContextMenu": {
-      "require": "./ContextMenu/index.cjs",
-      "import": "./ContextMenu/index.js"
-    },
-    "./FloatingMenuItem": {
-      "require": "./FloatingMenuItem/index.cjs",
-      "import": "./FloatingMenuItem/index.js"
     }
   },
   "scripts": {
@@ -191,23 +201,23 @@
     "build": "tsup --out-dir ./ --no-splitting --treeshake --minify terser",
     "build:variables": "tsup src/style/variables.scss --out-dir ./ --no-splitting --treeshake --minify terser",
     "build:Accordion": "tsup src/Accordion/index.tsx --out-dir ./Accordion --no-splitting --treeshake --minify terser",
-    "build:Avatar": "tsup src/Avatar/index.tsx --out-dir ./Avatar --no-splitting --treeshake --minify terser",
-    "build:ContextMenu": "tsup src/floatings/ContextMenu/index.tsx --out-dir ./Accordion --no-splitting --treeshake --minify terser",
-    "build:FloatingMenuItem": "tsup src/floatings/FloatingMenuItem/index.tsx --out-dir ./Accordion --no-splitting --treeshake --minify terser",
     "build:Alert": "tsup src/Alert/index.tsx --out-dir ./Alert --no-splitting --treeshake --minify terser",
+    "build:Avatar": "tsup src/Avatar/index.tsx --out-dir ./Avatar --no-splitting --treeshake --minify terser",
     "build:Badge": "tsup src/Badge/index.tsx --out-dir ./Badge --no-splitting --treeshake --minify terser",
     "build:BentoCard": "tsup src/BentoCard/index.tsx --out-dir ./BentoCard --no-splitting --treeshake --minify terser",
-    "build:Button": "tsup src/Button/index.tsx --out-dir ./Button --no-splitting --treeshake --minify terser",
+    "build:BentoGrid": "tsup src/BentoGrid/index.tsx --out-dir ./BentoGrid --no-splitting --treeshake --minify terser",
     "build:Breadcrumbs": "tsup src/Breadcrumbs/index.tsx --out-dir ./Breadcrumbs --no-splitting --treeshake --minify terser",
+    "build:Button": "tsup src/Button/index.tsx --out-dir ./Button --no-splitting --treeshake --minify terser",
     "build:Card": "tsup src/Card/index.tsx --out-dir ./Card --no-splitting --treeshake --minify terser",
     "build:Chip": "tsup src/Chip/index.tsx --out-dir ./Chip --no-splitting --treeshake --minify terser",
     "build:Col": "tsup src/Grid/Col/index.tsx --out-dir ./Col --no-splitting --treeshake --minify terser",
-    "build:BentoGrid": "tsup src/BentoGrid/index.tsx --out-dir ./BentoGrid --no-splitting --treeshake --minify terser",
-    "build:Grid": "tsup src/Grid/index.tsx --out-dir ./Grid --no-splitting --treeshake --minify terser",
+    "build:ContextMenu": "tsup src/floatings/ContextMenu/index.tsx --out-dir ./ContextMenu --no-splitting --treeshake --minify terser",
     "build:Countdown": "tsup src/Countdown/index.tsx --out-dir ./Countdown --no-splitting --treeshake --minify terser",
     "build:DataTable": "tsup src/DataTable/index.tsx --out-dir ./DataTable --no-splitting --treeshake --minify terser",
     "build:Divider": "tsup src/Divider/index.tsx --out-dir ./Divider --no-splitting --treeshake --minify terser",
     "build:Dropdown": "tsup src/floatings/Dropdown/index.tsx --out-dir ./Dropdown --no-splitting --treeshake --minify terser",
+    "build:FloatingMenuItem": "tsup src/floatings/FloatingMenuItem/index.tsx --out-dir ./FloatingMenuItem --no-splitting --treeshake --minify terser",
+    "build:Grid": "tsup src/Grid/index.tsx --out-dir ./Grid --no-splitting --treeshake --minify terser",
     "build:List": "tsup src/List/index.tsx --out-dir ./List --no-splitting --treeshake --minify terser",
     "build:Popover": "tsup src/floatings/Popover/index.tsx --out-dir ./Popover --no-splitting --treeshake --minify terser",
     "build:Progress": "tsup src/Progress/index.tsx --out-dir ./Progress --no-splitting --treeshake --minify terser",
