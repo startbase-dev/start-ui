@@ -1,6 +1,308 @@
+import { Tabs } from 'nextra/components';
+import Preview from '@components/Preview/Preview';
+import { Modal, GlobalModals, useModal } from '@start-base/react-modal';
+import { useState } from 'react';
+
+export const ModalExample = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div>
+      <button onClick={() => setIsOpen(true)}>Open Modal</button>
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={() => setIsOpen(false)}
+      >
+        <h1>Hello World</h1>
+      </Modal>
+    </div>
+  );
+}
+
+export const GlobalModalExample = () => {
+  const { openModal, closeModal } = useModal();
+  const modalStyles = {
+    "modal-1": { width: "500px", height: "500px" },
+    "modal-2": { width: "400px", height: "400px" },
+    "modal-3": { width: "300px", height: "300px" },
+    "modal-4": { width: "200px", height: "200px" },
+  }
+  return (
+    <GlobalModals>
+      {Object.keys(modalStyles).map((key) => (
+        <Modal
+          key={key}
+          name={key}
+          style={{ content: modalStyles[key] }}
+          isOpen={false}
+        >
+          global {key}
+          <button onClick={() => closeModal(key)}>close {key}</button>
+          {key !== "modal-4" && (
+            <button
+              onClick={() =>
+                openModal(`modal-${parseInt(key.split("-")[1], 10) + 1}`)
+              }
+            >
+              open modal-{parseInt(key.split("-")[1], 10) + 1}
+            </button>
+          )}
+        </Modal>
+      ))}
+    </GlobalModals>
+  )
+}
+
 # Modal
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+Accessible modal dialog component and global modals provider for React. This package is an enhanced version of [react-modal](https://github.com/reactjs/react-modal).
 
-import { Tabs } from 'nextra/components';
-import s from '../../index.module.css';
+## Features
+
+- React Portal
+- Global Modals Providers
+- Hooks to control modals
+- Accessibility
+
+## Installation
+
+<Tabs items={["npm", "yarn"]}>
+  <Tabs.Tab>
+    ```bash copy showLineNumbers
+      npm install @start-base/react-modal
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```bash copy showLineNumbers
+      yarn add @start-base/react-modal
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## Usage
+
+The primary documentation for Modal component is the [react-modal](https://reactjs.github.io/react-modal), which describes the API and gives examples of its usage.
+
+Next.js example can show all the features and how to use them.
+
+To style the modal, you can utilize the `className` and `overlayClassName` props. When it comes to Next.js client-side rendering, you can re-export components with a comment indicating the use of the `use client` approach.
+
+```tsx copy showLineNumbers
+'use client';
+import {
+  Modal as ReactModal,
+  GlobalModals,
+  ModalProvider,
+  useModal,
+} from '@start-base/react-modal';
+
+import styles from './Modal.module.css';
+
+const Modal = ({ ...props }) => (
+  <ReactModal
+    appElement="html"
+    {...props}
+    className={styles.modal}
+    overlayClassName={styles.overlay}
+  />
+);
+
+export { Modal, GlobalModals, ModalProvider, useModal };
+```
+
+## Components
+
+### `<Modal />`
+
+The `Modal` component is a local modal that is self contained. Its state can be managed from its parent component.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="200px">
+      <ModalExample />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```tsx copy showLineNumbers
+    import { Modal } from '@start-base/react-modal';
+    import { useState } from 'react';
+
+    function ModalExample() {
+      const [isOpen, setIsOpen] = useState(false);
+
+      return (
+        <div>
+          <button onClick={() => setIsOpen(true)}>Open Modal</button>
+          <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
+            <h1>Hello World</h1>
+          </Modal>
+        </div>
+      );
+    }
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### `<GlobalModals />`
+
+The `GlobalModals` component is a wrapper for `<Modal />` components that allows you to manage your modals globally. This method allows you to open and close modals from anywhere in your application. It is meant to be used in conjunction with the `useModal` hook.
+
+Since the state of the modals inside `GlobalModals` is managed globally, each requires a unique identifier for the hook to manage its state. This unique identifier is passed as the `name` prop.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="200px">
+      <GlobalModalExample />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```tsx copy showLineNumbers
+    import { GlobalModals, Modal, useModal } from '@start-base/react-modal';
+    import { CSSProperties } from 'react';
+
+    function GlobalModalExample() {
+      const { openModal, closeModal } = useModal();
+
+      const modalStyles: Record<string, CSSProperties> = {
+        "modal-1": { width: "500px", height: "500px" },
+        "modal-2": { width: "400px", height: "400px" },
+        "modal-3": { width: "300px", height: "300px" },
+        "modal-4": { width: "200px", height: "200px" },
+      };
+
+      return (
+        <GlobalModals>
+          {Object.keys(modalStyles).map((key) => (
+            <Modal
+              key={key}
+              name={key}
+              style={{ content: modalStyles[key] }}
+              isOpen={false}
+            >
+              global {key}
+              <button onClick={() => closeModal(key)}>close {key}</button>
+              {key !== "modal-4" && (
+                <button
+                  onClick={() =>
+                    openModal(`modal-${parseInt(key.split("-")[1], 10) + 1}`)
+                  }
+                >
+                  open modal-{parseInt(key.split("-")[1], 10) + 1}
+                </button>
+              )}
+            </Modal>
+          ))}
+        </GlobalModals>
+      );
+    }
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+This example creates a series of modals wrapped in `GlobalModals` that can be opened and closed from anywhere in the application. But, for this to work, we need `ModalProvider` to be set up in our application.
+
+## Providers
+
+### `<ModalProvider />`
+
+The `ModalProvider` component is a wrapper for `GlobalModals` that allows you to manage your modals globally. This method allows you to open and close modals from anywhere in your application.
+
+```jsx copy showLineNumbers
+import { Inter } from 'next/font/google';
+import { ModalProvider } from '@start-base/react-modal';
+import Modals from '@/components/Modals';
+
+const inter = Inter({ subsets: ['latin'] });
+
+export const metadata = {
+  title: 'Create Next App',
+  description: 'Generated by create next app',
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>
+        <ModalProvider>
+          {children}
+          <Modals />
+        </ModalProvider>
+      </body>
+    </html>
+  );
+}
+```
+
+Now any button that triggers `openModal`, which comes with `useModal` hook, can be used to open the modals.
+
+## Hooks
+
+### `useModal`
+
+The `useModal` hook is a simple custom hook that provides a way to manage the state of a global modal. It is used in conjunction with `GlobalModals` to open and close modals. The string passed to `openModal` or `closeModal` should match the `name` prop of the modal you want to open or close.
+
+```jsx copy showLineNumbers
+import { useModal } from '@start-base/react-modal';
+
+const { openModal, closeModal } = useModal();
+
+<button onClick={() => openModal('modal-1')}>Open modal-1</button>
+<button onClick={() => closeModal('modal-1')}>Close modal-1</button>
+```
+
+## Styling and Animation
+
+As mentioned in the usage section, you can style the modal using the `className` and `overlayClassName` props. For closing animations, you can use `closeTimeoutMS` prop to delay the closing of the modal.
+
+The following is an example of custom styling and animation.
+
+```css copy showLineNumbers
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  padding: 2rem;
+  overflow: auto;
+  outline: none;
+  border-radius: 10px;
+  background-color: var(--black);
+  box-shadow:
+    0 1px 5px rgba(0, 0, 0, 0.2),
+    0 1px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  color: var(--white);
+  opacity: 0;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+  @media (max-width: 768px) {
+    max-width: 90%;
+  }
+}
+
+.modal[class~='ReactModal__Content--after-open'] {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal[class~='ReactModal__Content--before-close'] {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease;
+}
+
+.overlay[class~='ReactModal__Overlay--after-open'] {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.overlay[class~='ReactModal__Overlay--before-close'] {
+  background-color: rgba(0, 0, 0, 0);
+}
+```
