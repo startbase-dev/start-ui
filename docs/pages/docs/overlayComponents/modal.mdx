@@ -1,6 +1,151 @@
+import { Tabs } from 'nextra/components';
+import Preview from '@components/Preview/Preview';
+
 # Modal
 
-A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+Accessible modal dialog component and global modals provider for React. This package is an enhanced version of [react-modal](https://github.com/reactjs/react-modal).
 
-import { Tabs } from 'nextra/components';
-import s from '../../index.module.css';
+## Features
+
+- React Portal
+- Global Modals Providers
+- Hooks to control modals
+- Accessibility
+
+## Installation
+
+<Tabs items={["npm", "yarn"]}>
+  <Tabs.Tab>
+    ```bash copy showLineNumbers
+      npm install @start-base/react-modal
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```bash copy showLineNumbers
+      yarn add @start-base/react-modal
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## Components
+
+### `<Modal />`
+
+The `Modal` component is a local modal that is self contained. Its state can be managed from its parent component.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="200px">
+      <ModalExample />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    import { Modal } from '@start-base/react-modal';
+    import { useState } from 'react';
+
+    function ModalExample() {
+      const [isOpen, setIsOpen] = useState(false);
+
+      return (
+        <div>
+          <button onClick={() => setIsOpen(true)}>Open Modal</button>
+          <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
+            <h1>Hello World</h1>
+          </Modal>
+        </div>
+      );
+    }
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### `<GlobalModals />`
+
+The `GlobalModals` component is a wrapper for `<Modal />` components that allows you to manage your modals globally. This method allows you to open and close modals from anywhere in your application. It is meant to be used in conjunction with the `useModal` hook.
+
+Since the state of the modals inside `GlobalModals` is managed globally, each requires a unique identifier for the hook to manage its state. This unique identifier is passed as the `name` prop.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview height="200px">
+      <GlobalModalExample />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    import { GlobalModals, Modal, useModal } from '@start-base/react-modal';
+    import { CSSProperties } from 'react';
+
+    function GlobalModalExample() {
+      const { openModal, closeModal } = useModal();
+
+      const modalStyles: Record<string, CSSProperties> = {
+        "modal-1": { width: "500px", height: "500px" },
+        "modal-2": { width: "400px", height: "400px" },
+        "modal-3": { width: "300px", height: "300px" },
+        "modal-4": { width: "200px", height: "200px" },
+      };
+
+      return (
+        <GlobalModals>
+          {Object.keys(modalStyles).map((key) => (
+            <Modal
+              key={key}
+              name={key}
+              style={{ content: modalStyles[key] }}
+              isOpen={false}
+            >
+              global {key}
+              <button onClick={() => closeModal(key)}>close {key}</button>
+              {key !== "modal-4" && (
+                <button
+                  onClick={() =>
+                    openModal(`modal-${parseInt(key.split("-")[1], 10) + 1}`)
+                  }
+                >
+                  open modal-{parseInt(key.split("-")[1], 10) + 1}
+                </button>
+              )}
+            </Modal>
+          ))}
+        </GlobalModals>
+      );
+    }
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+This example creates a series of modals wrapped in `GlobalModals` that can be opened and closed from anywhere in the application. But, for this to work, we need `ModalProvider` to be set up in our application.
+
+### `<ModalProvider />`
+
+The `ModalProvider` component is a wrapper for `GlobalModals` that allows you to manage your modals globally. This method allows you to open and close modals from anywhere in your application.
+
+```jsx copy showLineNumbers
+import { ModalProvider } from '@start-base/react-modal';
+
+function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <ModalProvider>
+      {children}
+      <GlobalModals />
+    </ModalProvider>
+  );
+}
+```
+
+Now any button that triggers `openModal`, which comes with `useModal` hook, can be used to open the modals.
+
+### `useModal`
+
+The `useModal` hook is a simple custom hook that provides a way to manage the state of a global modal. It is used in conjunction with `GlobalModals` to open and close modals. The string passed to `openModal` or `closeModal` should match the `name` prop of the modal you want to open or close.
+
+```jsx copy showLineNumbers
+import { useModal } from '@start-base/react-modal';
+
+const { openModal, closeModal } = useModal();
+
+<button onClick={() => openModal('modal-1')}>Open modal-1</button>
+<button onClick={() => closeModal('modal-1')}>Close modal-1</button>
+```
