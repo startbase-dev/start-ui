@@ -1,5 +1,56 @@
 import { Tabs } from 'nextra/components';
 import Preview from '@components/Preview/Preview';
+import { Modal, GlobalModals, useModal } from '@start-base/react-modal';
+import { useState } from 'react';
+
+export const ModalExample = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div>
+      <button onClick={() => setIsOpen(true)}>Open Modal</button>
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={() => setIsOpen(false)}
+      >
+        <h1>Hello World</h1>
+      </Modal>
+    </div>
+  );
+}
+
+export const GlobalModalExample = () => {
+  const { openModal, closeModal } = useModal();
+  const modalStyles = {
+    "modal-1": { width: "500px", height: "500px" },
+    "modal-2": { width: "400px", height: "400px" },
+    "modal-3": { width: "300px", height: "300px" },
+    "modal-4": { width: "200px", height: "200px" },
+  }
+  return (
+    <GlobalModals>
+      {Object.keys(modalStyles).map((key) => (
+        <Modal
+          key={key}
+          name={key}
+          style={{ content: modalStyles[key] }}
+          isOpen={false}
+        >
+          global {key}
+          <button onClick={() => closeModal(key)}>close {key}</button>
+          {key !== "modal-4" && (
+            <button
+              onClick={() =>
+                openModal(`modal-${parseInt(key.split("-")[1], 10) + 1}`)
+              }
+            >
+              open modal-{parseInt(key.split("-")[1], 10) + 1}
+            </button>
+          )}
+        </Modal>
+      ))}
+    </GlobalModals>
+  )
+}
 
 # Modal
 
@@ -35,7 +86,7 @@ Next.js example can show all the features and how to use them.
 
 To style the modal, you can utilize the `className` and `overlayClassName` props. When it comes to Next.js client-side rendering, you can re-export components with a comment indicating the use of the `use client` approach.
 
-```jsx copy showLineNumbers
+```tsx copy showLineNumbers
 'use client';
 import {
   Modal as ReactModal,
@@ -71,7 +122,7 @@ The `Modal` component is a local modal that is self contained. Its state can be 
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```jsx copy showLineNumbers
+    ```tsx copy showLineNumbers
     import { Modal } from '@start-base/react-modal';
     import { useState } from 'react';
 
@@ -104,7 +155,7 @@ Since the state of the modals inside `GlobalModals` is managed globally, each re
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```jsx copy showLineNumbers
+    ```tsx copy showLineNumbers
     import { GlobalModals, Modal, useModal } from '@start-base/react-modal';
     import { CSSProperties } from 'react';
 
