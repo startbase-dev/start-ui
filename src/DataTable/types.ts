@@ -6,6 +6,10 @@ export interface DataItem {
   [key: string]: unknown;
 }
 
+export interface CellAttributes
+  extends React.TdHTMLAttributes<HTMLElement>,
+    Record<`data-${string}`, string | undefined> {}
+
 export interface CheckboxProps {
   checked: boolean;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;

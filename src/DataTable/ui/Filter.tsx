@@ -195,7 +195,7 @@ const Filter = ({
           onChange={handleInputChange}
           placeholder={
             filterOperator === 'Operator'
-              ? 'Select operator first'
+              ? 'Select operator'
               : operatorsRequiringValue.includes(filterOperator)
                 ? 'Type value'
                 : 'Not needed'

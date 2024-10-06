@@ -33,8 +33,7 @@
   justify-content: center;
   align-items: center;
   text-wrap: nowrap;
-  border: 1px solid var(--sui-datatable-border);
-  border-top: none;
+  border: none;
   padding: var(--sui-datatable-padding-small);
 }
 
@@ -86,16 +85,6 @@
     var(--sui-datatable-black) 80%,
     var(--sui-datatable-white)
   ) !important;
-}
-
-.columnSelect {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  left: 30%;
-  bottom: 0;
-  background-color: var(--sui-gray-50);
-  padding: var(--sui-datatable-padding-small);
 }
 
 .rowHighlighted {
@@ -167,10 +156,11 @@
 
 .filterOperatorDropdown {
   display: flex;
-  background-color: transparent;
   border: none;
   background: var(--sui-gray-150);
   border-radius: var(--sui-datatable-border-radius-small);
+  max-width: 4.7rem;
+  text-overflow: ellipsis;
 }
 
 .filterPanel {
@@ -201,6 +191,19 @@
   background: var(--sui-gray-150);
   border: none;
   border-radius: var(--sui-datatable-border-radius-small);
+  text-overflow: ellipsis;
+}
+
+.columnSelect {
+  display: flex;
+  position: absolute;
+  right: 5%;
+  top: 0%;
+  border-radius: var(--sui-datatable-border-radius-small);
+  background-color: var(--sui-gray-50);
+  padding: var(--sui-datatable-padding-small);
+  font-size: 0.8rem;
+  z-index: 3;
 }
 
 .openPanel {
@@ -271,10 +274,14 @@
   justify-content: flex-end;
 }
 
-.tableTitle {
+.tableTitleContainer {
   display: flex;
   text-align: center;
   flex-shrink: 0;
+}
+
+.tableTitle {
+  display:flex;
 }
 
 .table {
@@ -311,6 +318,8 @@
           var(--sui-datatable-black) 90%,
           var(--sui-datatable-white)
         );
+        width: 1px;
+
       }
 
       tbody {
@@ -339,7 +348,7 @@
 
       tr {
         display: block;
-        margin-bottom: 1rem;
+        margin-bottom: 0;
         box-sizing: border-box;
         height: auto;
         border-top: 1px solid var(--sui-datatable-border);
@@ -394,6 +403,11 @@
       gap: var(--sui-datatable-gap-small);
     }
 
+    .paginationContainer {
+      border: 1px solid var(--sui-datatable-border);
+      border-top: none;
+    }
+
     .tableContainer {
       table {
         border-collapse: collapse;
@@ -407,8 +421,8 @@
           clip: auto;
           height: auto;
           margin: 0;
-          overflow: visible;
           padding: 0;
+          overflow: visible;
           position: sticky;
           top: -1px;
           z-index: 2;
@@ -423,7 +437,7 @@
         tr {
           padding: 0.35em;
           display: table-row;
-          margin-bottom: 0;
+          margin-bottom: 1rem;
         }
 
         th,
@@ -474,7 +488,8 @@
     // XXX-Large devices (larger desktops, 2160px and up)
   }
 }
-@media (min-width: 1200px) {
+
+@media (min-width: 430px) {
   .tableTopContainer {
     flex-direction: row;
   }
