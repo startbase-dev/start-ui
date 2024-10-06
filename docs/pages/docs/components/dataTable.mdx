@@ -1,28 +1,1434 @@
-# DataTable
+import DataTable from '@start-base/start-ui/DataTable';
+import { Tabs } from 'nextra/components';
+import { Steps } from 'nextra/components';
+import '@start-base/start-ui/styles.css';
+import Preview from '@components/Preview/Preview';
+
+# Data Table
 
 A powerful and flexible component for displaying and managing tabular data, offering features such as sorting, filtering, pagination, and customizable columns to efficiently present large datasets in a user-friendly format.
 
-import Chip from '@start-base/start-ui/Chip';
+## Installation
 
-<div
-  style={{
-    display: 'flex',
-    justifyContent: 'center',
-    marginTop: '2rem',
-    marginBottom: '2rem',
-  }}
->
-  <Chip color="warning" size="lg">
-    Coming Soon
-  </Chip>
-</div>
+<Steps>
+### Install the package
+```sh copy npm2yarn
+npm i @start-base/start-ui
+```
+### Add the styles
 
-The DataTable component is currently under development and will be available in a future release. This powerful component will offer a range of features to efficiently manage and display tabular data, including:
+<Tabs items={["Next.js 14 (App Directory)", "Next.js 13", "React.js"]}>
+    <Tabs.Tab label="Next.js 14 (App Directory)">
+        To use the React form elements styles in a Next.js 14 project, import the styles in your `layout.tsx` file.
 
-- Sorting capabilities
-- Advanced filtering options
-- Pagination for large datasets
-- Customizable columns
-- Responsive design for various screen sizes
+        ```tsx copy filename="app/layout.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
 
-Stay tuned for updates on this exciting addition to our component library!
+    </Tabs.Tab>
+    <Tabs.Tab label="Next.js 13">
+        For Next.js 13 projects, ensure you include the React form elements styles in the `_app.tsx` file.
+
+        ```tsx copy filename="pages/_app.tsx"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+    <Tabs.Tab label="React.js">
+        In a React.js project, you should import the styles directly into your `App.js` file.
+
+        ```tsx copy filename="App.js"
+        import "@start-base/start-ui/styles.css";
+        ```
+
+    </Tabs.Tab>
+
+</Tabs>
+
+### Import the component
+
+    <Tabs items={["Individual", "Global"]}>
+        <Tabs.Tab label="Individual">
+
+            ```tsx copy
+            import DataTable from '@start-base/start-ui/DataTable';
+            ```
+
+        </Tabs.Tab>
+        <Tabs.Tab label="Global">
+
+            ```tsx copy
+            import { DataTable } from '@start-base/start-ui';
+            ```
+
+        </Tabs.Tab>
+
+    </Tabs>
+
+</Steps>
+
+## Usages
+
+#### DataTable with Pagination
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <Preview>
+      <DataTable
+        data={[
+          { key: 1, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+          {
+            key: 2,
+            name: 'Jane Smith',
+            age: 34,
+            email: 'jane.smith@example.com',
+          },
+          {
+            key: 3,
+            name: 'Alice Johnson',
+            age: 45,
+            email: 'alice.johnson@example.com',
+          },
+          {
+            key: 4,
+            name: 'Bob Brown',
+            age: 52,
+            email: 'bob.brown@example.com',
+          },
+          {
+            key: 5,
+            name: 'Clara Davis',
+            age: 24,
+            email: 'clara.davis@example.com',
+          },
+          {
+            key: 6,
+            name: 'Daniel Green',
+            age: 38,
+            email: 'daniel.green@example.com',
+          },
+        ]}
+        columns={[
+          { title: 'Name', dataIndex: 'name', key: 'name' },
+          { title: 'Age', dataIndex: 'age', key: 'age' },
+          { title: 'Email', dataIndex: 'email', key: 'email' },
+        ]}
+        pagination={true}
+        rowsPerPage={5}
+        rowsPerPageOptions={[5, 10, 15]}
+        emptyText="No data available"
+        rowClassName=""
+      />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <DataTable
+      data={[
+        { key: 1, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+        {
+          key: 2,
+          name: 'Jane Smith',
+          age: 34,
+          email: 'jane.smith@example.com',
+        },
+        {
+          key: 3,
+          name: 'Alice Johnson',
+          age: 45,
+          email: 'alice.johnson@example.com',
+        },
+        { key: 4, name: 'Bob Brown', age: 52, email: 'bob.brown@example.com' },
+        {
+          key: 5,
+          name: 'Clara Davis',
+          age: 24,
+          email: 'clara.davis@example.com',
+        },
+        {
+          key: 6,
+          name: 'Daniel Green',
+          age: 38,
+          email: 'daniel.green@example.com',
+        },
+      ]}
+      columns={[
+        { title: 'Name', dataIndex: 'name', key: 'name' },
+        { title: 'Age', dataIndex: 'age', key: 'age' },
+        { title: 'Email', dataIndex: 'email', key: 'email' },
+      ]}
+      pagination={true}
+      rowsPerPage={5}
+      rowsPerPageOptions={[5, 10, 15]}
+      emptyText="No data available"
+      rowClassName=""
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+#### DataTable with Border
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab label="Preview">
+    <Preview>
+      <DataTable
+        data={[
+          { key: 1, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+          {
+            key: 2,
+            name: 'Jane Smith',
+            age: 34,
+            email: 'jane.smith@example.com',
+          },
+          {
+            key: 3,
+            name: 'Alice Johnson',
+            age: 45,
+            email: 'alice.johnson@example.com',
+          },
+          {
+            key: 4,
+            name: 'Bob Brown',
+            age: 52,
+            email: 'bob.brown@example.com',
+          },
+          {
+            key: 5,
+            name: 'Clara Davis',
+            age: 24,
+            email: 'clara.davis@example.com',
+          },
+          {
+            key: 6,
+            name: 'Daniel Green',
+            age: 38,
+            email: 'daniel.green@example.com',
+          },
+          { key: 7, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+          {
+            key: 8,
+            name: 'Jane Smith',
+            age: 34,
+            email: 'jane.smith@example.com',
+          },
+          {
+            key: 9,
+            name: 'Alice Johnson',
+            age: 45,
+            email: 'alice.johnson@example.com',
+          },
+          {
+            key: 10,
+            name: 'Bob Brown',
+            age: 52,
+            email: 'bob.brown@example.com',
+          },
+          {
+            key: 11,
+            name: 'Clara Davis',
+            age: 24,
+            email: 'clara.davis@example.com',
+          },
+          {
+            key: 12,
+            name: 'Daniel Green',
+            age: 38,
+            email: 'daniel.green@example.com',
+          },
+        ]}
+        columns={[
+          { title: 'Name', dataIndex: 'name', key: 'name' },
+          { title: 'Age', dataIndex: 'age', key: 'age' },
+          { title: 'Email', dataIndex: 'email', key: 'email' },
+        ]}
+        rowClassName=""
+        emptyText="No data available"
+      />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab label="Code">
+    ```jsx copy showLineNumbers
+    <DataTable
+      data={[
+        { key: 1, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+        {
+          key: 2,
+          name: 'Jane Smith',
+          age: 34,
+          email: 'jane.smith@example.com',
+        },
+        {
+          key: 3,
+          name: 'Alice Johnson',
+          age: 45,
+          email: 'alice.johnson@example.com',
+        },
+        { key: 4, name: 'Bob Brown', age: 52, email: 'bob.brown@example.com' },
+        {
+          key: 5,
+          name: 'Clara Davis',
+          age: 24,
+          email: 'clara.davis@example.com',
+        },
+        {
+          key: 6,
+          name: 'Daniel Green',
+          age: 38,
+          email: 'daniel.green@example.com',
+        },
+        { key: 7, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+        {
+          key: 8,
+          name: 'Jane Smith',
+          age: 34,
+          email: 'jane.smith@example.com',
+        },
+        {
+          key: 9,
+          name: 'Alice Johnson',
+          age: 45,
+          email: 'alice.johnson@example.com',
+        },
+        { key: 10, name: 'Bob Brown', age: 52, email: 'bob.brown@example.com' },
+        {
+          key: 11,
+          name: 'Clara Davis',
+          age: 24,
+          email: 'clara.davis@example.com',
+        },
+        {
+          key: 12,
+          name: 'Daniel Green',
+          age: 38,
+          email: 'daniel.green@example.com',
+        },
+      ]}
+      columns={[
+        { title: 'Name', dataIndex: 'name', key: 'name' },
+        { title: 'Age', dataIndex: 'age', key: 'age' },
+        { title: 'Email', dataIndex: 'email', key: 'email' },
+      ]}
+      rowClassName=""
+      emptyText="No data available"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+#### DataTable Without Border
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab label="Preview">
+    <Preview>
+      <DataTable
+        data={[
+          { key: 1, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+          {
+            key: 2,
+            name: 'Jane Smith',
+            age: 34,
+            email: 'jane.smith@example.com',
+          },
+          {
+            key: 3,
+            name: 'Alice Johnson',
+            age: 45,
+            email: 'alice.johnson@example.com',
+          },
+          {
+            key: 4,
+            name: 'Bob Brown',
+            age: 52,
+            email: 'bob.brown@example.com',
+          },
+          {
+            key: 5,
+            name: 'Clara Davis',
+            age: 24,
+            email: 'clara.davis@example.com',
+          },
+          {
+            key: 6,
+            name: 'Daniel Green',
+            age: 38,
+            email: 'daniel.green@example.com',
+          },
+          { key: 7, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+          {
+            key: 8,
+            name: 'Jane Smith',
+            age: 34,
+            email: 'jane.smith@example.com',
+          },
+          {
+            key: 9,
+            name: 'Alice Johnson',
+            age: 45,
+            email: 'alice.johnson@example.com',
+          },
+          {
+            key: 10,
+            name: 'Bob Brown',
+            age: 52,
+            email: 'bob.brown@example.com',
+          },
+          {
+            key: 11,
+            name: 'Clara Davis',
+            age: 24,
+            email: 'clara.davis@example.com',
+          },
+          {
+            key: 12,
+            name: 'Daniel Green',
+            age: 38,
+            email: 'daniel.green@example.com',
+          },
+        ]}
+        columns={[
+          { title: 'Name', dataIndex: 'name', key: 'name' },
+          { title: 'Age', dataIndex: 'age', key: 'age' },
+          { title: 'Email', dataIndex: 'email', key: 'email' },
+        ]}
+        rowClassName=""
+        emptyText="No data available"
+        border={false}
+      />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab label="Code">
+    ```jsx copy showLineNumbers
+    <DataTable
+      data={[
+        { key: 1, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+        {
+          key: 2,
+          name: 'Jane Smith',
+          age: 34,
+          email: 'jane.smith@example.com',
+        },
+        {
+          key: 3,
+          name: 'Alice Johnson',
+          age: 45,
+          email: 'alice.johnson@example.com',
+        },
+        { key: 4, name: 'Bob Brown', age: 52, email: 'bob.brown@example.com' },
+        {
+          key: 5,
+          name: 'Clara Davis',
+          age: 24,
+          email: 'clara.davis@example.com',
+        },
+        {
+          key: 6,
+          name: 'Daniel Green',
+          age: 38,
+          email: 'daniel.green@example.com',
+        },
+        { key: 7, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+        {
+          key: 8,
+          name: 'Jane Smith',
+          age: 34,
+          email: 'jane.smith@example.com',
+        },
+        {
+          key: 9,
+          name: 'Alice Johnson',
+          age: 45,
+          email: 'alice.johnson@example.com',
+        },
+        { key: 10, name: 'Bob Brown', age: 52, email: 'bob.brown@example.com' },
+        {
+          key: 11,
+          name: 'Clara Davis',
+          age: 24,
+          email: 'clara.davis@example.com',
+        },
+        {
+          key: 12,
+          name: 'Daniel Green',
+          age: 38,
+          email: 'daniel.green@example.com',
+        },
+      ]}
+      columns={[
+        { title: 'Name', dataIndex: 'name', key: 'name' },
+        { title: 'Age', dataIndex: 'age', key: 'age' },
+        { title: 'Email', dataIndex: 'email', key: 'email' },
+      ]}
+      rowClassName=""
+      emptyText="No data available"
+      border={false}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+#### Virtual Table
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab label="Preview">
+    <Preview>
+      <DataTable
+        data={[
+          { key: 1, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+          {
+            key: 2,
+            name: 'Jane Smith',
+            age: 34,
+            email: 'jane.smith@example.com',
+          },
+          {
+            key: 3,
+            name: 'Alice Johnson',
+            age: 45,
+            email: 'alice.johnson@example.com',
+          },
+          {
+            key: 4,
+            name: 'Bob Brown',
+            age: 52,
+            email: 'bob.brown@example.com',
+          },
+          {
+            key: 5,
+            name: 'Clara Davis',
+            age: 24,
+            email: 'clara.davis@example.com',
+          },
+          {
+            key: 6,
+            name: 'Daniel Green',
+            age: 38,
+            email: 'daniel.green@example.com',
+          },
+          { key: 7, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+          {
+            key: 8,
+            name: 'Jane Smith',
+            age: 34,
+            email: 'jane.smith@example.com',
+          },
+          {
+            key: 9,
+            name: 'Alice Johnson',
+            age: 45,
+            email: 'alice.johnson@example.com',
+          },
+          {
+            key: 10,
+            name: 'Bob Brown',
+            age: 52,
+            email: 'bob.brown@example.com',
+          },
+          {
+            key: 11,
+            name: 'Clara Davis',
+            age: 24,
+            email: 'clara.davis@example.com',
+          },
+          {
+            key: 12,
+            name: 'Daniel Green',
+            age: 38,
+            email: 'daniel.green@example.com',
+          },
+        ]}
+        columns={[
+          { title: 'Name', dataIndex: 'name', key: 'name' },
+          { title: 'Age', dataIndex: 'age', key: 'age' },
+          { title: 'Email', dataIndex: 'email', key: 'email' },
+        ]}
+        rowClassName=""
+        emptyText="No data available"
+        virtualized
+      />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab label="Code">
+    ```jsx copy showLineNumbers
+    <DataTable
+      data={[
+        { key: 1, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+        {
+          key: 2,
+          name: 'Jane Smith',
+          age: 34,
+          email: 'jane.smith@example.com',
+        },
+        {
+          key: 3,
+          name: 'Alice Johnson',
+          age: 45,
+          email: 'alice.johnson@example.com',
+        },
+        { key: 4, name: 'Bob Brown', age: 52, email: 'bob.brown@example.com' },
+        {
+          key: 5,
+          name: 'Clara Davis',
+          age: 24,
+          email: 'clara.davis@example.com',
+        },
+        {
+          key: 6,
+          name: 'Daniel Green',
+          age: 38,
+          email: 'daniel.green@example.com',
+        },
+        { key: 7, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+        {
+          key: 8,
+          name: 'Jane Smith',
+          age: 34,
+          email: 'jane.smith@example.com',
+        },
+        {
+          key: 9,
+          name: 'Alice Johnson',
+          age: 45,
+          email: 'alice.johnson@example.com',
+        },
+        { key: 10, name: 'Bob Brown', age: 52, email: 'bob.brown@example.com' },
+        {
+          key: 11,
+          name: 'Clara Davis',
+          age: 24,
+          email: 'clara.davis@example.com',
+        },
+        {
+          key: 12,
+          name: 'Daniel Green',
+          age: 38,
+          email: 'daniel.green@example.com',
+        },
+      ]}
+      columns={[
+        { title: 'Name', dataIndex: 'name', key: 'name' },
+        { title: 'Age', dataIndex: 'age', key: 'age' },
+        { title: 'Email', dataIndex: 'email', key: 'email' },
+      ]}
+      rowClassName=""
+      emptyText="No data available"
+      virtualized
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+#### DataTable With Custom Empty Text
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab label="Preview">
+    <Preview>
+      <DataTable
+        data={[]}
+        columns={[
+          { title: 'Name', dataIndex: 'name', key: 'name' },
+          { title: 'Age', dataIndex: 'age', key: 'age' },
+          { title: 'Email', dataIndex: 'email', key: 'email' },
+        ]}
+        rowClassName=""
+        emptyText="Nothing to show here."
+      />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab label="Code">
+    ```jsx copy showLineNumbers
+    <DataTable
+      data={[]}
+      columns={[
+        { title: 'Name', dataIndex: 'name', key: 'name' },
+        { title: 'Age', dataIndex: 'age', key: 'age' },
+        { title: 'Email', dataIndex: 'email', key: 'email' },
+      ]}
+      rowClassName=""
+      emptyText="Nothing to show here."
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+#### Row Selection with a Custom Action
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab label="Preview">
+    <Preview>
+      <DataTable
+        data={[
+          { key: 1, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+          {
+            key: 2,
+            name: 'Jane Smith',
+            age: 34,
+            email: 'jane.smith@example.com',
+          },
+          {
+            key: 3,
+            name: 'Alice Johnson',
+            age: 45,
+            email: 'alice.johnson@example.com',
+          },
+          {
+            key: 4,
+            name: 'Bob Brown',
+            age: 52,
+            email: 'bob.brown@example.com',
+          },
+          {
+            key: 5,
+            name: 'Clara Davis',
+            age: 24,
+            email: 'clara.davis@example.com',
+          },
+          {
+            key: 6,
+            name: 'Daniel Green',
+            age: 38,
+            email: 'daniel.green@example.com',
+          },
+          { key: 7, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+          {
+            key: 8,
+            name: 'Jane Smith',
+            age: 34,
+            email: 'jane.smith@example.com',
+          },
+          {
+            key: 9,
+            name: 'Alice Johnson',
+            age: 45,
+            email: 'alice.johnson@example.com',
+          },
+          {
+            key: 10,
+            name: 'Bob Brown',
+            age: 52,
+            email: 'bob.brown@example.com',
+          },
+          {
+            key: 11,
+            name: 'Clara Davis',
+            age: 24,
+            email: 'clara.davis@example.com',
+          },
+          {
+            key: 12,
+            name: 'Daniel Green',
+            age: 38,
+            email: 'daniel.green@example.com',
+          },
+        ]}
+        columns={[
+          { title: 'Name', dataIndex: 'name', key: 'name' },
+          { title: 'Age', dataIndex: 'age', key: 'age' },
+          { title: 'Email', dataIndex: 'email', key: 'email' },
+        ]}
+        rowClassName=""
+        emptyText="No data available"
+        rowSelect
+        rowSelectAction={() => alert('Selection')}
+      />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab label="Code">
+    ```jsx copy showLineNumbers
+    <DataTable
+      data={[
+        { key: 1, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+        {
+          key: 2,
+          name: 'Jane Smith',
+          age: 34,
+          email: 'jane.smith@example.com',
+        },
+        {
+          key: 3,
+          name: 'Alice Johnson',
+          age: 45,
+          email: 'alice.johnson@example.com',
+        },
+        { key: 4, name: 'Bob Brown', age: 52, email: 'bob.brown@example.com' },
+        {
+          key: 5,
+          name: 'Clara Davis',
+          age: 24,
+          email: 'clara.davis@example.com',
+        },
+        {
+          key: 6,
+          name: 'Daniel Green',
+          age: 38,
+          email: 'daniel.green@example.com',
+        },
+        { key: 7, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+        {
+          key: 8,
+          name: 'Jane Smith',
+          age: 34,
+          email: 'jane.smith@example.com',
+        },
+        {
+          key: 9,
+          name: 'Alice Johnson',
+          age: 45,
+          email: 'alice.johnson@example.com',
+        },
+        { key: 10, name: 'Bob Brown', age: 52, email: 'bob.brown@example.com' },
+        {
+          key: 11,
+          name: 'Clara Davis',
+          age: 24,
+          email: 'clara.davis@example.com',
+        },
+        {
+          key: 12,
+          name: 'Daniel Green',
+          age: 38,
+          email: 'daniel.green@example.com',
+        },
+      ]}
+      columns={[
+        { title: 'Name', dataIndex: 'name', key: 'name' },
+        { title: 'Age', dataIndex: 'age', key: 'age' },
+        { title: 'Email', dataIndex: 'email', key: 'email' },
+      ]}
+      rowClassName=""
+      emptyText="No data available"
+      rowSelect
+      rowSelectAction={() => alert('Selection')}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+#### Row Selection with Checkboxes
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab label="Preview">
+    <Preview>
+      <DataTable
+        data={[
+          { key: 1, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+          {
+            key: 2,
+            name: 'Jane Smith',
+            age: 34,
+            email: 'jane.smith@example.com',
+          },
+          {
+            key: 3,
+            name: 'Alice Johnson',
+            age: 45,
+            email: 'alice.johnson@example.com',
+          },
+          {
+            key: 4,
+            name: 'Bob Brown',
+            age: 52,
+            email: 'bob.brown@example.com',
+          },
+          {
+            key: 5,
+            name: 'Clara Davis',
+            age: 24,
+            email: 'clara.davis@example.com',
+          },
+          {
+            key: 6,
+            name: 'Daniel Green',
+            age: 38,
+            email: 'daniel.green@example.com',
+          },
+          { key: 7, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+          {
+            key: 8,
+            name: 'Jane Smith',
+            age: 34,
+            email: 'jane.smith@example.com',
+          },
+          {
+            key: 9,
+            name: 'Alice Johnson',
+            age: 45,
+            email: 'alice.johnson@example.com',
+          },
+          {
+            key: 10,
+            name: 'Bob Brown',
+            age: 52,
+            email: 'bob.brown@example.com',
+          },
+          {
+            key: 11,
+            name: 'Clara Davis',
+            age: 24,
+            email: 'clara.davis@example.com',
+          },
+          {
+            key: 12,
+            name: 'Daniel Green',
+            age: 38,
+            email: 'daniel.green@example.com',
+          },
+        ]}
+        columns={[
+          { title: 'Name', dataIndex: 'name', key: 'name' },
+          { title: 'Age', dataIndex: 'age', key: 'age' },
+          { title: 'Email', dataIndex: 'email', key: 'email' },
+        ]}
+        rowClassName=""
+        emptyText="No data available"
+        rowSelect
+        checkboxAvailable
+      />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab label="Code">
+    ``` jsx copy showLineNumbers
+    <DataTable
+      data={[
+        { key: 1, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+        {
+          key: 2,
+          name: 'Jane Smith',
+          age: 34,
+          email: 'jane.smith@example.com',
+        },
+        {
+          key: 3,
+          name: 'Alice Johnson',
+          age: 45,
+          email: 'alice.johnson@example.com',
+        },
+        { key: 4, name: 'Bob Brown', age: 52, email: 'bob.brown@example.com' },
+        {
+          key: 5,
+          name: 'Clara Davis',
+          age: 24,
+          email: 'clara.davis@example.com',
+        },
+        {
+          key: 6,
+          name: 'Daniel Green',
+          age: 38,
+          email: 'daniel.green@example.com',
+        },
+        { key: 7, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+        {
+          key: 8,
+          name: 'Jane Smith',
+          age: 34,
+          email: 'jane.smith@example.com',
+        },
+        {
+          key: 9,
+          name: 'Alice Johnson',
+          age: 45,
+          email: 'alice.johnson@example.com',
+        },
+        { key: 10, name: 'Bob Brown', age: 52, email: 'bob.brown@example.com' },
+        {
+          key: 11,
+          name: 'Clara Davis',
+          age: 24,
+          email: 'clara.davis@example.com',
+        },
+        {
+          key: 12,
+          name: 'Daniel Green',
+          age: 38,
+          email: 'daniel.green@example.com',
+        },
+      ]}
+      columns={[
+        { title: 'Name', dataIndex: 'name', key: 'name' },
+        { title: 'Age', dataIndex: 'age', key: 'age' },
+        { title: 'Email', dataIndex: 'email', key: 'email' },
+      ]}
+      rowClassName=""
+      emptyText="No data available"
+      rowSelect
+      checkboxAvailable
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+#### DataTable with Title
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab label="Preview">
+    <Preview>
+      <DataTable
+        data={[
+          { key: 1, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+          {
+            key: 2,
+            name: 'Jane Smith',
+            age: 34,
+            email: 'jane.smith@example.com',
+          },
+          {
+            key: 3,
+            name: 'Alice Johnson',
+            age: 45,
+            email: 'alice.johnson@example.com',
+          },
+          {
+            key: 4,
+            name: 'Bob Brown',
+            age: 52,
+            email: 'bob.brown@example.com',
+          },
+          {
+            key: 5,
+            name: 'Clara Davis',
+            age: 24,
+            email: 'clara.davis@example.com',
+          },
+          {
+            key: 6,
+            name: 'Daniel Green',
+            age: 38,
+            email: 'daniel.green@example.com',
+          },
+          { key: 7, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+          {
+            key: 8,
+            name: 'Jane Smith',
+            age: 34,
+            email: 'jane.smith@example.com',
+          },
+          {
+            key: 9,
+            name: 'Alice Johnson',
+            age: 45,
+            email: 'alice.johnson@example.com',
+          },
+          {
+            key: 10,
+            name: 'Bob Brown',
+            age: 52,
+            email: 'bob.brown@example.com',
+          },
+          {
+            key: 11,
+            name: 'Clara Davis',
+            age: 24,
+            email: 'clara.davis@example.com',
+          },
+          {
+            key: 12,
+            name: 'Daniel Green',
+            age: 38,
+            email: 'daniel.green@example.com',
+          },
+        ]}
+        columns={[
+          { title: 'Name', dataIndex: 'name', key: 'name' },
+          { title: 'Age', dataIndex: 'age', key: 'age' },
+          { title: 'Email', dataIndex: 'email', key: 'email' },
+        ]}
+        rowClassName=""
+        emptyText="No data available"
+        title="User Information"
+      />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab label="Code">
+    ```jsx copy showLineNumbers
+    <DataTable
+      data={[
+        { key: 1, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+        {
+          key: 2,
+          name: 'Jane Smith',
+          age: 34,
+          email: 'jane.smith@example.com',
+        },
+        {
+          key: 3,
+          name: 'Alice Johnson',
+          age: 45,
+          email: 'alice.johnson@example.com',
+        },
+        { key: 4, name: 'Bob Brown', age: 52, email: 'bob.brown@example.com' },
+        {
+          key: 5,
+          name: 'Clara Davis',
+          age: 24,
+          email: 'clara.davis@example.com',
+        },
+        {
+          key: 6,
+          name: 'Daniel Green',
+          age: 38,
+          email: 'daniel.green@example.com',
+        },
+        { key: 7, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+        {
+          key: 8,
+          name: 'Jane Smith',
+          age: 34,
+          email: 'jane.smith@example.com',
+        },
+        {
+          key: 9,
+          name: 'Alice Johnson',
+          age: 45,
+          email: 'alice.johnson@example.com',
+        },
+        { key: 10, name: 'Bob Brown', age: 52, email: 'bob.brown@example.com' },
+        {
+          key: 11,
+          name: 'Clara Davis',
+          age: 24,
+          email: 'clara.davis@example.com',
+        },
+        {
+          key: 12,
+          name: 'Daniel Green',
+          age: 38,
+          email: 'daniel.green@example.com',
+        },
+      ]}
+      columns={[
+        { title: 'Name', dataIndex: 'name', key: 'name' },
+        { title: 'Age', dataIndex: 'age', key: 'age' },
+        { title: 'Email', dataIndex: 'email', key: 'email' },
+      ]}
+      rowClassName=""
+      emptyText="No data available"
+      title="User Information"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+#### DataTable With Filter
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab label="Preview">
+    <Preview>
+      <DataTable
+        data={[
+          { key: 1, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+          {
+            key: 2,
+            name: 'Jane Smith',
+            age: 34,
+            email: 'jane.smith@example.com',
+          },
+          {
+            key: 3,
+            name: 'Alice Johnson',
+            age: 45,
+            email: 'alice.johnson@example.com',
+          },
+          {
+            key: 4,
+            name: 'Bob Brown',
+            age: 52,
+            email: 'bob.brown@example.com',
+          },
+          {
+            key: 5,
+            name: 'Clara Davis',
+            age: 24,
+            email: 'clara.davis@example.com',
+          },
+          {
+            key: 6,
+            name: 'Daniel Green',
+            age: 38,
+            email: 'daniel.green@example.com',
+          },
+          { key: 7, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+          {
+            key: 8,
+            name: 'Jane Smith',
+            age: 34,
+            email: 'jane.smith@example.com',
+          },
+          {
+            key: 9,
+            name: 'Alice Johnson',
+            age: 45,
+            email: 'alice.johnson@example.com',
+          },
+          {
+            key: 10,
+            name: 'Bob Brown',
+            age: 52,
+            email: 'bob.brown@example.com',
+          },
+          {
+            key: 11,
+            name: 'Clara Davis',
+            age: 24,
+            email: 'clara.davis@example.com',
+          },
+          {
+            key: 12,
+            name: 'Daniel Green',
+            age: 38,
+            email: 'daniel.green@example.com',
+          },
+        ]}
+        columns={[
+          { title: 'Name', dataIndex: 'name', key: 'name' },
+          { title: 'Age', dataIndex: 'age', key: 'age' },
+          { title: 'Email', dataIndex: 'email', key: 'email' },
+        ]}
+        rowClassName=""
+        emptyText="No data available"
+        filter
+        title="Filtering Enabled Table"
+      />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab label="Code">
+    ```jsx copy showLineNumbers
+    <DataTable
+      data={[
+        { key: 1, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+        {
+          key: 2,
+          name: 'Jane Smith',
+          age: 34,
+          email: 'jane.smith@example.com',
+        },
+        {
+          key: 3,
+          name: 'Alice Johnson',
+          age: 45,
+          email: 'alice.johnson@example.com',
+        },
+        { key: 4, name: 'Bob Brown', age: 52, email: 'bob.brown@example.com' },
+        {
+          key: 5,
+          name: 'Clara Davis',
+          age: 24,
+          email: 'clara.davis@example.com',
+        },
+        {
+          key: 6,
+          name: 'Daniel Green',
+          age: 38,
+          email: 'daniel.green@example.com',
+        },
+        { key: 7, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+        {
+          key: 8,
+          name: 'Jane Smith',
+          age: 34,
+          email: 'jane.smith@example.com',
+        },
+        {
+          key: 9,
+          name: 'Alice Johnson',
+          age: 45,
+          email: 'alice.johnson@example.com',
+        },
+        { key: 10, name: 'Bob Brown', age: 52, email: 'bob.brown@example.com' },
+        {
+          key: 11,
+          name: 'Clara Davis',
+          age: 24,
+          email: 'clara.davis@example.com',
+        },
+        {
+          key: 12,
+          name: 'Daniel Green',
+          age: 38,
+          email: 'daniel.green@example.com',
+        },
+      ]}
+      columns={[
+        { title: 'Name', dataIndex: 'name', key: 'name' },
+        { title: 'Age', dataIndex: 'age', key: 'age' },
+        { title: 'Email', dataIndex: 'email', key: 'email' },
+      ]}
+      rowClassName=""
+      emptyText="No data available"
+      filter
+      title="Filtering Enabled Table"
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+#### DataTable With Sorting
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab label="Preview">
+    <Preview>
+      <DataTable
+        data={[
+          { key: 1, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+          {
+            key: 2,
+            name: 'Jane Smith',
+            age: 34,
+            email: 'jane.smith@example.com',
+          },
+          {
+            key: 3,
+            name: 'Alice Johnson',
+            age: 45,
+            email: 'alice.johnson@example.com',
+          },
+          {
+            key: 4,
+            name: 'Bob Brown',
+            age: 52,
+            email: 'bob.brown@example.com',
+          },
+          {
+            key: 5,
+            name: 'Clara Davis',
+            age: 24,
+            email: 'clara.davis@example.com',
+          },
+          {
+            key: 6,
+            name: 'Daniel Green',
+            age: 38,
+            email: 'daniel.green@example.com',
+          },
+          { key: 7, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+          {
+            key: 8,
+            name: 'Jane Smith',
+            age: 34,
+            email: 'jane.smith@example.com',
+          },
+          {
+            key: 9,
+            name: 'Alice Johnson',
+            age: 45,
+            email: 'alice.johnson@example.com',
+          },
+          {
+            key: 10,
+            name: 'Bob Brown',
+            age: 52,
+            email: 'bob.brown@example.com',
+          },
+          {
+            key: 11,
+            name: 'Clara Davis',
+            age: 24,
+            email: 'clara.davis@example.com',
+          },
+          {
+            key: 12,
+            name: 'Daniel Green',
+            age: 38,
+            email: 'daniel.green@example.com',
+          },
+        ]}
+        columns={[
+          { title: 'Name', dataIndex: 'name', key: 'name' },
+          { title: 'Age', dataIndex: 'age', key: 'age' },
+          { title: 'Email', dataIndex: 'email', key: 'email' },
+        ]}
+        rowClassName=""
+        emptyText="No data available"
+        sorting
+      />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab label="Code">
+    ```jsx copy showLineNumbers
+    <DataTable
+      data={[
+        { key: 1, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+        {
+          key: 2,
+          name: 'Jane Smith',
+          age: 34,
+          email: 'jane.smith@example.com',
+        },
+        {
+          key: 3,
+          name: 'Alice Johnson',
+          age: 45,
+          email: 'alice.johnson@example.com',
+        },
+        { key: 4, name: 'Bob Brown', age: 52, email: 'bob.brown@example.com' },
+        {
+          key: 5,
+          name: 'Clara Davis',
+          age: 24,
+          email: 'clara.davis@example.com',
+        },
+        {
+          key: 6,
+          name: 'Daniel Green',
+          age: 38,
+          email: 'daniel.green@example.com',
+        },
+        { key: 7, name: 'John Doe', age: 28, email: 'john.doe@example.com' },
+        {
+          key: 8,
+          name: 'Jane Smith',
+          age: 34,
+          email: 'jane.smith@example.com',
+        },
+        {
+          key: 9,
+          name: 'Alice Johnson',
+          age: 45,
+          email: 'alice.johnson@example.com',
+        },
+        { key: 10, name: 'Bob Brown', age: 52, email: 'bob.brown@example.com' },
+        {
+          key: 11,
+          name: 'Clara Davis',
+          age: 24,
+          email: 'clara.davis@example.com',
+        },
+        {
+          key: 12,
+          name: 'Daniel Green',
+          age: 38,
+          email: 'daniel.green@example.com',
+        },
+      ]}
+      columns={[
+        { title: 'Name', dataIndex: 'name', key: 'name' },
+        { title: 'Age', dataIndex: 'age', key: 'age' },
+        { title: 'Email', dataIndex: 'email', key: 'email' },
+      ]}
+      rowClassName=""
+      emptyText="No data available"
+      sorting
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+## API
+
+| Name               | Type                                           | Default       | Description                                            |
+| ------------------ | ---------------------------------------------- | ------------- | ------------------------------------------------------ |
+| data               | `array`                                        |               | Data to be displayed in the table                      |
+| columns            | `array`                                        |               | Columns configuration of the table                     |
+| rowsPerPage        | `number`                                       | `5`           | Number of rows per page when pagination is enabled     |
+| pagination         | `boolean`                                      | `false`       | Whether to enable pagination                           |
+| rowsPerPageOptions | `array`                                        | `[5, 10, 20]` | Options for rows per page in pagination                |
+| border             | `boolean`                                      | `true`        | Whether to show border around the table and its rows   |
+| rowSelect          | `boolean`                                      | `false`       | Whether to enable row selection                        |
+| rowSelectAction    | `(selectedRows: (string \| number)[]) => void` |               | Callback function when rows are selected               |
+| checkboxAvailable  | `boolean`                                      | `false`       | Whether to enable checkbox selection of rows           |
+| title              | `string` \| `ReactNode`                        |               | Title of the table                                     |
+| filter             | `boolean`                                      | `false`       | Whether to enable filtering functionality              |
+| sorting            | `boolean`                                      | `false`       | Whether to enable sorting functionality                |
+| virtualized        | `boolean`                                      | `false`       | Whether to enable virtual scrolling for large datasets |
+| emptyText          | `string`                                       |               | Text displayed when there's no data                    |
+| rowClassName       | `string`                                       |               | Class name applied to table rows                       |
+| maxHeight          | `number`                                       | `340`         | Maximum height of the table                            |
