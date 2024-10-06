@@ -12,7 +12,7 @@ import type { FloatingMenuItemProps } from './types';
 const FloatingMenuItem = forwardRef<HTMLDivElement, FloatingMenuItemProps>(
   ({ label, disabled, className, ...props }, forwardedRef) => {
     const menu = useContext(MenuContext);
-    const item = useListItem({ label: disabled ? null : label });
+    const item = useListItem();
     const tree = useFloatingTree();
     const isActive = item.index === menu.activeIndex;
 
@@ -21,7 +21,9 @@ const FloatingMenuItem = forwardRef<HTMLDivElement, FloatingMenuItemProps>(
         {...props}
         ref={useMergeRefs([item.ref, forwardedRef])}
         role="menuitem"
-        className={cx(styles.menuItem, className && { [className]: true })}
+        className={cx(styles.menuItem, className && { [className]: true }, {
+          [styles.disabled]: disabled,
+        })}
         tabIndex={isActive ? 0 : -1}
         {...menu.getItemProps({
           onClick(event: React.MouseEvent<HTMLDivElement>) {

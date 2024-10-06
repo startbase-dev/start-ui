@@ -115,14 +115,9 @@ The Radio component is designed for selecting a single option from a set of mutu
   <Tabs.Tab>
     ```jsx copy showLineNumbers
     <Controller
-        name="input"
-        control={control}
-        render={({ field }) => (
-          <Radio
-            value={watch("input")}
-            {...field}
-          />
-        )}
+      name="input"
+      control={control}
+      render={({ field }) => <Radio value={watch('input')} {...field} />}
     />
     ```
   </Tabs.Tab>

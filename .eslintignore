@@ -47,6 +47,7 @@ package-lock.json
 
 /Accordion
 /Alert
+/Avatar
 /Badge
 /BentoCard
 /Button
@@ -54,10 +55,13 @@ package-lock.json
 /Chip
 /Col
 /BentoGrid
+/Breadcrumbs
 /Grid
 /Countdown
 /DataTable
 /Divider
+/ContextMenu
+/FloatingMenuItem
 /Dropdown
 /List
 /Popover
@@ -72,10 +76,19 @@ package-lock.json
 /ToggleGroup
 /Tooltip
 /Typography
+/Container
+/Collapsible
 
 /index.js
 /styles.css
 /variables.css
 /index.mjs
+/index.d.mts
+/index.d.ts
+/variables.d.mts
+/variables.d.ts
 
 *storybook.log
+
+# Visual Studio Code
+.vscode

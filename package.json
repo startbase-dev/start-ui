@@ -2,7 +2,7 @@
   "name": "@start-base/start-ui",
   "author": "Start-Base",
   "description": "",
-  "version": "0.0.37-alpha",
+  "version": "0.0.41-alpha",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -191,6 +191,7 @@
     }
   },
   "scripts": {
+    "tsc": "tsc --noEmit ",
     "lint": "eslint . --ext js,jsx,ts,tsx --fix",
     "lint:docs": "eslint . --ext mdx --fix",
     "format": "prettier --write .",
