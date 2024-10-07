@@ -12,25 +12,35 @@ CSS variables for theming are available for all components.
 Classnames are available for all components.
 Built-in dark mode support.
 
-## Consent Manager Installation
+## Features
+
+- CSS variables for theming all available components.
+- Classnames for all available components.
+- Built-in dark mode support.
+
+## Installation
 
 <Tabs items={['npm', 'yarn', 'pnpm']}>
   <Tabs.Tab>
-    ``` bash copy npm install --save @start-base/react-consent-manager ```
+    ```bash copy npm install --save @start-base/react-consent-manager ```
   </Tabs.Tab>
   <Tabs.Tab>
-    ``` bash copy yarn add @start-base/react-consent-manager ```
+    ```bash copy yarn add @start-base/react-consent-manager ```
   </Tabs.Tab>
   <Tabs.Tab>
-    ``` bash copy pnpm add @start-base/react-consent-manager ```
+    ```bash copy pnpm add @start-base/react-consent-manager ```
   </Tabs.Tab>
 </Tabs>
 
 Make sure to add css file to your app root file
 
-```tsx copy
+```ts copy
 import '@start-base/react-consent-manager/dist/lib/index.css';
 ```
+
+## Components
+
+### `<ConsentBanner />`
 
 import '@start-base/react-form-elements/styles.css';
 import Preview from '@components/Preview/Preview';
@@ -68,7 +78,7 @@ import '@start-base/react-consent-manager/dist/lib/index.css';
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```ts copy showLineNumbers
+    ```tsx copy showLineNumbers
     import { ConsentBanner } from '@start-base/react-consent-manager';
     import Switch from '@start-base/react-form-elements/Switch';
     import '@start-base/react-consent-manager/dist/lib/index.css';
@@ -101,3 +111,35 @@ import '@start-base/react-consent-manager/dist/lib/index.css';
 
   </Tabs.Tab>
 </Tabs>
+
+### `<ConsentBanner /> Props`
+
+| Prop       | Type                                                     | Default                               | Description                                            |
+| ---------- | -------------------------------------------------------- | ------------------------------------- | ------------------------------------------------------ |
+| `children` | `React.ReactNode`                                        | `null`                                | Content to display inside the banner                   |
+| `decline`  | `{ hidden: boolean, label: string }`                     | `{ hidden: false, label: 'Decline' }` | Object to configure the decline button                 |
+| `approve`  | `{ hidden: boolean, label: string }`                     | `{ hidden: false, label: 'Accept' }`  | Object to configure the approve button                 |
+| `settings` | `{ hidden: boolean, label: string, modal: ModalConfig }` | `{}`                                  | Object to configure the settings of the consent banner |
+
+#### `ModalConfig`
+
+Configuration object for the consent banner modal.
+
+```ts
+interface ModalConfig {
+  title: string;
+  description?: string;
+  decline?: {
+    hidden?: boolean;
+    label?: string;
+  };
+  approve?: {
+    hidden?: boolean;
+    label?: string;
+  };
+  approveAll?: {
+    hidden?: boolean;
+    label?: string;
+  };
+}
+```
