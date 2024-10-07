@@ -8,24 +8,21 @@ export const ModalExample = () => {
   return (
     <div>
       <button onClick={() => setIsOpen(true)}>Open Modal</button>
-      <Modal
-        isOpen={isOpen}
-        onRequestClose={() => setIsOpen(false)}
-      >
+      <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
         <h1>Hello World</h1>
       </Modal>
     </div>
   );
-}
+};
 
 export const GlobalModalExample = () => {
   const { openModal, closeModal } = useModal();
   const modalStyles = {
-    "modal-1": { width: "500px", height: "500px" },
-    "modal-2": { width: "400px", height: "400px" },
-    "modal-3": { width: "300px", height: "300px" },
-    "modal-4": { width: "200px", height: "200px" },
-  }
+    'modal-1': { width: '500px', height: '500px' },
+    'modal-2': { width: '400px', height: '400px' },
+    'modal-3': { width: '300px', height: '300px' },
+    'modal-4': { width: '200px', height: '200px' },
+  };
   return (
     <GlobalModals>
       {Object.keys(modalStyles).map((key) => (
@@ -37,20 +34,20 @@ export const GlobalModalExample = () => {
         >
           global {key}
           <button onClick={() => closeModal(key)}>close {key}</button>
-          {key !== "modal-4" && (
+          {key !== 'modal-4' && (
             <button
               onClick={() =>
-                openModal(`modal-${parseInt(key.split("-")[1], 10) + 1}`)
+                openModal(`modal-${parseInt(key.split('-')[1], 10) + 1}`)
               }
             >
-              open modal-{parseInt(key.split("-")[1], 10) + 1}
+              open modal-{parseInt(key.split('-')[1], 10) + 1}
             </button>
           )}
         </Modal>
       ))}
     </GlobalModals>
-  )
-}
+  );
+};
 
 # Modal
 
@@ -65,16 +62,12 @@ Accessible modal dialog component and global modals provider for React. This pac
 
 ## Installation
 
-<Tabs items={["npm", "yarn"]}>
+<Tabs items={['npm', 'yarn']}>
   <Tabs.Tab>
-    ```bash copy showLineNumbers
-      npm install @start-base/react-modal
-    ```
+    ```bash copy showLineNumbers npm install @start-base/react-modal ```
   </Tabs.Tab>
   <Tabs.Tab>
-    ```bash copy showLineNumbers
-      yarn add @start-base/react-modal
-    ```
+    ```bash copy showLineNumbers yarn add @start-base/react-modal ```
   </Tabs.Tab>
 </Tabs>
 
@@ -139,6 +132,7 @@ The `Modal` component is a local modal that is self contained. Its state can be 
       );
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -195,6 +189,7 @@ Since the state of the modals inside `GlobalModals` is managed globally, each re
       );
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
