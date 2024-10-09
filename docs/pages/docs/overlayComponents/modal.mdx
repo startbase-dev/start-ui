@@ -62,12 +62,44 @@ Accessible modal dialog component and global modals provider for React. This pac
 
 ## Installation
 
-<Tabs items={['npm', 'yarn']}>
+### Install the package
+
+<Tabs items={['npm', 'yarn', 'pnpm', 'bun']}>
   <Tabs.Tab>
-    ```bash copy showLineNumbers npm install @start-base/react-modal ```
+    ```bash copy
+    npm install @start-base/react-modal
+    ```
   </Tabs.Tab>
   <Tabs.Tab>
-    ```bash copy showLineNumbers yarn add @start-base/react-modal ```
+    ```bash copy
+    yarn add @start-base/react-modal
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```bash copy
+    pnmp add @start-base/react-modal
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```bash copy
+    bun add @start-base/react-modal
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Import the components
+
+<Tabs items={['Individual', 'Global']}>
+  <Tabs.Tab>
+    ```tsx copy
+    import Modal from '@start-base/react-modal/Modal';
+    import GlobalModals from '@start-base/react-modal/GlobalModals';
+    ```
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```tsx copy
+    import { Modal, GlobalModals } from '@start-base/react-modal';
+    ```
   </Tabs.Tab>
 </Tabs>
 
@@ -233,15 +265,118 @@ Now any button that triggers `openModal`, which comes with `useModal` hook, can 
 
 ### `useModal`
 
-The `useModal` hook is a simple custom hook that provides a way to manage the state of a global modal. It is used in conjunction with `GlobalModals` to open and close modals. The string passed to `openModal` or `closeModal` should match the `name` prop of the modal you want to open or close.
+The `useModal` custom hook provides several useful functions and properties for managing global modals.
 
-```jsx copy showLineNumbers
+#### `modals`
+
+The `modals` string array of `useModal` hook contains the names of global modals that currently exist.
+
+```jsx copy
 import { useModal } from '@start-base/react-modal';
 
-const { openModal, closeModal } = useModal();
+const { modals } = useModal();
 
-<button onClick={() => openModal('modal-1')}>Open modal-1</button>
-<button onClick={() => closeModal('modal-1')}>Close modal-1</button>
+console.log(modals); // ["modal-1", "modal-2"]
+```
+
+#### `openedModals`
+
+The `openedModals` object of `useModal` hook contains the names of the global modals as keys and their state as boolean values.
+
+```jsx copy
+import { useModal } from '@start-base/react-modal';
+
+const { openedModals } = useModal();
+
+console.log(openedModals); // { "modal-1": true, "modal-2": false }
+```
+
+#### `openModal`
+
+The `openModal` function of `useModal` hook opens and optionally stores properties to a global modal. The string passed to this function must match the `name` property of a given global modal.
+
+The stored properties can be accessed and used with `modalProps` object of `useModal` hook.
+
+```jsx copy
+import { useModal } from '@start-base/react-modal';
+
+function MyComponent() {
+  const { openModal } = useModal();
+
+  function handleDelete() {
+    console.log("Deleting modal-1");
+  }
+
+  return (
+    <button
+      onClick={() => openModal('modal-1', { callback: handleDelete })}
+    >
+      Open modal-1
+    </button>
+  );
+}
+```
+
+##### Syntax
+
+```ts
+openModal(modalName: string)
+openModal(modalName: string, modalProps: Record<string, any>)
+```
+
+##### Parameters
+
+`modalName`
+
+The name of the modal that will be opened. This string must match the `name` property of a given global modal.
+
+`modalProps` Optional
+
+The object to be used as the modal's properties when accessing it using `modalProps`. This object serves to attach any kind of extra value or function that a modal might need.
+
+#### `closeModal`
+
+The `closeModal` function of `useModal` hook is used to close a global modal. The string passed to this function must match the `name` property of a given global modal.
+
+```jsx copy
+import { useModal } from '@start-base/react-modal';
+
+function MyComponent() {
+  const { closeModal } = useModal();
+
+  return (
+    <button
+      onClick={() => closeModal('modal-1')}
+    >
+      Close modal-1
+    </button>
+  );
+}
+```
+
+#### `modalProps`
+
+The `modalProps` object of `useModal` hook contains all values passed to each global modal when opened using `openModal` function. It can be used to read extra values or run functions attached to a specific global modal.
+
+```jsx copy
+import { useModal } from '@start-base/react-modal';
+
+function MyComponent() {
+  const { modalProps, closeModal } = useModal();
+
+  console.log(modalProps); // { "modal-1": { callback: () => handleDelete() } }
+
+  function handleClose() {
+    modalProps["modal-1"]?.handleDelete();
+    closeModal("modal-1");
+  }
+
+  return (
+    <button onClick={handleClose}>
+      Close modal-1
+    </button>
+  );
+}
 ```
 
 ## Styling and Animation
