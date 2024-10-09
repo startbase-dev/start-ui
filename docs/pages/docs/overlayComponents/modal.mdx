@@ -31,41 +31,15 @@ Accessible modal dialog component and global modals provider for React. This pac
 
 ### Install the package
 
-<Tabs items={['npm', 'yarn', 'pnpm', 'bun']}>
-  <Tabs.Tab>
-    ```bash copy
-    npm install @start-base/react-modal
-    ```
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ```bash copy
-    yarn add @start-base/react-modal
-    ```
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ```bash copy
-    pnmp add @start-base/react-modal
-    ```
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ```bash copy
-    bun add @start-base/react-modal
-    ```
-  </Tabs.Tab>
-</Tabs>
-
 ### Import the components
 
 <Tabs items={['Individual', 'Global']}>
   <Tabs.Tab>
-    ```jsx copy
-    import Modal from '@start-base/react-modal/Modal';
-    import GlobalModals from '@start-base/react-modal/GlobalModals';
-    ```
+    ``` jsx copy import Modal from '@start-base/react-modal/Modal'; import
+    GlobalModals from '@start-base/react-modal/GlobalModals'; ```
   </Tabs.Tab>
   <Tabs.Tab>
-    ```jsx copy
-    import { Modal, GlobalModals } from '@start-base/react-modal';
+    ``` jsx copy import {(Modal, GlobalModals)} from '@start-base/react-modal';
     ```
   </Tabs.Tab>
 </Tabs>
@@ -131,6 +105,7 @@ The `Modal` component is a local modal that is self contained. Its state can be 
       );
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -147,7 +122,7 @@ Since the state of the modals inside `GlobalModals` is managed globally, each re
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```jsx copy showLineNumbers
+```jsx copy showLineNumbers
 'use client';
 import { GlobalModals, Modal, useModal } from '@start-base/react-modal';
 import Button from '@start-base/start-ui/Button';
@@ -155,24 +130,24 @@ import Button from '@start-base/start-ui/Button';
 import styles from './Modals.module.scss';
 
 export default function Modals() {
-  const { closeModal, openModal } = useModal();
+    const { closeModal, openModal } = useModal();
 
-  return (
-    <GlobalModals>
-      <div>
-            <Button onClick={() => openModal("modal")}>
-              Modal
-            </Button>
-      </div>
-      <Modal name="modal" isOpen={false}>
-        <div>
-          <h5>Modal</h5>
-        </div>
-      </Modal>
-    </GlobalModals>
-  );
+    return (
+        <GlobalModals>
+          <div>
+            <Button onClick={() => openModal('modal')}>Modal</Button>
+          </div>
+          <Modal name="modal" isOpen={false}>
+            <div>
+              <h5>Modal</h5>
+            </div>
+          </Modal>
+        </GlobalModals>
+    );
+
 }
-    ```
+
+````
   </Tabs.Tab>
 </Tabs>
 
@@ -208,7 +183,7 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-```
+````
 
 Now any button that triggers `openModal`, which comes with `useModal` hook, can be used to open the modals.
 

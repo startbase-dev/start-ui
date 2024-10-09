@@ -32,17 +32,13 @@ Make sure to add css file to your app root file
 import '@start-base/react-consent-manager/dist/lib/index.css';
 ```
 
-import '@start-base/react-form-elements/styles.css';
 import Preview from '@components/Preview/Preview';
 import { ConsentBanner } from '@start-base/react-consent-manager';
-import Switch from '@start-base/react-form-elements/Switch';
-import '@start-base/react-consent-manager/dist/lib/index.css';
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
   <Preview height="200px">
     <ConsentBanner
-      switchComponent={Switch}
       decline={{ hidden: false, label: 'Reject Optionals' }}
       approve={{ hidden: false, label: 'Accept' }}
       settings={{
@@ -70,11 +66,8 @@ import '@start-base/react-consent-manager/dist/lib/index.css';
   <Tabs.Tab>
     ```ts copy showLineNumbers
     import { ConsentBanner } from '@start-base/react-consent-manager';
-    import Switch from '@start-base/react-form-elements/Switch';
-    import '@start-base/react-consent-manager/dist/lib/index.css';
 
     <ConsentBanner
-      switchComponent={Switch}
       decline={{ hidden: false, label: 'Reject Optionals' }}
       approve={{ hidden: false, label: 'Accept' }}
       settings={{
