@@ -1,7 +1,7 @@
 import { Tabs } from 'nextra/components';
 import Preview from '@components/Preview/Preview';
 import GlobalModalExample from '@components/ModalExample/ModalExample';
-import { Modal, GlobalModals, useModal } from '@start-base/react-modal';
+import { Modal } from '@start-base/react-modal';
 import { useState } from 'react';
 
 export const ModalExample = () => {
@@ -160,9 +160,9 @@ export default function Modals() {
   return (
     <GlobalModals>
       <div>
-        <Button onClick={() => openModal("modal")}>
-          Modal
-        </Button>
+            <Button onClick={() => openModal("modal")}>
+              Modal
+            </Button>
       </div>
       <Modal name="modal" isOpen={false}>
         <div>
@@ -255,13 +255,11 @@ function MyComponent() {
   const { openModal } = useModal();
 
   function handleDelete() {
-    console.log("Deleting modal-1");
+    console.log('Deleting modal-1');
   }
 
   return (
-    <button
-      onClick={() => openModal('modal-1', { callback: handleDelete })}
-    >
+    <button onClick={() => openModal('modal-1', { callback: handleDelete })}>
       Open modal-1
     </button>
   );
@@ -295,13 +293,7 @@ import { useModal } from '@start-base/react-modal';
 function MyComponent() {
   const { closeModal } = useModal();
 
-  return (
-    <button
-      onClick={() => closeModal('modal-1')}
-    >
-      Close modal-1
-    </button>
-  );
+  return <button onClick={() => closeModal('modal-1')}>Close modal-1</button>;
 }
 ```
 
@@ -318,15 +310,11 @@ function MyComponent() {
   console.log(modalProps); // { "modal-1": { callback: () => handleDelete() } }
 
   function handleClose() {
-    modalProps["modal-1"]?.handleDelete();
-    closeModal("modal-1");
+    modalProps['modal-1']?.handleDelete();
+    closeModal('modal-1');
   }
 
-  return (
-    <button onClick={handleClose}>
-      Close modal-1
-    </button>
-  );
+  return <button onClick={handleClose}>Close modal-1</button>;
 }
 ```
 
