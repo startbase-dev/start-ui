@@ -1,20 +1,10 @@
 import { Tabs } from 'nextra/components';
 import Preview from '@components/Preview/Preview';
-import GlobalModalExample from '@components/ModalExample/ModalExample';
+import ModalExample from '@components/ModalExamples/ModalExample/ModalExample'
+import GlobalModalExample from '@components/ModalExamples/GlobalModalExample/GlobalModalExample';
 import { Modal } from '@start-base/react-modal';
 import { useState } from 'react';
-
-export const ModalExample = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  return (
-    <div>
-      <button onClick={() => setIsOpen(true)}>Open Modal</button>
-      <Modal isOpen={isOpen} onRequestClose={() => setIsOpen(false)}>
-        <h1>Hello World</h1>
-      </Modal>
-    </div>
-  );
-};
+import { Steps } from 'nextra/components';
 
 # Modal
 
@@ -29,22 +19,21 @@ Accessible modal dialog component and global modals provider for React. This pac
 
 ## Installation
 
-### Install the package
+<Steps>
+  ### Install the package
 
-### Import the components
+  ```sh copy npm2yarn
+  npm i @start-base/react-modal
+  ```
 
-<Tabs items={['Individual', 'Global']}>
-  <Tabs.Tab>
-    ``` jsx copy import Modal from '@start-base/react-modal/Modal'; import
-    GlobalModals from '@start-base/react-modal/GlobalModals'; ```
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ``` jsx copy import {(Modal, GlobalModals)} from '@start-base/react-modal';
-    ```
-  </Tabs.Tab>
-</Tabs>
+  ### Import the component
 
-## Usage
+  ```tsx copy
+  import { Modal } from '@start-base/react-modal';
+  ```
+</Steps>
+
+## Usages
 
 The primary documentation for Modal component is the [react-modal](https://reactjs.github.io/react-modal), which describes the API and gives examples of its usage.
 
@@ -52,7 +41,7 @@ Next.js example can show all the features and how to use them.
 
 To style the modal, you can utilize the `className` and `overlayClassName` props. When it comes to Next.js client-side rendering, you can re-export components with a comment indicating the use of the `use client` approach.
 
-```jsx copy showLineNumbers
+```tsx copy showLineNumbers
 'use client';
 import {
   Modal as ReactModal,
@@ -79,7 +68,7 @@ export { Modal, GlobalModals, ModalProvider, useModal };
 
 ### `<Modal />`
 
-The `Modal` component is a local modal that is self contained. Its state can be managed from its parent component.
+The `Modal` component is the main component of the `react-modal` library. It can either be a local modal if its state is managed inside its parent, or a global modal if it is wrapped in a `GlobalModals` component.
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
@@ -88,7 +77,7 @@ The `Modal` component is a local modal that is self contained. Its state can be 
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-    ```jsx copy showLineNumbers
+    ```tsx copy showLineNumbers
     import { Modal } from '@start-base/react-modal';
     import { useState } from 'react';
 
@@ -105,7 +94,6 @@ The `Modal` component is a local modal that is self contained. Its state can be 
       );
     }
     ```
-
   </Tabs.Tab>
 </Tabs>
 
@@ -122,17 +110,17 @@ Since the state of the modals inside `GlobalModals` is managed globally, each re
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
-```jsx copy showLineNumbers
-'use client';
-import { GlobalModals, Modal, useModal } from '@start-base/react-modal';
-import Button from '@start-base/start-ui/Button';
+    ```tsx copy showLineNumbers
+    'use client';
+    import { GlobalModals, Modal, useModal } from '@start-base/react-modal';
+    import Button from '@start-base/start-ui/Button';
 
-import styles from './Modals.module.scss';
+    import styles from './Modals.module.scss';
 
-export default function Modals() {
-    const { closeModal, openModal } = useModal();
+    export default function Modals() {
+      const { closeModal, openModal } = useModal();
 
-    return (
+      return (
         <GlobalModals>
           <div>
             <Button onClick={() => openModal('modal')}>Modal</Button>
@@ -143,11 +131,9 @@ export default function Modals() {
             </div>
           </Modal>
         </GlobalModals>
-    );
-
-}
-
-````
+      );
+    }
+    ```
   </Tabs.Tab>
 </Tabs>
 
@@ -159,10 +145,9 @@ This example creates a series of modals wrapped in `GlobalModals` that can be op
 
 The `ModalProvider` component is a wrapper for `GlobalModals` that allows you to manage your modals globally. This method allows you to open and close modals from anywhere in your application.
 
-```jsx copy showLineNumbers
+```tsx copy showLineNumbers
 import { Inter } from 'next/font/google';
 import { ModalProvider } from '@start-base/react-modal';
-import Modals from '@/components/Modals';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -177,13 +162,12 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <ModalProvider>
           {children}
-          <Modals />
         </ModalProvider>
       </body>
     </html>
   );
 }
-````
+```
 
 Now any button that triggers `openModal`, which comes with `useModal` hook, can be used to open the modals.
 
@@ -197,7 +181,7 @@ The `useModal` custom hook provides several useful functions and properties for 
 
 The `modals` string array of `useModal` hook contains the names of global modals that currently exist.
 
-```jsx copy
+```tsx copy showLineNumbers
 import { useModal } from '@start-base/react-modal';
 
 const { modals } = useModal();
@@ -209,7 +193,7 @@ console.log(modals); // ["modal-1", "modal-2"]
 
 The `openedModals` object of `useModal` hook contains the names of the global modals as keys and their state as boolean values.
 
-```jsx copy
+```tsx copy showLineNumbers
 import { useModal } from '@start-base/react-modal';
 
 const { openedModals } = useModal();
@@ -223,7 +207,7 @@ The `openModal` function of `useModal` hook opens and optionally stores properti
 
 The stored properties can be accessed and used with `modalProps` object of `useModal` hook.
 
-```jsx copy
+```tsx copy showLineNumbers
 import { useModal } from '@start-base/react-modal';
 
 function MyComponent() {
@@ -262,7 +246,7 @@ The object to be used as the modal's properties when accessing it using `modalPr
 
 The `closeModal` function of `useModal` hook is used to close a global modal. The string passed to this function must match the `name` property of a given global modal.
 
-```jsx copy
+```tsx copy showLineNumbers
 import { useModal } from '@start-base/react-modal';
 
 function MyComponent() {
@@ -276,7 +260,7 @@ function MyComponent() {
 
 The `modalProps` object of `useModal` hook contains all values passed to each global modal when opened using `openModal` function. It can be used to read extra values or run functions attached to a specific global modal.
 
-```jsx copy
+```tsx copy showLineNumbers
 import { useModal } from '@start-base/react-modal';
 
 function MyComponent() {
@@ -298,6 +282,8 @@ function MyComponent() {
 As mentioned in the usage section, you can style the modal using the `className` and `overlayClassName` props. For closing animations, you can use `closeTimeoutMS` prop to delay the closing of the modal.
 
 The following is an example of custom styling and animation.
+
+### Styling Modal
 
 ```css copy showLineNumbers
 .modal {
@@ -334,7 +320,11 @@ The following is an example of custom styling and animation.
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.8);
 }
+```
 
+### Styling Modal overlay
+
+```css copy showLineNumbers
 .overlay {
   position: fixed;
   inset: 0;
