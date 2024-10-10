@@ -1,9 +1,7 @@
 import { Tabs } from 'nextra/components';
 import Preview from '@components/Preview/Preview';
-import ModalExample from '@components/ModalExamples/ModalExample/ModalExample'
+import ModalExample from '@components/ModalExamples/ModalExample/ModalExample';
 import GlobalModalExample from '@components/ModalExamples/GlobalModalExample/GlobalModalExample';
-import { Modal } from '@start-base/react-modal';
-import { useState } from 'react';
 import { Steps } from 'nextra/components';
 
 # Modal
@@ -22,15 +20,16 @@ Accessible modal dialog component and global modals provider for React. This pac
 <Steps>
   ### Install the package
 
-  ```sh copy npm2yarn
-  npm i @start-base/react-modal
-  ```
+```sh copy npm2yarn
+npm i @start-base/react-modal
+```
 
-  ### Import the component
+### Import the component
 
-  ```tsx copy
-  import { Modal } from '@start-base/react-modal';
-  ```
+```tsx copy
+import { Modal } from '@start-base/react-modal';
+```
+
 </Steps>
 
 ## Usages
@@ -94,6 +93,7 @@ The `Modal` component is the main component of the `react-modal` library. It can
       );
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -134,6 +134,7 @@ Since the state of the modals inside `GlobalModals` is managed globally, each re
       );
     }
     ```
+
   </Tabs.Tab>
 </Tabs>
 
@@ -160,9 +161,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ModalProvider>
-          {children}
-        </ModalProvider>
+        <ModalProvider>{children}</ModalProvider>
       </body>
     </html>
   );
