@@ -1,0 +1,226 @@
+.leftSidebar {
+  left: -400px !important;
+  min-width: 400px;
+  height: calc(100% - 68px) !important;
+  top: 68px !important;
+  border-radius: 0 !important;
+  transform: none !important;
+  padding: 24px 12px;
+  transition: left 0.25s ease-in !important;
+
+  &[class~='ReactModal__Content--after-open'] {
+    min-width: 400px;
+    left: 0 !important;
+  }
+
+  &[class~='ReactModal__Content--before-close'] {
+    left: -400px !important;
+    opacity: 1 !important;
+  }
+
+  @media (min-width: 576px) {
+    // Small devices (landscape phones, 576px and up)
+  }
+
+  @media (min-width: 768px) {
+    // Medium devices (tablets, 768px and up)
+  }
+
+  @media (min-width: 992px) {
+    // Large devices (desktops, 992px and up)
+  }
+
+  @media (min-width: 1200px) {
+    // X-Large devices (large desktops, 1200px and up)
+  }
+
+  @media (min-width: 1400px) {
+    // XX-Large devices (larger desktops, 1400px and up)
+  }
+
+  @media (min-width: 2160px) {
+    // XXX-Large devices (larger desktops, 2160px and up)
+  }
+}
+
+.rightSidebar {
+  right: -400px !important;
+  left: unset !important;
+  min-width: 400px;
+  min-height: 100%;
+  height: 100%;
+  top: 0 !important;
+  border-radius: 0 !important;
+  transform: none !important;
+  transition: right 0.25s ease-in !important;
+
+  &[class~='ReactModal__Content--after-open'] {
+    min-width: 400px;
+    right: 0 !important;
+  }
+
+  &[class~='ReactModal__Content--before-close'] {
+    right: -400px !important;
+    opacity: 1 !important;
+  }
+
+  @media (min-width: 576px) {
+    // Small devices (landscape phones, 576px and up)
+  }
+
+  @media (min-width: 768px) {
+    // Medium devices (tablets, 768px and up)
+  }
+
+  @media (min-width: 992px) {
+    // Large devices (desktops, 992px and up)
+  }
+
+  @media (min-width: 1200px) {
+    // X-Large devices (large desktops, 1200px and up)
+  }
+
+  @media (min-width: 1400px) {
+    // XX-Large devices (larger desktops, 1400px and up)
+  }
+
+  @media (min-width: 2160px) {
+    // XXX-Large devices (larger desktops, 2160px and up)
+  }
+}
+
+.drawer {
+  right: 0 !important;
+  left: unset !important;
+  top: 100vh !important;
+  width: 100% !important;
+  height: calc((100vh / 4) * 3) !important;
+  border-radius: 0 !important;
+  transform: none !important;
+  transition: top 0.3s ease-in !important;
+
+  &[class~='ReactModal__Content--after-open'] {
+    min-width: 400px;
+    top: calc(100vh / 4) !important;
+  }
+
+  &[class~='ReactModal__Content--before-close'] {
+    top: 100vh !important;
+    opacity: 1 !important;
+  }
+
+  @media (min-width: 576px) {
+    // Small devices (landscape phones, 576px and up)
+  }
+
+  @media (min-width: 768px) {
+    // Medium devices (tablets, 768px and up)
+  }
+
+  @media (min-width: 992px) {
+    // Large devices (desktops, 992px and up)
+    right: 50px !important;
+    width: 400px !important;
+    min-height: calc(100vh / 2);
+
+    &[class~='ReactModal__Content--after-open'] {
+      top: calc(100vh / 2) !important;
+      opacity: 1 !important;
+    }
+
+    &[class~='ReactModal__Content--before-close'] {
+      top: 100vh !important;
+      opacity: 1 !important;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    // X-Large devices (large desktops, 1200px and up)
+  }
+
+  @media (min-width: 1400px) {
+    // XX-Large devices (larger desktops, 1400px and up)
+  }
+
+  @media (min-width: 2160px) {
+    // XXX-Large devices (larger desktops, 2160px and up)
+  }
+}
+
+.fullPage {
+  height: 100% !important;
+  width: 100% !important;
+  transform: translate(-50%, -50%) scale(0.5);
+  overflow: auto;
+  outline: none;
+  border-radius: unset !important;
+
+  &[class~='ReactModal__Content--before-close'] {
+    transform: translate(-50%, -50%) scale(0) !important;
+    transition:
+      opacity 0.5s ease,
+      transform 0.4s ease !important;
+  }
+
+  @media (min-width: 576px) {
+    // Small devices (landscape phones, 576px and up)
+  }
+
+  @media (min-width: 768px) {
+    // Medium devices (tablets, 768px and up)
+  }
+
+  @media (min-width: 992px) {
+    // Large devices (desktops, 992px and up)
+  }
+
+  @media (min-width: 1200px) {
+    // X-Large devices (large desktops, 1200px and up)
+  }
+
+  @media (min-width: 1400px) {
+    // XX-Large devices (larger desktops, 1400px and up)
+  }
+
+  @media (min-width: 2160px) {
+    // XXX-Large devices (larger desktops, 2160px and up)
+  }
+}
+
+.noOverlay {
+  position: static !important;
+  background-color: var(--transparent) !important;
+  backdrop-filter: unset !important;
+
+  &[class~='ReactModal__Overlay--after-open'] {
+    background-color: var(--transparent) !important;
+  }
+
+  &[class~='ReactModal__Overlay--before-close'] {
+    background-color: var(--transparent) !important;
+  }
+
+  @media (min-width: 576px) {
+    // Small devices (landscape phones, 576px and up)
+  }
+
+  @media (min-width: 768px) {
+    // Medium devices (tablets, 768px and up)
+  }
+
+  @media (min-width: 992px) {
+    // Large devices (desktops, 992px and up)
+  }
+
+  @media (min-width: 1200px) {
+    // X-Large devices (large desktops, 1200px and up)
+  }
+
+  @media (min-width: 1400px) {
+    // XX-Large devices (larger desktops, 1400px and up)
+  }
+
+  @media (min-width: 2160px) {
+    // XXX-Large devices (larger desktops, 2160px and up)
+  }
+}

@@ -2,7 +2,13 @@ import '../style.module.css';
 import React from 'react';
 import '@start-base/react-form-elements/styles.css';
 import '@start-base/start-ui/styles.css';
+import '@start-base/react-consent-manager/styles.css';
+import { ModalProvider } from '@start-base/react-modal';
 
 export default function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <ModalProvider>
+      <Component {...pageProps} />
+    </ModalProvider>
+  );
 }

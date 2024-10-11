@@ -58,6 +58,7 @@ export default defineConfig({
   },
   dts: true,
   sourcemap: false,
+  treeshake: true,
   clean: false,
   esbuildPlugins: [
     sassPlugin({

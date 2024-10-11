@@ -2,11 +2,10 @@ import React, { useState, useEffect, useMemo, Key, forwardRef } from 'react';
 import RCTable, { VirtualTable } from 'rc-table';
 import cx from 'clsx';
 import { ColumnType } from 'rc-table';
-import { DataItem, DataTableProps, SortOrder } from './types';
+import { CellAttributes, DataItem, DataTableProps, SortOrder } from './types';
 import Pagination from './ui/Pagination';
 import Filter from './ui/Filter';
 import Sorting from './ui/Sort';
-import Typography from '../Typography/index';
 import Checkbox from './ui/Checkbox';
 
 // eslint-disable-next-line css-modules/no-unused-class
@@ -205,10 +204,19 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
             )}
           </div>
         );
+        const dataTitle =
+          typeof col.title === 'string'
+            ? col.title
+            : typeof col.title === 'number'
+              ? col.title.toString()
+              : undefined;
 
         return {
           ...col,
           title: titleWithSort,
+          onCell: (): CellAttributes => ({
+            'data-title': dataTitle,
+          }),
         };
       });
     }, [columns, sorting, sortColumn, sortOrder, hoveredColumn]);
@@ -248,11 +256,9 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
           })}
         >
           {title && (
-            <div className={styles.tableTitle}>
+            <div className={styles.tableTitleContainer}>
               {typeof title === 'string' ? (
-                <Typography variant="subtitle" size="small">
-                  {title}
-                </Typography>
+                <p className={styles.tableTitle}>{title}</p>
               ) : (
                 title
               )}
@@ -280,7 +286,7 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
               data={tableData}
               columns={modifiedColumns}
               tableLayout="fixed"
-              scroll={{ y: maxHeight }}
+              scroll={{ x: 400, y: maxHeight }}
               className={styles.tableContainer}
               rowClassName={(_record) =>
                 cx(styles.row, styles.virtualized, {
