@@ -19,23 +19,23 @@
   "homepage": "https://github.com/shuding/nextra-docs-template#readme",
   "dependencies": {
     "@dotlottie/react-player": "1.6.19",
-    "@start-base/react-consent-manager": "1.11.1",
-    "@start-base/react-form-elements": "1.10.1",
-    "@start-base/react-modal": "^1.4.1",
-    "@start-base/start-ui": "0.0.36-alpha",
-    "framer-motion": "11.8.0",
-    "next": "13.5.6",
+    "@start-base/react-consent-manager": "1.11.2",
+    "@start-base/react-form-elements": "1.11.1",
+    "@start-base/react-modal": "1.4.1",
+    "@start-base/start-ui": "0.0.42-alpha",
+    "framer-motion": "11.11.7",
+    "next": "13.5.7",
     "nextra": "2.13.4",
     "nextra-theme-docs": "2.13.4",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-icons": "5.3.0",
-    "sass": "^1.79.4"
+    "sass": "1.79.5"
   },
   "devDependencies": {
-    "@lottiefiles/lottie-types": "^1.5.0",
-    "@types/howler": "^2.2.12",
-    "@types/node": "22.7.3",
-    "typescript": "5.6.2"
+    "@lottiefiles/lottie-types": "1.5.0",
+    "@types/howler": "2.2.12",
+    "@types/node": "22.7.5",
+    "typescript": "5.6.3"
   }
 }

@@ -52,7 +52,8 @@
       "extends": "plugin:mdx/recommended",
       "rules": {
         "semi": 0,
-        "css-modules/no-unused-class": 0
+        "css-modules/no-unused-class": 0,
+        "react/no-children-prop": 0
       }
     }
   ]
