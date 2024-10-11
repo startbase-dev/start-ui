@@ -3,9 +3,9 @@ import React from 'react';
 import { GlobalModals, Modal, useModal } from '@start-base/react-modal';
 import Button from '@start-base/start-ui/Button';
 
-import styles from './ModalExample.module.scss';
+import styles from './GlobalModalExample.module.scss';
 
-export default function Modals() {
+export default function GlobalModalExample() {
   const { closeModal, openModal } = useModal();
 
   return (
