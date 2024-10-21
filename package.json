@@ -2,7 +2,7 @@
   "name": "@start-base/start-ui",
   "author": "Start-Base",
   "description": "",
-  "version": "0.0.42-alpha",
+  "version": "0.0.43-alpha",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -188,6 +188,10 @@
     "./Typography": {
       "require": "./Typography/index.cjs",
       "import": "./Typography/index.js"
+    },
+    "./WordAnimation": {
+      "require": "./WordAnimation/index.cjs",
+      "import": "./WordAnimation/index.js"
     }
   },
   "scripts": {
@@ -198,7 +202,7 @@
     "stylelint": "stylelint \"src/**/*.scss\" --fix",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build:all": "npm run build && npm run build:variables && npm run build:Accordion && npm run build:Breadcrumbs && npm run build:ContextMenu && npm run build:FloatingMenuItem && npm run build:Alert && npm run build:Badge && npm run build:BentoCard && npm run build:Button && npm run build:Card && npm run build:Chip && npm run build:Col && npm run build:BentoGrid && npm run build:Grid && npm run build:Countdown && npm run build:DataTable && npm run build:Divider && npm run build:Dropdown && npm run build:List && npm run build:Popover && npm run build:Progress && npm run build:Row && npm run build:ScrollArea && npm run build:Skeleton && npm run build:Stepper && npm run build:Tab && npm run build:Table && npm run build:Toggle && npm run build:ToggleGroup && npm run build:Tooltip && npm run build:Typography && npm run build:Avatar",
+    "build:all": "npm run build && npm run build:variables && npm run build:Accordion && npm run build:Breadcrumbs && npm run build:ContextMenu && npm run build:FloatingMenuItem && npm run build:Alert && npm run build:Badge && npm run build:BentoCard && npm run build:Button && npm run build:Card && npm run build:Chip && npm run build:Col && npm run build:BentoGrid && npm run build:Grid && npm run build:Countdown && npm run build:DataTable && npm run build:Divider && npm run build:Dropdown && npm run build:List && npm run build:Popover && npm run build:Progress && npm run build:Row && npm run build:ScrollArea && npm run build:Skeleton && npm run build:Stepper && npm run build:Tab && npm run build:Table && npm run build:Toggle && npm run build:ToggleGroup && npm run build:Tooltip && npm run build:Typography && npm run build:Avatar && npm run build:WordAnimation",
     "build": "tsup --out-dir ./ --no-splitting --treeshake --minify terser",
     "build:variables": "tsup src/style/variables.scss --out-dir ./ --no-splitting --treeshake --minify terser",
     "build:Accordion": "tsup src/Accordion/index.tsx --out-dir ./Accordion --no-splitting --treeshake --minify terser",
@@ -231,7 +235,8 @@
     "build:Toggle": "tsup src/Toggle/index.tsx --out-dir ./Toggle --no-splitting --treeshake --minify terser",
     "build:ToggleGroup": "tsup src/ToggleGroup/index.tsx --out-dir ./ToggleGroup --no-splitting --treeshake --minify terser",
     "build:Tooltip": "tsup src/floatings/Tooltip/index.tsx --out-dir ./Tooltip --no-splitting --treeshake --minify terser",
-    "build:Typography": "tsup src/Typography/index.tsx --out-dir ./Typography --no-splitting --treeshake --minify terser"
+    "build:Typography": "tsup src/Typography/index.tsx --out-dir ./Typography --no-splitting --treeshake --minify terser",
+    "build:WordAnimation": "tsup src/WordAnimation/index.tsx --out-dir ./WordAnimation --no-splitting --treeshake --minify terser"
   },
   "peerDependencies": {
     "@floating-ui/core": "^1.6.8",
