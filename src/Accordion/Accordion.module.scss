@@ -6,6 +6,7 @@
   border-right: 1px solid var(--sui-accordion-border);
   box-sizing: border-box;
   transition: var(--sui-transition);
+  padding: 0 0.5rem;
 
   &:first-of-type {
     border-top-left-radius: var(--sui-border-radius-small);
@@ -20,11 +21,16 @@
   }
 
   &[data-expanded='true'] {
-    .root,
     .actions {
       max-height: 200px;
       max-height: calc-size(auto);
-      padding: 0.5rem 1rem;
+      padding: 1rem 0.5rem;
+    }
+
+    .root {
+      max-height: 200px;
+      max-height: calc-size(auto);
+      padding: 0 1rem;
     }
 
     .icon {
@@ -52,7 +58,7 @@
   align-items: center;
   width: 100%;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 1rem 0.5rem;
   color: var(--sui-accordion-summary-fg);
   background-color: var(--sui-accordion-summary-bg);
   border-radius: var(--sui-border-radius-small);
@@ -89,7 +95,7 @@
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 0.5rem;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   overflow: auto;
   max-height: 0;
   transition: var(--sui-transition);
