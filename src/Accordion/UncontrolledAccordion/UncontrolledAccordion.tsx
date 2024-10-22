@@ -24,6 +24,7 @@ const UncontrolledAccordion = forwardRef<
       disabled = false,
       icon,
       unmountOnExit = false,
+      variant = "drawer",
       ...props
     },
     ref
@@ -60,6 +61,7 @@ const UncontrolledAccordion = forwardRef<
         data-expanded={expanded}
         data-unmountonexit={unmountOnExit}
         aria-disabled={disabled}
+        data-variant={variant}
         {...props}
       >
         <button

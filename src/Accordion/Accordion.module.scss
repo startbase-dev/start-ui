@@ -2,22 +2,34 @@
   color: var(--sui-accordion-fg);
   background-color: var(--sui-accordion-bg);
   font-family: var(--sui-font-family);
-  border-left: 1px solid var(--sui-accordion-border);
-  border-right: 1px solid var(--sui-accordion-border);
   box-sizing: border-box;
   transition: var(--sui-transition);
   padding: 0 0.5rem;
 
-  &:first-of-type {
-    border-top-left-radius: var(--sui-border-radius-small);
-    border-top-right-radius: var(--sui-border-radius-small);
-    border-top: 1px solid var(--sui-accordion-border);
+  &[data-variant="drawer"] {
+    border-left: 1px solid var(--sui-accordion-border);
+    border-right: 1px solid var(--sui-accordion-border);
+
+    &:first-of-type {
+      border-top-left-radius: var(--sui-border-radius-small);
+      border-top-right-radius: var(--sui-border-radius-small);
+      border-top: 1px solid var(--sui-accordion-border);
+    }
+
+    &:last-of-type {
+      border-bottom-left-radius: var(--sui-border-radius-small);
+      border-bottom-right-radius: var(--sui-border-radius-small);
+      border-bottom: 1px solid var(--sui-accordion-border);
+    }
   }
 
-  &:last-of-type {
-    border-bottom-left-radius: var(--sui-border-radius-small);
-    border-bottom-right-radius: var(--sui-border-radius-small);
-    border-bottom: 1px solid var(--sui-accordion-border);
+  &[data-variant="individual"] {
+    border: 1px solid var(--sui-accordion-border);
+    border-radius: var(--sui-border-radius-medium);
+
+    &:not(:first-of-type):not(:last-of-type) {
+      margin: 1rem 0;
+    }
   }
 
   &[data-expanded='true'] {
@@ -45,6 +57,7 @@
   }
 
   &[data-unmountonexit='true'] {
+
     .root,
     .actions {
       transition: none;
