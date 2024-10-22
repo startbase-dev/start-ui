@@ -6,7 +6,7 @@
   transition: var(--sui-transition);
   padding: 0 0.5rem;
 
-  &[data-variant="drawer"] {
+  &[data-variant='drawer'] {
     border-left: 1px solid var(--sui-accordion-border);
     border-right: 1px solid var(--sui-accordion-border);
 
@@ -23,11 +23,11 @@
     }
   }
 
-  &[data-variant="individual"] {
+  &[data-variant='individual'] {
     border: 1px solid var(--sui-accordion-border);
     border-radius: var(--sui-border-radius-medium);
 
-    &:not(:first-of-type):not(:last-of-type) {
+    &:not(:first-of-type, :last-of-type) {
       margin: 1rem 0;
     }
   }
@@ -57,7 +57,6 @@
   }
 
   &[data-unmountonexit='true'] {
-
     .root,
     .actions {
       transition: none;

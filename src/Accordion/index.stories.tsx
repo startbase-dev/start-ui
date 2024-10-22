@@ -18,10 +18,10 @@ const Template: React.FC<AccordionTemplateProps> = (args) => {
   return (
     <StoryBook title={title}>
       <span>{`"individual" variant`}</span>
-      <div style={{width: "100%"}}>
-        <Accordion {...props} variant='individual' />
-        <Accordion {...props} variant='individual' />
-        <Accordion {...props} variant='individual' />
+      <div style={{ width: '100%' }}>
+        <Accordion {...props} variant="individual" />
+        <Accordion {...props} variant="individual" />
+        <Accordion {...props} variant="individual" />
       </div>
       <span>{`Default expanded accordions will be expanded upon page load.`}</span>
       <div style={{ width: '100%' }}>
@@ -96,7 +96,7 @@ AccordionComponent.args = {
   defaultExpanded: false,
   disabled: false,
   unmountOnExit: false,
-  variant: "drawer",
+  variant: 'drawer',
 };
 
 const Component = {

@@ -13,7 +13,7 @@ export interface AccordionProps
   disabled?: boolean;
   icon?: React.ReactNode;
   unmountOnExit?: boolean;
-  variant?: "drawer" | "individual";
+  variant?: 'drawer' | 'individual';
 }
 
 export interface AccordionTemplateProps extends AccordionProps {

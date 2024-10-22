@@ -24,7 +24,7 @@ const UncontrolledAccordion = forwardRef<
       disabled = false,
       icon,
       unmountOnExit = false,
-      variant = "drawer",
+      variant = 'drawer',
       ...props
     },
     ref
