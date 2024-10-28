@@ -350,7 +350,6 @@
         margin-bottom: 0;
         box-sizing: border-box;
         height: auto;
-        border-top: 1px solid var(--sui-datatable-border);
       }
 
       td {
@@ -365,6 +364,10 @@
         height: 56px;
         justify-content: space-between;
         align-items: center;
+
+        &:first-of-type {
+          border-top: 1px solid var(--sui-datatable-border);
+        }
 
         &::before {
           content: attr(data-title);
@@ -437,6 +440,7 @@
           padding: 0.35em;
           display: table-row;
           margin-bottom: 1rem;
+          border-top: 1px solid var(--sui-datatable-border);
         }
 
         th,
