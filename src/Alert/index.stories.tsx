@@ -2,6 +2,7 @@ import React from 'react';
 import Alert from './index';
 import type { TemplateProps } from './types';
 import Storybook from '../Storybook';
+import Button from '../Button';
 
 const Template: React.FC<TemplateProps> = (args) => {
   const { children, title, ...props } = args;
@@ -58,8 +59,8 @@ AlertWithAction.args = {
   ...AlertComponent.args,
   children:
     'This is an alert with an action button. Try clicking on the button.',
-  action: (
-    <button onClick={() => window.alert('You clicked me!')}>Click me!</button>
+  actionElement: (
+    <Button onClick={() => window.alert('You clicked me!')} style={{ minWidth: "unset", height: "unset" }}>Click me!</Button>
   ),
 };
 

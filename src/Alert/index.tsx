@@ -22,7 +22,7 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
     ...rest
   } = props;
   const rootClassNames = clsx(s.root, className);
-  const iconClassNames = clsx(iconClassName);
+  const iconClassNames = clsx(s.icon, iconClassName);
   const bodyClassNames = clsx(s.body, bodyClassName);
   const titleClassNames = clsx(s.title, titleClassName);
   const textClassNames = clsx(textClassName);
@@ -59,7 +59,7 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
           className={iconClassNames}
           iconName={severity}
           icon={icon}
-          size={22}
+          size={24}
         />
       ) : (
         icon
@@ -68,7 +68,7 @@ const Alert = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
         {title && <span className={titleClassNames}>{title}</span>}
         <span className={textClassNames}>{children}</span>
       </div>
-      {actionElement}
+      {actionElement && <div className={s.icon}>{actionElement}</div>}
     </div>
   );
 });
