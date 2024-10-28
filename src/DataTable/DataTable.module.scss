@@ -75,6 +75,12 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--sui-datatable-gap-small);
+
+  /** TODO: Temporary fix for pagination misalignment. The issue stems from the Button component's styling */
+  > button {
+    min-width: unset !important;
+    height: unset !important;
+  }
 }
 
 /* Select and Highlight */
