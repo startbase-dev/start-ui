@@ -293,6 +293,10 @@
 .table {
   border: none;
 
+  input {
+    appearance: auto;
+  }
+
   .columnHeader {
     display: flex;
     justify-content: center;
