@@ -96,8 +96,8 @@
 .rowHighlighted {
   background-color: color-mix(
     in srgb,
-    var(--sui-datatable-black) 25%,
-    var(--sui-datatable-white)
+    var(--sui-datatable-white) 20%,
+    var(--sui-datatable-black)
   ) !important;
 }
 
@@ -138,6 +138,7 @@
   justify-content: center;
   align-items: center;
   margin-bottom: var(--sui-datatable-margin-small);
+  color: var(--sui-black);
 }
 
 .filterIconButton {
@@ -150,13 +151,10 @@
   border-radius: var(--sui-datatable-border-radius-small);
   text-align: center;
   z-index: 20;
+  background-color: var(--sui-gray-150);
 
   &:hover {
-    background-color: color-mix(
-      in srgb,
-      var(--sui-datatable-black) 94%,
-      var(--sui-datatable-white)
-    );
+    background-color: var(--sui-datatable-filter-hover);
   }
 }
 
@@ -178,6 +176,10 @@
   transform: translateX(25px);
   opacity: 0;
   height: 1.5rem;
+
+  > button {
+    background-color: var(--sui-gray-150);
+  }
 }
 
 .filterContentInner {
@@ -206,10 +208,16 @@
   right: 5%;
   top: 0%;
   border-radius: var(--sui-datatable-border-radius-small);
+  color: var(--sui-black);
   background-color: var(--sui-gray-50);
   padding: var(--sui-datatable-padding-small);
   font-size: 0.8rem;
   z-index: 3;
+
+  input[type="checkbox"] {
+    appearance: auto;
+    color-scheme: light;
+  }
 }
 
 .openPanel {
