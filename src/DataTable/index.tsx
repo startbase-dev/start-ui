@@ -258,7 +258,7 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
           {title && (
             <div className={styles.tableTitleContainer}>
               {typeof title === 'string' ? (
-                <p className={styles.tableTitle}>{title}</p>
+                <span className={styles.tableTitle}>{title}</span>
               ) : (
                 title
               )}
