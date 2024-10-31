@@ -1,6 +1,8 @@
 .root {
   width: 100%;
   height: 100%;
+  min-width: 300px;
+  min-height: 300px;
   background-color: var(--sui-bento-card-bg);
   border-radius: 16px;
   border: 1px solid var(--sui-bento-card-border);
@@ -13,24 +15,24 @@
   justify-content: space-between;
   overflow: hidden;
   position: relative;
+  box-sizing: border-box;
 }
 
 .rootActive {
   background-color: var(--sui-bento-card-bg-active);
   line-height: 24px;
+  padding: 20px;
 }
 
 .title {
-  font-size: var(--sui-h1-fs);
+  font-size: var(--sui-h3-lh);
   line-height: var(--sui-h1-lh);
   font-weight: 600;
   letter-spacing: 0.011em;
   color: var(--sui-bento-card-title);
-  padding: 36px 40px;
   position: absolute;
   z-index: 4;
   flex-shrink: 0;
-  max-height: 100px;
 }
 
 .activeTitle {
@@ -81,7 +83,7 @@
     opacity 600ms;
   animation: slide-up 600ms forwards;
   width: 100%;
-  font-size: var(--sui-text-large-fs);
+  font-size: var(--sui-h6-lh);
   line-height: var(--sui-text-large-lh);
 }
 
@@ -194,4 +196,42 @@
   to {
     transform: rotate(0deg);
   }
+}
+
+@media (min-width: 576px) {
+  // Small devices (landscape phones, 576px and up)
+  .title {
+    padding: 36px 40px;
+    max-height: 100px;
+    font-size: var(--sui-h1-fs);
+  }
+
+  .content {
+    font-size: var(--sui-text-large-fs);
+    padding: 0 40px;
+  }
+
+  .rootActive {
+    padding: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  // Medium devices (tablets, 768px and up)
+}
+
+@media (min-width: 992px) {
+  // Large devices (desktops, 992px and up)
+}
+
+@media (min-width: 1200px) {
+  // X-Large devices (large desktops, 1200px and up
+}
+
+@media (min-width: 1400px) {
+  // XX-Large devices (larger desktops, 1400px and up)
+}
+
+@media (min-width: 2160px) {
+  // XXX-Large devices (larger desktops, 2160px and up)
 }
