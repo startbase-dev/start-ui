@@ -15,6 +15,7 @@ export default function ModalExample() {
         className={styles.modal}
         overlayClassName={styles.overlay}
         onRequestClose={() => setIsOpen(false)}
+        appElement={"html"}
       >
         <div>
           <span className={styles.title}>Hello World</span>
