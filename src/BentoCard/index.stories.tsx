@@ -21,7 +21,7 @@ const Template: React.FC<TemplateProps> = (args) => {
           firstContent={<VideoPlayer />}
           rootClassName={s.firstCardRoot}
           secondContent={
-            <div style={{ padding: '40px' }}>
+            <div>
               Customize how your controls are laid out, resize them, or build
               your own groups of controls so they’re always just a swipe away.
             </div>
@@ -41,7 +41,7 @@ const Template: React.FC<TemplateProps> = (args) => {
           }
           redirectTo="https://startbase.dev"
           secondContent={
-            <div style={{ padding: '40px' }}>
+            <div>
               Lock an app to require Face ID, Touch ID, or your passcode for
               access. Information from the app won’t appear in other places
               across the system, including search and notifications, so others
@@ -58,7 +58,7 @@ const Template: React.FC<TemplateProps> = (args) => {
           rootClassName={s.thirdCardRoot}
           firstContent={<Image />}
           secondContent={
-            <div style={{ padding: '40px' }}>
+            <div>
               With the satellite capabilities on iPhone 14 or later, you can
               stay connected with friends and family over iMessage or SMS even
               without cellular or Wi-Fi service. When texting people on
