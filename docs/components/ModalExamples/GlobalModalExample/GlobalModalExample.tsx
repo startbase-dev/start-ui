@@ -23,6 +23,7 @@ export default function GlobalModalExample() {
         name="modal"
         isOpen={false}
         className={styles.modal}
+        overlayClassName={styles.overlay}
         appElement={'html'}
         closeTimeoutMS={300}
       >
