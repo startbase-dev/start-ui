@@ -121,16 +121,19 @@ Since the state of the modals inside `GlobalModals` is managed globally, each re
       const { closeModal, openModal } = useModal();
 
       return (
-        <GlobalModals>
+        <div>
           <div>
             <Button onClick={() => openModal('modal')}>Modal</Button>
           </div>
-          <Modal name="modal" isOpen={false}>
-            <div>
-              <h5>Modal</h5>
-            </div>
-          </Modal>
-        </GlobalModals>
+          <GlobalModals>
+            <Modal name="modal" isOpen={false}>
+              <div>
+                <h5>Modal</h5>
+                <Button onClick={() => closeModal("modal")}>Close</Button>
+              </div>
+            </Modal>
+          </GlobalModals>
+        </div>
       );
     }
     ```
