@@ -19,6 +19,7 @@ const BentoCard = forwardRef<HTMLDivElement, BentoCardProps>((props, ref) => {
     isTitleVisibleInFirst = true,
     isTitleVisibleInSecond = true,
     redirectTo,
+    ...rest
   } = props;
   const [isActive, setIsActive] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
@@ -57,7 +58,7 @@ const BentoCard = forwardRef<HTMLDivElement, BentoCardProps>((props, ref) => {
         [s.rootActive]: isActive,
       })}
       ref={ref}
-      {...props}
+      {...rest}
     >
       <div
         className={clsx(s.title, titleClassName, {
