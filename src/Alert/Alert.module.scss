@@ -1,7 +1,8 @@
 .root {
   display: flex;
-  gap: var(--sui-gap);
-  padding: var(--sui-padding);
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
   border-radius: var(--sui-border-radius-medium);
   border: 1px solid var(--sui-transparent);
   color: var(--sui-success);
@@ -9,9 +10,14 @@
   font-family: var(--sui-font-family);
 }
 
+.icon {
+  width: fit-content;
+  flex-shrink: 0;
+}
+
 .body {
   display: flex;
-  flex-grow: 1;
+  flex: 1;
   flex-direction: column;
   justify-content: center;
   font-weight: 400;
