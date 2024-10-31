@@ -1,49 +1,69 @@
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.8);
-  padding: 2rem;
-  overflow: auto;
-  outline: none;
-  border-radius: 10px;
-  background-color: var(--black);
-  box-shadow:
-    0 1px 5px rgba(0, 0, 0, 0.2),
-    0 1px 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  color: var(--white);
-  opacity: 0;
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-
-  @media (max-width: 768px) {
-    max-width: 90%;
+@keyframes pop-in {
+  from {
+    scale: 0.2;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
   }
 }
 
-.modal[class~='ReactModal__Content--after-open'] {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
+@keyframes pop-out {
+  from {
+    scale: 1;
+    opacity: 1;
+  }
+  to {
+    scale: 0.2;
+    opacity: 0;
+  }
 }
 
-.modal[class~='ReactModal__Content--before-close'] {
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.8);
+.modal {
+  color: black;
+  background-color: white;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  inset: calc((100svh - 300px) / 2) calc((100svw - 300px) / 2);
+  border-radius: 0.5rem;
+  animation: pop-in 300ms both cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+  &[class~='ReactModal__Content--before-close'] {
+    animation: pop-out 300ms both cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    background-color: inherit;
+    border-radius: inherit;
+    padding: 20px;
+    width: 300px;
+    height: 300px;
+  }
 }
 
 .overlay {
+  z-index: 1003;
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0);
-  transition: background-color 0.3s ease;
+  background-color: rgba(0,0,0,0.25);
 }
 
-.overlay[class~='ReactModal__Overlay--after-open'] {
-  background-color: rgba(0, 0, 0, 0.5);
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 100%;
 }
 
-.overlay[class~='ReactModal__Overlay--before-close'] {
-  background-color: rgba(0, 0, 0, 0);
+html[class~="dark"] {
+  .modal {
+    color: white;
+    background-color: black;
+  }
 }
