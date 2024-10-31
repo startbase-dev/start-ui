@@ -76,15 +76,15 @@ The RadioGroup component is designed to manage a set of radio buttons that allow
     <FormOnChange>
    <RadioGroup
       label="RadioGroup"
-      name="default"
+      name="e1"
       options={[
         {
           label: 'Radio Option 1',
-          value: 'default1'
+          value: 'e1v1'
         },
         {
           label: 'Radio Option 2',
-          value: 'default2'
+          value: 'e1v2'
         }
       ]}
     />
@@ -94,69 +94,6 @@ The RadioGroup component is designed to manage a set of radio buttons that allow
   <Tabs.Tab>
     ```jsx copy showLineNumbers
     <RadioGroup
-      label="RadioGroup"
-      name="default"
-      onChange={handleChange}
-      options={[
-        {
-          label: 'Radio Option 1',
-          value: 'default1'
-        },
-        {
-          label: 'Radio Option 2',
-          value: 'default2'
-        }
-      ]}
-    />
-    ```
-
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ```jsx copy showLineNumbers
-    <Controller
-        name="input"
-        control={control}
-        render={({ field }) => (
-          <RadioGroup
-            value={watch("input")}
-            {...field}
-          />
-        )}
-    />
-    ```
-  </Tabs.Tab>
-</Tabs>
-
-### Radio Group Component Checked
-
-<Tabs items={["Preview", "Code", "React Hook Form"]}>
-  <Tabs.Tab>
-  <Preview height="200px">
-
-        <FormOnChange>
-      <RadioGroup
-      checked
-      label="RadioGroup"
-      name="default"
-      options={[
-        {
-          label: 'Radio Option 1',
-          value: 'default1'
-        },
-        {
-          label: 'Radio Option 2',
-          value: 'default2'
-        }
-      ]}
-    />
-
-  </FormOnChange>
-  </Preview>
-  </Tabs.Tab>
-  <Tabs.Tab>
-    ```jsx copy showLineNumbers
-    <RadioGroup
-      checked
       label="RadioGroup"
       name="default"
       onChange={handleChange}
@@ -200,15 +137,15 @@ The RadioGroup component is designed to manage a set of radio buttons that allow
      <RadioGroup
       disabled
       label="RadioGroup"
-      name="default"
+      name="e2"
       options={[
         {
           label: 'Radio Option 1',
-          value: 'default1'
+          value: 'e2v1'
         },
         {
           label: 'Radio Option 2',
-          value: 'default2'
+          value: 'e2v2'
         }
       ]}
     />
@@ -262,15 +199,15 @@ The RadioGroup component is designed to manage a set of radio buttons that allow
      <RadioGroup
       error="Error Message"
       label="RadioGroup"
-      name="default"
+      name="e3"
       options={[
         {
           label: 'Radio Option 1',
-          value: 'default1'
+          value: 'e3v1'
         },
         {
           label: 'Radio Option 2',
-          value: 'default2'
+          value: 'e3v2'
         }
       ]}
     />
