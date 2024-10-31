@@ -396,17 +396,86 @@ Will not render their details when collapsed to increase performance. This optio
   </Tabs.Tab>
 </Tabs>
 
+#### Accordion Variants
+
+"Individual" variant that is better suited for desktop screens.
+
+<Tabs items={["Preview", "Code"]}>
+  <Tabs.Tab>
+    <Preview>
+      <Accordion
+        summary="Accordion 1"
+        variant="individual"
+      >
+        Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
+        sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
+        Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est,
+        vitae vehicula augue aliquam semper. Integer convallis blandit odio,
+        vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue
+        vehicula, felis purus consectetur sem, nec dapibus libero lectus in
+        nibh.
+      </Accordion>
+      <Accordion
+        summary="Accordion 2"
+        variant="individual"
+      >
+        Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
+        sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
+        Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est,
+        vitae vehicula augue aliquam semper. Integer convallis blandit odio,
+        vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue
+        vehicula, felis purus consectetur sem, nec dapibus libero lectus in
+        nibh.
+      </Accordion>
+    </Preview>
+  </Tabs.Tab>
+
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Accordion
+      summary="Accordion 1"
+      variant="individual"
+    >
+      Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
+      sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
+      Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est,
+      vitae vehicula augue aliquam semper. Integer convallis blandit odio,
+      vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue
+      vehicula, felis purus consectetur sem, nec dapibus libero lectus in
+      nibh.
+    </Accordion>
+    <Accordion
+      summary="Accordion 2"
+      variant="individual"
+    >
+      Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
+      sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
+      Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est,
+      vitae vehicula augue aliquam semper. Integer convallis blandit odio,
+      vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue
+      vehicula, felis purus consectetur sem, nec dapibus libero lectus in
+      nibh.
+    </Accordion>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
 ## API
 
-| Name               | Type      | Default | Description                       |
-| ------------------ | --------- | ------- | --------------------------------- |
-| summary            | `string`  |         | Summary of the accordion          |
-| children           | `string`  |         | Children of the accordion         |
-| actions            | `object`  |         | Actions of the accordion          |
-| className          | `string`  |         | Classname the accordion           |
-| actionsClassName   | `string`  |         | Action Classname the accordion    |
-| summaryClassName   | `string`  |         | Summary Classname the accordion   |
-| containerClassName | `string`  |         | Container Classname the accordion |
-| defaultExpanded    | `boolean` | `false` | Default Expanded the accordion    |
-| disabled           | `boolean` | `false` | Disabled the accordion            |
-| unmountOnExit      | `boolean` | `false` | Unmount the accordion on exit     |
+| Name               | Type      | Default    | Description                       |
+| ------------------ | --------- | ---------- | --------------------------------- |
+| summary            | `string`  |            | Summary of the accordion          |
+| children           | `string`  |            | Children of the accordion         |
+| actions            | `object`  |            | Actions of the accordion          |
+| className          | `string`  |            | Classname the accordion           |
+| actionsClassName   | `string`  |            | Action Classname the accordion    |
+| summaryClassName   | `string`  |            | Summary Classname the accordion   |
+| containerClassName | `string`  |            | Container Classname the accordion |
+| defaultExpanded    | `boolean` | `false`    | Default Expanded the accordion    |
+| disabled           | `boolean` | `false`    | Disabled the accordion            |
+| unmountOnExit      | `boolean` | `false`    | Unmount the accordion on exit     |
+| variant            | `string`  | `"drawer"` | Styling variant of the accordion  |

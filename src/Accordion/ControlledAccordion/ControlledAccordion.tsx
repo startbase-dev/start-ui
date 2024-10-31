@@ -27,6 +27,7 @@ const ControlledAccordion = forwardRef<
       onExpand,
       icon,
       unmountOnExit = false,
+      variant = 'drawer',
       ...props
     },
     ref
@@ -60,6 +61,7 @@ const ControlledAccordion = forwardRef<
         ref={ref}
         data-expanded={expanded}
         data-unmountonexit={unmountOnExit}
+        data-variant={variant}
         {...props}
       >
         <button className={summaryClassNames} onClick={handleClick}>
