@@ -25,7 +25,7 @@
 }
 
 .title {
-  font-size: 1.825rem;
+  font-size: var(--sui-h3-lh);
   line-height: var(--sui-h1-lh);
   font-weight: 600;
   letter-spacing: 0.011em;
@@ -83,7 +83,7 @@
     opacity 600ms;
   animation: slide-up 600ms forwards;
   width: 100%;
-  font-size: 1.25rem;
+  font-size: var(--sui-h6-lh);
   line-height: var(--sui-text-large-lh);
 }
 
