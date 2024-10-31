@@ -1,9 +1,11 @@
 .root {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   list-style: none;
   padding: 0;
   margin: 0;
+  font-size: var(--sui-text-small-fs);
 }
 
 .list {
@@ -34,4 +36,34 @@
   margin-right: 0.5rem;
   display: inline-flex;
   align-items: center;
+}
+
+@media (min-width: 576px) {
+  // Small devices (landscape phones, 576px and up)
+  .root {
+    font-size: var(--sui-text-fs);
+  }
+}
+
+@media (min-width: 768px) {
+  // Small devices (tablets, 768px and up)
+  .root {
+    font-size: var(--sui-text-lh);
+  }
+}
+
+@media (min-width: 992px) {
+  // Small devices (desktops, 992px and up)
+}
+
+@media (min-width: 1200px) {
+  // Small devices (large desktops, 1200px and up)
+}
+
+@media (min-width: 1400px) {
+  // Small devices (larger desktops, 1400px and up)
+}
+
+@media (min-width: 2160px) {
+  // Small devices (largest desktops, 2160px and up)
 }
