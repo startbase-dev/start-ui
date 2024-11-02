@@ -65,15 +65,13 @@
 
 .vertical .stepConnector {
   height: 3rem;
-  min-width: 0.25rem;
-  max-width: 0.25rem;
-  flex: auto;
-  display: flex;
+  width: 2px;
+  min-width: unset;
   margin-left: 1rem;
 }
 
 .stepConnector {
-  height: 0.25rem;
+  height: 2px;
   min-width: 2rem;
   max-width: 6rem;
   background-color: var(--sui-stepper-stepconnector-bg);
