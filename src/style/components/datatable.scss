@@ -8,6 +8,11 @@
     var(--sui-black) 75%,
     var(--sui-white)
   );
+  --sui-datatable-filter-hover: color-mix(
+    in srgb,
+    var(--sui-white) 94%,
+    var(--sui-black)
+  );
 }
 
 .dark,
