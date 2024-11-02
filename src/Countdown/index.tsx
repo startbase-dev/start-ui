@@ -53,7 +53,7 @@ const Countdown = forwardRef<HTMLDivElement, CountdownProps>((props, ref) => {
   }, [type]);
 
   return (
-    <div className={clsx(s.root, rootClassName)} ref={ref}>
+    <div className={clsx(s.root, rootClassName)} data-type={type} ref={ref}>
       {showDay && timeLeft.day !== undefined && (
         <div className={itemClassNames}>
           <div className={valueClassNames}>{timeLeft.day}</div>
