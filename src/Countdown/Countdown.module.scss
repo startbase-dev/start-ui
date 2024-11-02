@@ -25,13 +25,13 @@
 }
 
 .value {
-  font-size: 32px;
+  font-size: 1rem;
   line-height: 32px;
   font-weight: bold;
 }
 
 .label {
-  font-size: 32px;
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -39,14 +39,14 @@
   line-height: 32px;
   font-weight: bold;
   margin: 0 5px;
-  font-size: 32px;
+  font-size: 1rem;
 }
 
 .withLabels {
   align-items: flex-end;
   gap: 8px;
   max-width: 100px;
-  font-size: 16px;
+  font-size: 0.75rem;
 }
 
 .labelsUnder {
@@ -55,7 +55,7 @@
 }
 
 .labelsUnder .label {
-  font-size: 16px;
+  font-size: 0.75rem;
 }
 
 .inBoxes {
@@ -73,10 +73,46 @@
 }
 
 .inBoxes .label {
-  font-size: 16px;
+  font-size: 0.75rem;
   color: var(--sui-countdown-label);
 }
 
 .inBoxes .value {
   color: var(--sui-countdown-label);
 }
+
+@media (min-width: 576px) {
+  // Small devices (landscape phones, 576px and up)
+  .value,
+  .label,
+  .separator {
+    font-size: 2rem;
+  }
+
+  .withLabels,
+  .labelsUnder .label,
+  .inBoxes .label {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  // Small devices (tablets, 768px and up)
+}
+
+@media (min-width: 992px) {
+  // Small devices (desktops, 992px and up)
+}
+
+@media (min-width: 1200px) {
+  // Small devices (large desktops, 1200px and up)
+}
+
+@media (min-width: 1400px) {
+  // Small devices (larger desktops, 1400px and up)
+}
+
+@media (min-width: 2160px) {
+  // Small devices (largest desktops, 2160px and up)
+}
+
