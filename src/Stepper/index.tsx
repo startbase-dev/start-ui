@@ -103,7 +103,7 @@ export const Stepper = forwardRef<HTMLDivElement, StepperProps>(
           <button
             className={s.button}
             onClick={handleBack}
-            disabled={currentStep === 0}
+            disabled={currentStep === 0 || completed}
           >
             Back
           </button>
