@@ -67,6 +67,7 @@
   height: 3rem;
   width: 2px;
   min-width: unset;
+  max-width: unset;
   margin-left: 1rem;
 }
 
@@ -82,10 +83,10 @@
 @media screen and (max-width: 400px) {
   .stepConnector {
     height: 3rem;
-    min-width: 0.25rem;
-    max-width: 0.25rem;
-    flex: auto;
-    align-self: center;
+    width: 2px;
+    min-width: unset;
+    max-width: unset;
+    margin-left: 1rem;
   }
 
   .stepper {
