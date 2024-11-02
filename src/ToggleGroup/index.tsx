@@ -70,7 +70,8 @@ export const ToggleItem = ({
     if (onToggle) {
       onToggle(newState);
     }
-    onChange(value);
+
+    if (onChange) onChange(value);
   };
 
   const isSelected = selectedValue === value;
