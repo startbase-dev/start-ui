@@ -1,0 +1,16 @@
+.container {
+  color: var(sui-black);
+  background-color: var(--sui-gray-100);
+  height: auto;
+  width: auto;
+  padding: 1rem 2rem;
+}
+
+.horizontal {
+  width: 1000px;
+}
+
+html[class~="dark"] .container {
+  color: var(--sui-white);
+  background-color: var(--sui-gray-800);
+}
