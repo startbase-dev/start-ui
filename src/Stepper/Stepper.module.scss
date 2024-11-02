@@ -33,6 +33,7 @@
   width: 2rem;
   height: 2rem;
   display: flex;
+  flex-shrink: 0;
   justify-content: center;
   align-items: center;
   border-radius: var(--sui-border-radius-full);
@@ -65,15 +66,14 @@
 
 .vertical .stepConnector {
   height: 3rem;
-  min-width: 0.25rem;
-  max-width: 0.25rem;
-  flex: auto;
-  display: flex;
+  width: 2px;
+  min-width: unset;
+  max-width: unset;
   margin-left: 1rem;
 }
 
 .stepConnector {
-  height: 0.25rem;
+  height: 2px;
   min-width: 2rem;
   max-width: 6rem;
   background-color: var(--sui-stepper-stepconnector-bg);
@@ -84,10 +84,10 @@
 @media screen and (max-width: 400px) {
   .stepConnector {
     height: 3rem;
-    min-width: 0.25rem;
-    max-width: 0.25rem;
-    flex: auto;
-    align-self: center;
+    width: 2px;
+    min-width: unset;
+    max-width: unset;
+    margin-left: 1rem;
   }
 
   .stepper {
