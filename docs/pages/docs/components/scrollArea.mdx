@@ -2,6 +2,7 @@ import { ScrollArea } from '@start-base/start-ui';
 import { Tabs } from 'nextra/components';
 import { Steps } from 'nextra/components';
 import Preview from '@components/Preview/Preview';
+import styles from "@styles/scrollArea.module.scss";
 
 # ScrollArea
 
@@ -87,14 +88,7 @@ npm i @start-base/start-ui
             height: '200px',
           }}
         >
-          <div
-            style={{
-              backgroundColor: 'var(--sui-gray-100)',
-              height: 'auto',
-              padding: '16px',
-              width: 'auto',
-            }}
-          >
+          <div className={styles.container}>
             In a distant galaxy, far beyond the reaches of the known universe,
             the remnants of the fallen Jedi Order were gathering in secret. Led
             by the last surviving Jedi Knight, Jor-El, they sought refuge on the
@@ -173,7 +167,7 @@ npm i @start-base/start-ui
           style={{
             backgroundColor: 'var(--sui-gray-100)',
             height: '500px',
-            padding: '16px',
+            padding: '1rem 2rem',
             width: 'auto',
           }}
         >
@@ -247,14 +241,7 @@ npm i @start-base/start-ui
           width: '600px',
         }}
       >
-        <div
-          style={{
-            backgroundColor: 'var(--sui-gray-100)',
-            height: 'auto',
-            padding: '16px',
-            width: '1000px',
-          }}
-        >
+        <div className={`${styles.container} ${styles.horizontal}`}>
           In a distant galaxy, far beyond the reaches of the known universe, the
           remnants of the fallen Jedi Order were gathering in secret. Led by the
           last surviving Jedi Knight, Jor-El, they sought refuge on the
@@ -323,7 +310,7 @@ npm i @start-base/start-ui
         style={{
           backgroundColor: 'var(--sui-gray-100)',
           height: 'auto',
-          padding: '16px',
+          padding: '1rem 2rem',
           width: '1000px',
         }}
       >
