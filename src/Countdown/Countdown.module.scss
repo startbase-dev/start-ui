@@ -3,6 +3,19 @@
   align-items: center;
   justify-content: center;
   font-family: var(--sui-font-family);
+  gap: 0.5rem;
+
+  &[data-type="withSeparator"] {
+    gap: 0.125rem;
+  }
+
+  &[data-type="inBoxes"] {
+    flex-wrap: wrap;
+  }
+
+  &[data-type="labelsUnder"] {
+    gap: 1rem;
+  }
 }
 
 .item {
@@ -31,14 +44,13 @@
 
 .withLabels {
   align-items: flex-end;
-  margin-right: 8px;
+  gap: 8px;
   max-width: 100px;
   font-size: 16px;
 }
 
 .labelsUnder {
   flex-direction: column;
-  margin-right: 12px;
   gap: 5px;
 }
 
