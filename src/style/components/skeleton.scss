@@ -1,0 +1,14 @@
+.light,
+:root,
+[data-theme='light'] {
+  --sui-skeleton-start-bg: #f0f0f0;
+  --sui-skeleton-center-bg: #e0e0e0;
+  --sui-skeleton-end-bg: #f0f0f0;
+}
+
+.dark,
+[data-theme='dark'] {
+  --sui-skeleton-start-bg: #323232;
+  --sui-skeleton-center-bg: #242424;
+  --sui-skeleton-end-bg: #323232;
+}
