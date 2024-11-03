@@ -22,7 +22,7 @@
     "@start-base/react-consent-manager": "1.11.2",
     "@start-base/react-form-elements": "1.11.1",
     "@start-base/react-modal": "1.4.1",
-    "@start-base/start-ui": "0.0.42-alpha",
+    "@start-base/start-ui": "0.0.44-alpha",
     "framer-motion": "11.11.7",
     "next": "13.5.7",
     "nextra": "2.13.4",
