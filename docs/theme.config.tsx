@@ -4,6 +4,11 @@ import Logo from './pages/docs/components/Logo';
 import { Chip } from '@start-base/start-ui';
 
 const config: DocsThemeConfig = {
+  head: (
+    <>
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    </>
+  ),
   logo: (
     <span>
       <Logo />
