@@ -167,7 +167,7 @@ const Tooltip = forwardRef<HTMLElement, TooltipProps>(
           top: y ?? 0,
           left: x ?? 0,
           width: 'max-content',
-          'max-width': `calc(100svw - ${OFFSET * 2}px)`,
+          maxWidth: `calc(100svw - ${OFFSET * 2}px)`,
         }}
         className={cx(
           styles.tooltip,
