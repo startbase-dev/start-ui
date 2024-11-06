@@ -11,14 +11,14 @@ export default function GlobalModalExample() {
   return (
     <div>
       <div className={styles.buttons}>
-          <Button onClick={() => openModal('modal')}>Modal</Button>
-          <Button onClick={() => openModal('left-sidebar')}>Left Sidebar</Button>
-          <Button onClick={() => openModal('right-sidebar')}>
-            Right Sidebar
-          </Button>
-          <Button onClick={() => openModal('drawer')}>Drawer</Button>
-          <Button onClick={() => openModal('full-page')}>Full Page</Button>
-        </div>
+        <Button onClick={() => openModal('modal')}>Modal</Button>
+        <Button onClick={() => openModal('left-sidebar')}>Left Sidebar</Button>
+        <Button onClick={() => openModal('right-sidebar')}>
+          Right Sidebar
+        </Button>
+        <Button onClick={() => openModal('drawer')}>Drawer</Button>
+        <Button onClick={() => openModal('full-page')}>Full Page</Button>
+      </div>
       <GlobalModals>
         <Modal
           name="modal"
@@ -36,55 +36,63 @@ export default function GlobalModalExample() {
           </div>
         </Modal>
         <Modal
-          name='left-sidebar'
+          name="left-sidebar"
           isOpen={false}
           className={styles.leftSidebar}
           overlayClassName={styles.overlay}
-          appElement={"html"}
+          appElement={'html'}
           closeTimeoutMS={300}
         >
           <div>
             <span className={styles.title}>Left Sidebar</span>
-            <Button fluid onClick={() => closeModal("left-sidebar")}>Close</Button>
+            <Button fluid onClick={() => closeModal('left-sidebar')}>
+              Close
+            </Button>
           </div>
         </Modal>
         <Modal
-          name='right-sidebar'
+          name="right-sidebar"
           isOpen={false}
           className={styles.rightSidebar}
           overlayClassName={styles.overlay}
-          appElement={"html"}
+          appElement={'html'}
           closeTimeoutMS={300}
         >
           <div>
             <span className={styles.title}>Right Sidebar</span>
-            <Button fluid onClick={() => closeModal("right-sidebar")}>Close</Button>
+            <Button fluid onClick={() => closeModal('right-sidebar')}>
+              Close
+            </Button>
           </div>
         </Modal>
         <Modal
-          name='drawer'
+          name="drawer"
           isOpen={false}
           className={styles.drawer}
           overlayClassName={styles.drawerOverlay}
-          appElement={"html"}
+          appElement={'html'}
           closeTimeoutMS={300}
         >
           <div>
             <span className={styles.title}>Drawer</span>
-            <Button fluid onClick={() => closeModal("drawer")}>Close</Button>
+            <Button fluid onClick={() => closeModal('drawer')}>
+              Close
+            </Button>
           </div>
         </Modal>
         <Modal
-          name='full-page'
+          name="full-page"
           isOpen={false}
           className={styles.fullPage}
-          appElement={"html"}
+          appElement={'html'}
           closeTimeoutMS={300}
           overlayClassName={styles.fullPageOverlay}
         >
           <div>
             <span className={styles.title}>Full Page</span>
-            <Button fluid onClick={() => closeModal("full-page")}>Close</Button>
+            <Button fluid onClick={() => closeModal('full-page')}>
+              Close
+            </Button>
           </div>
         </Modal>
       </GlobalModals>

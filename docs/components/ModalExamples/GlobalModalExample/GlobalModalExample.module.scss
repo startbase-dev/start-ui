@@ -71,7 +71,7 @@
   z-index: 1003;
   position: fixed;
   inset: 0;
-  background-color: rgba(0,0,0,0.25);
+  background-color: rgba(0, 0, 0, 0.25);
 }
 
 @keyframes slide-from-left {
@@ -228,7 +228,7 @@
   }
 }
 
-html[class~="dark"] {
+html[class~='dark'] {
   .modal,
   .leftSidebar,
   .rightSidebar,

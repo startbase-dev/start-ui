@@ -51,7 +51,7 @@
   z-index: 1003;
   position: fixed;
   inset: 0;
-  background-color: rgba(0,0,0,0.25);
+  background-color: rgba(0, 0, 0, 0.25);
 }
 
 .title {
@@ -61,7 +61,7 @@
   line-height: 100%;
 }
 
-html[class~="dark"] {
+html[class~='dark'] {
   .modal {
     color: white;
     background-color: black;

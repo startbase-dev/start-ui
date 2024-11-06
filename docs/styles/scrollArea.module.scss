@@ -10,7 +10,7 @@
   width: 1000px;
 }
 
-html[class~="dark"] .container {
+html[class~='dark'] .container {
   color: var(--sui-white);
   background-color: var(--sui-gray-800);
 }

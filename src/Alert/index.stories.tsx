@@ -60,7 +60,12 @@ AlertWithAction.args = {
   children:
     'This is an alert with an action button. Try clicking on the button.',
   actionElement: (
-    <Button onClick={() => window.alert('You clicked me!')} style={{ minWidth: "unset", height: "unset" }}>Click me!</Button>
+    <Button
+      onClick={() => window.alert('You clicked me!')}
+      style={{ minWidth: 'unset', height: 'unset' }}
+    >
+      Click me!
+    </Button>
   ),
 };
 

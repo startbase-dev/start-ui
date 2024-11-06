@@ -5,21 +5,21 @@
   box-shadow: var(--sui-elevation-2);
   gap: 0.5rem;
 
-  >div {
+  > div {
     flex-wrap: nowrap;
     gap: 0.5rem;
 
-    >div {
+    > div {
       color: var(--sui-white);
       font-weight: bold;
       border-radius: 0.5rem;
     }
 
-    &:first-of-type>div {
+    &:first-of-type > div {
       background-color: var(--sui-info);
     }
 
-    &:nth-of-type(2)>div {
+    &:nth-of-type(2) > div {
       background-color: var(--sui-success);
     }
   }

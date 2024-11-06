@@ -45,6 +45,7 @@ package-lock.json
 # dist
 /dist
 
+/WordAnimation
 /Accordion
 /Alert
 /Avatar

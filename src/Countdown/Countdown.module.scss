@@ -5,15 +5,15 @@
   font-family: var(--sui-font-family);
   gap: 0.5rem;
 
-  &[data-type="withSeparator"] {
+  &[data-type='withSeparator'] {
     gap: 0.125rem;
   }
 
-  &[data-type="inBoxes"] {
+  &[data-type='inBoxes'] {
     flex-wrap: wrap;
   }
 
-  &[data-type="labelsUnder"] {
+  &[data-type='labelsUnder'] {
     gap: 1rem;
   }
 }
@@ -115,4 +115,3 @@
 @media (min-width: 2160px) {
   // Small devices (largest desktops, 2160px and up)
 }
-
