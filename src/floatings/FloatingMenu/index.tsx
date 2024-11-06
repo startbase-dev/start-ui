@@ -31,7 +31,7 @@ import {
   useRole,
   useTypeahead,
 } from '@floating-ui/react';
-import IoCaretForwardOutline from '../../icons/Play';
+import ArrowForwardIos from '../../icons/ArrowForwardIos';
 
 import MenuContext from '../FloatingMenuContext';
 
@@ -190,7 +190,7 @@ const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
           )}
         >
           {component || label}
-          {isNested && (icon || <IoCaretForwardOutline />)}
+          {isNested && (icon || <ArrowForwardIos />)}
         </div>
         <MenuContext.Provider value={contextObject}>
           <FloatingList elementsRef={elementsRef} labelsRef={labelsRef}>

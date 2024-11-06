@@ -18,20 +18,33 @@
   cursor: pointer;
 
   svg {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
+    transition: rotate 200ms;
   }
 
   &:hover,
   &:focus {
     background: var(--sui-floating-menu-item-active);
+
+    svg {
+      rotate: 90deg;
+    }
   }
 
   &[data-nested][data-open]:not([data-focus-inside]) {
     background: var(--sui-floating-menu-item-active);
+
+    svg {
+      rotate: 90deg;
+    }
   }
 
   &[data-focus-inside][data-open] {
     background: var(--sui-floating-menu-item-active);
+
+    svg {
+      rotate: 90deg;
+    }
   }
 }
