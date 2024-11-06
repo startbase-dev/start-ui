@@ -7,6 +7,8 @@ import React, {
   useMemo,
 } from 'react';
 
+import { Boundary } from '@floating-ui/react';
+
 import {
   FloatingFocusManager,
   FloatingList,
@@ -82,8 +84,8 @@ const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
           mainAxis: isNested ? 0 : 4,
           alignmentAxis: isNested ? -4 : 0,
         }),
-        flip(),
-        shift(),
+        shift({ padding: 4, crossAxis: true }),
+        flip({ padding: 4 }),
       ],
       whileElementsMounted: autoUpdate,
     });
