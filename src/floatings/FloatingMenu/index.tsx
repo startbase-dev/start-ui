@@ -49,6 +49,7 @@ const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
       className,
       menuClassName,
       placement,
+      icon,
       ...props
     },
     forwardedRef
@@ -189,7 +190,7 @@ const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
           )}
         >
           {component || label}
-          {isNested && <IoCaretForwardOutline />}
+          {isNested && (icon || <IoCaretForwardOutline />)}
         </div>
         <MenuContext.Provider value={contextObject}>
           <FloatingList elementsRef={elementsRef} labelsRef={labelsRef}>
