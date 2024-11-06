@@ -8,7 +8,7 @@ import React, {
   MutableRefObject,
 } from 'react';
 
-import { arrow, offset, Middleware } from '@floating-ui/core';
+import { arrow, offset, shift, flip, Middleware } from '@floating-ui/core';
 import { autoUpdate } from '@floating-ui/dom';
 import { FloatingPortal, useFloating } from '@floating-ui/react';
 import cx from 'clsx';
@@ -59,7 +59,12 @@ const Popover = forwardRef<HTMLElement, PopoverProps>(
     const { x, y, strategy, refs, middlewareData } = useFloating({
       placement,
       whileElementsMounted: autoUpdate,
-      middleware: [offset(OFFSET + spacing), ...arrowMiddleware],
+      middleware: [
+        offset(OFFSET + spacing),
+        flip({ padding: OFFSET }),
+        shift({ padding: OFFSET, crossAxis: true }),
+        ...arrowMiddleware,
+      ],
     });
 
     const show = useCallback(() => {
@@ -181,6 +186,7 @@ const Popover = forwardRef<HTMLElement, PopoverProps>(
           top: y ?? 0,
           left: x ?? 2,
           width: 'max-content',
+          maxWidth: `calc(100svw - ${OFFSET * 2}px)`,
         }}
         className={cx(
           styles.popover,
