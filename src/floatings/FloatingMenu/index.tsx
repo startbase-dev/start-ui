@@ -7,8 +7,6 @@ import React, {
   useMemo,
 } from 'react';
 
-import { Boundary } from '@floating-ui/react';
-
 import {
   FloatingFocusManager,
   FloatingList,
