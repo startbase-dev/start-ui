@@ -1,8 +1,7 @@
 import { Tabs } from 'nextra/components';
 import '@start-base/react-form-elements/styles.css';
-import Radio from '@start-base/react-form-elements/Radio';
+import RadioExample from '@components/RadioExample/RadioExample';
 import Preview from '@components/Preview/Preview';
-import FormOnChange from '@components/formOnChange';
 import { Steps } from 'nextra/components';
 import '@start-base/react-form-elements/styles.css';
 
@@ -74,18 +73,7 @@ The Radio component is designed for selecting a single option from a set of mutu
 <Tabs items={['Preview', 'Code', 'React Hook Form']}>
   <Tabs.Tab>
     <Preview height="200px">
-      <FormOnChange>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-evenly',
-          }}
-        >
-          <Radio label="Radio Option 1" name="e1" value="e1v1" checked />
-          <Radio label="Radio Option 2" name="e1" value="e1v2" checked />
-        </div>
-      </FormOnChange>
+      <RadioExample />
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -128,34 +116,7 @@ The Radio component is designed for selecting a single option from a set of mutu
 <Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="200px">
-
-    <FormOnChange>
-        <div
-    style={{
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'space-evenly'
-    }}
-
->
-
-    <Radio
-      checked
-      label="Radio Option 1"
-      name="e2"
-      title="Radio"
-      value="e2v1"
-    />
-    <Radio
-      checked
-      label="Radio Option 2"
-      name="e2"
-      title="Radio"
-      value="e2v2"
-    />
-
-  </div>
-  </FormOnChange>
+    <RadioExample example="checked" />
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -200,34 +161,7 @@ The Radio component is designed for selecting a single option from a set of mutu
 <Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="200px">
-
-      <FormOnChange>
-           <div
-    style={{
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'space-evenly'
-    }}
-
->
-
-    <Radio
-      disabled
-      label="Radio Option 1"
-      name="e3"
-      title="Radio"
-      value="e3v1"
-    />
-    <Radio
-      disabled
-      label="Radio Option 2"
-      name="e3"
-      title="Radio"
-      value="e3v2"
-    />
-
-  </div>
-  </FormOnChange>
+    <RadioExample example="disabled" />
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -272,33 +206,7 @@ The Radio component is designed for selecting a single option from a set of mutu
 <Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
   <Preview height="200px">
-  
-        <FormOnChange>
-             <div
-    style={{
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'space-evenly'
-    }}
-  >
-    <Radio
-      error="Error Message"
-      label="Radio Option 1"
-      name="e4"
-      title="Radio"
-      value="e4v1"
-      checked
-    />
-    <Radio
-      error="Error Message"
-      label="Radio Option 2"
-      name="e4"
-      title="Radio"
-      value="e4v2"
-      checked
-    />
-  </div>
-  </FormOnChange>
+    <RadioExample example="error" />
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>

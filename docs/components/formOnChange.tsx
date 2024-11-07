@@ -12,6 +12,8 @@ interface FormOnChangeProps {
 type InputState = Record<string, string | boolean>;
 
 const FormOnChange: React.FC<FormOnChangeProps> = ({ children }) => {
+  const { props } = children;
+
   const [inputs, setInputs] = useState<InputState>({});
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -24,8 +26,9 @@ const FormOnChange: React.FC<FormOnChangeProps> = ({ children }) => {
 
   return children
     ? cloneElement(children, {
-        name: 'input',
-        value: inputs.input || '',
+        ...props,
+        value: inputs[props.name] || '',
+        checked: inputs[props.name] ?? props.checked,
         onChange: onChange,
       })
     : null;
