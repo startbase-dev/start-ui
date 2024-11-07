@@ -8,6 +8,7 @@ export interface FloatingMenuProps
   className?: string;
   menuClassName?: string;
   onFocus?: (event: React.FocusEvent<HTMLDivElement>) => void;
+  icon?: ReactElement;
   placement?:
     | 'top'
     | 'bottom'
