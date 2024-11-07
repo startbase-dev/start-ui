@@ -24,8 +24,6 @@ const FormOnChange: React.FC<FormOnChangeProps> = ({ children }) => {
     }));
   };
 
-  console.log(props);
-
   return children
     ? cloneElement(children, {
         ...props,
