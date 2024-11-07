@@ -1,7 +1,6 @@
 import { Tabs } from 'nextra/components';
-import CheckboxCards from '@start-base/react-form-elements/CheckboxCards';
+import CheckboxCardsExample from '@components/CheckboxCardsExample/CheckboxCardsExample';
 import Preview from '@components/Preview/Preview';
-import FormOnChange from '@components/formOnChange';
 import { Steps } from 'nextra/components';
 import '@start-base/react-form-elements/styles.css';
 
@@ -73,22 +72,7 @@ The CheckboxCards component provides a user-friendly interface for toggling betw
 <Tabs items={['Preview', 'Code', 'React Hook Form']}>
   <Tabs.Tab>
     <Preview height="200px">
-      <FormOnChange>
-        <CheckboxCards
-          label="CheckboxCards"
-          name="default"
-          options={[
-            {
-              label: 'Checkbox Option 1',
-              value: 'default1',
-            },
-            {
-              label: 'Checkbox Option 2',
-              value: 'default2',
-            },
-          ]}
-        />
-      </FormOnChange>
+      <CheckboxCardsExample />
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -128,23 +112,7 @@ The CheckboxCards component provides a user-friendly interface for toggling betw
 <Tabs items={['Preview', 'Code', 'React Hook Form']}>
   <Tabs.Tab>
     <Preview height="200px">
-      <FormOnChange>
-        <CheckboxCards
-          label="CheckboxCards"
-          name="default"
-          options={[
-            {
-              label: 'Checkbox Option 1',
-              value: 'default1',
-            },
-            {
-              label: 'Checkbox Option 2',
-              value: 'default2',
-            },
-          ]}
-          value={['default1', 'default2']}
-        />
-      </FormOnChange>
+      <CheckboxCardsExample example="checked" />
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -185,23 +153,7 @@ The CheckboxCards component provides a user-friendly interface for toggling betw
 <Tabs items={['Preview', 'Code', 'React Hook Form']}>
   <Tabs.Tab>
     <Preview height="200px">
-      <FormOnChange>
-        <CheckboxCards
-          direction="row"
-          label="CheckboxCards"
-          name="default"
-          options={[
-            {
-              label: 'Checkbox Option 1',
-              value: 'default1',
-            },
-            {
-              label: 'Checkbox Option 2',
-              value: 'default2',
-            },
-          ]}
-        />
-      </FormOnChange>
+      <CheckboxCardsExample example="row" />
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -242,23 +194,7 @@ The CheckboxCards component provides a user-friendly interface for toggling betw
 <Tabs items={['Preview', 'Code', 'React Hook Form']}>
   <Tabs.Tab>
     <Preview height="200px">
-      <FormOnChange>
-        <CheckboxCards
-          disabled
-          label="CheckboxCards"
-          name="default"
-          options={[
-            {
-              label: 'Checkbox Option 1',
-              value: 'default1',
-            },
-            {
-              label: 'Checkbox Option 2',
-              value: 'default2',
-            },
-          ]}
-        />
-      </FormOnChange>
+      <CheckboxCardsExample example="disabled" />
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -299,22 +235,7 @@ The CheckboxCards component provides a user-friendly interface for toggling betw
 <Tabs items={['Preview', 'Code', 'React Hook Form']}>
   <Tabs.Tab>
     <Preview height="200px">
-      <FormOnChange>
-        <CheckboxCards
-          label="CheckboxCards"
-          name="default"
-          options={[
-            {
-              label: 'Checkbox Option 1',
-              value: 'default1',
-            },
-            {
-              label: 'Checkbox Option 2',
-              value: 'default2',
-            },
-          ]}
-        />
-      </FormOnChange>
+      <CheckboxCardsExample example="input" />
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -354,23 +275,7 @@ The CheckboxCards component provides a user-friendly interface for toggling betw
 <Tabs items={['Preview', 'Code', 'React Hook Form']}>
   <Tabs.Tab>
     <Preview height="200px">
-      <FormOnChange>
-        <CheckboxCards
-          error="Error Message"
-          label="CheckboxCards"
-          name="default"
-          options={[
-            {
-              label: 'Checkbox Option 1',
-              value: 'default1',
-            },
-            {
-              label: 'Checkbox Option 2',
-              value: 'default2',
-            },
-          ]}
-        />
-      </FormOnChange>
+      <CheckboxCardsExample example="error" />
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
