@@ -10,7 +10,7 @@ import React, {
 
 import { arrow, offset, Middleware } from '@floating-ui/core';
 import { autoUpdate } from '@floating-ui/dom';
-import { FloatingPortal, useFloating } from '@floating-ui/react';
+import { FloatingPortal, useFloating, shift, flip } from '@floating-ui/react';
 import cx from 'clsx';
 
 import { useOutsideClick } from '../../hooks/useOutsideClick';
@@ -58,7 +58,12 @@ const Tooltip = forwardRef<HTMLElement, TooltipProps>(
     const { x, y, strategy, refs, middlewareData } = useFloating({
       placement,
       whileElementsMounted: autoUpdate,
-      middleware: [offset(OFFSET + spacing), ...arrowMiddleware],
+      middleware: [
+        offset(OFFSET + spacing),
+        shift({ padding: OFFSET }),
+        flip({ padding: OFFSET }),
+        ...arrowMiddleware,
+      ],
     });
 
     const show = useCallback(() => {
@@ -162,6 +167,7 @@ const Tooltip = forwardRef<HTMLElement, TooltipProps>(
           top: y ?? 0,
           left: x ?? 0,
           width: 'max-content',
+          maxWidth: `calc(100svw - ${OFFSET * 2}px)`,
         }}
         className={cx(
           styles.tooltip,

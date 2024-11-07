@@ -1,4 +1,5 @@
 .tooltip {
+  box-sizing: border-box;
   position: absolute;
   background-color: var(--sui-tooltip-bg);
   color: var(--sui-tooltip-text);
