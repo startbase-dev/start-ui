@@ -6,6 +6,7 @@ interface Props {
   children: React.ReactNode;
   height: string;
   width: string;
+  containerHeight?: string;
   isReplayActive?: boolean;
 }
 
@@ -13,6 +14,7 @@ const Preview: React.FC<Props> = ({
   children,
   height,
   width,
+  containerHeight,
   isReplayActive = false,
 }) => {
   const [key, setKey] = useState(0);
@@ -28,7 +30,7 @@ const Preview: React.FC<Props> = ({
           <Replay />
         </button>
       )}
-      <div className={s.children} style={{ width }} key={key}>
+      <div className={s.children} style={{ width, height: containerHeight }} key={key}>
         {children}
       </div>
     </div>

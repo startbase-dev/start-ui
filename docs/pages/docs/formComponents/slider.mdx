@@ -1,5 +1,7 @@
 import { Tabs } from 'nextra/components';
 import Slider from '@start-base/react-form-elements/Slider';
+import FormOnChange from '@components/formOnChange';
+import SliderExample from '@components/SliderExample/SliderExample';
 import Preview from '@components/Preview/Preview';
 import { Steps } from 'nextra/components';
 
@@ -70,13 +72,15 @@ A series of interactive headings arranged vertically, each revealing a section o
 
 <Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
-  <Preview height="200px">
-   <Slider
-      label="Slider"
-      max={100}
-      min={0}
-      name="slider"
-    />
+  <Preview height="200px" width="300px">
+    <FormOnChange>
+      <Slider
+        label="Slider"
+        max={100}
+        min={0}
+        name="e1"
+      />
+    </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -110,14 +114,16 @@ A series of interactive headings arranged vertically, each revealing a section o
 
 <Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
-  <Preview height="200px">
-    <Slider
-      disabled
-      label="Slider"
-      max={100}
-      min={0}
-      name="slider"
-    />
+  <Preview height="200px" width="300px">
+    <FormOnChange>
+      <Slider
+        disabled
+        label="Slider"
+        max={100}
+        min={0}
+        name="e2"
+      />
+    </FormOnChange>
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -152,25 +158,27 @@ A series of interactive headings arranged vertically, each revealing a section o
 
 <Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
-  <Preview height="200px">
+  <Preview height="200px" width="300px">
+    <FormOnChange>
       <Slider
-      label="Slider"
-      marks={{
-        '0': <strong>0°C</strong>,
-        '26': '26°C',
-        '37': '37°C',
-        '50': '50°C',
-        '100': {
-          label: <strong>100°C</strong>,
-          style: {
-            color: 'red'
+        label="Slider"
+        marks={{
+          '0': <strong>0°C</strong>,
+          '26': '26°C',
+          '37': '37°C',
+          '50': '50°C',
+          '100': {
+            label: <strong>100°C</strong>,
+            style: {
+              color: 'red'
+            }
           }
-        }
-      }}
-      max={100}
-      min={0}
-      name="slider"
-    />
+        }}
+        max={100}
+        min={0}
+        name="e3"
+      />
+    </FormOnChange>
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -216,26 +224,28 @@ A series of interactive headings arranged vertically, each revealing a section o
 
 <Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
-  <Preview height="400px">
-    <Slider
-      label="Slider"
-      marks={{
-        '0': <strong>0°C</strong>,
-        '26': '26°C',
-        '37': '37°C',
-        '50': '50°C',
-        '100': {
-          label: <strong>100°C</strong>,
-          style: {
-            color: 'red'
+  <Preview height="400px" containerHeight="300px">
+    <FormOnChange>
+      <Slider
+        label="Slider"
+        marks={{
+          '0': <strong>0°C</strong>,
+          '26': '26°C',
+          '37': '37°C',
+          '50': '50°C',
+          '100': {
+            label: <strong>100°C</strong>,
+            style: {
+              color: 'red'
+            }
           }
-        }
-      }}
-      max={100}
-      min={0}
-      name="slider"
-      vertical
-    />
+        }}
+        max={100}
+        min={0}
+        name="e4"
+        vertical
+      />
+    </FormOnChange>
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -282,18 +292,8 @@ A series of interactive headings arranged vertically, each revealing a section o
 
 <Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
-  <Preview height="200px">
-   <Slider
-      defaultValue={[
-        20,
-        50
-      ]}
-      label="Slider"
-      max={100}
-      min={0}
-      name="slider"
-      range
-    />
+  <Preview height="200px" width="300px">
+    <SliderExample />
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -332,15 +332,17 @@ A series of interactive headings arranged vertically, each revealing a section o
 
 <Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
-  <Preview height="200px">
-   <Slider
-      defaultValue={50}
-      label="Slider"
-      max={100}
-      min={0}
-      name="slider"
-      vertical
-    />
+  <Preview height="200px" containerHeight="300px">
+    <FormOnChange>
+      <Slider
+        defaultValue={50}
+        label="Slider"
+        max={100}
+        min={0}
+        name="e6"
+        vertical
+      />
+    </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
@@ -376,14 +378,16 @@ A series of interactive headings arranged vertically, each revealing a section o
 
 <Tabs items={["Preview", "Code", "React Hook Form"]}>
   <Tabs.Tab>
-  <Preview height="200px">
-   <Slider
-      error="Error Message"
-      label="Slider"
-      max={100}
-      min={0}
-      name="slider"
-    />
+  <Preview height="200px" width="300px">
+    <FormOnChange>
+      <Slider
+        error="Error Message"
+        label="Slider"
+        max={100}
+        min={0}
+        name="e7"
+      />
+    </FormOnChange>
   </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
