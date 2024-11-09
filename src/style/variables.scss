@@ -1,23 +1,23 @@
-@import 'colors/colors';
-@import 'colors/colors-light';
-@import 'colors/colors-dark';
+@use 'colors/colors';
+@use 'colors/colors-light';
+@use 'colors/colors-dark';
 
-@import 'components/accordion';
-@import 'components/button';
-@import 'components/context-menu';
-@import 'components/dropdown';
-@import 'components/floating-menu-item';
-@import 'components/popover';
-@import 'components/progress';
-@import 'components/skeleton';
-@import 'components/tab';
-@import 'components/bentoCard';
-@import 'components/countdown';
-@import 'components/tooltip';
-@import 'components/alert';
-@import 'components/table';
-@import 'components/breadCrumbs';
-@import 'components/datatable';
+@use 'components/accordion';
+@use 'components/button';
+@use 'components/context-menu';
+@use 'components/dropdown';
+@use 'components/floating-menu-item';
+@use 'components/popover';
+@use 'components/progress';
+@use 'components/skeleton';
+@use 'components/tab';
+@use 'components/bentoCard';
+@use 'components/countdown';
+@use 'components/tooltip';
+@use 'components/alert';
+@use 'components/table';
+@use 'components/breadCrumbs';
+@use 'components/datatable';
 
 :root {
   /* TYPOGRAPHY */

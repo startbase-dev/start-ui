@@ -1,5 +1,6 @@
 import { ChangeEvent, useState } from 'react';
 import MultipleDatePicker from '@start-base/react-form-elements/MultipleDatePicker';
+import React from 'react';
 
 export default function MultipleDatePickerExample() {
   const [inputs, setInputs] = useState({});
