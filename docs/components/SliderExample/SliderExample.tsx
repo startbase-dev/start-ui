@@ -1,5 +1,6 @@
-import { ChangeEvent, useState } from "react";
-import Slider from "@start-base/react-form-elements/Slider";
+import { ChangeEvent, useState } from 'react';
+import React from 'react';
+import Slider from '@start-base/react-form-elements/Slider';
 
 export default function SliderExample() {
   const [inputs, setInputs] = useState({});
@@ -9,7 +10,7 @@ export default function SliderExample() {
 
     setInputs((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? !prev[name] : value
+      [name]: type === 'checkbox' ? !prev[name] : value,
     }));
   }
 
@@ -19,7 +20,7 @@ export default function SliderExample() {
       label="Slider"
       min={0}
       max={100}
-      value={inputs["e5"]}
+      value={inputs['e5']}
       onChange={handleChange}
       range
       defaultValue={[20, 50]}

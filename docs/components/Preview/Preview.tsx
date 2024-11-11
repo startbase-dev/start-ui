@@ -30,7 +30,11 @@ const Preview: React.FC<Props> = ({
           <Replay />
         </button>
       )}
-      <div className={s.children} style={{ width, height: containerHeight }} key={key}>
+      <div
+        className={s.children}
+        style={{ width, height: containerHeight }}
+        key={key}
+      >
         {children}
       </div>
     </div>
