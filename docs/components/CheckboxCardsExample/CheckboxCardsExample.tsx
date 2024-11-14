@@ -1,6 +1,7 @@
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
 import CheckboxCards from '@start-base/react-form-elements/CheckboxCards';
 import React from 'react';
+
 interface CheckboxCardsExampleProps {
   example?: 'default' | 'checked' | 'row' | 'disabled' | 'input' | 'error';
 }
@@ -8,13 +9,15 @@ interface CheckboxCardsExampleProps {
 export default function CheckboxCardsExample({
   example = 'default',
 }: CheckboxCardsExampleProps) {
-  const [inputs, setInputs] = useState([]);
+  type Inputs = Record<string, Array<string | number>>;
+  const [inputs, setInputs] = useState<Inputs>({});
 
-  function handleChange(
-    event: ChangeEvent<HTMLInputElement> & {
-      target: { name: string; value: (string | number)[] };
-    }
-  ) {
+  function handleChange(event: {
+    target: {
+      name: string;
+      value: Array<string | number>;
+    };
+  }) {
     const { name, value } = event.target;
 
     setInputs((prev) => ({
@@ -47,7 +50,7 @@ export default function CheckboxCardsExample({
     case 'checked':
       return (
         <CheckboxCards
-          value={inputs['e2'] ?? 'e2v1'}
+          value={inputs['e2'] ?? ['e2v1', 'e2v2']}
           label="CheckboxCards"
           name="e2"
           onChange={handleChange}
