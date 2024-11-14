@@ -9,7 +9,7 @@ interface RadioExampleProps {
 export default function RadioExample({
   example = 'default',
 }: RadioExampleProps) {
-  const [inputs, setInputs] = useState({});
+  const [inputs, setInputs] = useState<Record<string, unknown>>({});
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const { name, value, type } = event.target;
