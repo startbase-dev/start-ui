@@ -1,3 +1,5 @@
+import { ElementType } from "react";
+
 export interface AvatarProps
   extends Omit<React.AllHTMLAttributes<HTMLDivElement>, 'size'> {
   picture?: string;
@@ -6,4 +8,6 @@ export interface AvatarProps
   variant?: 'circular' | 'square';
   defaultPicture?: string;
   className?: string;
+  Component?: ElementType;
+  componentProps?: Record<string, unknown>;
 }
