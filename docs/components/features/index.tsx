@@ -1,9 +1,19 @@
 import React from 'react';
 import cn from 'clsx';
-import { motion } from 'framer-motion';
+import { motion, MotionProps } from 'framer-motion';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import styles from './style.module.css';
+
+interface FeatureProps extends MotionProps {
+  index: number;
+  children: ReactNode;
+  className?: string;
+  large?: boolean;
+  centered?: boolean;
+  lightOnly?: boolean;
+  href?: string;
+}
 
 export function Feature({
   large,
@@ -14,7 +24,7 @@ export function Feature({
   href,
   index,
   ...props
-}) {
+}: FeatureProps) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
