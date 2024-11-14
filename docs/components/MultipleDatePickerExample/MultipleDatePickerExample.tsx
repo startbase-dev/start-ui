@@ -3,7 +3,7 @@ import MultipleDatePicker from '@start-base/react-form-elements/MultipleDatePick
 import React from 'react';
 
 export default function MultipleDatePickerExample() {
-  const [inputs, setInputs] = useState({});
+  const [inputs, setInputs] = useState<Record<string, unknown>>({});
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const { name, value, type } = event.target;
