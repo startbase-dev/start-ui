@@ -170,17 +170,9 @@ const FloatingContextMenu = forwardRef<
         }
       };
 
-      function onMouseUp() {
-        if (allowMouseUpCloseRef.current) {
-          setIsOpen(false);
-        }
-      }
-
       document.addEventListener('contextmenu', onContextMenu);
-      document.addEventListener('mouseup', onMouseUp);
       return () => {
         document.removeEventListener('contextmenu', onContextMenu);
-        document.removeEventListener('mouseup', onMouseUp);
         clearTimeout(timeout);
       };
     }, [refs, component]);
@@ -283,7 +275,15 @@ const FloatingContextMenu = forwardRef<
                       style={floatingStyles}
                       {...getFloatingProps()}
                     >
-                      {children}
+                      {React.Children.map(children, (child, index) => {
+                        return cloneElement(child as React.ReactElement, {
+                          key: index,
+                          onClick: (e: any) => {
+                            child.props.onClick?.(e);
+                            setIsOpen(false);
+                          },
+                        });
+                      })}
                     </div>
                   </FloatingFocusManager>
                 </FloatingPortal>
