@@ -2,6 +2,7 @@ import { Tabs } from 'nextra/components';
 import Preview from '@components/Preview/Preview';
 import { Avatar } from '@start-base/start-ui';
 import { Steps } from 'nextra/components';
+import Image from 'next/image';
 
 # Avatar
 
@@ -203,13 +204,36 @@ npm i @start-base/start-ui
   </Tabs.Tab>
 </Tabs>
 
+### Avatar With Next Image
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <Preview height='200px'>
+      <Avatar picture="/avatar.webp" Component={Image} componentProps={{ width: 30, height: 30 }} />
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```tsx copy
+    import Image from 'next/image';
+
+    <Avatar
+      picture="/example.jpg"
+      Component={Image}
+      componentProps={{ width: 30, height: 30 }}
+    />
+    ```
+  </Tabs.Tab>
+</Tabs>
+
 ## API
 
-| Name           | Type                     | Default    | Description                   |
-| -------------- | ------------------------ | ---------- | ----------------------------- |
-| chars          | `string`                 | "SU"       | Chars of the Avatar           |
-| size           | `small` `medium` `large` | `medium`   | Size of the Avatar            |
-| variant        | `circular` `square`      | `circular` | Variant of the Avatar         |
-| picture        | `string`                 | ""         | Picture of the Avatar         |
-| className      | `string`                 | ""         | ClassName of the Avatar       |
-| defaultPicture | `string`                 | ""         | Default Picture of the Avatar |
+| Name           | Type                     | Default    | Description                                                                   |
+| -------------- | ------------------------ | ---------- | ----------------------------------------------------------------------------- |
+| chars          | `string`                 | "SU"       | Chars of the Avatar                                                           |
+| size           | `small` `medium` `large` | `medium`   | Size of the Avatar                                                            |
+| variant        | `circular` `square`      | `circular` | Variant of the Avatar                                                         |
+| picture        | `string`                 | ""         | Picture of the Avatar                                                         |
+| className      | `string`                 | ""         | ClassName of the Avatar                                                       |
+| defaultPicture | `string`                 | ""         | Default Picture of the Avatar                                                 |
+| Component      | `ElementType`            | `"img"`    | Custom component to replace the `<img>` element. Can be used with Next Image. |
+| componentProps | `object`                 | `{}`       | Properties for `Component` element.                                           |
