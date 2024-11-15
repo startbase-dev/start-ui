@@ -14,7 +14,7 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
       variant = 'circular',
       defaultPicture = '',
       className = '',
-      Component = "img",
+      Component = 'img',
       componentProps = {},
       ...rest
     },
@@ -31,7 +31,12 @@ const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
         <div className={s.container}>
           <div className={clsx(s.circular, s[variant])}>
             {imageSrc ? (
-              <Component {...componentProps} alt="avatar" src={imageSrc} className={s.image} />
+              <Component
+                {...componentProps}
+                alt="avatar"
+                src={imageSrc}
+                className={s.image}
+              />
             ) : (
               <span className={s.chars}>{chars}</span>
             )}

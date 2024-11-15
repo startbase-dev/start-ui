@@ -3,7 +3,7 @@ import React from 'react';
 import { BentoGrid, BentoCard } from '@start-base/start-ui';
 import '@start-base/start-ui/styles.css';
 import style from './style.module.css';
-import VideoPlayer from '@components/VideoPlayer/VideoPlayer';
+import VideoPlayer from '../VideoPlayer/VideoPlayer';
 import { DotLottiePlayer } from '@dotlottie/react-player';
 import { motion } from 'framer-motion';
 import Link from 'next/link';

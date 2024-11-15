@@ -9,13 +9,13 @@ interface CheckboxCardsExampleProps {
 export default function CheckboxCardsExample({
   example = 'default',
 }: CheckboxCardsExampleProps) {
-  type Inputs = Record<string, Array<string | number>>;
+  type Inputs = Record<string, (string | number)[]>;
   const [inputs, setInputs] = useState<Inputs>({});
 
   function handleChange(event: {
     target: {
       name: string;
-      value: Array<string | number>;
+      value: (string | number)[];
     };
   }) {
     const { name, value } = event.target;
