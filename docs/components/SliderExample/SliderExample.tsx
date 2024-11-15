@@ -3,7 +3,7 @@ import React from 'react';
 import Slider from '@start-base/react-form-elements/Slider';
 
 export default function SliderExample() {
-  const [inputs, setInputs] = useState({});
+  const [inputs, setInputs] = useState<Record<string, unknown>>({});
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const { name, value, type } = event.target;
