@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h1 align="center">@start-base/react-consent-manager</h1>
+<h1 align="center">@start-base/react-start-ui</h1>
 
 <p align="center">
   Discover a powerful and flexible React UI library crafted for seamless customization and effortless integration. Built specifically with Next.js in mind, these components streamline website development, enhance productivity, and empower you to create highly adaptable, user-friendly interfaces with ease.
