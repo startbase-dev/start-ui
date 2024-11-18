@@ -138,8 +138,8 @@ Used to display a user's profile picture or initials in a visually appealing man
 
 | Name           | Type                             | Default      | Description                                                                                                                 |
 | -------------- | -------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------- |
-| picture        | `string`                         | `''`         | Picture href to be passed to `<img>` element.                                                                               |
-| defaultPicture | `string`                         | `''`         | Picture href to be used if `picture` is not found.                                                                          |
+| picture        | `string`                         | `''`         | Picture URL to be passed to `<img>` element.                                                                                |
+| defaultPicture | `string`                         | `''`         | Picture URL to be used if `picture` is not found.                                                                           |
 | chars          | `string`                         | `'SU'`       | Initials to be used in place of `picture`.                                                                                  |
 | size           | `string`                         | `'medium'`   | Size variant. Possible options are `'small' \| 'medium' \| 'large'`                                                         |
 | variant        | `string`                         | `'circular'` | Styling variant. Possible options are `'circular' \| 'square'`                                                              |
@@ -165,3 +165,23 @@ A series of interactive headings arranged vertically, each revealing a section o
 | className          | `string`                         | `undefined`   | Additional class to be passed to `content`.                                                                                                                                  |
 | containerClassName | `string`                         | `undefined`   | Additional class to be passed to container, which contains `children` and `content`.                                                                                         |
 | ...props           | `HTMLAttributes<HTMLDivElement>` |               | Common HTML attributes to be passed to root.                                                                                                                                 |
+
+### BentoCard
+
+A versatile and customizable card component designed to display content in a bento-style layout. It is ideal for use in marketing pages, dashboards, and other interfaces where information needs to be presented in a visually appealing and organized manner.
+
+| Name                   | Type                             | Default     | Description                                                            |
+| ---------------------- | -------------------------------- | ----------- | ---------------------------------------------------------------------- |
+| firstContent           | `ReactNode`                      | `undefined` | The primary content.                                                   |
+| secondContent          | `ReactNode`                      | `undefined` | The secondary content.                                                 |
+| title                  | `string`                         | `undefined` | Title of the component.                                                |
+| isTitleVisibleInFirst  | `boolean`                        | `true`      | Controls whether `title` is visible when `firstContent` is displayed.  |
+| isTitleVisibleInSecond | `boolean`                        | `true`      | Controls whether `title` is visible when `secondContent` is displayed. |
+| redirectTo             | `string`                         | `undefined` | URL to redirect to when button is clicked.                             |
+| rootClassName          | `string`                         | `undefined` | Additional class to be passed to root.                                 |
+| rootActiveClassName    | `string`                         | `undefined` | Additional class to be passed to root's active state.                  |
+| titleClassName         | `string`                         | `undefined` | Additional class to be passed to `title`.                              |
+| titleActiveClassName   | `string`                         | `undefined` | Additional class to be passed to `title`'s active state.               |
+| buttonClassName        | `string`                         | `undefined` | Additional class to be passed to button.                               |
+| activeButtonClassName  | `string`                         | `undefined` | Additional class to be passed to button's active state.                |
+| ...props               | `HTMLAttributes<HTMLDivElement>` |             | Common HTML attributes to be passed to root.                           |
