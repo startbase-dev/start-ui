@@ -201,12 +201,9 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
             )}
           </div>
         );
-        const dataTitle =
-          typeof col.title === 'string'
-            ? col.title
-            : typeof col.title === 'number'
-              ? col.title.toString()
-              : undefined;
+        const dataTitle = typeof col.title === 'string' ? col.title : '';
+
+        console.log(dataTitle);
 
         return {
           ...col,
@@ -277,7 +274,12 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
           )}
         </div>
 
-        <div className={cx(styles.table, { [styles.withoutBorder]: !border })}>
+        <div
+          className={cx(styles.table, {
+            [styles.withoutBorder]: !border,
+            [styles.empty]: tableData?.length === 0,
+          })}
+        >
           <Table
             data={tableData}
             columns={modifiedColumns}

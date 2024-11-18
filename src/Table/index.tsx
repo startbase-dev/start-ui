@@ -14,16 +14,17 @@ const Table: React.FC<TableProps> = ({
   ...rest
 }) => {
   const modifiedColumns = columns.map((column) => ({
-    ...column,
     onCell: () => ({
-      'data-title': column.title as React.ReactNode,
+      'data-title': column.title,
     }),
+    ...column,
   })) as ColumnType<DataItem>[];
 
   return (
     <div
       className={cx(styles.table, {
         [styles.border]: border,
+        [styles.empty]: data?.length === 0,
       })}
     >
       {virtualized ? (

@@ -26,6 +26,17 @@
   }
 }
 
+.empty {
+  .tableContainer {
+    table {
+      td {
+        justify-content: center !important;
+        text-align: center;
+      }
+    }
+  }
+}
+
 /* Pagination */
 
 .paginationContainer {
@@ -321,12 +332,7 @@
       border: 0;
       width: 100%;
 
-      colgroup {
-        display: none;
-      }
-
       thead {
-        border: none;
         clip: rect(0 0 0 0);
         height: 1px;
         margin: -1px;
@@ -367,7 +373,7 @@
 
       tr {
         display: block;
-        margin-bottom: 0;
+        margin-bottom: 0.5rem;
         box-sizing: border-box;
         height: auto;
       }
@@ -404,7 +410,6 @@
 
   .row {
     height: 56px;
-    border-bottom: 1px solid var(--sui-datatable-border);
   }
 
   @media (min-width: 576px) {
