@@ -132,7 +132,7 @@ A versatile component that displays a message to the user with various customiza
 
 ### Avatar
 
-The Avatar component is used to display a user's profile picture or initials in a visually appealing manner. It supports various sizes and shapes, including circular and square variants.
+Used to display a user's profile picture or initials in a visually appealing manner. It supports various sizes and shapes, including circular and square variants.
 
 #### Avatar Properties
 
@@ -147,3 +147,21 @@ The Avatar component is used to display a user's profile picture or initials in 
 | Component      | `ElementType`                    | `'img'`      | Image component to be used to render the picture. Can be used to pass Next's Image component for optimized image rendering. |
 | componentProps | `object`                         | `{}`         | Additional properties to be passed to `Component`.                                                                          |
 | ...props       | `HTMLAttributes<HTMLDivElement>` |              | Common HTML attributes to be passed to root.                                                                                |
+
+### Badge
+
+A series of interactive headings arranged vertically, each revealing a section of content when clicked.
+
+#### Badge Properties
+
+| Name               | Type                             | Default       | Description                                                                                                                                                                  |
+| ------------------ | -------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| children\*         | `ReactNode`                      | `undefined`   | The content to which the component will be attached.                                                                                                                         |
+| content\*          | `ReactNode`                      | `undefined`   | The main content.                                                                                                                                                            |
+| position           | `string`                         | `'top-right'` | Position of `content` relative to `children`. Possible options are `'top-left' \| 'top' \| 'top-right' \| 'right' \| 'bottom-right' \| 'bottom' \| 'bottom-left' \| 'left'`. |
+| color              | `string`                         | `'primary'`   | Color variant. Possible options are `'primary' \| 'secondary' \| 'success' \| 'error'`.                                                                                      |
+| variant            | `string`                         | `'default'`   | Styling variant. Possible options are `'default' \| 'dot'`.                                                                                                                  |
+| invisible          | `boolean`                        | `false`       | Controls whether `content` is visible.                                                                                                                                       |
+| className          | `string`                         | `undefined`   | Additional class to be passed to `content`.                                                                                                                                  |
+| containerClassName | `string`                         | `undefined`   | Additional class to be passed to container, which contains `children` and `content`.                                                                                         |
+| ...props           | `HTMLAttributes<HTMLDivElement>` |               | Common HTML attributes to be passed to root.                                                                                                                                 |
