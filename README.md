@@ -92,7 +92,7 @@ A group of `Accordion` components should be grouped together inside a parent ele
 | containerClassName | `string`         | `undefined` | Additional class to be passed to container, which contains root, `summary` and `actions`.                                                         |
 | variant            | `string`         | `'drawer'`  | Styling variant. Possible options are `'drawer' \| 'individual'`.                                                                                 |
 | expanded           | `boolean`        | `undefined` | Controls whether the component is expanded or not.                                                                                                |
-| onExpand           | `function`       | `undefined` | Function to run when `summary` is clicked.                                                                                                        |
+| onExpand           | `function`       | `undefined` | Callback function to run when `summary` is clicked.                                                                                               |
 | unmountOnExit      | `boolean`        | `false`     | Controls whether the `children` should unmount when `expanded` is false. Disables CSS animations but improves performance for very large content. |
 | defaultExpanded    | `boolean`        | `false`     | Controls whether the component is expanded or not when first mounting.                                                                            |
 | disabled           | `boolean`        | `false`     | Controls whether the component should expand or collapse when `summary` is clicked.                                                               |
@@ -102,10 +102,10 @@ The Accordion components has two modes: _controlled_ or _uncontrolled_, which is
 
 #### Controlled Accordion Properties
 
-| Name       | Type       | Default     | Description                                        |
-| ---------- | ---------- | ----------- | -------------------------------------------------- |
-| expanded\* | `boolean`  | `undefined` | Controls whether the Accordion is expanded or not. |
-| onExpand\* | `function` | `undefined` | Function to run when `summary` is clicked.         |
+| Name       | Type       | Default     | Description                                         |
+| ---------- | ---------- | ----------- | --------------------------------------------------- |
+| expanded\* | `boolean`  | `undefined` | Controls whether the Accordion is expanded or not.  |
+| onExpand\* | `function` | `undefined` | Callback function to run when `summary` is clicked. |
 
 ### Alert
 
@@ -196,7 +196,7 @@ A flexible grid layout that allows for dynamic placement of elements, enabling c
 
 | Name      | Type             | Default     | Description                                                                                                           |
 | --------- | ---------------- | ----------- | --------------------------------------------------------------------------------------------------------------------- |
-| items\*   | `array`          | `undefined` | Grid items to be displayed. Accepts an array such as `Array<{ element: ReactNode; width: number; height: number; }>`. |
+| items\*   | `array`          | `undefined` | Grid items to be displayed. Accepts an array of type `Array<{ element: ReactNode; width: number; height: number; }>`. |
 | gridCols  | `number`         | `4`         | Number of grid columns.                                                                                               |
 | rowHeight | `number`         | `100`       | Height of grid rows in pixels.                                                                                        |
 | ...props  | `HTMLAttributes` |             | Common HTML attributes to be passed to root.                                                                          |
@@ -209,7 +209,7 @@ A navigational aid in web applications, allowing users to keep track of their lo
 
 | Name            | Type     | Default     | Description                                                                                                                       |
 | --------------- | -------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| data\*          | `array`  | `[]`        | Data to be used for displaying breadcrumbs. Accepts an array such as `Array<{ label: string; icon?: ReactNode; href?: string }>`. |
+| data\*          | `array`  | `[]`        | Data to be used for displaying breadcrumbs. Accepts an array of type `Array<{ label: string; icon?: ReactNode; href?: string }>`. |
 | separator       | `string` | `'/'`       | Character to be used to separate the breadcrumbs.                                                                                 |
 | className       | `string` | `undefined` | Additional class to be passed to root.                                                                                            |
 | listClassName   | `string` | `undefined` | Additional class to be passed to `<li>` element inside root.                                                                      |
@@ -247,3 +247,78 @@ A versatile UI element used to display content and actions on a single topic. It
 | fluid       | `boolean`   | `false`     | Controls whether the component should expand horizontally to use empty space. |
 | className   | `string`    | `undefined` | Additional class to be passed to root.                                        |
 | size        | `string`    | `'medium'`  | Size variant. Possible options are `'small' \| 'medium' \| 'large'`.          |
+
+### Chip
+
+A flexible and customizable UI element used to display small pieces of information, tags, or actions. It supports different variants, colors, sizes, and can include icons or be dismissible for enhanced interactivity.
+
+#### Chip Properties
+
+| Name       | Type             | Default     | Description                                                                                                    |
+| ---------- | ---------------- | ----------- | -------------------------------------------------------------------------------------------------------------- |
+| children\* | `ReactNode`      | `undefined` | The main content.                                                                                              |
+| className  | `string`         | `undefined` | Additional class to be passed to root.                                                                         |
+| color      | `string`         | `'primary'` | Color variant. Possible options are `'primary' \| 'secondary' \| 'success' \| 'info' \| 'warning' \| 'error'`. |
+| ...props   | `HTMLAttributes` |             | Common HTML attributes to be passed to root.                                                                   |
+
+### Countdown
+
+A customizable React countdown component that dynamically displays only active time units, supporting multiple formats and precise millisecond accuracy. **Client-only**.
+
+#### Countdown Properties
+
+| Name           | Type             | Default     | Description                                                                                                         |
+| -------------- | ---------------- | ----------- | ------------------------------------------------------------------------------------------------------------------- |
+| date\*         | `Date \| number` | `undefined` | The date to be used as the deadline for the countdown.                                                              |
+| showDay        | `boolean`        | `true`      | Controls whether day count is displayed or not.                                                                     |
+| showHour       | `boolean`        | `true`      | Controls whether hour count is displayed or not.                                                                    |
+| showMinute     | `boolean`        | `true`      | Controls whether minute count is displayed or not.                                                                  |
+| showSecond     | `boolean`        | `true`      | Controls whether second count is displayed or not.                                                                  |
+| type           | `string`         | `'default'` | Styling variant. Possible options are `'default' \| 'withSeparator' \| 'withLabels' \| 'labelsUnder' \| 'inBoxes'`. |
+| rootClassName  | `string`         | `undefined` | Additional class to be passed to root.                                                                              |
+| itemClassName  | `string`         | `undefined` | Additional class to be passed to item, which contains day, hour, minute, or second count.                           |
+| valueClassName | `string`         | `undefined` | Additional class to be passed to value, which contains the number value of count.                                   |
+| labelClassName | `string`         | `undefined` | Additional class to be passed to label, which contains the label of a value.                                        |
+| ...props       | `HTMLAttributes` |             | Common HTML attributes to be passed to root.                                                                        |
+
+### DataTable
+
+A powerful and flexible component for displaying and managing tabular data, offering features such as sorting, filtering, pagination, and customizable columns to efficiently present large datasets in a user-friendly format.
+
+#### DataTable Properties
+
+| Name               | Type        | Default       | Description                                                                                                                                                                        |
+| ------------------ | ----------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| data\*             | `array`     | `undefined`   | Data to be displayed. Accepts an array of type `Array<Record<string, unknown>>`.                                                                                                   |
+| columns\*          | `array`     | `undefined`   | Columns of the table. Accepts an array of type `Array<ColumnType<typeof data>>`. The `ColumnType` type comes from [rc-table](https://www.npmjs.com/package/rc-table#column-props). |
+| title              | `ReactNode` | `undefined`   | Table title.                                                                                                                                                                       |
+| emptyText          | `string`    | `undefined`   | Text to be displayed when there is no data.                                                                                                                                        |
+| pagination         | `boolean`   | `false`       | Controls whether items should be paginated.                                                                                                                                        |
+| rowsPerPage        | `number`    | `5`           | Maximum amount of rows per page. Requires `pagination` to be true.                                                                                                                 |
+| rowsPerPageOptions | `number[]`  | `[5, 10, 20]` | Options to override `rowsPerPage`.                                                                                                                                                 |
+| rowSelect          | `boolean`   | `false`       | Controls whether rows are selectable or not.                                                                                                                                       |
+| rowSelectAction    | `function`  | `undefined`   | Callback function to call when row is selected. Accepts a function of type `(row: Array<string \| number>) => void`.                                                               |
+| rowClassName       | `string`    | `undefined`   | Additional class to be passed to each row.                                                                                                                                         |
+| border             | `boolean`   | `true`        | Controls whether borders between items should be displayed or not.                                                                                                                 |
+| checkboxAvailable  | `boolean`   | `false`       | Controls whether checkbox selection for each row is displayed or not.                                                                                                              |
+| filter             | `boolean`   | `false`       | Controls whether to display filter options.                                                                                                                                        |
+| sorting            | `boolean`   | `false`       | Controls whether to display sort options.                                                                                                                                          |
+| virtualized        | `boolean`   | `false`       | Controls whether to enable virtual scrolling. Improves performance for large datasets.                                                                                             |
+| maxHeight          | `number`    | `340`         | Maximum height of the table.                                                                                                                                                       |
+| maxHeight          | `number`    | `340`         | Maximum height of the table.                                                                                                                                                       |
+
+### Divider
+
+A versatile component that displays a message to the user with various customization options. It supports different severity levels, variants, colors, and additional actions.
+
+#### Divider Properties
+
+| Name         | Type             | Default        | Description                                                                          |
+| ------------ | ---------------- | -------------- | ------------------------------------------------------------------------------------ |
+| children     | `ReactNode`      | `undefined`    | The content to be displayed in the line.                                             |
+| contentAlign | `string`         | `'center'`     | Alignment of `children`. Possible options are `'start' \| 'center' \| 'end'`.        |
+| variant      | `string`         | `'fullWidth'`  | Styling variant. Possible options are `'fullWidth' \| 'start' \| 'center' \| 'end'`. |
+| orientation  | `string`         | `'horizontal'` | Orientation variant. Possible options are `'horizontal' \| 'vertical'`.              |
+| component    | `string`         | `div`          | HTML element to be used as root.                                                     |
+| className    | `string`         | `undefined`    | Additional class to be passed to root.                                               |
+| ...props     | `HTMLAttributes` |                | Common HTML attributes to be passed to root.                                         |
