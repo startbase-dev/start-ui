@@ -58,7 +58,7 @@ export default function Page() {
 }
 ```
 
-Since some Start-UI components utilize React hooks, we suggest importing them separately when used inside client-side components.
+**IMPORTANT:** Since some Start-UI components utilize React hooks, we suggest importing them separately when used inside client-side components.
 
 ## Components
 
@@ -78,27 +78,27 @@ import Accordion from '@start-base/start-ui/Accordion';
 
 A group of `Accordion` components should be grouped together inside a parent element for proper styling.
 
-### Accordion Properties
+#### Accordion Properties
 
-| Name               | Type                             | Default     | Description                                                                                                                                                     |
-| ------------------ | -------------------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| summary            | `ReactNode`                      | `undefined` | A summary of the content.                                                                                                                                       |
-| children           | `ReactNode`                      | `undefined` | The main content.                                                                                                                                               |
-| actions            | `ReactNode`                      | `undefined` | Action elements placed below the content.                                                                                                                       |
-| icon               | `ReactNode`                      | `undefined` | Custom icon element that will be placed at the end of `summary`.                                                                                                |
-| className          | `string`                         | `undefined` | Additional class to be passed to the root of the Accordion.                                                                                                     |
-| summaryClassName   | `string`                         | `undefined` | Additional class to be passed to the summary element of the Accordion.                                                                                          |
-| actionsClassName   | `string`                         | `undefined` | Additional class to be passed to the actions element of the Accordion.                                                                                          |
-| containerClassName | `string`                         | `undefined` | Additional class to be passed to the container element of the Accordion.                                                                                        |
-| variant            | `string`                         | `'drawer'`  | Styling variant for the Accordion. Possible options are `'drawer' \| 'individual'`.                                                                             |
-| expanded           | `boolean`                        | `undefined` | Controls whether the Accordion is expanded or not.                                                                                                              |
-| onExpand           | `function`                       | `undefined` | Function to run when `summary` is clicked.                                                                                                                      |
-| unmountOnExit      | `boolean`                        | `false`     | Controls whether the `children` should unmount when `expanded` is false. This property disables CSS animations but improves performance for very large content. |
-| defaultExpanded    | `boolean`                        | `false`     | Controls whether the Accordion is expanded or not when first mounting.                                                                                          |
-| disabled           | `boolean`                        | `false`     | Controls whether the Accordion should expand or collapse when `summary` is clicked.                                                                             |
-| ...props           | `HTMLAttributes<HTMLDivElement>` |             | Common HTML attributes to be passed to the root element.                                                                                                        |
+| Name               | Type                             | Default     | Description                                                                                                                                       |
+| ------------------ | -------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| summary            | `ReactNode`                      | `undefined` | A summary of the content.                                                                                                                         |
+| children           | `ReactNode`                      | `undefined` | The main content.                                                                                                                                 |
+| actions            | `ReactNode`                      | `undefined` | Action elements placed below `children`.                                                                                                          |
+| icon               | `ReactNode`                      | `undefined` | Custom icon element that will be placed at the end of `summary`.                                                                                  |
+| className          | `string`                         | `undefined` | Additional class to be passed to root.                                                                                                            |
+| summaryClassName   | `string`                         | `undefined` | Additional class to be passed to `summary`.                                                                                                       |
+| actionsClassName   | `string`                         | `undefined` | Additional class to be passed to `actions`.                                                                                                       |
+| containerClassName | `string`                         | `undefined` | Additional class to be passed to container, which contains root, `summary` and `actions`.                                                         |
+| variant            | `string`                         | `'drawer'`  | Styling variant. Possible options are `'drawer' \| 'individual'`.                                                                                 |
+| expanded           | `boolean`                        | `undefined` | Controls whether the component is expanded or not.                                                                                                |
+| onExpand           | `function`                       | `undefined` | Function to run when `summary` is clicked.                                                                                                        |
+| unmountOnExit      | `boolean`                        | `false`     | Controls whether the `children` should unmount when `expanded` is false. Disables CSS animations but improves performance for very large content. |
+| defaultExpanded    | `boolean`                        | `false`     | Controls whether the component is expanded or not when first mounting.                                                                            |
+| disabled           | `boolean`                        | `false`     | Controls whether the component should expand or collapse when `summary` is clicked.                                                               |
+| ...props           | `HTMLAttributes<HTMLDivElement>` |             | Common HTML attributes to be passed to root.                                                                                                      |
 
-The Accordion components has two modes: controlled or uncontrolled depending on whether its state is controlled externally or internally. They differ slightly when it comes to their properties:
+The Accordion components has two modes: _controlled_ or _uncontrolled_, which is decided automatically depending on whether its state is controlled externally or internally. They differ slightly when it comes to their properties:
 
 #### Controlled Accordion Properties
 
@@ -106,3 +106,26 @@ The Accordion components has two modes: controlled or uncontrolled depending on 
 | ---------- | ---------- | ----------- | -------------------------------------------------- |
 | expanded\* | `boolean`  | `undefined` | Controls whether the Accordion is expanded or not. |
 | onExpand\* | `function` | `undefined` | Function to run when `summary` is clicked.         |
+
+### Alert
+
+A versatile component that displays a message to the user with various customization options. It supports different severity levels, variants, colors, and additional actions.
+
+#### Alert Properties
+
+| Name           | Type                             | Default     | Description                                                                                                                                                 |
+| -------------- | -------------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| children       | `ReactNode`                      | `undefined` | The main content.                                                                                                                                           |
+| severity       | `string`                         | `success`   | Severity of the component. Controls the colors to be used for the styling and the icon. Possible options are `'success' \| 'info' \| 'warning' \| 'error'`. |
+| variant        | `string`                         | `default`   | Styling variant. Possible options are `'default' \| 'filler' \| 'outlined'`.                                                                                |
+| color          | `string`                         | `inherit`   | Colors to be used for styling. Overrides `severity`. Possible options are `'inherit' \| 'success' \| 'info' \| 'warning' \| 'error'`.                       |
+| actionElement  | `ReactNode`                      | `undefined` | Action element placed after `children`.                                                                                                                     |
+| icon           | `ReactNode \| boolean`           | `true`      | Controls the component icon. Given a boolean value will display or hide the icon. Can be given a custom icon element to be displayed.                       |
+| alertTitle     | `string \| boolean`              | `false`     | Controls the component title above the main content. Given a boolean value will display or hide the title. Can be given a custom title.                     |
+| open           | `boolean`                        | `true`      | Controls whether the component is displayed or not.                                                                                                         |
+| className      | `string`                         | `undefined` | Additional class to be passed to root.                                                                                                                      |
+| iconClassName  | `string`                         | `undefined` | Additional class to be passed to `icon`.                                                                                                                    |
+| bodyClassName  | `string`                         | `undefined` | Additional class to be passed to body, which contains `title` and `children`.                                                                               |
+| titleClassName | `string`                         | `undefined` | Additional class to be passed to `alertTitle`.                                                                                                              |
+| textClassName  | `string`                         | `undefined` | Additional class to be passed to `children` container.                                                                                                      |
+| ...props       | `HTMLAttributes<HTMLDivElement>` |             | Common HTML attributes to be passed to root.                                                                                                                |
