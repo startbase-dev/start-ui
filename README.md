@@ -80,23 +80,23 @@ A group of `Accordion` components should be grouped together inside a parent ele
 
 #### Accordion Properties
 
-| Name               | Type                             | Default     | Description                                                                                                                                       |
-| ------------------ | -------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| summary            | `ReactNode`                      | `undefined` | A summary of the content.                                                                                                                         |
-| children           | `ReactNode`                      | `undefined` | The main content.                                                                                                                                 |
-| actions            | `ReactNode`                      | `undefined` | Action elements placed below `children`.                                                                                                          |
-| icon               | `ReactNode`                      | `undefined` | Custom icon element that will be placed at the end of `summary`.                                                                                  |
-| className          | `string`                         | `undefined` | Additional class to be passed to root.                                                                                                            |
-| summaryClassName   | `string`                         | `undefined` | Additional class to be passed to `summary`.                                                                                                       |
-| actionsClassName   | `string`                         | `undefined` | Additional class to be passed to `actions`.                                                                                                       |
-| containerClassName | `string`                         | `undefined` | Additional class to be passed to container, which contains root, `summary` and `actions`.                                                         |
-| variant            | `string`                         | `'drawer'`  | Styling variant. Possible options are `'drawer' \| 'individual'`.                                                                                 |
-| expanded           | `boolean`                        | `undefined` | Controls whether the component is expanded or not.                                                                                                |
-| onExpand           | `function`                       | `undefined` | Function to run when `summary` is clicked.                                                                                                        |
-| unmountOnExit      | `boolean`                        | `false`     | Controls whether the `children` should unmount when `expanded` is false. Disables CSS animations but improves performance for very large content. |
-| defaultExpanded    | `boolean`                        | `false`     | Controls whether the component is expanded or not when first mounting.                                                                            |
-| disabled           | `boolean`                        | `false`     | Controls whether the component should expand or collapse when `summary` is clicked.                                                               |
-| ...props           | `HTMLAttributes<HTMLDivElement>` |             | Common HTML attributes to be passed to root.                                                                                                      |
+| Name               | Type             | Default     | Description                                                                                                                                       |
+| ------------------ | ---------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| summary            | `ReactNode`      | `undefined` | A summary of the content.                                                                                                                         |
+| children           | `ReactNode`      | `undefined` | The main content.                                                                                                                                 |
+| actions            | `ReactNode`      | `undefined` | Action elements placed below `children`.                                                                                                          |
+| icon               | `ReactNode`      | `undefined` | Custom icon element that will be placed at the end of `summary`.                                                                                  |
+| className          | `string`         | `undefined` | Additional class to be passed to root.                                                                                                            |
+| summaryClassName   | `string`         | `undefined` | Additional class to be passed to `summary`.                                                                                                       |
+| actionsClassName   | `string`         | `undefined` | Additional class to be passed to `actions`.                                                                                                       |
+| containerClassName | `string`         | `undefined` | Additional class to be passed to container, which contains root, `summary` and `actions`.                                                         |
+| variant            | `string`         | `'drawer'`  | Styling variant. Possible options are `'drawer' \| 'individual'`.                                                                                 |
+| expanded           | `boolean`        | `undefined` | Controls whether the component is expanded or not.                                                                                                |
+| onExpand           | `function`       | `undefined` | Function to run when `summary` is clicked.                                                                                                        |
+| unmountOnExit      | `boolean`        | `false`     | Controls whether the `children` should unmount when `expanded` is false. Disables CSS animations but improves performance for very large content. |
+| defaultExpanded    | `boolean`        | `false`     | Controls whether the component is expanded or not when first mounting.                                                                            |
+| disabled           | `boolean`        | `false`     | Controls whether the component should expand or collapse when `summary` is clicked.                                                               |
+| ...props           | `HTMLAttributes` |             | Common HTML attributes to be passed to root.                                                                                                      |
 
 The Accordion components has two modes: _controlled_ or _uncontrolled_, which is decided automatically depending on whether its state is controlled externally or internally. They differ slightly when it comes to their properties:
 
@@ -113,22 +113,22 @@ A versatile component that displays a message to the user with various customiza
 
 #### Alert Properties
 
-| Name           | Type                             | Default     | Description                                                                                                                                                 |
-| -------------- | -------------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| children       | `ReactNode`                      | `undefined` | The main content.                                                                                                                                           |
-| severity       | `string`                         | `success`   | Severity of the component. Controls the colors to be used for the styling and the icon. Possible options are `'success' \| 'info' \| 'warning' \| 'error'`. |
-| variant        | `string`                         | `default`   | Styling variant. Possible options are `'default' \| 'filler' \| 'outlined'`.                                                                                |
-| color          | `string`                         | `inherit`   | Colors to be used for styling. Overrides `severity`. Possible options are `'inherit' \| 'success' \| 'info' \| 'warning' \| 'error'`.                       |
-| actionElement  | `ReactNode`                      | `undefined` | Action element placed after `children`.                                                                                                                     |
-| icon           | `ReactNode \| boolean`           | `true`      | Controls the component icon. Given a boolean value will display or hide the icon. Can be given a custom icon element to be displayed.                       |
-| alertTitle     | `string \| boolean`              | `false`     | Controls the component title above the main content. Given a boolean value will display or hide the title. Can be given a custom title.                     |
-| open           | `boolean`                        | `true`      | Controls whether the component is displayed or not.                                                                                                         |
-| className      | `string`                         | `undefined` | Additional class to be passed to root.                                                                                                                      |
-| iconClassName  | `string`                         | `undefined` | Additional class to be passed to `icon`.                                                                                                                    |
-| bodyClassName  | `string`                         | `undefined` | Additional class to be passed to body, which contains `title` and `children`.                                                                               |
-| titleClassName | `string`                         | `undefined` | Additional class to be passed to `alertTitle`.                                                                                                              |
-| textClassName  | `string`                         | `undefined` | Additional class to be passed to `children` container.                                                                                                      |
-| ...props       | `HTMLAttributes<HTMLDivElement>` |             | Common HTML attributes to be passed to root.                                                                                                                |
+| Name           | Type                   | Default     | Description                                                                                                                                                 |
+| -------------- | ---------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| children       | `ReactNode`            | `undefined` | The main content.                                                                                                                                           |
+| severity       | `string`               | `success`   | Severity of the component. Controls the colors to be used for the styling and the icon. Possible options are `'success' \| 'info' \| 'warning' \| 'error'`. |
+| variant        | `string`               | `default`   | Styling variant. Possible options are `'default' \| 'filler' \| 'outlined'`.                                                                                |
+| color          | `string`               | `inherit`   | Colors to be used for styling. Overrides `severity`. Possible options are `'inherit' \| 'success' \| 'info' \| 'warning' \| 'error'`.                       |
+| actionElement  | `ReactNode`            | `undefined` | Action element placed after `children`.                                                                                                                     |
+| icon           | `ReactNode \| boolean` | `true`      | Controls the component icon. Given a boolean value will display or hide the icon. Can be given a custom icon element to be displayed.                       |
+| alertTitle     | `string \| boolean`    | `false`     | Controls the component title above the main content. Given a boolean value will display or hide the title. Can be given a custom title.                     |
+| open           | `boolean`              | `true`      | Controls whether the component is displayed or not.                                                                                                         |
+| className      | `string`               | `undefined` | Additional class to be passed to root.                                                                                                                      |
+| iconClassName  | `string`               | `undefined` | Additional class to be passed to `icon`.                                                                                                                    |
+| bodyClassName  | `string`               | `undefined` | Additional class to be passed to body, which contains `title` and `children`.                                                                               |
+| titleClassName | `string`               | `undefined` | Additional class to be passed to `alertTitle`.                                                                                                              |
+| textClassName  | `string`               | `undefined` | Additional class to be passed to `children` container.                                                                                                      |
+| ...props       | `HTMLAttributes`       |             | Common HTML attributes to be passed to root.                                                                                                                |
 
 ### Avatar
 
@@ -136,17 +136,17 @@ Used to display a user's profile picture or initials in a visually appealing man
 
 #### Avatar Properties
 
-| Name           | Type                             | Default      | Description                                                                                                                 |
-| -------------- | -------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------- |
-| picture        | `string`                         | `''`         | Picture URL to be passed to `<img>` element.                                                                                |
-| defaultPicture | `string`                         | `''`         | Picture URL to be used if `picture` is not found.                                                                           |
-| chars          | `string`                         | `'SU'`       | Initials to be used in place of `picture`.                                                                                  |
-| size           | `string`                         | `'medium'`   | Size variant. Possible options are `'small' \| 'medium' \| 'large'`                                                         |
-| variant        | `string`                         | `'circular'` | Styling variant. Possible options are `'circular' \| 'square'`                                                              |
-| className      | `string`                         | `undefined`  | Additional class to be passed to root.                                                                                      |
-| Component      | `ElementType`                    | `'img'`      | Image component to be used to render the picture. Can be used to pass Next's Image component for optimized image rendering. |
-| componentProps | `object`                         | `{}`         | Additional properties to be passed to `Component`.                                                                          |
-| ...props       | `HTMLAttributes<HTMLDivElement>` |              | Common HTML attributes to be passed to root.                                                                                |
+| Name           | Type             | Default      | Description                                                                                                                 |
+| -------------- | ---------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------- |
+| picture        | `string`         | `''`         | Picture URL to be passed to `<img>` element.                                                                                |
+| defaultPicture | `string`         | `''`         | Picture URL to be used if `picture` is not found.                                                                           |
+| chars          | `string`         | `'SU'`       | Initials to be used in place of `picture`.                                                                                  |
+| size           | `string`         | `'medium'`   | Size variant. Possible options are `'small' \| 'medium' \| 'large'`                                                         |
+| variant        | `string`         | `'circular'` | Styling variant. Possible options are `'circular' \| 'square'`                                                              |
+| className      | `string`         | `undefined`  | Additional class to be passed to root.                                                                                      |
+| Component      | `ElementType`    | `'img'`      | Image component to be used to render the picture. Can be used to pass Next's Image component for optimized image rendering. |
+| componentProps | `object`         | `{}`         | Additional properties to be passed to `Component`.                                                                          |
+| ...props       | `HTMLAttributes` |              | Common HTML attributes to be passed to root.                                                                                |
 
 ### Badge
 
@@ -154,34 +154,96 @@ A series of interactive headings arranged vertically, each revealing a section o
 
 #### Badge Properties
 
-| Name               | Type                             | Default       | Description                                                                                                                                                                  |
-| ------------------ | -------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| children\*         | `ReactNode`                      | `undefined`   | The content to which the component will be attached.                                                                                                                         |
-| content\*          | `ReactNode`                      | `undefined`   | The main content.                                                                                                                                                            |
-| position           | `string`                         | `'top-right'` | Position of `content` relative to `children`. Possible options are `'top-left' \| 'top' \| 'top-right' \| 'right' \| 'bottom-right' \| 'bottom' \| 'bottom-left' \| 'left'`. |
-| color              | `string`                         | `'primary'`   | Color variant. Possible options are `'primary' \| 'secondary' \| 'success' \| 'error'`.                                                                                      |
-| variant            | `string`                         | `'default'`   | Styling variant. Possible options are `'default' \| 'dot'`.                                                                                                                  |
-| invisible          | `boolean`                        | `false`       | Controls whether `content` is visible.                                                                                                                                       |
-| className          | `string`                         | `undefined`   | Additional class to be passed to `content`.                                                                                                                                  |
-| containerClassName | `string`                         | `undefined`   | Additional class to be passed to container, which contains `children` and `content`.                                                                                         |
-| ...props           | `HTMLAttributes<HTMLDivElement>` |               | Common HTML attributes to be passed to root.                                                                                                                                 |
+| Name               | Type             | Default       | Description                                                                                                                                                                  |
+| ------------------ | ---------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| children\*         | `ReactNode`      | `undefined`   | The content to which the component will be attached.                                                                                                                         |
+| content\*          | `ReactNode`      | `undefined`   | The main content.                                                                                                                                                            |
+| position           | `string`         | `'top-right'` | Position of `content` relative to `children`. Possible options are `'top-left' \| 'top' \| 'top-right' \| 'right' \| 'bottom-right' \| 'bottom' \| 'bottom-left' \| 'left'`. |
+| color              | `string`         | `'primary'`   | Color variant. Possible options are `'primary' \| 'secondary' \| 'success' \| 'error'`.                                                                                      |
+| variant            | `string`         | `'default'`   | Styling variant. Possible options are `'default' \| 'dot'`.                                                                                                                  |
+| invisible          | `boolean`        | `false`       | Controls whether `content` is visible.                                                                                                                                       |
+| className          | `string`         | `undefined`   | Additional class to be passed to `content`.                                                                                                                                  |
+| containerClassName | `string`         | `undefined`   | Additional class to be passed to container, which contains `children` and `content`.                                                                                         |
+| ...props           | `HTMLAttributes` |               | Common HTML attributes to be passed to root.                                                                                                                                 |
 
 ### BentoCard
 
-A versatile and customizable card component designed to display content in a bento-style layout. It is ideal for use in marketing pages, dashboards, and other interfaces where information needs to be presented in a visually appealing and organized manner.
+A versatile and customizable card component designed to display content in a bento-style layout. It is ideal for use in marketing pages, dashboards, and other interfaces where information needs to be presented in a visually appealing and organized manner. **Client-only**.
 
-| Name                   | Type                             | Default     | Description                                                            |
-| ---------------------- | -------------------------------- | ----------- | ---------------------------------------------------------------------- |
-| firstContent           | `ReactNode`                      | `undefined` | The primary content.                                                   |
-| secondContent          | `ReactNode`                      | `undefined` | The secondary content.                                                 |
-| title                  | `string`                         | `undefined` | Title of the component.                                                |
-| isTitleVisibleInFirst  | `boolean`                        | `true`      | Controls whether `title` is visible when `firstContent` is displayed.  |
-| isTitleVisibleInSecond | `boolean`                        | `true`      | Controls whether `title` is visible when `secondContent` is displayed. |
-| redirectTo             | `string`                         | `undefined` | URL to redirect to when button is clicked.                             |
-| rootClassName          | `string`                         | `undefined` | Additional class to be passed to root.                                 |
-| rootActiveClassName    | `string`                         | `undefined` | Additional class to be passed to root's active state.                  |
-| titleClassName         | `string`                         | `undefined` | Additional class to be passed to `title`.                              |
-| titleActiveClassName   | `string`                         | `undefined` | Additional class to be passed to `title`'s active state.               |
-| buttonClassName        | `string`                         | `undefined` | Additional class to be passed to button.                               |
-| activeButtonClassName  | `string`                         | `undefined` | Additional class to be passed to button's active state.                |
-| ...props               | `HTMLAttributes<HTMLDivElement>` |             | Common HTML attributes to be passed to root.                           |
+#### BentoCard Properties
+
+| Name                   | Type             | Default     | Description                                                            |
+| ---------------------- | ---------------- | ----------- | ---------------------------------------------------------------------- |
+| firstContent           | `ReactNode`      | `undefined` | The primary content.                                                   |
+| secondContent          | `ReactNode`      | `undefined` | The secondary content.                                                 |
+| title                  | `string`         | `undefined` | Title of the component.                                                |
+| isTitleVisibleInFirst  | `boolean`        | `true`      | Controls whether `title` is visible when `firstContent` is displayed.  |
+| isTitleVisibleInSecond | `boolean`        | `true`      | Controls whether `title` is visible when `secondContent` is displayed. |
+| redirectTo             | `string`         | `undefined` | URL to redirect to when button is clicked.                             |
+| rootClassName          | `string`         | `undefined` | Additional class to be passed to root.                                 |
+| rootActiveClassName    | `string`         | `undefined` | Additional class to be passed to root's active state.                  |
+| titleClassName         | `string`         | `undefined` | Additional class to be passed to `title`.                              |
+| titleActiveClassName   | `string`         | `undefined` | Additional class to be passed to `title`'s active state.               |
+| buttonClassName        | `string`         | `undefined` | Additional class to be passed to button.                               |
+| activeButtonClassName  | `string`         | `undefined` | Additional class to be passed to button's active state.                |
+| ...props               | `HTMLAttributes` |             | Common HTML attributes to be passed to root.                           |
+
+### BentoGrid
+
+A flexible grid layout that allows for dynamic placement of elements, enabling customization of grid items' width and height. It's ideal for creating responsive, visually appealing grids that adjust seamlessly across various screen sizes.
+
+#### BentoGrid Properties
+
+| Name      | Type             | Default     | Description                                                                                                           |
+| --------- | ---------------- | ----------- | --------------------------------------------------------------------------------------------------------------------- |
+| items\*   | `array`          | `undefined` | Grid items to be displayed. Accepts an array such as `Array<{ element: ReactNode; width: number; height: number; }>`. |
+| gridCols  | `number`         | `4`         | Number of grid columns.                                                                                               |
+| rowHeight | `number`         | `100`       | Height of grid rows in pixels.                                                                                        |
+| ...props  | `HTMLAttributes` |             | Common HTML attributes to be passed to root.                                                                          |
+
+### Breadcrumbs
+
+A navigational aid in web applications, allowing users to keep track of their locations within the app hierarchy. It displays a series of links representing the current page and its ancestors, making it easy for users to navigate back to previous sections.
+
+#### Breadcrumbs Properties
+
+| Name            | Type     | Default     | Description                                                                                                                       |
+| --------------- | -------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| data\*          | `array`  | `[]`        | Data to be used for displaying breadcrumbs. Accepts an array such as `Array<{ label: string; icon?: ReactNode; href?: string }>`. |
+| separator       | `string` | `'/'`       | Character to be used to separate the breadcrumbs.                                                                                 |
+| className       | `string` | `undefined` | Additional class to be passed to root.                                                                                            |
+| listClassName   | `string` | `undefined` | Additional class to be passed to `<li>` element inside root.                                                                      |
+| activeClassName | `string` | `undefined` | Additional class to be passed to `<li>` element's active state.                                                                   |
+| itemClassName   | `string` | `undefined` | Additional class to be passed to each breadcrumb.                                                                                 |
+
+### Button
+
+A versatile and customizable button element that can be used in various contexts. It supports different variants, colors, sizes, and additional actions.
+
+#### Button Properties
+
+| Name       | Type                   | Default     | Description                                                                          |
+| ---------- | ---------------------- | ----------- | ------------------------------------------------------------------------------------ |
+| children\* | `ReactNode`            | `undefined` | The main content.                                                                    |
+| color      | `string`               | `'primary'` | Color variant. Possible options are `'primary' \| 'secondary' \| 'destructive'`.     |
+| variant    | `string`               | `'default'` | Styling variant. Possible options are `'default' \| 'link' \| 'outline' \| 'ghost'`. |
+| size       | `string`               | `'medium'`  | Size variant. Possible options are `'small' \| 'medium' \| 'large' \| 'icon'`.       |
+| loading    | `boolean`              | `false`     | Controls whether a loading spinner is displayed or not.                              |
+| fluid      | `boolean`              | `false`     | Controls whether the component should expand horizontally to use empty space.        |
+| ...props   | `ButtonHTMLAttributes` |             | Button HTML attributes to be passed to root.                                         |
+
+### Card
+
+A versatile UI element used to display content and actions on a single topic. It can contain various elements such as text, images, and buttons. **Client-only**.
+
+#### Card Properties
+
+| Name        | Type        | Default     | Description                                                                   |
+| ----------- | ----------- | ----------- | ----------------------------------------------------------------------------- |
+| children    | `ReactNode` | `undefined` | The main content.                                                             |
+| title       | `ReactNode` | `undefined` | Title for the main content.                                                   |
+| description | `ReactNode` | `undefined` | Description for the main content.                                             |
+| collapsible | `boolean`   | `false`     | Controls whether the component is collapsible on click or not.                |
+| fluid       | `boolean`   | `false`     | Controls whether the component should expand horizontally to use empty space. |
+| className   | `string`    | `undefined` | Additional class to be passed to root.                                        |
+| size        | `string`    | `'medium'`  | Size variant. Possible options are `'small' \| 'medium' \| 'large'`.          |
