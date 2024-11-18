@@ -129,3 +129,21 @@ A versatile component that displays a message to the user with various customiza
 | titleClassName | `string`                         | `undefined` | Additional class to be passed to `alertTitle`.                                                                                                              |
 | textClassName  | `string`                         | `undefined` | Additional class to be passed to `children` container.                                                                                                      |
 | ...props       | `HTMLAttributes<HTMLDivElement>` |             | Common HTML attributes to be passed to root.                                                                                                                |
+
+### Avatar
+
+The Avatar component is used to display a user's profile picture or initials in a visually appealing manner. It supports various sizes and shapes, including circular and square variants.
+
+#### Avatar Properties
+
+| Name           | Type                             | Default      | Description                                                                                                                 |
+| -------------- | -------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------- |
+| picture        | `string`                         | `''`         | Picture href to be passed to `<img>` element.                                                                               |
+| defaultPicture | `string`                         | `''`         | Picture href to be used if `picture` is not found.                                                                          |
+| chars          | `string`                         | `'SU'`       | Initials to be used in place of `picture`.                                                                                  |
+| size           | `string`                         | `'medium'`   | Size variant. Possible options are `'small' \| 'medium' \| 'large'`                                                         |
+| variant        | `string`                         | `'circular'` | Styling variant. Possible options are `'circular' \| 'square'`                                                              |
+| className      | `string`                         | `undefined`  | Additional class to be passed to root.                                                                                      |
+| Component      | `ElementType`                    | `'img'`      | Image component to be used to render the picture. Can be used to pass Next's Image component for optimized image rendering. |
+| componentProps | `object`                         | `{}`         | Additional properties to be passed to `Component`.                                                                          |
+| ...props       | `HTMLAttributes<HTMLDivElement>` |              | Common HTML attributes to be passed to root.                                                                                |
