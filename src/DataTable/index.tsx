@@ -203,8 +203,6 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
         );
         const dataTitle = typeof col.title === 'string' ? col.title : '';
 
-        console.log(dataTitle);
-
         return {
           ...col,
           title: titleWithSort,

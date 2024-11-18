@@ -340,9 +340,9 @@
         padding: 0;
         position: absolute;
         background-color: color-mix(
-          in srgb,
-          var(--sui-datatable-black) 90%,
-          var(--sui-datatable-white)
+                        in srgb,
+                        var(--sui-table-black) 90%,
+                        var(--sui-table-white)
         );
         width: 1px;
       }
@@ -350,22 +350,22 @@
       tbody {
         tr {
           &:nth-child(odd) {
-            background-color: var(--sui-datatable-black);
+            background-color: var(--sui-table-black);
           }
 
           &:nth-child(even) {
             background-color: color-mix(
-              in srgb,
-              var(--sui-datatable-black) 98%,
-              var(--sui-datatable-white)
+                            in srgb,
+                            var(--sui-table-black) 98%,
+                            var(--sui-table-white)
             );
           }
 
           &:hover {
             background-color: color-mix(
-              in srgb,
-              var(--sui-datatable-black) 94%,
-              var(--sui-datatable-white)
+                            in srgb,
+                            var(--sui-table-black) 94%,
+                            var(--sui-table-white)
             );
           }
         }
@@ -376,11 +376,13 @@
         margin-bottom: 0.5rem;
         box-sizing: border-box;
         height: auto;
+        border-top: 1px solid var(--sui-table-border);
       }
 
       td {
-        border: 1px solid var(--sui-datatable-border);
-        border-top: none;
+        border-bottom: 1px solid var(--sui-table-border);
+        border-right: 1px solid var(--sui-table-border);
+        border-left: 1px solid var(--sui-table-border);
         display: flex;
         font-size: 0.8em;
         text-align: right;
@@ -391,18 +393,11 @@
         justify-content: space-between;
         align-items: center;
 
-        &:first-of-type {
-          border-top: 1px solid var(--sui-datatable-border);
-        }
-
         &::before {
           content: attr(data-title);
           float: left;
           font-weight: bold;
           text-transform: uppercase;
-        }
-
-        &:last-child {
         }
       }
     }
@@ -469,7 +464,7 @@
         th,
         td {
           padding: 0.625em;
-          text-align: center;
+          text-align: left;
           display: table-cell;
           border-bottom: 1px solid var(--sui-datatable-border);
           font-size: 14px;
