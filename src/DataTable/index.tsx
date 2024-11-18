@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useMemo, Key, forwardRef } from 'react';
-import RCTable, { VirtualTable } from 'rc-table';
 import cx from 'clsx';
 import { ColumnType } from 'rc-table';
 import { CellAttributes, DataItem, DataTableProps, SortOrder } from './types';
@@ -10,6 +9,7 @@ import Checkbox from './ui/Checkbox';
 
 // eslint-disable-next-line css-modules/no-unused-class
 import styles from './DataTable.module.scss';
+import Table from '../Table';
 
 const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
   (
@@ -26,11 +26,8 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
       title,
       filter = false,
       sorting = false,
-      virtualized = false,
       emptyText,
       rowClassName,
-      maxHeight = 340,
-      minHeight = 340,
     },
     ref
   ) => {
@@ -281,62 +278,30 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
         </div>
 
         <div className={cx(styles.table, { [styles.withoutBorder]: !border })}>
-          {virtualized ? (
-            <VirtualTable
-              data={tableData}
-              columns={modifiedColumns}
-              tableLayout="fixed"
-              scroll={{ x: 400, y: maxHeight }}
-              className={styles.tableContainer}
-              rowClassName={(_record) =>
-                cx(styles.row, styles.virtualized, {
-                  [rowClassName as string]: rowClassName,
-                  [styles.rowSelected]:
-                    rowSelect &&
-                    !checkboxAvailable &&
-                    selectedRows.includes(_record.key as string | number),
-                  [styles.rowHighlighted]: highlightedRows.includes(
-                    _record.key
-                  ),
-                })
-              }
-              emptyText={emptyText}
-              onRow={(record) => ({
-                onClick: () => {
-                  if (rowSelect && !checkboxAvailable) {
-                    handleRowSelect(record.key as string | number);
-                  }
-                },
-              })}
-            />
-          ) : (
-            <RCTable
-              data={tableData}
-              columns={modifiedColumns}
-              tableLayout="fixed"
-              className={styles.tableContainer}
-              scroll={{ y: maxHeight }}
-              style={{ minHeight: minHeight }}
-              rowClassName={(record) =>
-                cx(styles.row, {
-                  [rowClassName as string]: rowClassName,
-                  [styles.rowSelected]:
-                    rowSelect &&
-                    !checkboxAvailable &&
-                    selectedRows.includes(record.key as string | number),
-                  [styles.rowHighlighted]: highlightedRows.includes(record.key),
-                })
-              }
-              emptyText={emptyText}
-              onRow={(record) => ({
-                onClick: () => {
-                  if (rowSelect && !checkboxAvailable) {
-                    handleRowSelect(record.key as string | number);
-                  }
-                },
-              })}
-            />
-          )}
+          <Table
+            data={tableData}
+            columns={modifiedColumns}
+            className={styles.tableContainer}
+            border={border}
+            rowClassName={(record) =>
+              cx(styles.row, {
+                [rowClassName as string]: rowClassName,
+                [styles.rowSelected]:
+                  rowSelect &&
+                  !checkboxAvailable &&
+                  selectedRows.includes(record.key as string | number),
+                [styles.rowHighlighted]: highlightedRows.includes(record.key),
+              })
+            }
+            emptyText={emptyText}
+            onRow={(record) => ({
+              onClick: () => {
+                if (rowSelect && !checkboxAvailable) {
+                  handleRowSelect(record.key as string | number);
+                }
+              },
+            })}
+          />
         </div>
 
         {pagination && (

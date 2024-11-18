@@ -397,7 +397,6 @@
         }
 
         &:last-child {
-          border-bottom: 0;
         }
       }
     }
@@ -418,7 +417,6 @@
 
   @media (min-width: 992px) {
     // Large devices (desktops, 992px and up)
-    border: 1px solid var(--sui-datatable-border);
     border-top: none;
 
     .paginationContent {

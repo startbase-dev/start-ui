@@ -1,5 +1,8 @@
 .table {
-  border: none;
+  &.border {
+    border-left: 1px solid var(--sui-table-border);
+    border-right: 1px solid var(--sui-table-border);
+  }
 
   .tableContainer {
     font-weight: 400;
@@ -104,8 +107,6 @@
 
   @media (min-width: 992px) {
     // Large devices (desktops, 992px and up)
-    border-left: 1px solid var(--sui-table-border);
-    border-right: 1px solid var(--sui-table-border);
 
     .tableContainer {
       table {

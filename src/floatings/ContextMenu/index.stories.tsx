@@ -14,7 +14,12 @@ const Template: React.FC<TemplateProps> = (props) => {
   return (
     <Storybook title={title}>
       <ContextMenu component={<Button>Click Right</Button>}>
-        <FloatingMenuItem label="Undo" />
+        <FloatingMenuItem
+          label="Undo"
+          onClick={() => {
+            alert('Undo!');
+          }}
+        />
         <FloatingMenuItem label="Redo" disabled />
         <FloatingMenuItem label="Cut" />
         <ContextMenu label="Copy as">
