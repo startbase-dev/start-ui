@@ -167,6 +167,13 @@ const Filter = ({
     dictionary.isAnyOf,
   ];
 
+  function toggleReset() {
+    setFilterValue("");
+    setDebouncedFilterValue("");
+    setFilterOperator("Operator");
+    setSelectedColumns([]);
+  }
+
   return (
     <div className={styles.filterContainer}>
       <div
@@ -175,6 +182,9 @@ const Filter = ({
           isContainerOpen ? styles.openPanel : styles.closePanel
         )}
       >
+        <Button size='small' variant='link' onClick={toggleReset}>
+          Reset
+        </Button>
         <Button
           size="small"
           variant="link"
