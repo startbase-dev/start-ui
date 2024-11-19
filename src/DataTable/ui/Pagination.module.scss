@@ -1,0 +1,55 @@
+
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-wrap: nowrap;
+  border: none;
+  padding: var(--sui-datatable-padding-small);
+}
+
+.paginationContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sui-datatable-gap-small);
+}
+
+.pageInfo {
+  display: flex;
+  gap: var(--sui-datatable-gap-small);
+}
+
+.rowsPerPage {
+  display: flex;
+  align-items: center;
+
+  label {
+    margin-right: var(--sui-text-margin);
+    font-size: var(--sui-text-small-fs);
+    line-height: var(--sui-text-small-lh);
+  }
+
+  .rowsPerPageSelect {
+    border: none;
+    background: var(--sui-gray-150);
+    border-radius: var(--sui-datatable-border-radius-small);
+    height: 24px;
+  }
+}
+
+.paginationInfo {
+  font-size: var(--sui-text-small-fs);
+}
+
+.paginationButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sui-datatable-gap-small);
+
+  /** TODO: Temporary fix for pagination misalignment. The issue stems from the Button component's styling */
+  > button {
+    min-width: unset !important;
+    height: unset !important;
+  }
+}

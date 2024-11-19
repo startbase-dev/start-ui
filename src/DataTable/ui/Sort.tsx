@@ -2,8 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { SortOrder, SortingProps } from '../types';
 import Button from '../../Button/index';
 
-// eslint-disable-next-line css-modules/no-unused-class
-import styles from '../DataTable.module.scss';
+import styles from './Sort.module.scss';
 
 const Sorting = ({
   column,

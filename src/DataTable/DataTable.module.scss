@@ -37,63 +37,6 @@
   }
 }
 
-/* Pagination */
-
-.paginationContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-wrap: nowrap;
-  border: none;
-  padding: var(--sui-datatable-padding-small);
-}
-
-.paginationContent {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--sui-datatable-gap-small);
-}
-
-.pageInfo {
-  display: flex;
-  gap: var(--sui-datatable-gap-small);
-}
-
-.rowsPerPage {
-  display: flex;
-  align-items: center;
-
-  label {
-    margin-right: var(--sui-text-margin);
-    font-size: var(--sui-text-small-fs);
-    line-height: var(--sui-text-small-lh);
-  }
-
-  .rowsPerPageSelect {
-    border: none;
-    background: var(--sui-gray-150);
-    border-radius: var(--sui-datatable-border-radius-small);
-    height: 24px;
-  }
-}
-
-.paginationInfo {
-  font-size: var(--sui-text-small-fs);
-}
-
-.paginationButtons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--sui-datatable-gap-small);
-
-  /** TODO: Temporary fix for pagination misalignment. The issue stems from the Button component's styling */
-  > button {
-    min-width: unset !important;
-    height: unset !important;
-  }
-}
-
 /* Select and Highlight */
 
 .rowSelected {
@@ -140,151 +83,6 @@
       var(--sui-datatable-white)
     );
   }
-}
-
-/* Filter */
-
-.filterContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: var(--sui-datatable-margin-small);
-  color: var(--sui-black);
-}
-
-.filterIconButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  padding: var(--sui-datatable-padding-small);
-  border: none;
-  border-radius: var(--sui-datatable-border-radius-small);
-  text-align: center;
-  z-index: 20;
-  background-color: var(--sui-gray-150);
-
-  &:hover {
-    background-color: var(--sui-datatable-filter-hover);
-  }
-}
-
-.filterOperatorDropdown {
-  display: flex;
-  border: none;
-  background: var(--sui-gray-150);
-  border-radius: var(--sui-datatable-border-radius-small);
-  max-width: 4.7rem;
-  text-overflow: ellipsis;
-}
-
-.filterPanel {
-  display: flex;
-  justify-content: flex-end;
-  gap: var(--sui-datatable-gap-small);
-  margin-right: var(--sui-datatable-margin-small);
-  transition: all 0.75s ease;
-  transform: translateX(25px);
-  opacity: 0;
-  height: 1.5rem;
-
-  > button {
-    background-color: var(--sui-gray-150);
-  }
-}
-
-.filterContentInner {
-  display: flex;
-}
-
-.filterOperator {
-  display: flex;
-  height: 1rem;
-  max-width: 4rem;
-}
-
-.filterInput {
-  display: flex;
-  max-width: 5rem;
-  text-align: center;
-  background: var(--sui-gray-150);
-  border: none;
-  border-radius: var(--sui-datatable-border-radius-small);
-  text-overflow: ellipsis;
-}
-
-.columnSelect {
-  display: flex;
-  position: absolute;
-  right: 5%;
-  top: 0%;
-  border-radius: var(--sui-datatable-border-radius-small);
-  color: var(--sui-black);
-  background-color: var(--sui-gray-50);
-  padding: var(--sui-datatable-padding-small);
-  font-size: 0.8rem;
-  z-index: 3;
-
-  input[type='checkbox'] {
-    appearance: auto;
-    color-scheme: light;
-  }
-}
-
-.openPanel {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.closePanel {
-  opacity: 0;
-  transform: translateX(25px);
-}
-
-/* Sort */
-
-.sortingContainer {
-  position: relative;
-  display: flex;
-  margin-left: 5px;
-}
-
-.sortingButton {
-  display: flex;
-  position: absolute;
-  top: -1rem;
-  left: 0;
-  margin: 0;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  color: var(--sui-datatable-white);
-}
-
-.sortDropdown {
-  position: absolute;
-  top: -1.8rem;
-  left: 2rem;
-  background: var(--sui-datatable-black);
-  border: 1px solid var(--sui-datatable-border);
-  border-radius: var(--sui-datatable-border-radius-small);
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-}
-
-.sortOptionButton {
-  border: none;
-  background: none;
-  padding: 5px;
-  text-align: left;
-  cursor: pointer;
-  width: 100%;
-}
-
-.sortOptionButton:hover {
-  background-color: var(--sui-gray-150);
 }
 
 /* Table */
@@ -407,14 +205,6 @@
     height: 56px;
   }
 
-  @media (min-width: 576px) {
-    // Small devices (landscape phones, 576px and up)
-  }
-
-  @media (min-width: 768px) {
-    // Medium devices (tablets, 768px and up)
-  }
-
   @media (min-width: 992px) {
     // Large devices (desktops, 992px and up)
     border-top: none;
@@ -495,18 +285,6 @@
         }
       }
     }
-  }
-
-  @media (min-width: 1200px) {
-    // X-Large devices (large desktops, 1200px and up)
-  }
-
-  @media (min-width: 1400px) {
-    // XX-Large devices (larger desktops, 1400px and up)
-  }
-
-  @media (min-width: 2160px) {
-    // XXX-Large devices (larger desktops, 2160px and up)
   }
 }
 

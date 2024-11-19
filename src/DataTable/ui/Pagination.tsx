@@ -1,6 +1,5 @@
 import React from 'react';
-// eslint-disable-next-line css-modules/no-unused-class
-import styles from '../DataTable.module.scss';
+import styles from './Pagination.module.scss';
 import Button from '../../Button/index';
 import { PaginationProps } from '../types';
 

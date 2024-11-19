@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-// eslint-disable-next-line css-modules/no-unused-class
-import styles from '../DataTable.module.scss';
+import styles from './Filter.module.scss';
 import Button from '../../Button/index';
 import { FilterProps } from '../types';
 import clsx from 'clsx';
