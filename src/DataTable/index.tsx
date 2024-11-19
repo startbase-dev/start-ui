@@ -28,6 +28,7 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
       sorting = false,
       emptyText,
       rowClassName,
+      i18n,
     },
     ref
   ) => {
@@ -192,11 +193,10 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
             {sorting && (
               <Sorting
                 column={col}
-                sortColumn={sortColumn}
+                isSorted={dataIndex === sortColumn}
                 setSortColumn={setSortColumn}
                 sortOrder={sortOrder}
                 setSortOrder={setSortOrder}
-                showIcon={hoveredColumn === dataIndex}
               />
             )}
           </div>
@@ -240,6 +240,8 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
       key: item?.key ?? index,
     }));
 
+    const { pagination: paginationTranslations, filter: filterTranslations } = i18n || {};
+
     return (
       <div ref={ref}>
         <div
@@ -268,6 +270,7 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
               setSelectedColumns={setSelectedColumns}
               setHighlightedRows={setHighlightedRows}
               setCurrentPage={setCurrentPage}
+              i18n={filterTranslations}
             />
           )}
         </div>
@@ -312,6 +315,7 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
             setCurrentRowsPerPage={setCurrentRowsPerPage}
             rowsPerPageOptions={rowsPerPageOptions}
             dataLength={totalItems}
+            i18n={paginationTranslations}
           />
         )}
       </div>

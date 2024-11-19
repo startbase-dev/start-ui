@@ -1,8 +1,14 @@
 import React from 'react';
-// eslint-disable-next-line css-modules/no-unused-class
-import styles from '../DataTable.module.scss';
+import styles from './Pagination.module.scss';
 import Button from '../../Button/index';
 import { PaginationProps } from '../types';
+
+const i18nDefaults = {
+  next: "Next",
+  of: "of",
+  previous: "Previous",
+  rows: "Rows",
+};
 
 const Pagination = ({
   currentPage,
@@ -11,7 +17,10 @@ const Pagination = ({
   setCurrentRowsPerPage,
   rowsPerPageOptions,
   dataLength,
+  i18n = i18nDefaults,
 }: PaginationProps) => {
+  const dictionary = {...i18nDefaults, ...i18n };
+
   const totalPages = Math.ceil(dataLength / currentRowsPerPage);
 
   const startItem = (currentPage - 1) * currentRowsPerPage + 1;
@@ -37,7 +46,7 @@ const Pagination = ({
       <div className={styles.paginationContent}>
         <div className={styles.pageInfo}>
           <div className={styles.rowsPerPage}>
-            <label htmlFor="rowsPerPage">Rows:</label>
+            <label htmlFor="rowsPerPage">{dictionary.rows}</label>
             <select
               id="rowsPerPage"
               value={currentRowsPerPage}
@@ -53,7 +62,7 @@ const Pagination = ({
           </div>
           <div className={styles.paginationInfo}>
             <span>
-              {startItem}–{endItem} of {dataLength}
+              {`${startItem}-${endItem} ${dictionary.of} ${dataLength}`}
             </span>
           </div>
         </div>
@@ -65,7 +74,7 @@ const Pagination = ({
             onClick={handlePreviousPage}
             disabled={currentPage === 1}
           >
-            Previous
+            {dictionary.previous}
           </Button>
           <Button
             size="small"
@@ -74,7 +83,7 @@ const Pagination = ({
             onClick={handleNextPage}
             disabled={currentPage === totalPages}
           >
-            Next
+            {dictionary.next}
           </Button>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { Key } from 'react';
+import { Dispatch, Key, SetStateAction } from 'react';
 import { ColumnType } from 'rc-table';
 
 export interface DataItem {
@@ -16,9 +16,39 @@ export interface CheckboxProps {
   indeterminate?: boolean;
 }
 
+interface DataTableI18N {
+  pagination: {
+    rows: string;
+    of: string;
+    previous: string;
+    next: string;
+  };
+  filter: {
+    reset: string;
+    columns: string;
+    operator: string;
+    selectOperator: string;
+    typeValue: string;
+    notNeeded: string;
+    contains: string;
+    doesNotContain: string;
+    equals: string;
+    doesNotEqual: string;
+    startsWith: string;
+    endsWith: string;
+    isEmpty: string;
+    isNotEmpty: string;
+    isAnyOf: string;
+  };
+}
+
+interface DataTableColumn extends ColumnType<DataItem> {
+  filterable?: boolean;
+}
+
 export interface DataTableProps {
   data: DataItem[];
-  columns: ColumnType<DataItem>[];
+  columns: DataTableColumn[];
   rowsPerPage?: number;
   pagination?: boolean;
   rowsPerPageOptions?: number[];
@@ -34,10 +64,11 @@ export interface DataTableProps {
   maxHeight?: number;
   minHeight?: number;
   sorting?: boolean;
+  i18n?: Partial<DataTableI18N>;
 }
 
 export interface FilterProps {
-  columns: ColumnType<DataItem>[];
+  columns: DataTableColumn[];
   data: DataItem[];
   filterValue: string;
   setFilterValue: (value: string) => void;
@@ -47,6 +78,7 @@ export interface FilterProps {
   setSelectedColumns: React.Dispatch<React.SetStateAction<string[]>>;
   setHighlightedRows: (rows: (Key | undefined)[]) => void;
   setCurrentPage: (page: number) => void;
+  i18n?: Partial<Pick<DataTableI18N, "filter">["filter"]>;
 }
 
 export interface PaginationProps {
@@ -56,15 +88,15 @@ export interface PaginationProps {
   setCurrentRowsPerPage: (rowsPerPage: number) => void;
   rowsPerPageOptions: number[];
   dataLength: number;
+  i18n?: Partial<Pick<DataTableI18N, "pagination">["pagination"]>;
 }
 
 export interface SortingProps {
   column: ColumnType<DataItem>;
-  sortColumn: string | null;
-  sortOrder: SortOrder;
   setSortColumn: (columnKey: string | null) => void;
-  setSortOrder: (order: SortOrder) => void;
-  showIcon: boolean;
+  isSorted: boolean;
+  sortOrder: SortOrder;
+  setSortOrder: Dispatch<SetStateAction<SortOrder>>;
 }
 
 export type SortOrder = 'ascend' | 'descend' | null;

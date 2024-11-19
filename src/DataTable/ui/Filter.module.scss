@@ -1,0 +1,95 @@
+.filterContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--sui-datatable-margin-small);
+  color: var(--sui-black);
+  width: 100%;
+}
+
+.filterIconButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: var(--sui-datatable-padding-small);
+  border: none;
+  border-radius: var(--sui-datatable-border-radius-small);
+  text-align: center;
+  z-index: 20;
+  background-color: var(--sui-gray-150);
+
+  &:hover {
+    background-color: var(--sui-datatable-filter-hover);
+  }
+}
+
+.filterOperatorDropdown {
+  display: flex;
+  border: none;
+  background: var(--sui-gray-150);
+  border-radius: var(--sui-datatable-border-radius-small);
+  text-overflow: ellipsis;
+}
+
+.filterPanel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--sui-datatable-gap-small);
+  margin-right: var(--sui-datatable-margin-small);
+  transition: all 0.75s ease;
+  transform: translateX(25px);
+  opacity: 0;
+  width: 100%;
+
+  > button {
+    background-color: var(--sui-gray-150);
+  }
+}
+
+.filterContentInner {
+  display: flex;
+}
+
+.filterOperator {
+  display: flex;
+  height: 1rem;
+}
+
+.filterInput {
+  display: flex;
+  text-align: center;
+  background: var(--sui-gray-150);
+  border: none;
+  border-radius: var(--sui-datatable-border-radius-small);
+  text-overflow: ellipsis;
+}
+
+.columnSelect {
+  display: flex;
+  position: absolute;
+  right: 5%;
+  top: 0%;
+  border-radius: var(--sui-datatable-border-radius-small);
+  color: var(--sui-black);
+  background-color: var(--sui-gray-50);
+  padding: var(--sui-datatable-padding-small);
+  font-size: 0.8rem;
+  z-index: 3;
+
+  input[type='checkbox'] {
+    appearance: auto;
+    color-scheme: light;
+  }
+}
+
+.openPanel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.closePanel {
+  opacity: 0;
+  transform: translateX(25px);
+}

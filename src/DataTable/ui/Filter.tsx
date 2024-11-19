@@ -1,9 +1,27 @@
-import React, { useState, useEffect, useRef } from 'react';
-// eslint-disable-next-line css-modules/no-unused-class
-import styles from '../DataTable.module.scss';
+import React, { useState, useEffect } from 'react';
+import styles from './Filter.module.scss';
 import Button from '../../Button/index';
+import Dropdown from '../../floatings/Dropdown';
 import { FilterProps } from '../types';
 import clsx from 'clsx';
+
+const i18nDefaults = {
+  reset: "Reset",
+  columns: "Columns",
+  contains: "contains",
+  doesNotContain: "does not contain",
+  doesNotEqual: "does not equal",
+  endsWith: "ends with",
+  equals: "equals",
+  isAnyOf: "is any of",
+  isEmpty: "is empty",
+  isNotEmpty: "is not empty",
+  notNeeded: "Not needed",
+  operator: "Operator",
+  selectOperator: "Select operator",
+  startsWith: "starts with",
+  typeValue: "Type value",
+};
 
 const Filter = ({
   columns,
@@ -16,11 +34,12 @@ const Filter = ({
   setSelectedColumns,
   setHighlightedRows,
   setCurrentPage,
+  i18n = i18nDefaults,
 }: FilterProps) => {
   const [isContainerOpen, setIsContainerOpen] = useState(false);
-  const [isColumnDropdownOpen, setIsColumnDropdownOpen] = useState(false);
   const [debouncedFilterValue, setDebouncedFilterValue] = useState(filterValue);
-  const columnDropdownRef = useRef<HTMLDivElement>(null);
+
+  const dictionary = { ...i18nDefaults, ...i18n };
 
   const operatorsRequiringValue = [
     'contains',
@@ -54,27 +73,6 @@ const Filter = ({
 
     return () => clearTimeout(handler);
   }, [debouncedFilterValue]);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        columnDropdownRef.current &&
-        !columnDropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsColumnDropdownOpen(false);
-      }
-    };
-
-    if (isColumnDropdownOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isColumnDropdownOpen]);
 
   const applyFilterOnClick = () => {
     if (filterOperator === 'Operator' || selectedColumns.length === 0) {
@@ -136,6 +134,25 @@ const Filter = ({
     setDebouncedFilterValue(e.target.value);
   };
 
+  const filterOperators = [
+    dictionary.contains,
+    dictionary.doesNotContain,
+    dictionary.equals,
+    dictionary.doesNotEqual,
+    dictionary.startsWith,
+    dictionary.endsWith,
+    dictionary.isEmpty,
+    dictionary.isNotEmpty,
+    dictionary.isAnyOf,
+  ];
+
+  function toggleReset() {
+    setFilterValue("");
+    setDebouncedFilterValue("");
+    setFilterOperator("Operator");
+    setSelectedColumns([]);
+  }
+
   return (
     <div className={styles.filterContainer}>
       <div
@@ -144,43 +161,40 @@ const Filter = ({
           isContainerOpen ? styles.openPanel : styles.closePanel
         )}
       >
-        <Button
-          size="small"
-          variant="link"
-          onClick={() => setIsColumnDropdownOpen(!isColumnDropdownOpen)}
-        >
-          Columns
+        <Button size='small' variant='link' onClick={toggleReset}>
+          {dictionary.reset}
         </Button>
-        {isColumnDropdownOpen && (
-          <div className={styles.columnSelect} ref={columnDropdownRef}>
-            {columns.map((col) => (
-              <label key={col.key}>
-                <input
-                  type="checkbox"
-                  value={col.key?.toString()}
-                  checked={selectedColumns.includes(col.key?.toString() ?? '')}
-                  onChange={(e) => {
-                    const value = e.target.value;
-                    setSelectedColumns((prev) =>
-                      e.target.checked
-                        ? [...prev, value]
-                        : prev.filter((colKey) => colKey !== value)
-                    );
-                  }}
-                />
-                {col.title}
-              </label>
-            ))}
-          </div>
-        )}
-
+        <Dropdown
+          component={
+            <Button size='small' variant='link' fluid>{dictionary.columns}</Button>
+          }
+        >
+          {columns.filter((col) => col.filterable !== false).map((col) => (
+            <label key={col.key}>
+              <input
+                type="checkbox"
+                value={col.key?.toString()}
+                checked={selectedColumns.includes(col.key?.toString() ?? '')}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  setSelectedColumns((prev) =>
+                    e.target.checked
+                      ? [...prev, value]
+                      : prev.filter((colKey) => colKey !== value)
+                  );
+                }}
+              />
+              {col.title}
+            </label>
+          ))}
+        </Dropdown>
         <select
           value={filterOperator}
           onChange={(e) => setFilterOperator(e.target.value)}
           className={styles.filterOperatorDropdown}
         >
           <option disabled value="Operator">
-            Operator
+            {dictionary.operator}
           </option>
           {filterOperators.map((operator) => (
             <option key={operator} value={operator}>
@@ -195,10 +209,10 @@ const Filter = ({
           onChange={handleInputChange}
           placeholder={
             filterOperator === 'Operator'
-              ? 'Select operator'
+              ? dictionary.selectOperator
               : operatorsRequiringValue.includes(filterOperator)
-                ? 'Type value'
-                : 'Not needed'
+                ? dictionary.typeValue
+                : dictionary.notNeeded
           }
           className={styles.filterInput}
           disabled={
@@ -227,17 +241,5 @@ const Filter = ({
     </div>
   );
 };
-
-const filterOperators = [
-  'contains',
-  'does not contain',
-  'equals',
-  'does not equal',
-  'starts with',
-  'ends with',
-  'is empty',
-  'is not empty',
-  'is any of',
-];
 
 export default Filter;
