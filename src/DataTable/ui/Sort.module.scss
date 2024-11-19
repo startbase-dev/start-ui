@@ -36,28 +36,3 @@
     color: var(--sui-gray-500);
   }
 }
-
-.sortDropdown {
-  position: absolute;
-  top: -1.8rem;
-  left: 2rem;
-  background: var(--sui-datatable-black);
-  border: 1px solid var(--sui-datatable-border);
-  border-radius: var(--sui-datatable-border-radius-small);
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-}
-
-.sortOptionButton {
-  border: none;
-  background: none;
-  padding: 5px;
-  text-align: left;
-  cursor: pointer;
-  width: 100%;
-}
-
-.sortOptionButton:hover {
-  background-color: var(--sui-gray-150);
-}
