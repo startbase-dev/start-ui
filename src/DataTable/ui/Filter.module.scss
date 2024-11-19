@@ -48,15 +48,6 @@
   }
 }
 
-.filterContentInner {
-  display: flex;
-}
-
-.filterOperator {
-  display: flex;
-  height: 1rem;
-}
-
 .filterInput {
   display: flex;
   text-align: center;
@@ -64,24 +55,6 @@
   border: none;
   border-radius: var(--sui-datatable-border-radius-small);
   text-overflow: ellipsis;
-}
-
-.columnSelect {
-  display: flex;
-  position: absolute;
-  right: 5%;
-  top: 0%;
-  border-radius: var(--sui-datatable-border-radius-small);
-  color: var(--sui-black);
-  background-color: var(--sui-gray-50);
-  padding: var(--sui-datatable-padding-small);
-  font-size: 0.8rem;
-  z-index: 3;
-
-  input[type='checkbox'] {
-    appearance: auto;
-    color-scheme: light;
-  }
 }
 
 .openPanel {

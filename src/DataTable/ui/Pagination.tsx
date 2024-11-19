@@ -4,10 +4,10 @@ import Button from '../../Button/index';
 import { PaginationProps } from '../types';
 
 const i18nDefaults = {
-  next: "Next",
-  of: "of",
-  previous: "Previous",
-  rows: "Rows",
+  next: 'Next',
+  of: 'of',
+  previous: 'Previous',
+  rows: 'Rows',
 };
 
 const Pagination = ({
@@ -19,7 +19,7 @@ const Pagination = ({
   dataLength,
   i18n = i18nDefaults,
 }: PaginationProps) => {
-  const dictionary = {...i18nDefaults, ...i18n };
+  const dictionary = { ...i18nDefaults, ...i18n };
 
   const totalPages = Math.ceil(dataLength / currentRowsPerPage);
 

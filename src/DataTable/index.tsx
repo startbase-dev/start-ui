@@ -7,7 +7,6 @@ import Filter from './ui/Filter';
 import Sorting from './ui/Sort';
 import Checkbox from './ui/Checkbox';
 
-// eslint-disable-next-line css-modules/no-unused-class
 import styles from './DataTable.module.scss';
 import Table from '../Table';
 
@@ -240,10 +239,11 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
       key: item?.key ?? index,
     }));
 
-    const { pagination: paginationTranslations, filter: filterTranslations } = i18n || {};
+    const { pagination: paginationTranslations, filter: filterTranslations } =
+      i18n || {};
 
     return (
-      <div ref={ref}>
+      <div ref={ref} className={styles.root}>
         <div
           className={cx(styles.tableTopContainer, {
             [styles.withoutTitle]: !title,
@@ -326,7 +326,5 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
 DataTable.displayName = 'DataTable';
 
 export default DataTable;
-
-export const DataTableGroup = { DataTable, Filter, Checkbox, Pagination };
 
 export { type DataTableProps };

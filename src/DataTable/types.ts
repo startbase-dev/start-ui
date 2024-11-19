@@ -78,7 +78,7 @@ export interface FilterProps {
   setSelectedColumns: React.Dispatch<React.SetStateAction<string[]>>;
   setHighlightedRows: (rows: (Key | undefined)[]) => void;
   setCurrentPage: (page: number) => void;
-  i18n?: Partial<Pick<DataTableI18N, "filter">["filter"]>;
+  i18n?: Partial<Pick<DataTableI18N, 'filter'>['filter']>;
 }
 
 export interface PaginationProps {
@@ -88,7 +88,7 @@ export interface PaginationProps {
   setCurrentRowsPerPage: (rowsPerPage: number) => void;
   rowsPerPageOptions: number[];
   dataLength: number;
-  i18n?: Partial<Pick<DataTableI18N, "pagination">["pagination"]>;
+  i18n?: Partial<Pick<DataTableI18N, 'pagination'>['pagination']>;
 }
 
 export interface SortingProps {

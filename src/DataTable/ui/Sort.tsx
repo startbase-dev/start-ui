@@ -1,7 +1,7 @@
 import React from 'react';
 import { SortingProps } from '../types';
 import Button from '../../Button/index';
-import DownArrow from "../../icons/DownArrow";
+import DownArrow from '../../icons/DownArrow';
 
 import styles from './Sort.module.scss';
 
@@ -14,8 +14,8 @@ const Sorting = ({
 }: SortingProps) => {
   function toggleSort() {
     setSortOrder((prev) => {
-      if (!prev || !isSorted) return "descend";
-      if (prev === "descend") return "ascend";
+      if (!prev || !isSorted) return 'descend';
+      if (prev === 'descend') return 'ascend';
       return null;
     });
     setSortColumn(column.dataIndex as string);

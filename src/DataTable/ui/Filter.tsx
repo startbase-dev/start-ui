@@ -6,21 +6,21 @@ import { FilterProps } from '../types';
 import clsx from 'clsx';
 
 const i18nDefaults = {
-  reset: "Reset",
-  columns: "Columns",
-  contains: "contains",
-  doesNotContain: "does not contain",
-  doesNotEqual: "does not equal",
-  endsWith: "ends with",
-  equals: "equals",
-  isAnyOf: "is any of",
-  isEmpty: "is empty",
-  isNotEmpty: "is not empty",
-  notNeeded: "Not needed",
-  operator: "Operator",
-  selectOperator: "Select operator",
-  startsWith: "starts with",
-  typeValue: "Type value",
+  reset: 'Reset',
+  columns: 'Columns',
+  contains: 'contains',
+  doesNotContain: 'does not contain',
+  doesNotEqual: 'does not equal',
+  endsWith: 'ends with',
+  equals: 'equals',
+  isAnyOf: 'is any of',
+  isEmpty: 'is empty',
+  isNotEmpty: 'is not empty',
+  notNeeded: 'Not needed',
+  operator: 'Operator',
+  selectOperator: 'Select operator',
+  startsWith: 'starts with',
+  typeValue: 'Type value',
 };
 
 const Filter = ({
@@ -147,9 +147,9 @@ const Filter = ({
   ];
 
   function toggleReset() {
-    setFilterValue("");
-    setDebouncedFilterValue("");
-    setFilterOperator("Operator");
+    setFilterValue('');
+    setDebouncedFilterValue('');
+    setFilterOperator('Operator');
     setSelectedColumns([]);
   }
 
@@ -161,32 +161,36 @@ const Filter = ({
           isContainerOpen ? styles.openPanel : styles.closePanel
         )}
       >
-        <Button size='small' variant='link' onClick={toggleReset}>
+        <Button size="small" variant="link" onClick={toggleReset}>
           {dictionary.reset}
         </Button>
         <Dropdown
           component={
-            <Button size='small' variant='link' fluid>{dictionary.columns}</Button>
+            <Button size="small" variant="link" fluid>
+              {dictionary.columns}
+            </Button>
           }
         >
-          {columns.filter((col) => col.filterable !== false).map((col) => (
-            <label key={col.key}>
-              <input
-                type="checkbox"
-                value={col.key?.toString()}
-                checked={selectedColumns.includes(col.key?.toString() ?? '')}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  setSelectedColumns((prev) =>
-                    e.target.checked
-                      ? [...prev, value]
-                      : prev.filter((colKey) => colKey !== value)
-                  );
-                }}
-              />
-              {col.title}
-            </label>
-          ))}
+          {columns
+            .filter((col) => col.filterable !== false)
+            .map((col) => (
+              <label key={col.key}>
+                <input
+                  type="checkbox"
+                  value={col.key?.toString()}
+                  checked={selectedColumns.includes(col.key?.toString() ?? '')}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setSelectedColumns((prev) =>
+                      e.target.checked
+                        ? [...prev, value]
+                        : prev.filter((colKey) => colKey !== value)
+                    );
+                  }}
+                />
+                {col.title}
+              </label>
+            ))}
         </Dropdown>
         <select
           value={filterOperator}

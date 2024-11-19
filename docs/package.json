@@ -20,10 +20,11 @@
   "homepage": "https://github.com/shuding/nextra-docs-template#readme",
   "dependencies": {
     "@dotlottie/react-player": "1.6.19",
+    "@next/third-parties": "^15.0.3",
     "@start-base/react-consent-manager": "1.12.0",
     "@start-base/react-form-elements": "1.13.1",
-    "@start-base/react-modal": "1.5.0",
-    "@start-base/start-ui": "0.0.51-alpha",
+    "@start-base/react-modal": "1.5.2",
+    "@start-base/start-ui": "0.0.52-alpha",
     "framer-motion": "11.11.17",
     "next": "14.2.18",
     "nextra": "2.13.4",
