@@ -4,6 +4,7 @@
   align-items: center;
   margin-bottom: var(--sui-datatable-margin-small);
   color: var(--sui-black);
+  width: 100%;
 }
 
 .filterIconButton {
@@ -28,19 +29,19 @@
   border: none;
   background: var(--sui-gray-150);
   border-radius: var(--sui-datatable-border-radius-small);
-  max-width: 4.7rem;
   text-overflow: ellipsis;
 }
 
 .filterPanel {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   gap: var(--sui-datatable-gap-small);
   margin-right: var(--sui-datatable-margin-small);
   transition: all 0.75s ease;
   transform: translateX(25px);
   opacity: 0;
-  height: 1.5rem;
+  width: 100%;
 
   > button {
     background-color: var(--sui-gray-150);
@@ -54,12 +55,10 @@
 .filterOperator {
   display: flex;
   height: 1rem;
-  max-width: 4rem;
 }
 
 .filterInput {
   display: flex;
-  max-width: 5rem;
   text-align: center;
   background: var(--sui-gray-150);
   border: none;

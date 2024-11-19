@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Filter.module.scss';
 import Button from '../../Button/index';
+import Dropdown from '../../floatings/Dropdown';
 import { FilterProps } from '../types';
 import clsx from 'clsx';
 
@@ -36,11 +37,9 @@ const Filter = ({
   i18n = i18nDefaults,
 }: FilterProps) => {
   const [isContainerOpen, setIsContainerOpen] = useState(false);
-  const [isColumnDropdownOpen, setIsColumnDropdownOpen] = useState(false);
   const [debouncedFilterValue, setDebouncedFilterValue] = useState(filterValue);
-  const columnDropdownRef = useRef<HTMLDivElement>(null);
 
-  const dictionary = {...i18nDefaults, ...i18n };
+  const dictionary = { ...i18nDefaults, ...i18n };
 
   const operatorsRequiringValue = [
     'contains',
@@ -74,27 +73,6 @@ const Filter = ({
 
     return () => clearTimeout(handler);
   }, [debouncedFilterValue]);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        columnDropdownRef.current &&
-        !columnDropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsColumnDropdownOpen(false);
-      }
-    };
-
-    if (isColumnDropdownOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isColumnDropdownOpen]);
 
   const applyFilterOnClick = () => {
     if (filterOperator === 'Operator' || selectedColumns.length === 0) {
@@ -186,40 +164,30 @@ const Filter = ({
         <Button size='small' variant='link' onClick={toggleReset}>
           {dictionary.reset}
         </Button>
-        <Button
-          size="small"
-          variant="link"
-          onClick={() => setIsColumnDropdownOpen(!isColumnDropdownOpen)}
+        <Dropdown
+          component={
+            <Button size='small' variant='link' fluid>{dictionary.columns}</Button>
+          }
         >
-          {dictionary.columns}
-        </Button>
-        {isColumnDropdownOpen && (
-          <div className={styles.columnSelect} ref={columnDropdownRef}>
-            {columns.map((col) => {
-              if (col.filterable !== false) return (
-                <label key={col.key}>
-                  <input
-                    type="checkbox"
-                    value={col.key?.toString()}
-                    checked={selectedColumns.includes(col.key?.toString() ?? '')}
-                    onChange={(e) => {
-                      const value = e.target.value;
-                      setSelectedColumns((prev) =>
-                        e.target.checked
-                          ? [...prev, value]
-                          : prev.filter((colKey) => colKey !== value)
-                      );
-                    }}
-                  />
-                  {col.title}
-                </label>
-              );
-
-              return null;
-            })}
-          </div>
-        )}
-
+          {columns.filter((col) => col.filterable !== false).map((col) => (
+            <label key={col.key}>
+              <input
+                type="checkbox"
+                value={col.key?.toString()}
+                checked={selectedColumns.includes(col.key?.toString() ?? '')}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  setSelectedColumns((prev) =>
+                    e.target.checked
+                      ? [...prev, value]
+                      : prev.filter((colKey) => colKey !== value)
+                  );
+                }}
+              />
+              {col.title}
+            </label>
+          ))}
+        </Dropdown>
         <select
           value={filterOperator}
           onChange={(e) => setFilterOperator(e.target.value)}
