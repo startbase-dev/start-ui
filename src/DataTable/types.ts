@@ -24,6 +24,7 @@ interface DataTableI18N {
     next: string;
   };
   filter: {
+    reset: string;
     columns: string;
     operator: string;
     selectOperator: string;

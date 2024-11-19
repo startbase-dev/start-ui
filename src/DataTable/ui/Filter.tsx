@@ -5,6 +5,7 @@ import { FilterProps } from '../types';
 import clsx from 'clsx';
 
 const i18nDefaults = {
+  reset: "Reset",
   columns: "Columns",
   contains: "contains",
   doesNotContain: "does not contain",
@@ -183,7 +184,7 @@ const Filter = ({
         )}
       >
         <Button size='small' variant='link' onClick={toggleReset}>
-          Reset
+          {dictionary.reset}
         </Button>
         <Button
           size="small"
