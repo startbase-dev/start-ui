@@ -42,9 +42,13 @@ interface DataTableI18N {
   };
 }
 
+interface DataTableColumn extends ColumnType<DataItem> {
+  filterable?: boolean;
+}
+
 export interface DataTableProps {
   data: DataItem[];
-  columns: ColumnType<DataItem>[];
+  columns: DataTableColumn[];
   rowsPerPage?: number;
   pagination?: boolean;
   rowsPerPageOptions?: number[];
@@ -64,7 +68,7 @@ export interface DataTableProps {
 }
 
 export interface FilterProps {
-  columns: ColumnType<DataItem>[];
+  columns: DataTableColumn[];
   data: DataItem[];
   filterValue: string;
   setFilterValue: (value: string) => void;

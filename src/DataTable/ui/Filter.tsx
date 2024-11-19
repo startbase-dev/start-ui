@@ -195,24 +195,28 @@ const Filter = ({
         </Button>
         {isColumnDropdownOpen && (
           <div className={styles.columnSelect} ref={columnDropdownRef}>
-            {columns.map((col) => (
-              <label key={col.key}>
-                <input
-                  type="checkbox"
-                  value={col.key?.toString()}
-                  checked={selectedColumns.includes(col.key?.toString() ?? '')}
-                  onChange={(e) => {
-                    const value = e.target.value;
-                    setSelectedColumns((prev) =>
-                      e.target.checked
-                        ? [...prev, value]
-                        : prev.filter((colKey) => colKey !== value)
-                    );
-                  }}
-                />
-                {col.title}
-              </label>
-            ))}
+            {columns.map((col) => {
+              if (col.filterable !== false) return (
+                <label key={col.key}>
+                  <input
+                    type="checkbox"
+                    value={col.key?.toString()}
+                    checked={selectedColumns.includes(col.key?.toString() ?? '')}
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      setSelectedColumns((prev) =>
+                        e.target.checked
+                          ? [...prev, value]
+                          : prev.filter((colKey) => colKey !== value)
+                      );
+                    }}
+                  />
+                  {col.title}
+                </label>
+              );
+
+              return null;
+            })}
           </div>
         )}
 
