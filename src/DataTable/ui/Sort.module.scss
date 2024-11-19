@@ -2,6 +2,18 @@
   position: relative;
   display: flex;
   margin-left: 5px;
+
+  &[data-sort="ascend"] {
+    .sortingButton > svg {
+      transform: rotate(0deg);
+    }
+  }
+
+  &[data-sort="descend"] {
+    .sortingButton > svg {
+      transform: rotate(-180deg);
+    }
+  }
 }
 
 .sortingButton {
@@ -15,6 +27,14 @@
   cursor: pointer;
   padding: 0;
   color: var(--sui-datatable-white);
+
+  > svg {
+    width: 16px;
+    height: 16px;
+    transform: rotate(-90deg);
+    transition: transform 200ms;
+    color: var(--sui-gray-500);
+  }
 }
 
 .sortDropdown {

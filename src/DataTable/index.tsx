@@ -193,11 +193,10 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
             {sorting && (
               <Sorting
                 column={col}
-                sortColumn={sortColumn}
+                isSorted={dataIndex === sortColumn}
                 setSortColumn={setSortColumn}
                 sortOrder={sortOrder}
                 setSortOrder={setSortOrder}
-                showIcon={hoveredColumn === dataIndex}
               />
             )}
           </div>

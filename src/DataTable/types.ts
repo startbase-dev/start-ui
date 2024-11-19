@@ -1,4 +1,4 @@
-import { Key } from 'react';
+import { Dispatch, Key, SetStateAction } from 'react';
 import { ColumnType } from 'rc-table';
 
 export interface DataItem {
@@ -88,11 +88,10 @@ export interface PaginationProps {
 
 export interface SortingProps {
   column: ColumnType<DataItem>;
-  sortColumn: string | null;
-  sortOrder: SortOrder;
   setSortColumn: (columnKey: string | null) => void;
-  setSortOrder: (order: SortOrder) => void;
-  showIcon: boolean;
+  isSorted: boolean;
+  sortOrder: SortOrder;
+  setSortOrder: Dispatch<SetStateAction<SortOrder>>;
 }
 
 export type SortOrder = 'ascend' | 'descend' | null;
