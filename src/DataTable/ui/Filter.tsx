@@ -5,6 +5,23 @@ import Button from '../../Button/index';
 import { FilterProps } from '../types';
 import clsx from 'clsx';
 
+const i18nDefaults = {
+  columns: "Columns",
+  contains: "contains",
+  doesNotContain: "does not contain",
+  doesNotEqual: "does not equal",
+  endsWith: "ends with",
+  equals: "equals",
+  isAnyOf: "is any of",
+  isEmpty: "is empty",
+  isNotEmpty: "is not empty",
+  notNeeded: "Not needed",
+  operator: "Operator",
+  selectOperator: "Select operator",
+  startsWith: "starts with",
+  typeValue: "Type value",
+};
+
 const Filter = ({
   columns,
   data,
@@ -16,11 +33,14 @@ const Filter = ({
   setSelectedColumns,
   setHighlightedRows,
   setCurrentPage,
+  i18n = i18nDefaults,
 }: FilterProps) => {
   const [isContainerOpen, setIsContainerOpen] = useState(false);
   const [isColumnDropdownOpen, setIsColumnDropdownOpen] = useState(false);
   const [debouncedFilterValue, setDebouncedFilterValue] = useState(filterValue);
   const columnDropdownRef = useRef<HTMLDivElement>(null);
+
+  const dictionary = {...i18nDefaults, ...i18n };
 
   const operatorsRequiringValue = [
     'contains',
@@ -136,6 +156,18 @@ const Filter = ({
     setDebouncedFilterValue(e.target.value);
   };
 
+  const filterOperators = [
+    dictionary.contains,
+    dictionary.doesNotContain,
+    dictionary.equals,
+    dictionary.doesNotEqual,
+    dictionary.startsWith,
+    dictionary.endsWith,
+    dictionary.isEmpty,
+    dictionary.isNotEmpty,
+    dictionary.isAnyOf,
+  ];
+
   return (
     <div className={styles.filterContainer}>
       <div
@@ -149,7 +181,7 @@ const Filter = ({
           variant="link"
           onClick={() => setIsColumnDropdownOpen(!isColumnDropdownOpen)}
         >
-          Columns
+          {dictionary.columns}
         </Button>
         {isColumnDropdownOpen && (
           <div className={styles.columnSelect} ref={columnDropdownRef}>
@@ -180,7 +212,7 @@ const Filter = ({
           className={styles.filterOperatorDropdown}
         >
           <option disabled value="Operator">
-            Operator
+            {dictionary.operator}
           </option>
           {filterOperators.map((operator) => (
             <option key={operator} value={operator}>
@@ -195,10 +227,10 @@ const Filter = ({
           onChange={handleInputChange}
           placeholder={
             filterOperator === 'Operator'
-              ? 'Select operator'
+              ? dictionary.selectOperator
               : operatorsRequiringValue.includes(filterOperator)
-                ? 'Type value'
-                : 'Not needed'
+                ? dictionary.typeValue
+                : dictionary.notNeeded
           }
           className={styles.filterInput}
           disabled={
@@ -227,17 +259,5 @@ const Filter = ({
     </div>
   );
 };
-
-const filterOperators = [
-  'contains',
-  'does not contain',
-  'equals',
-  'does not equal',
-  'starts with',
-  'ends with',
-  'is empty',
-  'is not empty',
-  'is any of',
-];
 
 export default Filter;
