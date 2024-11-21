@@ -1,56 +1,41 @@
-import { createElement, forwardRef } from 'react';
-import s from './Divider.module.scss';
+import React, { forwardRef } from 'react';
+import styles from './Divider.module.scss';
 import clsx from 'clsx';
 import type { DividerProps } from './types';
 
-const Divider = forwardRef<HTMLDivElement, DividerProps>((props, ref) => {
-  const {
-    children = null,
-    variant = 'fullWidth',
-    orientation = 'horizontal',
-    contentAlign = 'middle',
-    component = 'div',
-    className = '',
-    ...rest
-  } = props;
+const Divider = forwardRef<HTMLDivElement, DividerProps>(({
+  children,
+  className,
+  variant = "full",
+  orientation = "horizontal",
+  align = "center",
+  color = "var(--sui-border)",
+  size = "1px",
+  round = false,
+  style = {},
+  ...props
+}, ref) => {
+  const rootClassNames = clsx(className, styles.root);
 
-  const rootClassNames = clsx(s.root, className);
-
-  const componentParams = {
-    className: rootClassNames,
-    ref,
-    role: 'separator',
-    'aria-orientation': orientation,
-    'data-variant': variant,
-    'data-align': contentAlign,
-    ...rest,
-  };
-
-  // Void elements throw error if a child is passed: https://developer.mozilla.org/en-US/docs/Glossary/Void_element
-  // Avoid passing child if a void element is used
-  const voidElements = [
-    'area',
-    'base',
-    'br',
-    'col',
-    'embed',
-    'hr',
-    'img',
-    'input',
-    'link',
-    'meta',
-    'param',
-    'source',
-    'track',
-    'wbr',
-  ];
-
-  // Return void divider
-  if (voidElements.includes(component))
-    return createElement(component, componentParams, null);
-
-  // Return normal divider
-  return createElement(component, componentParams, children);
+  return (
+    <div
+      className={rootClassNames}
+      role='separator'
+      aria-orientation={orientation}
+      data-variant={variant}
+      data-align={align}
+      data-round={`${round}`}
+      ref={ref}
+      style={{
+        "--sui-divider-color": color,
+        "--sui-divider-size": size,
+        ...style
+      }}
+      {...props}
+    >
+      {children}
+    </div>
+  )
 });
 
 Divider.displayName = 'Divider';
