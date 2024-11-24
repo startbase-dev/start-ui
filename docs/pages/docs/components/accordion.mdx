@@ -4,6 +4,7 @@ import { Steps } from 'nextra/components';
 import Preview from '@components/Preview/Preview';
 import ControlledAccordion from '@components/ControlledAccordion';
 import { Button } from '@start-base/start-ui';
+import styles from '@styles/accordion.module.scss';
 
 # Accordion
 
@@ -76,7 +77,7 @@ npm i @start-base/start-ui
   <Tabs.Tab>
     <Preview height="800px">
       <div style={{ width: '100%' }}>
-        <Accordion summary="Accordion 1">
+        <Accordion summary="Accordion 1" className={styles.accordionRoot}>
           Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
           gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit
@@ -86,7 +87,7 @@ npm i @start-base/start-ui
           dui eget congue vehicula, felis purus consectetur sem, nec dapibus
           libero lectus in nibh.
         </Accordion>
-        <Accordion summary="Default Expanded Accordion" defaultExpanded>
+        <Accordion summary="Default Expanded Accordion" defaultExpanded className={styles.accordionRoot}>
           Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
           gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit
@@ -96,7 +97,7 @@ npm i @start-base/start-ui
           dui eget congue vehicula, felis purus consectetur sem, nec dapibus
           libero lectus in nibh.
         </Accordion>
-        <Accordion summary="Accordion 3">
+        <Accordion summary="Accordion 3" className={styles.accordionRoot}>
           Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
           gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit
@@ -112,7 +113,7 @@ npm i @start-base/start-ui
   <Tabs.Tab>
     ```jsx copy showLineNumbers
     <div style={{ width: '100%' }}>
-      <Accordion summary="Accordion 1">
+      <Accordion summary="Accordion 1" className={styles.accordionRoot}>
         Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
         sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
@@ -122,7 +123,7 @@ npm i @start-base/start-ui
         vehicula, felis purus consectetur sem, nec dapibus libero lectus in
         nibh.
       </Accordion>
-      <Accordion summary="Default Expanded Accordion" defaultExpanded>
+      <Accordion summary="Default Expanded Accordion" defaultExpanded className={styles.accordionRoot}>
         Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
         sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
@@ -132,7 +133,7 @@ npm i @start-base/start-ui
         vehicula, felis purus consectetur sem, nec dapibus libero lectus in
         nibh.
       </Accordion>
-      <Accordion summary="Accordion 3">
+      <Accordion summary="Accordion 3" className={styles.accordionRoot}>
         Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
         sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
@@ -153,7 +154,7 @@ npm i @start-base/start-ui
   <Tabs.Tab>
     <Preview height="800px">
       <div style={{ width: '100%' }}>
-        <Accordion summary="Accordion 1">
+        <Accordion summary="Accordion 1" className={styles.accordionRoot}>
           Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
           gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit
@@ -163,7 +164,7 @@ npm i @start-base/start-ui
           dui eget congue vehicula, felis purus consectetur sem, nec dapibus
           libero lectus in nibh.
         </Accordion>
-        <Accordion disabled summary="Accordion 2">
+        <Accordion disabled summary="Accordion 2" className={styles.accordionRoot}>
           Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
           gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit
@@ -173,7 +174,7 @@ npm i @start-base/start-ui
           dui eget congue vehicula, felis purus consectetur sem, nec dapibus
           libero lectus in nibh.
         </Accordion>
-        <Accordion summary="Accordion 3">
+        <Accordion summary="Accordion 3" className={styles.accordionRoot}>
           Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
           gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit
@@ -189,7 +190,7 @@ npm i @start-base/start-ui
   <Tabs.Tab>
     ```jsx copy showLineNumbers
     <div style={{ width: '100%' }}>
-      <Accordion summary="Accordion 1">
+      <Accordion summary="Accordion 1" className={styles.accordionRoot}>
         Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
         sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
@@ -199,7 +200,7 @@ npm i @start-base/start-ui
         vehicula, felis purus consectetur sem, nec dapibus libero lectus in
         nibh.
       </Accordion>
-      <Accordion disabled summary="Accordion 2">
+      <Accordion disabled summary="Accordion 2" className={styles.accordionRoot}>
         Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
         sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
@@ -209,7 +210,7 @@ npm i @start-base/start-ui
         vehicula, felis purus consectetur sem, nec dapibus libero lectus in
         nibh.
       </Accordion>
-      <Accordion summary="Accordion 3">
+      <Accordion summary="Accordion 3" className={styles.accordionRoot}>
         Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
         sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
@@ -230,7 +231,7 @@ npm i @start-base/start-ui
   <Tabs.Tab>
     <Preview height="800px">
       <div style={{ width: "100%" }}>
-        <ControlledAccordion summary="Controlled Accordion 1" expanded="a1">
+        <ControlledAccordion summary="Controlled Accordion 1" expanded="a1" className={styles.accordionRoot}>
           Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
           gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit
@@ -240,7 +241,7 @@ npm i @start-base/start-ui
           dui eget congue vehicula, felis purus consectetur sem, nec dapibus
           libero lectus in nibh.
         </ControlledAccordion>
-        <ControlledAccordion summary="Controlled Accordion 2" expanded="a2">
+        <ControlledAccordion summary="Controlled Accordion 2" expanded="a2" className={styles.accordionRoot}>
           Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
           gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit
@@ -250,7 +251,7 @@ npm i @start-base/start-ui
           dui eget congue vehicula, felis purus consectetur sem, nec dapibus
           libero lectus in nibh.
         </ControlledAccordion>
-        <ControlledAccordion summary="Controlled Accordion 3" expanded="a3">
+        <ControlledAccordion summary="Controlled Accordion 3" expanded="a3" className={styles.accordionRoot}>
           Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
           gravida sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit
@@ -333,6 +334,7 @@ Will not render their details when collapsed to increase performance. This optio
           actions={<Button>Accordion Actions</Button>}
           summary="Accordion 1"
           unmountOnExit
+          className={styles.accordionRoot}
         >
           Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
@@ -347,6 +349,7 @@ Will not render their details when collapsed to increase performance. This optio
           actions={<Button>Accordion Actions</Button>}
           summary="Accordion 2"
           unmountOnExit
+          className={styles.accordionRoot}
         >
           Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing
           elit. Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros
@@ -402,33 +405,37 @@ Will not render their details when collapsed to increase performance. This optio
 
 <Tabs items={["Preview", "Code"]}>
   <Tabs.Tab>
-    <Preview>
-      <Accordion
-        summary="Accordion 1"
-        variant="individual"
-      >
-        Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
-        sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
-        Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est,
-        vitae vehicula augue aliquam semper. Integer convallis blandit odio,
-        vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue
-        vehicula, felis purus consectetur sem, nec dapibus libero lectus in
-        nibh.
-      </Accordion>
-      <Accordion
-        summary="Accordion 2"
-        variant="individual"
-      >
-        Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
-        sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
-        Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est,
-        vitae vehicula augue aliquam semper. Integer convallis blandit odio,
-        vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue
-        vehicula, felis purus consectetur sem, nec dapibus libero lectus in
-        nibh.
-      </Accordion>
+    <Preview style>
+      <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+        <Accordion
+          summary="Accordion 1"
+          variant="individual"
+          className={styles.accordionRoot}
+        >
+          Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
+          sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
+          Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est,
+          vitae vehicula augue aliquam semper. Integer convallis blandit odio,
+          vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue
+          vehicula, felis purus consectetur sem, nec dapibus libero lectus in
+          nibh.
+        </Accordion>
+        <Accordion
+          summary="Accordion 2"
+          variant="individual"
+          className={styles.accordionRoot}
+        >
+          Accordion Root. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Ut eu turpis a ex porttitor ultricies. Duis id tellus sed eros gravida
+          sodales. Nullam dapibus tortor ac odio congue, a pulvinar elit vehicula.
+          Nulla eget ligula ac orci mollis ornare. Nullam facilisis ornare est,
+          vitae vehicula augue aliquam semper. Integer convallis blandit odio,
+          vitae eleifend lectus aliquam at. Phasellus sagittis, dui eget congue
+          vehicula, felis purus consectetur sem, nec dapibus libero lectus in
+          nibh.
+        </Accordion>
+      </div>
     </Preview>
   </Tabs.Tab>
 

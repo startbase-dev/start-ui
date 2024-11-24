@@ -30,12 +30,13 @@ const Template: React.FC<TemplateProps> = (args) => {
 export const DividerComponent = Template.bind({});
 DividerComponent.args = {
   title: 'Divider',
-  variant: 'fullWidth',
-  orientation: 'horizontal',
-  contentAlign: 'center',
-  component: 'div',
-  className: '',
   children: '',
+  variant: 'full',
+  orientation: 'horizontal',
+  align: 'center',
+  color: 'var(--sui-border)',
+  size: '1px',
+  round: false,
 };
 
 export const DividerWithVariant = Template.bind({});
@@ -56,7 +57,7 @@ export const DividerWithAlign = Template.bind({});
 DividerWithAlign.args = {
   ...DividerComponent.args,
   title: 'Divider with children',
-  contentAlign: 'start',
+  align: 'start',
   children: 'Hello World',
 };
 
@@ -72,19 +73,15 @@ const Component = {
   component: DividerComponent,
   argTypes: {
     variant: {
-      options: ['fullWidth', 'start', 'center', 'end'],
+      options: ['full', 'start', 'center', 'end'],
       control: 'radio',
     },
     orientation: {
       options: ['horizontal', 'vertical'],
       control: 'radio',
     },
-    contentAlign: {
+    align: {
       options: ['start', 'center', 'end'],
-      control: 'radio',
-    },
-    component: {
-      options: ['div', 'hr', 'li'],
       control: 'radio',
     },
   },
