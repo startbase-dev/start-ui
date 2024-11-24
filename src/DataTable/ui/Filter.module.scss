@@ -4,6 +4,7 @@
   align-items: center;
   margin-bottom: var(--sui-datatable-margin-small);
   color: var(--sui-black);
+  width: 100%;
 }
 
 .filterPanel {
@@ -45,7 +46,11 @@
 }
 
 .item {
-  height: 16px !important;
+  display: flex;
+  gap: 12px;
+  height: 36px !important;
+  padding: 6px;
+  align-items: center;
 }
 
 .dropButton {

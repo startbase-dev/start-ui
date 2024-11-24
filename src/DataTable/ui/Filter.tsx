@@ -194,30 +194,22 @@ const Filter = ({
           {columns
             .filter((col) => col.filterable !== false)
             .map((col) => (
-              <FloatingMenuItem
-                label={
-                  <>
-                    <input
-                      type="checkbox"
-                      value={col.key?.toString()}
-                      checked={selectedColumns.includes(
-                        col.key?.toString() ?? ''
-                      )}
-                      onChange={(e) => {
-                        const value = e.target.value;
-                        setSelectedColumns((prev) =>
-                          e.target.checked
-                            ? [...prev, value]
-                            : prev.filter((colKey) => colKey !== value)
-                        );
-                      }}
-                    />
-                    {col.title}
-                  </>
-                }
-                key={col.key}
-                className={styles.item}
-              />
+              <div key={col.key} className={styles.item}>
+                <input
+                  type="checkbox"
+                  value={col.key?.toString()}
+                  checked={selectedColumns.includes(col.key?.toString() ?? '')}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    setSelectedColumns((prev) =>
+                      e.target.checked
+                        ? [...prev, value]
+                        : prev.filter((colKey) => colKey !== value)
+                    );
+                  }}
+                />
+                {col.title}
+              </div>
             ))}
         </Dropdown>
         <Dropdown
@@ -237,7 +229,6 @@ const Filter = ({
             <FloatingMenuItem
               label={operator}
               key={operator}
-              className={styles.item}
               onClick={() => setFilterOperator(operator)}
             />
           ))}
