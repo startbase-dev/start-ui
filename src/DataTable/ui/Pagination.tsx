@@ -1,7 +1,10 @@
 import React from 'react';
 import styles from './Pagination.module.scss';
-import Button from '../../Button/index';
+import Button from '../../Button';
 import { PaginationProps } from '../types';
+import Dropdown from '../../floatings/Dropdown';
+import FloatingMenuItem from '../../floatings/FloatingMenuItem';
+import DownArrow from '../../icons/DownArrow';
 
 const i18nDefaults = {
   next: 'Next',
@@ -26,13 +29,6 @@ const Pagination = ({
   const startItem = (currentPage - 1) * currentRowsPerPage + 1;
   const endItem = Math.min(currentPage * currentRowsPerPage, dataLength);
 
-  const handleRowsPerPageChange = (
-    event: React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    setCurrentRowsPerPage(Number(event.target.value));
-    setCurrentPage(1);
-  };
-
   const handleNextPage = () => {
     setCurrentPage(Math.min(currentPage + 1, totalPages));
   };
@@ -47,18 +43,28 @@ const Pagination = ({
         <div className={styles.pageInfo}>
           <div className={styles.rowsPerPage}>
             <label htmlFor="rowsPerPage">{dictionary.rows}</label>
-            <select
-              id="rowsPerPage"
-              value={currentRowsPerPage}
-              onChange={handleRowsPerPageChange}
-              className={styles.rowsPerPageSelect}
+            <Dropdown
+              menuClassName={styles.menu}
+              component={
+                <Button
+                  variant="outline"
+                  color="secondary"
+                  size="small"
+                  className={styles.rowsPerPageButton}
+                >
+                  {currentRowsPerPage} <DownArrow />
+                </Button>
+              }
             >
               {rowsPerPageOptions.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
+                <FloatingMenuItem
+                  label={option}
+                  key={option}
+                  className={styles.item}
+                  onClick={() => setCurrentRowsPerPage(Number(option))}
+                />
               ))}
-            </select>
+            </Dropdown>
           </div>
           <div className={styles.paginationInfo}>
             <span>

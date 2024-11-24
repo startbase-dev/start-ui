@@ -4,6 +4,8 @@ import Button from '../../Button/index';
 import Dropdown from '../../floatings/Dropdown';
 import { FilterProps } from '../types';
 import clsx from 'clsx';
+import FloatingMenuItem from '../../floatings/FloatingMenuItem';
+import DownArrow from '../../icons/DownArrow';
 
 const i18nDefaults = {
   reset: 'Reset',
@@ -153,6 +155,8 @@ const Filter = ({
     setSelectedColumns([]);
   }
 
+  console.log(filterOperator, selectedColumns, filterValue);
+
   return (
     <div className={styles.filterContainer}>
       <div
@@ -161,51 +165,83 @@ const Filter = ({
           isContainerOpen ? styles.openPanel : styles.closePanel
         )}
       >
-        <Button size="small" variant="link" onClick={toggleReset}>
-          {dictionary.reset}
-        </Button>
+        {filterOperator !== 'Operator' ||
+        selectedColumns.length > 0 ||
+        filterValue ? (
+          <Button
+            size="small"
+            color="secondary"
+            variant="outline"
+            onClick={toggleReset}
+          >
+            {dictionary.reset}
+          </Button>
+        ) : null}
         <Dropdown
+          menuClassName={styles.menu}
           component={
-            <Button size="small" variant="link" fluid>
-              {dictionary.columns}
+            <Button
+              size="small"
+              color="secondary"
+              variant="outline"
+              fluid
+              className={styles.dropButton}
+            >
+              {dictionary.columns} <DownArrow />
             </Button>
           }
         >
           {columns
             .filter((col) => col.filterable !== false)
             .map((col) => (
-              <label key={col.key}>
-                <input
-                  type="checkbox"
-                  value={col.key?.toString()}
-                  checked={selectedColumns.includes(col.key?.toString() ?? '')}
-                  onChange={(e) => {
-                    const value = e.target.value;
-                    setSelectedColumns((prev) =>
-                      e.target.checked
-                        ? [...prev, value]
-                        : prev.filter((colKey) => colKey !== value)
-                    );
-                  }}
-                />
-                {col.title}
-              </label>
+              <FloatingMenuItem
+                label={
+                  <>
+                    <input
+                      type="checkbox"
+                      value={col.key?.toString()}
+                      checked={selectedColumns.includes(
+                        col.key?.toString() ?? ''
+                      )}
+                      onChange={(e) => {
+                        const value = e.target.value;
+                        setSelectedColumns((prev) =>
+                          e.target.checked
+                            ? [...prev, value]
+                            : prev.filter((colKey) => colKey !== value)
+                        );
+                      }}
+                    />
+                    {col.title}
+                  </>
+                }
+                key={col.key}
+                className={styles.item}
+              />
             ))}
         </Dropdown>
-        <select
-          value={filterOperator}
-          onChange={(e) => setFilterOperator(e.target.value)}
-          className={styles.filterOperatorDropdown}
+        <Dropdown
+          menuClassName={styles.menu}
+          component={
+            <Button
+              variant="outline"
+              color="secondary"
+              size="small"
+              className={styles.dropButton}
+            >
+              {filterOperator} <DownArrow />
+            </Button>
+          }
         >
-          <option disabled value="Operator">
-            {dictionary.operator}
-          </option>
           {filterOperators.map((operator) => (
-            <option key={operator} value={operator}>
-              {operator}
-            </option>
+            <FloatingMenuItem
+              label={operator}
+              key={operator}
+              className={styles.item}
+              onClick={() => setFilterOperator(operator)}
+            />
           ))}
-        </select>
+        </Dropdown>
 
         <input
           type="text"
@@ -228,15 +264,16 @@ const Filter = ({
 
       <Button
         size="icon"
-        variant="link"
-        className={styles.filterIconButton}
+        color="secondary"
+        variant="outline"
         onClick={() => setIsContainerOpen(!isContainerOpen)}
+        className={styles.button}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
-          fill="#000"
+          fill="currentColor"
           viewBox="0 0 256 256"
         >
           <path d="M200,136a8,8,0,0,1-8,8H64a8,8,0,0,1,0-16H192A8,8,0,0,1,200,136Zm32-56H24a8,8,0,0,0,0,16H232a8,8,0,0,0,0-16Zm-80,96H104a8,8,0,0,0,0,16h48a8,8,0,0,0,0-16Z"></path>

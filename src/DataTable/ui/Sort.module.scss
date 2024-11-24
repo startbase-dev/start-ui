@@ -3,13 +3,13 @@
   display: flex;
   margin-left: 5px;
 
-  &[data-sort="ascend"] {
+  &[data-sort='ascend'] {
     .sortingButton > svg {
       transform: rotate(0deg);
     }
   }
 
-  &[data-sort="descend"] {
+  &[data-sort='descend'] {
     .sortingButton > svg {
       transform: rotate(-180deg);
     }

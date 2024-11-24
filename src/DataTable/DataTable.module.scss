@@ -88,9 +88,9 @@
           padding: 0;
           position: absolute;
           background-color: color-mix(
-                          in srgb,
-                          var(--sui-table-black) 90%,
-                          var(--sui-table-white)
+            in srgb,
+            var(--sui-table-black) 90%,
+            var(--sui-table-white)
           );
           width: 1px;
         }
@@ -103,17 +103,17 @@
 
             &:nth-child(even) {
               background-color: color-mix(
-                              in srgb,
-                              var(--sui-table-black) 98%,
-                              var(--sui-table-white)
+                in srgb,
+                var(--sui-table-black) 98%,
+                var(--sui-table-white)
               );
             }
 
             &:hover {
               background-color: color-mix(
-                              in srgb,
-                              var(--sui-table-black) 94%,
-                              var(--sui-table-white)
+                in srgb,
+                var(--sui-table-black) 94%,
+                var(--sui-table-white)
               );
             }
           }
@@ -231,17 +231,17 @@
 
   .rowSelected {
     background-color: color-mix(
-                    in srgb,
-                    var(--sui-datatable-black) 80%,
-                    var(--sui-datatable-white)
+      in srgb,
+      var(--sui-datatable-black) 80%,
+      var(--sui-datatable-white)
     ) !important;
   }
 
   .rowHighlighted {
     background-color: color-mix(
-                    in srgb,
-                    var(--sui-datatable-white) 20%,
-                    var(--sui-datatable-black)
+      in srgb,
+      var(--sui-datatable-white) 20%,
+      var(--sui-datatable-black)
     ) !important;
   }
 }
