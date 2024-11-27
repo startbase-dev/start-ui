@@ -16,22 +16,6 @@ const Grid = forwardRef<HTMLDivElement, GridProps>(({
 }, ref) => {
   const rootClassNames = clsx(className, styles.root);
 
-  const gridGap = typeof gap === "number" ? gap : gap.base;
-
-  let gapSM = gridGap;
-  let gapMD = gridGap;
-  let gapLG = gridGap;
-  let gapXL = gridGap;
-  let gapXXL = gridGap;
-
-  if (typeof gap === "object") {
-    gapSM = gap.sm ?? gap.base;
-    gapMD = gap.md ?? gapSM;
-    gapLG = gap.lg ?? gapMD;
-    gapXL = gap.xl ?? gapLG;
-    gapXXL = gap.xxl ?? gapXL;
-  }
-
   if (!rowGap) rowGap = gap;
 
   const rowGapBase = typeof rowGap === "number" ? rowGap : rowGap.base;
@@ -88,24 +72,18 @@ const Grid = forwardRef<HTMLDivElement, GridProps>(({
   if (container) return (
     <div ref={ref} className={rootClassNames} style={{
       ...style,
-      "--sui-grid-gap-base": `${gridGap}px`,
-      "--sui-grid-gap-sm": `${gapSM}px`,
-      "--sui-grid-gap-md": `${gapMD}px`,
-      "--sui-grid-gap-lg": `${gapLG}px`,
-      "--sui-grid-gap-xl": `${gapXL}px`,
-      "--sui-grid-gap-xxl": `${gapXXL}px`,
-      "--sui-row-gap-base": `${rowGapBase}px`,
-      "--sui-row-gap-sm": `${rowGapSM}px`,
-      "--sui-row-gap-md": `${rowGapMD}px`,
-      "--sui-row-gap-lg": `${rowGapLG}px`,
-      "--sui-row-gap-xl": `${rowGapXL}px`,
-      "--sui-row-gap-xxl": `${rowGapXXL}px`,
-      "--sui-column-gap-base": `${columnGapBase}px`,
-      "--sui-column-gap-sm": `${columnGapSM}px`,
-      "--sui-column-gap-md": `${columnGapMD}px`,
-      "--sui-column-gap-lg": `${columnGapLG}px`,
-      "--sui-column-gap-xl": `${columnGapXL}px`,
-      "--sui-column-gap-xxl": `${columnGapXXL}px`,
+      "--sui-grid-row-gap-base": `${rowGapBase}px`,
+      "--sui-grid-row-gap-sm": `${rowGapSM}px`,
+      "--sui-grid-row-gap-md": `${rowGapMD}px`,
+      "--sui-grid-row-gap-lg": `${rowGapLG}px`,
+      "--sui-grid-row-gap-xl": `${rowGapXL}px`,
+      "--sui-grid-row-gap-xxl": `${rowGapXXL}px`,
+      "--sui-grid-column-gap-base": `${columnGapBase}px`,
+      "--sui-grid-column-gap-sm": `${columnGapSM}px`,
+      "--sui-grid-column-gap-md": `${columnGapMD}px`,
+      "--sui-grid-column-gap-lg": `${columnGapLG}px`,
+      "--sui-grid-column-gap-xl": `${columnGapXL}px`,
+      "--sui-grid-column-gap-xxl": `${columnGapXXL}px`,
       "--sui-grid-columns-base": columnsBase,
       "--sui-grid-columns-sm": columnsSM,
       "--sui-grid-columns-md": columnsMD,
