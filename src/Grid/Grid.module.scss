@@ -46,31 +46,54 @@
 .item {
   flex-grow: 0;
   flex-basis: auto;
-  width: calc(100% * var(--sui-grid-span-base) / var(--sui-grid-columns-base) - (var(--sui-grid-columns-base) - var(--sui-grid-span-base)) * (var(--sui-grid-column-gap-base) / var(--sui-grid-columns-base)));
-  background-color: red;
+  width: calc(
+    100% * var(--sui-grid-span-base) / var(--sui-grid-columns-base) -
+      (var(--sui-grid-columns-base) - var(--sui-grid-span-base)) *
+      (var(--sui-grid-column-gap-base) / var(--sui-grid-columns-base))
+  );
 
   @media (min-width: 576px) {
     // Small devices (landscape phones, 576px and up)
-    width: calc(100% * var(--sui-grid-span-sm) / var(--sui-grid-columns-sm) - (var(--sui-grid-columns-sm) - var(--sui-grid-span-sm)) * (var(--sui-grid-column-gap-sm) / var(--sui-grid-columns-sm)));
+    width: calc(
+      100% * var(--sui-grid-span-sm) / var(--sui-grid-columns-sm) -
+        (var(--sui-grid-columns-sm) - var(--sui-grid-span-sm)) *
+        (var(--sui-grid-column-gap-sm) / var(--sui-grid-columns-sm))
+    );
   }
 
   @media (min-width: 768px) {
     // Medium devices (tablets, 768px and up)
-    width: calc(100% * var(--sui-grid-span-md) / var(--sui-grid-columns-md) - (var(--sui-grid-columns-md) - var(--sui-grid-span-md)) * (var(--sui-grid-column-gap-md) / var(--sui-grid-columns-md)));
+    width: calc(
+      100% * var(--sui-grid-span-md) / var(--sui-grid-columns-md) -
+        (var(--sui-grid-columns-md) - var(--sui-grid-span-md)) *
+        (var(--sui-grid-column-gap-md) / var(--sui-grid-columns-md))
+    );
   }
 
   @media (min-width: 992px) {
     // Large Devices (desktops, 992px and up)
-    width: calc(100% * var(--sui-grid-span-lg) / var(--sui-grid-columns-lg) - (var(--sui-grid-columns-lg) - var(--sui-grid-span-lg)) * (var(--sui-grid-column-gap-lg) / var(--sui-grid-columns-lg)));
+    width: calc(
+      100% * var(--sui-grid-span-lg) / var(--sui-grid-columns-lg) -
+        (var(--sui-grid-columns-lg) - var(--sui-grid-span-lg)) *
+        (var(--sui-grid-column-gap-lg) / var(--sui-grid-columns-lg))
+    );
   }
 
   @media (min-width: 1200px) {
     // X-Large devices (large desktops, 1200px and up)
-    width: calc(100% * var(--sui-grid-span-xl) / var(--sui-grid-columns-xl) - (var(--sui-grid-columns-xl) - var(--sui-grid-span-xl)) * (var(--sui-grid-column-gap-xl) / var(--sui-grid-columns-xl)));
+    width: calc(
+      100% * var(--sui-grid-span-xl) / var(--sui-grid-columns-xl) -
+        (var(--sui-grid-columns-xl) - var(--sui-grid-span-xl)) *
+        (var(--sui-grid-column-gap-xl) / var(--sui-grid-columns-xl))
+    );
   }
 
   @media (min-width: 1400px) {
     // XX-Large devices (larger desktops, 1400px and up)
-    width: calc(100% * var(--sui-grid-span-xxl) / var(--sui-grid-columns-xxl) - (var(--sui-grid-columns-xxl) - var(--sui-grid-span-xxl)) * (var(--sui-grid-column-gap-xxl) / var(--sui-grid-columns-xxl)));
+    width: calc(
+      100% * var(--sui-grid-span-xxl) / var(--sui-grid-columns-xxl) -
+        (var(--sui-grid-columns-xxl) - var(--sui-grid-span-xxl)) *
+        (var(--sui-grid-column-gap-xxl) / var(--sui-grid-columns-xxl))
+    );
   }
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Grid from './index';
 import type { TemplateProps } from './types';
 
@@ -13,73 +13,22 @@ const Template: React.FC<TemplateProps> = (args) => {
           flexDirection: 'column',
         }}
       >
-        <Grid container gap={8}>
+        <Grid container>
           <Grid span={8}>
-            <span>size=8</span>
+            <Box>span=8</Box>
           </Grid>
           <Grid span={4}>
-            <span>size=4</span>
+            <Box>span=4</Box>
           </Grid>
           <Grid span={4}>
-            <span>size=4</span>
+            <Box>span=4</Box>
           </Grid>
           <Grid span={8}>
-            <span>size=8</span>
+            <Box>span=8</Box>
           </Grid>
         </Grid>
       </div>
-      <h2>Responsive Grid</h2>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-evenly',
-          flexDirection: 'column',
-        }}
-      >
-        <Grid container gap={16}>
-          <Grid span={{ base: 6, md: 8 }}>
-            <span>base=6 md=8</span>
-          </Grid>
-          <Grid span={{ base: 6, md: 4 }}>
-            <span>base=6 md=4</span>
-          </Grid>
-          <Grid span={{ base: 6, md: 4 }}>
-            <span>base=6 md=4</span>
-          </Grid>
-          <Grid span={{ base: 6, md: 8 }}>
-            <span>base=6 md=8</span>
-          </Grid>
-          <Grid span={{ base: 6, md: 12 }}>
-            <span>base=6 md=12</span>
-          </Grid>
-        </Grid>
-      </div>
-      <h2>Row and Column Gaps</h2>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-evenly',
-          flexDirection: 'column',
-        }}
-      >
-        <Grid container gap={16} columnGap={32} rowGap={64}>
-          <Grid span={{ base: 6, md: 8 }}>
-            <span>base=6 md=8</span>
-          </Grid>
-          <Grid span={{ base: 6, md: 4 }}>
-            <span>base=6 md=4</span>
-          </Grid>
-          <Grid span={{ base: 6, md: 4 }}>
-            <span>base=6 md=4</span>
-          </Grid>
-          <Grid span={{ base: 6, md: 8 }}>
-            <span>base=6 md=8</span>
-          </Grid>
-          <Grid span={{ base: 6, md: 8 }}>
-            <span>base=6 md=8</span>
-          </Grid>
-        </Grid>
-      </div>
+
       <h2>Custom Columns</h2>
       <div
         style={{
@@ -88,25 +37,23 @@ const Template: React.FC<TemplateProps> = (args) => {
           flexDirection: 'column',
         }}
       >
-        <Grid container columns={{ base: 12, md: 24 }}>
-          <Grid span={12}>
-            <span>base=6 md=8</span>
+        <Grid container columns={8}>
+          <Grid span={8}>
+            <Box>span=8</Box>
           </Grid>
-          <Grid span={12}>
-            <span>base=6 md=4</span>
+          <Grid span={4}>
+            <Box>span=4</Box>
           </Grid>
-          <Grid span={12}>
-            <span>base=6 md=4</span>
+          <Grid span={4}>
+            <Box>span=4</Box>
           </Grid>
-          <Grid span={12}>
-            <span>base=6 md=8</span>
-          </Grid>
-          <Grid span={12}>
-            <span>base=6 md=8</span>
+          <Grid span={8}>
+            <Box>span=8</Box>
           </Grid>
         </Grid>
       </div>
-      <h2>Padding</h2>
+
+      <h2>Padding & Gap</h2>
       <div
         style={{
           display: 'flex',
@@ -114,21 +61,66 @@ const Template: React.FC<TemplateProps> = (args) => {
           flexDirection: 'column',
         }}
       >
-        <Grid container padding={16} columns={{ base: 12, md: 24 }}>
-          <Grid span={12}>
-            <span>base=6 md=8</span>
+        <Grid container padding={16} gap={16}>
+          <Grid span={8}>
+            <Box>span=8</Box>
           </Grid>
-          <Grid span={12}>
-            <span>base=6 md=4</span>
+          <Grid span={4}>
+            <Box>span=4</Box>
           </Grid>
-          <Grid span={12}>
-            <span>base=6 md=4</span>
+          <Grid span={4}>
+            <Box>span=4</Box>
           </Grid>
-          <Grid span={12}>
-            <span>base=6 md=8</span>
+          <Grid span={8}>
+            <Box>span=8</Box>
           </Grid>
-          <Grid span={12}>
-            <span>base=6 md=8</span>
+        </Grid>
+      </div>
+
+      <h2>Independent Row & Column Gaps</h2>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexDirection: 'column',
+        }}
+      >
+        <Grid container rowGap={16} columnGap={32}>
+          <Grid span={8}>
+            <Box>span=8</Box>
+          </Grid>
+          <Grid span={4}>
+            <Box>span=4</Box>
+          </Grid>
+          <Grid span={4}>
+            <Box>span=4</Box>
+          </Grid>
+          <Grid span={8}>
+            <Box>span=8</Box>
+          </Grid>
+        </Grid>
+      </div>
+
+      <h2>Responsive Design</h2>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexDirection: 'column',
+        }}
+      >
+        <Grid container>
+          <Grid span={{ base: 12, sm: 12, md: 8 }}>
+            <Box>base=12, sm=12, md=8</Box>
+          </Grid>
+          <Grid span={{ base: 12, sm: 6, md: 4 }}>
+            <Box>base=12, sm=6, md=4</Box>
+          </Grid>
+          <Grid span={{ base: 12, sm: 6, md: 4 }}>
+            <Box>base=12, sm=6, md=4</Box>
+          </Grid>
+          <Grid span={{ base: 12, sm: 12, md: 8 }}>
+            <Box>base=12, sm=12, md=8</Box>
           </Grid>
         </Grid>
       </div>
@@ -145,3 +137,21 @@ const Component = {
 };
 
 export default Component;
+
+function Box({ children }: { children: ReactNode }) {
+  return (
+    <div
+      style={{
+        backgroundColor: 'var(--sui-primary)',
+        color: 'var(--sui-white)',
+        borderRadius: '4px',
+        padding: '16px 32px',
+        display: 'grid',
+        placeItems: 'center',
+        height: '100%',
+      }}
+    >
+      {children}
+    </div>
+  );
+}
