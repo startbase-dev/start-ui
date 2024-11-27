@@ -80,6 +80,32 @@ const Template: React.FC<TemplateProps> = (args) => {
           </Grid>
         </Grid>
       </div>
+      <h2>Custom Columns</h2>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexDirection: 'column',
+        }}
+      >
+        <Grid container columns={{ base: 12, md: 24 }}>
+          <Grid span={12}>
+            <span>base=6 md=8</span>
+          </Grid>
+          <Grid span={12}>
+            <span>base=6 md=4</span>
+          </Grid>
+          <Grid span={12}>
+            <span>base=6 md=4</span>
+          </Grid>
+          <Grid span={12}>
+            <span>base=6 md=8</span>
+          </Grid>
+          <Grid span={12}>
+            <span>base=6 md=8</span>
+          </Grid>
+        </Grid>
+      </div>
     </>
   );
 };

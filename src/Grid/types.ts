@@ -12,6 +12,7 @@ interface ResponsiveGridValues {
 export interface GridProps extends HTMLAttributes<HTMLDivElement> {
   container?: boolean;
   span?: number | ResponsiveGridValues;
+  columns?: number | ResponsiveGridValues;
   gap?: number | ResponsiveGridValues;
   rowGap?: number | ResponsiveGridValues;
   columnGap?: number | ResponsiveGridValues;

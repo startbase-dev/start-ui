@@ -9,12 +9,12 @@ const Grid = forwardRef<HTMLDivElement, GridProps>(({
   style,
   container = false,
   span = 12,
+  columns = 12,
   gap = 8,
   rowGap,
   columnGap,
 }, ref) => {
   const rootClassNames = clsx(className, styles.root);
-  const itemClassNames = clsx(className, styles.item);
 
   const gridGap = typeof gap === "number" ? gap : gap.base;
 
@@ -68,6 +68,22 @@ const Grid = forwardRef<HTMLDivElement, GridProps>(({
     columnGapXXL = columnGap.xxl ?? columnGapXL;
   }
 
+  const columnsBase = typeof columns === "number" ? columns : columns.base;
+
+  let columnsSM = columnsBase;
+  let columnsMD = columnsBase;
+  let columnsLG = columnsBase;
+  let columnsXL = columnsBase;
+  let columnsXXL = columnsBase;
+
+  if (typeof columns === "object") {
+    columnsSM = columns.sm ?? columns.base;
+    columnsMD = columns.md ?? columnsSM;
+    columnsLG = columns.lg ?? columnsMD;
+    columnsXL = columns.xl ?? columnsLG;
+    columnsXXL = columns.xxl ?? columnsXL;
+  }
+
   // RETURN GRID CONTAINER
   if (container) return (
     <div ref={ref} className={rootClassNames} style={{
@@ -90,10 +106,18 @@ const Grid = forwardRef<HTMLDivElement, GridProps>(({
       "--sui-column-gap-lg": `${columnGapLG}px`,
       "--sui-column-gap-xl": `${columnGapXL}px`,
       "--sui-column-gap-xxl": `${columnGapXXL}px`,
+      "--sui-grid-columns-base": columnsBase,
+      "--sui-grid-columns-sm": columnsSM,
+      "--sui-grid-columns-md": columnsMD,
+      "--sui-grid-columns-lg": columnsLG,
+      "--sui-grid-columns-xl": columnsXL,
+      "--sui-grid-columns-xxl": columnsXXL,
     }}>
       {children}
     </div>
   );
+
+  const itemClassNames = clsx(className, styles.item);
 
   const itemSpan = typeof span === "number" ? span : span.base;
 
