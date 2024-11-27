@@ -1,26 +1,9 @@
-.grid {
-  background-color: var(--sui-white);
-  border-radius: 1rem;
-  padding: 1rem;
-  box-shadow: var(--sui-elevation-2);
-  gap: 0.5rem;
-
-  > div {
-    flex-wrap: nowrap;
-    gap: 0.5rem;
-
-    > div {
-      color: var(--sui-white);
-      font-weight: bold;
-      border-radius: 0.5rem;
-    }
-
-    &:first-of-type > div {
-      background-color: var(--sui-info);
-    }
-
-    &:nth-of-type(2) > div {
-      background-color: var(--sui-success);
-    }
-  }
+.box {
+  color: var(--sui-white);
+  background-color: var(--sui-primary);
+  border-radius: 4px;
+  padding: 16px 32px;
+  display: grid;
+  place-items: center;
+  height: 100%;
 }

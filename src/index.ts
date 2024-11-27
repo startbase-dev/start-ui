@@ -14,8 +14,6 @@ import BentoCard from './BentoCard';
 import { type BentoCardProps } from './BentoCard/types';
 import Chip from './Chip';
 import { type ChipProps } from './Chip/types';
-import Col from './Grid/Col';
-import { type ColProps } from './Grid/types';
 import BentoGrid from './BentoGrid';
 import { type BentoGridProps, type BentoItems } from './BentoGrid/types';
 import Grid from './Grid';
@@ -46,8 +44,6 @@ import {
 } from './List/types';
 import Progress from './Progress';
 import { type ProgressProps } from './Progress/types';
-import Row from './Grid/Row';
-import { type RowProps } from './Grid/types';
 import ScrollArea from './ScrollArea';
 import { type ScrollAreaProps } from './ScrollArea/types';
 import {
@@ -129,8 +125,6 @@ export {
   type BentoCardProps,
   Chip,
   type ChipProps,
-  Col,
-  type ColProps,
   BentoGrid,
   type BentoGridProps,
   type BentoItems,
@@ -162,8 +156,6 @@ export {
   type PopoverProps,
   Progress,
   type ProgressProps,
-  Row,
-  type RowProps,
   ScrollArea,
   type ScrollAreaProps,
   SkeletonAvatar,

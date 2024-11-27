@@ -1,7 +1,5 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import Grid from './index';
-import Row from './Row';
-import Col from './Col';
 import type { TemplateProps } from './types';
 
 const Template: React.FC<TemplateProps> = (args) => {
@@ -15,112 +13,123 @@ const Template: React.FC<TemplateProps> = (args) => {
           flexDirection: 'column',
         }}
       >
-        <Grid>
-          <Row>
-            <Col span={4}>{`Column 1 (4/12)`}</Col>
-            <Col span={4}>{`Column 2 (4/12)`}</Col>
-            <Col span={4}>{`Column 3 (4/12)`}</Col>
-          </Row>
-          <Row>
-            <Col span={6}>{`Column 1 (6/12)`}</Col>
-            <Col span={6}>{`Column 2 (6/12)`}</Col>
-          </Row>
+        <Grid container>
+          <Grid span={8}>
+            <Box>span=8</Box>
+          </Grid>
+          <Grid span={4}>
+            <Box>span=4</Box>
+          </Grid>
+          <Grid span={4}>
+            <Box>span=4</Box>
+          </Grid>
+          <Grid span={8}>
+            <Box>span=8</Box>
+          </Grid>
+        </Grid>
+      </div>
+
+      <h2>Custom Columns</h2>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexDirection: 'column',
+        }}
+      >
+        <Grid container columns={8}>
+          <Grid span={8}>
+            <Box>span=8</Box>
+          </Grid>
+          <Grid span={4}>
+            <Box>span=4</Box>
+          </Grid>
+          <Grid span={4}>
+            <Box>span=4</Box>
+          </Grid>
+          <Grid span={8}>
+            <Box>span=8</Box>
+          </Grid>
+        </Grid>
+      </div>
+
+      <h2>Padding & Gap</h2>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexDirection: 'column',
+        }}
+      >
+        <Grid container padding={16} gap={16}>
+          <Grid span={8}>
+            <Box>span=8</Box>
+          </Grid>
+          <Grid span={4}>
+            <Box>span=4</Box>
+          </Grid>
+          <Grid span={4}>
+            <Box>span=4</Box>
+          </Grid>
+          <Grid span={8}>
+            <Box>span=8</Box>
+          </Grid>
+        </Grid>
+      </div>
+
+      <h2>Independent Row & Column Gaps</h2>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexDirection: 'column',
+        }}
+      >
+        <Grid container rowGap={16} columnGap={32}>
+          <Grid span={8}>
+            <Box>span=8</Box>
+          </Grid>
+          <Grid span={4}>
+            <Box>span=4</Box>
+          </Grid>
+          <Grid span={4}>
+            <Box>span=4</Box>
+          </Grid>
+          <Grid span={8}>
+            <Box>span=8</Box>
+          </Grid>
+        </Grid>
+      </div>
+
+      <h2>Responsive Design</h2>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-evenly',
+          flexDirection: 'column',
+        }}
+      >
+        <Grid container>
+          <Grid span={{ base: 12, sm: 12, md: 8 }}>
+            <Box>base=12, sm=12, md=8</Box>
+          </Grid>
+          <Grid span={{ base: 12, sm: 6, md: 4 }}>
+            <Box>base=12, sm=6, md=4</Box>
+          </Grid>
+          <Grid span={{ base: 12, sm: 6, md: 4 }}>
+            <Box>base=12, sm=6, md=4</Box>
+          </Grid>
+          <Grid span={{ base: 12, sm: 12, md: 8 }}>
+            <Box>base=12, sm=12, md=8</Box>
+          </Grid>
         </Grid>
       </div>
     </>
   );
 };
 
-const TemplateWithPadding: React.FC<TemplateProps> = (args) => (
-  <>
-    <h2>{args.title}</h2>
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'space-evenly',
-        flexDirection: 'column',
-      }}
-    >
-      <Grid>
-        <Row>
-          <Col span={4} padding="24px">
-            {`Column 1 (4/12)`}
-          </Col>
-          <Col span={4} padding="24px">
-            {`Column 2 (4/12)`}
-          </Col>
-          <Col span={4} padding="24px">
-            {`Column 3 (4/12)`}
-          </Col>
-        </Row>
-        <Row>
-          <Col span={6} padding="24px">
-            {`Column 1 (6/12)`}
-          </Col>
-          <Col span={6} padding="24px">
-            {`Column 2 (6/12)`}
-          </Col>
-        </Row>
-      </Grid>
-    </div>
-  </>
-);
-
-const TemplateWithResponsive: React.FC<TemplateProps> = (args) => (
-  <>
-    <h2>{args.title}</h2>
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'space-evenly',
-        flexDirection: 'column',
-      }}
-    >
-      <Grid>
-        <Row>
-          <Col
-            span={12}
-            spanSizes={{ sm: 12, md: 12, lg: 6, xl: 4 }}
-            padding="24px"
-          >
-            {`Column 1 (4/12)`}
-          </Col>
-          <Col
-            span={12}
-            spanSizes={{ sm: 12, md: 12, lg: 6, xl: 4 }}
-            padding="24px"
-          >
-            {`Column 2 (4/12)`}
-          </Col>
-          <Col
-            span={12}
-            spanSizes={{ sm: 12, md: 12, lg: 6, xl: 4 }}
-            padding="24px"
-          >
-            {`Column 3 (4/12)`}
-          </Col>
-        </Row>
-        <Row>
-          <Col span={6} padding="24px">
-            {`Column 1 (6/12)`}
-          </Col>
-          <Col span={6} padding="24px">
-            {`Column 2 (6/12)`}
-          </Col>
-        </Row>
-      </Grid>
-    </div>
-  </>
-);
-
 export const GridComponent = Template.bind({});
 GridComponent.args = { title: 'Grid' };
-
-export const GridWithPadding = TemplateWithPadding.bind({});
-GridWithPadding.args = { title: 'Grid with padding' };
-
-export const GridWithResponsive = TemplateWithResponsive.bind({});
-GridWithResponsive.args = { title: 'Grid with responsive' };
 
 const Component = {
   title: 'UI/Grid',
@@ -128,3 +137,21 @@ const Component = {
 };
 
 export default Component;
+
+function Box({ children }: { children: ReactNode }) {
+  return (
+    <div
+      style={{
+        backgroundColor: 'var(--sui-primary)',
+        color: 'var(--sui-white)',
+        borderRadius: '4px',
+        padding: '16px 32px',
+        display: 'grid',
+        placeItems: 'center',
+        height: '100%',
+      }}
+    >
+      {children}
+    </div>
+  );
+}

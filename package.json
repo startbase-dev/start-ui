@@ -24,7 +24,6 @@
     "Button",
     "Card",
     "Chip",
-    "Col",
     "ContextMenu",
     "Countdown",
     "DataTable",
@@ -35,7 +34,6 @@
     "List",
     "Popover",
     "Progress",
-    "Row",
     "ScrollArea",
     "Skeleton",
     "Stepper",
@@ -106,10 +104,6 @@
       "require": "./Chip/index.cjs",
       "import": "./Chip/index.js"
     },
-    "./Col": {
-      "require": "./Col/index.cjs",
-      "import": "./Col/index.js"
-    },
     "./ContextMenu": {
       "require": "./ContextMenu/index.cjs",
       "import": "./ContextMenu/index.js"
@@ -149,10 +143,6 @@
     "./Progress": {
       "require": "./Progress/index.cjs",
       "import": "./Progress/index.js"
-    },
-    "./Row": {
-      "require": "./Row/index.cjs",
-      "import": "./Row/index.js"
     },
     "./ScrollArea": {
       "require": "./ScrollArea/index.cjs",
@@ -203,7 +193,7 @@
     "stylelint": "stylelint \"src/**/*.scss\" --fix",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "build:all": "npm run build && npm run build:variables && npm run build:Accordion && npm run build:Breadcrumbs && npm run build:ContextMenu && npm run build:FloatingMenuItem && npm run build:Alert && npm run build:Badge && npm run build:BentoCard && npm run build:Button && npm run build:Card && npm run build:Chip && npm run build:Col && npm run build:BentoGrid && npm run build:Grid && npm run build:Countdown && npm run build:DataTable && npm run build:Divider && npm run build:Dropdown && npm run build:List && npm run build:Popover && npm run build:Progress && npm run build:Row && npm run build:ScrollArea && npm run build:Skeleton && npm run build:Stepper && npm run build:Tab && npm run build:Table && npm run build:Toggle && npm run build:ToggleGroup && npm run build:Tooltip && npm run build:Typography && npm run build:Avatar && npm run build:WordAnimation",
+    "build:all": "npm run build && npm run build:variables && npm run build:Accordion && npm run build:Breadcrumbs && npm run build:ContextMenu && npm run build:FloatingMenuItem && npm run build:Alert && npm run build:Badge && npm run build:BentoCard && npm run build:Button && npm run build:Card && npm run build:Chip && npm run build:BentoGrid && npm run build:Grid && npm run build:Countdown && npm run build:DataTable && npm run build:Divider && npm run build:Dropdown && npm run build:List && npm run build:Popover && npm run build:Progress && npm run build:ScrollArea && npm run build:Skeleton && npm run build:Stepper && npm run build:Tab && npm run build:Table && npm run build:Toggle && npm run build:ToggleGroup && npm run build:Tooltip && npm run build:Typography && npm run build:Avatar && npm run build:WordAnimation",
     "build": "tsup --out-dir ./ --no-splitting --treeshake --minify terser",
     "build:variables": "tsup src/style/variables.scss --out-dir ./ --no-splitting --treeshake --minify terser",
     "build:Accordion": "tsup src/Accordion/index.tsx --out-dir ./Accordion --no-splitting --treeshake --minify terser",
@@ -216,7 +206,6 @@
     "build:Button": "tsup src/Button/index.tsx --out-dir ./Button --no-splitting --treeshake --minify terser",
     "build:Card": "tsup src/Card/index.tsx --out-dir ./Card --no-splitting --treeshake --minify terser",
     "build:Chip": "tsup src/Chip/index.tsx --out-dir ./Chip --no-splitting --treeshake --minify terser",
-    "build:Col": "tsup src/Grid/Col/index.tsx --out-dir ./Col --no-splitting --treeshake --minify terser",
     "build:ContextMenu": "tsup src/floatings/ContextMenu/index.tsx --out-dir ./ContextMenu --no-splitting --treeshake --minify terser",
     "build:Countdown": "tsup src/Countdown/index.tsx --out-dir ./Countdown --no-splitting --treeshake --minify terser",
     "build:DataTable": "tsup src/DataTable/index.tsx --out-dir ./DataTable --no-splitting --treeshake --minify terser",
@@ -227,7 +216,6 @@
     "build:List": "tsup src/List/index.tsx --out-dir ./List --no-splitting --treeshake --minify terser",
     "build:Popover": "tsup src/floatings/Popover/index.tsx --out-dir ./Popover --no-splitting --treeshake --minify terser",
     "build:Progress": "tsup src/Progress/index.tsx --out-dir ./Progress --no-splitting --treeshake --minify terser",
-    "build:Row": "tsup src/Grid/Row/index.tsx --out-dir ./Row --no-splitting --treeshake --minify terser",
     "build:ScrollArea": "tsup src/ScrollArea/index.tsx --out-dir ./ScrollArea --no-splitting --treeshake --minify terser",
     "build:Skeleton": "tsup src/Skeleton/index.tsx --out-dir ./Skeleton --no-splitting --treeshake --minify terser",
     "build:Stepper": "tsup src/Stepper/index.tsx --out-dir ./Stepper --no-splitting --treeshake --minify terser",

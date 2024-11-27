@@ -1,4 +1,4 @@
-import { Grid, Row, Col } from '@start-base/start-ui';
+import { Grid } from '@start-base/start-ui';
 import { Tabs } from 'nextra/components';
 import { Steps } from 'nextra/components';
 import Preview from '@components/Preview/Preview';
@@ -74,195 +74,201 @@ npm i @start-base/start-ui
 <Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <Preview>
-      <Grid className={styles.grid}>
-        <Row>
-          <Col span={4}>Column 1 (4/12)</Col>
-          <Col span={4}>Column 2 (4/12)</Col>
-          <Col span={4}>Column 3 (4/12)</Col>
-        </Row>
-        <Row>
-          <Col span={6}>Column 1 (6/12)</Col>
-          <Col span={6}>Column 2 (6/12)</Col>
-        </Row>
+      <Grid container>
+        <Grid span={8}>
+          <div className={styles.box}>span=8</div>
+        </Grid>
+        <Grid span={4}>
+          <div className={styles.box}>span=4</div>
+        </Grid>
+        <Grid span={4}>
+          <div className={styles.box}>span=4</div>
+        </Grid>
+        <Grid span={8}>
+          <div className={styles.box}>span=8</div>
+        </Grid>
       </Grid>
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
     ```jsx copy showLineNumbers
-    <Grid>
-      <Row>
-        <Col span={4}>Column 1 (4/12)</Col>
-        <Col span={4}>Column 2 (4/12)</Col>
-        <Col span={4}>Column 3 (4/12)</Col>
-      </Row>
-      <Row>
-        <Col span={6}>Column 1 (6/12)</Col>
-        <Col span={6}>Column 2 (6/12)</Col>
-      </Row>
+    <Grid container>
+      <Grid span={8}>
+        <Box>span=8</Box>
+      </Grid>
+      <Grid span={4}>
+        <Box>span=4</Box>
+      </Grid>
+      <Grid span={4}>
+        <Box>span=4</Box>
+      </Grid>
+      <Grid span={8}>
+        <Box>span=8</Box>
+      </Grid>
     </Grid>
     ```
   </Tabs.Tab>
 </Tabs>
 
-### Grid with Padding
+### Grid With Custom Columns
 
 <Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <Preview>
-      <Grid className={styles.grid}>
-        <Row>
-          <Col padding="24px" span={4}>
-            Column 1 (4/12)
-          </Col>
-          <Col padding="24px" span={4}>
-            Column 2 (4/12)
-          </Col>
-          <Col padding="24px" span={4}>
-            Column 3 (4/12)
-          </Col>
-        </Row>
-        <Row>
-          <Col padding="24px" span={6}>
-            Column 1 (6/12)
-          </Col>
-          <Col padding="24px" span={6}>
-            Column 2 (6/12)
-          </Col>
-        </Row>
+      <Grid container columns={8}>
+        <Grid span={8}>
+          <div className={styles.box}>span=8</div>
+        </Grid>
+        <Grid span={4}>
+          <div className={styles.box}>span=4</div>
+        </Grid>
+        <Grid span={4}>
+          <div className={styles.box}>span=4</div>
+        </Grid>
+        <Grid span={8}>
+          <div className={styles.box}>span=8</div>
+        </Grid>
       </Grid>
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
     ```jsx copy showLineNumbers
-    <Grid>
-      <Row>
-        <Col padding="24px" span={4}>
-          Column 1 (4/12)
-        </Col>
-        <Col padding="24px" span={4}>
-          Column 2 (4/12)
-        </Col>
-        <Col padding="24px" span={4}>
-          Column 3 (4/12)
-        </Col>
-      </Row>
-      <Row>
-        <Col padding="24px" span={6}>
-          Column 1 (6/12)
-        </Col>
-        <Col padding="24px" span={6}>
-          Column 2 (6/12)
-        </Col>
-      </Row>
+    <Grid container columns={8}>
+      <Grid span={8}>
+        <Box>span=8</Box>
+      </Grid>
+      <Grid span={4}>
+        <Box>span=4</Box>
+      </Grid>
+      <Grid span={4}>
+        <Box>span=4</Box>
+      </Grid>
+      <Grid span={8}>
+        <Box>span=8</Box>
+      </Grid>
     </Grid>
     ```
   </Tabs.Tab>
 </Tabs>
 
-### Grid with Responsive
+### Grid with Custom Padding & Gap
 
 <Tabs items={['Preview', 'Code']}>
   <Tabs.Tab>
     <Preview>
-      <Grid className={styles.grid}>
-        <Row>
-          <Col
-            padding="24px"
-            span={12}
-            spanSizes={{
-              lg: 6,
-              md: 12,
-              sm: 12,
-              xl: 4,
-            }}
-          >
-            Column 1 (4/12)
-          </Col>
-          <Col
-            padding="24px"
-            span={12}
-            spanSizes={{
-              lg: 6,
-              md: 12,
-              sm: 12,
-              xl: 4,
-            }}
-          >
-            Column 2 (4/12)
-          </Col>
-          <Col
-            padding="24px"
-            span={12}
-            spanSizes={{
-              lg: 6,
-              md: 12,
-              sm: 12,
-              xl: 4,
-            }}
-          >
-            Column 3 (4/12)
-          </Col>
-        </Row>
-        <Row>
-          <Col padding="24px" span={6}>
-            Column 1 (6/12)
-          </Col>
-          <Col padding="24px" span={6}>
-            Column 2 (6/12)
-          </Col>
-        </Row>
+      <Grid container padding={16} gap={16}>
+        <Grid span={8}>
+          <div className={styles.box}>span=8</div>
+        </Grid>
+        <Grid span={4}>
+          <div className={styles.box}>span=4</div>
+        </Grid>
+        <Grid span={4}>
+          <div className={styles.box}>span=4</div>
+        </Grid>
+        <Grid span={8}>
+          <div className={styles.box}>span=8</div>
+        </Grid>
       </Grid>
     </Preview>
   </Tabs.Tab>
   <Tabs.Tab>
     ```jsx copy showLineNumbers
-    <Grid>
-      <Row>
-        <Col
-          padding="24px"
-          span={12}
-          spanSizes={{
-            lg: 6,
-            md: 12,
-            sm: 12,
-            xl: 4,
-          }}
-        >
-          Column 1 (4/12)
-        </Col>
-        <Col
-          padding="24px"
-          span={12}
-          spanSizes={{
-            lg: 6,
-            md: 12,
-            sm: 12,
-            xl: 4,
-          }}
-        >
-          Column 2 (4/12)
-        </Col>
-        <Col
-          padding="24px"
-          span={12}
-          spanSizes={{
-            lg: 6,
-            md: 12,
-            sm: 12,
-            xl: 4,
-          }}
-        >
-          Column 3 (4/12)
-        </Col>
-      </Row>
-      <Row>
-        <Col padding="24px" span={6}>
-          Column 1 (6/12)
-        </Col>
-        <Col padding="24px" span={6}>
-          Column 2 (6/12)
-        </Col>
-      </Row>
+    <Grid container padding={16} gap={16}>
+      <Grid span={8}>
+        <Box>span=8</Box>
+      </Grid>
+      <Grid span={4}>
+        <Box>span=4</Box>
+      </Grid>
+      <Grid span={4}>
+        <Box>span=4</Box>
+      </Grid>
+      <Grid span={8}>
+        <Box>span=8</Box>
+      </Grid>
+    </Grid>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Grid with Independent Row & Column Gaps
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <Preview>
+      <Grid container rowGap={16} columnGap={32}>
+        <Grid span={8}>
+          <div className={styles.box}>span=8</div>
+        </Grid>
+        <Grid span={4}>
+          <div className={styles.box}>span=4</div>
+        </Grid>
+        <Grid span={4}>
+          <div className={styles.box}>span=4</div>
+        </Grid>
+        <Grid span={8}>
+          <div className={styles.box}>span=8</div>
+        </Grid>
+      </Grid>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Grid container rowGap={16} columnGap={32}>
+      <Grid span={8}>
+        <Box>span=8</Box>
+      </Grid>
+      <Grid span={4}>
+        <Box>span=4</Box>
+      </Grid>
+      <Grid span={4}>
+        <Box>span=4</Box>
+      </Grid>
+      <Grid span={8}>
+        <Box>span=8</Box>
+      </Grid>
+    </Grid>
+    ```
+  </Tabs.Tab>
+</Tabs>
+
+### Grid with Responsive Values
+
+<Tabs items={['Preview', 'Code']}>
+  <Tabs.Tab>
+    <Preview>
+      <Grid container>
+        <Grid span={{ base: 12, sm: 12, md: 8 }}>
+          <div className={styles.box}>base=12, sm=12, md=8</div>
+        </Grid>
+        <Grid span={{ base: 12, sm: 6, md: 4 }}>
+          <div className={styles.box}>base=12, sm=6, md=4</div>
+        </Grid>
+        <Grid span={{ base: 12, sm: 6, md: 4 }}>
+          <div className={styles.box}>base=12, sm=6, md=4</div>
+        </Grid>
+        <Grid span={{ base: 12, sm: 12, md: 8 }}>
+          <div className={styles.box}>base=12, sm=12, md=8</div>
+        </Grid>
+      </Grid>
+    </Preview>
+  </Tabs.Tab>
+  <Tabs.Tab>
+    ```jsx copy showLineNumbers
+    <Grid container>
+      <Grid span={{ base: 12, sm: 12, md: 8 }}>
+        <Box>base=12, sm=12, md=8</Box>
+      </Grid>
+      <Grid span={{ base: 12, sm: 6, md: 4 }}>
+        <Box>base=12, sm=6, md=4</Box>
+      </Grid>
+      <Grid span={{ base: 12, sm: 6, md: 4 }}>
+        <Box>base=12, sm=6, md=4</Box>
+      </Grid>
+      <Grid span={{ base: 12, sm: 12, md: 8 }}>
+        <Box>base=12, sm=12, md=8</Box>
+      </Grid>
     </Grid>
     ```
   </Tabs.Tab>
@@ -270,10 +276,32 @@ npm i @start-base/start-ui
 
 ## API
 
-| Name        | Type        | Default                                                                                      | Variants                                                                                                                                    | Description                       |
-| ----------- | ----------- | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- |
-| children    | `ReactNode` |                                                                                              |                                                                                                                                             | Children of the Grid              |
-| span        | `number`    |                                                                                              |                                                                                                                                             | Span of the Col                   |
-| spanSizes   | `object`    |                                                                                              | `{ lg: number, md: number, sm: number, xl: number, xxl: number }`                                                                           | Responsive span sizes for the Col |
-| padding     | `string`    |                                                                                              |                                                                                                                                             | Padding of the Col                |
-| breakpoints | `object`    | `smMinWidth = "576px"` `mdMinWidth = "768px"` `lgMinWidth = "992px"` `xlMinWidth = "1200px"` | `smMinWidth: "--sui-sm-min-width"` `mdMinWidth: "--sui-md-min-width"` `lgMinWidth: "--sui-lg-min-width"` `xlMinWidth: "--sui-xl-min-width"` | Breakpoints for responsive design |
+| Name      | Type               | Default     | Description                                                                                                                                                                      |
+| --------- | ------------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| children  | `ReactNode`        | `undefined` | Grid items to be displayed.                                                                                                                                                      |
+| container | `boolean`          | `false`     | Controls whether the Grid component is a Grid container or a Grid item.                                                                                                          |
+| className | `string`           | `undefined` | Additional CSS class for the root element.                                                                                                                                       |
+| span      | `number \| object` | `12`        | A value between 1 and 12 that will dictate how much horizontal space an item will use up. Accepts a number or an object of type `ResponsiveGridValues` which is explained below. |
+| columns   | `number \| object` | `12`        | A value that will be used to define the maximum `span` value. Accepts a number or an object of type `ResponsiveGridValues` which is explained below.                             |
+| padding   | `number \| object` | `0`         | Padding value for Grid container. Accepts a number or an object of type `ResponsiveGridValues` which is explained below.                                                         |
+| gap       | `number \| object` | `8`         | Gap between Grid items. Accepts a number or an object of type `ResponsiveGridValues` which is explained below.                                                                   |
+| rowGap    | `number \| object` | `undefined` | Gap between the rows of Grid items. Overrides `gap`. Accepts a number or an object of type `ResponsiveGridValues` which is explained below.                                      |
+| columnGap | `number \| object` | `undefined` | Gap between the columns of Grid items. Overrides `gap`. Accepts a number or an object of type `ResponsiveGridValues` which is explained below.                                   |
+| ...props  | `HTMLAttributes`   |             | Additional HTML attributes for the root element.                                                                                                                                 |
+
+### `ResponsiveGridValues`
+
+`ResponsiveGridValues` allows you to pass props depending on the viewport width.
+
+```ts
+interface ResponsiveGridValues {
+  base: number;
+  sm?: number; // 576px and up
+  md?: number; // 768px and up
+  lg?: number; // 992px and up
+  xl?: number; // 1200px and up
+  xxl?: number; // 1400px and up
+}
+```
+
+`base` is what you would normally pass as the `number` to that property. Note that smaller keys cascade into larger keys if the larger keys are not specified. This means given only `base` and `sm` keys, the `sm` value will be used when viewport is larger than or equal to 576 pixels.
