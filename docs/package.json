@@ -22,10 +22,10 @@
     "@dotlottie/react-player": "1.6.19",
     "@next/third-parties": "^15.0.3",
     "@start-base/react-consent-manager": "1.12.0",
-    "@start-base/react-form-elements": "1.13.1",
+    "@start-base/react-form-elements": "1.13.2",
     "@start-base/react-modal": "1.5.2",
-    "@start-base/start-ui": "0.0.56-alpha",
-    "framer-motion": "11.11.17",
+    "@start-base/start-ui": "0.0.57-alpha",
+    "framer-motion": "11.12.0",
     "next": "14.2.18",
     "nextra": "2.13.4",
     "nextra-theme-docs": "2.13.4",
@@ -37,7 +37,7 @@
   "devDependencies": {
     "@lottiefiles/lottie-types": "1.5.0",
     "@types/howler": "2.2.12",
-    "@types/node": "20.17.7",
+    "@types/node": "20.17.8",
     "typescript": "5.7.2"
   }
 }
