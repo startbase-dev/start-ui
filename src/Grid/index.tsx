@@ -10,6 +10,7 @@ const Grid = forwardRef<HTMLDivElement, GridProps>(({
   container = false,
   span = 12,
   columns = 12,
+  padding = 0,
   gap = 8,
   rowGap,
   columnGap,
@@ -68,6 +69,22 @@ const Grid = forwardRef<HTMLDivElement, GridProps>(({
     columnsXXL = columns.xxl ?? columnsXL;
   }
 
+  const paddingBase = typeof padding === "number" ? padding : padding.base;
+
+  let paddingSM = paddingBase;
+  let paddingMD = paddingBase;
+  let paddingLG = paddingBase;
+  let paddingXL = paddingBase;
+  let paddingXXL = paddingBase;
+
+  if (typeof padding === "object") {
+    paddingSM = padding.sm ?? padding.base;
+    paddingMD = padding.md ?? paddingSM;
+    paddingLG = padding.lg ?? paddingMD;
+    paddingXL = padding.xl ?? paddingLG;
+    paddingXXL = padding.xxl ?? paddingXL;
+  }
+
   // RETURN GRID CONTAINER
   if (container) return (
     <div ref={ref} className={rootClassNames} style={{
@@ -90,6 +107,12 @@ const Grid = forwardRef<HTMLDivElement, GridProps>(({
       "--sui-grid-columns-lg": columnsLG,
       "--sui-grid-columns-xl": columnsXL,
       "--sui-grid-columns-xxl": columnsXXL,
+      "--sui-grid-padding-base": `${paddingBase}px`,
+      "--sui-grid-padding-sm": `${paddingSM}px`,
+      "--sui-grid-padding-md": `${paddingMD}px`,
+      "--sui-grid-padding-lg": `${paddingLG}px`,
+      "--sui-grid-padding-xl": `${paddingXL}px`,
+      "--sui-grid-padding-xxl": `${paddingXXL}px`,
     }}>
       {children}
     </div>
