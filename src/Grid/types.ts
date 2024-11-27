@@ -1,33 +1,22 @@
-import type { AllHTMLAttributes } from 'react';
+import type { HTMLAttributes } from 'react';
 
-export interface GridProps extends AllHTMLAttributes<HTMLDivElement> {
-  children?: React.ReactNode;
-  breakpoints?: {
-    smMinWidth?: string;
-    mdMinWidth?: string;
-    lgMinWidth?: string;
-    xlMinWidth?: string;
-  };
+interface ResponsiveGridValues {
+  base: number;
+  sm?: number;
+  md?: number;
+  lg?: number;
+  xl?: number;
+  xxl?: number;
+}
+
+export interface GridProps extends HTMLAttributes<HTMLDivElement> {
+  container?: boolean;
+  span?: number | ResponsiveGridValues;
+  gap?: number | ResponsiveGridValues;
+  rowGap?: number | ResponsiveGridValues;
+  columnGap?: number | ResponsiveGridValues;
 }
 
 export interface TemplateProps extends GridProps {
   title: string;
-}
-
-export interface RowProps extends AllHTMLAttributes<HTMLDivElement> {
-  children?: React.ReactNode;
-}
-
-export interface ColProps extends AllHTMLAttributes<HTMLDivElement> {
-  children?: React.ReactNode;
-  className?: string;
-  span?: number;
-  columns?: number;
-  spanSizes?: {
-    sm?: number;
-    md?: number;
-    lg?: number;
-    xl?: number;
-  };
-  padding?: string;
 }

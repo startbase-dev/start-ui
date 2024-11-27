@@ -1,12 +1,70 @@
 .root {
-  display: flex;
-  flex-direction: column;
-  color: var(--sui-sui-foreground);
-  background-color: var(--sui-sui-background);
   box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sui-row-gap-base) var(--sui-column-gap-base);
+  color: inherit;
+  background-color: inherit;
   font-family: var(--sui-font-family);
+
+  @media (min-width: 576px) {
+    // Small devices (landscape phones, 576px and up)
+    gap: var(--sui-row-gap-sm) var(--sui-column-gap-sm);
+  }
+
+  @media (min-width: 768px) {
+    // Medium devices (tablets, 768px and up)
+    gap: var(--sui-row-gap-md) var(--sui-column-gap-md);
+  }
+
+  @media (min-width: 992px) {
+    // Large Devices (desktops, 992px and up)
+    gap: var(--sui-row-gap-lg) var(--sui-column-gap-lg);
+  }
+
+  @media (min-width: 1200px) {
+    // X-Large devices (large desktops, 1200px and up)
+    gap: var(--sui-row-gap-xl) var(--sui-column-gap-xl);
+  }
+
+  @media (min-width: 1400px) {
+    // XX-Large devices (larger desktops, 1400px and up)
+    gap: var(--sui-row-gap-xxl) var(--sui-column-gap-xxl);
+  }
 }
 
 .root * {
   box-sizing: border-box;
+}
+
+.item {
+  flex-grow: 0;
+  flex-basis: auto;
+  width: calc(100% * var(--sui-grid-span-base) / 12 - (12 - var(--sui-grid-span-base)) * (var(--sui-column-gap-base) / 12));
+  background-color: red;
+
+  @media (min-width: 576px) {
+    // Small devices (landscape phones, 576px and up)
+    width: calc(100% * var(--sui-grid-span-sm) / 12 - (12 - var(--sui-grid-span-sm)) * (var(--sui-column-gap-sm) / 12));
+  }
+
+  @media (min-width: 768px) {
+    // Medium devices (tablets, 768px and up)
+    width: calc(100% * var(--sui-grid-span-md) / 12 - (12 - var(--sui-grid-span-md)) * (var(--sui-column-gap-md) / 12));
+  }
+
+  @media (min-width: 992px) {
+    // Large Devices (desktops, 992px and up)
+    width: calc(100% * var(--sui-grid-span-lg) / 12 - (12 - var(--sui-grid-span-lg)) * (var(--sui-column-gap-lg) / 12));
+  }
+
+  @media (min-width: 1200px) {
+    // X-Large devices (large desktops, 1200px and up)
+    width: calc(100% * var(--sui-grid-span-xl) / 12 - (12 - var(--sui-grid-span-xl)) * (var(--sui-column-gap-xl) / 12));
+  }
+
+  @media (min-width: 1400px) {
+    // XX-Large devices (larger desktops, 1400px and up)
+    width: calc(100% * var(--sui-grid-span-xxl) / 12 - (12 - var(--sui-grid-span-xxl)) * (var(--sui-column-gap-xxl) / 12));
+  }
 }
