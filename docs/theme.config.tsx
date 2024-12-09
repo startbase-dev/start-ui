@@ -2,6 +2,7 @@ import React from 'react';
 import { DocsThemeConfig } from 'nextra-theme-docs';
 import Logo from './pages/docs/components/Logo';
 import { Chip } from '@start-base/start-ui';
+import StorybookIcon from 'icons/StorybookIcon';
 
 const config: DocsThemeConfig = {
   useNextSeoProps() {
@@ -42,6 +43,17 @@ const config: DocsThemeConfig = {
   },
   gitTimestamp: null,
   docsRepositoryBase: 'https://github.com/startbase-dev/start-ui',
+  navbar: {
+    extraContent: (
+      <a
+        className="nx-p-2 nx-text-current"
+        target="_blank"
+        href="https://start-ui-storybook.vercel.app"
+      >
+        <StorybookIcon size={24} />
+      </a>
+    ),
+  },
   footer: {
     text: (
       <span>
