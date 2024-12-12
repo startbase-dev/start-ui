@@ -5,10 +5,11 @@
   justify-content: center;
   width: 100%;
 
+  .stepConnector:last-of-type {
+    display: none;
+  }
+
   &[aria-orientation='vertical'] {
-    .stepConnector:last-of-type {
-      display: none;
-    }
 
     .container {
       display: flex;
