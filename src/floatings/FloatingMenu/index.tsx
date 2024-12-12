@@ -80,7 +80,7 @@ const FloatingMenu = forwardRef<HTMLDivElement, FloatingMenuProps>(
           : 'bottom-end',
       middleware: [
         offset({
-          mainAxis: isNested ? 0 : 4,
+          mainAxis: isNested ? 8 : 4,
           alignmentAxis: isNested ? -4 : 0,
         }),
         shift({ padding: 4, crossAxis: true }),
