@@ -1,5 +1,6 @@
 import React, { useState, forwardRef } from 'react';
 import cx from 'clsx';
+// eslint-disable-next-line css-modules/no-unused-class
 import s from './Stepper.module.scss';
 import '../style/components/stepper.scss';
 import type {
@@ -38,7 +39,11 @@ export const Stepper = forwardRef<HTMLDivElement, StepperProps>(
     };
 
     return (
-      <div ref={ref} className={cx(s.stepperWrapper, s[color], className)} aria-orientation={direction}>
+      <div
+        ref={ref}
+        className={cx(s.stepperWrapper, s[color], className)}
+        aria-orientation={direction}
+      >
         <div className={cx(s.stepper, s[direction as keyof typeof s])}>
           {steps.map((step, index) => (
             <React.Fragment key={index}>
@@ -52,7 +57,7 @@ export const Stepper = forwardRef<HTMLDivElement, StepperProps>(
                 <StepIcon
                   icon={
                     index < currentStep ||
-                      (completed && index === currentStep) ? (
+                    (completed && index === currentStep) ? (
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="24"
@@ -83,26 +88,29 @@ export const Stepper = forwardRef<HTMLDivElement, StepperProps>(
                   color={color}
                 />
               </Step>
-              {index < steps.length && (
-                direction === 'vertical' && currentStep === index ?
+              {index < steps.length &&
+                (direction === 'vertical' && currentStep === index ? (
                   <div className={s.container}>
                     <div className={s.stepContent}>
                       {steps[currentStep]?.content}
                     </div>
-                  </div> :
+                  </div>
+                ) : (
                   <StepConnector
                     active={index < currentStep}
                     completed={index < currentStep || completed}
                     color={color}
                   />
-              )}
+                ))}
             </React.Fragment>
           ))}
         </div>
 
-        {direction !== 'vertical' && steps[currentStep] && steps[currentStep].content && (
-          <div className={s.stepContent}>{steps[currentStep].content}</div>
-        )}
+        {direction !== 'vertical' &&
+          steps[currentStep] &&
+          steps[currentStep].content && (
+            <div className={s.stepContent}>{steps[currentStep].content}</div>
+          )}
 
         <div className={s.buttonContainer}>
           <button
