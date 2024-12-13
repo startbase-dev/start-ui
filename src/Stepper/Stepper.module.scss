@@ -4,6 +4,32 @@
   gap: var(--sui-gap);
   justify-content: center;
   width: 100%;
+
+  .stepConnector:last-of-type {
+    display: none;
+  }
+
+  &[aria-orientation='vertical'] {
+    .container {
+      display: flex;
+      gap: 16px;
+      width: 100%;
+      margin-left: 1rem;
+
+      &::before {
+        content: '';
+        display: flex;
+        width: 2px;
+        background-color: var(--sui-stepper-stepconnector-bg);
+      }
+
+      &:last-of-type {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 .stepper {
@@ -65,7 +91,7 @@
 }
 
 .vertical .stepConnector {
-  height: 3rem;
+  height: 1rem;
   width: 2px;
   min-width: unset;
   max-width: unset;
