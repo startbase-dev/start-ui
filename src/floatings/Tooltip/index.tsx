@@ -5,7 +5,7 @@ import React, {
   useEffect,
   useRef,
   useState,
-  MutableRefObject,
+  RefObject,
 } from 'react';
 
 import { arrow, offset, Middleware } from '@floating-ui/core';
@@ -155,7 +155,7 @@ const Tooltip = forwardRef<HTMLElement, TooltipProps>(
     }, [refs, handleClick, handleMouseEnter, handleMouseLeave]);
 
     useOutsideClick({
-      ref: refs?.domReference as MutableRefObject<HTMLElement | null>,
+      ref: refs?.domReference as RefObject<HTMLElement>,
       handler: handleClickOutside,
     });
 

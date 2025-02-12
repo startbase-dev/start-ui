@@ -5,7 +5,7 @@ import React, {
   useEffect,
   useRef,
   useState,
-  MutableRefObject,
+  RefObject,
 } from 'react';
 
 import { arrow, offset, shift, flip, Middleware } from '@floating-ui/core';
@@ -170,9 +170,9 @@ const Popover = forwardRef<HTMLElement, PopoverProps>(
     }, [refs, handleClick, handleMouseEnter, handleMouseLeave]);
 
     useOutsideClick({
-      ref: refs?.domReference as MutableRefObject<HTMLElement | null>,
+      ref: refs?.domReference as RefObject<HTMLElement>,
       handler: handleClickOutside,
-      withoutRef: refs.floating,
+      withoutRef: refs.floating as RefObject<HTMLElement>,
     });
 
     const popover = (

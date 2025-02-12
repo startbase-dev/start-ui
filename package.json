@@ -232,18 +232,18 @@
     "@floating-ui/dom": "^1.6.12",
     "@floating-ui/react": "^0.26.27",
     "clsx": "^2.1.1",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "rc-table": "^7.40.0"
+    "rc-table": "^7.40.0",
+    "react": ">=17.0.0",
+    "react-dom": "^18.0.0"
   },
   "dependencies": {
     "@floating-ui/core": "^1.6.8",
     "@floating-ui/dom": "^1.6.12",
     "@floating-ui/react": "^0.26.27",
     "clsx": "^2.1.1",
+    "rc-table": "^7.40.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "rc-table": "^7.40.0"
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.26.0",
@@ -261,6 +261,7 @@
     "@storybook/react": "8.4.5",
     "@storybook/react-webpack5": "8.4.5",
     "@storybook/test": "8.4.5",
+    "@types/react": "^19.0.8",
     "@typescript-eslint/eslint-plugin": "8.16.0",
     "@typescript-eslint/parser": "8.16.0",
     "autoprefixer": "10.4.20",
