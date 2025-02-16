@@ -2,7 +2,7 @@
   "name": "@start-base/start-ui",
   "author": "Start-Base",
   "description": "",
-  "version": "0.0.57-alpha",
+  "version": "1.0.1",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -228,11 +228,11 @@
     "build:WordAnimation": "tsup src/WordAnimation/index.tsx --out-dir ./WordAnimation --no-splitting --treeshake --minify terser"
   },
   "peerDependencies": {
-    "@floating-ui/core": "^1.6.8",
-    "@floating-ui/dom": "^1.6.12",
-    "@floating-ui/react": "^0.26.27",
-    "clsx": "^2.1.1",
-    "rc-table": "^7.40.0",
+    "@floating-ui/core": ">=1.0.0",
+    "@floating-ui/dom": ">=1.0.0",
+    "@floating-ui/react": ">=0.25.0",
+    "clsx": ">=2.0.0",
+    "rc-table": ">=7.0.0",
     "react": ">=17.0.0",
     "react-dom": ">=17.0.0"
   },
