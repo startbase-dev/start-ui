@@ -65,7 +65,7 @@ const FloatingContextMenu = forwardRef<
     const item = useListItem();
     const isNested = parentId != null;
 
-    const componentRef = useRef<HTMLElement>(null);
+    const componentRef = useRef<HTMLElement | null>(null);
 
     const { floatingStyles, refs, context } = useFloating({
       nodeId,
@@ -275,14 +275,14 @@ const FloatingContextMenu = forwardRef<
                       style={floatingStyles}
                       {...getFloatingProps()}
                     >
-                      {React.Children.map(children, (child, index) => {
-                        return cloneElement(child as React.ReactElement, {
+                      {React.Children.map(children, (child: { props: Record<string, any> } & React.ReactElement, index) => {
+                        return cloneElement(child, {
                           key: index,
                           onClick: (e: any) => {
                             child.props.onClick?.(e);
                             setIsOpen(false);
                           },
-                        });
+                        } as React.Attributes);
                       })}
                     </div>
                   </FloatingFocusManager>
