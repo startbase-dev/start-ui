@@ -155,8 +155,6 @@ const Filter = ({
     setSelectedColumns([]);
   }
 
-  console.log(filterOperator, selectedColumns, filterValue);
-
   return (
     <div className={styles.filterContainer}>
       <div
