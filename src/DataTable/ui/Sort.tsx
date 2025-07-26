@@ -5,13 +5,13 @@ import DownArrow from '../../icons/DownArrow';
 
 import styles from './Sort.module.scss';
 
-const Sorting = ({
+const Sorting = <T,>({
   column,
   isSorted,
   setSortColumn,
   sortOrder,
   setSortOrder,
-}: SortingProps) => {
+}: SortingProps<T>) => {
   function toggleSort() {
     setSortOrder((prev) => {
       if (!prev || !isSorted) return 'descend';
@@ -36,5 +36,4 @@ const Sorting = ({
     </div>
   );
 };
-
 export default Sorting;

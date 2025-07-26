@@ -5,14 +5,19 @@ interface IconProps extends SVGProps<SVGSVGElement> {
   size?: number;
 }
 
-export default function StorybookIcon({ size, width, height, ...props }: IconProps) {
+export default function StorybookIcon({
+  size,
+  width,
+  height,
+  ...props
+}: IconProps) {
   return (
     <svg
-      xmlns='http://www.w3.org/2000/svg'
-      fill='currentColor'
-      stroke='currentColor'
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      stroke="currentColor"
       strokeWidth={0}
-      viewBox='0 0 24 24'
+      viewBox="0 0 24 24"
       width={size ?? width}
       height={size ?? height}
       {...props}

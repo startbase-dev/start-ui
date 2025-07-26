@@ -25,7 +25,7 @@ const i18nDefaults = {
   typeValue: 'Type value',
 };
 
-const Filter = ({
+const Filter = <T,>({
   columns,
   data,
   filterValue,
@@ -37,7 +37,7 @@ const Filter = ({
   setHighlightedRows,
   setCurrentPage,
   i18n = i18nDefaults,
-}: FilterProps) => {
+}: FilterProps<T>) => {
   const [isContainerOpen, setIsContainerOpen] = useState(false);
   const [debouncedFilterValue, setDebouncedFilterValue] = useState(filterValue);
 
@@ -86,7 +86,11 @@ const Filter = ({
 
     const filteredData = data.filter((item) => {
       return selectedColumns.some((colKey) => {
-        const columnValue = item[colKey]?.toString().toLowerCase().trim() ?? '';
+        const columnValue =
+          (item as Record<string, any>)[colKey]
+            ?.toString()
+            .toLowerCase()
+            .trim() ?? '';
 
         switch (filterOperator) {
           case 'contains':
@@ -124,7 +128,9 @@ const Filter = ({
     });
 
     if (filteredData.length > 0) {
-      const highlightedRowKeys = filteredData.map((item) => item.key);
+      const highlightedRowKeys = filteredData.map(
+        (item) => (item as { key: string | number }).key
+      );
       setHighlightedRows(highlightedRowKeys);
     } else {
       setHighlightedRows([]);

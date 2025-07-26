@@ -1,11 +1,6 @@
 import { Dispatch, Key, SetStateAction } from 'react';
 import { ColumnType } from 'rc-table';
 
-export interface DataItem {
-  key?: Key;
-  [key: string]: unknown;
-}
-
 export interface CellAttributes
   extends React.TdHTMLAttributes<HTMLElement>,
     Record<`data-${string}`, string | undefined> {}
@@ -16,7 +11,7 @@ export interface CheckboxProps {
   indeterminate?: boolean;
 }
 
-interface DataTableI18N {
+export interface DataTableI18N {
   pagination: {
     rows: string;
     of: string;
@@ -42,13 +37,18 @@ interface DataTableI18N {
   };
 }
 
-interface DataTableColumn extends ColumnType<DataItem> {
+export interface DataItem {
+  key?: Key;
+  [key: string]: unknown;
+}
+
+export interface DataTableColumn<T> extends ColumnType<T> {
   filterable?: boolean;
 }
 
-export interface DataTableProps {
-  data: DataItem[];
-  columns: DataTableColumn[];
+export interface DataTableProps<T> {
+  data: T[];
+  columns: DataTableColumn<T>[];
   rowsPerPage?: number;
   pagination?: boolean;
   rowsPerPageOptions?: number[];
@@ -67,15 +67,15 @@ export interface DataTableProps {
   i18n?: Partial<DataTableI18N>;
 }
 
-export interface FilterProps {
-  columns: DataTableColumn[];
-  data: DataItem[];
+export interface FilterProps<T> {
+  columns: DataTableColumn<T>[];
+  data: T[];
   filterValue: string;
   setFilterValue: (value: string) => void;
   filterOperator: string;
   setFilterOperator: (value: string) => void;
   selectedColumns: string[];
-  setSelectedColumns: React.Dispatch<React.SetStateAction<string[]>>;
+  setSelectedColumns: Dispatch<SetStateAction<string[]>>;
   setHighlightedRows: (rows: (Key | undefined)[]) => void;
   setCurrentPage: (page: number) => void;
   i18n?: Partial<Pick<DataTableI18N, 'filter'>['filter']>;
@@ -91,8 +91,8 @@ export interface PaginationProps {
   i18n?: Partial<Pick<DataTableI18N, 'pagination'>['pagination']>;
 }
 
-export interface SortingProps {
-  column: ColumnType<DataItem>;
+export interface SortingProps<T> {
+  column: ColumnType<T>;
   setSortColumn: (columnKey: string | null) => void;
   isSorted: boolean;
   sortOrder: SortOrder;

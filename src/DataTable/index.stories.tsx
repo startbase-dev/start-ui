@@ -46,7 +46,7 @@ const dummyColumns = [
   },
 ];
 
-const Template = (args: DataTableProps) => {
+const Template = (args: DataTableProps<DataItem>) => {
   return (
     <Storybook title="Table Component">
       <DataTable {...args} />

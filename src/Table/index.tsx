@@ -1,10 +1,11 @@
 import React from 'react';
 import cx from 'clsx';
 import RCTable, { VirtualTable } from 'rc-table';
+import type { ColumnType } from 'rc-table';
 import styles from './Table.module.scss';
 import type { TableProps, DataItem } from './types';
-import { ColumnType } from 'rc-table';
-const Table: React.FC<TableProps> = ({
+
+const Table = <T extends DataItem>({
   data,
   columns,
   rowClassName,
@@ -12,13 +13,18 @@ const Table: React.FC<TableProps> = ({
   virtualized = false,
   border = true,
   ...rest
-}) => {
+}: TableProps<T>) => {
   const modifiedColumns = columns.map((column) => ({
     onCell: () => ({
-      'data-title': column.title,
+      'data-title': typeof column.title === 'string' ? column.title : '',
     }),
     ...column,
-  })) as ColumnType<DataItem>[];
+  })) as ColumnType<T>[];
+
+  const tableData = data?.map((item, index) => ({
+    ...item,
+    key: item?.key ?? index,
+  }));
 
   return (
     <div
@@ -28,11 +34,8 @@ const Table: React.FC<TableProps> = ({
       })}
     >
       {virtualized ? (
-        <VirtualTable
-          data={data?.map((item, index) => ({
-            ...item,
-            key: item?.key ?? index,
-          }))}
+        <VirtualTable<T>
+          data={tableData}
           columns={modifiedColumns}
           tableLayout="fixed"
           className={styles.tableContainer}
@@ -43,11 +46,8 @@ const Table: React.FC<TableProps> = ({
           {...rest}
         />
       ) : (
-        <RCTable
-          data={data?.map((item, index) => ({
-            ...item,
-            key: item?.key ?? index,
-          }))}
+        <RCTable<T>
+          data={tableData}
           columns={modifiedColumns}
           tableLayout="fixed"
           className={styles.tableContainer}

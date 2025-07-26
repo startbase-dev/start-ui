@@ -275,15 +275,23 @@ const FloatingContextMenu = forwardRef<
                       style={floatingStyles}
                       {...getFloatingProps()}
                     >
-                      {React.Children.map(children, (child: { props: Record<string, any> } & React.ReactElement, index) => {
-                        return cloneElement(child, {
-                          key: index,
-                          onClick: (e: any) => {
-                            child.props.onClick?.(e);
-                            setIsOpen(false);
-                          },
-                        } as React.Attributes);
-                      })}
+                      {React.Children.map(
+                        children,
+                        (
+                          child: {
+                            props: Record<string, any>;
+                          } & React.ReactElement,
+                          index
+                        ) => {
+                          return cloneElement(child, {
+                            key: index,
+                            onClick: (e: any) => {
+                              child.props.onClick?.(e);
+                              setIsOpen(false);
+                            },
+                          } as React.Attributes);
+                        }
+                      )}
                     </div>
                   </FloatingFocusManager>
                 </FloatingPortal>

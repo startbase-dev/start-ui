@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo, Key, forwardRef } from 'react';
 import cx from 'clsx';
 import { ColumnType } from 'rc-table';
-import { CellAttributes, DataItem, DataTableProps, SortOrder } from './types';
+import { CellAttributes, SortOrder, DataTableProps, DataItem } from './types';
 import Pagination from './ui/Pagination';
 import Filter from './ui/Filter';
 import Sorting from './ui/Sort';
@@ -10,8 +10,8 @@ import Checkbox from './ui/Checkbox';
 import styles from './DataTable.module.scss';
 import Table from '../Table';
 
-const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
-  (
+const DataTable = forwardRef(
+  <T extends DataItem>(
     {
       data: initialData,
       columns: initialColumns,
@@ -28,12 +28,11 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
       emptyText,
       rowClassName,
       i18n,
-    },
-    ref
+    }: DataTableProps<T>,
+    ref: React.Ref<HTMLDivElement>
   ) => {
-    const [data, setData] = useState<DataItem[]>(initialData);
-    const [columns, setColumns] =
-      useState<ColumnType<DataItem>[]>(initialColumns);
+    const [data, setData] = useState<T[]>(initialData);
+    const [columns, setColumns] = useState<ColumnType<T>[]>(initialColumns);
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [currentRowsPerPage, setCurrentRowsPerPage] =
       useState<number>(rowsPerPage);
@@ -56,7 +55,7 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
       setColumns(initialColumns);
     }, [initialColumns]);
 
-    const applyFilter = (data: DataItem[]) => {
+    const applyFilter = (data: T[]) => {
       if (!filter || selectedColumns.length === 0 || !filterOperator) {
         return data;
       }
@@ -95,11 +94,12 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
         });
       });
     };
+
     const sortData = (
-      data: DataItem[],
+      data: T[],
       sortColumn: string | null,
       sortOrder: SortOrder
-    ): DataItem[] => {
+    ): T[] => {
       if (!sortColumn || !sortOrder) return data;
 
       return [...data].sort((a, b) => {
@@ -115,21 +115,17 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
         const aStr = aValue.toString();
         const bStr = bValue.toString();
 
-        if (sortOrder === 'ascend') {
-          return aStr.localeCompare(bStr);
-        } else {
-          return bStr.localeCompare(aStr);
-        }
+        return sortOrder === 'ascend'
+          ? aStr.localeCompare(bStr)
+          : bStr.localeCompare(aStr);
       });
     };
 
     const processedData = useMemo(() => {
       let tempData = applyFilter(data);
-
       if (sorting) {
         tempData = sortData(tempData, sortColumn, sortOrder);
       }
-
       return tempData;
     }, [
       data,
@@ -200,6 +196,7 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
             )}
           </div>
         );
+
         const dataTitle = typeof col.title === 'string' ? col.title : '';
 
         return {
@@ -212,7 +209,7 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
       });
     }, [columns, sorting, sortColumn, sortOrder, hoveredColumn]);
 
-    const modifiedColumns: ColumnType<DataItem>[] = checkboxAvailable
+    const modifiedColumns: ColumnType<T>[] = checkboxAvailable
       ? [
           {
             title: (
@@ -223,7 +220,7 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
               />
             ),
             key: 'checkbox',
-            render: (_: unknown, record: DataItem) => (
+            render: (_: unknown, record: T) => (
               <Checkbox
                 checked={selectedRows.includes(record.key as string | number)}
                 onChange={() => handleRowSelect(record.key as string | number)}
@@ -281,7 +278,7 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
             [styles.empty]: tableData?.length === 0,
           })}
         >
-          <Table
+          <Table<T>
             data={tableData}
             columns={modifiedColumns}
             className={styles.tableContainer}
@@ -326,5 +323,3 @@ const DataTable = forwardRef<HTMLDivElement, DataTableProps>(
 DataTable.displayName = 'DataTable';
 
 export default DataTable;
-
-export { type DataTableProps };

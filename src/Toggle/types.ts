@@ -1,6 +1,7 @@
 import { ButtonHTMLAttributes, ReactNode } from 'react';
 
-export interface ToggleProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "onToggle"> {
+export interface ToggleProps
+  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onToggle'> {
   initialState?: boolean;
   onToggle?: (state: boolean) => void;
   color?: 'primary' | 'secondary' | 'destructive';
